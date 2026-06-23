@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "新莊哪裡有專業驗光？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能見度視覺中心（比泱驗光所）位於新北市新莊區中正路，由 YoYo 驗光師主理，提供完整臨床驗光、雙眼視覺評估、兒童近視控制與多焦點鏡片配製服務。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "老花一定要配多焦點嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不一定。老花的解決方案包含單焦老花鏡、漸進多焦點鏡片、甚至接觸鏡選項。多焦點鏡片適合需要頻繁切換遠中近距離的生活型態，但工作以近距離為主者不一定適合。YoYo 驗光師會根據你的生活習慣給出最適合的建議，而非一律推薦最貴的方案。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼戴眼鏡會頭暈？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "戴眼鏡頭暈的原因包括：度數配錯、散光軸向偏差、鏡片光學中心偏移、鏡架調整不當導致傾斜角問題，或高度近視眼鏡的棱鏡效應。能見度視覺中心提供免費回診評估，YoYo 驗光師可協助找出確切原因。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "兒童近視控制哪裡做最專業？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能見度視覺中心新莊店（比泱驗光所）提供兒童近視控制完整方案，包含角膜塑型片（OK鏡）、低濃度阿托品、MiSight 離焦日拋及蔡司星趣控鏡片，由 YoYo 驗光師進行個人化評估與定期追蹤。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "板橋哪裡可以配蔡司鏡片？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能見度眼鏡 × 能見度驗光所位於新北市板橋區，為蔡司 Zeiss 認證合作店，提供 Individual² 個人化訂製蔡司鏡片、多焦點鏡片與高度近視眼鏡解決方案。"
+      }
+    }
+  ]
+};
+---
+<Layout
+  title="能見度視覺中心 × 比泱驗光所｜新莊板橋 蔡司鏡片 多焦點鏡片 兒童近視控制｜YoYo 驗光師"
+  description="新北市新莊、板橋 YoYo 驗光師主理。蔡司鏡片、多焦點鏡片、兒童近視控制、高度近視眼鏡。能見度視覺中心 × 比泱驗光所，不追求最貴，只追求最適合。"
+  schema={faqSchema}
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-4">新北市新莊 × 板橋 專業驗光</p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        不追求最貴<br />只追求最<span class="text-brand-gold">適合</span>你的視覺解決方案
+      </h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        從臨床驗光到多焦點鏡片、近視控制，每一副眼鏡都是為你的生活視覺量身打造。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/booking"
+          class="bg-brand-gold text-brand-navy font-bold px-8 py-4 rounded-full text-lg hover:bg-brand-gold/90 transition-colors">
+          立即預約視覺分析
+        </a>
+        <a href="/services"
+          class="border border-white/40 text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-colors">
+          了解服務內容
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心優勢 -->
+  <section class="max-w-6xl mx-auto px-4 py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-brand-navy mb-3">為什麼選擇能見度視覺中心？</h2>
+      <p class="text-gray-500">高端驗光，不是販售眼鏡，而是為你建立長期視覺健康檔案</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { icon: '🔬', title: '臨床等級驗光', desc: '完整雙眼視覺評估、頂點距離量測、鏡片傾斜角調整，每個參數精準到位。' },
+        { icon: '🎯', title: '蔡司 Zeiss 認證', desc: '台灣授權蔡司合作店，從個人化漸進多焦到數位防護，提供原廠品質保證。' },
+        { icon: '📊', title: '近視控制專科', desc: '角膜塑型片、低濃度阿托品、離焦鏡片，為孩子規劃科學化近視管理方案。' },
+      ].map(item => (
+        <div class="bg-brand-light rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="text-5xl mb-4">{item.icon}</div>
+          <h3 class="font-bold text-xl text-brand-navy mb-3">{item.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 門市資訊 -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">兩大門市，就在你身邊</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            name: '新莊店',
+            full: '能見度視覺中心 × 比泱驗光所',
+            addr: '新北市新莊區中正路',
+            focus: '臨床驗光、進階視覺管理、近視控制',
+            tag: '新莊驗光首選',
+          },
+          {
+            name: '板橋店',
+            full: '能見度眼鏡 × 能見度驗光所',
+            addr: '新北市板橋區',
+            focus: '多焦點鏡片、蔡司 Zeiss、熟齡視覺',
+            tag: '板橋多焦點專科',
+          },
+        ].map(store => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <span class="bg-brand-navy text-white text-xs font-semibold px-3 py-1 rounded-full">{store.tag}</span>
+            <h3 class="text-xl font-bold text-brand-navy mt-4 mb-1">{store.name}</h3>
+            <p class="text-gray-500 text-sm mb-4">{store.full}</p>
+            <p class="text-gray-700 mb-2">📍 {store.addr}</p>
+            <p class="text-gray-600 text-sm">✦ {store.focus}</p>
+            <a href="/booking" class="mt-6 block text-center bg-brand-navy text-white py-3 rounded-xl font-semibold hover:bg-brand-navy/90 transition-colors">
+              預約此門市
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-4 py-20">
+    <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">常見問題</h2>
+    <div class="space-y-4">
+      {[
+        { q: '老花一定要配多焦點嗎？', a: '不一定。老花的解決方案包含：單焦老花鏡、漸進多焦點鏡片、甚至接觸鏡選項。多焦點鏡片適合需要頻繁切換遠中近距離者，但工作以近距離為主的人不一定適合。YoYo 驗光師會根據你的真實生活習慣給出建議，而非一律推薦多焦點。' },
+        { q: '為什麼戴眼鏡會頭暈？', a: '戴眼鏡頭暈最常見的原因：度數配錯、散光軸向偏差、鏡片光學中心偏移、鏡架調整不當造成傾斜角問題。高度近視眼鏡尤其敏感，任何一個細節失準都會放大不適感。能見度視覺中心提供免費回診評估。' },
+        { q: '近視控制真的有效嗎？', a: '有效，但需個人化評估。角膜塑型片、低濃度阿托品（0.01%）與離焦設計鏡片，在國際臨床研究中已證實可減緩近視加深速度 30–60%。兒童近視控制最佳時機是 6–14 歲，越早開始效果越好。' },
+        { q: '蔡司鏡片和普通鏡片差在哪裡？', a: '蔡司鏡片（Zeiss）的差異在於個人化光學計算：Individual² 系列根據你的頭部轉動習慣、眼球運動模式與實際配戴姿勢客製化設計，清晰視野範圍比標準鏡片大 20% 以上。能見度視覺中心為蔡司認證合作店。' },
+      ].map(item => (
+        <details class="border border-gray-200 rounded-xl overflow-hidden group">
+          <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-semibold text-brand-navy hover:bg-brand-light transition-colors">
+            {item.q}
+            <span class="text-brand-gold text-xl group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="px-6 pb-5 text-gray-600 leading-relaxed">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4 text-center">
+    <h2 class="text-3xl font-bold mb-4">你的視覺，值得被認真對待</h2>
+    <p class="text-gray-300 mb-8 text-lg">免費視覺健康評估，新莊 × 板橋兩大門市皆可預約</p>
+    <a href="/booking"
+      class="bg-brand-gold text-brand-navy font-bold px-10 py-4 rounded-full text-lg hover:bg-brand-gold/90 transition-colors inline-block">
+      立即線上預約 →
+    </a>
+  </section>
+</Layout>

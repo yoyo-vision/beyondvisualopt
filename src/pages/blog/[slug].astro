@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "author": {
+    "@type": "Person",
+    "name": "YoYo 驗光師",
+    "worksFor": { "@type": "Organization", "name": "能見度視覺中心 × 比泱驗光所" }
+  },
+  "datePublished": post.data.date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "能見度視覺中心",
+    "url": "https://beyondvisualopt.com"
+  },
+  "description": post.data.excerpt,
+  "image": post.data.image || "https://beyondvisualopt.com/og-image.jpg",
+  "keywords": "多焦點鏡片,蔡司鏡片,兒童近視控制,高度近視眼鏡,新莊驗光,板橋驗光,新莊驗光所推薦,新北市驗光所,能見度視覺中心,比泱驗光所,YoYo驗光師"
+};
+---
+<Layout
+  title={`${post.data.title}｜YoYo 驗光師｜能見度視覺中心 × 比泱驗光所 新莊板橋驗光`}
+  description={`${post.data.excerpt} 能見度視覺中心 YoYo 驗光師，新莊驗光所推薦、板橋驗光首選。`}
+  schema={articleSchema}
+>
+  <article class="max-w-3xl mx-auto px-4 py-16">
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+        <span class="text-gray-400 text-sm">{post.data.date} · 能見度視覺中心 YoYo 驗光師</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight mb-4">{post.data.title}</h1>
+      <p class="text-gray-500 text-lg leading-relaxed">{post.data.excerpt}</p>
+    </div>
+
+    <!-- 封面圖片 -->
+    {post.data.image && (
+      <img src={post.data.image} alt={post.data.title} class="w-full h-64 object-cover rounded-2xl mb-8" />
+    )}
+
+    <!-- YouTube 影片嵌入 -->
+    {post.data.youtube && (
+      <div class="mb-8 rounded-2xl overflow-hidden aspect-video">
+        <iframe
+          src={`https://www.youtube.com/embed/${post.data.youtube}`}
+          title={post.data.title}
+          class="w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    )}
+
+    <!-- 文章內文 -->
+    <div class="prose prose-gray max-w-none
+      prose-headings:text-brand-navy prose-headings:font-bold
+      prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+      prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+      prose-p:leading-relaxed prose-p:text-gray-700
+      prose-strong:text-brand-navy
+      prose-a:text-brand-gold prose-a:no-underline hover:prose-a:underline
+      prose-blockquote:border-brand-gold prose-blockquote:bg-brand-light prose-blockquote:rounded-r-xl prose-blockquote:py-2
+      prose-table:text-sm prose-th:bg-brand-navy prose-th:text-white prose-th:p-3
+      prose-td:p-3 prose-td:border-b prose-td:border-gray-100
+      prose-hr:border-gray-200
+    ">
+      <Content />
+    </div>
+
+    <!-- Instagram 嵌入 -->
+    {post.data.instagram && (
+      <div class="mt-10 p-6 bg-brand-light rounded-2xl text-center">
+        <p class="text-sm text-gray-500 mb-3">📸 追蹤我們的 Instagram</p>
+        <a href={post.data.instagram} target="_blank" rel="noopener noreferrer"
+          class="text-brand-navy font-semibold hover:text-brand-gold transition-colors">
+          查看 Instagram 貼文 →
+        </a>
+      </div>
+    )}
+
+    <!-- CTA -->
+    <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
+      <h2 class="text-xl font-bold mb-3">還有問題？歡迎預約 YoYo 驗光師</h2>
+      <p class="text-gray-300 mb-6">能見度視覺中心（新莊比泱驗光所 × 板橋店）｜新北市驗光所推薦首選</p>
+      <a href="/booking" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+        立即線上預約 →
+      </a>
+    </div>
+  </article>
+
+  <div class="border-t py-12 bg-brand-light text-center">
+    <a href="/blog" class="text-brand-navy font-semibold hover:underline">← 回到視覺小知識</a>
+  </div>
+</Layout>

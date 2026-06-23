@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lenses = [
+  {
+    category: '蔡司 Zeiss 系列',
+    items: [
+      { name: 'Individual²', desc: '根據你的頭部轉動習慣、眼球運動模式個人化計算，視野清晰區域比標準鏡片大 20%。', best: '高度數 / 高要求族群' },
+      { name: 'Progressive Plus', desc: '入門漸進多焦點，適合初次配戴者，提供自然的遠中近視覺轉換。', best: '老花初期 / 預算導向' },
+      { name: 'Digital Lens', desc: '專為長時間使用數位裝置設計，強化中近距離視覺，減輕睫狀肌持續緊繃造成的視覺疲勞。', best: '上班族 / 螢幕族' },
+      { name: 'DriveSafe', desc: '提升夜間行車對比敏感度，降低眩光，雨天視線更清晰。', best: '通勤族 / 夜間駕車者' },
+    ]
+  },
+  {
+    category: '近視控制鏡片',
+    items: [
+      { name: '角膜塑型片（OK鏡）', desc: '夜間配戴塑型角膜，白天裸眼視力清晰，同步減緩眼軸延長速度。臨床研究証實可降低近視進展達 50%。', best: '8–16 歲近視兒童' },
+      { name: 'MiSight 日拋', desc: '全球首片 FDA 核准近視控制日拋，雙焦離焦設計，適合不接受塑型片的孩童。', best: '6–12 歲 / 活動力強的孩子' },
+      { name: '星趣控（Stellest）', desc: '蔡司近視控制鏡片，H.A.L.T 技術建立全面離焦屏障，有效控制近視加深。', best: '拒絕戴隱形眼鏡的青少年' },
+    ]
+  },
+  {
+    category: '功能性鏡片',
+    items: [
+      { name: '抗藍光鍍膜', desc: '過濾 420nm 短波藍光，減少螢幕長時間使用造成的視網膜累積刺激。', best: '螢幕族 / 夜貓族' },
+      { name: '感光變色片', desc: '室內透明、戶外 UV 觸發自動變色，一副眼鏡兩種功能，適合頻繁進出室內外的生活型態。', best: '通勤族 / 戶外工作者' },
+      { name: '高折射率鏡片（1.74）', desc: '極高度數者（-8.00 以上）的首選，在相同度數下鏡片更薄更輕，大幅改善外觀厚度問題。', best: '高度近視 / 高度遠視族群' },
+    ]
+  },
+];
+---
+<Layout
+  title="鏡片種類｜蔡司鏡片 多焦點鏡片 高度近視眼鏡 兒童近視控制｜能見度視覺中心 × 比泱驗光所"
+  description="蔡司鏡片（Individual²/Digital/DriveSafe）、多焦點鏡片、高度近視眼鏡（1.74 超薄）、兒童近視控制（OK鏡/MiSight/星趣控）。YoYo 驗光師主理，新莊、板橋門市。"
+>
+  <section class="bg-brand-navy text-white py-20 px-4 text-center">
+    <h1 class="text-4xl font-bold mb-4">鏡片種類</h1>
+    <p class="text-gray-300 text-lg max-w-2xl mx-auto">每種鏡片都有它最適合的使用者。我們的工作是幫你找到那一片。</p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-20 space-y-16">
+    {lenses.map(cat => (
+      <div>
+        <h2 class="text-2xl font-bold text-brand-navy mb-8 border-l-4 border-brand-gold pl-4">{cat.category}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {cat.items.map(lens => (
+            <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+              <h3 class="text-lg font-bold text-brand-navy mb-2">{lens.name}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{lens.desc}</p>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-brand-gray">最適合：</span>
+                <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{lens.best}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="bg-brand-light py-16 px-4 text-center">
+    <h2 class="text-2xl font-bold text-brand-navy mb-4">哪片鏡片最適合你？</h2>
+    <p class="text-gray-600 mb-8">不是最貴的就最好。讓我們評估你的視覺需求，給你最精準的建議。</p>
+    <a href="/booking" class="bg-brand-navy text-white font-bold px-8 py-4 rounded-full hover:bg-brand-navy/90 transition-colors inline-block">
+      預約鏡片諮詢
+    </a>
+  </section>
+</Layout>

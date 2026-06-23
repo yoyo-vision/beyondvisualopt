@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="服務內容｜能見度視覺中心 × 比泱驗光所｜多焦點鏡片 蔡司鏡片 兒童近視控制 高度近視眼鏡｜YoYo 驗光師"
+  description="YoYo 驗光師主理。多焦點鏡片、蔡司鏡片個人化訂製、兒童近視控制（OK鏡/阿托品）、高度近視眼鏡專科。能見度視覺中心新莊、板橋門市。"
+>
+  <section class="bg-brand-navy text-white py-20 px-4 text-center">
+    <h1 class="text-4xl font-bold mb-4">服務內容</h1>
+    <p class="text-gray-300 text-lg max-w-2xl mx-auto">每一項服務，都從你的真實視覺需求出發，而不是從產品利潤出發。</p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {[
+        {
+          icon: '🔬',
+          title: '臨床全套驗光',
+          subtitle: '不是快篩，是完整評估',
+          items: ['主觀 + 客觀屈光度測量', '雙眼視覺協調評估', '調節力與聚散力檢測', '頂點距離 & 鏡片傾斜角量測', '個人化生活視覺分析'],
+          tag: '新莊店 / 板橋店',
+        },
+        {
+          icon: '👁️',
+          title: '近視控制',
+          subtitle: '讓孩子的近視慢下來',
+          items: ['角膜塑型片（OK鏡）評估與配製', '低濃度阿托品（0.01%）搭配方案', 'MiSight 離焦日拋評估', '定期追蹤眼軸長進展', '家長衛教與使用指導'],
+          tag: '新莊店主力服務',
+        },
+        {
+          icon: '📐',
+          title: '多焦點鏡片',
+          subtitle: '老花、疲勞、看遠看近全顧到',
+          items: ['漸進多焦點度數精準設計', '蔡司 Individual² 個人化訂製', '鏡片適應期追蹤調整', '工作距離客製化設定', '適應不良免費重新評估'],
+          tag: '板橋店 / 新莊店',
+        },
+        {
+          icon: '🛡️',
+          title: '數位疲勞視覺方案',
+          subtitle: '給每天盯螢幕超過 8 小時的你',
+          items: ['螢幕距離視覺壓力評估', '藍光防護鏡片選配', '蔡司 Digital Lens 推薦', '人體工學配鏡角度調整', '工作環境照明建議'],
+          tag: '上班族首選',
+        },
+      ].map(s => (
+        <div class="border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+          <div class="flex items-start justify-between mb-4">
+            <div class="text-5xl">{s.icon}</div>
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{s.tag}</span>
+          </div>
+          <h2 class="text-2xl font-bold text-brand-navy mb-1">{s.title}</h2>
+          <p class="text-brand-gray text-sm mb-5">{s.subtitle}</p>
+          <ul class="space-y-2">
+            {s.items.map(item => (
+              <li class="flex items-start gap-2 text-gray-600 text-sm">
+                <span class="text-brand-gold mt-0.5">✦</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-brand-light py-16 px-4 text-center">
+    <h2 class="text-2xl font-bold text-brand-navy mb-4">不確定自己需要哪個服務？</h2>
+    <p class="text-gray-600 mb-8">告訴我們你的視覺困擾，YoYo 驗光師會為你規劃最適合的方案。</p>
+    <a href="/booking" class="bg-brand-navy text-white font-bold px-8 py-4 rounded-full hover:bg-brand-navy/90 transition-colors inline-block">
+      預約免費視覺諮詢
+    </a>
+  </section>
+</Layout>
