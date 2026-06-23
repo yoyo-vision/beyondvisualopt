@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="SEO 操作指南｜能見度視覺中心後台提醒"
+  description="網站 SEO、GEO、AI 搜尋優化操作指南，專為能見度視覺中心團隊整理。"
+>
+  <section class="bg-brand-navy text-white py-16 px-4 text-center">
+    <h1 class="text-3xl font-bold mb-2">SEO / GEO / AI 搜尋 操作手冊</h1>
+    <p class="text-gray-300">能見度視覺中心 × 比泱驗光所 專用提醒清單</p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 py-16 space-y-12">
+
+    <!-- 每次發文必做 -->
+    <div>
+      <h2 class="text-2xl font-bold text-brand-navy mb-6 border-l-4 border-brand-gold pl-4">
+        📝 每次新增文章必做清單
+      </h2>
+      <div class="space-y-3">
+        {[
+          { done: true, text: '標題包含「地點 + 服務關鍵字」，例如：「新莊驗光師推薦｜多焦點鏡片為什麼會暈？」' },
+          { done: true, text: '摘要（excerpt）第一句就寫出核心問題與答案，方便 Google 抓取精選摘要' },
+          { done: true, text: '文章內至少出現一次「能見度視覺中心」、「比泱驗光所」、「YoYo 驗光師」' },
+          { done: true, text: '文章內至少出現一次「新莊驗光」或「板橋驗光」或「新北市驗光所」' },
+          { done: false, text: '上傳封面圖片（建議 1200×630px），圖片檔名用關鍵字命名，例如：xinzhuang-jinshi-kongzhi.jpg' },
+          { done: false, text: '若有拍攝相關 YouTube 影片，填入影片 ID 嵌入文章' },
+          { done: false, text: '每篇文章結尾都有預約 CTA（目前已自動嵌入）' },
+        ].map(item => (
+          <div class={`flex gap-3 items-start p-4 rounded-xl ${item.done ? 'bg-green-50 border border-green-200' : 'bg-yellow-50 border border-yellow-200'}`}>
+            <span class="text-lg mt-0.5">{item.done ? '✅' : '⚠️'}</span>
+            <p class="text-sm text-gray-700 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Google 工具設定 -->
+    <div>
+      <h2 class="text-2xl font-bold text-brand-navy mb-6 border-l-4 border-brand-gold pl-4">
+        🔍 Google 工具設定（只做一次）
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          {
+            title: 'Google Search Console',
+            status: '⚠️ 尚未設定',
+            desc: '驗證網站所有權後，Google 爬取速度快 10 倍。每次發文後可手動提交 URL 索引。',
+            url: 'search.google.com/search-console',
+          },
+          {
+            title: 'Google 商家檔案（Google Maps）',
+            status: '⚠️ 確認已連結網站',
+            desc: '在商家檔案的「網站」欄位填入 beyondvisualopt.com，讓地圖搜尋直接導流到官網。',
+            url: 'business.google.com',
+          },
+          {
+            title: 'Google Analytics 4',
+            status: '⚠️ 尚未設定',
+            desc: '追蹤每篇文章的閱讀人數、哪些關鍵字帶來流量，讓你知道哪類內容最有效。',
+            url: 'analytics.google.com',
+          },
+          {
+            title: 'Bing Webmaster Tools',
+            status: '⚠️ 選做',
+            desc: 'Bing 是 ChatGPT 的搜尋引擎來源，提交這裡等於讓 ChatGPT 也更容易找到你。',
+            url: 'bing.com/webmasters',
+          },
+        ].map(tool => (
+          <div class="border border-gray-200 rounded-xl p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-brand-navy">{tool.title}</h3>
+              <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full whitespace-nowrap">{tool.status}</span>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed mb-2">{tool.desc}</p>
+            <p class="text-xs text-brand-gray">→ {tool.url}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- AI 搜尋（GEO）優化技巧 -->
+    <div>
+      <h2 class="text-2xl font-bold text-brand-navy mb-6 border-l-4 border-brand-gold pl-4">
+        🤖 AI 搜尋（GEO）優化技巧
+      </h2>
+      <div class="space-y-4">
+        {[
+          {
+            title: 'FAQ 問答格式',
+            tip: '每篇文章至少 2 組「問題 + 完整答案」段落。Perplexity、ChatGPT、Gemini 最愛抓這種格式當答案來源。',
+            example: '例：「老花一定要配多焦點嗎？」→ 直接給出完整答案，不要讓讀者自己推論。',
+          },
+          {
+            title: '品牌名稱要完整重複出現',
+            tip: '「能見度視覺中心」、「比泱驗光所」、「YoYo 驗光師」在文章中至少各出現 2 次。AI 靠重複出現的名稱建立實體識別。',
+            example: '例：文章結尾加「歡迎預約能見度視覺中心（新莊比泱驗光所）YoYo 驗光師」。',
+          },
+          {
+            title: '具體數據優於模糊形容',
+            tip: 'AI 引用有數字的內容機率高 3 倍。把「很有效」改成「臨床研究証實減緩近視加深達 50%」。',
+            example: '例：「角膜塑型片可減緩眼軸延長速度，研究顯示近視控制率達 30–60%」。',
+          },
+          {
+            title: '在地化地址要精確',
+            tip: '「新北市新莊區中正路」比「新莊」對 AI 地理識別更強。每篇文章結尾都附上完整地址。',
+            example: '例：「能見度視覺中心位於新北市新莊區中正路，提供新莊、板橋地區驗光服務。」',
+          },
+          {
+            title: '每月至少發 2 篇新文章',
+            tip: '持續更新的網站在 Google 和 AI 搜尋中都有頻率加權。每篇 800 字以上效果最佳。',
+            example: '文章主題建議：「為什麼我的孩子近視加深這麼快？」、「蔡司鏡片和普通鏡片差在哪裡？」',
+          },
+        ].map(tip => (
+          <div class="border border-gray-200 rounded-xl p-6">
+            <h3 class="font-bold text-brand-navy mb-2">{tip.title}</h3>
+            <p class="text-sm text-gray-700 leading-relaxed mb-3">{tip.tip}</p>
+            <div class="bg-brand-light rounded-lg px-4 py-3 text-sm text-brand-gray">
+              {tip.example}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 圖片 SEO -->
+    <div>
+      <h2 class="text-2xl font-bold text-brand-navy mb-6 border-l-4 border-brand-gold pl-4">
+        🖼️ 圖片上傳規範
+      </h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="p-3 text-left rounded-tl-lg">項目</th>
+              <th class="p-3 text-left">規範</th>
+              <th class="p-3 text-left rounded-tr-lg">原因</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['檔名', '用英文關鍵字命名，如 xinzhuang-yanguang-zeiss.jpg', 'Google 圖片搜尋靠檔名識別內容'],
+              ['大小', '壓縮至 200KB 以下（用 squoosh.app 免費壓縮）', '影響 Core Web Vitals 分數'],
+              ['尺寸', '封面圖 1200×630px，內文圖 800×600px', 'OpenGraph 社群分享最佳比例'],
+              ['替代文字', '在 CMS 後台填寫，包含關鍵字', 'Google 和視障輔助技術都靠這個'],
+            ].map(([item, rule, reason]) => (
+              <tr class="border-b border-gray-100">
+                <td class="p-3 font-semibold text-brand-navy">{item}</td>
+                <td class="p-3 text-gray-700">{rule}</td>
+                <td class="p-3 text-gray-500 text-xs">{reason}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 快速連結 -->
+    <div class="bg-brand-navy text-white rounded-2xl p-8">
+      <h2 class="text-xl font-bold mb-4">🔗 常用工具快速連結</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        {[
+          ['後台 CMS 編輯', '/admin'],
+          ['Google Search Console', 'search.google.com/search-console'],
+          ['Google 商家檔案', 'business.google.com'],
+          ['圖片壓縮工具 Squoosh', 'squoosh.app'],
+          ['Google Analytics', 'analytics.google.com'],
+          ['Schema 結構驗證', 'search.google.com/test/rich-results'],
+        ].map(([label, url]) => (
+          <div class="flex items-center gap-2">
+            <span class="text-brand-gold">→</span>
+            <span class="text-gray-300">{label}：</span>
+            <span class="text-brand-gold text-xs">{url}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </section>
+</Layout>
