@@ -1,72 +1,290 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "驗光要多久？一般眼鏡行和能見度有什麼不同？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一般快速配鏡約 10 分鐘。能見度的完整臨床驗光流程需要 45–60 分鐘，包含主觀屈光度測量、雙眼視覺協調評估、調節力與聚散力檢測，以及鏡片傾斜角與頂點距離量測。這些數據直接影響你戴鏡後的舒適度與清晰度。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "近視控制 OK 鏡適合幾歲的孩子？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "角膜塑型片（OK鏡）一般建議 8 歲以上、近視度數每年加深超過 75 度的兒童評估。能見度提供完整的角膜地形圖評估、試戴適應追蹤，以及家長衛教說明，確保孩子安全使用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "多焦點鏡片戴了會頭暈是正常的嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "初期適應期（通常 1–2 週）輕微頭暈屬正常現象，主要來自大腦重新學習「看遠用上區、看近用下區」的視覺策略。但若超過 3 週仍不適，通常代表度數設計或瞳距測量有誤差，需要重新評估。能見度提供適應期免費追蹤調整。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "數位疲勞鏡片和一般防藍光鏡片有什麼差別？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "防藍光鏡片只是濾光，不解決眼睛的調節壓力問題。數位疲勞專用鏡片（如蔡司 Digital Lens）在鏡片下方設計一個微小的「輔助調節區」，讓眼睛看螢幕時不需要全力調節，從根本降低睫狀肌疲勞。兩者功能不同，不能互相取代。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "高度近視配眼鏡有哪些特別注意事項？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "高度近視（-6.00D 以上）鏡片較厚，需要特別考量：鏡框尺寸（越小越薄）、鏡片折射率選擇（建議 1.74 以上）、頂點距離精準測量（每 1mm 誤差約影響 0.25D 實際度數），以及鏡片光學中心對準。能見度針對高度近視提供完整的鏡片設計諮詢。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "能見度視覺中心 × 比泱驗光所",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "中正路419-1號",
+          "addressLocality": "新莊區",
+          "addressRegion": "新北市",
+          "addressCountry": "TW"
+        }
+      },
+      "serviceType": ["臨床驗光", "近視控制", "多焦點鏡片", "數位疲勞視覺方案"],
+      "areaServed": ["新莊", "板橋", "新北市"]
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: '🔬',
+    title: '臨床全套驗光',
+    subtitle: '不是快篩，是完整評估',
+    duration: '約 45–60 分鐘',
+    items: [
+      '主觀 + 客觀屈光度精準測量',
+      '雙眼視覺協調評估（斜視 / 隱斜視檢查）',
+      '調節力與聚散力（AC/A）檢測',
+      '頂點距離 & 鏡片傾斜角量測',
+      '個人化生活視覺需求分析',
+      '試戴舒適度確認後出單',
+    ],
+    tag: '新莊店 / 板橋店',
+    note: '建議每 6–12 個月定期追蹤一次',
+  },
+  {
+    icon: '👁️',
+    title: '兒童近視控制',
+    subtitle: '讓孩子的近視慢下來',
+    duration: '初診約 60 分鐘',
+    items: [
+      '眼軸長基準測量（Axial Length）',
+      '角膜塑型片（OK鏡）適合度評估',
+      '低濃度阿托品（0.01%）搭配方案說明',
+      'MiSight 離焦日拋鏡片評估',
+      '每 3–6 個月眼軸進展追蹤',
+      '家長衛教與夜戴 OK 鏡使用指導',
+    ],
+    tag: '新莊店主力服務',
+    note: '8 歲以上、度數每年加深 > 75 度者優先評估',
+  },
+  {
+    icon: '📐',
+    title: '多焦點鏡片',
+    subtitle: '老花、疲勞、看遠看近全顧到',
+    duration: '設計諮詢約 30 分鐘',
+    items: [
+      '老花度數精準評估（加入度 ADD 設計）',
+      '蔡司 Individual² 個人化訂製',
+      '工作距離 / 閱讀習慣客製化設定',
+      '瞳孔高度精準測量（影響視覺分區）',
+      '適應期 2 週主動追蹤調整',
+      '適應不良免費重新評估（非人為損壞）',
+    ],
+    tag: '板橋店 / 新莊店',
+    note: '40 歲以上或長時間使用近距離視覺者適用',
+  },
+  {
+    icon: '🖥️',
+    title: '數位疲勞視覺方案',
+    subtitle: '給每天盯螢幕超過 8 小時的你',
+    duration: '評估約 30 分鐘',
+    items: [
+      '螢幕距離視覺壓力評估',
+      '睫狀肌調節靈活度測試',
+      '蔡司 Digital Lens 適合度評估',
+      '藍光防護鏡片選配建議',
+      '人體工學配鏡角度調整',
+      '工作環境照明與螢幕距離建議',
+    ],
+    tag: '上班族 / 設計師首選',
+    note: '不只換鏡片，更提供環境調整建議',
+  },
+  {
+    icon: '🏔️',
+    title: '高度近視專科配鏡',
+    subtitle: '-6.00D 以上的精密工程',
+    duration: '驗光 + 諮詢約 60 分鐘',
+    items: [
+      '頂點距離精準補正計算',
+      '鏡片折射率選擇指引（1.67 / 1.74）',
+      '小框架減薄設計建議',
+      '光學中心偏差確認',
+      '蔡司超薄系列鏡片訂製',
+      '鏡架前傾角與鼻托高度精調',
+    ],
+    tag: '高近視族群',
+    note: '每 1mm 頂點距離誤差 ≈ 0.25D 實際度數差異',
+  },
+  {
+    icon: '🎓',
+    title: '視覺健康諮詢',
+    subtitle: '搞懂你的眼睛，再做決定',
+    duration: '約 20–30 分鐘',
+    items: [
+      '現有眼鏡處方解讀',
+      '不同鏡片方案比較說明',
+      '舊鏡架回收 / 換片評估',
+      '角膜塑型片 vs 阿托品比較',
+      '多焦點 vs 老花鏡選擇建議',
+      '無壓力、不推銷的純諮詢環境',
+    ],
+    tag: '免費提供',
+    note: '不清楚自己需要什麼？從這裡開始',
+  },
+];
+
+const faqs = [
+  {
+    q: '驗光要多久？和一般眼鏡行有什麼不同？',
+    a: '能見度的完整臨床驗光需要 45–60 分鐘，包含雙眼視覺協調、調節力與聚散力評估，以及頂點距離量測。一般快速配鏡約 10 分鐘，通常只測屈光度數，不包含上述進階評估。這些差異直接影響戴鏡後的舒適度與視覺品質。',
+  },
+  {
+    q: '近視控制 OK 鏡適合幾歲開始配？',
+    a: '建議 8 歲以上、近視度數每年加深超過 75 度的孩子進行評估。角膜塑型片需要夜間配戴，孩子需具備基本的鏡片清潔配合能力。能見度提供角膜地形圖評估、試戴適應追蹤及家長衛教服務。',
+  },
+  {
+    q: '多焦點鏡片戴了頭暈是正常的嗎？',
+    a: '初期 1–2 週輕微頭暈屬正常適應現象，大腦正在重新學習「看遠用上區、看近用下區」的視覺策略。若超過 3 週仍持續不適，通常代表度數設計或瞳距測量有誤差，需重新評估。能見度提供適應期免費追蹤調整。',
+  },
+  {
+    q: '防藍光和數位疲勞鏡片是一樣的嗎？',
+    a: '不一樣。防藍光是「濾光」，僅減少藍光進入眼睛，不解決調節壓力問題。數位疲勞鏡片（如蔡司 Digital Lens）在鏡片下方設計輔助調節微區，讓眼睛看螢幕時降低睫狀肌負擔。功能不同，不能互相取代。',
+  },
+  {
+    q: '高度近視配眼鏡有哪些注意事項？',
+    a: '高度近視（-6.00D 以上）需特別注意：鏡框尺寸選擇（越小鏡片越薄）、折射率選擇（建議 1.74）、頂點距離精準測量（每 1mm 誤差約影響 0.25D 實際度數）。能見度針對高度近視族群提供完整的鏡片設計諮詢與精密調整。',
+  },
+];
 ---
 <Layout
   title="服務內容｜能見度視覺中心 × 比泱驗光所｜多焦點鏡片 蔡司鏡片 兒童近視控制 高度近視眼鏡｜YoYo 驗光師"
-  description="YoYo 驗光師主理。多焦點鏡片、蔡司鏡片個人化訂製、兒童近視控制（OK鏡/阿托品）、高度近視眼鏡專科。能見度視覺中心新莊、板橋門市。"
+  description="YoYo 驗光師主理。多焦點鏡片、蔡司鏡片個人化訂製、兒童近視控制（OK鏡/阿托品）、高度近視眼鏡專科、數位疲勞視覺方案。能見度視覺中心新莊、板橋門市。"
+  schema={schema}
 >
+  <!-- Hero -->
   <section class="bg-brand-navy text-white py-20 px-4 text-center">
     <h1 class="text-4xl font-bold mb-4">服務內容</h1>
     <p class="text-gray-300 text-lg max-w-2xl mx-auto">每一項服務，都從你的真實視覺需求出發，而不是從產品利潤出發。</p>
+    <p class="text-brand-gold text-sm mt-4 tracking-wider">新莊店 × 板橋店｜YoYo 驗光師主理</p>
   </section>
 
+  <!-- 服務卡片 -->
   <section class="max-w-6xl mx-auto px-4 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      {[
-        {
-          icon: '🔬',
-          title: '臨床全套驗光',
-          subtitle: '不是快篩，是完整評估',
-          items: ['主觀 + 客觀屈光度測量', '雙眼視覺協調評估', '調節力與聚散力檢測', '頂點距離 & 鏡片傾斜角量測', '個人化生活視覺分析'],
-          tag: '新莊店 / 板橋店',
-        },
-        {
-          icon: '👁️',
-          title: '近視控制',
-          subtitle: '讓孩子的近視慢下來',
-          items: ['角膜塑型片（OK鏡）評估與配製', '低濃度阿托品（0.01%）搭配方案', 'MiSight 離焦日拋評估', '定期追蹤眼軸長進展', '家長衛教與使用指導'],
-          tag: '新莊店主力服務',
-        },
-        {
-          icon: '📐',
-          title: '多焦點鏡片',
-          subtitle: '老花、疲勞、看遠看近全顧到',
-          items: ['漸進多焦點度數精準設計', '蔡司 Individual² 個人化訂製', '鏡片適應期追蹤調整', '工作距離客製化設定', '適應不良免費重新評估'],
-          tag: '板橋店 / 新莊店',
-        },
-        {
-          icon: '🛡️',
-          title: '數位疲勞視覺方案',
-          subtitle: '給每天盯螢幕超過 8 小時的你',
-          items: ['螢幕距離視覺壓力評估', '藍光防護鏡片選配', '蔡司 Digital Lens 推薦', '人體工學配鏡角度調整', '工作環境照明建議'],
-          tag: '上班族首選',
-        },
-      ].map(s => (
-        <div class="border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map(s => (
+        <div class="border border-gray-200 rounded-2xl p-7 hover:shadow-lg transition-shadow flex flex-col">
           <div class="flex items-start justify-between mb-4">
-            <div class="text-5xl">{s.icon}</div>
+            <div class="text-4xl">{s.icon}</div>
             <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{s.tag}</span>
           </div>
-          <h2 class="text-2xl font-bold text-brand-navy mb-1">{s.title}</h2>
-          <p class="text-brand-gray text-sm mb-5">{s.subtitle}</p>
-          <ul class="space-y-2">
+          <h2 class="text-xl font-bold text-brand-navy mb-1">{s.title}</h2>
+          <p class="text-brand-gray text-sm mb-1">{s.subtitle}</p>
+          <p class="text-xs text-brand-gold mb-4">⏱ {s.duration}</p>
+          <ul class="space-y-2 flex-1">
             {s.items.map(item => (
               <li class="flex items-start gap-2 text-gray-600 text-sm">
-                <span class="text-brand-gold mt-0.5">✦</span>
+                <span class="text-brand-gold mt-0.5 shrink-0">✦</span>
                 {item}
               </li>
             ))}
           </ul>
+          {s.note && (
+            <p class="mt-5 pt-4 border-t border-gray-100 text-xs text-gray-400 italic">{s.note}</p>
+          )}
         </div>
       ))}
     </div>
   </section>
 
-  <section class="bg-brand-light py-16 px-4 text-center">
-    <h2 class="text-2xl font-bold text-brand-navy mb-4">不確定自己需要哪個服務？</h2>
-    <p class="text-gray-600 mb-8">告訴我們你的視覺困擾，YoYo 驗光師會為你規劃最適合的方案。</p>
-    <a href="/booking" class="bg-brand-navy text-white font-bold px-8 py-4 rounded-full hover:bg-brand-navy/90 transition-colors inline-block">
-      預約免費視覺諮詢
+  <!-- 與一般眼鏡行的差異 -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy text-center mb-10">能見度 vs 一般配鏡行</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="px-4 py-3 text-left font-semibold rounded-tl-lg">評估項目</th>
+              <th class="px-4 py-3 text-center font-semibold">一般配鏡行</th>
+              <th class="px-4 py-3 text-center font-semibold text-brand-gold rounded-tr-lg">能見度視覺中心</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            {[
+              ['驗光時間', '5–10 分鐘', '45–60 分鐘'],
+              ['雙眼視覺協調評估', '❌', '✅ 含斜視 / 隱斜視'],
+              ['調節力 & 聚散力檢測', '❌', '✅ AC/A 比值分析'],
+              ['頂點距離量測', '❌', '✅ 精準補正計算'],
+              ['多焦點適應期追蹤', '無', '✅ 2 週免費追蹤'],
+              ['近視控制方案', '無', '✅ OK鏡 / 阿托品 / 離焦'],
+              ['高度近視鏡片設計', '依一般規則', '✅ 個人化光學設計'],
+              ['無銷售壓力諮詢', '❌', '✅ 先評估再建議'],
+            ].map(([item, general, us]) => (
+              <tr class="hover:bg-gray-50">
+                <td class="px-4 py-3 font-medium text-gray-700">{item}</td>
+                <td class="px-4 py-3 text-center text-gray-400">{general}</td>
+                <td class="px-4 py-3 text-center text-brand-navy font-semibold">{us}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-4 py-20">
+    <h2 class="text-2xl font-bold text-brand-navy text-center mb-10">常見問題 FAQ</h2>
+    <div class="space-y-6">
+      {faqs.map((faq, i) => (
+        <div class="border border-gray-200 rounded-xl p-6">
+          <p class="font-bold text-brand-navy mb-2">Q{i + 1}. {faq.q}</p>
+          <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy py-16 px-4 text-center text-white">
+    <h2 class="text-2xl font-bold mb-4">不確定自己需要哪個服務？</h2>
+    <p class="text-gray-300 mb-8 max-w-xl mx-auto">告訴我們你的視覺困擾，YoYo 驗光師會為你規劃最適合的方案——不推銷、不加壓，只給你真正需要的答案。</p>
+    <a href="/booking" class="bg-brand-gold text-white font-bold px-8 py-4 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+      預約免費視覺諮詢 →
     </a>
   </section>
 </Layout>

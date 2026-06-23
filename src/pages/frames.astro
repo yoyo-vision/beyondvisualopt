@@ -1,46 +1,246 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "高度近視適合選哪種鏡框？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "高度近視（-6.00D 以上）建議選擇「小鏡框」，因為鏡片研磨範圍越小，邊緣厚度越薄、重量越輕。鏡框越大，相同度數下鏡片邊緣厚度會增加 1–3mm，重量可能多出 5–10 克。YoYo 驗光師會根據你的度數和臉部結構，給出最適合的框型建議。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Lindberg 鏡架值得買嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lindberg 使用超彈性純鈦（β-Titanium），無螺絲設計，重量約 1.9–2.5 克，是一般鈦架的 1/3。對於對鼻樑或耳朵有壓迫感敏感、過敏膚質、或長時間配戴者來說，它帶來的舒適度差異是可感受到的。是否「值得」取決於個人對輕量感的需求程度。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "蔡司鏡片一定要配蔡司鏡架嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定。蔡司鏡片可以搭配任何品牌的鏡架，關鍵是鏡架的尺寸、前傾角（Pantoscopic Tilt）和頂點距離是否符合蔡司鏡片的設計參數。能見度為蔡司認證合作店，所有鏡架調整均依照蔡司建議標準進行，確保鏡片光學性能完整發揮。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "鏡架多久需要調整一次？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "建議每 3–6 個月回店做一次微調，尤其是鼻托下滑、腳架外擴、或鏡架歪斜時。鏡架走位會改變光學中心對準位置，影響視覺清晰度。能見度提供所有品牌鏡架的免費精密調整服務。"
+          }
+        }
+      ]
+    }
+  ]
+};
+
 const brands = [
-  { name: 'ZEISS 蔡司', origin: '德國', type: '光學鏡片品牌', desc: '全球精密光學領導品牌，Individual² 個人化訂製鏡片根據你的配戴姿勢、瞳孔高度與頭部轉動習慣計算最佳視覺區域。', badge: '蔡司認證合作店' },
-  { name: 'Lindberg', origin: '丹麥', type: '高端鏡架', desc: '全球最輕量的純鈦鏡架品牌，無螺絲設計、彈性記憶鈦材質，長期配戴無壓迫感，是高敏感膚質族群首選。', badge: '預約試戴' },
-  { name: 'ic! berlin', origin: '德國', type: '設計鏡架', desc: '無螺絲彈片扣合技術，鏡架可快速拆裝維修。設計師款式每季更新，強調個人風格與機能並重。', badge: '德國設計' },
-  { name: 'Face à Face', origin: '法國', type: '藝術鏡架', desc: '巴黎設計師品牌，以雕塑感框型與高飽和色彩聞名。適合想透過眼鏡表達個人風格的高端客群。', badge: '法國設計' },
-  { name: 'Götti', origin: '瑞士', type: '輕量鈦架', desc: '瑞士工藝，極簡主義設計，醫療級純鈦材質。適合對鏡架重量與皮膚敏感度有高要求的配戴者。', badge: '瑞士工藝' },
-  { name: '客製化調整鏡架', origin: '全品牌', type: '調整服務', desc: '任何品牌鏡架，我們提供鼻托高度、腳架角度、傾斜角的專業精密調整，確保光學中心精準對準。', badge: '免費調整' },
+  {
+    name: 'ZEISS 蔡司',
+    origin: '德國',
+    type: '光學鏡片',
+    badge: '蔡司認證合作店',
+    badgeColor: 'bg-brand-navy text-white',
+    highlight: true,
+    desc: '全球精密光學領導品牌，Individual² 個人化訂製鏡片根據你的配戴姿勢、瞳孔高度與頭部轉動習慣計算最佳視覺區域，是目前市面上客製化程度最高的漸進多焦鏡片。能見度為蔡司認證合作店，具備完整的測量設備與認證資格。',
+    tags: ['Individual² 個人化訂製', 'Digital Lens', 'DuraVision 抗反射', '超薄系列'],
+  },
+  {
+    name: 'Lindberg',
+    origin: '丹麥',
+    type: '超輕量純鈦鏡架',
+    badge: '預約試戴',
+    badgeColor: 'bg-brand-light text-brand-navy',
+    highlight: false,
+    desc: '全球最輕量鏡架品牌，無螺絲設計採用 β-Titanium 超彈性記憶鈦，重量僅約 1.9–2.5 克，是一般鈦架的 1/3。無螺絲代表沒有鬆動問題，高敏感膚質族群首選。鼻托採純鈦材質，對金屬過敏者友善。',
+    tags: ['無螺絲設計', '醫療級純鈦', '超彈性記憶材質', '高度客製化'],
+  },
+  {
+    name: 'ic! berlin',
+    origin: '德國',
+    type: '設計師鏡架',
+    badge: '德國設計',
+    badgeColor: 'bg-brand-light text-brand-navy',
+    highlight: false,
+    desc: '發明「彈片扣合技術」的德國品牌，鏡架無螺絲、可快速拆裝維修，維修成本極低。設計師款式每季更新，強調個人風格與機能並重。薄板彈片鏡腳設計兼具時尚感與耐用性。',
+    tags: ['彈片扣合', '無螺絲維修', '設計師聯名', '季季更新'],
+  },
+  {
+    name: 'Face à Face',
+    origin: '法國',
+    type: '藝術造型鏡架',
+    badge: '法國設計',
+    badgeColor: 'bg-brand-light text-brand-navy',
+    highlight: false,
+    desc: '巴黎設計師品牌，以雕塑感框型與高飽和度色彩聞名。每副鏡框都是視覺藝術品，非常適合想透過眼鏡彰顯個人風格的高端客群。鏡框多以優質醋酸纖維（Acetate）手工製作。',
+    tags: ['手工醋酸纖維', '雕塑感框型', '藝術色彩', '巴黎設計師'],
+  },
+  {
+    name: 'Götti',
+    origin: '瑞士',
+    type: '輕量純鈦鏡架',
+    badge: '瑞士工藝',
+    badgeColor: 'bg-brand-light text-brand-navy',
+    highlight: false,
+    desc: '瑞士工藝、極簡主義設計，醫療級純鈦材質，觸感細膩。鏡架設計低調而精緻，適合對鏡架重量與膚質敏感度有高要求、偏好內斂品味的配戴者。',
+    tags: ['醫療級純鈦', '極簡設計', '瑞士工藝', '低敏材質'],
+  },
+  {
+    name: '精密鏡架調整服務',
+    origin: '全品牌通用',
+    type: '專業調整',
+    badge: '免費提供',
+    badgeColor: 'bg-green-100 text-green-800',
+    highlight: false,
+    desc: '不論任何品牌鏡架，能見度提供鼻托高度、腳架角度、鏡面傾斜角（Pantoscopic Tilt）的專業精密調整，確保光學中心精準對準瞳孔。鏡架走位是影響配鏡品質最容易被忽略的關鍵因素。',
+    tags: ['鼻托高度調整', '傾斜角校正', '腳架張力調整', '全品牌適用'],
+  },
+];
+
+const selectionGuide = [
+  {
+    need: '高度近視（-6.00D 以上）',
+    recommendation: '選小鏡框 + 折射率 1.74 鏡片',
+    reason: '鏡框越小、邊緣磨削面積越小，鏡片越薄越輕',
+    brands: ['Lindberg', 'Götti（小尺碼系列）'],
+  },
+  {
+    need: '對鼻樑 / 耳朵壓迫敏感',
+    recommendation: 'Lindberg 超輕量純鈦',
+    reason: '1.9–2.5 克，幾乎感受不到鏡架重量',
+    brands: ['Lindberg'],
+  },
+  {
+    need: '想要獨特風格 / 時尚感',
+    recommendation: 'ic! berlin 或 Face à Face',
+    reason: '設計師款、色彩豐富、每季更新',
+    brands: ['ic! berlin', 'Face à Face'],
+  },
+  {
+    need: '多焦點漸進鏡片配戴者',
+    recommendation: '中等框深（≥ 28mm）鏡框',
+    reason: '漸進鏡片需要足夠的垂直高度放置視覺分區',
+    brands: ['Götti', 'Face à Face'],
+  },
+  {
+    need: '對金屬過敏 / 敏感膚質',
+    recommendation: '醫療級純鈦或醋酸纖維板料',
+    reason: '純鈦不含鎳，醋酸纖維為植物基材',
+    brands: ['Lindberg', 'Götti', 'Face à Face'],
+  },
+];
+
+const faqs = [
+  {
+    q: '高度近視適合選哪種鏡框？',
+    a: '高度近視（-6.00D 以上）建議選擇「小鏡框」——鏡片研磨範圍越小，邊緣厚度越薄、重量越輕。鏡框越大，相同度數下邊緣厚度可能多出 1–3mm，重量增加 5–10 克。YoYo 驗光師會根據你的度數與臉部結構，給出最適合的框型建議。',
+  },
+  {
+    q: 'Lindberg 鏡架值得買嗎？',
+    a: 'Lindberg 使用超彈性純鈦，重量約 1.9–2.5 克，是一般鈦架的 1/3。對鼻樑或耳朵有壓迫感敏感、過敏膚質、或長時間配戴者，輕量感差異是可感受到的。是否值得，取決於個人對舒適度的重視程度。',
+  },
+  {
+    q: '蔡司鏡片一定要配蔡司鏡架嗎？',
+    a: '不一定。蔡司鏡片可搭配任何品牌鏡架，關鍵是鏡架尺寸、前傾角與頂點距離是否符合蔡司鏡片設計參數。能見度為蔡司認證合作店，所有鏡架調整均依照蔡司建議標準進行，確保光學性能完整發揮。',
+  },
+  {
+    q: '鏡架多久需要調整一次？',
+    a: '建議每 3–6 個月回店微調一次，尤其是鼻托下滑、腳架外擴或鏡架歪斜時。鏡架走位會改變光學中心對準位置，直接影響視覺清晰度。能見度提供所有品牌鏡架的免費精密調整服務。',
+  },
 ];
 ---
 <Layout
-  title="鏡框品牌｜蔡司鏡片認證合作 Lindberg ic! berlin｜能見度視覺中心 × 比泱驗光所 YoYo 驗光師"
-  description="能見度視覺中心為蔡司鏡片認證合作店，同時代理 Lindberg、ic! berlin、Götti 等高端鏡架。YoYo 驗光師協助配搭高度近視眼鏡最適鏡框。新莊、板橋門市。"
+  title="鏡框品牌｜蔡司認證合作 Lindberg ic! berlin Götti｜能見度視覺中心 × 比泱驗光所｜新莊 板橋"
+  description="能見度視覺中心為蔡司鏡片認證合作店，代理 Lindberg、ic! berlin、Götti、Face à Face 等高端鏡架。YoYo 驗光師協助高度近視、多焦點鏡片最佳鏡框搭配。新莊、板橋門市。"
+  schema={schema}
 >
+  <!-- Hero -->
   <section class="bg-brand-navy text-white py-20 px-4 text-center">
     <h1 class="text-4xl font-bold mb-4">鏡框品牌</h1>
-    <p class="text-gray-300 text-lg max-w-2xl mx-auto">我們只選擇真正值得推薦的品牌，每一個都有其不可取代的配戴優勢。</p>
+    <p class="text-gray-300 text-lg max-w-2xl mx-auto">我們只選擇真正值得推薦的品牌——每一個都有其不可取代的配戴優勢，不是為了陳列而陳列。</p>
+    <p class="text-brand-gold text-sm mt-4 tracking-wider">蔡司認證合作店｜能見度視覺中心 新莊 × 板橋</p>
   </section>
 
+  <!-- 品牌卡片 -->
   <section class="max-w-6xl mx-auto px-4 py-20">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {brands.map(brand => (
-        <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+        <div class={`rounded-2xl p-7 hover:shadow-lg transition-shadow flex flex-col ${brand.highlight ? 'border-2 border-brand-gold bg-brand-light' : 'border border-gray-200'}`}>
           <div class="flex justify-between items-start mb-3">
             <div>
               <h2 class="text-xl font-bold text-brand-navy">{brand.name}</h2>
-              <p class="text-gray-400 text-sm">{brand.origin}｜{brand.type}</p>
+              <p class="text-gray-400 text-xs mt-0.5">{brand.origin}｜{brand.type}</p>
             </div>
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">{brand.badge}</span>
+            <span class={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap ${brand.badgeColor}`}>{brand.badge}</span>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed">{brand.desc}</p>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">{brand.desc}</p>
+          <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-2">
+            {brand.tags.map(tag => (
+              <span class="text-xs bg-white border border-gray-200 text-gray-500 px-2 py-1 rounded-full">{tag}</span>
+            ))}
+          </div>
         </div>
       ))}
     </div>
   </section>
 
-  <section class="bg-brand-light py-16 px-4 text-center">
-    <h2 class="text-2xl font-bold text-brand-navy mb-4">不確定哪款鏡架最適合你的臉型？</h2>
-    <p class="text-gray-600 mb-8">YoYo 驗光師會根據你的臉部結構、配戴習慣與鏡片厚度需求，給你最精準的建議。</p>
-    <a href="/booking" class="bg-brand-navy text-white font-bold px-8 py-4 rounded-full hover:bg-brand-navy/90 transition-colors inline-block">
-      預約鏡架試戴諮詢
+  <!-- 選框指引 -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy text-center mb-3">如何選擇最適合你的鏡框？</h2>
+      <p class="text-gray-500 text-sm text-center mb-10">從需求出發，不從品牌出發</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="px-4 py-3 text-left font-semibold rounded-tl-lg">你的需求</th>
+              <th class="px-4 py-3 text-left font-semibold">建議方向</th>
+              <th class="px-4 py-3 text-left font-semibold rounded-tr-lg">原因</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            {selectionGuide.map(row => (
+              <tr class="hover:bg-gray-50">
+                <td class="px-4 py-3 font-medium text-brand-navy">{row.need}</td>
+                <td class="px-4 py-3 text-gray-700">{row.recommendation}</td>
+                <td class="px-4 py-3 text-gray-500 text-xs">{row.reason}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-4 py-20">
+    <h2 class="text-2xl font-bold text-brand-navy text-center mb-10">鏡框常見問題 FAQ</h2>
+    <div class="space-y-6">
+      {faqs.map((faq, i) => (
+        <div class="border border-gray-200 rounded-xl p-6">
+          <p class="font-bold text-brand-navy mb-2">Q{i + 1}. {faq.q}</p>
+          <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy py-16 px-4 text-center text-white">
+    <h2 class="text-2xl font-bold mb-4">不確定哪款鏡架最適合你？</h2>
+    <p class="text-gray-300 mb-8 max-w-xl mx-auto">YoYo 驗光師會根據你的度數、臉部結構、配戴習慣與鏡片厚度需求，給你最精準的搭配建議——不是靠感覺，是靠數據。</p>
+    <a href="/booking" class="bg-brand-gold text-white font-bold px-8 py-4 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+      預約鏡架試戴諮詢 →
     </a>
   </section>
 </Layout>
