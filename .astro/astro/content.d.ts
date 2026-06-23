@@ -141,9 +141,44 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"children-myopia-control-xinzhuang.md": {
+	id: "children-myopia-control-xinzhuang.md";
+  slug: "children-myopia-control-xinzhuang";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"contact-lens-fatigue.md": {
+	id: "contact-lens-fatigue.md";
+  slug: "contact-lens-fatigue";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"driving-lens-night-glare.md": {
+	id: "driving-lens-night-glare.md";
+  slug: "driving-lens-night-glare";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "glasses-dizzy.md": {
 	id: "glasses-dizzy.md";
   slug: "glasses-dizzy";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"glasses-uncomfortable-3-reasons.md": {
+	id: "glasses-uncomfortable-3-reasons.md";
+  slug: "glasses-uncomfortable-3-reasons";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"minamoto-eyewear-brand.md": {
+	id: "minamoto-eyewear-brand.md";
+  slug: "minamoto-eyewear-brand";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -158,6 +193,13 @@ declare module 'astro:content' {
 "progressive-lens-dizzy.md": {
 	id: "progressive-lens-dizzy.md";
   slug: "progressive-lens-dizzy";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"rgp-hard-contact-lens.md": {
+	id: "rgp-hard-contact-lens.md";
+  slug: "rgp-hard-contact-lens";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

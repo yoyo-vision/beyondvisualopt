@@ -2,6 +2,8 @@ backend:
   name: github
   repo: yoyo-vision/beyondvisualopt
   branch: main
+  base_url: https://beyondvisualopt.com
+  auth_endpoint: api/auth
 
 media_folder: public/images
 public_folder: /images

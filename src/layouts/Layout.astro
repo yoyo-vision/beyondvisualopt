@@ -15,7 +15,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="b9R-zvmjM3wN6sH5QabENei5LBkcg4sKtx3zIv0Jijw" />
   <link rel="canonical" href={canonicalURL} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -51,13 +56,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       "新莊驗光","板橋驗光","新莊眼鏡行推薦","板橋眼鏡行",
       "新北市驗光所","新莊配眼鏡","板橋配眼鏡","新莊驗光所推薦"
     ],
-    "telephone": "+886-2-XXXX-XXXX",
-    "email": "yoyo86421@gmail.com",
+    "telephone": "+886-2-2206-6700",
+    "email": "visibility.opticians@gmail.com",
     "address": [
       {
         "@type": "PostalAddress",
-        "streetAddress": "中正路",
+        "streetAddress": "中正路419-1號",
         "addressLocality": "新莊區",
+        "addressRegion": "新北市",
+        "postalCode": "242",
+        "addressCountry": "TW"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "板橋區",
         "addressRegion": "新北市",
         "addressCountry": "TW"
       }
@@ -82,8 +94,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }
     ],
     "sameAs": [
-      "https://www.instagram.com/beyondvisualopt",
-      "https://line.me/ti/p/beyondvisualopt"
+      "https://www.instagram.com/bv_optical/",
+      "https://www.instagram.com/youzi_yu/",
+      "https://www.facebook.com/NengJianDuYanJingXing/",
+      "https://share.google/rMxJYqYZH6fR4QwrS",
+      "https://share.google/lReL1vW8OEUXZBeVy"
     ]
   })} />
 
@@ -98,7 +113,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
     <nav class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
       <a href="/" class="flex items-center gap-2">
-        <span class="text-brand-navy font-bold text-xl tracking-tight">能見度視覺中心</span>
+        <img src="/images/logo.png" alt="能見度視覺中心 Logo" class="h-10 w-auto" />
       </a>
       <!-- 桌機選單 -->
       <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
@@ -129,9 +144,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div>
         <h3 class="font-bold text-lg mb-3">門市資訊</h3>
         <ul class="text-gray-300 text-sm space-y-1">
-          <li>🏪 新莊店：新北市新莊區中正路</li>
-          <li>🏪 板橋店：新北市板橋區</li>
-          <li>📞 LINE OA 預約優先</li>
+          <li>🏪 新莊店：新北市新莊區中正路419-1號</li>
+          <li>📞 新莊店：02-2206-6700</li>
+          <li>🏪 板橋總店：新北市板橋區雙十路二段47巷28號</li>
+          <li>📞 板橋店：02-2253-1246</li>
+          <li>✉️ visibility.opticians@gmail.com</li>
         </ul>
       </div>
       <div>
@@ -141,6 +158,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <li><a href="/blog" class="hover:text-brand-gold transition-colors">視覺小知識</a></li>
           <li><a href="/booking" class="hover:text-brand-gold transition-colors">線上預約</a></li>
         </ul>
+        <h3 class="font-bold text-lg mt-6 mb-3">追蹤我們</h3>
+        <div class="flex flex-col gap-2">
+          <a href="https://www.instagram.com/bv_optical/" target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-2 text-gray-300 text-sm hover:text-brand-gold transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @bv_optical 門市 IG
+          </a>
+          <a href="https://www.instagram.com/youzi_yu/" target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-2 text-gray-300 text-sm hover:text-brand-gold transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @youzi_yu YoYo 驗光師
+          </a>
+          <a href="https://www.facebook.com/NengJianDuYanJingXing/" target="_blank" rel="noopener noreferrer"
+            class="flex items-center gap-2 text-gray-300 text-sm hover:text-brand-gold transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook 粉絲頁
+          </a>
+        </div>
       </div>
     </div>
     <div class="border-t border-white/10 text-center text-gray-400 text-xs py-4">

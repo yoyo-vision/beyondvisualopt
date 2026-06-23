@@ -56,12 +56,12 @@ const faqSchema = {
   <!-- Hero -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-4">新北市新莊 × 板橋 專業驗光</p>
+      <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-4">新北市新莊 × 板橋｜深耕在地 30 年專業驗光</p>
       <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-        不追求最貴<br />只追求最<span class="text-brand-gold">適合</span>你的視覺解決方案
+        精準驗光｜功能型鏡片<br />兒童近視控制｜熟齡<span class="text-brand-gold">老花</span>配鏡
       </h1>
       <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        從臨床驗光到多焦點鏡片、近視控制，每一副眼鏡都是為你的生活視覺量身打造。
+        新莊與板橋在地深耕超過 30 年的專業眼鏡行。從兒童近視追蹤到熟齡族老花配鏡，提供醫療級驗光流程與國際鏡片品牌，為你打造真正適合的清晰視界。
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/booking"
@@ -97,6 +97,22 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- YoYo 驗光師 -->
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <div class="flex flex-col md:flex-row gap-10 items-center">
+      <img src="/images/yoyo-optometrist.jpg" alt="YoYo 驗光師 能見度視覺中心 比泱驗光所" class="w-64 h-64 object-cover rounded-2xl shadow-lg flex-shrink-0" />
+      <div>
+        <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-2">主理驗光師</p>
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">YoYo 驗光師</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">能見度視覺中心 × 比泱驗光所主理驗光師。專精臨床驗光、雙眼視覺評估、多焦點鏡片配製與兒童近視控制。蔡司 Zeiss 認證合作驗光師，新莊驗光首選。</p>
+        <p class="text-gray-600 leading-relaxed italic">「不追求最貴，只追求最適合你的視覺解決方案。」</p>
+        <a href="/booking" class="mt-6 inline-block bg-brand-navy text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-navy/90 transition-colors">
+          預約 YoYo 驗光師
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 門市資訊 -->
   <section class="bg-brand-light py-20 px-4">
     <div class="max-w-5xl mx-auto">
@@ -106,32 +122,132 @@ const faqSchema = {
           {
             name: '新莊店',
             full: '能見度視覺中心 × 比泱驗光所',
-            addr: '新北市新莊區中正路',
-            focus: '臨床驗光、進階視覺管理、近視控制',
+            addr: '新北市新莊區中正路419-1號',
+            phone: '02-2206-6700',
+            focus: '臨床驗光、進階視覺管理、兒童近視控制',
             tag: '新莊驗光首選',
+            img: '/images/store-xinzhuang.jpg',
+            year: '2023年成立',
+            google: 'https://share.google/rMxJYqYZH6fR4QwrS',
           },
           {
-            name: '板橋店',
+            name: '板橋總店',
             full: '能見度眼鏡 × 能見度驗光所',
-            addr: '新北市板橋區',
-            focus: '多焦點鏡片、蔡司 Zeiss、熟齡視覺',
-            tag: '板橋多焦點專科',
+            addr: '新北市板橋區雙十路二段47巷28號',
+            phone: '02-2253-1246',
+            focus: '多焦點鏡片、蔡司 Zeiss、熟齡老花配鏡',
+            tag: '板橋配眼鏡首選',
+            img: '/images/store-banqiao.jpg',
+            year: '1992年創立',
+            google: 'https://share.google/lReL1vW8OEUXZBeVy',
           },
         ].map(store => (
-          <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-            <span class="bg-brand-navy text-white text-xs font-semibold px-3 py-1 rounded-full">{store.tag}</span>
-            <h3 class="text-xl font-bold text-brand-navy mt-4 mb-1">{store.name}</h3>
-            <p class="text-gray-500 text-sm mb-4">{store.full}</p>
-            <p class="text-gray-700 mb-2">📍 {store.addr}</p>
-            <p class="text-gray-600 text-sm">✦ {store.focus}</p>
-            <a href="/booking" class="mt-6 block text-center bg-brand-navy text-white py-3 rounded-xl font-semibold hover:bg-brand-navy/90 transition-colors">
-              預約此門市
-            </a>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+            <img src={store.img} alt={`${store.name} ${store.full} 新北市驗光所`} class="w-full h-48 object-cover" />
+            <div class="p-8">
+              <div class="flex gap-2 flex-wrap">
+                <span class="bg-brand-navy text-white text-xs font-semibold px-3 py-1 rounded-full">{store.tag}</span>
+                <span class="bg-brand-gold/20 text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{store.year}</span>
+              </div>
+              <h3 class="text-xl font-bold text-brand-navy mt-4 mb-1">{store.name}</h3>
+              <p class="text-gray-500 text-sm mb-4">{store.full}</p>
+              <p class="text-gray-700 mb-1">📍 {store.addr}</p>
+              <p class="text-gray-700 mb-3">📞 {store.phone}</p>
+              <p class="text-gray-600 text-sm">✦ {store.focus}</p>
+              <div class="mt-6 flex flex-col gap-3">
+                <a href="/booking" class="block text-center bg-brand-navy text-white py-3 rounded-xl font-semibold hover:bg-brand-navy/90 transition-colors">
+                  預約此門市
+                </a>
+                <a href={store.google} target="_blank" rel="noopener noreferrer"
+                  class="flex items-center justify-center gap-2 border border-gray-200 text-gray-600 py-2.5 rounded-xl text-sm font-medium hover:border-brand-gold hover:text-brand-navy transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                  查看 Google 評論
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- 客戶評價 -->
+  <section class="max-w-6xl mx-auto px-4 py-20">
+    <div class="text-center mb-12">
+      <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-2">顧客真實評價</p>
+      <h2 class="text-3xl font-bold text-brand-navy">新莊與板橋地區的信賴選擇</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {[
+        {
+          name: '林小姐',
+          tag: '多焦點鏡片',
+          stars: 5,
+          text: 'YoYo 驗光師非常專業，我配了很多年眼鏡都有暈眩問題，來這裡重新驗光後完全解決了！終於知道原來是散光軸向一直配錯。',
+        },
+        {
+          name: '陳媽媽',
+          tag: '兒童近視控制',
+          stars: 5,
+          text: '孩子的近視在這裡做角膜塑型控制快一年了，度數幾乎沒有加深，驗光師每次追蹤都很仔細，說明也很清楚，非常放心。',
+        },
+        {
+          name: '王先生',
+          tag: '蔡司鏡片',
+          stars: 5,
+          text: '在板橋店配了蔡司 Individual² 個人化鏡片，和之前的普通鏡片差很多，看東西更清晰，眼睛也不容易疲勞了。強烈推薦！',
+        },
+        {
+          name: '張小姐',
+          tag: '老花配鏡',
+          stars: 5,
+          text: '第一次配老花不知道要選什麼，YoYo 驗光師根據我的工作習慣推薦辦公室鏡片，比漸進鏡更適合我。完全不暈！',
+        },
+        {
+          name: '李先生',
+          tag: '高度近視',
+          stars: 5,
+          text: '高度近視 -1000 度以上，以前配鏡都是問題很多。在這裡驗光非常細心，還特別說明頂點距離的重要性，配完真的很舒服。',
+        },
+        {
+          name: '黃小姐',
+          tag: '新莊驗光',
+          stars: 5,
+          text: '在新莊住了很多年，終於找到一家真正專業的驗光所。不會一直推銷，只做適合你的選擇，這才是真正的專業服務。',
+        },
+      ].map(review => (
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center gap-1 mb-3">
+            {Array(review.stars).fill(0).map(() => <span class="text-brand-gold">★</span>)}
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">「{review.text}」</p>
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-brand-navy text-sm">{review.name}</span>
+            <span class="bg-brand-light text-brand-navy text-xs px-2 py-1 rounded-full">{review.tag}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="text-center text-gray-400 text-xs mt-6">* 以上為顧客真實回饋，保護隱私僅顯示姓氏</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+      <a href="https://share.google/rMxJYqYZH6fR4QwrS" target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-full text-sm font-medium hover:border-brand-gold hover:text-brand-navy transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        新莊店 Google 評論
+      </a>
+      <a href="https://share.google/lReL1vW8OEUXZBeVy" target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-full text-sm font-medium hover:border-brand-gold hover:text-brand-navy transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        板橋店 Google 評論
+      </a>
+    </div>
+  </section>
+
 
   <!-- FAQ -->
   <section class="max-w-3xl mx-auto px-4 py-20">
