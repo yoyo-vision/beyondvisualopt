@@ -38,7 +38,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- 字型 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- LocalBusiness JSON-LD（每頁都嵌入） -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -108,23 +108,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <title>{title}</title>
 </head>
-<body class="bg-white font-sans text-gray-800 antialiased">
+<body class="bg-brand-paper font-serif text-brand-ink antialiased" style="font-size:17px;line-height:1.75">
   <!-- 導覽列 -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
-    <nav class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/images/logo.png" alt="能見度視覺中心 Logo" class="h-10 w-auto" />
+  <header class="sticky top-0 z-50 backdrop-blur-md border-b border-brand-ink/10" style="background:rgba(247,243,236,0.92)">
+    <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-[68px]">
+      <a href="/" class="flex items-center gap-3">
+        <img src="/images/logo.png" alt="能見度視覺中心 Logo" class="h-11 w-auto" />
       </a>
       <!-- 桌機選單 -->
-      <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-        <li><a href="/services" class="hover:text-brand-navy transition-colors">服務內容</a></li>
-        <li><a href="/process" class="hover:text-brand-navy transition-colors">服務流程</a></li>
-        <li><a href="/frames" class="hover:text-brand-navy transition-colors">鏡框品牌</a></li>
-        <li><a href="/lenses" class="hover:text-brand-navy transition-colors">鏡片種類</a></li>
-        <li><a href="/blog" class="hover:text-brand-navy transition-colors">視覺小知識</a></li>
+      <ul class="hidden md:flex items-center gap-8 font-sans" style="font-size:14px;letter-spacing:0.04em">
+        <li><a href="/services" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務內容</a></li>
+        <li><a href="/process" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務流程</a></li>
+        <li><a href="/frames" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡框品牌</a></li>
+        <li><a href="/lenses" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡片種類</a></li>
+        <li><a href="/blog" class="text-brand-ink-2 hover:text-brand-ink transition-colors">視覺小知識</a></li>
       </ul>
       <a href="/booking"
-        class="bg-brand-navy text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-brand-navy/90 transition-colors">
+        class="font-sans border border-brand-ink text-brand-ink px-5 py-2 text-sm hover:bg-brand-ink hover:text-brand-paper transition-all duration-300"
+        style="letter-spacing:0.1em;font-size:13px">
         立即預約
       </a>
     </nav>
@@ -135,30 +136,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </main>
 
   <!-- 頁尾 -->
-  <footer class="bg-brand-navy text-white mt-20">
-    <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <footer class="text-brand-paper" style="background:#17140f;margin-top:0">
+    <div class="max-w-6xl mx-auto px-6 md:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
       <div>
-        <h3 class="font-bold text-lg mb-3">能見度視覺中心</h3>
-        <p class="text-gray-300 text-sm leading-relaxed">不追求最貴，只追求最適合。<br />台灣高端臨床驗光與功能性眼鏡品牌。</p>
+        <h3 class="font-serif text-brand-paper mb-4" style="font-size:18px;font-weight:300">能見度視覺中心</h3>
+        <p class="text-brand-paper/50 leading-relaxed" style="font-size:15px">不追求最貴，只追求最適合。<br />台灣高端臨床驗光與功能性眼鏡品牌。</p>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-3">門市資訊</h3>
-        <ul class="text-gray-300 text-sm space-y-1">
-          <li>🏪 新莊店：新北市新莊區中正路419-1號</li>
-          <li>📞 新莊店：02-2206-6700</li>
-          <li>🏪 板橋總店：新北市板橋區雙十路二段47巷28號</li>
-          <li>📞 板橋店：02-2253-1246</li>
-          <li>✉️ visibility.opticians@gmail.com</li>
+        <h3 class="font-sans text-brand-paper/60 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">門市資訊</h3>
+        <ul class="text-brand-paper/50 space-y-2" style="font-size:15px">
+          <li>新莊店：新北市新莊區中正路419-1號</li>
+          <li>📞 02-2206-6700</li>
+          <li class="pt-1">板橋總店：新北市板橋區雙十路二段47巷28號</li>
+          <li>📞 02-2253-1246</li>
+          <li class="pt-1">✉️ visibility.opticians@gmail.com</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-3">快速連結</h3>
-        <ul class="text-gray-300 text-sm space-y-1">
-          <li><a href="/services" class="hover:text-brand-gold transition-colors">服務內容</a></li>
-          <li><a href="/blog" class="hover:text-brand-gold transition-colors">視覺小知識</a></li>
-          <li><a href="/booking" class="hover:text-brand-gold transition-colors">線上預約</a></li>
+        <h3 class="font-sans text-brand-paper/60 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">快速連結</h3>
+        <ul class="text-brand-paper/50 space-y-2" style="font-size:15px">
+          <li><a href="/services" class="hover:text-brand-paper transition-colors">服務內容</a></li>
+          <li><a href="/blog" class="hover:text-brand-paper transition-colors">視覺小知識</a></li>
+          <li><a href="/booking" class="hover:text-brand-paper transition-colors">線上預約</a></li>
         </ul>
-        <h3 class="font-bold text-lg mt-6 mb-3">追蹤我們</h3>
+        <h3 class="font-sans text-brand-paper/60 mt-8 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">追蹤我們</h3>
         <div class="flex flex-col gap-2">
           <a href="https://www.instagram.com/bv_optical/" target="_blank" rel="noopener noreferrer"
             class="flex items-center gap-2 text-gray-300 text-sm hover:text-brand-gold transition-colors">
@@ -178,7 +179,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         </div>
       </div>
     </div>
-    <div class="border-t border-white/10 text-center text-gray-400 text-xs py-4">
+    <div class="border-t border-brand-paper/10 text-center text-brand-paper/30 py-6" style="font-size:13px">
       © 2026 能見度視覺中心 Beyond Visual Optometry. All rights reserved.
     </div>
   </footer>

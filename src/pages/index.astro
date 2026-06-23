@@ -54,69 +54,103 @@ const faqSchema = {
   schema={faqSchema}
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-4">新北市新莊 × 板橋｜深耕在地 30 年專業驗光</p>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-        精準驗光｜功能型鏡片<br />兒童近視控制｜熟齡<span class="text-brand-gold">老花</span>配鏡
+  <section class="min-h-screen flex flex-col justify-center px-6 md:px-16 pt-20 pb-16 border-b border-brand-ink/10" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="flex items-center gap-4 mb-10">
+        <div class="h-px w-14 bg-brand-ink"></div>
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase" style="font-size:12px;letter-spacing:0.22em">新北市新莊 × 板橋｜在地深耕 30 年</span>
+      </div>
+      <h1 class="font-serif text-brand-ink leading-tight mb-8" style="font-size:clamp(42px,7vw,96px);font-weight:300;letter-spacing:-0.01em;max-width:14ch">
+        看清楚，<br />是每個人<br />都值得擁有的權利。
       </h1>
-      <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        新莊與板橋在地深耕超過 30 年的專業眼鏡行。從兒童近視追蹤到熟齡族老花配鏡，提供醫療級驗光流程與國際鏡片品牌，為你打造真正適合的清晰視界。
+      <p class="text-brand-ink-2 mb-12 max-w-xl" style="font-size:19px;line-height:1.8">
+        能見度視覺中心以臨床醫療標準進行每一次驗光。從兒童近視控制到熟齡老花配鏡，從蔡司個人化鏡片到硬式隱形眼鏡驗配，YoYo 驗光師只給你真正適合的答案。
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="flex flex-col sm:flex-row gap-4 items-start">
         <a href="/booking"
-          class="bg-brand-gold text-brand-navy font-bold px-8 py-4 rounded-full text-lg hover:bg-brand-gold/90 transition-colors">
-          立即預約視覺分析
+          class="font-sans bg-brand-ink text-brand-paper px-8 py-4 hover:bg-brand-navy transition-all duration-300 inline-flex items-center gap-3"
+          style="font-size:14px;letter-spacing:0.12em">
+          預約視覺分析
+          <span style="display:inline-block;width:24px;height:1px;background:currentColor;position:relative">
+            <span style="position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-right:1px solid currentColor;border-top:1px solid currentColor;transform:rotate(45deg);display:block"></span>
+          </span>
         </a>
         <a href="/services"
-          class="border border-white/40 text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-colors">
+          class="font-sans border border-brand-ink text-brand-ink px-8 py-4 hover:bg-brand-ink hover:text-brand-paper transition-all duration-300"
+          style="font-size:14px;letter-spacing:0.12em">
           了解服務內容
         </a>
+      </div>
+      <div class="flex gap-12 mt-16 pt-8 border-t border-brand-ink/12 flex-wrap">
+        {[
+          { n: '30+', t: '年在地深耕' },
+          { n: '2', t: '新莊 × 板橋門市' },
+          { n: 'Zeiss', t: '蔡司認證合作店' },
+        ].map(s => (
+          <div>
+            <div class="font-serif text-brand-ink mb-1" style="font-size:28px;font-weight:300">{s.n}</div>
+            <div class="font-sans text-brand-ink-3" style="font-size:13px">{s.t}</div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- 核心優勢 -->
-  <section class="max-w-6xl mx-auto px-4 py-20">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-brand-navy mb-3">為什麼選擇能見度視覺中心？</h2>
-      <p class="text-gray-500">高端驗光，不是販售眼鏡，而是為你建立長期視覺健康檔案</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[
-        { icon: '🔬', title: '臨床等級驗光', desc: '完整雙眼視覺評估、頂點距離量測、鏡片傾斜角調整，每個參數精準到位。' },
-        { icon: '🎯', title: '蔡司 Zeiss 認證', desc: '台灣授權蔡司合作店，從個人化漸進多焦到數位防護，提供原廠品質保證。' },
-        { icon: '📊', title: '近視控制專科', desc: '角膜塑型片、低濃度阿托品、離焦鏡片，為孩子規劃科學化近視管理方案。' },
-      ].map(item => (
-        <div class="bg-brand-light rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-          <div class="text-5xl mb-4">{item.icon}</div>
-          <h3 class="font-bold text-xl text-brand-navy mb-3">{item.title}</h3>
-          <p class="text-gray-600 leading-relaxed">{item.desc}</p>
-        </div>
-      ))}
+  <section class="px-6 md:px-16 py-24" style="background:#eee8da">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-16 items-end">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(32px,4.5vw,56px);font-weight:300;line-height:1.15">
+          不只是配一副<br />眼鏡那麼簡單
+        </h2>
+        <p class="text-brand-ink-2" style="font-size:18px;line-height:1.8">
+          每一次進門，我們做的不是快速出貨，而是完整了解你的視覺狀態、生活習慣與真正的需求，才給出建議。
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { num: '01', title: '臨床等級驗光', desc: '完整雙眼視覺評估、頂點距離量測、鏡片傾斜角調整，每個參數精準到位，而不是十分鐘驗完出貨。' },
+          { num: '02', title: '蔡司 Zeiss 認證', desc: '台灣授權蔡司合作店。Individual² 個人化訂製、多焦點鏡片、數位防護系列，原廠品質有憑有據。' },
+          { num: '03', title: '近視控制專科', desc: '角膜塑型片、低濃度阿托品、MiSight 離焦日拋，為 6–14 歲兒童規劃科學化近視管理方案。' },
+        ].map(item => (
+          <div class="border-t border-brand-ink/20 pt-8">
+            <div class="font-sans text-brand-ink-3 mb-4" style="font-size:12px;letter-spacing:0.2em">{item.num}</div>
+            <h3 class="font-serif text-brand-ink mb-4" style="font-size:22px;font-weight:400">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{item.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
   <!-- YoYo 驗光師 -->
-  <section class="max-w-5xl mx-auto px-4 py-16">
-    <div class="flex flex-col md:flex-row gap-10 items-center">
-      <img src="/images/yoyo-optometrist.jpg" alt="YoYo 驗光師 能見度視覺中心 比泱驗光所" class="w-64 h-64 object-cover rounded-2xl shadow-lg flex-shrink-0" />
-      <div>
-        <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-2">主理驗光師</p>
-        <h2 class="text-3xl font-bold text-brand-navy mb-4">YoYo 驗光師</h2>
-        <p class="text-gray-600 leading-relaxed mb-4">能見度視覺中心 × 比泱驗光所主理驗光師。專精臨床驗光、雙眼視覺評估、多焦點鏡片配製與兒童近視控制。蔡司 Zeiss 認證合作驗光師，新莊驗光首選。</p>
-        <p class="text-gray-600 leading-relaxed italic">「不追求最貴，只追求最適合你的視覺解決方案。」</p>
-        <a href="/booking" class="mt-6 inline-block bg-brand-navy text-white px-6 py-3 rounded-full font-semibold hover:bg-brand-navy/90 transition-colors">
-          預約 YoYo 驗光師
-        </a>
+  <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-14 items-center">
+        <img src="/images/yoyo-optometrist.jpg" alt="YoYo 驗光師 能見度視覺中心 比泱驗光所" class="w-72 h-80 object-cover flex-shrink-0" style="filter:sepia(8%)" />
+        <div>
+          <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">主理驗光師</span>
+          <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(28px,3.5vw,44px);font-weight:300">YoYo 驗光師</h2>
+          <p class="text-brand-ink-2 mb-5" style="font-size:18px;line-height:1.85">
+            能見度視覺中心 × 比泱驗光所主理驗光師。專精臨床驗光、雙眼視覺評估、多焦點鏡片配製與兒童近視控制。蔡司 Zeiss 認證合作驗光師，新莊驗光首選。
+          </p>
+          <p class="text-brand-ink-3 italic mb-8" style="font-size:18px;line-height:1.85">
+            「不追求最貴，只追求最適合你的視覺解決方案。」
+          </p>
+          <a href="/booking"
+            class="font-sans inline-flex items-center gap-3 border border-brand-ink text-brand-ink px-7 py-3 hover:bg-brand-ink hover:text-brand-paper transition-all duration-300"
+            style="font-size:14px;letter-spacing:0.1em">
+            預約 YoYo 驗光師
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 門市資訊 -->
-  <section class="bg-brand-light py-20 px-4">
+  <section class="px-6 md:px-16 py-24 border-t border-brand-ink/10" style="background:#eee8da">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">兩大門市，就在你身邊</h2>
+      <h2 class="font-serif text-brand-ink text-center mb-16" style="font-size:clamp(28px,4vw,48px);font-weight:300">兩大門市，就在你身邊</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {[
           {
@@ -142,30 +176,25 @@ const faqSchema = {
             google: 'https://share.google/lReL1vW8OEUXZBeVy',
           },
         ].map(store => (
-          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-            <img src={store.img} alt={`${store.name} ${store.full} 新北市驗光所`} class="w-full h-48 object-cover" />
+          <div class="bg-brand-paper overflow-hidden border border-brand-ink/10">
+            <img src={store.img} alt={`${store.name} ${store.full} 新北市驗光所`} class="w-full h-52 object-cover" style="filter:sepia(6%)" />
             <div class="p-8">
-              <div class="flex gap-2 flex-wrap">
-                <span class="bg-brand-navy text-white text-xs font-semibold px-3 py-1 rounded-full">{store.tag}</span>
-                <span class="bg-brand-gold/20 text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{store.year}</span>
+              <div class="flex gap-2 flex-wrap mb-4">
+                <span class="font-sans border border-brand-ink text-brand-ink text-xs px-3 py-1" style="letter-spacing:0.08em">{store.tag}</span>
+                <span class="font-sans border border-brand-ink/30 text-brand-ink-3 text-xs px-3 py-1" style="letter-spacing:0.08em">{store.year}</span>
               </div>
-              <h3 class="text-xl font-bold text-brand-navy mt-4 mb-1">{store.name}</h3>
-              <p class="text-gray-500 text-sm mb-4">{store.full}</p>
-              <p class="text-gray-700 mb-1">📍 {store.addr}</p>
-              <p class="text-gray-700 mb-3">📞 {store.phone}</p>
-              <p class="text-gray-600 text-sm">✦ {store.focus}</p>
-              <div class="mt-6 flex flex-col gap-3">
-                <a href="/booking" class="block text-center bg-brand-navy text-white py-3 rounded-xl font-semibold hover:bg-brand-navy/90 transition-colors">
+              <h3 class="font-serif text-brand-ink mb-1" style="font-size:22px;font-weight:400">{store.name}</h3>
+              <p class="text-brand-ink-3 mb-5" style="font-size:14px">{store.full}</p>
+              <p class="text-brand-ink-2 mb-1" style="font-size:16px">📍 {store.addr}</p>
+              <p class="text-brand-ink-2 mb-2" style="font-size:16px">📞 {store.phone}</p>
+              <p class="text-brand-ink-3" style="font-size:15px">✦ {store.focus}</p>
+              <div class="mt-7 flex flex-col gap-3">
+                <a href="/booking" class="font-sans block text-center bg-brand-ink text-brand-paper py-3 hover:bg-brand-navy transition-all duration-300" style="font-size:14px;letter-spacing:0.1em">
                   預約此門市
                 </a>
                 <a href={store.google} target="_blank" rel="noopener noreferrer"
-                  class="flex items-center justify-center gap-2 border border-gray-200 text-gray-600 py-2.5 rounded-xl text-sm font-medium hover:border-brand-gold hover:text-brand-navy transition-colors">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                  </svg>
+                  class="font-sans flex items-center justify-center gap-2 border border-brand-ink/20 text-brand-ink-2 py-2.5 hover:border-brand-ink transition-colors" style="font-size:14px">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
                   查看 Google 評論
                 </a>
               </div>
@@ -177,10 +206,11 @@ const faqSchema = {
   </section>
 
   <!-- 客戶評價 -->
-  <section class="max-w-6xl mx-auto px-4 py-20">
-    <div class="text-center mb-12">
-      <p class="text-brand-gold font-semibold text-sm tracking-widest uppercase mb-2">顧客真實評價</p>
-      <h2 class="text-3xl font-bold text-brand-navy">新莊與板橋地區的信賴選擇</h2>
+  <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+    <div class="mb-16">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">顧客真實評價</span>
+      <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">新莊與板橋地區<br />的信賴選擇</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {[
@@ -221,62 +251,69 @@ const faqSchema = {
           text: '在新莊住了很多年，終於找到一家真正專業的驗光所。不會一直推銷，只做適合你的選擇，這才是真正的專業服務。',
         },
       ].map(review => (
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-          <div class="flex items-center gap-1 mb-3">
-            {Array(review.stars).fill(0).map(() => <span class="text-brand-gold">★</span>)}
+        <div class="border-t border-brand-ink/15 pt-7">
+          <div class="flex items-center gap-0.5 mb-4">
+            {Array(review.stars).fill(0).map(() => <span class="text-brand-gold" style="font-size:14px">★</span>)}
           </div>
-          <p class="text-gray-700 text-sm leading-relaxed mb-4">「{review.text}」</p>
+          <p class="text-brand-ink-2 mb-5" style="font-size:17px;line-height:1.85">「{review.text}」</p>
           <div class="flex items-center justify-between">
-            <span class="font-semibold text-brand-navy text-sm">{review.name}</span>
-            <span class="bg-brand-light text-brand-navy text-xs px-2 py-1 rounded-full">{review.tag}</span>
+            <span class="font-serif text-brand-ink" style="font-size:15px">{review.name}</span>
+            <span class="font-sans text-brand-ink-3 border border-brand-ink/15 px-2 py-0.5" style="font-size:12px;letter-spacing:0.06em">{review.tag}</span>
           </div>
         </div>
       ))}
     </div>
-    <p class="text-center text-gray-400 text-xs mt-6">* 以上為顧客真實回饋，保護隱私僅顯示姓氏</p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+    <p class="text-brand-ink-3 text-center mt-8" style="font-size:13px">* 以上為顧客真實回饋，保護隱私僅顯示姓氏</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-7">
       <a href="https://share.google/rMxJYqYZH6fR4QwrS" target="_blank" rel="noopener noreferrer"
-        class="flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-full text-sm font-medium hover:border-brand-gold hover:text-brand-navy transition-colors">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        class="font-sans flex items-center justify-center gap-2 border border-brand-ink/25 text-brand-ink-2 px-6 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
         新莊店 Google 評論
       </a>
       <a href="https://share.google/lReL1vW8OEUXZBeVy" target="_blank" rel="noopener noreferrer"
-        class="flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-full text-sm font-medium hover:border-brand-gold hover:text-brand-navy transition-colors">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        class="font-sans flex items-center justify-center gap-2 border border-brand-ink/25 text-brand-ink-2 px-6 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
         板橋店 Google 評論
       </a>
     </div>
+    </div>
   </section>
 
-
   <!-- FAQ -->
-  <section class="max-w-3xl mx-auto px-4 py-20">
-    <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">常見問題</h2>
-    <div class="space-y-4">
-      {[
-        { q: '老花一定要配多焦點嗎？', a: '不一定。老花的解決方案包含：單焦老花鏡、漸進多焦點鏡片、甚至接觸鏡選項。多焦點鏡片適合需要頻繁切換遠中近距離者，但工作以近距離為主的人不一定適合。YoYo 驗光師會根據你的真實生活習慣給出建議，而非一律推薦多焦點。' },
-        { q: '為什麼戴眼鏡會頭暈？', a: '戴眼鏡頭暈最常見的原因：度數配錯、散光軸向偏差、鏡片光學中心偏移、鏡架調整不當造成傾斜角問題。高度近視眼鏡尤其敏感，任何一個細節失準都會放大不適感。能見度視覺中心提供免費回診評估。' },
-        { q: '近視控制真的有效嗎？', a: '有效，但需個人化評估。角膜塑型片、低濃度阿托品（0.01%）與離焦設計鏡片，在國際臨床研究中已證實可減緩近視加深速度 30–60%。兒童近視控制最佳時機是 6–14 歲，越早開始效果越好。' },
-        { q: '蔡司鏡片和普通鏡片差在哪裡？', a: '蔡司鏡片（Zeiss）的差異在於個人化光學計算：Individual² 系列根據你的頭部轉動習慣、眼球運動模式與實際配戴姿勢客製化設計，清晰視野範圍比標準鏡片大 20% 以上。能見度視覺中心為蔡司認證合作店。' },
-      ].map(item => (
-        <details class="border border-gray-200 rounded-xl overflow-hidden group">
-          <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-semibold text-brand-navy hover:bg-brand-light transition-colors">
-            {item.q}
-            <span class="text-brand-gold text-xl group-open:rotate-45 transition-transform">+</span>
-          </summary>
-          <p class="px-6 pb-5 text-gray-600 leading-relaxed">{item.a}</p>
-        </details>
-      ))}
+  <section class="px-6 md:px-16 py-24 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-14" style="font-size:clamp(28px,4vw,48px);font-weight:300">常見問題</h2>
+      <div class="space-y-0">
+        {[
+          { q: '老花一定要配多焦點嗎？', a: '不一定。老花的解決方案包含：單焦老花鏡、漸進多焦點鏡片、甚至接觸鏡選項。多焦點鏡片適合需要頻繁切換遠中近距離者，但工作以近距離為主的人不一定適合。YoYo 驗光師會根據你的真實生活習慣給出建議，而非一律推薦多焦點。' },
+          { q: '為什麼戴眼鏡會頭暈？', a: '戴眼鏡頭暈最常見的原因：度數配錯、散光軸向偏差、鏡片光學中心偏移、鏡架調整不當造成傾斜角問題。高度近視眼鏡尤其敏感，任何一個細節失準都會放大不適感。能見度視覺中心提供免費回診評估。' },
+          { q: '近視控制真的有效嗎？', a: '有效，但需個人化評估。角膜塑型片、低濃度阿托品（0.01%）與離焦設計鏡片，在國際臨床研究中已證實可減緩近視加深速度 30–60%。兒童近視控制最佳時機是 6–14 歲，越早開始效果越好。' },
+          { q: '蔡司鏡片和普通鏡片差在哪裡？', a: '蔡司鏡片（Zeiss）的差異在於個人化光學計算：Individual² 系列根據你的頭部轉動習慣、眼球運動模式與實際配戴姿勢客製化設計，清晰視野範圍比標準鏡片大 20% 以上。能見度視覺中心為蔡司認證合作店。' },
+        ].map(item => (
+          <details class="border-t border-brand-ink/15 group">
+            <summary class="flex justify-between items-center py-5 cursor-pointer text-brand-ink hover:text-brand-navy transition-colors" style="font-size:18px;font-weight:400;list-style:none">
+              {item.q}
+              <span class="font-sans text-brand-ink-3 text-2xl ml-4 group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+            </summary>
+            <p class="pb-6 text-brand-ink-2" style="font-size:17px;line-height:1.85">{item.a}</p>
+          </details>
+        ))}
+        <div class="border-t border-brand-ink/15"></div>
+      </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-brand-navy text-white py-16 px-4 text-center">
-    <h2 class="text-3xl font-bold mb-4">你的視覺，值得被認真對待</h2>
-    <p class="text-gray-300 mb-8 text-lg">免費視覺健康評估，新莊 × 板橋兩大門市皆可預約</p>
-    <a href="/booking"
-      class="bg-brand-gold text-brand-navy font-bold px-10 py-4 rounded-full text-lg hover:bg-brand-gold/90 transition-colors inline-block">
-      立即線上預約 →
-    </a>
+  <section class="px-6 md:px-16 py-24 text-center" style="background:#1a2f4e">
+    <div class="max-w-2xl mx-auto">
+      <span class="font-sans text-brand-gold/70 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.22em">預約視覺評估</span>
+      <h2 class="font-serif text-brand-paper mb-6" style="font-size:clamp(28px,4vw,52px);font-weight:300;line-height:1.2">你的視覺，<br />值得被認真對待</h2>
+      <p class="text-brand-paper/60 mb-10" style="font-size:18px;line-height:1.8">免費視覺健康評估，新莊 × 板橋兩大門市皆可預約</p>
+      <a href="/booking"
+        class="font-sans inline-flex items-center gap-3 bg-brand-gold text-brand-navy px-10 py-4 hover:bg-brand-gold/90 transition-all duration-300"
+        style="font-size:15px;letter-spacing:0.1em;font-weight:600">
+        立即線上預約 →
+      </a>
+    </div>
   </section>
 </Layout>
