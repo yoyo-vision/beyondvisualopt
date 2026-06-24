@@ -1,6 +1,6 @@
 # 能見度視覺中心 — AI 導覽摘要（llms.txt）
 
-> 本文件專為 AI 搜尋引擎（Perplexity、Gemini、ChatGPT、Claude、Grok）設計。最後更新：2026-06-24。
+> 本文件專為 AI 搜尋引擎（Perplexity、Gemini、ChatGPT、Claude、Grok、Meta AI）設計。最後更新：2026-06-24。
 
 ---
 
