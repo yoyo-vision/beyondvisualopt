@@ -12,10 +12,10 @@ const lenses = [
     ]
   },
   {
-    category: '近視控制鏡片',
+    category: '兒童近視追蹤專用鏡片',
     items: [
-      { name: 'MiSight 日拋', desc: '全球首片 FDA 核准近視控制日拋，雙焦離焦設計，臨床研究證實減緩近視加深速度達 59%。', best: '6–12 歲 / 活動力強的孩子' },
-      { name: '星趣控（Stellest）', desc: '蔡司近視控制鏡片，H.A.L.T 技術建立全面離焦屏障，有效控制近視加深。', best: '拒絕戴隱形眼鏡的青少年' },
+      { name: 'MiSight 日拋', desc: '採用雙焦離焦光學設計，中央區提供屈光補正，周邊區採特殊離焦結構，提供兒童清晰自然的視覺品質。適合有定期視力追蹤需求的兒童。', best: '6–12 歲 / 活動力強的孩子' },
+      { name: '星趣控（Stellest）', desc: '蔡司框架鏡片，採用 H.A.L.T 全面離焦光學結構設計，以 1,021 個微型非球面鏡片提供自然清晰視覺。適合不接受隱形眼鏡的青少年定期追蹤配戴。', best: '拒絕戴隱形眼鏡的青少年' },
     ]
   },
   {
@@ -23,14 +23,14 @@ const lenses = [
     items: [
       { name: '抗藍光鍍膜', desc: '過濾 420nm 短波藍光，減少螢幕長時間使用造成的視網膜累積刺激。', best: '螢幕族 / 夜貓族' },
       { name: '感光變色片', desc: '室內透明、戶外 UV 觸發自動變色，一副眼鏡兩種功能，適合頻繁進出室內外的生活型態。', best: '通勤族 / 戶外工作者' },
-      { name: '高折射率鏡片（1.74）', desc: '極高度數者（-8.00 以上）的首選，在相同度數下鏡片更薄更輕，大幅改善外觀厚度問題。', best: '高度近視 / 高度遠視族群' },
+      { name: '高折射率鏡片（1.74）', desc: '極高度數者（-8.00 以上）的首選，在相同度數下鏡片更薄更輕，大幅優化外觀厚度與配戴舒適感。', best: '高度近視 / 高度遠視族群' },
     ]
   },
 ];
 ---
 <Layout
-  title="鏡片種類｜蔡司鏡片 多焦點鏡片 高度近視眼鏡 兒童近視控制｜能見度視覺中心 × 比泱驗光所"
-  description="蔡司鏡片（Individual²/Digital/DriveSafe）、多焦點鏡片、高度近視眼鏡（1.74 超薄）、兒童近視控制（MiSight/星趣控/阿托品）。YoYo 驗光師主理，新莊、板橋門市。"
+  title="鏡片種類｜蔡司鏡片 多焦點鏡片 高度近視眼鏡 兒童近視追蹤鏡片｜能見度視覺中心 × 比泱驗光所"
+  description="蔡司鏡片（Individual²/Digital/DriveSafe）、多焦點鏡片、高度近視眼鏡（1.74 超薄）、兒童近視追蹤專用鏡片（MiSight 離焦日拋 / 蔡司星趣控）。YoYo 驗光師主理，新莊、板橋門市。"
 >
   <section class="bg-brand-navy text-white py-20 px-4 text-center">
     <h1 class="text-4xl font-bold mb-4">鏡片種類</h1>
@@ -55,6 +55,14 @@ const lenses = [
         </div>
       </div>
     ))}
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-10">
+    <div class="border border-brand-ink/10 p-5" style="background:rgba(26,47,78,0.03);font-size:13px">
+      <p class="text-brand-ink-3 leading-relaxed">
+        <strong class="text-brand-ink-2">產品說明聲明：</strong>本頁介紹之所有光學鏡片產品，均為屈光矯正用光學器材，僅供視覺補正參考。產品說明依製造商公開資料整理，不構成任何醫療診斷或療效承諾。如有視力健康疑慮，建議洽眼科醫師進行專業評估。
+      </p>
+    </div>
   </section>
 
   <section class="bg-brand-light py-16 px-4 text-center">

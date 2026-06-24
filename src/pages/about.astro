@@ -1,0 +1,303 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "能見度視覺中心",
+  "description": "新北市新莊、板橋在地深耕超過 30 年的專業眼鏡與驗光機構，由 YoYo 驗光師主理，提供臨床等級驗光、蔡司鏡片、多焦點配鏡、兒童近視追蹤服務。",
+  "url": "https://beyondvisualopt.com/about",
+  "telephone": ["02-2206-6700", "02-2253-1246"],
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "中正路419-1號",
+      "addressLocality": "新莊區",
+      "addressRegion": "新北市",
+      "addressCountry": "TW"
+    }
+  ],
+  "foundingDate": "1992",
+  "founder": {
+    "@type": "Person",
+    "name": "鄭家侑",
+    "jobTitle": "主理驗光師"
+  }
+};
+---
+<Layout
+  title="關於我們｜能見度視覺中心品牌故事｜新莊 × 板橋 30 年在地驗光｜YoYo 驗光師"
+  description="從 1992 年板橋創立到新莊比泱驗光所，能見度視覺中心 30 年堅持「不追求最貴，只追求最適合」。了解我們的品牌故事、門市環境與驗光師團隊。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-28 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">關於我們</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(32px,5vw,58px);font-weight:300">
+        不追求最貴，<br />只追求最適合你的<span class="text-brand-gold">視覺解決方案</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        新莊 × 板橋在地深耕超過 30 年。從一家小眼鏡行到臨床等級驗光所，我們從未改變的，是把每一位顧客的視覺需求，當作真正的專業課題來對待。
+      </p>
+    </div>
+  </section>
+
+  <!-- 品牌故事 -->
+  <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-5" style="font-size:12px;letter-spacing:0.22em">品牌故事</span>
+          <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(28px,4vw,44px);font-weight:300;line-height:1.2">從板橋一家眼鏡行，<br />到臨床等級驗光所</h2>
+          <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+            <p>1992 年，能見度眼鏡在新北市板橋區創立。那個年代的眼鏡行，配眼鏡就是驗個度數、選個框架、十分鐘出貨——這是行業的預設值，也是我們後來決定打破的東西。</p>
+            <p>超過 30 年的時間，我們看過太多顧客帶著「配好的眼鏡」進門，說戴了頭暈、看不清楚、不舒服。每一次重新驗光，我們都在思考：為什麼第一次就不能做對？</p>
+            <p>2023 年，新莊店「能見度視覺中心 × 比泱驗光所」成立。不是為了展店，而是為了實踐一件事：讓驗光回歸它本來應有的深度——完整的雙眼視覺評估、個人化的生活分析、說清楚講明白的選配過程。</p>
+          </div>
+        </div>
+        <div class="space-y-0">
+          {[
+            { year: '1992', event: '能見度眼鏡板橋總店創立', desc: '新北市板橋區，提供基礎配鏡服務，在地深耕超過 30 年。' },
+            { year: '2020', event: '蔡司 Zeiss 簽約經銷商', desc: '正式成為蔡司台灣授權合作店，引進 Individual² 個人化訂製鏡片服務。' },
+            { year: '2023', event: '新莊比泱驗光所成立', desc: '能見度視覺中心 × 比泱驗光所開幕，主打臨床等級驗光與進階視覺管理。' },
+          ].map((item, i) => (
+            <div class={`flex gap-8 py-8 ${i > 0 ? 'border-t border-brand-ink/10' : ''}`}>
+              <div class="flex-shrink-0 w-16">
+                <span class="font-sans text-brand-gold font-semibold" style="font-size:13px;letter-spacing:0.1em">{item.year}</span>
+              </div>
+              <div>
+                <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">{item.event}</h3>
+                <p class="text-brand-ink-3" style="font-size:15px;line-height:1.7">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心理念 -->
+  <section class="px-6 md:px-16 py-24" style="background:#eee8da">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">核心理念</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">我們相信的三件事</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            num: '01',
+            title: '驗光是評估，不是快速出貨',
+            body: '每一次配鏡，我們花 45–60 分鐘完整分析你的視覺狀態、生活習慣與真實需求。不是因為我們動作慢，而是因為這些細節直接影響你戴上眼鏡後的每一天。'
+          },
+          {
+            num: '02',
+            title: '推薦適合的，不推薦最貴的',
+            body: '蔡司 Individual² 很好，但不是每個人都需要它。我們的工作是把選項說清楚，讓你做有知識的決定——而不是用「這個比較好」三個字帶過。'
+          },
+          {
+            num: '03',
+            title: '配完眼鏡，不是服務的終點',
+            body: '取鏡後 2 週內主動追蹤，適應期任何問題免費回診。眼鏡配好了才算完成，不是收了錢就結束。'
+          },
+        ].map(item => (
+          <div class="border-t border-brand-ink/20 pt-8">
+            <div class="font-sans text-brand-ink-3 mb-4" style="font-size:12px;letter-spacing:0.2em">{item.num}</div>
+            <h3 class="font-serif text-brand-ink mb-4" style="font-size:20px;font-weight:400;line-height:1.3">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 驗光師介紹 -->
+  <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">驗光師介紹</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">主理驗光師</h2>
+      </div>
+      <div class="flex flex-col md:flex-row gap-14 items-start max-w-4xl mx-auto">
+        <img
+          src="/images/yoyo-optometrist.jpg"
+          alt="YoYo 驗光師 能見度視覺中心 比泱驗光所 新莊驗光"
+          class="w-72 h-80 object-cover flex-shrink-0"
+          style="filter:sepia(8%)"
+        />
+        <div class="flex-1">
+          <h3 class="font-serif text-brand-ink mb-1" style="font-size:clamp(26px,3.5vw,40px);font-weight:300">鄭家侑 驗光師</h3>
+          <p class="text-brand-ink-3 font-sans mb-1" style="font-size:15px">YoYo｜主理驗光師</p>
+          <p class="text-brand-gold font-sans mb-6" style="font-size:14px;letter-spacing:0.1em">能見度視覺中心 × 比泱驗光所</p>
+          <div class="space-y-4 text-brand-ink-2 mb-8" style="font-size:17px;line-height:1.85">
+            <p>台灣執照驗光師。專精臨床驗光、雙眼視覺評估、多焦點鏡片配製與兒童近視追蹤，服務於蔡司 Zeiss 簽約經銷門市。</p>
+            <p>「我最常做的事，是幫顧客搞清楚他們真正需要什麼——而不是把最好的產品賣給他。有時候最適合的選擇，是一副不貴但參數完全對的眼鏡。」</p>
+          </div>
+          <div class="space-y-2 mb-8">
+            {[
+              '臨床驗光與雙眼視覺評估',
+              '多焦點鏡片（漸進 / 辦公室鏡片）配製',
+              '高度近視精密配鏡（頂點距離補正）',
+              '兒童近視定期追蹤與離焦鏡片配適',
+              '蔡司 Individual² 個人化訂製',
+            ].map(item => (
+              <div class="flex items-start gap-3">
+                <span class="text-brand-gold mt-1 flex-shrink-0" style="font-size:12px">✦</span>
+                <span class="text-brand-ink-2" style="font-size:16px">{item}</span>
+              </div>
+            ))}
+          </div>
+          <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 italic" style="font-size:17px;line-height:1.8">
+            「不追求最貴，只追求最適合你的視覺解決方案。」
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 門市環境 -->
+  <section class="px-6 md:px-16 py-24" style="background:#eee8da">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">門市環境</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">兩大門市，各有專精</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <!-- 新莊店 -->
+        <div class="bg-brand-paper border border-brand-ink/10 overflow-hidden">
+          <img
+            src="/images/store-xinzhuang.jpg"
+            alt="能見度視覺中心新莊店 比泱驗光所 新北市新莊區驗光"
+            class="w-full h-64 object-cover"
+            style="filter:sepia(6%)"
+          />
+          <div class="p-8">
+            <div class="flex gap-2 flex-wrap mb-4">
+              <span class="font-sans border border-brand-gold text-brand-gold text-xs px-3 py-1" style="letter-spacing:0.08em">2023 年成立</span>
+              <span class="font-sans border border-brand-ink/20 text-brand-ink-3 text-xs px-3 py-1" style="letter-spacing:0.08em">臨床驗光主力門市</span>
+            </div>
+            <h3 class="font-serif text-brand-ink mb-1" style="font-size:22px;font-weight:400">新莊店</h3>
+            <p class="text-brand-ink-3 mb-5" style="font-size:14px">能見度視覺中心 × 比泱驗光所</p>
+            <div class="space-y-2 mb-6">
+              <p class="text-brand-ink-2" style="font-size:15px">📍 新北市新莊區中正路 419-1 號</p>
+              <p class="text-brand-ink-2" style="font-size:15px">📞 02-2206-6700</p>
+            </div>
+            <p class="text-brand-ink-3 mb-6" style="font-size:15px;line-height:1.7">
+              以臨床等級驗光為核心，設有完整雙眼視覺評估設備，包含眼軸長測量儀、調節靈活度測試、角膜地形圖等。YoYo 驗光師駐診，提供兒童近視追蹤與多焦點鏡片配製。
+            </p>
+            <div class="space-y-2">
+              {['雙眼視覺評估設備', '眼軸長測量（Axial Length）', '角膜地形圖', '多焦點鏡片試戴區', '蔡司 Zeiss 簽約經銷門市'].map(item => (
+                <div class="flex items-center gap-2">
+                  <span class="text-brand-gold" style="font-size:11px">✦</span>
+                  <span class="text-brand-ink-3" style="font-size:14px">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- 板橋店 -->
+        <div class="bg-brand-paper border border-brand-ink/10 overflow-hidden">
+          <img
+            src="/images/store-banqiao.jpg"
+            alt="能見度眼鏡板橋店 能見度驗光所 新北市板橋區配眼鏡"
+            class="w-full h-64 object-cover"
+            style="filter:sepia(6%)"
+          />
+          <div class="p-8">
+            <div class="flex gap-2 flex-wrap mb-4">
+              <span class="font-sans border border-brand-gold text-brand-gold text-xs px-3 py-1" style="letter-spacing:0.08em">1992 年創立</span>
+              <span class="font-sans border border-brand-ink/20 text-brand-ink-3 text-xs px-3 py-1" style="letter-spacing:0.08em">蔡司 Zeiss 簽約門市</span>
+            </div>
+            <h3 class="font-serif text-brand-ink mb-1" style="font-size:22px;font-weight:400">板橋總店</h3>
+            <p class="text-brand-ink-3 mb-5" style="font-size:14px">能見度眼鏡 × 能見度驗光所</p>
+            <div class="space-y-2 mb-6">
+              <p class="text-brand-ink-2" style="font-size:15px">📍 新北市板橋區雙十路二段 47 巷 28 號</p>
+              <p class="text-brand-ink-2" style="font-size:15px">📞 02-2253-1246</p>
+            </div>
+            <p class="text-brand-ink-3 mb-6" style="font-size:15px;line-height:1.7">
+              30 年老店底蘊，完整蔡司 Zeiss 鏡片展示與試戴區。多焦點鏡片、熟齡老花配鏡、高度近視精密配鏡為主力服務，並設有高端鏡架選配區。
+            </p>
+            <div class="space-y-2">
+              {['蔡司 Zeiss 完整鏡片展示', 'Individual² 個人化訂製服務', '多焦點鏡片試戴體驗', '高端歐洲鏡架選配', '高度近視鏡片設計諮詢'].map(item => (
+                <div class="flex items-center gap-2">
+                  <span class="text-brand-gold" style="font-size:11px">✦</span>
+                  <span class="text-brand-ink-3" style="font-size:14px">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 數字說話 -->
+  <section class="px-6 md:px-16 py-24" style="background:#1a2f4e">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {[
+          { num: '30+', label: '年在地深耕' },
+          { num: '2', label: '門市據點' },
+          { num: '45–60', label: '分鐘完整驗光' },
+          { num: '100%', label: '不推銷，只推薦適合的' },
+        ].map(item => (
+          <div>
+            <div class="font-serif text-brand-gold mb-2" style="font-size:clamp(36px,5vw,56px);font-weight:300">{item.num}</div>
+            <div class="font-sans text-white/60" style="font-size:14px;letter-spacing:0.05em">{item.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 法定資訊公示 -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec;border-top:1px solid rgba(26,47,78,0.08)">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-8" style="font-size:12px;letter-spacing:0.22em">驗光所登記資訊</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-3">
+          <h3 class="font-serif text-brand-ink mb-4" style="font-size:17px;font-weight:400">比泱驗光所（新莊）</h3>
+          <div class="space-y-1 text-brand-ink-3" style="font-size:14px;line-height:1.8">
+            <p>地址：新北市新莊區中正路 419-1 號</p>
+            <p>電話：02-2206-6700</p>
+            <p>開業執照：新北府莊衛驗光字第 5Y31060655 號</p>
+            <p>執業驗光師：鄭家侑｜驗師字第 003309 號</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <h3 class="font-serif text-brand-ink mb-4" style="font-size:17px;font-weight:400">能見度驗光所（板橋）</h3>
+          <div class="space-y-1 text-brand-ink-3" style="font-size:14px;line-height:1.8">
+            <p>地址：新北市板橋區雙十路二段 47 巷 28 號</p>
+            <p>電話：02-2253-1246</p>
+            <p>開業執照：新北府板衛驗光字第 5Y31010039 號</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 p-5 border border-brand-ink/10" style="background:rgba(26,47,78,0.03)">
+        <p class="text-brand-ink-3" style="font-size:13px;line-height:1.8">
+          本網站介紹之光學產品及驗光服務，僅供視覺屈光矯正參考，不構成任何醫療診斷或治療建議。如有視力健康疑慮，建議優先至醫療機構進行專業醫學診斷。驗光師業務範圍依《驗光人員法》規定辦理；如發現異常或視力無法有效補正，將依法轉介眼科醫師。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 md:px-16 py-24 text-center" style="background:#f7f3ec">
+    <div class="max-w-2xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.22em">預約視覺評估</span>
+      <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(28px,4vw,48px);font-weight:300">你的視覺，<br />值得被認真對待</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:17px;line-height:1.8">免費視覺健康評估，新莊 × 板橋兩大門市皆可預約</p>
+      <a href="/booking"
+        class="font-sans inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-4 hover:bg-brand-navy/90 transition-all duration-300"
+        style="font-size:15px;letter-spacing:0.1em;font-weight:600">
+        預約驗光人員 →
+      </a>
+    </div>
+  </section>
+
+</Layout>
