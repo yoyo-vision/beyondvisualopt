@@ -202,7 +202,7 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
         <!-- 新莊店 -->
-        <a href="/xinzhuang/" class="block bg-brand-paper border border-brand-ink/10 overflow-hidden hover:border-brand-ink/40 transition-colors duration-300 cursor-pointer">
+        <div class="relative bg-brand-paper border border-brand-ink/10 overflow-hidden hover:border-brand-ink/40 transition-colors duration-300 group">
           <picture>
             <source srcset="/images/store-xinzhuang.webp" type="image/webp" />
             <img src="/images/store-xinzhuang.jpg" alt="能見度視覺中心新莊店 比泱驗光所 新北市新莊區驗光" width="600" height="256" class="w-full h-64 object-cover" style="filter:sepia(6%)" />
@@ -262,10 +262,12 @@ const schema = {
               referrerpolicy="no-referrer-when-downgrade"
               title="能見度視覺中心 比泱驗光所 地圖"></iframe>
           </div>
-        </a>
+          <!-- 點擊整張卡片的 overlay，z-index 低於 iframe 讓地圖仍可操作 -->
+          <a href="/xinzhuang/" class="absolute inset-0" aria-label="新莊店詳情" style="z-index:1"></a>
+        </div>
 
         <!-- 板橋店 -->
-        <a href="/banqiao/" class="block bg-brand-paper border border-brand-ink/10 overflow-hidden hover:border-brand-ink/40 transition-colors duration-300 cursor-pointer">
+        <div class="relative bg-brand-paper border border-brand-ink/10 overflow-hidden hover:border-brand-ink/40 transition-colors duration-300 group">
           <picture>
             <source srcset="/images/store-banqiao.webp" type="image/webp" />
             <img src="/images/store-banqiao.jpg" alt="能見度眼鏡板橋店 能見度驗光所 新北市板橋區配眼鏡" width="600" height="256" class="w-full h-64 object-cover" style="filter:sepia(6%)" />
@@ -322,7 +324,8 @@ const schema = {
               referrerpolicy="no-referrer-when-downgrade"
               title="能見度眼鏡 能見度驗光所 板橋地圖"></iframe>
           </div>
-        </a>
+          <a href="/banqiao/" class="absolute inset-0" aria-label="板橋店詳情" style="z-index:1"></a>
+        </div>
 
       </div>
     </div>
