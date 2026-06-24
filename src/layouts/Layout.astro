@@ -5,8 +5,10 @@ export interface Props {
   keywords?: string;
   image?: string;
   schema?: object;
+  preloadHeroMobile?: string;
+  preloadHeroDesktop?: string;
 }
-const { title, description, keywords, image = '/og-image.jpg', schema } = Astro.props;
+const { title, description, keywords, image = '/og-image.jpg', schema, preloadHeroMobile, preloadHeroDesktop } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
@@ -21,6 +23,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="b9R-zvmjM3wN6sH5QabENei5LBkcg4sKtx3zIv0Jijw" />
   <link rel="canonical" href={canonicalURL} />
+
+  <!-- Hero 圖優先預載（LCP 優化） -->
+  {preloadHeroMobile && <link rel="preload" as="image" href={preloadHeroMobile} media="(max-width: 768px)" fetchpriority="high" />}
+  {preloadHeroDesktop && <link rel="preload" as="image" href={preloadHeroDesktop} media="(min-width: 769px)" fetchpriority="high" />}
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -39,13 +45,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
 
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B3DK67BENE"></script>
+  <!-- Google Analytics GA4：延遲到 idle 載入，不阻塞主執行緒 -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-B3DK67BENE');
+    function loadGA(){
+      var s=document.createElement('script');
+      s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id=G-B3DK67BENE';
+      document.head.appendChild(s);
+    }
+    if('requestIdleCallback' in window){
+      requestIdleCallback(loadGA,{timeout:3000});
+    } else {
+      window.addEventListener('load',loadGA);
+    }
   </script>
 
   <!-- 字型：完全延遲載入，不阻塞首屏渲染 -->
