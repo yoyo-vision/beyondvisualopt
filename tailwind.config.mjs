@@ -16,8 +16,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Noto Sans TC', 'system-ui', 'sans-serif'],
-        serif: ['Noto Serif TC', 'Georgia', 'serif'],
+        sans: ['"Noto Sans TC"', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Noto Serif TC"', 'Georgia', '"Times New Roman"', 'serif'],
       },
       fontSize: {
         base: ['17px', '1.75'],

@@ -48,12 +48,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     gtag('config', 'G-B3DK67BENE');
   </script>
 
-  <!-- 字型：非阻斷式載入 -->
+  <!-- 字型：完全延遲載入，不阻塞首屏渲染 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" /></noscript>
+  <script>
+    (function(){
+      var FONT_URL='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600&display=swap';
+      function loadFont(){
+        var l=document.createElement('link');
+        l.rel='stylesheet';l.href=FONT_URL;
+        document.head.appendChild(l);
+      }
+      if('requestIdleCallback' in window){
+        requestIdleCallback(loadFont,{timeout:2000});
+      } else {
+        window.addEventListener('load',loadFont);
+      }
+    })();
+  </script>
 
   <!-- LocalBusiness JSON-LD（每頁都嵌入） -->
   <script type="application/ld+json" set:html={JSON.stringify({
