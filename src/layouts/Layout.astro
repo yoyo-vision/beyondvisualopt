@@ -7,8 +7,9 @@ export interface Props {
   schema?: object;
   preloadHeroMobile?: string;
   preloadHeroDesktop?: string;
+  robots?: string;
 }
-const { title, description, keywords, image = '/og-image.jpg', schema, preloadHeroMobile, preloadHeroDesktop } = Astro.props;
+const { title, description, keywords, image = '/og-image.jpg', schema, preloadHeroMobile, preloadHeroDesktop, robots } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   {keywords && <meta name="keywords" content={keywords} />}
   <meta name="author" content="鄭家侑（YoYo）・能見度眼鏡" />
   <meta name="publisher" content="能見度眼鏡 Beyond Visual Optometry" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content={robots ?? "index, follow"} />
   <meta name="google-site-verification" content="b9R-zvmjM3wN6sH5QabENei5LBkcg4sKtx3zIv0Jijw" />
   <link rel="canonical" href={canonicalURL} />
 
