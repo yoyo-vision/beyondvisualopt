@@ -202,129 +202,63 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
         <!-- 新莊店 -->
-        <div class="relative bg-brand-paper border border-brand-ink/10 overflow-hidden hover:border-brand-ink/40 transition-colors duration-300 group">
+        <div class="bg-brand-paper border border-brand-ink/10 overflow-hidden">
           <picture>
             <source srcset="/images/store-xinzhuang.webp" type="image/webp" />
             <img src="/images/store-xinzhuang.jpg" alt="能見度視覺中心新莊店 比泱驗光所 新北市新莊區驗光" width="600" height="256" class="w-full h-64 object-cover" style="filter:sepia(6%)" />
           </picture>
           <div class="p-8">
-            <div class="flex gap-2 flex-wrap mb-4">
+            <div class="flex gap-2 flex-wrap mb-5">
               <span class="font-sans border border-brand-gold text-brand-gold text-xs px-3 py-1" style="letter-spacing:0.08em">2023 年成立</span>
               <span class="font-sans border border-brand-ink/20 text-brand-ink-3 text-xs px-3 py-1" style="letter-spacing:0.08em">臨床驗光主力門市</span>
             </div>
-            <h3 class="font-serif text-brand-ink mb-1" style="font-size:24px;font-weight:400">能見度視覺中心 × 比泱驗光所</h3>
-            <div class="space-y-1 mt-4 mb-6 text-brand-ink-2" style="font-size:15px">
+            <h3 class="font-serif text-brand-ink mb-4" style="font-size:22px;font-weight:400">能見度視覺中心 × 比泱驗光所</h3>
+            <div class="space-y-1.5 mb-5 text-brand-ink-2" style="font-size:15px">
               <p>📍 新北市新莊區中正路 419-1 號</p>
               <p>📞 <a href="tel:0222066700" class="hover:text-brand-ink transition-colors">02-2206-6700</a></p>
-            </div>
-            <p class="text-brand-ink-2 mb-6" style="font-size:16px;line-height:1.8">
-              新莊在地驗光首選。比泱驗光所為合法開業驗光所，由 YoYo 驗光師（鄭家侑，驗師字第 003309 號）主理，提供完整臨床驗光流程，從雙眼視覺評估到鏡框客製調整，每個環節都有依據，不快速出貨。
-            </p>
-            <div class="mb-6">
-              <p class="font-sans text-brand-ink font-semibold mb-3" style="font-size:13px;letter-spacing:0.08em">主要服務項目</p>
-              <div class="space-y-2">
-                {[
-                  '臨床等級完整驗光（雙眼視覺評估）',
-                  '蔡司 Zeiss 鏡片配製（簽約經銷）',
-                  '多焦點漸進鏡片配適與追蹤',
-                  '兒童近視定期追蹤（6–14 歲）',
-                  '高度近視精密配鏡',
-                  'RGP 硬式隱形眼鏡配適',
-                  '數位疲勞視覺解決方案',
-                ].map(item => (
-                  <div class="flex items-center gap-2">
-                    <span class="text-brand-gold" style="font-size:11px">✦</span>
-                    <span class="text-brand-ink-2" style="font-size:15px">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div class="mb-6 border-t border-brand-ink/10 pt-6">
-              <p class="font-sans text-brand-ink font-semibold mb-3" style="font-size:13px;letter-spacing:0.08em">營業時間</p>
-              <table class="w-full text-brand-ink-2" style="font-size:14px;border-collapse:collapse">
-                <tbody>
-                  {[
-                    ['週一、二、三、五、六', '11:00 – 21:00'],
-                    ['週日', '12:00 – 21:00'],
-                    ['週四', '公休（電話預約可接受）'],
-                  ].map(([day, time]) => (
-                    <tr class="border-b border-brand-ink/8">
-                      <td class="py-2 pr-4 text-brand-ink-3">{day}</td>
-                      <td class="py-2">{time}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <p class="text-brand-ink-3" style="font-size:13px">週一二三五六 11:00–21:00・週日 12:00–21:00・週四公休</p>
             </div>
             <iframe
               src="https://maps.google.com/maps?q=新北市新莊區中正路419-1號&output=embed&hl=zh-TW&z=16"
-              width="100%" height="200" style="border:0;display:block" allowfullscreen loading="lazy"
+              width="100%" height="180" style="border:0;display:block;margin-bottom:1.25rem" allowfullscreen loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="能見度視覺中心 比泱驗光所 地圖"></iframe>
+            <a href="/xinzhuang/"
+              class="font-sans inline-flex items-center gap-2 border border-brand-ink text-brand-ink px-5 py-2.5 hover:bg-brand-ink hover:text-brand-paper transition-colors duration-300"
+              style="font-size:13px;letter-spacing:0.08em">
+              新莊店完整介紹 →
+            </a>
           </div>
-          <!-- 點擊整張卡片的 overlay，z-index 低於 iframe 讓地圖仍可操作 -->
-          <a href="/xinzhuang/" class="absolute inset-0" aria-label="新莊店詳情" style="z-index:1"></a>
         </div>
 
         <!-- 板橋店 -->
-        <div class="relative bg-brand-paper border border-brand-ink/10 overflow-hidden hover:border-brand-ink/40 transition-colors duration-300 group">
+        <div class="bg-brand-paper border border-brand-ink/10 overflow-hidden">
           <picture>
             <source srcset="/images/store-banqiao.webp" type="image/webp" />
             <img src="/images/store-banqiao.jpg" alt="能見度眼鏡板橋店 能見度驗光所 新北市板橋區配眼鏡" width="600" height="256" class="w-full h-64 object-cover" style="filter:sepia(6%)" />
           </picture>
           <div class="p-8">
-            <div class="flex gap-2 flex-wrap mb-4">
+            <div class="flex gap-2 flex-wrap mb-5">
               <span class="font-sans border border-brand-gold text-brand-gold text-xs px-3 py-1" style="letter-spacing:0.08em">1992 年創立</span>
               <span class="font-sans border border-brand-ink/20 text-brand-ink-3 text-xs px-3 py-1" style="letter-spacing:0.08em">蔡司 Zeiss 簽約門市</span>
             </div>
-            <h3 class="font-serif text-brand-ink mb-1" style="font-size:24px;font-weight:400">能見度眼鏡 × 能見度驗光所</h3>
-            <div class="space-y-1 mt-4 mb-6 text-brand-ink-2" style="font-size:15px">
+            <h3 class="font-serif text-brand-ink mb-4" style="font-size:22px;font-weight:400">能見度眼鏡 × 能見度驗光所</h3>
+            <div class="space-y-1.5 mb-5 text-brand-ink-2" style="font-size:15px">
               <p>📍 新北市板橋區雙十路二段 47 巷 28 號</p>
               <p>📞 <a href="tel:0222531246" class="hover:text-brand-ink transition-colors">02-2253-1246</a></p>
-            </div>
-            <p class="text-brand-ink-2 mb-6" style="font-size:16px;line-height:1.8">
-              30 年老店底蘊，一對從業逾 30 年的夫妻主理。從青年配到老花、從自己配到幫孩子配，很多顧客一家三代都在這裡——不是因為距離近，是因為信任這裡的人。
-            </p>
-            <div class="mb-6">
-              <p class="font-sans text-brand-ink font-semibold mb-3" style="font-size:13px;letter-spacing:0.08em">主要服務項目</p>
-              <div class="space-y-2">
-                {[
-                  '熟齡視覺規劃｜老花、多焦點漸進精準驗配',
-                  '兒童視力評估｜完整記錄度數變化',
-                  '雙眼視覺評估｜找出頭暈真正原因',
-                  '高度近視客製化配鏡評估',
-                  '蔡司 Zeiss｜HOYA｜依視路 Essilor｜Nikon',
-                ].map(item => (
-                  <div class="flex items-center gap-2">
-                    <span class="text-brand-gold" style="font-size:11px">✦</span>
-                    <span class="text-brand-ink-2" style="font-size:15px">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div class="mb-6 border-t border-brand-ink/10 pt-6">
-              <p class="font-sans text-brand-ink font-semibold mb-3" style="font-size:13px;letter-spacing:0.08em">營業時間</p>
-              <table class="w-full text-brand-ink-2" style="font-size:14px;border-collapse:collapse">
-                <tbody>
-                  {[
-                    ['每日', '10:00 – 22:00'],
-                    ['每月第二、四週日', '公休'],
-                  ].map(([day, time]) => (
-                    <tr class="border-b border-brand-ink/8">
-                      <td class="py-2 pr-4 text-brand-ink-3">{day}</td>
-                      <td class="py-2">{time}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <p class="text-brand-ink-3" style="font-size:13px">每日 10:00–22:00・每月第二、四週日公休</p>
             </div>
             <iframe
               src="https://maps.google.com/maps?q=新北市板橋區雙十路二段47巷28號&output=embed&hl=zh-TW&z=16"
-              width="100%" height="200" style="border:0;display:block" allowfullscreen loading="lazy"
+              width="100%" height="180" style="border:0;display:block;margin-bottom:1.25rem" allowfullscreen loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="能見度眼鏡 能見度驗光所 板橋地圖"></iframe>
+            <a href="/banqiao/"
+              class="font-sans inline-flex items-center gap-2 border border-brand-ink text-brand-ink px-5 py-2.5 hover:bg-brand-ink hover:text-brand-paper transition-colors duration-300"
+              style="font-size:13px;letter-spacing:0.08em">
+              板橋店完整介紹 →
+            </a>
           </div>
-          <a href="/banqiao/" class="absolute inset-0" aria-label="板橋店詳情" style="z-index:1"></a>
         </div>
 
       </div>
