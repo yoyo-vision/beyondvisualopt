@@ -50,7 +50,7 @@ export async function onRequest(context) {
   }), {
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'no-store',
+      'Cache-Control': 'public, max-age=3600',
       'Access-Control-Allow-Origin': '*',
     },
   });
