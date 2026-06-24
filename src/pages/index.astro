@@ -190,76 +190,116 @@ const faqSchema = {
   <!-- 客戶評價 -->
   <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
     <div class="max-w-6xl mx-auto">
-    <div class="mb-16">
-      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">顧客真實評價</span>
-      <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">新莊與板橋地區<br />的信賴選擇</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        {
-          name: '林小姐',
-          tag: '多焦點鏡片',
-          stars: 5,
-          text: 'YoYo 驗光師非常專業，我配了很多年眼鏡都有暈眩問題，來這裡重新驗光後完全解決了！終於知道原來是散光軸向一直配錯。',
-        },
-        {
-          name: '陳媽媽',
-          tag: '兒童近視追蹤',
-          stars: 5,
-          text: '孩子配戴離焦鏡片追蹤快一年了，定期回診都很仔細，度數變化都有詳細紀錄說明，驗光師每次也都有完整分析，非常放心。',
-        },
-        {
-          name: '王先生',
-          tag: '蔡司鏡片',
-          stars: 5,
-          text: '在板橋店配了蔡司 Individual² 個人化鏡片，和之前的普通鏡片差很多，看東西更清晰，眼睛也不容易疲勞了。強烈推薦！',
-        },
-        {
-          name: '張小姐',
-          tag: '老花配鏡',
-          stars: 5,
-          text: '第一次配老花不知道要選什麼，YoYo 驗光師根據我的工作習慣推薦辦公室鏡片，比漸進鏡更適合我。完全不暈！',
-        },
-        {
-          name: '李先生',
-          tag: '高度近視',
-          stars: 5,
-          text: '高度近視 -1000 度以上，以前配鏡都是問題很多。在這裡驗光非常細心，還特別說明頂點距離的重要性，配完真的很舒服。',
-        },
-        {
-          name: '黃小姐',
-          tag: '新莊驗光',
-          stars: 5,
-          text: '在新莊住了很多年，終於找到一家真正專業的驗光所。不會一直推銷，只做適合你的選擇，這才是真正的專業服務。',
-        },
-      ].map(review => (
-        <div class="border-t border-brand-ink/15 pt-7">
-          <div class="flex items-center gap-0.5 mb-4">
-            {Array(review.stars).fill(0).map(() => <span class="text-brand-gold" style="font-size:14px">★</span>)}
+
+      <!-- 標題 + 評分總覽 -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Google 真實評價</span>
+          <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">新莊與板橋地區<br />的信賴選擇</h2>
+        </div>
+        <div class="flex gap-8">
+          <div id="rating-xinzhuang" class="text-center">
+            <div class="font-serif text-brand-ink" style="font-size:36px;font-weight:300;line-height:1">—</div>
+            <div class="flex justify-center gap-0.5 my-1" id="stars-xinzhuang"></div>
+            <div class="font-sans text-brand-ink-3" style="font-size:12px">新莊店</div>
           </div>
-          <p class="text-brand-ink-2 mb-5" style="font-size:17px;line-height:1.85">「{review.text}」</p>
-          <div class="flex items-center justify-between">
-            <span class="font-serif text-brand-ink" style="font-size:15px">{review.name}</span>
-            <span class="font-sans text-brand-ink-3 border border-brand-ink/15 px-2 py-0.5" style="font-size:12px;letter-spacing:0.06em">{review.tag}</span>
+          <div id="rating-banqiao" class="text-center">
+            <div class="font-serif text-brand-ink" style="font-size:36px;font-weight:300;line-height:1">—</div>
+            <div class="flex justify-center gap-0.5 my-1" id="stars-banqiao"></div>
+            <div class="font-sans text-brand-ink-3" style="font-size:12px">板橋店</div>
           </div>
         </div>
-      ))}
-    </div>
-    <p class="text-brand-ink-3 text-center mt-8" style="font-size:13px">* 以上為顧客真實回饋，保護隱私僅顯示姓氏</p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-7">
-      <a href="https://share.google/rMxJYqYZH6fR4QwrS" target="_blank" rel="noopener noreferrer"
-        class="font-sans flex items-center justify-center gap-2 border border-brand-ink/25 text-brand-ink-2 px-6 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        新莊店 Google 評論
-      </a>
-      <a href="https://share.google/lReL1vW8OEUXZBeVy" target="_blank" rel="noopener noreferrer"
-        class="font-sans flex items-center justify-center gap-2 border border-brand-ink/25 text-brand-ink-2 px-6 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        板橋店 Google 評論
-      </a>
-    </div>
+      </div>
+
+      <!-- 評論卡片 -->
+      <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 載入中佔位 -->
+        {[1,2,3].map(() => (
+          <div class="border-t border-brand-ink/15 pt-7 animate-pulse">
+            <div class="h-3 bg-brand-ink/8 rounded mb-4 w-24"></div>
+            <div class="space-y-2 mb-5">
+              <div class="h-3 bg-brand-ink/8 rounded w-full"></div>
+              <div class="h-3 bg-brand-ink/8 rounded w-4/5"></div>
+              <div class="h-3 bg-brand-ink/8 rounded w-3/5"></div>
+            </div>
+            <div class="h-3 bg-brand-ink/8 rounded w-20"></div>
+          </div>
+        ))}
+      </div>
+
+      <!-- 按鈕 -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+        <a href="https://share.google/rMxJYqYZH6fR4QwrS" target="_blank" rel="noopener noreferrer"
+          class="font-sans flex items-center justify-center gap-2 border border-brand-ink/25 text-brand-ink-2 px-6 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          新莊店 Google 評論
+        </a>
+        <a href="https://share.google/lReL1vW8OEUXZBeVy" target="_blank" rel="noopener noreferrer"
+          class="font-sans flex items-center justify-center gap-2 border border-brand-ink/25 text-brand-ink-2 px-6 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          板橋店 Google 評論
+        </a>
+      </div>
+
     </div>
   </section>
+
+  <script>{`
+    const GOOGLE_G = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>';
+
+    function stars(n) {
+      return Array(5).fill(0).map((_, i) =>
+        '<span style="color:' + (i < n ? '#c9a84c' : '#d1c9bc') + ';font-size:14px">★</span>'
+      ).join('');
+    }
+
+    async function loadReviews() {
+      try {
+        const [rxRes, rbRes] = await Promise.all([
+          fetch('/api/google-reviews?store=xinzhuang'),
+          fetch('/api/google-reviews?store=banqiao'),
+        ]);
+        const rx = await rxRes.json();
+        const rb = await rbRes.json();
+
+        // 評分總覽
+        document.querySelector('#rating-xinzhuang div').textContent = rx.rating?.toFixed(1) || '—';
+        document.getElementById('stars-xinzhuang').innerHTML = stars(Math.round(rx.rating || 0));
+        document.querySelector('#rating-banqiao div').textContent = rb.rating?.toFixed(1) || '—';
+        document.getElementById('stars-banqiao').innerHTML = stars(Math.round(rb.rating || 0));
+
+        // 合併評論，新莊優先取 4 則，板橋取 2 則
+        const combined = [
+          ...(rx.reviews || []).slice(0, 4).map(r => ({ ...r, store: '新莊店' })),
+          ...(rb.reviews || []).slice(0, 2).map(r => ({ ...r, store: '板橋店' })),
+        ];
+
+        if (!combined.length) return;
+
+        document.getElementById('reviews-grid').innerHTML = combined.map(r => {
+          const shortText = r.text.length > 120 ? r.text.slice(0, 120) + '…' : r.text;
+          return \`
+            <div class="border-t border-brand-ink/15 pt-7">
+              <div class="flex items-center gap-2 mb-3">
+                \${r.photo ? \`<img src="\${r.photo}" alt="\${r.author}" class="w-8 h-8 rounded-full object-cover flex-shrink-0">\` : ''}
+                <div>
+                  <div class="font-sans text-brand-ink" style="font-size:14px;font-weight:500">\${r.author}</div>
+                  <div class="font-sans text-brand-ink-3" style="font-size:11px">\${r.store}・\${r.time}</div>
+                </div>
+                <span class="ml-auto flex-shrink-0">\${GOOGLE_G}</span>
+              </div>
+              <div class="flex gap-0.5 mb-3">\${stars(r.rating)}</div>
+              <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">「\${shortText}」</p>
+            </div>
+          \`;
+        }).join('');
+      } catch(e) {
+        console.error('Google Reviews load error:', e);
+      }
+    }
+
+    loadReviews();
+  `}</script>
 
   <!-- FAQ -->
   <section class="px-6 md:px-16 py-24 border-t border-brand-ink/10" style="background:#eee8da">
