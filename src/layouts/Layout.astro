@@ -220,25 +220,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         </div>
       </div>
     </div>
-    <!-- 累積人氣 -->
-    <div class="border-t border-brand-paper/10 text-center py-4">
-      <span class="font-sans text-brand-paper/30" style="font-size:13px;letter-spacing:0.08em">
-        累積人氣：<span id="hit-counter" class="text-brand-gold/50">10000</span>
-      </span>
-    </div>
-    <script>{`
-      // 基底 10000 + 每次造訪累加（session storage 防重複）
-      const BASE = 10000;
-      const key = 'bv_hits';
-      let hits = parseInt(localStorage.getItem(key) || BASE);
-      if (!sessionStorage.getItem('bv_counted')) {
-        hits += 1;
-        localStorage.setItem(key, hits);
-        sessionStorage.setItem('bv_counted', '1');
-      }
-      document.getElementById('hit-counter').textContent = hits.toLocaleString('zh-TW');
-    `}</script>
-
     <!-- 執照公示 + 免責聲明 -->
     <div class="border-t border-brand-paper/10 px-6 md:px-16 py-8">
       <div class="max-w-6xl mx-auto space-y-3">

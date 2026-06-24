@@ -78,27 +78,6 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- 跑馬燈 -->
-  <div class="overflow-hidden py-5 border-y border-brand-ink/8" style="background:#eee8da">
-    <div class="marquee-track flex gap-16 whitespace-nowrap" style="animation:marquee 28s linear infinite">
-      {Array(6).fill(0).map(() => (
-        <>
-          <span class="font-serif text-brand-ink/15 flex-shrink-0" style="font-size:clamp(48px,8vw,96px);font-weight:300;letter-spacing:0.05em">Beyond Visual</span>
-          <span class="font-sans text-brand-gold/30 flex-shrink-0 self-center" style="font-size:20px">✦</span>
-          <span class="font-serif text-brand-ink/15 flex-shrink-0" style="font-size:clamp(48px,8vw,96px);font-weight:300;letter-spacing:0.05em">能見度視覺中心</span>
-          <span class="font-sans text-brand-gold/30 flex-shrink-0 self-center" style="font-size:20px">✦</span>
-        </>
-      ))}
-    </div>
-  </div>
-  <style>{`
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-    .marquee-track { width: max-content; }
-  `}</style>
-
   <!-- 六宮格導覽 -->
   <section>
     <div class="grid grid-cols-2 md:grid-cols-3" style="height:clamp(420px,60vw,600px)">
