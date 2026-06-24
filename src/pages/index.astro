@@ -55,8 +55,13 @@ const faqSchema = {
   schema={faqSchema}
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-28 px-6">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="relative text-white py-28 px-6 overflow-hidden">
+    <picture>
+      <source srcset="/images/store-interior-hero.webp" type="image/webp" />
+      <img src="/images/store-interior-hero.webp" alt="能見度眼鏡新莊門市內部" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" width="1920" height="1080" />
+    </picture>
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-navy/90 to-[#0f1e33]/85"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">新北市新莊 × 板橋｜深耕在地 30 年專業驗光</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(32px,5.5vw,62px);font-weight:300">
         能見度眼鏡｜新莊驗光所 × 板橋眼鏡行<br /><span class="text-brand-gold">蔡司鏡片</span>｜多焦點鏡片｜兒童近視追蹤
