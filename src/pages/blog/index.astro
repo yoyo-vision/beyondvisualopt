@@ -5,31 +5,127 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+
+const latest = posts.slice(0, 3);
+
+const tagOrder = ['驗光知識', '鏡片知識', '多焦點鏡片', '老花配鏡', '兒童近視追蹤', '蔡司鏡片', '鏡架鏡框'];
+const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
+  (a, b) => tagOrder.indexOf(a) - tagOrder.indexOf(b)
+);
 ---
 <Layout
   title="視覺小知識｜YoYo 驗光師專欄｜多焦點鏡片 蔡司鏡片 兒童近視追蹤 高度近視｜能見度視覺中心 × 比泱驗光所 新莊板橋"
   description="能見度視覺中心 YoYo 驗光師分享：多焦點鏡片為什麼會暈、老花一定要配多焦點嗎、為什麼戴眼鏡會頭暈、蔡司鏡片值不值得、兒童近視追蹤完整指南。新莊驗光所推薦、板橋驗光首選。"
 >
-  <section class="bg-brand-navy text-white py-20 px-4 text-center">
-    <h1 class="text-4xl font-bold mb-4">視覺小知識</h1>
-    <p class="text-gray-300 text-lg max-w-2xl mx-auto">YoYo 驗光師的第一手視光知識，讓你在配鏡前就已經是半個行家。</p>
+  <!-- Hero -->
+  <section class="bg-brand-navy text-white py-20 px-6 text-center">
+    <h1 class="font-serif text-white mb-4" style="font-size:clamp(28px,5vw,48px);font-weight:300">視覺小知識</h1>
+    <p class="text-white/70 text-lg max-w-2xl mx-auto">YoYo 驗光師的第一手視光知識，讓你在配鏡前就已經是半個行家。</p>
   </section>
 
-  <section class="max-w-4xl mx-auto px-4 py-20">
-    <div class="space-y-6">
-      {posts.map(post => (
-        <a href={`/blog/${post.slug}`} class="block border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow hover:border-brand-navy group">
-          {post.data.image && (
-            <img src={post.data.image} alt={post.data.title} class="w-full h-48 object-cover rounded-xl mb-4" />
-          )}
-          <div class="flex items-center gap-3 mb-3">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <span class="text-gray-400 text-sm">{new Date(post.data.date).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-          </div>
-          <h2 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">{post.data.title}</h2>
-          <p class="text-gray-600 text-sm leading-relaxed">{post.data.excerpt}</p>
-        </a>
-      ))}
+  <!-- 最新資訊 -->
+  <section class="px-6 md:px-16 py-16" style="background:#eee8da">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between mb-10">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(20px,3vw,32px);font-weight:300">最新文章</h2>
+        <span class="font-sans text-brand-ink-3" style="font-size:13px">最近更新</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {latest.map(post => (
+          <a href={`/blog/${post.slug}`} class="bg-white border border-brand-ink/10 p-6 hover:shadow-md transition-shadow group block">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="font-sans text-brand-gold text-xs font-semibold px-2 py-1 border border-brand-gold">{post.data.tag}</span>
+              <span class="text-brand-ink-3 text-xs">{new Date(post.data.date).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            </div>
+            <h3 class="font-serif text-brand-ink mb-3 group-hover:text-brand-gold transition-colors" style="font-size:16px;font-weight:400;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 text-sm leading-relaxed line-clamp-3">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
+
+  <!-- 分類選單 + 文章列表 -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- 分類 tabs -->
+      <div class="flex flex-wrap gap-2 mb-10" id="tag-filters">
+        <button
+          data-tag="all"
+          class="tag-btn font-sans text-sm px-5 py-2 border transition-colors active"
+          style="border-color:var(--brand-navy);background:var(--brand-navy);color:white"
+        >全部</button>
+        {allTags.map(tag => (
+          <button
+            data-tag={tag}
+            class="tag-btn font-sans text-sm px-5 py-2 border border-brand-ink/30 text-brand-ink-3 hover:border-brand-navy hover:text-brand-navy transition-colors"
+          >{tag}</button>
+        ))}
+      </div>
+
+      <!-- 文章列表 -->
+      <div class="space-y-5" id="post-list">
+        {posts.map(post => (
+          <a
+            href={`/blog/${post.slug}`}
+            data-tag={post.data.tag}
+            class="post-item flex flex-col sm:flex-row gap-5 border border-brand-ink/10 bg-white p-6 hover:shadow-md transition-shadow group"
+          >
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="font-sans text-brand-gold text-xs font-semibold px-2 py-1 border border-brand-gold">{post.data.tag}</span>
+                <span class="text-brand-ink-3 text-xs">{new Date(post.data.date).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+              <h2 class="font-serif text-brand-ink mb-2 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:400;line-height:1.5">{post.data.title}</h2>
+              <p class="text-brand-ink-3 text-sm leading-relaxed">{post.data.excerpt}</p>
+            </div>
+            <div class="flex-shrink-0 self-center">
+              <span class="font-sans text-brand-navy text-sm">閱讀 →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- 沒有結果提示 -->
+      <p id="no-results" class="text-center text-brand-ink-3 py-12 hidden" style="font-size:15px">此分類目前沒有文章</p>
+
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll('.tag-btn');
+    const items = document.querySelectorAll('.post-item');
+    const noResults = document.getElementById('no-results');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.getAttribute('data-tag');
+
+        // 更新按鈕樣式
+        buttons.forEach(b => {
+          b.classList.remove('active');
+          b.style.background = '';
+          b.style.color = '';
+          b.style.borderColor = '';
+          b.classList.add('border-brand-ink/30', 'text-brand-ink-3');
+        });
+        btn.classList.add('active');
+        btn.style.background = 'var(--brand-navy, #1a2e4a)';
+        btn.style.color = 'white';
+        btn.style.borderColor = 'var(--brand-navy, #1a2e4a)';
+        btn.classList.remove('border-brand-ink/30', 'text-brand-ink-3');
+
+        // 篩選文章
+        let visible = 0;
+        items.forEach(item => {
+          const match = tag === 'all' || item.getAttribute('data-tag') === tag;
+          item.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+
+        noResults.classList.toggle('hidden', visible > 0);
+      });
+    });
+  </script>
 </Layout>
