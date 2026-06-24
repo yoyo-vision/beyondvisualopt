@@ -2,70 +2,181 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout
-  title="線上預約｜YoYo 驗光師｜多焦點鏡片 蔡司鏡片 兒童近視追蹤 高度近視眼鏡｜能見度視覺中心 × 比泱驗光所 新莊板橋"
-  description="預約能見度驗光人員：多焦點鏡片諮詢、蔡司鏡片個人化訂製、兒童近視追蹤評估、高度近視眼鏡配製。能見度視覺中心 × 比泱驗光所，新莊、板橋門市。"
+  title="線上預約｜YoYo 驗光師｜新莊板橋驗光所｜能見度眼鏡"
+  description="預約能見度眼鏡 YoYo 驗光師。多焦點鏡片諮詢、蔡司鏡片訂製、兒童近視追蹤、高度近視配鏡、數位疲勞評估。新莊中正路 × 板橋門市，45–60 分鐘完整評估。"
 >
-  <section class="bg-brand-navy text-white py-20 px-4 text-center">
-    <h1 class="text-4xl font-bold mb-4">線上預約</h1>
-    <p class="text-gray-300 text-lg max-w-2xl mx-auto">選擇你方便的時段，YoYo 驗光師會在預約時間準時為你服務。</p>
+  <!-- Hero -->
+  <section class="bg-brand-navy text-white py-20 px-6 text-center">
+    <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">新莊 × 板橋｜YoYo 驗光師</p>
+    <h1 class="font-serif text-white mb-5" style="font-size:clamp(30px,5vw,54px);font-weight:300">預約視覺評估</h1>
+    <p class="text-white/70 max-w-xl mx-auto" style="font-size:17px;line-height:1.85">
+      不是快速配鏡出貨。預約後，YoYo 驗光師會花 45–60 分鐘真正了解你的視覺狀況——從生活習慣到光學參數，每個細節都有意義。
+    </p>
   </section>
 
-  <section class="max-w-4xl mx-auto px-4 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-      <div class="bg-brand-light rounded-2xl p-6">
-        <h2 class="text-xl font-bold text-brand-navy mb-4">預約須知</h2>
-        <ul class="space-y-3 text-gray-600 text-sm">
-          <li class="flex gap-2"><span class="text-brand-gold">✦</span>首次驗光建議預留 60–90 分鐘</li>
-          <li class="flex gap-2"><span class="text-brand-gold">✦</span>攜帶目前配戴的眼鏡與舊處方箋（如有）</li>
-          <li class="flex gap-2"><span class="text-brand-gold">✦</span>前一晚充足睡眠，有助於調節力放鬆測量</li>
-          <li class="flex gap-2"><span class="text-brand-gold">✦</span>若需散瞳驗光，請安排不需自行開車的行程</li>
-          <li class="flex gap-2"><span class="text-brand-gold">✦</span>預約更動請於 24 小時前透過 LINE OA 告知</li>
-        </ul>
+  <!-- 預約前先了解 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">預約前</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,40px);font-weight:300">你可能想知道的幾件事</h2>
       </div>
-      <div class="bg-brand-light rounded-2xl p-6">
-        <h2 class="text-xl font-bold text-brand-navy mb-4">門市資訊</h2>
-        <div class="space-y-4 text-sm text-gray-600">
-          <div>
-            <p class="font-semibold text-brand-navy">新莊店（2023年成立）</p>
-            <p>能見度視覺中心 × 比泱驗光所</p>
-            <p>📍 新北市新莊區中正路419-1號</p>
-            <p>📞 02-2206-6700</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {[
+          {
+            num: '01',
+            title: '適合誰來預約？',
+            items: [
+              '配了眼鏡還是頭暈、看不清楚',
+              '想配多焦點漸進鏡片，不知從何開始',
+              '高度近視，想找人認真量測一次',
+              '孩子近視，想定期追蹤度數變化',
+              '長期盯螢幕，眼睛越來越累',
+              '想了解蔡司鏡片值不值得',
+            ]
+          },
+          {
+            num: '02',
+            title: '來之前準備什麼？',
+            items: [
+              '目前配戴的眼鏡（一定要帶）',
+              '舊的處方箋或度數紀錄（如有）',
+              '保留 60–90 分鐘的時間',
+              '前一晚充足睡眠，有助放鬆調節力',
+              '若需散瞳，請勿自行開車',
+              '有任何過去配鏡的不舒服，請告訴我們',
+            ]
+          },
+          {
+            num: '03',
+            title: '當天流程是什麼？',
+            items: [
+              '問診：了解視覺困擾與生活習慣',
+              '儀器檢測：角膜地形圖、自動驗光',
+              '主客觀驗光：確立精準處方',
+              '雙眼視覺評估：排查頭暈根源',
+              '鏡片選配說明：不推銷，只說明',
+              '鏡架試戴與調整確認',
+            ]
+          },
+        ].map(card => (
+          <div class="border-t-2 border-brand-gold pt-8">
+            <div class="font-sans text-brand-gold mb-3" style="font-size:12px;letter-spacing:0.2em">{card.num}</div>
+            <h3 class="font-serif text-brand-ink mb-5" style="font-size:19px;font-weight:400">{card.title}</h3>
+            <ul class="space-y-2">
+              {card.items.map(item => (
+                <li class="flex items-start gap-2 text-brand-ink-3" style="font-size:14px;line-height:1.6">
+                  <span class="text-brand-gold mt-1 flex-shrink-0" style="font-size:10px">✦</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div>
-            <p class="font-semibold text-brand-navy">板橋總店（1992年創立）</p>
-            <p>能見度眼鏡 × 能見度驗光所</p>
-            <p>📍 新北市板橋區</p>
-            <p>📞 02-2253-1246</p>
+        ))}
+      </div>
+
+      <!-- 門市資訊 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white border border-brand-ink/10 p-8">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-sans text-brand-gold font-semibold" style="font-size:12px;letter-spacing:0.1em">新莊店</span>
+            <span class="text-brand-ink/20">|</span>
+            <span class="font-sans text-brand-ink-3" style="font-size:12px">臨床驗光主力門市</span>
           </div>
-          <div class="pt-2 border-t border-gray-200">
-            <p>✉️ visibility.opticians@gmail.com</p>
+          <h3 class="font-serif text-brand-ink mb-4" style="font-size:18px;font-weight:400">能見度視覺中心 × 比泱驗光所</h3>
+          <div class="space-y-2 text-brand-ink-3 mb-5" style="font-size:14px;line-height:1.8">
+            <p>📍 新北市新莊區中正路 419-1 號</p>
+            <p>📞 <a href="tel:0222066700" class="hover:text-brand-navy transition-colors">02-2206-6700</a></p>
+            <p>🕐 週一至週六 11:00–20:00</p>
           </div>
+          <p class="text-brand-ink-3 border-t border-brand-ink/10 pt-4" style="font-size:13px;line-height:1.7">
+            捷運新莊站步行約 8 分鐘｜輔大站步行約 12 分鐘<br />門口有機車停車格，附近有停車場
+          </p>
+        </div>
+        <div class="bg-white border border-brand-ink/10 p-8">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-sans text-brand-gold font-semibold" style="font-size:12px;letter-spacing:0.1em">板橋店</span>
+            <span class="text-brand-ink/20">|</span>
+            <span class="font-sans text-brand-ink-3" style="font-size:12px">1992 年創立</span>
+          </div>
+          <h3 class="font-serif text-brand-ink mb-4" style="font-size:18px;font-weight:400">能見度眼鏡 × 能見度驗光所</h3>
+          <div class="space-y-2 text-brand-ink-3 mb-5" style="font-size:14px;line-height:1.8">
+            <p>📍 新北市板橋區雙十路二段 47 巷 28 號</p>
+            <p>📞 <a href="tel:0222531246" class="hover:text-brand-navy transition-colors">02-2253-1246</a></p>
+            <p>🕐 週一至週六 11:00–20:00</p>
+          </div>
+          <p class="text-brand-ink-3 border-t border-brand-ink/10 pt-4" style="font-size:13px;line-height:1.7">
+            捷運新埔站步行約 5 分鐘<br />附近有公共停車場
+          </p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Google Calendar 預約嵌入 -->
-    <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-      <div class="bg-brand-navy text-white px-6 py-4">
-        <h2 class="font-bold text-lg">選擇預約時段</h2>
-        <p class="text-gray-300 text-sm">透過 Google 行事曆即時選擇可用時段</p>
+  <!-- Google Calendar 預約 -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">線上預約</span>
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">選擇你方便的時段</h2>
+        <p class="text-brand-ink-3" style="font-size:15px">即時查看可用時段，確認後會收到 Email 通知</p>
       </div>
-      <iframe
-        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1lXrXscx77iubVQAfIa7rLHWENjNnnKO2BAQnDR2keUDwAWEbvWzodaP06Jqq8syfxCFuB9YAQ?gv=true"
-        style="border: 0; width: 100%; height: 600px;"
-        frameborder="0"
-        title="能見度視覺中心線上預約"
-      ></iframe>
-    </div>
-
-    <!-- LINE OA 備用 -->
-    <div class="mt-8 text-center">
-      <p class="text-gray-500 mb-4">或透過 LINE OA 直接聯絡我們</p>
-      <a href="https://lin.ee/SoWj9Ft"
-        class="inline-flex items-center gap-2 bg-[#06C755] text-white font-bold px-8 py-4 rounded-full hover:bg-[#05a847] transition-colors">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        LINE OA 預約
-      </a>
+      <div class="overflow-hidden border border-brand-ink/10 bg-white shadow-sm">
+        <iframe
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1lXrXscx77iubVQAfIa7rLHWENjNnnKO2BAQnDR2keUDwAWEbvWzodaP06Jqq8syfxCFuB9YAQ?gv=true"
+          style="border: 0; width: 100%; height: 600px;"
+          frameborder="0"
+          title="能見度視覺中心線上預約"
+        ></iframe>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-brand-ink-3 mb-5" style="font-size:15px">也可以透過 LINE OA 預約或詢問</p>
+        <a href="https://lin.ee/SoWj9Ft"
+          class="inline-flex items-center gap-2 font-sans font-bold px-8 py-4 transition-colors text-white"
+          style="background:#06C755;font-size:15px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.630 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINE OA 聯絡我們
+        </a>
+      </div>
     </div>
   </section>
+
+  <!-- 預約 FAQ -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">預約常見問題</h2>
+      </div>
+      <div class="space-y-6">
+        {[
+          {
+            q: '第一次去需要預約嗎？',
+            a: '建議預約。YoYo 驗光師採一對一接診，現場候診時間不固定。預約可確保你有完整的 45–60 分鐘，不被插隊或趕時間。'
+          },
+          {
+            q: '只是想諮詢，不確定要不要配眼鏡，可以來嗎？',
+            a: '完全可以。很多人第一次來只是想搞清楚自己的視覺狀況——「我的眼鏡是不是配錯了」、「我需不需要多焦點」。諮詢不代表一定要消費，評估清楚才決定。'
+          },
+          {
+            q: '驗光費用是多少？',
+            a: '驗光本身不另外收費。費用在於後續選配的鏡片與鏡架。YoYo 驗光師會在評估後說明各選項的價格區間，你再決定是否進行。'
+          },
+          {
+            q: '可以帶孩子來嗎？幾歲適合？',
+            a: '建議 6 歲以上的孩子可以進行完整視力評估。年齡較小的孩子若有視覺異常疑慮，請先諮詢眼科醫師進行散瞳驗光後，再來評估鏡片配適需求。'
+          },
+          {
+            q: '預約後臨時有事可以更改嗎？',
+            a: '可以。請於預約時間 24 小時前透過 LINE OA 告知，我們會協助安排更換時段。'
+          },
+        ].map((faq, i) => (
+          <div class="border-t border-brand-ink/15 pt-6">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">Q{i + 1}. {faq.q}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
 </Layout>
