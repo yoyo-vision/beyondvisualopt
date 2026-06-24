@@ -78,6 +78,54 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- 跑馬燈 -->
+  <div class="overflow-hidden py-5 border-y border-brand-ink/8" style="background:#eee8da">
+    <div class="marquee-track flex gap-16 whitespace-nowrap" style="animation:marquee 28s linear infinite">
+      {Array(6).fill(0).map(() => (
+        <>
+          <span class="font-serif text-brand-ink/15 flex-shrink-0" style="font-size:clamp(48px,8vw,96px);font-weight:300;letter-spacing:0.05em">Beyond Visual</span>
+          <span class="font-sans text-brand-gold/30 flex-shrink-0 self-center" style="font-size:20px">✦</span>
+          <span class="font-serif text-brand-ink/15 flex-shrink-0" style="font-size:clamp(48px,8vw,96px);font-weight:300;letter-spacing:0.05em">能見度視覺中心</span>
+          <span class="font-sans text-brand-gold/30 flex-shrink-0 self-center" style="font-size:20px">✦</span>
+        </>
+      ))}
+    </div>
+  </div>
+  <style>{`
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-track { width: max-content; }
+  `}</style>
+
+  <!-- 六宮格導覽 -->
+  <section>
+    <div class="grid grid-cols-2 md:grid-cols-3" style="height:clamp(420px,60vw,600px)">
+      {[
+        { label: '關於我們', sub: 'Our Story',    href: '/about',    img: '/images/store-xinzhuang.jpg' },
+        { label: '服務項目', sub: 'Services',     href: '/services', img: '/images/yoyo-optometrist.jpg' },
+        { label: '鏡框品牌', sub: 'Frames',       href: '/frames',   img: '/images/store-banqiao.jpg' },
+        { label: '鏡片種類', sub: 'Lenses',       href: '/lenses',   img: '' },
+        { label: '視覺小知識', sub: 'Knowledge',  href: '/blog',     img: '/images/store-xinzhuang.jpg' },
+        { label: '立即預約', sub: 'Book Now',     href: '/booking',  img: '/images/store-banqiao.jpg' },
+      ].map(item => (
+        <a href={item.href} class="relative overflow-hidden group block" style="height:100%">
+          {item.img
+            ? <img src={item.img} alt={item.label} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            : <div class="w-full h-full" style="background:linear-gradient(135deg,#1a2f4e 0%,#0f1e33 100%)"></div>
+          }
+          <div class="absolute inset-0 transition-opacity duration-300" style="background:rgba(10,18,30,0.42)" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <span class="font-serif mb-1 tracking-widest" style="font-size:clamp(16px,2.2vw,26px);font-weight:300;letter-spacing:0.2em">{item.label}</span>
+            <span class="font-sans text-white/50 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.25em">{item.sub}</span>
+            <span class="mt-4 w-6 border-t border-brand-gold/60 transition-all duration-300 group-hover:w-12"></span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
   <!-- 核心優勢 -->
   <section class="px-6 md:px-16 py-24" style="background:#eee8da">
     <div class="max-w-6xl mx-auto">
