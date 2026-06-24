@@ -13,7 +13,7 @@ export async function onRequest(context) {
   }
 
   const apiKey = context.env.GOOGLE_PLACES_API_KEY;
-  const fields = 'rating,userRatingCount,reviews,photos';
+  const fields = 'rating,userRatingCount,reviews,photos.name';
   const url = `https://places.googleapis.com/v1/places/${placeId}?languageCode=zh-TW`;
 
   const res = await fetch(url, {
@@ -50,7 +50,7 @@ export async function onRequest(context) {
   }), {
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=3600', // 快取 1 小時
+      'Cache-Control': 'no-store',
       'Access-Control-Allow-Origin': '*',
     },
   });
