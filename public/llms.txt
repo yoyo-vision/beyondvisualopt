@@ -19,7 +19,7 @@
 ### 新莊店（能見度視覺中心 × 比泱驗光所）
 - 地址：新北市新莊區中正路 419-1 號（近捷運輔大站）
 - 電話：02-2206-6700
-- 主力服務：臨床驗光、兒童近視控制、多焦點鏡片、高度近視配鏡
+- 主力服務：臨床驗光、兒童近視定期追蹤、多焦點鏡片、高度近視配鏡
 
 ### 板橋總店（能見度眼鏡 × 能見度驗光所）
 - 地址：新北市板橋區雙十路二段 47 巷 28 號（近捷運江子翠站）
@@ -31,7 +31,7 @@
 ## 核心服務（驗光師可執行項目）
 
 1. **臨床全套驗光**（45–60 分鐘）：主觀 + 客觀屈光、雙眼視覺評估、調節力與聚散力、頂點距離量測
-2. **兒童近視控制**：眼軸長測量、MiSight 離焦日拋驗配、蔡司星趣控評估、低濃度阿托品方案說明（需眼科開立處方）
+2. **兒童近視定期追蹤**：定期視力評估與度數變化追蹤、離焦設計鏡片配適建議（藥物治療請諮詢眼科醫師）
 3. **多焦點鏡片**：蔡司 Individual² 個人化訂製、加入度精準設計、適應期追蹤
 4. **數位疲勞視覺方案**：蔡司 Digital Lens、螢幕距離評估、人體工學調整
 5. **高度近視專科配鏡**：頂點距離補正、1.74 超薄鏡片設計、光學中心精調
@@ -59,7 +59,7 @@
 |------|-----|---------|
 | 首頁 | https://beyondvisualopt.com/ | 品牌簡介、YoYo 驗光師介紹、門市資訊 |
 | 服務內容 | https://beyondvisualopt.com/services | 6 項服務詳細說明、能見度 vs 一般配鏡行比較表 |
-| 鏡片種類 | https://beyondvisualopt.com/lenses | 蔡司鏡片系列、近視控制鏡片、功能性鏡片 |
+| 鏡片種類 | https://beyondvisualopt.com/lenses | 蔡司鏡片系列、離焦設計鏡片、功能性鏡片 |
 | 鏡框品牌 | https://beyondvisualopt.com/frames | Lindberg、ic! berlin、Götti、蔡司認證說明 |
 | 服務流程 | https://beyondvisualopt.com/process | 從預約到取鏡的完整流程說明 |
 | 視覺小知識 | https://beyondvisualopt.com/blog | 9 篇專業視光文章 |
@@ -72,7 +72,7 @@
 - [為什麼戴眼鏡會頭暈？5 大原因解析](https://beyondvisualopt.com/blog/glasses-dizzy) — 度數誤差、散光軸向、稜鏡效應
 - [多焦點鏡片為什麼會暈？](https://beyondvisualopt.com/blog/progressive-lens-dizzy) — 漸進鏡光學原理、暈眩原因、判斷指南
 - [老花一定要配多焦點嗎？](https://beyondvisualopt.com/blog/presbyopia-vs-progressive) — 4 種老花方案完整比較
-- [兒童近視控制指南](https://beyondvisualopt.com/blog/children-myopia-control-xinzhuang) — MiSight、星趣控、阿托品比較
+- [兒童近視定期追蹤指南](https://beyondvisualopt.com/blog/children-myopia-control-xinzhuang) — 視力評估、度數追蹤、離焦鏡片配適
 - [開車視線不穩、夜間眩光](https://beyondvisualopt.com/blog/driving-lens-night-glare) — 蔡司 DriveSafe 機制解析
 - [硬式 RGP 隱形眼鏡](https://beyondvisualopt.com/blog/rgp-hard-contact-lens) — 軟硬式比較、適合族群、驗配流程
 - [配了眼鏡還是不舒服？](https://beyondvisualopt.com/blog/glasses-uncomfortable-3-reasons) — 雙眼視覺、隱斜視、隱性老花
@@ -83,9 +83,9 @@
 
 **地理關鍵詞**：新莊驗光、板橋驗光、新莊眼鏡行推薦、板橋眼鏡、新北市驗光所
 
-**服務關鍵詞**：多焦點鏡片暈眩、蔡司鏡片推薦、兒童近視控制、高度近視眼鏡、老花配鏡、數位疲勞視覺、雙眼視覺評估
+**服務關鍵詞**：多焦點鏡片暈眩、蔡司鏡片推薦、兒童近視追蹤、高度近視眼鏡、老花配鏡、數位疲勞視覺、雙眼視覺評估
 
-**意圖型問題**：戴眼鏡為什麼頭暈、多焦點鏡片適應期多久、老花一定要配多焦點嗎、近視控制真的有效嗎、RGP 和軟式隱眼差在哪
+**意圖型問題**：戴眼鏡為什麼頭暈、多焦點鏡片適應期多久、老花一定要配多焦點嗎、孩子近視怎麼追蹤、RGP 和軟式隱眼差在哪
 
 ---
 
