@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Optician",
+  "name": "能見度視覺中心 × 比泱驗光所",
+  "alternateName": ["比泱驗光所", "新莊驗光所", "新莊眼鏡行"],
+  "url": "https://beyondvisualopt.com/xinzhuang",
+  "telephone": "+886-2-2206-6700",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "中正路419-1號",
+    "addressLocality": "新莊區",
+    "addressRegion": "新北市",
+    "postalCode": "242",
+    "addressCountry": "TW"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.0338,
+    "longitude": 121.4487
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "11:00", "closes": "18:00" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "221",
+    "bestRating": "5"
+  },
+  "hasMap": "https://maps.google.com/?q=新北市新莊區中正路419-1號",
+  "sameAs": ["https://share.google/rMxJYqYZH6fR4QwrS"]
+};
+---
+<Layout
+  title="新莊驗光所｜新莊眼鏡行推薦｜能見度視覺中心 × 比泱驗光所｜YoYo 驗光師"
+  description="新莊驗光所首選：能見度視覺中心 × 比泱驗光所，新北市新莊區中正路419-1號。YoYo 驗光師主理，蔡司鏡片、多焦點漸進鏡片、兒童近視追蹤、高度近視配鏡。捷運新莊站步行8分鐘。"
+  keywords="新莊驗光,新莊驗光所,新莊眼鏡行,新莊配眼鏡,新莊眼鏡行推薦,新莊蔡司鏡片,新莊多焦點鏡片,新莊兒童近視,比泱驗光所,能見度視覺中心,YoYo驗光師"
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="bg-brand-navy text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">新北市新莊區</p>
+      <h1 class="font-serif text-white mb-5" style="font-size:clamp(28px,5vw,54px);font-weight:300">
+        新莊驗光所<br /><span style="font-size:0.65em;opacity:0.8">能見度視覺中心 × 比泱驗光所</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mb-8" style="font-size:17px;line-height:1.85">
+        新莊區在地專業驗光所。由驗光師鄭家侑（YoYo）主理，提供臨床等級驗光、蔡司鏡片、多焦點漸進鏡片、兒童近視定期追蹤與 RGP 硬式隱形眼鏡配適服務。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/booking" class="font-sans font-bold px-8 py-4 transition-colors text-brand-navy" style="background:#c9a96e;font-size:15px">立即預約</a>
+        <a href="tel:0222066700" class="font-sans font-semibold px-8 py-4 border border-white/40 text-white hover:bg-white/10 transition-colors" style="font-size:15px">📞 02-2206-6700</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 交通資訊 -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">門市資訊</span>
+          <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(22px,3vw,36px);font-weight:300">新莊店怎麼到？</h2>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">🚇</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">捷運</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">新莊線 <strong>新莊站</strong> 步行約 8 分鐘<br />新莊線 <strong>輔大站</strong> 步行約 12 分鐘</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">🚗</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">開車 / 機車</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">門口有機車停車格<br />附近有新莊中正路停車場（步行 3 分鐘）</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">📍</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">地址</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">新北市新莊區中正路 419-1 號</p>
+                <a href="https://maps.google.com/?q=新北市新莊區中正路419-1號" target="_blank" rel="noopener" class="text-brand-gold underline" style="font-size:13px">Google Maps 導航 →</a>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">🕐</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">營業時間</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">週一至週五 11:00–20:00<br />週六 11:00–18:00<br />週日 公休</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <picture>
+            <source srcset="/images/store-xinzhuang-exterior.webp" type="image/webp" />
+            <img src="/images/store-xinzhuang-exterior.webp" alt="能見度視覺中心比泱驗光所 新莊中正路419-1號 門市外觀" width="600" height="400" class="w-full object-cover" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新莊店特色服務 -->
+  <section class="px-6 md:px-16 py-16" style="background:#eee8da">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">新莊店服務特色</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,38px);font-weight:300">臨床驗光主力門市</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { icon: '👁️', title: '完整雙眼視覺評估', desc: '雙眼協調能力、調節力、聚散力全面評估，找出一般驗光容易漏掉的視覺問題根源。' },
+          { icon: '🔬', title: '角膜地形圖檢測', desc: 'NIDEK CA-800 角膜地形圖儀，精確量測角膜弧度，用於 RGP 驗配評估與高度散光分析。' },
+          { icon: '🏆', title: '蔡司 Zeiss 簽約經銷', desc: '蔡司台灣正式簽約門市。Individual² 個人化訂製、多焦點鏡片、數位防護系列均可提供。' },
+          { icon: '👶', title: '兒童近視定期追蹤', desc: '6 歲以上兒童完整視力評估與度數變化追蹤，搭配離焦設計鏡片配適建議，協助家長掌握視力發展趨勢。' },
+          { icon: '👓', title: '高度近視精密配鏡', desc: '頂點距離補正計算、光學中心精準定位、個人化鏡片設計，讓高度近視配鏡不再是猜謎題。' },
+          { icon: '💻', title: '數位疲勞解決方案', desc: '針對醫師、工程師、業務等長時間用眼族群，規劃適合工作情境的鏡片配置。' },
+        ].map(item => (
+          <div class="bg-white p-7 border border-brand-ink/10">
+            <div class="text-3xl mb-4">{item.icon}</div>
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">{item.title}</h3>
+            <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見問題 -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(22px,3vw,36px);font-weight:300">新莊驗光常見問題</h2>
+      <div class="space-y-6">
+        {[
+          { q: '新莊比泱驗光所在哪裡？', a: '位於新北市新莊區中正路 419-1 號，捷運新莊站步行約 8 分鐘，輔大站步行約 12 分鐘。門口有機車停車格，附近有停車場。' },
+          { q: '新莊這裡有蔡司鏡片嗎？', a: '有。能見度視覺中心是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含 Individual² 個人化訂製鏡片。' },
+          { q: '新莊哪裡有多焦點漸進鏡片可以驗配？', a: '比泱驗光所提供完整的多焦點漸進鏡片驗配服務，包含加入度評估、配鏡高度量測與適應期追蹤，由 YoYo 驗光師親自接診。' },
+          { q: '新莊孩子的近視可以追蹤嗎？', a: '可以。新莊店提供 6 歲以上兒童的定期視力評估與度數追蹤，搭配離焦鏡片配適建議。藥物相關治療請諮詢眼科醫師。' },
+        ].map((faq, i) => (
+          <div class="border-t border-brand-ink/15 pt-6">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:16px;font-weight:400">Q{i+1}. {faq.q}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy py-16 px-6 text-center text-white">
+    <h2 class="font-serif text-white mb-4" style="font-size:clamp(22px,3vw,36px);font-weight:300">預約新莊店視覺評估</h2>
+    <p class="text-white/70 mb-8 max-w-xl mx-auto" style="font-size:16px">一對一接診，YoYo 驗光師親自評估。建議預留 60–90 分鐘。</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/booking" class="font-sans font-bold px-8 py-4 transition-colors text-brand-navy" style="background:#c9a96e;font-size:15px">線上預約</a>
+      <a href="tel:0222066700" class="font-sans font-semibold px-8 py-4 border border-white/40 text-white hover:bg-white/10 transition-colors" style="font-size:15px">02-2206-6700</a>
+    </div>
+  </section>
+</Layout>

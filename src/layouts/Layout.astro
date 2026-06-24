@@ -143,7 +143,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           "postalCode": "220",
           "addressCountry": "TW"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.0108,
+          "longitude": 121.4614
+        },
         "hasCredential": "新北府板衛驗光字第 5Y31010039 號",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "47",
+          "bestRating": "5"
+        },
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -275,6 +286,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div>
         <h3 class="font-sans text-brand-paper/60 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">快速連結</h3>
         <ul class="text-brand-paper/50 space-y-2" style="font-size:15px">
+          <li><a href="/xinzhuang" class="hover:text-brand-paper transition-colors">新莊驗光所</a></li>
+          <li><a href="/banqiao" class="hover:text-brand-paper transition-colors">板橋眼鏡行</a></li>
           <li><a href="/services" class="hover:text-brand-paper transition-colors">服務內容</a></li>
           <li><a href="/blog" class="hover:text-brand-paper transition-colors">視覺小知識</a></li>
           <li><a href="/booking" class="hover:text-brand-paper transition-colors">線上預約</a></li>

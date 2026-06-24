@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Optician",
+  "name": "能見度眼鏡 × 能見度驗光所",
+  "alternateName": ["能見度驗光所", "板橋驗光所", "板橋眼鏡行"],
+  "url": "https://beyondvisualopt.com/banqiao",
+  "telephone": "+886-2-2253-1246",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "雙十路二段47巷28號",
+    "addressLocality": "板橋區",
+    "addressRegion": "新北市",
+    "postalCode": "220",
+    "addressCountry": "TW"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.0108,
+    "longitude": 121.4614
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "11:00", "closes": "18:00" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47",
+    "bestRating": "5"
+  },
+  "hasMap": "https://maps.google.com/?q=新北市板橋區雙十路二段47巷28號",
+  "sameAs": ["https://share.google/lReL1vW8OEUXZBeVy"]
+};
+---
+<Layout
+  title="板橋驗光所｜板橋眼鏡行推薦｜能見度眼鏡 × 能見度驗光所｜蔡司鏡片"
+  description="板橋驗光所首選：能見度眼鏡 × 能見度驗光所，新北市板橋區雙十路二段47巷28號。1992年創立，蔡司 Zeiss 簽約經銷，多焦點鏡片、老花配鏡、高度近視眼鏡。捷運新埔站步行5分鐘。"
+  keywords="板橋驗光,板橋驗光所,板橋眼鏡行,板橋配眼鏡,板橋眼鏡行推薦,板橋蔡司鏡片,板橋多焦點鏡片,板橋老花眼鏡,能見度驗光所,能見度眼鏡板橋"
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="bg-brand-navy text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">新北市板橋區｜1992 年創立</p>
+      <h1 class="font-serif text-white mb-5" style="font-size:clamp(28px,5vw,54px);font-weight:300">
+        板橋眼鏡行<br /><span style="font-size:0.65em;opacity:0.8">能見度眼鏡 × 能見度驗光所</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mb-8" style="font-size:17px;line-height:1.85">
+        板橋區在地深耕超過 30 年的眼鏡與驗光品牌。蔡司 Zeiss 簽約經銷商，提供多焦點漸進鏡片、老花配鏡、蔡司個人化訂製鏡片與高度近視眼鏡服務。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/booking" class="font-sans font-bold px-8 py-4 transition-colors text-brand-navy" style="background:#c9a96e;font-size:15px">立即預約</a>
+        <a href="tel:0222531246" class="font-sans font-semibold px-8 py-4 border border-white/40 text-white hover:bg-white/10 transition-colors" style="font-size:15px">📞 02-2253-1246</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 交通資訊 -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">門市資訊</span>
+          <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(22px,3vw,36px);font-weight:300">板橋店怎麼到？</h2>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">🚇</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">捷運</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">板南線 <strong>新埔站</strong> 步行約 5 分鐘</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">🚗</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">開車 / 機車</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">附近有公共停車場（雙十路停車場，步行約 3 分鐘）</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">📍</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">地址</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">新北市板橋區雙十路二段 47 巷 28 號</p>
+                <a href="https://maps.google.com/?q=新北市板橋區雙十路二段47巷28號" target="_blank" rel="noopener" class="text-brand-gold underline" style="font-size:13px">Google Maps 導航 →</a>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="text-brand-gold text-xl flex-shrink-0">🕐</span>
+              <div>
+                <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">營業時間</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">週一至週五 11:00–20:00<br />週六 11:00–18:00<br />週日 公休</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <picture>
+            <source srcset="/images/store-banqiao.webp" type="image/webp" />
+            <img src="/images/store-banqiao.jpg" alt="能見度眼鏡 能見度驗光所 板橋雙十路二段 門市外觀" width="600" height="400" class="w-full object-cover" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 板橋店特色服務 -->
+  <section class="px-6 md:px-16 py-16" style="background:#eee8da">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">板橋店服務特色</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,38px);font-weight:300">30 年在地配鏡經驗</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { icon: '🏆', title: '蔡司 Zeiss 簽約經銷', desc: '板橋區蔡司正式簽約門市。Individual² 個人化鏡片、多焦點漸進鏡片、DriveSafe 夜間駕車鏡片均可諮詢。' },
+          { icon: '👓', title: '多焦點漸進鏡片', desc: '老花初期至進階配鏡，提供多種等級漸進鏡片選擇，說清楚每個選項的差異再讓你決定。' },
+          { icon: '📐', title: '高度近視精密配鏡', desc: '高度近視需要精準的光學中心定位與頂點距離評估，不是選個折射率最高的就好。' },
+          { icon: '🌙', title: '夜間視覺改善', desc: '針對夜間駕車眩光、暗處視力模糊等問題，提供適合的鏡片設計建議。' },
+          { icon: '🇩🇪', title: '歐洲精品鏡架選配', desc: '精選歐洲設計師鏡架，提供完整鏡架調整服務，確保每副眼鏡配戴舒適。' },
+          { icon: '🔄', title: '鏡片更換 / 舊框新鏡', desc: '原有鏡架喜歡但鏡片度數變了？可提供鏡片更換服務，不一定要換整副。' },
+        ].map(item => (
+          <div class="bg-white p-7 border border-brand-ink/10">
+            <div class="text-3xl mb-4">{item.icon}</div>
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">{item.title}</h3>
+            <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見問題 -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(22px,3vw,36px);font-weight:300">板橋配眼鏡常見問題</h2>
+      <div class="space-y-6">
+        {[
+          { q: '板橋能見度驗光所在哪裡？', a: '位於新北市板橋區雙十路二段 47 巷 28 號，捷運板南線新埔站步行約 5 分鐘。' },
+          { q: '板橋有蔡司鏡片可以配嗎？', a: '有。能見度眼鏡板橋店是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含多焦點漸進鏡片與個人化訂製。' },
+          { q: '板橋老花眼鏡哪裡配比較專業？', a: '能見度驗光所提供完整的老花配鏡諮詢，包含加入度評估、鏡片選配說明（單焦老花鏡、辦公室鏡片、多焦點漸進鏡片），不推銷最貴的，只推薦最適合的。' },
+          { q: '板橋高度近視可以配眼鏡嗎？', a: '可以。高度近視配鏡需要頂點距離補正與光學中心精準定位，能見度眼鏡板橋店提供完整的高度近視配鏡評估服務。' },
+        ].map((faq, i) => (
+          <div class="border-t border-brand-ink/15 pt-6">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:16px;font-weight:400">Q{i+1}. {faq.q}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy py-16 px-6 text-center text-white">
+    <h2 class="font-serif text-white mb-4" style="font-size:clamp(22px,3vw,36px);font-weight:300">預約板橋店配鏡諮詢</h2>
+    <p class="text-white/70 mb-8 max-w-xl mx-auto" style="font-size:16px">30 年在地配鏡經驗，蔡司鏡片專業諮詢，歡迎預約或直接來電。</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/booking" class="font-sans font-bold px-8 py-4 transition-colors text-brand-navy" style="background:#c9a96e;font-size:15px">線上預約</a>
+      <a href="tel:0222531246" class="font-sans font-semibold px-8 py-4 border border-white/40 text-white hover:bg-white/10 transition-colors" style="font-size:15px">02-2253-1246</a>
+    </div>
+  </section>
+</Layout>
