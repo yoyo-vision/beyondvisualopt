@@ -2,10 +2,11 @@
 export interface Props {
   title: string;
   description: string;
+  keywords?: string;
   image?: string;
   schema?: object;
 }
-const { title, description, image = '/og-image.jpg', schema } = Astro.props;
+const { title, description, keywords, image = '/og-image.jpg', schema } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
@@ -14,6 +15,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <meta name="author" content="鄭家侑（YoYo）・能見度視覺中心" />
+  <meta name="publisher" content="能見度視覺中心 × 比泱驗光所" />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="b9R-zvmjM3wN6sH5QabENei5LBkcg4sKtx3zIv0Jijw" />
   <link rel="canonical" href={canonicalURL} />
