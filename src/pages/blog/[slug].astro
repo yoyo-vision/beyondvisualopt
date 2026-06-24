@@ -4,11 +4,21 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post, allPosts: posts } }));
 }
 
-const { post } = Astro.props;
+const { post, allPosts } = Astro.props;
 const { Content } = await post.render();
+
+// 同標籤優先，其次其他文章，排除自己，最多 6 篇
+const related = allPosts
+  .filter(p => p.slug !== post.slug)
+  .sort((a, b) => {
+    const sameTagA = a.data.tag === post.data.tag ? 1 : 0;
+    const sameTagB = b.data.tag === post.data.tag ? 1 : 0;
+    return sameTagB - sameTagA;
+  })
+  .slice(0, 6);
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -27,7 +37,7 @@ const articleSchema = {
   },
   "description": post.data.excerpt,
   "image": post.data.image || "https://beyondvisualopt.com/og-image.jpg",
-  "keywords": "多焦點鏡片,蔡司鏡片,兒童近視控制,高度近視眼鏡,新莊驗光,板橋驗光,新莊驗光所推薦,新北市驗光所,能見度視覺中心,比泱驗光所,YoYo驗光師"
+  "keywords": "多焦點鏡片,蔡司鏡片,兒童近視控制,高度近視眼鏡,新莊驗光,板橋驗光,能見度視覺中心,比泱驗光所,YoYo驗光師"
 };
 ---
 <Layout
@@ -35,73 +45,236 @@ const articleSchema = {
   description={`${post.data.excerpt} 能見度視覺中心 YoYo 驗光師，新莊驗光所推薦、板橋驗光首選。`}
   schema={articleSchema}
 >
-  <article class="max-w-3xl mx-auto px-4 py-16">
-    <div class="mb-8">
-      <div class="flex items-center gap-3 mb-4">
-        <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-        <span class="text-gray-400 text-sm">{post.data.date} · 能見度視覺中心 YoYo 驗光師</span>
-      </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight mb-4">{post.data.title}</h1>
-      <p class="text-gray-500 text-lg leading-relaxed">{post.data.excerpt}</p>
+  <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+
+      <!-- ── 主文區 ── -->
+      <article class="w-full lg:flex-1 min-w-0">
+
+        <!-- 文章 header -->
+        <div class="mb-8 pb-8 border-b border-gray-100">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <span class="text-gray-400 text-sm">{post.data.date} · YoYo 驗光師</span>
+          </div>
+          <h1 class="font-serif text-brand-navy leading-tight mb-5" style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.3">{post.data.title}</h1>
+          <p class="text-gray-500 leading-relaxed" style="font-size:17px;line-height:1.8">{post.data.excerpt}</p>
+        </div>
+
+        <!-- 封面圖 -->
+        {post.data.image && (
+          <img src={post.data.image} alt={post.data.title} class="w-full h-64 object-cover rounded-2xl mb-10" />
+        )}
+
+        <!-- YouTube -->
+        {post.data.youtube && (
+          <div class="mb-10 rounded-2xl overflow-hidden aspect-video">
+            <iframe
+              src={`https://www.youtube.com/embed/${post.data.youtube}`}
+              title={post.data.title}
+              class="w-full h-full"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        )}
+
+        <!-- 文章內文 -->
+        <div class="article-body">
+          <Content />
+        </div>
+
+        <!-- Instagram -->
+        {post.data.instagram && (
+          <div class="mt-10 p-6 bg-brand-light rounded-2xl text-center">
+            <p class="text-sm text-gray-500 mb-3">📸 追蹤我們的 Instagram</p>
+            <a href={post.data.instagram} target="_blank" rel="noopener noreferrer"
+              class="text-brand-navy font-semibold hover:text-brand-gold transition-colors">
+              查看 Instagram 貼文 →
+            </a>
+          </div>
+        )}
+
+        <!-- CTA -->
+        <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
+          <h2 class="text-xl font-bold mb-3">還有問題？歡迎預約 YoYo 驗光師</h2>
+          <p class="text-gray-300 mb-6" style="font-size:15px">能見度視覺中心（新莊比泱驗光所 × 板橋店）｜新北市驗光所推薦首選</p>
+          <a href="/booking" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+            立即線上預約 →
+          </a>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a href="/blog" class="text-brand-navy font-semibold hover:underline text-sm">← 回到視覺小知識</a>
+        </div>
+      </article>
+
+      <!-- ── 右側欄 ── -->
+      <aside class="w-full lg:w-72 xl:w-80 shrink-0 lg:sticky lg:top-24">
+
+        <!-- 相關話題 -->
+        <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden mb-6">
+          <div class="bg-brand-navy text-white px-5 py-3">
+            <h3 class="font-bold text-sm tracking-wide">相關話題文章</h3>
+          </div>
+          <ul class="divide-y divide-gray-100">
+            {related.map(p => (
+              <li>
+                <a href={`/blog/${p.slug}`}
+                  class="flex items-start gap-3 px-5 py-4 hover:bg-brand-light transition-colors group">
+                  <span class="text-brand-gold mt-0.5 shrink-0 text-sm">▶</span>
+                  <div class="min-w-0">
+                    <p class="text-brand-navy text-sm font-medium leading-snug group-hover:text-brand-gold transition-colors line-clamp-2">{p.data.title}</p>
+                    <span class="text-gray-400 text-xs mt-1 block">{p.data.tag}</span>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- 快速諮詢 -->
+        <div class="bg-brand-light rounded-2xl p-5 mb-6">
+          <p class="text-brand-navy font-bold text-sm mb-2">🔬 免費視覺諮詢</p>
+          <p class="text-gray-600 text-xs leading-relaxed mb-4">不確定自己的視覺問題？YoYo 驗光師提供免費初步諮詢，找出真正原因。</p>
+          <a href="/booking" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
+            立即預約 →
+          </a>
+        </div>
+
+        <!-- 門市資訊 -->
+        <div class="border border-gray-200 rounded-2xl p-5 text-xs text-gray-600 space-y-3">
+          <p class="font-bold text-brand-navy text-sm">📍 門市資訊</p>
+          <div>
+            <p class="font-semibold text-brand-navy">新莊店</p>
+            <p>新北市新莊區中正路 419-1 號</p>
+            <a href="tel:0222066700" class="text-brand-gold hover:underline">02-2206-6700</a>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-navy">板橋店</p>
+            <p>新北市板橋區雙十路二段 47 巷 28 號</p>
+            <a href="tel:0222531246" class="text-brand-gold hover:underline">02-2253-1246</a>
+          </div>
+        </div>
+      </aside>
+
     </div>
-
-    <!-- 封面圖片 -->
-    {post.data.image && (
-      <img src={post.data.image} alt={post.data.title} class="w-full h-64 object-cover rounded-2xl mb-8" />
-    )}
-
-    <!-- YouTube 影片嵌入 -->
-    {post.data.youtube && (
-      <div class="mb-8 rounded-2xl overflow-hidden aspect-video">
-        <iframe
-          src={`https://www.youtube.com/embed/${post.data.youtube}`}
-          title={post.data.title}
-          class="w-full h-full"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    )}
-
-    <!-- 文章內文 -->
-    <div class="prose prose-gray max-w-none
-      prose-headings:text-brand-navy prose-headings:font-bold
-      prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-      prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-      prose-p:leading-relaxed prose-p:text-gray-700
-      prose-strong:text-brand-navy
-      prose-a:text-brand-gold prose-a:no-underline hover:prose-a:underline
-      prose-blockquote:border-brand-gold prose-blockquote:bg-brand-light prose-blockquote:rounded-r-xl prose-blockquote:py-2
-      prose-table:text-sm prose-th:bg-brand-navy prose-th:text-white prose-th:p-3
-      prose-td:p-3 prose-td:border-b prose-td:border-gray-100
-      prose-hr:border-gray-200
-    ">
-      <Content />
-    </div>
-
-    <!-- Instagram 嵌入 -->
-    {post.data.instagram && (
-      <div class="mt-10 p-6 bg-brand-light rounded-2xl text-center">
-        <p class="text-sm text-gray-500 mb-3">📸 追蹤我們的 Instagram</p>
-        <a href={post.data.instagram} target="_blank" rel="noopener noreferrer"
-          class="text-brand-navy font-semibold hover:text-brand-gold transition-colors">
-          查看 Instagram 貼文 →
-        </a>
-      </div>
-    )}
-
-    <!-- CTA -->
-    <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
-      <h2 class="text-xl font-bold mb-3">還有問題？歡迎預約 YoYo 驗光師</h2>
-      <p class="text-gray-300 mb-6">能見度視覺中心（新莊比泱驗光所 × 板橋店）｜新北市驗光所推薦首選</p>
-      <a href="/booking" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
-        立即線上預約 →
-      </a>
-    </div>
-  </article>
-
-  <div class="border-t py-12 bg-brand-light text-center">
-    <a href="/blog" class="text-brand-navy font-semibold hover:underline">← 回到視覺小知識</a>
   </div>
 </Layout>
+
+<style is:global>
+/* ── 文章內文排版 ── */
+.article-body {
+  color: #3a3530;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+/* 段落間距 */
+.article-body p {
+  margin-bottom: 1.25rem;
+}
+
+/* H2：大標題，每個新章節 */
+.article-body h2 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2f4e;
+  margin-top: 2.5rem;
+  margin-bottom: 0.875rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #c9a84c;
+  line-height: 1.35;
+}
+
+/* H3：小節標題 */
+.article-body h3 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a2f4e;
+  margin-top: 2rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.4;
+}
+
+/* 條列清單 */
+.article-body ul,
+.article-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.article-body li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+.article-body ul li::marker {
+  color: #c9a84c;
+}
+
+/* 粗體 */
+.article-body strong {
+  color: #1a2f4e;
+  font-weight: 700;
+}
+
+/* 引言區塊 */
+.article-body blockquote {
+  border-left: 4px solid #c9a84c;
+  background: #f3ede3;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  margin: 1.5rem 0;
+  font-size: 15px;
+  color: #3a3530;
+}
+
+/* 表格 */
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.article-body th {
+  background: #1a2f4e;
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+.article-body td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0ebe3;
+  vertical-align: top;
+}
+.article-body tr:hover td {
+  background: #faf8f4;
+}
+
+/* 分隔線 */
+.article-body hr {
+  border: none;
+  border-top: 1px solid #e8e3da;
+  margin: 2rem 0;
+}
+
+/* 連結 */
+.article-body a {
+  color: #c9a84c;
+  text-decoration: none;
+}
+.article-body a:hover {
+  text-decoration: underline;
+}
+
+/* 行動裝置側欄移到下方 */
+@media (max-width: 1023px) {
+  .article-body h2 { font-size: 1.3rem; }
+  .article-body h3 { font-size: 1.1rem; }
+}
+</style>
