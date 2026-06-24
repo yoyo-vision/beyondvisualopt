@@ -24,7 +24,7 @@ const posts = (await getCollection('blog')).sort(
           )}
           <div class="flex items-center gap-3 mb-3">
             <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <span class="text-gray-400 text-sm">{post.data.date}</span>
+            <span class="text-gray-400 text-sm">{new Date(post.data.date).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
           </div>
           <h2 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">{post.data.title}</h2>
           <p class="text-gray-600 text-sm leading-relaxed">{post.data.excerpt}</p>
