@@ -177,6 +177,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </main>
 
   <!-- 頁尾 -->
+  <!-- 頁尾小導覽列 -->
+  <nav class="border-t border-brand-paper/10" style="background:#17140f">
+    <div class="max-w-6xl mx-auto px-6 md:px-16">
+      <div class="grid grid-cols-3 md:grid-cols-6 divide-x divide-brand-paper/10">
+        {[
+          { label: '關於我們', href: '/about' },
+          { label: '服務項目', href: '/services' },
+          { label: '鏡框品牌', href: '/frames' },
+          { label: '鏡片種類', href: '/lenses' },
+          { label: '視覺小知識', href: '/blog' },
+          { label: '立即預約', href: '/booking' },
+        ].map(item => (
+          <a href={item.href}
+            class="block text-center py-4 text-brand-paper/40 hover:text-brand-gold transition-colors font-sans"
+            style="font-size:13px;letter-spacing:0.08em">
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </nav>
+
   <footer class="text-brand-paper" style="background:#17140f;margin-top:0">
     <div class="max-w-6xl mx-auto px-6 md:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
       <div>
