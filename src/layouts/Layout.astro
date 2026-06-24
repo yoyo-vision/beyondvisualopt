@@ -16,8 +16,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   {keywords && <meta name="keywords" content={keywords} />}
-  <meta name="author" content="鄭家侑（YoYo）・能見度視覺中心" />
-  <meta name="publisher" content="能見度視覺中心 × 比泱驗光所" />
+  <meta name="author" content="鄭家侑（YoYo）・能見度眼鏡" />
+  <meta name="publisher" content="能見度眼鏡 Beyond Visual Optometry" />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="b9R-zvmjM3wN6sH5QabENei5LBkcg4sKtx3zIv0Jijw" />
   <link rel="canonical" href={canonicalURL} />
@@ -58,62 +58,107 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- LocalBusiness JSON-LD（每頁都嵌入） -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Optician",
-    "name": "能見度視覺中心",
-    "alternateName": "Beyond Visual Optometry",
-    "url": "https://beyondvisualopt.com",
-    "logo": "https://beyondvisualopt.com/logo.png",
-    "description": "台灣新北市新莊、板橋專業驗光。多焦點鏡片、蔡司鏡片、兒童近視控制、高度近視眼鏡。YoYo 驗光師、能見度視覺中心、比泱驗光所。",
-    "keywords": [
-      "多焦點鏡片","蔡司鏡片","高度近視眼鏡","兒童近視控制","近視控制",
-      "老花一定要配多焦點嗎","為什麼戴眼鏡會頭暈",
-      "能見度視覺中心","比泱驗光所","YoYo 驗光師",
-      "新莊驗光","板橋驗光","新莊眼鏡行推薦","板橋眼鏡行",
-      "新北市驗光所","新莊配眼鏡","板橋配眼鏡","新莊驗光所推薦"
-    ],
-    "telephone": "+886-2-2206-6700",
-    "email": "visibility.opticians@gmail.com",
-    "address": [
+    "@graph": [
       {
-        "@type": "PostalAddress",
-        "streetAddress": "中正路419-1號",
-        "addressLocality": "新莊區",
-        "addressRegion": "新北市",
-        "postalCode": "242",
-        "addressCountry": "TW"
+        "@type": "Organization",
+        "@id": "https://beyondvisualopt.com/#organization",
+        "name": "能見度眼鏡",
+        "alternateName": "Beyond Visual Optometry",
+        "url": "https://beyondvisualopt.com",
+        "logo": "https://beyondvisualopt.com/images/logo.png",
+        "email": "visibility.opticians@gmail.com",
+        "description": "台灣新北市新莊、板橋專業驗光品牌。旗下含能見度視覺中心（新莊比泱驗光所）與能見度眼鏡（板橋能見度驗光所），提供蔡司鏡片、多焦點鏡片、兒童近視追蹤與高度近視配鏡服務。",
+        "sameAs": [
+          "https://www.instagram.com/bv_optical/",
+          "https://www.instagram.com/youzi_yu/",
+          "https://www.facebook.com/NengJianDuYanJingXing/"
+        ],
+        "employee": {
+          "@type": "Person",
+          "name": "鄭家侑",
+          "alternateName": "YoYo",
+          "jobTitle": "驗光師",
+          "identifier": "驗師字第 003309 號"
+        }
       },
       {
-        "@type": "PostalAddress",
-        "addressLocality": "板橋區",
-        "addressRegion": "新北市",
-        "addressCountry": "TW"
-      }
-    ],
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 25.0338,
-      "longitude": 121.4487
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "10:00",
-        "closes": "20:00"
+        "@type": "Optician",
+        "@id": "https://beyondvisualopt.com/#xinzhuang",
+        "name": "能見度視覺中心 × 比泱驗光所",
+        "alternateName": ["比泱驗光所", "能見度視覺中心", "新莊驗光所"],
+        "parentOrganization": { "@id": "https://beyondvisualopt.com/#organization" },
+        "url": "https://beyondvisualopt.com",
+        "telephone": "+886-2-2206-6700",
+        "description": "新北市新莊區臨床等級驗光所。蔡司 Zeiss 簽約經銷門市，提供雙眼視覺評估、多焦點鏡片配製、兒童近視追蹤、高度近視精密配鏡。驗光師鄭家侑（YoYo）主理。",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "中正路419-1號",
+          "addressLocality": "新莊區",
+          "addressRegion": "新北市",
+          "postalCode": "242",
+          "addressCountry": "TW"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.0338,
+          "longitude": 121.4487
+        },
+        "hasCredential": "新北府莊衛驗光字第 5Y31060655 號",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "10:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday","Sunday"],
+            "opens": "10:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": ["https://share.google/rMxJYqYZH6fR4QwrS"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "221",
+          "bestRating": "5"
+        }
       },
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday","Sunday"],
-        "opens": "10:00",
-        "closes": "18:00"
+        "@type": "Optician",
+        "@id": "https://beyondvisualopt.com/#banqiao",
+        "name": "能見度眼鏡 × 能見度驗光所",
+        "alternateName": ["能見度驗光所", "能見度眼鏡板橋", "板橋驗光所"],
+        "parentOrganization": { "@id": "https://beyondvisualopt.com/#organization" },
+        "telephone": "+886-2-2253-1246",
+        "description": "新北市板橋區眼鏡行與驗光所，1992 年創立。蔡司 Zeiss 簽約經銷門市，提供多焦點鏡片、蔡司鏡片與一般配鏡服務。",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "雙十路二段47巷28號",
+          "addressLocality": "板橋區",
+          "addressRegion": "新北市",
+          "postalCode": "220",
+          "addressCountry": "TW"
+        },
+        "hasCredential": "新北府板衛驗光字第 5Y31010039 號",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "10:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday","Sunday"],
+            "opens": "10:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": ["https://share.google/lReL1vW8OEUXZBeVy"]
       }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/bv_optical/",
-      "https://www.instagram.com/youzi_yu/",
-      "https://www.facebook.com/NengJianDuYanJingXing/",
-      "https://share.google/rMxJYqYZH6fR4QwrS",
-      "https://share.google/lReL1vW8OEUXZBeVy"
     ]
   })} />
 
@@ -128,7 +173,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <header class="sticky top-0 z-50 backdrop-blur-md border-b border-brand-ink/10" style="background:rgba(247,243,236,0.95)">
     <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-[68px]">
       <a href="/" class="flex items-center gap-3">
-        <img src="/images/logo.png" alt="能見度視覺中心 Logo" class="h-11 w-auto" />
+        <img src="/images/logo.png" alt="能見度眼鏡 Logo" class="h-11 w-auto" />
         <div class="flex flex-col" style="gap:1px">
           <span class="font-serif text-brand-navy" style="font-size:17px;font-weight:600;letter-spacing:0.05em;line-height:1.1">能見度眼鏡</span>
           <span class="font-sans text-brand-gray" style="font-size:9px;font-weight:400;letter-spacing:0.18em;line-height:1">Beyond Visual</span>
@@ -208,15 +253,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <footer class="text-brand-paper" style="background:#17140f;margin-top:0">
     <div class="max-w-6xl mx-auto px-6 md:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
       <div>
-        <h3 class="font-serif text-brand-paper mb-4" style="font-size:18px;font-weight:300">能見度視覺中心</h3>
-        <p class="text-brand-paper/50 leading-relaxed" style="font-size:15px">不追求最貴，只追求最適合。<br />台灣高端臨床驗光與功能性眼鏡品牌。</p>
+        <h3 class="font-serif text-brand-paper mb-4" style="font-size:18px;font-weight:300">能見度眼鏡</h3>
+        <p class="text-brand-paper/50 leading-relaxed" style="font-size:15px">不追求最貴，只追求最適合。<br />新莊能見度視覺中心 × 比泱驗光所<br />板橋能見度眼鏡 × 能見度驗光所</p>
       </div>
       <div>
         <h3 class="font-sans text-brand-paper/60 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">門市資訊</h3>
         <ul class="text-brand-paper/50 space-y-2" style="font-size:15px">
-          <li>新莊店：新北市新莊區中正路419-1號</li>
+          <li>新莊｜能見度視覺中心 × 比泱驗光所</li>
+          <li class="text-brand-paper/35" style="font-size:13px">新北市新莊區中正路419-1號</li>
           <li>📞 02-2206-6700</li>
-          <li class="pt-1">板橋總店：新北市板橋區雙十路二段47巷28號</li>
+          <li class="pt-2">板橋｜能見度眼鏡 × 能見度驗光所</li>
+          <li class="text-brand-paper/35" style="font-size:13px">新北市板橋區雙十路二段47巷28號</li>
           <li>📞 02-2253-1246</li>
           <li class="pt-1">✉️ visibility.opticians@gmail.com</li>
         </ul>
