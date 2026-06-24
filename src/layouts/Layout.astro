@@ -174,7 +174,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <header class="sticky top-0 z-50 backdrop-blur-md border-b border-brand-ink/10" style="background:rgba(247,243,236,0.95)">
     <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-[68px]">
       <a href="/" class="flex items-center gap-3">
-        <img src="/images/logo.png" alt="能見度眼鏡 Logo" class="h-11 w-auto" />
+        <picture>
+          <source srcset="/images/logo.webp" type="image/webp" />
+          <img src="/images/logo.png" alt="能見度眼鏡 Logo" width="88" height="44" class="h-11 w-auto" fetchpriority="high" />
+        </picture>
         <div class="flex flex-col" style="gap:1px">
           <span class="font-serif text-brand-navy" style="font-size:17px;font-weight:600;letter-spacing:0.05em;line-height:1.1">能見度眼鏡</span>
           <span class="font-sans text-brand-gray" style="font-size:9px;font-weight:400;letter-spacing:0.18em;line-height:1">Beyond Visual</span>
@@ -191,15 +194,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </ul>
       <div class="flex items-center gap-3">
         <a href="/booking"
-          class="hidden md:inline-block font-sans border border-brand-ink text-brand-ink px-5 py-2 hover:bg-brand-ink hover:text-brand-paper transition-all duration-300"
+          class="hidden md:inline-block font-sans border border-brand-ink text-brand-ink px-5 py-2 hover:bg-brand-ink hover:text-brand-paper transition-colors duration-300"
           style="letter-spacing:0.1em;font-size:13px">
           立即預約
         </a>
         <!-- 手機漢堡按鈕 -->
         <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單">
-          <span class="block w-6 h-0.5 bg-brand-ink transition-all"></span>
-          <span class="block w-6 h-0.5 bg-brand-ink transition-all"></span>
-          <span class="block w-6 h-0.5 bg-brand-ink transition-all"></span>
+          <span class="block w-6 h-0.5 bg-brand-ink"></span>
+          <span class="block w-6 h-0.5 bg-brand-ink"></span>
+          <span class="block w-6 h-0.5 bg-brand-ink"></span>
         </button>
       </div>
     </nav>
@@ -315,9 +318,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <!-- 左下：回到頂部 -->
   <button id="back-to-top"
-    class="fixed bottom-6 left-6 z-50 flex flex-col items-center gap-1 opacity-0 pointer-events-none transition-all duration-300"
+    class="fixed bottom-6 left-6 z-50 flex flex-col items-center gap-1 opacity-0 pointer-events-none transition-opacity duration-300"
     aria-label="回到頂部">
-    <div class="w-10 h-10 rounded-full bg-brand-paper border border-brand-ink/20 flex items-center justify-center shadow hover:bg-brand-ink hover:text-brand-paper hover:border-brand-ink transition-all duration-300">
+    <div class="w-10 h-10 rounded-full bg-brand-paper border border-brand-ink/20 flex items-center justify-center shadow hover:bg-brand-ink hover:text-brand-paper hover:border-brand-ink transition-colors duration-300">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
     </div>
     <span class="font-sans text-brand-ink-3" style="font-size:10px;letter-spacing:0.15em">TOP</span>
