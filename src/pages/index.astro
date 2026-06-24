@@ -291,12 +291,14 @@ const faqSchema = {
 
         document.getElementById('reviews-grid').innerHTML = combined.map(function(r) {
           var shortText = r.text.length > 120 ? r.text.slice(0, 120) + '…' : r.text;
-          var photoHtml = r.photo ? '<img src="' + r.photo + '" alt="' + r.author + '" class="w-8 h-8 rounded-full object-cover flex-shrink-0">' : '';
+          var initial = r.author ? r.author.charAt(0) : '?';
+          var avatarHtml = '<div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-sans text-white" style="background:#2a3f5f;font-size:14px;font-weight:500">' + initial + '</div>';
+          var maskedName = r.author ? r.author.charAt(0) + (r.author.length > 1 ? '**' : '') : '匿名';
           return '<div class="border-t border-brand-ink/15 pt-7">'
             + '<div class="flex items-center gap-2 mb-3">'
-            + photoHtml
+            + avatarHtml
             + '<div>'
-            + '<div class="font-sans text-brand-ink" style="font-size:14px;font-weight:500">' + r.author + '</div>'
+            + '<div class="font-sans text-brand-ink" style="font-size:14px;font-weight:500">' + maskedName + '</div>'
             + '<div class="font-sans text-brand-ink-3" style="font-size:11px">' + r.store + '・' + r.time + '</div>'
             + '</div>'
             + '<span class="ml-auto flex-shrink-0">' + GOOGLE_G + '</span>'
