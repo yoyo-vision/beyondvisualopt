@@ -389,6 +389,69 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- Google 評價 -->
+  <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">顧客評價</span>
+        <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(26px,4vw,44px);font-weight:300">他們說的，比我們說的更真實</h2>
+        <div class="flex items-center justify-center gap-8 flex-wrap mt-6">
+          <div class="text-center">
+            <div class="font-serif text-brand-gold" style="font-size:40px;font-weight:300;line-height:1">5.0</div>
+            <div class="text-brand-gold text-lg mt-1">★★★★★</div>
+            <div class="text-brand-ink-3 mt-1" style="font-size:13px">新莊店 221 則評價</div>
+          </div>
+          <div class="w-px h-14 bg-brand-ink/15 hidden md:block"></div>
+          <div class="text-center">
+            <div class="font-serif text-brand-gold" style="font-size:40px;font-weight:300;line-height:1">5.0</div>
+            <div class="text-brand-gold text-lg mt-1">★★★★★</div>
+            <div class="text-brand-ink-3 mt-1" style="font-size:13px">板橋店 47 則評價</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {[
+          {
+            text: '第一次來就覺得很不一樣，YoYo 驗光師很有耐心地解釋每個步驟，完全不會讓你覺得有壓力。配出來的眼鏡戴起來非常舒適，之前換了好幾家都配不準的問題終於解決了。',
+            name: 'Google 評論',
+            store: '新莊店'
+          },
+          {
+            text: '多焦點鏡片第一次適應成功，之前在別的地方配過兩次都失敗，這次 YoYo 驗光師很仔細地量測配鏡高度，取鏡後馬上就能適應，真的很感動。',
+            name: 'Google 評論',
+            store: '新莊店'
+          },
+          {
+            text: '板橋這家已經跟了超過十五年，從自己配到幫小孩配，每次都很放心交給他們。不會推銷貴的，真的很誠信。',
+            name: 'Google 評論',
+            store: '板橋店'
+          },
+        ].map(review => (
+          <div class="bg-white border border-brand-ink/10 p-7">
+            <div class="text-brand-gold mb-4" style="font-size:16px">★★★★★</div>
+            <p class="text-brand-ink-2 mb-6" style="font-size:15px;line-height:1.8">「{review.text}」</p>
+            <div class="border-t border-brand-ink/10 pt-4 flex items-center justify-between">
+              <span class="text-brand-ink-3" style="font-size:13px">{review.name}</span>
+              <span class="font-sans text-brand-gold text-xs px-2 py-1 border border-brand-gold">{review.store}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://share.google/rMxJYqYZH6fR4QwrS" target="_blank" rel="noopener noreferrer"
+          class="font-sans flex items-center justify-center gap-2 border border-brand-ink/30 text-brand-ink-2 px-8 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
+          查看新莊店所有評價 →
+        </a>
+        <a href="https://share.google/lReL1vW8OEUXZBeVy" target="_blank" rel="noopener noreferrer"
+          class="font-sans flex items-center justify-center gap-2 border border-brand-ink/30 text-brand-ink-2 px-8 py-3 hover:border-brand-ink transition-colors" style="font-size:14px">
+          查看板橋店所有評價 →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="px-6 md:px-16 py-24 text-center" style="background:#1a2f4e">
     <div class="max-w-2xl mx-auto">
