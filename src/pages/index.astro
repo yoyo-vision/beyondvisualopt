@@ -354,7 +354,19 @@ const faqSchema = {
       }
     }
 
-    loadReviews();
+    // Defer reviews load until the section enters viewport
+    var reviewsSection = document.getElementById('reviews-grid');
+    if ('IntersectionObserver' in window && reviewsSection) {
+      var io = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          io.disconnect();
+          loadReviews();
+        }
+      }, { rootMargin: '200px' });
+      io.observe(reviewsSection);
+    } else {
+      loadReviews();
+    }
   </script>
 
   <!-- FAQ -->
