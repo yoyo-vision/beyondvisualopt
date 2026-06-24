@@ -110,7 +110,10 @@ const faqSchema = {
   <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row gap-14 items-center">
-        <img src="/images/yoyo-optometrist.jpg" alt="YoYo 驗光師 能見度視覺中心 比泱驗光所" width="288" height="320" class="w-72 h-80 object-cover flex-shrink-0" style="filter:sepia(8%)" />
+        <picture>
+          <source srcset="/images/yoyo-optometrist.webp" type="image/webp" />
+          <img src="/images/yoyo-optometrist.jpg" alt="YoYo 驗光師 能見度視覺中心 比泱驗光所" width="288" height="320" class="w-72 h-80 object-cover flex-shrink-0" style="filter:sepia(8%)" />
+        </picture>
         <div>
           <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">主理驗光師</span>
           <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(28px,3.5vw,44px);font-weight:300">YoYo 驗光師</h2>
@@ -160,7 +163,10 @@ const faqSchema = {
           },
         ].map(store => (
           <div class="bg-brand-paper overflow-hidden border border-brand-ink/10">
-            <img src={store.img} alt={`${store.name} ${store.full} 新北市驗光所`} width="600" height="208" class="w-full h-52 object-cover" style="filter:sepia(6%)" />
+            <picture>
+              <source srcset={store.img.replace('.jpg', '.webp')} type="image/webp" />
+              <img src={store.img} alt={`${store.name} ${store.full} 新北市驗光所`} width="600" height="208" class="w-full h-52 object-cover" style="filter:sepia(6%)" />
+            </picture>
             <div class="p-8">
               <div class="flex gap-2 flex-wrap mb-4">
                 <span class="font-sans border border-brand-ink text-brand-ink text-xs px-3 py-1" style="letter-spacing:0.08em">{store.tag}</span>
