@@ -138,6 +138,98 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- 新莊店詳細介紹 -->
+  <section class="px-6 md:px-16 py-24 border-t border-brand-ink/10" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
+
+        <!-- 左：文字介紹 -->
+        <div>
+          <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">新莊旗艦門市</span>
+          <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(26px,3.5vw,40px);font-weight:300;line-height:1.25">
+            能見度視覺中心<br /><span class="text-brand-gold">×</span> 比泱驗光所
+          </h2>
+          <p class="text-brand-ink-3 mb-8" style="font-size:15px">新北市新莊區中正路 419-1 號</p>
+
+          <p class="text-brand-ink-2 mb-8" style="font-size:17px;line-height:1.85">
+            新莊在地驗光首選。比泱驗光所為合法開業驗光所，由 YoYo 驗光師（鄭家侑，驗師字第 003309 號）主理，提供完整臨床驗光流程，從雙眼視覺評估到鏡框客製調整，每個環節都有依據，不快速出貨。
+          </p>
+
+          <!-- 服務項目 -->
+          <div class="mb-8">
+            <h3 class="font-sans text-brand-ink font-semibold mb-4" style="font-size:14px;letter-spacing:0.1em">主要服務項目</h3>
+            <ul class="space-y-2 text-brand-ink-2" style="font-size:16px">
+              {[
+                '臨床等級完整驗光（雙眼視覺評估）',
+                '蔡司 Zeiss 鏡片配製（簽約經銷）',
+                '多焦點漸進鏡片配適與追蹤',
+                '兒童近視定期追蹤（6–14 歲）',
+                '高度近視精密配鏡',
+                'RGP 硬式隱形眼鏡配適',
+                '數位疲勞視覺解決方案',
+              ].map(s => (
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-gold mt-1 shrink-0">✦</span>
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- 營業時間 -->
+          <div class="mb-8">
+            <h3 class="font-sans text-brand-ink font-semibold mb-4" style="font-size:14px;letter-spacing:0.1em">營業時間</h3>
+            <table class="text-brand-ink-2 w-full" style="font-size:15px;border-collapse:collapse">
+              <tbody>
+                {[
+                  ['週一、二、三、五、六', '11:00 – 21:00'],
+                  ['週日', '12:00 – 21:00'],
+                  ['週四', '公休（電話預約可接受）'],
+                ].map(([day, time]) => (
+                  <tr class="border-b border-brand-ink/10">
+                    <td class="py-2 pr-6 text-brand-ink-3" style="font-size:14px">{day}</td>
+                    <td class="py-2">{time}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="/xinzhuang"
+              class="font-sans inline-flex items-center justify-center gap-2 bg-brand-ink text-brand-paper px-6 py-3 hover:bg-brand-navy transition-colors duration-300"
+              style="font-size:14px;letter-spacing:0.08em">
+              新莊店完整介紹 →
+            </a>
+            <a href="tel:0222066700"
+              class="font-sans inline-flex items-center justify-center gap-2 border border-brand-ink/30 text-brand-ink-2 px-6 py-3 hover:border-brand-ink transition-colors"
+              style="font-size:14px">
+              📞 02-2206-6700
+            </a>
+          </div>
+        </div>
+
+        <!-- 右：門市照 + Google Maps -->
+        <div class="flex flex-col gap-5">
+          <picture>
+            <source srcset="/images/store-xinzhuang.webp" type="image/webp" />
+            <img src="/images/store-xinzhuang.jpg"
+              alt="能見度視覺中心 比泱驗光所 新莊門市外觀 新北市新莊區中正路419-1號"
+              width="600" height="380"
+              class="w-full object-cover"
+              style="filter:sepia(6%)" />
+          </picture>
+          <iframe
+            src="https://maps.google.com/maps?q=新北市新莊區中正路419-1號&output=embed&hl=zh-TW&z=16"
+            width="100%" height="220" style="border:0;display:block" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="能見度視覺中心 比泱驗光所 Google Maps 新莊中正路419-1號"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- 門市資訊 -->
   <section class="px-6 md:px-16 py-24 border-t border-brand-ink/10" style="background:#eee8da">
     <div class="max-w-5xl mx-auto">
