@@ -31,29 +31,45 @@ const related = allPosts
   })
   .slice(0, 6);
 
+const canonicalUrl = `https://beyondvisualopt.com/blog/${post.slug}`;
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  "@id": canonicalUrl,
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  "url": canonicalUrl,
   "headline": post.data.title,
-  "author": {
-    "@type": "Person",
-    "name": "YoYo 驗光師",
-    "worksFor": { "@type": "Organization", "name": "能見度視覺中心 × 比泱驗光所" }
-  },
-  "datePublished": post.data.date,
-  "publisher": {
-    "@type": "Organization",
-    "name": "能見度視覺中心",
-    "url": "https://beyondvisualopt.com"
-  },
   "description": post.data.excerpt,
   "image": post.data.image || "https://beyondvisualopt.com/og-image.jpg",
+  "inLanguage": "zh-TW",
+  "articleSection": post.data.tag,
+  "datePublished": post.data.date,
+  "dateModified": post.data.date,
+  "author": {
+    "@type": "Person",
+    "name": "鄭家侑（YoYo）",
+    "alternateName": "YoYo 驗光師",
+    "url": "https://beyondvisualopt.com/about",
+    "identifier": "驗師字第 003309 號",
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://beyondvisualopt.com/#organization",
+      "name": "能見度視覺中心 × 比泱驗光所"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://beyondvisualopt.com/#organization",
+    "name": "能見度視覺中心",
+    "url": "https://beyondvisualopt.com",
+    "logo": "https://beyondvisualopt.com/images/logo.png"
+  },
   "keywords": "多焦點鏡片,蔡司鏡片,兒童近視追蹤,高度近視眼鏡,新莊驗光,板橋驗光,能見度視覺中心,比泱驗光所,YoYo驗光師"
 };
 ---
 <Layout
   title={`${post.data.title}｜YoYo 驗光師｜能見度視覺中心 × 比泱驗光所 新莊板橋驗光`}
-  description={`${post.data.excerpt} 能見度視覺中心 YoYo 驗光師，新莊驗光所推薦、板橋驗光首選。`}
+  description={post.data.excerpt}
   schema={articleSchema}
 >
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
