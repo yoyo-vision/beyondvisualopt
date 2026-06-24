@@ -13,7 +13,7 @@ export async function onRequest(context) {
   }
 
   const apiKey = context.env.GOOGLE_PLACES_API_KEY;
-  const fields = 'rating,userRatingCount,reviews';
+  const fields = 'rating,userRatingCount,reviews,photos';
   const url = `https://places.googleapis.com/v1/places/${placeId}?languageCode=zh-TW`;
 
   const res = await fetch(url, {
@@ -37,10 +37,16 @@ export async function onRequest(context) {
       time:   r.relativePublishTimeDescription || '',
     }));
 
+  // 取最多 9 張顧客實拍照（排除第一張通常是店家自己上傳的封面）
+  const photos = (data.photos || [])
+    .slice(1, 10)
+    .map(p => p.name);
+
   return new Response(JSON.stringify({
     rating: data.rating,
     total:  data.userRatingCount,
     reviews,
+    photos,
   }), {
     headers: {
       'Content-Type': 'application/json',

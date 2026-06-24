@@ -227,6 +227,19 @@ const faqSchema = {
         ))}
       </div>
 
+      <!-- 顧客實拍照牆 -->
+      <div id="photo-wall" class="mt-14 hidden">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-sans text-brand-ink-3" style="font-size:12px;letter-spacing:0.18em">顧客實拍・來自 Google Maps</span>
+        </div>
+        <div id="photo-grid" class="grid grid-cols-3 md:grid-cols-6 gap-2"></div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center" style="background:rgba(0,0,0,0.85)" onclick="this.classList.add('hidden');this.classList.remove('flex')">
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain" style="max-height:90vh;max-width:90vw">
+      </div>
+
       <!-- 按鈕 -->
       <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
         <a href="https://share.google/rMxJYqYZH6fR4QwrS" target="_blank" rel="noopener noreferrer"
@@ -292,6 +305,22 @@ const faqSchema = {
             + '<p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">「' + shortText + '」</p>'
             + '</div>';
         }).join('');
+        // 照片牆：合併兩店照片，最多 9 張
+        var allPhotos = [
+          ...(rx.photos || []).slice(0, 6),
+          ...(rb.photos || []).slice(0, 3),
+        ];
+
+        if (allPhotos.length) {
+          var grid = document.getElementById('photo-grid');
+          grid.innerHTML = allPhotos.map(function(name) {
+            var src = '/api/place-photo?name=' + encodeURIComponent(name);
+            return '<div class="cursor-pointer overflow-hidden" style="aspect-ratio:1" onclick="var lb=document.getElementById(\'lightbox\');document.getElementById(\'lightbox-img\').src=\'' + src + '\';lb.classList.remove(\'hidden\');lb.classList.add(\'flex\')">'
+              + '<img src="' + src + '" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">'
+              + '</div>';
+          }).join('');
+          document.getElementById('photo-wall').classList.remove('hidden');
+        }
       } catch(e) {
         console.error('Google Reviews load error:', e);
       }
