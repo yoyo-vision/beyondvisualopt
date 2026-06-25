@@ -49,6 +49,18 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
   <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
     <div class="max-w-6xl mx-auto">
 
+      <!-- 搜尋框 -->
+      <div class="relative mb-6">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="搜尋文章關鍵字，例如：多焦點、蔡司、兒童近視…"
+          class="w-full font-sans text-sm border border-brand-ink/20 bg-white px-5 py-3 pr-12 focus:outline-none focus:border-brand-navy transition-colors"
+          style="font-size:14px"
+        />
+        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-brand-ink-3" style="font-size:18px">🔍</span>
+      </div>
+
       <!-- 分類 tabs -->
       <div class="flex flex-wrap gap-2 mb-10" id="tag-filters">
         <button
@@ -70,6 +82,8 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
           <a
             href={`/blog/${post.slug}`}
             data-tag={post.data.tag}
+            data-title={post.data.title}
+            data-excerpt={post.data.excerpt}
             class="post-item flex flex-col sm:flex-row gap-5 border border-brand-ink/10 bg-white p-6 hover:shadow-md transition-shadow group"
           >
             <div class="flex-1">
@@ -97,12 +111,31 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
     const buttons = document.querySelectorAll('.tag-btn');
     const items = document.querySelectorAll('.post-item');
     const noResults = document.getElementById('no-results');
+    const searchInput = document.getElementById('search-input');
+
+    let activeTag = 'all';
+
+    function filterPosts() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      items.forEach(item => {
+        const tagMatch = activeTag === 'all' || item.getAttribute('data-tag') === activeTag;
+        const title = (item.getAttribute('data-title') || '').toLowerCase();
+        const excerpt = (item.getAttribute('data-excerpt') || '').toLowerCase();
+        const searchMatch = !query || title.includes(query) || excerpt.includes(query);
+        const show = tagMatch && searchMatch;
+        item.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noResults.classList.toggle('hidden', visible > 0);
+    }
+
+    searchInput.addEventListener('input', filterPosts);
 
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const tag = btn.getAttribute('data-tag');
+        activeTag = btn.getAttribute('data-tag');
 
-        // 更新按鈕樣式
         buttons.forEach(b => {
           b.classList.remove('active');
           b.style.background = '';
@@ -116,15 +149,7 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
         btn.style.borderColor = 'var(--brand-navy, #1a2e4a)';
         btn.classList.remove('border-brand-ink/30', 'text-brand-ink-3');
 
-        // 篩選文章
-        let visible = 0;
-        items.forEach(item => {
-          const match = tag === 'all' || item.getAttribute('data-tag') === tag;
-          item.style.display = match ? '' : 'none';
-          if (match) visible++;
-        });
-
-        noResults.classList.toggle('hidden', visible > 0);
+        filterPosts();
       });
     });
   </script>
