@@ -234,13 +234,20 @@ const langSwitchHref = isEn
       </a>
       <!-- 桌機選單 -->
       <ul class="hidden md:flex items-center gap-8 font-sans" style="font-size:14px;letter-spacing:0.04em">
-        <li><a href="/about" class="text-brand-ink-2 hover:text-brand-ink transition-colors">關於我們</a></li>
-        <li><a href="/about#stores" class="text-brand-ink-2 hover:text-brand-ink transition-colors">門市資訊</a></li>
-        <li><a href="/services" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務內容</a></li>
-        <li><a href="/process" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務流程</a></li>
-        <li><a href="/frames" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡框品牌</a></li>
-        <li><a href="/lenses" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡片種類</a></li>
-        <li><a href="/blog" class="text-brand-ink-2 hover:text-brand-ink transition-colors">視覺小知識</a></li>
+        {isEn ? (<>
+          <li><a href="/en/about" class="text-brand-ink-2 hover:text-brand-ink transition-colors">About</a></li>
+          <li><a href="/en/services" class="text-brand-ink-2 hover:text-brand-ink transition-colors">Services</a></li>
+          <li><a href="/en/xinzhuang" class="text-brand-ink-2 hover:text-brand-ink transition-colors">Xinzhuang</a></li>
+          <li><a href="/en/banqiao" class="text-brand-ink-2 hover:text-brand-ink transition-colors">Banqiao</a></li>
+        </>) : (<>
+          <li><a href="/about" class="text-brand-ink-2 hover:text-brand-ink transition-colors">關於我們</a></li>
+          <li><a href="/about#stores" class="text-brand-ink-2 hover:text-brand-ink transition-colors">門市資訊</a></li>
+          <li><a href="/services" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務內容</a></li>
+          <li><a href="/process" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務流程</a></li>
+          <li><a href="/frames" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡框品牌</a></li>
+          <li><a href="/lenses" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡片種類</a></li>
+          <li><a href="/blog" class="text-brand-ink-2 hover:text-brand-ink transition-colors">視覺小知識</a></li>
+        </>)}
       </ul>
       <div class="flex items-center gap-3">
         <!-- 語言切換 -->
@@ -265,14 +272,22 @@ const langSwitchHref = isEn
     <!-- 手機下拉選單 -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-brand-ink/10" style="background:rgba(247,243,236,0.98)">
       <ul class="font-sans px-6 py-4 space-y-0">
-        <li><a href="/about" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">關於我們</a></li>
-        <li><a href="/about#stores" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">門市資訊</a></li>
-        <li><a href="/services" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">服務內容</a></li>
-        <li><a href="/process" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">服務流程</a></li>
-        <li><a href="/frames" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡框品牌</a></li>
-        <li><a href="/lenses" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡片種類</a></li>
-        <li><a href="/blog" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">視覺小知識</a></li>
-        <li><a href="/booking" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">立即預約 →</a></li>
+        {isEn ? (<>
+          <li><a href="/en/about" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">About</a></li>
+          <li><a href="/en/services" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">Services</a></li>
+          <li><a href="/en/xinzhuang" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">Xinzhuang</a></li>
+          <li><a href="/en/banqiao" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">Banqiao</a></li>
+          <li><a href="/en/booking" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">Book Now →</a></li>
+        </>) : (<>
+          <li><a href="/about" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">關於我們</a></li>
+          <li><a href="/about#stores" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">門市資訊</a></li>
+          <li><a href="/services" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">服務內容</a></li>
+          <li><a href="/process" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">服務流程</a></li>
+          <li><a href="/frames" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡框品牌</a></li>
+          <li><a href="/lenses" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡片種類</a></li>
+          <li><a href="/blog" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">視覺小知識</a></li>
+          <li><a href="/booking" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">立即預約 →</a></li>
+        </>)}
       </ul>
     </div>
   </header>
