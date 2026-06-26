@@ -125,7 +125,33 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="py-12 text-center" style="background:#f7f3ec">
+  <!-- Clinical photos -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10 text-center" style="font-size:26px;font-weight:300">Our Equipment</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <picture>
+          <source srcset="/images/yoyo-examination.webp" type="image/webp" />
+          <img src="/images/yoyo-examination.webp" alt="YoYo conducting a full clinical eye examination" width="800" height="500" class="w-full h-56 object-cover object-top" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="/images/instrument-corneal-map.webp" type="image/webp" />
+          <img src="/images/instrument-corneal-map.webp" alt="NIDEK CA-800 Corneal Topographer" width="400" height="240" class="w-full h-56 object-cover" loading="lazy" />
+        </picture>
+        <picture>
+          <source srcset="/images/instrument-phoropter.webp" type="image/webp" />
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON Phoropter" width="400" height="240" class="w-full h-56 object-cover" loading="lazy" />
+        </picture>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4 mt-4">
+        <p class="font-sans text-xs text-brand-ink-3 text-center pt-2">YoYo — Full Clinical Exam</p>
+        <p class="font-sans text-xs text-brand-ink-3 text-center pt-2">NIDEK CA-800 Corneal Topographer</p>
+        <p class="font-sans text-xs text-brand-ink-3 text-center pt-2">TOPCON Integrated Phoropter</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 text-center" style="background:#eee8da">
     <a href="/en/booking" class="font-sans bg-brand-navy text-white px-10 py-4 hover:bg-brand-navy/90 transition-colors" style="font-size:14px;letter-spacing:0.1em">Book an Exam</a>
   </section>
 </Layout>

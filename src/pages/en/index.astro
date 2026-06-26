@@ -36,26 +36,38 @@ import Layout from '../../layouts/Layout.astro';
       <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(24px,3vw,36px);font-weight:300">Two Locations in New Taipei City</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Xinzhuang -->
-        <a href="/en/xinzhuang" class="bg-white border border-brand-ink/10 p-8 hover:shadow-md transition-shadow group block">
-          <p class="font-sans text-brand-gold text-xs font-semibold mb-3" style="letter-spacing:0.15em">XINZHUANG</p>
-          <h3 class="font-serif text-brand-ink mb-2" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br /><span style="font-size:16px;color:#6b6560">× BiYang Optometry Clinic</span></h3>
-          <div class="mt-6 space-y-2 font-sans text-sm text-brand-ink-2">
-            <p>📍 No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City</p>
-            <p>📞 02-2206-6700</p>
-            <p>🕐 Mon–Wed, Fri–Sat 11:00–21:00 | Sun 12:00–21:00 | Thu closed</p>
+        <a href="/en/xinzhuang" class="bg-white border border-brand-ink/10 overflow-hidden hover:shadow-md transition-shadow group block">
+          <picture>
+            <source srcset="/images/store-xinzhuang.webp" type="image/webp" />
+            <img src="/images/store-xinzhuang.jpg" alt="Beyond Visual Optometry Xinzhuang store" width="600" height="240" class="w-full h-60 object-cover" style="filter:sepia(6%)" loading="lazy" />
+          </picture>
+          <div class="p-8">
+            <p class="font-sans text-brand-gold text-xs font-semibold mb-3" style="letter-spacing:0.15em">XINZHUANG · Est. 2023</p>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br /><span style="font-size:16px;color:#6b6560">× BiYang Optometry Clinic</span></h3>
+            <div class="mt-4 space-y-2 font-sans text-sm text-brand-ink-2">
+              <p>📍 No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City</p>
+              <p>📞 02-2206-6700</p>
+              <p>🕐 Mon–Wed, Fri–Sat 11:00–21:00 | Sun 12:00–21:00 | Thu closed</p>
+            </div>
+            <p class="mt-4 font-sans text-brand-navy text-sm group-hover:underline">View details →</p>
           </div>
-          <p class="mt-4 font-sans text-brand-navy text-sm group-hover:underline">View details →</p>
         </a>
         <!-- Banqiao -->
-        <a href="/en/banqiao" class="bg-white border border-brand-ink/10 p-8 hover:shadow-md transition-shadow group block">
-          <p class="font-sans text-brand-gold text-xs font-semibold mb-3" style="letter-spacing:0.15em">BANQIAO</p>
-          <h3 class="font-serif text-brand-ink mb-2" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br /><span style="font-size:16px;color:#6b6560">× Neng Jian Du Optometry Clinic</span></h3>
-          <div class="mt-6 space-y-2 font-sans text-sm text-brand-ink-2">
-            <p>📍 No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City</p>
-            <p>📞 02-2253-1246</p>
-            <p>🕐 Daily 10:00–22:00 | Closed 2nd & 4th Sunday of each month</p>
+        <a href="/en/banqiao" class="bg-white border border-brand-ink/10 overflow-hidden hover:shadow-md transition-shadow group block">
+          <picture>
+            <source srcset="/images/store-banqiao.webp" type="image/webp" />
+            <img src="/images/store-banqiao.jpg" alt="Beyond Visual Optometry Banqiao store" width="600" height="240" class="w-full h-60 object-cover" style="filter:sepia(6%)" loading="lazy" />
+          </picture>
+          <div class="p-8">
+            <p class="font-sans text-brand-gold text-xs font-semibold mb-3" style="letter-spacing:0.15em">BANQIAO · Est. 1992</p>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br /><span style="font-size:16px;color:#6b6560">× Neng Jian Du Optometry Clinic</span></h3>
+            <div class="mt-4 space-y-2 font-sans text-sm text-brand-ink-2">
+              <p>📍 No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City</p>
+              <p>📞 02-2253-1246</p>
+              <p>🕐 Daily 10:00–22:00 | Closed 2nd & 4th Sunday of each month</p>
+            </div>
+            <p class="mt-4 font-sans text-brand-navy text-sm group-hover:underline">View details →</p>
           </div>
-          <p class="mt-4 font-sans text-brand-navy text-sm group-hover:underline">View details →</p>
         </a>
       </div>
     </div>
@@ -82,12 +94,24 @@ import Layout from '../../layouts/Layout.astro';
   </section>
 
   <!-- YoYo -->
-  <section class="px-6 md:px-16 py-20" style="background:#1a2f4e">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="font-sans text-brand-gold mb-4" style="font-size:12px;letter-spacing:0.2em">LEAD OPTOMETRIST</p>
-      <h2 class="font-serif text-white mb-6" style="font-size:clamp(24px,3vw,38px);font-weight:300">YoYo Cheng</h2>
-      <p class="text-white/75 font-sans leading-relaxed mb-8" style="font-size:16px">Licensed optometrist (License No. 003309). Specializing in progressive lens fitting, high myopia precision glasses, binocular vision assessment, and children's myopia tracking. Every exam is a full 45–60 minutes — because your vision deserves it.</p>
-      <a href="/en/about" class="font-sans border border-white/40 text-white px-8 py-3 hover:border-white transition-colors" style="font-size:13px;letter-spacing:0.1em">Learn More About Us</a>
+  <section style="background:#1a2f4e">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row">
+      <div class="w-full md:w-2/5 flex-shrink-0">
+        <picture>
+          <source srcset="/images/yoyo-optometrist.webp" type="image/webp" />
+          <img src="/images/yoyo-optometrist.jpg" alt="YoYo Cheng — Lead Optometrist at Beyond Visual Optometry" width="720" height="860" class="w-full object-cover object-top" style="filter:sepia(8%);min-height:420px;max-height:600px" loading="lazy" />
+        </picture>
+      </div>
+      <div class="w-full md:w-3/5 flex items-center px-10 md:px-16 py-20">
+        <div>
+          <p class="font-sans text-brand-gold mb-4" style="font-size:12px;letter-spacing:0.2em">LEAD OPTOMETRIST</p>
+          <h2 class="font-serif text-white mb-2" style="font-size:clamp(24px,3vw,38px);font-weight:300">YoYo Cheng</h2>
+          <p class="text-white/50 font-sans mb-6" style="font-size:14px">Optometrist License No. 003309</p>
+          <div class="w-10 border-t border-brand-gold mb-8"></div>
+          <p class="text-white/75 font-sans leading-relaxed mb-8" style="font-size:16px">Specializing in progressive lens fitting, high myopia precision glasses, binocular vision assessment, and children's myopia tracking. Every exam is a full 45–60 minutes — because your vision deserves it.</p>
+          <a href="/en/about" class="font-sans border border-white/40 text-white px-8 py-3 hover:border-white transition-colors" style="font-size:13px;letter-spacing:0.1em">Learn More About Us</a>
+        </div>
+      </div>
     </div>
   </section>
 
