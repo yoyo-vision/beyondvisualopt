@@ -31,6 +31,19 @@ const langSwitchHref = isEn
   <meta name="google-site-verification" content="b9R-zvmjM3wN6sH5QabENei5LBkcg4sKtx3zIv0Jijw" />
   <link rel="canonical" href={canonicalURL} />
 
+  <!-- hreflang：告知 Google 中英文版本對應關係 -->
+  {isEn ? (<>
+    <link rel="alternate" hreflang="en" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${langSwitchHref}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://beyondvisualopt.com${langSwitchHref}`} />
+  </>) : enPath ? (<>
+    <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang="en" href={`https://beyondvisualopt.com${enPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+  </>) : (
+    <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+  )}
+
   <!-- Hero 圖優先預載（LCP 優化） -->
   {preloadHeroMobile && <link rel="preload" as="image" href={preloadHeroMobile} media="(max-width: 768px)" fetchpriority="high" />}
   {preloadHeroDesktop && <link rel="preload" as="image" href={preloadHeroDesktop} media="(min-width: 769px)" fetchpriority="high" />}

@@ -141,6 +141,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"astigmatism-glasses-distortion.md": {
+	id: "astigmatism-glasses-distortion.md";
+  slug: "astigmatism-glasses-distortion";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"banqiao-glasses-guide.md": {
+	id: "banqiao-glasses-guide.md";
+  slug: "banqiao-glasses-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "children-myopia-control-xinzhuang.md": {
 	id: "children-myopia-control-xinzhuang.md";
   slug: "children-myopia-control-xinzhuang";
@@ -158,6 +172,13 @@ declare module 'astro:content' {
 "contact-lens-fatigue.md": {
 	id: "contact-lens-fatigue.md";
   slug: "contact-lens-fatigue";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"contact-lens-vs-glasses.md": {
+	id: "contact-lens-vs-glasses.md";
+  slug: "contact-lens-vs-glasses";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -225,6 +246,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"myopia-getting-worse-truth.md": {
+	id: "myopia-getting-worse-truth.md";
+  slug: "myopia-getting-worse-truth";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "optometry-vs-ophthalmology.md": {
 	id: "optometry-vs-ophthalmology.md";
   slug: "optometry-vs-ophthalmology";
@@ -267,9 +295,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"xinzhuang-glasses-guide.md": {
+	id: "xinzhuang-glasses-guide.md";
+  slug: "xinzhuang-glasses-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "zeiss-hoya-nikon-lens-guide.md": {
 	id: "zeiss-hoya-nikon-lens-guide.md";
   slug: "zeiss-hoya-nikon-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"zeiss-individual-worth-it.md": {
+	id: "zeiss-individual-worth-it.md";
+  slug: "zeiss-individual-worth-it";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
