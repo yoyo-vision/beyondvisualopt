@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Xinzhuang Optometrist | Beyond Visual Optometry × BiYang Optometry Clinic"
+  description="Clinical eye exams near Fu Jen Catholic University in Xinzhuang, New Taipei. ZEISS certified. 5-min walk from Fuhsing MRT Station. Tel: 02-2206-6700."
+  lang="en"
+  enPath="/en/xinzhuang"
+>
+  <section class="bg-brand-navy text-white py-20 px-6 text-center">
+    <p class="font-sans text-brand-gold mb-4" style="font-size:12px;letter-spacing:0.2em">XINZHUANG LOCATION</p>
+    <h1 class="font-serif text-white mb-4" style="font-size:clamp(26px,4vw,44px);font-weight:300">Beyond Visual Optometry<br />× BiYang Optometry Clinic</h1>
+    <p class="text-white/70 font-sans">No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City</p>
+  </section>
+
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-serif text-brand-ink mb-8" style="font-size:26px;font-weight:300">Location Info</h2>
+        <div class="space-y-4 font-sans text-sm text-brand-ink-2">
+          <div class="flex gap-3"><span>📍</span><span>No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City 242</span></div>
+          <div class="flex gap-3"><span>📞</span><a href="tel:0222066700" class="hover:text-brand-navy">02-2206-6700</a></div>
+          <div class="flex gap-3"><span>🚇</span><span>5-min walk from Fuhsing MRT Station (Bannan Line, Exit 2)</span></div>
+          <div class="flex gap-3"><span>🅿️</span><span>Street parking available on Zhongzheng Rd.</span></div>
+        </div>
+
+        <h3 class="font-serif text-brand-ink mt-10 mb-4" style="font-size:20px;font-weight:300">Business Hours</h3>
+        <table class="w-full font-sans text-sm text-brand-ink-2">
+          <tbody>
+            {[
+              ['Monday', '11:00 – 21:00'],
+              ['Tuesday', '11:00 – 21:00'],
+              ['Wednesday', '11:00 – 21:00'],
+              ['Thursday', 'Closed (appointments available)'],
+              ['Friday', '11:00 – 21:00'],
+              ['Saturday', '11:00 – 21:00'],
+              ['Sunday', '12:00 – 21:00'],
+            ].map(([day, hours]) => (
+              <tr class="border-b border-brand-ink/8">
+                <td class="py-2 pr-4 font-medium text-brand-ink">{day}</td>
+                <td class="py-2">{hours}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div class="mt-8 space-y-3">
+          <a href="tel:0222066700" class="block w-full text-center font-sans border border-brand-navy text-brand-navy py-3 hover:bg-brand-navy hover:text-white transition-colors" style="font-size:14px">
+            Call: 02-2206-6700
+          </a>
+          <a href="https://lin.ee/SoWj9Ft" target="_blank" rel="noopener" class="block w-full text-center font-sans bg-[#06C755] text-white py-3 hover:opacity-90 transition-opacity" style="font-size:14px">
+            Book via LINE
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-serif text-brand-ink mb-8" style="font-size:26px;font-weight:300">Services Available</h2>
+        <ul class="space-y-3 font-sans text-sm text-brand-ink-2">
+          {[
+            'Complete clinical eye exam (45–60 min)',
+            'ZEISS Individual² personalized lens fitting',
+            'Progressive lens fitting & adaptation follow-up',
+            'Children\'s myopia tracking (every 3–6 months)',
+            'High myopia precision glasses (−6.00D and above)',
+            'Digital eye strain solutions',
+            'RGP hard contact lens fitting',
+            'Frame adjustments (free for our customers)',
+            'Free vision consultation',
+          ].map(item => (
+            <li class="flex gap-2"><span class="text-brand-gold">—</span><span>{item}</span></li>
+          ))}
+        </ul>
+
+        <div class="mt-10 bg-brand-navy/5 border border-brand-ink/10 p-6">
+          <p class="font-sans text-brand-gold text-xs mb-3" style="letter-spacing:0.15em">CLINIC LICENSE</p>
+          <p class="font-sans text-brand-ink text-sm">New Taipei City BiYang Optometry Clinic<br />License No. 5Y31060655</p>
+          <p class="font-sans text-brand-gold text-xs mt-4 mb-1" style="letter-spacing:0.15em">LEAD OPTOMETRIST</p>
+          <p class="font-sans text-brand-ink text-sm">YoYo Cheng (Cheng Chia-Yu)<br />Optometrist License No. 003309</p>
+          <p class="font-sans text-brand-gold text-xs mt-4 mb-1" style="letter-spacing:0.15em">GOOGLE RATING</p>
+          <p class="font-sans text-brand-ink text-sm">⭐ 5.0 / 5.0 (221 reviews)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="max-w-5xl mx-auto mt-12">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.8!2d121.4469!3d25.0348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442b0!2z6IO95aGU5bqX6KGX6KeG5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1234567890"
+        width="100%" height="300" style="border:0;filter:grayscale(20%)" allowfullscreen loading="lazy"
+        title="Beyond Visual Optometry Xinzhuang Map"
+      ></iframe>
+    </div>
+  </section>
+</Layout>

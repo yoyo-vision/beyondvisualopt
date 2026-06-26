@@ -148,6 +148,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"common-optometry-mistakes.md": {
+	id: "common-optometry-mistakes.md";
+  slug: "common-optometry-mistakes";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "contact-lens-fatigue.md": {
 	id: "contact-lens-fatigue.md";
   slug: "contact-lens-fatigue";
@@ -155,9 +162,30 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"digital-eye-strain-solution.md": {
+	id: "digital-eye-strain-solution.md";
+  slug: "digital-eye-strain-solution";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "driving-lens-night-glare.md": {
 	id: "driving-lens-night-glare.md";
   slug: "driving-lens-night-glare";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"essilor-lens-guide.md": {
+	id: "essilor-lens-guide.md";
+  slug: "essilor-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"frame-adjustment-handcraft.md": {
+	id: "frame-adjustment-handcraft.md";
+  slug: "frame-adjustment-handcraft";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -176,6 +204,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"high-myopia-glasses-guide.md": {
+	id: "high-myopia-glasses-guide.md";
+  slug: "high-myopia-glasses-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"hoya-lens-guide.md": {
+	id: "hoya-lens-guide.md";
+  slug: "hoya-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "minamoto-eyewear-brand.md": {
 	id: "minamoto-eyewear-brand.md";
   slug: "minamoto-eyewear-brand";
@@ -183,9 +225,30 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"optometry-vs-ophthalmology.md": {
+	id: "optometry-vs-ophthalmology.md";
+  slug: "optometry-vs-ophthalmology";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"presbyopia-lens-guide.md": {
+	id: "presbyopia-lens-guide.md";
+  slug: "presbyopia-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "presbyopia-vs-progressive.md": {
 	id: "presbyopia-vs-progressive.md";
   slug: "presbyopia-vs-progressive";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"progressive-lens-adaptation.md": {
+	id: "progressive-lens-adaptation.md";
+  slug: "progressive-lens-adaptation";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -200,6 +263,13 @@ declare module 'astro:content' {
 "rgp-hard-contact-lens.md": {
 	id: "rgp-hard-contact-lens.md";
   slug: "rgp-hard-contact-lens";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"zeiss-hoya-nikon-lens-guide.md": {
+	id: "zeiss-hoya-nikon-lens-guide.md";
+  slug: "zeiss-hoya-nikon-lens-guide";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

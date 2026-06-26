@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Book an Eye Exam | Beyond Visual Optometry | Xinzhuang & Banqiao"
+  description="Book a complete clinical eye exam at Beyond Visual Optometry. Two locations in Xinzhuang and Banqiao, New Taipei City. Contact us via LINE or phone."
+  lang="en"
+  enPath="/en/booking"
+>
+  <section class="bg-brand-navy text-white py-20 px-6 text-center">
+    <h1 class="font-serif text-white mb-4" style="font-size:clamp(28px,5vw,48px);font-weight:300">Book an Exam</h1>
+    <p class="text-white/70 text-lg max-w-xl mx-auto font-sans">Reserve your spot for a complete clinical eye exam. We recommend booking in advance.</p>
+  </section>
+
+  <!-- Two stores -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+      <!-- Xinzhuang -->
+      <div class="bg-white border border-brand-ink/10 p-8">
+        <p class="font-sans text-brand-gold text-xs font-semibold mb-4" style="letter-spacing:0.15em">XINZHUANG LOCATION</p>
+        <h2 class="font-serif text-brand-ink mb-6" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br />× BiYang Optometry Clinic</h2>
+        <div class="space-y-3 font-sans text-sm text-brand-ink-2 mb-8">
+          <p>📍 No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City 242</p>
+          <p>📞 <a href="tel:0222066700" class="hover:text-brand-navy">02-2206-6700</a></p>
+          <p>🕐 Mon–Wed, Fri–Sat: 11:00–21:00</p>
+          <p class="pl-5">Sunday: 12:00–21:00</p>
+          <p class="pl-5">Thursday: Closed (appointments available)</p>
+          <p>🚇 5-min walk from Fuhsing MRT Station (Bannan Line)</p>
+        </div>
+        <div class="space-y-3">
+          <a href="tel:0222066700" class="block w-full text-center font-sans border border-brand-navy text-brand-navy py-3 hover:bg-brand-navy hover:text-white transition-colors" style="font-size:14px;letter-spacing:0.08em">
+            Call to Book: 02-2206-6700
+          </a>
+          <a href="https://lin.ee/SoWj9Ft" target="_blank" rel="noopener" class="block w-full text-center font-sans bg-[#06C755] text-white py-3 hover:opacity-90 transition-opacity" style="font-size:14px;letter-spacing:0.08em">
+            Book via LINE
+          </a>
+        </div>
+      </div>
+
+      <!-- Banqiao -->
+      <div class="bg-white border border-brand-ink/10 p-8">
+        <p class="font-sans text-brand-gold text-xs font-semibold mb-4" style="letter-spacing:0.15em">BANQIAO LOCATION</p>
+        <h2 class="font-serif text-brand-ink mb-6" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br />× Neng Jian Du Optometry Clinic</h2>
+        <div class="space-y-3 font-sans text-sm text-brand-ink-2 mb-8">
+          <p>📍 No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City</p>
+          <p>📞 <a href="tel:0222531246" class="hover:text-brand-navy">02-2253-1246</a></p>
+          <p>🕐 Daily: 10:00–22:00</p>
+          <p class="pl-5">Closed: 2nd & 4th Sunday of each month</p>
+          <p>🚇 5-min walk from Jiangzicui MRT Station (Bannan Line)</p>
+        </div>
+        <div class="space-y-3">
+          <a href="tel:0222531246" class="block w-full text-center font-sans border border-brand-navy text-brand-navy py-3 hover:bg-brand-navy hover:text-white transition-colors" style="font-size:14px;letter-spacing:0.08em">
+            Call to Book: 02-2253-1246
+          </a>
+          <a href="https://lin.ee/SoWj9Ft" target="_blank" rel="noopener" class="block w-full text-center font-sans bg-[#06C755] text-white py-3 hover:opacity-90 transition-opacity" style="font-size:14px;letter-spacing:0.08em">
+            Book via LINE
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to expect -->
+  <section class="px-6 md:px-16 py-16" style="background:#eee8da">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10 text-center" style="font-size:28px;font-weight:300">What to Expect</h2>
+      <div class="space-y-6">
+        {[
+          { step: '01', title: 'Consultation', desc: 'Tell us about your vision concerns, daily habits, and any discomfort with your current glasses.' },
+          { step: '02', title: 'Clinical Eye Exam', desc: 'Complete objective and subjective refraction, binocular vision assessment, and vertex distance measurement. Full exam takes 45–60 minutes.' },
+          { step: '03', title: 'Lens & Frame Selection', desc: 'Based on your exam results and lifestyle, we recommend the most suitable lenses and frames — not the most expensive ones.' },
+          { step: '04', title: 'Follow-up Care', desc: 'After receiving your glasses, we provide free follow-up adjustments. If anything feels off, come back and we\'ll fix it.' },
+        ].map(step => (
+          <div class="flex gap-6">
+            <span class="font-sans text-brand-gold font-semibold flex-shrink-0" style="font-size:13px;letter-spacing:0.15em">{step.step}</span>
+            <div>
+              <h3 class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">{step.title}</h3>
+              <p class="font-sans text-brand-ink-2 text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Beyond Visual Optometry | Professional Eye Care in Xinzhuang & Banqiao, New Taipei"
+  description="Beyond Visual Optometry offers complete clinical eye exams, ZEISS lenses, progressive lenses, and myopia management. Two locations in Xinzhuang and Banqiao, New Taipei City."
+  lang="en"
+  enPath="/en"
+>
+  <!-- Hero -->
+  <section class="relative min-h-[480px] md:min-h-[580px] flex items-center overflow-hidden">
+    <picture>
+      <source media="(max-width: 768px)" srcset="/images/store-interior-hero-mobile.webp" type="image/webp" />
+      <source srcset="/images/store-interior-hero.webp" type="image/webp" />
+      <img src="/images/store-interior-hero.webp" alt="Beyond Visual Optometry store interior" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" width="1920" height="1080" />
+    </picture>
+    <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(15,30,51,0.82) 0%, rgba(15,30,51,0.55) 60%, rgba(15,30,51,0.2) 100%)"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-20">
+      <p class="font-sans text-brand-gold mb-4" style="font-size:13px;letter-spacing:0.18em">BEYOND VISUAL OPTOMETRY</p>
+      <h1 class="font-serif text-white mb-6" style="font-size:clamp(32px,5vw,58px);font-weight:300;line-height:1.2">
+        Vision Care<br />Tailored for You
+      </h1>
+      <p class="text-white/80 mb-8 max-w-xl font-sans" style="font-size:clamp(15px,2vw,18px);line-height:1.7">
+        Clinical-grade eye exams. ZEISS certified lenses. Two locations in Xinzhuang and Banqiao, New Taipei City.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/en/booking" class="font-sans bg-brand-gold text-white px-8 py-3 hover:bg-brand-gold/90 transition-colors" style="font-size:14px;letter-spacing:0.1em">Book an Exam</a>
+        <a href="/en/services" class="font-sans border border-white/60 text-white px-8 py-3 hover:border-white transition-colors" style="font-size:14px;letter-spacing:0.1em">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Locations -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(24px,3vw,36px);font-weight:300">Two Locations in New Taipei City</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Xinzhuang -->
+        <a href="/en/xinzhuang" class="bg-white border border-brand-ink/10 p-8 hover:shadow-md transition-shadow group block">
+          <p class="font-sans text-brand-gold text-xs font-semibold mb-3" style="letter-spacing:0.15em">XINZHUANG</p>
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br /><span style="font-size:16px;color:#6b6560">× BiYang Optometry Clinic</span></h3>
+          <div class="mt-6 space-y-2 font-sans text-sm text-brand-ink-2">
+            <p>📍 No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City</p>
+            <p>📞 02-2206-6700</p>
+            <p>🕐 Mon–Wed, Fri–Sat 11:00–21:00 | Sun 12:00–21:00 | Thu closed</p>
+          </div>
+          <p class="mt-4 font-sans text-brand-navy text-sm group-hover:underline">View details →</p>
+        </a>
+        <!-- Banqiao -->
+        <a href="/en/banqiao" class="bg-white border border-brand-ink/10 p-8 hover:shadow-md transition-shadow group block">
+          <p class="font-sans text-brand-gold text-xs font-semibold mb-3" style="letter-spacing:0.15em">BANQIAO</p>
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:22px;font-weight:400">Beyond Visual Optometry<br /><span style="font-size:16px;color:#6b6560">× Neng Jian Du Optometry Clinic</span></h3>
+          <div class="mt-6 space-y-2 font-sans text-sm text-brand-ink-2">
+            <p>📍 No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City</p>
+            <p>📞 02-2253-1246</p>
+            <p>🕐 Daily 10:00–22:00 | Closed 2nd & 4th Sunday of each month</p>
+          </div>
+          <p class="mt-4 font-sans text-brand-navy text-sm group-hover:underline">View details →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(24px,3vw,36px);font-weight:300">Why Beyond Visual?</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { num: '01', title: 'Clinical-Grade Eye Exams', desc: 'Full binocular vision assessment, vertex distance measurement, and lens tilt adjustment. Every parameter is precisely calibrated — not a 10-minute rush job.' },
+          { num: '02', title: 'ZEISS Certified Partner', desc: 'Authorized ZEISS dealer in Xinzhuang and Banqiao. Individual² personalized lenses, progressive lenses, and digital protection series — genuine quality guaranteed.' },
+          { num: '03', title: 'Myopia Management', desc: 'Regular vision assessments and prescription tracking for children aged 6–14, with defocus lens fitting recommendations to help parents monitor their child\'s vision development.' },
+        ].map(item => (
+          <div class="bg-white border border-brand-ink/10 p-8">
+            <p class="font-sans text-brand-gold mb-4" style="font-size:12px;letter-spacing:0.2em">{item.num}</p>
+            <h3 class="font-serif text-brand-ink mb-4" style="font-size:20px;font-weight:400;line-height:1.3">{item.title}</h3>
+            <p class="font-sans text-brand-ink-2 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- YoYo -->
+  <section class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="font-sans text-brand-gold mb-4" style="font-size:12px;letter-spacing:0.2em">LEAD OPTOMETRIST</p>
+      <h2 class="font-serif text-white mb-6" style="font-size:clamp(24px,3vw,38px);font-weight:300">YoYo Cheng</h2>
+      <p class="text-white/75 font-sans leading-relaxed mb-8" style="font-size:16px">Licensed optometrist (License No. 003309). Specializing in progressive lens fitting, high myopia precision glasses, binocular vision assessment, and children's myopia tracking. Every exam is a full 45–60 minutes — because your vision deserves it.</p>
+      <a href="/en/about" class="font-sans border border-white/40 text-white px-8 py-3 hover:border-white transition-colors" style="font-size:13px;letter-spacing:0.1em">Learn More About Us</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-16 text-center" style="background:#eee8da">
+    <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(22px,3vw,34px);font-weight:300">Ready for a Clearer Vision?</h2>
+    <p class="font-sans text-brand-ink-2 mb-8" style="font-size:15px">Book a free vision consultation at either of our locations.</p>
+    <a href="/en/booking" class="font-sans bg-brand-navy text-white px-10 py-4 hover:bg-brand-navy/90 transition-colors" style="font-size:14px;letter-spacing:0.1em">Book an Exam</a>
+  </section>
+</Layout>

@@ -8,12 +8,18 @@ export interface Props {
   preloadHeroMobile?: string;
   preloadHeroDesktop?: string;
   robots?: string;
+  lang?: string;
+  enPath?: string;
 }
-const { title, description, keywords, image = '/og-image.jpg', schema, preloadHeroMobile, preloadHeroDesktop, robots } = Astro.props;
+const { title, description, keywords, image = '/og-image.jpg', schema, preloadHeroMobile, preloadHeroDesktop, robots, lang = 'zh', enPath } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const isEn = lang === 'en';
+const langSwitchHref = isEn
+  ? (Astro.url.pathname.replace(/^\/en/, '') || '/')
+  : (enPath ?? '/en');
 ---
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang={isEn ? 'en' : 'zh-TW'}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -237,10 +243,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <li><a href="/blog" class="text-brand-ink-2 hover:text-brand-ink transition-colors">視覺小知識</a></li>
       </ul>
       <div class="flex items-center gap-3">
-        <a href="/booking"
+        <!-- 語言切換 -->
+        <a href={langSwitchHref}
+          class="font-sans border border-brand-ink/40 text-brand-ink-2 px-3 py-1.5 hover:border-brand-ink hover:text-brand-ink transition-colors duration-200"
+          style="font-size:12px;letter-spacing:0.08em">
+          {isEn ? '中文' : 'EN'}
+        </a>
+        <a href={isEn ? '/en/booking' : '/booking'}
           class="hidden md:inline-block font-sans border border-brand-ink text-brand-ink px-5 py-2 hover:bg-brand-ink hover:text-brand-paper transition-colors duration-300"
           style="letter-spacing:0.1em;font-size:13px">
-          立即預約
+          {isEn ? 'Book Now' : '立即預約'}
         </a>
         <!-- 手機漢堡按鈕 -->
         <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單">
