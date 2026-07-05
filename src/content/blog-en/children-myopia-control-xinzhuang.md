@@ -51,7 +51,7 @@ Many parents are confused about who should handle their child's myopia. Here's t
 |------|----------------------|---------|
 | Vision and prescription assessment | ✅ | ✅ |
 | Axial length measurement | ✅ | ✅ |
-| Myopia-control lens fitting (MiSight, Stellest) | ✅ | ✅ |
+| Myopia-control lens fitting (MiSight, Zeiss MyoCare) | ✅ | ✅ |
 | Regular tracking records and trend analysis | ✅ | ✅ |
 | Low-dose atropine prescription | ❌ Requires a physician's prescription | ✅ |
 | Fundus examination, cycloplegic refraction | ❌ Classified as medical procedures | ✅ |
@@ -67,7 +67,7 @@ Many parents are confused about who should handle their child's myopia. Here's t
 | Lens | Type | Recommended Age | Clinical Research Results | Best For |
 |------|------|---------|------------|---------|
 | **MiSight daily disposables** | Contact lenses | 8 and up | Axial elongation slowed by about 52% | Active kids who are comfortable with contact lenses |
-| **Essilor Stellest** | Spectacle lenses | 6 and up | Myopia progression reduced by about 67% (with 12h daily wear) | Kids who won't wear contact lenses |
+| **Zeiss MyoCare** | Spectacle lenses | 6 and up | 12-month study: myopia progression slowed ~48%, axial elongation ~41% | Kids who won't wear contact lenses |
 
 > The figures above are averages from international clinical studies. Individual results vary with visual habits, genetics, and compliance.
 
@@ -94,22 +94,22 @@ It uses a **dual-focus optical design**: the central zone corrects refractive er
 
 ---
 
-## Option 2: Essilor Stellest Spectacle Lenses
+## Option 2: Zeiss MyoCare Spectacle Lenses
 
-### What Is Stellest?
+### What Is MyoCare?
 
-Stellest is a **spectacle-lens** form of myopia-control lens using H.A.L.T. (Highly Aspherical Lenslet Target) technology — 1,021 tiny lenslets built into the lens to create a comprehensive defocus barrier.
+Zeiss MyoCare is a **spectacle-lens** form of myopia-management lens using **C.A.R.E.® technology** (Cylindrical Annular Refractive Elements) — nearly invisible concentric rings that alternate defocus and correction zones across the lens, giving the child clear vision while creating a competitive defocus signal that helps slow axial elongation.
 
-No contact lenses required, so acceptance among children is high.
+No contact lenses required, so acceptance among children is high, and daily care is the same as ordinary glasses. The portfolio also includes **MyoCare S**, designed for younger children with faster-progressing myopia.
 
 ### Clinical Data
 
-Zeiss research data shows that under specific wearing conditions, results observed with this lens differed from standard lenses. Individual results vary — ask your optometrist for details.
+Zeiss's 12-month clinical study in Asian children showed MyoCare slowed myopia progression by about 48% and axial elongation by about 41% on average (MyoCare S: about 45% and 34%). These are study averages; real-world results vary with a child's visual habits, genetics, and compliance, and require regular follow-up.
 
 ### Who It Suits
 
 - Children who refuse to wear contact lenses
-- Younger children (6 and up)
+- Younger children (6 and up; MyoCare S for faster progressors)
 - Parents who want something simple to use and easy to maintain
 
 ---
@@ -157,4 +157,4 @@ Absolutely. The goal of tracking is to slow progression, not reverse it. With my
 
 **Q: Where can I get children's myopia tracking in Xinzhuang?**
 
-Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, MiSight daily disposable fitting, and Essilor Stellest evaluation. Optometrist YoYo (licensed optometrist) tracks progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking).
+Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, MiSight daily disposable fitting, and Zeiss MyoCare evaluation. Optometrist YoYo (licensed optometrist) tracks progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking).
