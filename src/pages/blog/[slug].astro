@@ -11,8 +11,7 @@ const { post, allPosts } = Astro.props;
 const { Content } = await post.render();
 
 // 台灣時區（UTC+8）日期格式化
-const formatDate = (dateStr: string) => {
-  const d = new Date(dateStr);
+const formatDate = (d: Date) => {
   return d.toLocaleDateString('zh-TW', {
     timeZone: 'Asia/Taipei',
     year: 'numeric',
@@ -20,6 +19,9 @@ const formatDate = (dateStr: string) => {
     day: '2-digit',
   });
 };
+
+// Google 要求 ISO 8601 日期格式（YYYY-MM-DD）
+const isoDate = post.data.date.toISOString().split('T')[0];
 
 // 同標籤優先，其次其他文章，排除自己，最多 6 篇
 const related = allPosts
@@ -43,8 +45,8 @@ const articleSchema = {
   "image": post.data.image || "https://beyondvisualopt.com/og-image.jpg",
   "inLanguage": "zh-TW",
   "articleSection": post.data.tag,
-  "datePublished": post.data.date,
-  "dateModified": post.data.date,
+  "datePublished": isoDate,
+  "dateModified": isoDate,
   "author": {
     "@type": "Person",
     "name": "鄭家侑（YoYo）",

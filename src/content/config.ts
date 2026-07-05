@@ -4,7 +4,8 @@ const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.coerce.string(),
+    // 用 date 型別保存，輸出 schema 時才轉 ISO 8601（避免變成英文長字串）
+    date: z.coerce.date(),
     tag: z.string(),
     excerpt: z.string(),
     image: z.string().optional(),

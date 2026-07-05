@@ -17,6 +17,35 @@ const isEn = lang === 'en';
 const langSwitchHref = isEn
   ? (Astro.url.pathname.replace(/^\/en/, '') || '/')
   : (enPath ?? '/en');
+
+// ── BreadcrumbList：由路徑自動產生麵包屑結構化資料 ──
+const SECTION_LABELS: Record<string, string> = {
+  about: '關於我們', services: '服務內容', process: '服務流程',
+  frames: '鏡框品牌', lenses: '鏡片種類', blog: '視覺小知識',
+  faq: '常見問題', booking: '線上預約', xinzhuang: '新莊店', banqiao: '板橋店',
+  en: 'English',
+};
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbSchema = pathSegments.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": isEn ? 'Home' : '首頁', "item": "https://beyondvisualopt.com/" },
+    ...pathSegments.map((seg, i) => {
+      const isLast = i === pathSegments.length - 1;
+      // 最後一層用頁面標題（取「｜」前的主標）；中間層用固定對照表
+      const name = isLast
+        ? (title.split('｜')[0] || SECTION_LABELS[seg] || seg)
+        : (SECTION_LABELS[seg] || seg);
+      return {
+        "@type": "ListItem",
+        "position": i + 2,
+        "name": name,
+        "item": `https://beyondvisualopt.com/${pathSegments.slice(0, i + 1).join('/')}/`,
+      };
+    }),
+  ],
+} : null;
 ---
 <!DOCTYPE html>
 <html lang={isEn ? 'en' : 'zh-TW'}>
@@ -116,6 +145,15 @@ const langSwitchHref = isEn
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://beyondvisualopt.com/#website",
+        "url": "https://beyondvisualopt.com",
+        "name": "能見度眼鏡｜能見度視覺中心",
+        "alternateName": ["Beyond Visual Optometry", "比泱驗光所", "能見度驗光所"],
+        "inLanguage": "zh-TW",
+        "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+      },
       {
         "@type": "Organization",
         "@id": "https://beyondvisualopt.com/#organization",
@@ -233,6 +271,10 @@ const langSwitchHref = isEn
       }
     ]
   })} />
+
+  {breadcrumbSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  )}
 
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
