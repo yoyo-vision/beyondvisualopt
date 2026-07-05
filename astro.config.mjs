@@ -16,6 +16,10 @@ const latestPostDate = Object.values(blogDates).sort().at(-1);
 
 export default defineConfig({
   site: 'https://beyondvisualopt.com',
+  // /author 目前只有 YoYo 一位作者，直接轉址到作者頁（麵包屑中間層不落空）
+  redirects: {
+    '/author': '/author/yoyo',
+  },
   integrations: [
     tailwind(),
     sitemap({

@@ -23,6 +23,33 @@ const formatDate = (d: Date) => {
 // Google 要求 ISO 8601 日期格式（YYYY-MM-DD）
 const isoDate = post.data.date.toISOString().split('T')[0];
 
+// ── 從文章內文的「常見問題」段落自動抽取 Q&A，產生 FAQPage schema ──
+// 支援兩種格式：**Q：問題**＋「A：答案」或直接接答案段落
+function extractFaq(body: string) {
+  // 找到「## 常見問題」標題，取到下一個 H2 標題（或文末）為止
+  const start = body.search(/^##[^\n]*常見問題/m);
+  if (start === -1) return [];
+  let section = body.slice(start);
+  section = section.slice(section.indexOf('\n') + 1);
+  const nextH2 = section.search(/^## /m);
+  if (nextH2 !== -1) section = section.slice(0, nextH2);
+
+  const faqs: { q: string; a: string }[] = [];
+  const qRegex = /\*\*Q[：:]\s*([\s\S]+?)\*\*\s*\n+([\s\S]*?)(?=\n\s*\*\*Q[：:]|$)/g;
+  let m;
+  while ((m = qRegex.exec(section))) {
+    const answer = m[2].trim()
+      .replace(/^A[：:]\s*/, '')          // 去掉 A： 前綴
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // markdown 連結只留文字
+      .replace(/\*\*/g, '')                // 去掉粗體符號
+      .replace(/\s*\n+\s*/g, ' ')          // 摺疊換行
+      .trim();
+    if (answer) faqs.push({ q: m[1].trim(), a: answer });
+  }
+  return faqs;
+}
+const faqs = extractFaq(post.body);
+
 // 同標籤優先，其次其他文章，排除自己，最多 6 篇
 const related = allPosts
   .filter(p => p.slug !== post.slug)
@@ -35,7 +62,6 @@ const related = allPosts
 
 const canonicalUrl = `https://beyondvisualopt.com/blog/${post.slug}`;
 const articleSchema = {
-  "@context": "https://schema.org",
   "@type": "Article",
   "@id": canonicalUrl,
   "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
@@ -49,9 +75,10 @@ const articleSchema = {
   "dateModified": isoDate,
   "author": {
     "@type": "Person",
+    "@id": "https://beyondvisualopt.com/author/yoyo/#person",
     "name": "鄭家侑（YoYo）",
     "alternateName": "YoYo 驗光師",
-    "url": "https://beyondvisualopt.com/about",
+    "url": "https://beyondvisualopt.com/author/yoyo/",
     "identifier": "驗師字第 003309 號",
     "worksFor": {
       "@type": "Organization",
@@ -68,11 +95,27 @@ const articleSchema = {
   },
   "keywords": "多焦點鏡片,蔡司鏡片,兒童近視追蹤,高度近視眼鏡,新莊驗光,板橋驗光,能見度視覺中心,比泱驗光所,YoYo驗光師"
 };
+
+// 文章內文若有「常見問題」段落，一併輸出 FAQPage schema（AI 搜尋引擎最愛引用的格式）
+const faqSchema = faqs.length > 0 ? {
+  "@type": "FAQPage",
+  "@id": `${canonicalUrl}#faq`,
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+} : null;
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": faqSchema ? [articleSchema, faqSchema] : [articleSchema],
+};
 ---
 <Layout
   title={`${post.data.title}｜YoYo 驗光師｜能見度視覺中心 × 比泱驗光所 新莊板橋驗光`}
   description={post.data.excerpt}
-  schema={articleSchema}
+  schema={pageSchema}
 >
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
@@ -84,7 +127,7 @@ const articleSchema = {
         <div class="mb-8 pb-8 border-b border-gray-100">
           <div class="flex items-center gap-3 mb-4">
             <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <span class="text-gray-400 text-sm">{formatDate(post.data.date)} · YoYo 驗光師</span>
+            <span class="text-gray-400 text-sm">{formatDate(post.data.date)} · <a href="/author/yoyo/" class="hover:text-brand-gold transition-colors underline decoration-dotted underline-offset-2">YoYo 驗光師</a></span>
           </div>
           <h1 class="font-serif text-brand-navy leading-tight mb-5" style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.3">{post.data.title}</h1>
           <p class="text-gray-500 leading-relaxed" style="font-size:17px;line-height:1.8">{post.data.excerpt}</p>

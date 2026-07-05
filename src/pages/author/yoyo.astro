@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 所有文章皆由 YoYo 驗光師撰寫，依日期新到舊排列
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' });
+
+// Person schema：E-E-A-T 核心 — 持照專業人士身份，供 Google 與 AI 搜尋引擎驗證作者資格
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+  "name": "鄭家侑",
+  "alternateName": ["YoYo", "YoYo 驗光師"],
+  "jobTitle": "驗光師",
+  "identifier": "驗師字第 003309 號",
+  "url": "https://beyondvisualopt.com/author/yoyo/",
+  "image": "https://beyondvisualopt.com/images/yoyo-optometrist.webp",
+  "description": "台灣執照驗光師（驗師字第 003309 號），能見度視覺中心 × 比泱驗光所主理驗光師。專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配、兒童近視追蹤與 RGP 硬式隱形眼鏡配適。",
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "license",
+    "name": "中華民國驗光師證書",
+    "identifier": "驗師字第 003309 號"
+  },
+  "knowsAbout": [
+    "臨床驗光", "雙眼視覺評估", "多焦點漸進鏡片驗配", "兒童近視追蹤",
+    "高度近視精密配鏡", "頂點距離量測", "鏡片傾斜角校正", "RGP 硬式隱形眼鏡配適", "蔡司 Zeiss 鏡片"
+  ],
+  "worksFor": { "@id": "https://beyondvisualopt.com/#organization" },
+  "workLocation": [
+    { "@id": "https://beyondvisualopt.com/#xinzhuang" },
+    { "@id": "https://beyondvisualopt.com/#banqiao" }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/youzi_yu/",
+    "https://www.instagram.com/bv_optical/"
+  ]
+};
+---
+<Layout
+  title="YoYo 驗光師（鄭家侑）｜驗師字第 003309 號｜能見度視覺中心主理驗光師"
+  description="鄭家侑（YoYo），台灣執照驗光師（驗師字第 003309 號），能見度視覺中心 × 比泱驗光所主理。專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤，新莊、板橋服務中。"
+  schema={schema}
+>
+
+  <!-- Hero：作者介紹 -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-12 items-center md:items-start">
+        <img src="/images/yoyo-optometrist.webp" alt="YoYo 驗光師 鄭家侑 能見度視覺中心 比泱驗光所 新莊驗光"
+          width="256" height="320" class="w-64 h-80 object-cover flex-shrink-0 rounded-2xl" />
+        <div class="text-center md:text-left">
+          <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">作者介紹</p>
+          <h1 class="font-serif text-white leading-tight mb-3" style="font-size:clamp(30px,4.5vw,48px);font-weight:300">鄭家侑 驗光師</h1>
+          <p class="text-brand-gold font-sans mb-6" style="font-size:16px">YoYo｜主理驗光師｜驗師字第 003309 號</p>
+          <div class="space-y-4 text-white/70" style="font-size:17px;line-height:1.85">
+            <p>台灣執照驗光師，能見度視覺中心 × 比泱驗光所（新莊）主理。專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配、兒童近視追蹤與 RGP 硬式隱形眼鏡配適，服務於蔡司 Zeiss 簽約經銷門市。</p>
+            <p>本站所有視覺健康文章皆由 YoYo 驗光師親自撰寫或審閱，內容依據臨床驗光實務與光學原理，不做誇大宣稱。發現視力異常或無法矯正至正常視力者，將依《驗光人員法》轉介眼科醫師。</p>
+          </div>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start mt-7">
+            <a href="https://www.instagram.com/youzi_yu/" target="_blank" rel="noopener noreferrer"
+              class="font-sans border border-white/30 text-white/80 px-5 py-2 hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px;letter-spacing:0.08em">
+              Instagram @youzi_yu
+            </a>
+            <a href="/booking" class="font-sans bg-brand-gold text-brand-navy font-bold px-5 py-2 hover:bg-brand-gold/90 transition-colors" style="font-size:13px;letter-spacing:0.08em">
+              預約 YoYo 驗光師 →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 專業領域 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">專業領域</span>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(26px,3.5vw,38px);font-weight:300">臨床驗光專長</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { title: '臨床全套驗光', desc: '45–60 分鐘完整流程：主客觀屈光、雙眼視覺評估、頂點距離量測，找出視覺問題的真正原因。' },
+          { title: '多焦點漸進鏡片', desc: '蔡司 Individual² 訂製驗配，前傾角精準校正與適應期追蹤，降低暈眩與適應失敗率。' },
+          { title: '兒童近視追蹤', desc: '每 3–6 個月定期追蹤度數變化，離焦鏡片配適評估，與家長共同管理近視進程。' },
+          { title: '高度近視精密配鏡', desc: '600 度以上頂點距離補正、1.74 超薄鏡片選配，兼顧視覺品質與配戴舒適。' },
+          { title: 'RGP 硬式隱形眼鏡', desc: '硬式隱形眼鏡配適與定期追蹤，適合高度散光與特殊角膜條件。' },
+          { title: '數位疲勞視覺方案', desc: '長時間螢幕工作者的視覺壓力分析，蔡司 Digital Lens 等舒壓方案評估。' },
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 文章列表 -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">視覺小知識</span>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(26px,3.5vw,38px);font-weight:300">YoYo 驗光師的文章（{posts.length} 篇）</h2>
+      <ul class="divide-y divide-brand-ink/8">
+        {posts.map(post => (
+          <li>
+            <a href={`/blog/${post.slug}/`} class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 py-5 group">
+              <span class="font-sans text-brand-ink-3 flex-shrink-0 md:w-28" style="font-size:13px">{formatDate(post.data.date)}</span>
+              <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 w-fit">{post.data.tag}</span>
+              <span class="text-brand-ink group-hover:text-brand-gold transition-colors" style="font-size:16px;line-height:1.6">{post.data.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+</Layout>
