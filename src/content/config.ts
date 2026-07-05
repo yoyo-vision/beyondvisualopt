@@ -14,4 +14,18 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+// 英文版文章：slug 與中文版相同，放在 blog-en/，供 /en/blog/ 使用
+const blogEn = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    tag: z.string(),
+    excerpt: z.string(),
+    image: z.string().optional(),
+    youtube: z.string().optional(),
+    instagram: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, 'blog-en': blogEn };

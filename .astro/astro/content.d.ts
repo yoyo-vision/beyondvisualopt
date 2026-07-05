@@ -317,6 +317,43 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
+"blog-en": {
+"children-myopia-control-xinzhuang.md": {
+	id: "children-myopia-control-xinzhuang.md";
+  slug: "children-myopia-control-xinzhuang";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"high-myopia-glasses-guide.md": {
+	id: "high-myopia-glasses-guide.md";
+  slug: "high-myopia-glasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"progressive-lens-dizzy.md": {
+	id: "progressive-lens-dizzy.md";
+  slug: "progressive-lens-dizzy";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"xinzhuang-glasses-guide.md": {
+	id: "xinzhuang-glasses-guide.md";
+  slug: "xinzhuang-glasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"zeiss-individual-worth-it.md": {
+	id: "zeiss-individual-worth-it.md";
+  slug: "zeiss-individual-worth-it";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+};
 
 	};
 

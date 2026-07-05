@@ -1,0 +1,268 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'presbyopia-vs-progressive',
+  'presbyopia-lens-guide',
+  'progressive-lens-dizzy',
+  'progressive-lens-adaptation',
+  'zeiss-individual-worth-it',
+  'driving-lens-night-glare',
+];
+const allPosts = await getCollection('blog');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/guide/progressive-lens/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: '多焦點鏡片大概多少錢？',
+    a: '台灣市場的漸進多焦點鏡片，依設計等級從數千元到兩三萬元不等：標準設計約數千元，數位優化設計約一萬元上下，個人化訂製（如蔡司 Individual²）則需兩萬元以上。價差主要來自像差控制精度與訂製參數多寡，不是單純的品牌溢價。建議先做完整驗光與生活視覺分析，再依實際需求選擇等級。',
+  },
+  {
+    q: '幾歲開始需要多焦點鏡片？',
+    a: '老花通常從 40 歲前後開始出現，初期症狀是手機拿遠一點才看得清楚、近距離閱讀容易疲勞。老花初期（加入度較低）就開始配戴漸進鏡片，適應難度遠低於拖到老花 200 度以上才配，因為遠近落差小、漸進帶平緩。',
+  },
+  {
+    q: '多焦點鏡片和辦公室鏡片可以只選一副嗎？',
+    a: '要看你的生活型態。每天開車、戶外活動多的人適合漸進多焦點（遠中近全涵蓋）；一天 8 小時以上在辦公室、主要視距在 6 公尺內的人，辦公室鏡片的中近視野更寬更舒適。不少重度螢幕工作者最後是兩副並用：通勤用多焦點、上班用辦公室鏡片。',
+  },
+  {
+    q: '在其他眼鏡行配的多焦點戴了會暈，可以找你們評估嗎？',
+    a: '可以。能見度視覺中心（新莊比泱驗光所 × 板橋店）提供多焦點暈眩的第二意見評估：重新量測度數、單眼瞳距、瞳孔高度與鏡架配適狀態，先釐清是適應期問題還是配鏡參數問題，再討論處理方式。新莊店 02-2206-6700、板橋店 02-2253-1246。',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "多焦點（漸進）鏡片完整指南：原理、選擇、暈眩原因與適應方法",
+      "description": "從漸進鏡片光學原理、老花 4 種方案比較、鏡片設計等級選擇，到暈眩排查與適應技巧，YoYo 驗光師一頁講透多焦點鏡片。新莊、板橋蔡司驗配。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="多焦點鏡片完整指南｜原理・選擇・暈眩・適應｜新莊板橋蔡司驗配"
+  description="多焦點為什麼會暈？老花一定要配漸進鏡片嗎？從光學原理、4 種老花方案比較、鏡片等級選擇到適應技巧，YoYo 驗光師一頁講透。新莊、板橋能見度視覺中心。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        多焦點（漸進）鏡片<br /><span class="text-brand-gold">完整指南</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        原理、選擇、暈眩排查、適應方法——這一頁把多焦點鏡片最常見的疑問一次講清楚。由 YoYo 驗光師撰寫，依據臨床驗配實務，不是產品型錄。
+      </p>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '漸進鏡片原理', href: '#principle' },
+        { label: '老花 4 種方案', href: '#options' },
+        { label: '鏡片等級怎麼選', href: '#levels' },
+        { label: '為什麼會暈', href: '#dizzy' },
+        { label: '驗配關鍵量測', href: '#fitting' },
+        { label: '常見問題', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 原理 -->
+  <section id="principle" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">漸進鏡片不是「三段式」，是連續變化的曲面</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>漸進多焦點鏡片（Progressive Addition Lens, PAL）透過鏡片表面曲率的<strong>連續變化</strong>，在同一片鏡片上實現遠、中、近焦距的平滑過渡——上方看遠（開車、看電視）、中央漸進通道過渡、下方看近（手機、文件）。</p>
+        <p><strong>關鍵限制：</strong>漸進通道兩側必然存在「像差區」，這個區域的影像是變形模糊的，任何品牌都無法完全消除。高階鏡片與平價鏡片的核心差異，就在於能把像差區壓得多小、推得多邊緣——這直接決定你可用的清晰視野有多寬。</p>
+        <p>對每天在螢幕與文件之間切換十小時的工作者來說，漸進通道的寬度不是規格表上的數字，是一整天下來脖子痠不痠、眼睛脹不脹的差別。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 老花 4 種方案 -->
+  <section id="options" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">老花一定要配多焦點嗎？4 種方案比較</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">多焦點不是唯一解，也不是人人適合。先看你的生活場景落在哪裡。</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">方案</th>
+              <th class="text-left px-5 py-4 font-semibold">適合對象</th>
+              <th class="text-left px-5 py-4 font-semibold">優點</th>
+              <th class="text-left px-5 py-4 font-semibold">限制</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['單焦老花鏡', '只在閱讀時需要輔助', '便宜、視野寬、零適應期', '看遠必須摘掉，頻繁戴上摘下'],
+              ['漸進多焦點', '遠中近都需要、不想換鏡', '一副搞定所有距離，外觀無分界線', '有適應期，像差區需要習慣'],
+              ['辦公室鏡片', '長時間桌面與螢幕工作', '中近視野比漸進鏡寬很多', '不能開車，看 6 公尺外模糊'],
+              ['多焦點隱形眼鏡', '不想戴框架眼鏡', '運動、外觀自由', '視覺品質妥協較多，需適應評估'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        YoYo 驗光師的原則：先分析你一天的視距分布（開車幾小時、螢幕幾小時、閱讀距離多遠），再決定方案——不是先決定產品再說服你適合。
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 鏡片等級 -->
+  <section id="levels" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡片等級怎麼選：標準、優化、個人化訂製</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">同一個品牌的漸進鏡片，等級之間的差異比品牌之間更大。</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { level: '標準設計', desc: '固定的通道與像差分布，用平均臉型與平均配戴參數設計。預算有限、度數單純、初次嘗試者的入門選擇。', fit: '入門' },
+          { level: '數位優化設計', desc: '依處方度數優化像差分布，通道更寬、周邊變形較少。多數中度使用者的甜蜜點，價格與體驗的平衡。', fit: '主流' },
+          { level: '個人化訂製', desc: '如蔡司 Individual²：把你的鏡框前傾角、頂點距離、鏡面彎度全部納入計算，為你的臉和鏡框訂做光學設計。高度數、高用眼強度、對視覺品質敏感者差異最明顯。', fit: '訂製' },
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.level}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        想知道個人化訂製值不值得？看這篇：<a href="/blog/zeiss-individual-worth-it/" class="text-brand-gold underline">蔡司 Individual² 值得配嗎？驗光師的誠實分析</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 為什麼會暈 -->
+  <section id="dizzy" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">多焦點為什麼會暈？三個原因，只有一個該「忍」</h2>
+      <div class="space-y-6">
+        {[
+          { title: '① 正常適應期', desc: '大腦在學習「視線往下＝看近」的新邏輯。特徵是暈眩感每天遞減、1–3 週明顯改善。這是唯一該忍的情況。', action: '持續配戴，減少頻繁戴上摘下' },
+          { title: '② 配鏡參數問題', desc: '度數誤差、單眼瞳距或瞳孔高度沒量準、鏡架走位——參數錯了，忍再久都不會好。配戴 4 週仍暈、或靜止時影像晃動，就是回診信號。', action: '回診重新量測，多數可免費調整' },
+          { title: '③ 鏡片設計不匹配', desc: '工作型態以近距離為主，卻配了遠用導向的設計；或鏡框太小把漸進通道截斷。這類問題需要換片，預防勝於補救。', action: '配鏡前詳述你的視距使用習慣' },
+        ].map(item => (
+          <div class="border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2 mb-3" style="font-size:16px;line-height:1.8">{item.desc}</p>
+            <p class="font-sans text-brand-gold" style="font-size:14px">→ {item.action}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        完整的暈眩排查對照表：<a href="/blog/progressive-lens-dizzy/" class="text-brand-gold underline">多焦點鏡片為什麼會暈？3 個最常見原因與解決方式</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 驗配關鍵 -->
+  <section id="fitting" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">多焦點驗配，這些量測不能省</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">漸進鏡片的視覺設計以毫米為單位建構，快速驗光省掉的每一步，都會變成你臉上的暈眩。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {[
+          ['完整主客觀驗光（45–60 分鐘）', '確認調節力充分放鬆，老花初期最容易「假裝沒老花」讓度數失準'],
+          ['單眼瞳距（MPD-L / MPD-R）', '左右眼分開量，不是總瞳距除以二——漸進鏡的視覺分區以此為中心'],
+          ['瞳孔高度（Fitting Height）', '決定配鏡十字的垂直位置，沒量就是用猜的，誤差 2–3mm 是常態'],
+          ['頂點距離與前傾角', '個人化訂製鏡片的必要參數，直接影響實效度數與通道位置'],
+          ['近用工作距離確認', '你習慣 40cm 還是 33cm 閱讀，決定加入度的設計基準'],
+          ['取鏡後鏡架配適調整', '鼻托、腳架張力、水平度——「配好時還好、幾個月後開始暈」多半出在這'],
+        ].map(([title, desc]) => (
+          <div class="border-t border-white/10 pt-5">
+            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：多焦點主題文章</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">不確定哪種方案適合你？</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的視覺分析，YoYo 驗光師會先了解你的生活視距分布，再談鏡片——新莊、板橋兩店皆可預約。</p>
+      <a href="/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約免費視覺分析 →</a>
+    </div>
+  </section>
+
+</Layout>

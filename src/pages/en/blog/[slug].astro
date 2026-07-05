@@ -1,0 +1,250 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog-en');
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post, allPosts: posts } }));
+}
+
+const { post, allPosts } = Astro.props;
+const { Content } = await post.render();
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { timeZone: 'Asia/Taipei', year: 'numeric', month: 'short', day: 'numeric' });
+
+const isoDate = post.data.date.toISOString().split('T')[0];
+
+// 其他英文文章（排除自己）
+const related = allPosts.filter(p => p.slug !== post.slug).slice(0, 6);
+
+// 從內文「## FAQ」段落自動抽取 Q&A，產生 FAQPage schema（與中文版同機制）
+function extractFaq(body: string) {
+  const start = body.search(/^##[^\n]*FAQ/mi);
+  if (start === -1) return [];
+  let section = body.slice(start);
+  section = section.slice(section.indexOf('\n') + 1);
+  const nextH2 = section.search(/^## /m);
+  if (nextH2 !== -1) section = section.slice(0, nextH2);
+
+  const faqs: { q: string; a: string }[] = [];
+  const qRegex = /\*\*Q[:：]\s*([\s\S]+?)\*\*\s*\n+([\s\S]*?)(?=\n\s*\*\*Q[:：]|$)/g;
+  let m;
+  while ((m = qRegex.exec(section))) {
+    const answer = m[2].trim()
+      .replace(/^A[:：]\s*/, '')
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/\*\*/g, '')
+      .replace(/\s*\n+\s*/g, ' ')
+      .trim();
+    if (answer) faqs.push({ q: m[1].trim(), a: answer });
+  }
+  return faqs;
+}
+const faqs = extractFaq(post.body);
+
+const canonicalUrl = `https://beyondvisualopt.com/en/blog/${post.slug}`;
+const articleSchema = {
+  "@type": "Article",
+  "@id": canonicalUrl,
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  "url": canonicalUrl,
+  "headline": post.data.title,
+  "description": post.data.excerpt,
+  "image": post.data.image || "https://beyondvisualopt.com/og-image.jpg",
+  "inLanguage": "en",
+  "articleSection": post.data.tag,
+  "datePublished": isoDate,
+  "dateModified": isoDate,
+  "author": {
+    "@type": "Person",
+    "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+    "name": "YoYo (Chia-Yu Cheng)",
+    "alternateName": "Optometrist YoYo",
+    "url": "https://beyondvisualopt.com/author/yoyo/",
+    "identifier": "Taiwan Optometrist License No. 003309"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://beyondvisualopt.com/#organization",
+    "name": "Beyond Visual Optometry",
+    "url": "https://beyondvisualopt.com",
+    "logo": "https://beyondvisualopt.com/images/logo.png"
+  }
+};
+
+const faqSchema = faqs.length > 0 ? {
+  "@type": "FAQPage",
+  "@id": `${canonicalUrl}#faq`,
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+} : null;
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": faqSchema ? [articleSchema, faqSchema] : [articleSchema],
+};
+---
+<Layout
+  title={`${post.data.title} | Beyond Visual Optometry, New Taipei`}
+  description={post.data.excerpt}
+  schema={pageSchema}
+  lang="en"
+>
+  <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+
+      <!-- Main article -->
+      <article class="w-full lg:flex-1 min-w-0">
+        <div class="mb-8 pb-8 border-b border-gray-100">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <span class="text-gray-400 text-sm">{formatDate(post.data.date)} · Optometrist YoYo</span>
+          </div>
+          <h1 class="font-serif text-brand-navy leading-tight mb-5" style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.3">{post.data.title}</h1>
+          <p class="text-gray-500 leading-relaxed" style="font-size:17px;line-height:1.8">{post.data.excerpt}</p>
+        </div>
+
+        <div class="article-body">
+          <Content />
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
+          <h2 class="text-xl font-bold mb-3">Questions about your vision?</h2>
+          <p class="text-gray-300 mb-6" style="font-size:15px">Beyond Visual Optometry — English-friendly eye exams in Xinzhuang &amp; Banqiao, New Taipei City</p>
+          <a href="/en/booking" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+            Book an Appointment →
+          </a>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a href="/en/blog" class="text-brand-navy font-semibold hover:underline text-sm">← Back to all articles</a>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="w-full lg:w-72 xl:w-80 shrink-0 lg:sticky lg:top-24">
+        {related.length > 0 && (
+          <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden mb-6">
+            <div class="bg-brand-navy text-white px-5 py-3">
+              <h3 class="font-bold text-sm tracking-wide">More Articles</h3>
+            </div>
+            <ul class="divide-y divide-gray-100">
+              {related.map(p => (
+                <li>
+                  <a href={`/en/blog/${p.slug}/`}
+                    class="flex items-start gap-3 px-5 py-4 hover:bg-brand-light transition-colors group">
+                    <span class="text-brand-gold mt-0.5 shrink-0 text-sm">▶</span>
+                    <div class="min-w-0">
+                      <p class="text-brand-navy text-sm font-medium leading-snug group-hover:text-brand-gold transition-colors line-clamp-2">{p.data.title}</p>
+                      <span class="text-gray-400 text-xs mt-1 block">{p.data.tag}</span>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div class="bg-brand-light rounded-2xl p-5 mb-6">
+          <p class="text-brand-navy font-bold text-sm mb-2">🔬 Free Vision Consultation</p>
+          <p class="text-gray-600 text-xs leading-relaxed mb-4">Not sure what's causing your vision issues? Optometrist YoYo offers a free initial consultation in English.</p>
+          <a href="/en/booking" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
+            Book Now →
+          </a>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-5 text-xs text-gray-600 space-y-3">
+          <p class="font-bold text-brand-navy text-sm">📍 Our Stores</p>
+          <div>
+            <p class="font-semibold text-brand-navy">Xinzhuang</p>
+            <p>No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City</p>
+            <a href="tel:+886222066700" class="text-brand-gold hover:underline">+886-2-2206-6700</a>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-navy">Banqiao</p>
+            <p>No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City</p>
+            <a href="tel:+886222531246" class="text-brand-gold hover:underline">+886-2-2253-1246</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+/* 沿用中文文章頁的內文排版樣式 */
+.article-body {
+  color: #3a3530;
+  font-size: 17px;
+  line-height: 1.85;
+}
+.article-body p { margin-bottom: 1.25rem; }
+.article-body h2 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2f4e;
+  margin-top: 2.5rem;
+  margin-bottom: 0.875rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #c9a84c;
+  line-height: 1.35;
+}
+.article-body h3 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a2f4e;
+  margin-top: 2rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.4;
+}
+.article-body ul,
+.article-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.article-body li { margin-bottom: 0.5rem; line-height: 1.75; }
+.article-body ul li::marker { color: #c9a84c; }
+.article-body strong { color: #1a2f4e; font-weight: 700; }
+.article-body blockquote {
+  border-left: 4px solid #c9a84c;
+  background: #f3ede3;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  margin: 1.5rem 0;
+  font-size: 15px;
+  color: #3a3530;
+}
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.article-body th {
+  background: #1a2f4e;
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+.article-body td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0ebe3;
+  vertical-align: top;
+}
+.article-body tr:hover td { background: #faf8f4; }
+.article-body hr { border: none; border-top: 1px solid #e8e3da; margin: 2rem 0; }
+.article-body a { color: #c9a84c; text-decoration: none; }
+.article-body a:hover { text-decoration: underline; }
+@media (max-width: 1023px) {
+  .article-body h2 { font-size: 1.3rem; }
+  .article-body h3 { font-size: 1.1rem; }
+}
+</style>

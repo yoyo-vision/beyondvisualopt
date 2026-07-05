@@ -23,6 +23,28 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
     <p class="text-white/70 text-lg max-w-2xl mx-auto">YoYo 驗光師的第一手視光知識，讓你在配鏡前就已經是半個行家。</p>
   </section>
 
+  <!-- 三大完整指南入口 -->
+  <section class="px-6 md:px-16 py-12 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(18px,2.5vw,26px);font-weight:400">📚 完整指南：一頁講透一個主題</h2>
+        <a href="/guide/" class="font-sans text-brand-gold hover:underline" style="font-size:13px">全部指南 →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          { href: '/guide/progressive-lens/', tag: '老花・多焦點', title: '多焦點鏡片完整指南' },
+          { href: '/guide/children-myopia/', tag: '兒童視力', title: '兒童近視控制完整指南' },
+          { href: '/guide/high-myopia/', tag: '高度近視', title: '高度近視配鏡完整指南' },
+        ].map(g => (
+          <a href={g.href} class="bg-white border border-brand-gold/30 rounded-2xl px-6 py-5 hover:border-brand-gold transition-colors group">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase block mb-2" style="font-size:10px;letter-spacing:0.16em">{g.tag}</span>
+            <span class="font-serif text-brand-navy group-hover:text-brand-gold transition-colors" style="font-size:16px;font-weight:600">{g.title} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- 最新資訊 -->
   <section class="px-6 md:px-16 py-16" style="background:#eee8da">
     <div class="max-w-6xl mx-auto">

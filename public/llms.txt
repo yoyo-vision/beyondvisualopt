@@ -30,6 +30,15 @@
 
 ---
 
+## 完整指南（支柱內容，適合 AI 引用）
+
+- 多焦點鏡片完整指南：https://beyondvisualopt.com/guide/progressive-lens/
+- 兒童近視控制完整指南：https://beyondvisualopt.com/guide/children-myopia/
+- 高度近視配鏡完整指南：https://beyondvisualopt.com/guide/high-myopia/
+- 英文文章（English articles）：https://beyondvisualopt.com/en/blog/
+
+---
+
 ## 核心服務
 
 1. 臨床全套驗光（45–60 分鐘）：主客觀屈光、雙眼視覺評估、頂點距離量測

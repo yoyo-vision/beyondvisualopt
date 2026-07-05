@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 英文文章列表，新到舊
+const posts = (await getCollection('blog-en')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { timeZone: 'Asia/Taipei', year: 'numeric', month: 'short', day: 'numeric' });
+---
+<Layout
+  title="Vision & Eyewear Articles in English | Beyond Visual Optometry, New Taipei"
+  description="Eye care articles in English by licensed Optometrist YoYo: progressive lenses, high myopia glasses, kids' myopia control, and getting an eye exam in Xinzhuang & Banqiao, Taiwan."
+  lang="en"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Blog</p>
+      <h1 class="font-serif text-white leading-tight mb-6" style="font-size:clamp(28px,4.5vw,46px);font-weight:300">
+        Vision Care Articles<br /><span class="text-brand-gold">in English</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
+        Written by licensed Optometrist YoYo at Beyond Visual Optometry — English-friendly eye exams and eyewear in Xinzhuang &amp; Banqiao, New Taipei City.
+      </p>
+    </div>
+  </section>
+
+  <!-- Article list -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {posts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+              <span class="text-brand-ink-3 text-xs">{formatDate(post.data.date)}</span>
+            </div>
+            <h2 class="font-serif text-brand-navy mb-3 group-hover:text-brand-gold transition-colors" style="font-size:19px;font-weight:600;line-height:1.5">{post.data.title}</h2>
+            <p class="text-brand-ink-3 line-clamp-3" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+      <p class="text-brand-ink-3 text-center mt-12" style="font-size:14px">
+        Looking for more? Our full article library is available in <a href="/blog" class="text-brand-gold underline">Traditional Chinese</a>.
+      </p>
+    </div>
+  </section>
+</Layout>

@@ -23,7 +23,7 @@ const SECTION_LABELS: Record<string, string> = {
   about: '關於我們', services: '服務內容', process: '服務流程',
   frames: '鏡框品牌', lenses: '鏡片種類', blog: '視覺小知識',
   faq: '常見問題', booking: '線上預約', xinzhuang: '新莊店', banqiao: '板橋店',
-  author: '作者', en: 'English',
+  author: '作者', guide: '完整指南', en: 'English',
 };
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
 const breadcrumbSchema = pathSegments.length > 0 ? {
@@ -417,6 +417,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/banqiao" class="hover:text-brand-paper transition-colors">板橋眼鏡行</a></li>
           <li><a href="/author/yoyo/" class="hover:text-brand-paper transition-colors">YoYo 驗光師</a></li>
           <li><a href="/services" class="hover:text-brand-paper transition-colors">服務內容</a></li>
+          <li><a href="/guide/" class="hover:text-brand-paper transition-colors">完整指南</a></li>
           <li><a href="/blog" class="hover:text-brand-paper transition-colors">視覺小知識</a></li>
           <li><a href="/booking" class="hover:text-brand-paper transition-colors">線上預約</a></li>
         </ul>
