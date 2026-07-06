@@ -339,6 +339,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "blog-en": {
+"astigmatism-glasses-distortion.md": {
+	id: "astigmatism-glasses-distortion.md";
+  slug: "astigmatism-glasses-distortion";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
 "children-myopia-control-xinzhuang.md": {
 	id: "children-myopia-control-xinzhuang.md";
   slug: "children-myopia-control-xinzhuang";
@@ -346,9 +353,79 @@ declare module 'astro:content' {
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
 } & { render(): Render[".md"] };
+"common-optometry-mistakes.md": {
+	id: "common-optometry-mistakes.md";
+  slug: "common-optometry-mistakes";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"contact-lens-fatigue.md": {
+	id: "contact-lens-fatigue.md";
+  slug: "contact-lens-fatigue";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"contact-lens-vs-glasses.md": {
+	id: "contact-lens-vs-glasses.md";
+  slug: "contact-lens-vs-glasses";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"digital-eye-strain-solution.md": {
+	id: "digital-eye-strain-solution.md";
+  slug: "digital-eye-strain-solution";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"driving-lens-night-glare.md": {
+	id: "driving-lens-night-glare.md";
+  slug: "driving-lens-night-glare";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"glasses-dizzy.md": {
+	id: "glasses-dizzy.md";
+  slug: "glasses-dizzy";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
 "high-myopia-glasses-guide.md": {
 	id: "high-myopia-glasses-guide.md";
   slug: "high-myopia-glasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"myopia-getting-worse-truth.md": {
+	id: "myopia-getting-worse-truth.md";
+  slug: "myopia-getting-worse-truth";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"optometry-vs-ophthalmology.md": {
+	id: "optometry-vs-ophthalmology.md";
+  slug: "optometry-vs-ophthalmology";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"presbyopia-vs-progressive.md": {
+	id: "presbyopia-vs-progressive.md";
+  slug: "presbyopia-vs-progressive";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"progressive-lens-adaptation.md": {
+	id: "progressive-lens-adaptation.md";
+  slug: "progressive-lens-adaptation";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
@@ -363,6 +440,13 @@ declare module 'astro:content' {
 "xinzhuang-glasses-guide.md": {
 	id: "xinzhuang-glasses-guide.md";
   slug: "xinzhuang-glasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"zeiss-hoya-nikon-lens-guide.md": {
+	id: "zeiss-hoya-nikon-lens-guide.md";
+  slug: "zeiss-hoya-nikon-lens-guide";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
