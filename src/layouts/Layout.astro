@@ -343,7 +343,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           {isEn ? 'Book Now' : '立即預約'}
         </a>
         <!-- 手機漢堡按鈕 -->
-        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單">
+        <button id="menu-btn" type="button" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
           <span class="block w-6 h-0.5 bg-brand-ink"></span>
           <span class="block w-6 h-0.5 bg-brand-ink"></span>
           <span class="block w-6 h-0.5 bg-brand-ink"></span>
@@ -377,7 +377,9 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('mobile-menu');
     btn?.addEventListener('click', () => {
-      menu?.classList.toggle('hidden');
+      const open = menu?.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? '關閉選單' : '開啟選單');
     });
   </script>
 
