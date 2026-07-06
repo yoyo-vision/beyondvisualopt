@@ -1,0 +1,271 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'digital-eye-strain-solution',
+  'glasses-dizzy',
+  'contact-lens-fatigue',
+  'driving-lens-night-glare',
+];
+const allPosts = await getCollection('blog');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/guide/digital-eye-strain/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: '抗藍光鏡片真的有用嗎？',
+    a: '要看你期待它解決什麼。數位疲勞的核心是睫狀肌持續緊繃與眨眼減少造成的乾眼，藍光本身不是主因——所以抗藍光鍍膜對「下午眼睛脹、看遠對不到焦」這類疲勞的幫助，研究上仍有討論空間，不宜誇大成護眼防病變。它能減少部分短波光刺激，有些人反映對睡眠品質有幫助。真正對長時間螢幕工作有感的，通常是近用加成設計（如蔡司 Digital 類數位鏡片）加上正確的配鏡參數與用眼習慣，而不是單靠一層鍍膜。',
+  },
+  {
+    q: '看螢幕看到頭暈、眼睛痛怎麼辦？',
+    a: '先分兩種狀況。若是用眼幾小時後才出現、休息後緩解，多半是調節疲勞與乾眼——可先試 20-20-20 法則、有意識完整眨眼、調整螢幕到眼睛下視 10–15 度且距離 60–70 公分。若頭暈是「一戴上眼鏡就暈、靜止不動也暈、伴隨明顯頭痛或走路不穩」，那通常是配鏡參數問題（度數、散光軸向、瞳距、頂點距離），需要回診重新量測。症狀持續或加重，依《驗光人員法》我們會建議轉介眼科醫師檢查，驗光人員不做醫療診斷。',
+  },
+  {
+    q: '工程師、上班族長時間看螢幕該配什麼眼鏡？',
+    a: '沒有單一標準答案，取決於你的年齡與視距分布。近視族、長時間電腦族，蔡司 Digital 類數位鏡片在鏡片下方加入輕微近用加成，讓睫狀肌不必全力出力；已有老花、需要在電腦與文件間切換的人，辦公室（中近用）鏡片的中近視野更寬、側邊像差更小，比傳統遠用導向的漸進鏡更不容易暈。設計師這類對色準敏感的族群，抗藍光濾鏡會輕微影響色彩呈現，需要個別權衡。建議先做完整驗光與視距分析再決定。',
+  },
+  {
+    q: '隱形眼鏡越戴越累是為什麼？',
+    a: '常見有幾個原因：軟式隱眼含水材質會從眼表吸水，在冷氣房與螢幕環境下加重乾眼；透氧不足讓角膜慢性缺氧，戴到下午開始不舒服；配戴時間超過負荷（很多人一戴 14 小時）。改善方向包含確認是否為高透氧的矽水膠材質、把每天配戴控制在 10–12 小時內、使用無防腐劑人工淚液。若乾澀持續或眼白反覆充血，建議回診做眼表評估，必要時依《驗光人員法》轉介眼科醫師。',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "螢幕族視覺疲勞完整指南：數位疲勞的成因、症狀檢查與解決方案",
+      "description": "每天盯螢幕 10 小時、下午開始眼睛脹痛看不清楚？從調節疲勞、乾眼、藍光的成因，到 20-20-20 用眼習慣、抗藍光與辦公室鏡片方案，YoYo 驗光師一頁講透數位疲勞。新莊、板橋驗配。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="螢幕族視覺疲勞完整指南｜數位疲勞原因與解決方案｜新莊板橋驗光"
+  description="盯螢幕超過 10 小時、下午眼睛脹痛看不清楚？從調節疲勞、乾眼到藍光成因，加上 20-20-20 法則與抗藍光、辦公室鏡片方案，YoYo 驗光師一頁講透數位疲勞。新莊、板橋能見度視覺中心。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        螢幕族視覺疲勞<br /><span class="text-brand-gold">完整指南</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        每天盯螢幕超過 10 小時、下午三點一到眼睛就脹痛看不清楚？這一頁把數位疲勞的成因、自我檢查、用眼習慣與鏡片方案一次講清楚。由 YoYo 驗光師撰寫，依據臨床驗配實務，不是產品型錄。
+      </p>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '數位疲勞是什麼', href: '#why' },
+        { label: '症狀自我檢查', href: '#checklist' },
+        { label: '用眼習慣', href: '#habits' },
+        { label: '鏡片方案', href: '#lenses' },
+        { label: '隱形眼鏡族的疲勞', href: '#contacts' },
+        { label: '常見問題', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 數位疲勞是什麼 -->
+  <section id="why" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">數位疲勞不是「眼睛累了」，是有機制的視覺過勞</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>「下班後眼睛很乾、頭很痛」「看完電腦再看遠，好像對不到焦」「午後三點一到，就開始看不清楚」——這些症狀有一個名字：<strong>數位視覺症候群（Digital Vision Syndrome，DVS）</strong>，又稱數位眼疲勞。對每天盯螢幕十小時以上的工程師、醫師、業務、會計、設計師來說，這不只是「累」，而是三個清楚的視覺機制在同時作用。</p>
+        <p><strong>① 睫狀肌持續緊繃：</strong>看螢幕時，睫狀肌持續維持在同一個張力狀態，既不完全放鬆（看遠），也不切換——這叫「調節鎖定」。持續 4–6 小時後，調節精準度下降，視覺開始模糊、波動、難以對焦，這就是每天下午的「看不清楚」。</p>
+        <p><strong>② 眨眼次數減少、乾眼加重：</strong>正常眨眼每分鐘約 15–20 次，盯著螢幕時降到約 5–7 次，減少約 60%。淚膜靠眨眼更新，眨眼少了，淚膜破裂時間縮短，角膜暴露變長，乾澀、灼熱、異物感隨之而來。</p>
+        <p><strong>③ 近距離調節需求超出舒適區：</strong>假設你近視 300 度、戴著眼鏡，看遠是放鬆的，但看 60 公分的螢幕還要額外動用約 +1.67D 的調節力。若同時有未矯正的老花、調節不足或輕微隱性斜位，這個需求日積月累，就是每天的眼睛過勞。至於藍光，它是討論度很高的因素，但研究對它在數位疲勞中的角色仍有討論空間——核心其實是上面這幾項調節與乾眼問題。</p>
+      </div>
+      <p class="text-brand-ink-2 mt-6" style="font-size:16px;line-height:1.8">
+        完整成因解析：<a href="/blog/digital-eye-strain-solution/" class="text-brand-gold underline">螢幕族的眼睛為什麼這麼累？數位疲勞完整解決方案</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 症狀自我檢查 -->
+  <section id="checklist" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">你的疲勞屬於哪一種？症狀自我檢查</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">這些症狀往往交疊、而且不只單一原因——這也是為什麼「買個抗藍光眼鏡」通常解決不了問題。</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">你的症狀</th>
+              <th class="text-left px-5 py-4 font-semibold">可能的視覺問題</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['看遠模糊，休息後恢復', '調節痙攣（假性近視樣症狀）'],
+              ['眼睛乾、灼熱、異物感', '乾眼 + 眨眼不足'],
+              ['頭痛（太陽穴或眉弓）', '隱性外斜位、調節失衡'],
+              ['重影、字體跳動', '雙眼視覺協調問題（輻輳不足）'],
+              ['近看清楚，看完遠模糊', '調節過度疲勞'],
+              ['午後視力下降', '累積調節疲勞、乾眼加重'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        重要界線：驗光人員做的是視覺功能評估與配鏡矯正，不做醫療診斷。若你有持續的眼睛疼痛、反覆嚴重乾澀、視力明顯下降，依《驗光人員法》我們會建議並協助轉介眼科醫師檢查，先排除眼疾再談配鏡。
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 用眼習慣 -->
+  <section id="habits" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">先從免費的做起：用眼習慣與工作環境</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">換鏡片之前，這些調整常常比你想的更有效，尤其對整天在冷氣房、多螢幕切換的工作者。</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { level: '20-20-20 法則', desc: '每用眼 20 分鐘，看 20 英尺（約 6 公尺）外的物體，持續 20 秒。讓緊繃的睫狀肌有機會切換放鬆，打斷整段「調節鎖定」。', fit: '調節放鬆' },
+          { level: '有意識完整眨眼', desc: '很多人看螢幕時只「半眨眼」，淚膜更新不完全。提醒自己完整眨眼；搭配無防腐劑的拋棄式人工淚液，白天每 2–3 小時補一次。', fit: '對抗乾眼' },
+          { level: '螢幕距離與高度', desc: '理想是眼睛下視 10–15 度、距離 60–70 公分。避免螢幕比環境亮太多或太暗，減少瞳孔反覆縮放與對比壓力。', fit: '環境設定' },
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.level}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        這些習慣能緩解，但無法根治——如果症狀持續、或發現「一戴上眼鏡就頭暈」，那多半是配鏡參數問題，看這篇：<a href="/blog/glasses-dizzy/" class="text-brand-gold underline">為什麼戴眼鏡會頭暈？5 大常見原因</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 鏡片方案（深藍區段） -->
+  <section id="lenses" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">鏡片方案：依需求選對工具，不是一套解決所有人</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">習慣調整之後仍然撐不過整個下午，就該從鏡片本身處理。以下都是螢幕族實際會用到的方向。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {[
+          ['蔡司 Digital 類數位鏡片', '在單焦近視鏡片下方視區加入輕微正度數加成（約 +0.50～+1.25D），看近時不必動用全部調節力，等於給睫狀肌「部分支撐」。看遠依然清晰，適合近視族、35–50 歲調節力開始衰退者。它不是老花眼鏡，也不是漸進鏡片。'],
+          ['辦公室（中近用）鏡片', '把中近距離的清晰視野最大化，犧牲部分遠距（不適合開車），換來更寬的電腦與文件視野、更小的側邊像差、更不容易暈。適合老花族與電腦＋開會＋手機多距離切換的工作者。'],
+          ['抗藍光／防眩光鍍膜', '抗藍光可減少部分短波光刺激，有些人反映對睡眠有幫助；但它解決不了睫狀肌緊繃，對數位疲勞的實質幫助研究上仍有討論空間，屬於加分項而非主角。防眩光（抗反射）鍍膜則能減少鏡片表面反射，讓夜間或強光下的影像更純粹、不刺眼。'],
+          ['鏡架配適與配戴參數', '前傾角、頂點距離會影響看螢幕時光學中心的對準，高度近視者尤其敏感。有時正確的鏡架調整＋工作環境設定，比換鏡片更直接有效。取鏡後鏡架走位也會讓「本來還好、幾個月後開始暈」。'],
+        ].map(([title, desc]) => (
+          <div class="border-t border-white/10 pt-5">
+            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-white/70 mt-10" style="font-size:15px;line-height:1.8">
+        設計師這類對色準敏感的族群要特別提醒：抗藍光濾鏡會輕微影響色彩呈現，需要在色準與舒適之間個別權衡，不是套同一個方案。
+      </p>
+    </div>
+  </section>
+
+  <!-- 隱形眼鏡族的疲勞 -->
+  <section id="contacts" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">隱形眼鏡族：為什麼「越戴越累」？</h2>
+      <div class="space-y-6">
+        {[
+          { title: '① 含水材質加重乾眼', desc: '軟式隱眼會從眼表淚液吸水維持自身含水。在冷氣房、長時間螢幕、眨眼減少的環境下，形成「眼睛越乾→鏡片吸水越多→眼表更乾」的惡性循環。', action: '確認是否為高透氧矽水膠材質' },
+          { title: '② 透氧不足、角膜缺氧', desc: '透氧率低的鏡片讓角膜長期輕度缺氧，特徵是配戴初期還好、戴到下午開始不舒服、眼白容易充血。', action: '升級矽水膠材質可明顯改善' },
+          { title: '③ 配戴時間超過負荷', desc: '很多人早上 7 點戴、晚上 11 點才取下，長達 14 小時，對淚膜與角膜都是顯著負擔，螢幕族更明顯。', action: '每天配戴控制在 10–12 小時內' },
+        ].map(item => (
+          <div class="border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2 mb-3" style="font-size:16px;line-height:1.8">{item.desc}</p>
+            <p class="font-sans text-brand-gold" style="font-size:14px">→ {item.action}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        搭配無防腐劑人工淚液、每年定期驗光確認度數與眼表健康，若乾澀持續請就醫檢查。完整解析：<a href="/blog/contact-lens-fatigue/" class="text-brand-gold underline">每天戴隱形眼鏡，眼睛卻越來越累？</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：螢幕族視覺主題文章</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">整天盯螢幕，眼睛撐不過下午？</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的視覺分析，YoYo 驗光師會先了解你的螢幕時數與視距分布，做調節與乾眼初步評估，再談鏡片方案——新莊店 02-2206-6700（新莊區中正路 419-1 號）、板橋店 02-2253-1246，兩店皆可預約。</p>
+      <a href="/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺分析 →</a>
+    </div>
+  </section>
+
+</Layout>

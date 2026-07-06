@@ -1,0 +1,246 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'zeiss-hoya-nikon-lens-guide',
+  'hoya-lens-guide',
+  'essilor-lens-guide',
+  'zeiss-individual-worth-it',
+];
+const allPosts = await getCollection('blog');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/guide/lens-brands/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: '蔡司和 HOYA 哪個好？',
+    a: '沒有絕對的「哪個好」——每個品牌都有強項。蔡司以個人化訂製技術（Individual²）與德國光學底蘊著稱；HOYA 是全球最大鏡片製造商之一，垂直整合的製造能力讓品質一致性高、產品線從入門到高端都完整。實務上更關鍵的是設計等級與量測精度：一片 HOYA 高端個人化漸進鏡片，視覺舒適度很可能勝過蔡司入門等級。品牌之間的差異，往往小於同一品牌不同系列之間的差異。建議先做完整驗光與生活視覺分析，再由驗光師依你的度數組合與用眼習慣給出選配建議。',
+  },
+  {
+    q: '鏡片品牌差在哪裡？',
+    a: '差別不在 logo，而在三個層面：一是光學設計能力（像差控制、漸進通道寬度、視野過渡的平順度），二是鍍膜技術（抗反射、防刮、防污、抗藍光直接影響清晰度與使用年限），三是個人化訂製能力（能不能把你的頂點距離、前傾角、鏡框彎度納入計算）。這些才是價差的真正來源，不是單純的品牌溢價。同樣是漸進鏡片，Essilor 是 1959 年漸進鏡片的發明者、蔡司強在訂製精度、HOYA 與 NIKON 同源於日本精工製造——各有各的擅長。',
+  },
+  {
+    q: '貴的鏡片真的值得嗎？',
+    a: '取決於你是不是那個「用得到差異」的人。以蔡司 Individual² 為例，最受益的是高度近視（600 度以上，頂點距離誤差影響最大）、高度散光（200 度以上）、斜軸散光、以及每天長時間用眼、對視覺品質敏感的專業人士（設計師、醫師、精密工作者）。反過來，近視 300 度以下、無散光、鏡框選小框平面框的人，主觀差異通常不明顯，不建議花這個錢。貴的鏡片值不值得，是需求問題，不是面子問題——驗光師的角色是幫你找到適合的那一片，而不是直接推最貴的。',
+  },
+  {
+    q: '新莊、板橋可以配哪些品牌鏡片？',
+    a: '能見度視覺中心是蔡司 Zeiss 台灣簽約認證經銷商，新莊店（比泱驗光所，新北市新莊區中正路 419-1 號，02-2206-6700）與板橋店（新北市板橋區雙十路二段 47 巷 28 號，02-2253-1246）均可提供完整蔡司鏡片系列；同時也代理 HOYA、NIKON、依視路 Essilor 的主要系列鏡片。無論你要配蔡司 Individual²、HOYA iD、NIKON SeeMax 或依視路 Varilux，都可由 YoYo 驗光師依你的用眼需求做客觀比較與選配。',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "鏡片品牌怎麼選：蔡司、HOYA、NIKON、依視路完整比較指南",
+      "description": "蔡司、HOYA、NIKON、依視路四大鏡片品牌差在哪？從光學設計、鍍膜、個人化訂製能力到怎麼依需求選，YoYo 驗光師客觀比較，一頁講清楚。新莊、板橋能見度視覺中心。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="鏡片品牌怎麼選｜蔡司 HOYA NIKON 依視路完整比較｜新莊板橋驗配"
+  description="蔡司、HOYA、NIKON、依視路差在哪？從光學設計、鍍膜到個人化訂製能力，YoYo 驗光師客觀比較四大品牌，教你依需求選對鏡片。新莊、板橋能見度視覺中心。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        鏡片品牌<br /><span class="text-brand-gold">怎麼選</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        蔡司、HOYA、NIKON、依視路，報價差好幾千塊到底差在哪？這一頁客觀比較四大品牌的光學設計、鍍膜與訂製能力，再教你怎麼依需求選。由 YoYo 驗光師撰寫，不貶低任何一家、也不推銷最貴的。
+      </p>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '品牌差在哪', href: '#difference' },
+        { label: '四大品牌比較', href: '#compare' },
+        { label: '怎麼依需求選', href: '#choose' },
+        { label: '等級比品牌更關鍵', href: '#levels' },
+        { label: '深入閱讀', href: '#cluster' },
+        { label: '常見問題', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 品牌差在哪 -->
+  <section id="difference" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡片品牌差的不是 logo，是這三件事</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>很多人以為鏡片品牌的差別就是「牌子大小」或「產地不同」。實際上，同樣一副漸進鏡片報價差好幾千塊，價差來自三個看不見的層面：</p>
+        <p><strong>一、光學設計能力。</strong>漸進鏡片的通道兩側必然有像差區，那個區域看出去是變形模糊的。高端與平價鏡片的核心差異，就在於能把像差區壓得多小、清晰視野推得多寬。依視路（Essilor）是 1959 年漸進鏡片的發明者，蔡司強在訂製精度，HOYA 的 iD 系列用雙面複合設計換取更寬視野——各家的光學路數不同。</p>
+        <p><strong>二、鍍膜技術。</strong>抗反射、防刮、防污、抗藍光，直接影響鏡片的清晰度與使用年限。這是選鏡片時最容易被忽略、卻天天有感的環節。依視路的 Crizal、HOYA 的 Hi-Vision，都是各自的招牌鍍膜。</p>
+        <p><strong>三、個人化訂製能力。</strong>能不能把你的頂點距離、鏡框前傾角、鏡面彎度全部納入計算，為你的臉訂做光學設計——這是高階鏡片真正拉開差距的地方。對每天面對螢幕十小時的工程師來說，這三件事加起來，就是一整天下來眼睛脹不脹、脖子痠不痠的差別。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 四大品牌比較 -->
+  <section id="compare" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">四大品牌定位比較：各有各的強項</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">能見度是蔡司台灣簽約認證經銷商，同時代理 HOYA、NIKON、依視路。以下比較力求客觀，不貶低任何一家。</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">品牌</th>
+              <th class="text-left px-5 py-4 font-semibold">背景與強項</th>
+              <th class="text-left px-5 py-4 font-semibold">代表系列</th>
+              <th class="text-left px-5 py-4 font-semibold">適合對象</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['蔡司 Zeiss', '1846 年德國光學品牌，以個人化訂製技術著稱，訂製精度為其強項', 'Individual² 訂製、DriveSafe 夜駕、Digital Lens 數位、MyoCare 兒童近視管理（C.A.R.E. 技術）', '高度數、高散光、對視覺品質敏感、追求個人化訂製的專業人士'],
+              ['HOYA', '1941 年日本品牌，全球最大鏡片製造商之一，垂直整合製造、品質一致性高', 'iD 漸進（雙面複合設計）、Sync III 數位減壓、Nulux 單光、MiYOSMART 兒童離焦（DIMS 技術）', '想要產品線完整、價格區間彈性大、技術成熟穩定的族群'],
+              ['NIKON', '光學技術積累深厚，鏡片與 HOYA 系列同源製造，定位介於 HOYA 與蔡司之間', 'SeeMax 個人化漸進、Presio 標準漸進、Light / Relaxsee 單光', '信任 NIKON 光學、想要自由曲面漸進設計的族群'],
+              ['依視路 Essilor', '1849 年法國品牌，全球市占最高，1959 年漸進多焦點鏡片發明者', 'Varilux 漸進（漸進鏡片始祖）、Eyezen 數位減壓、Crizal 鍍膜、Stellest 兒童離焦（H.A.L.T. 技術）', '需要成熟普及漸進技術、重視鍍膜品質、預算彈性大的族群'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        提醒：星趣控（Stellest）是依視路的兒童近視離焦鏡片，採 H.A.L.T. 技術（1021 個微型非球面鏡片）；蔡司的兒童近視管理鏡片是 MyoCare，採 C.A.R.E. 技術（同心柱狀環離焦）——兩者常被搞混，是不同品牌的不同產品。
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 怎麼依需求選 -->
+  <section id="choose" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">怎麼依你的需求選？先看你落在哪一格</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">品牌不是重點，先確認你的用眼情境，再回頭對應合適的系列。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { need: '多焦點 / 老花', desc: '遠中近都要清楚、不想一直換眼鏡。四大品牌都有旗艦漸進：蔡司 Individual²、HOYA iD、NIKON SeeMax、依視路 Varilux。從入門到個人化訂製都有等級之分，先確認你一天的視距分布再選。' },
+          { need: '高度近視 / 高度散光', desc: '600 度以上近視、200 度以上散光，頂點距離與前傾角的補正影響最大。個人化訂製鏡片（如蔡司 Individual²）在這類度數上差異最明顯，未補正可能造成有效度數與散光軸向偏移。' },
+          { need: '數位疲勞（長時間螢幕）', desc: '每天螢幕超過 6 小時、下班眼睛酸澀，但還不需要老花鏡。可考慮數位減壓型單光鏡片：HOYA Sync III、依視路 Eyezen、蔡司 Digital Lens，在下方加入輕微調節輔助、外觀與一般鏡片相同。' },
+          { need: '預算有限 / 度數單純', desc: '入門等級就足夠。標準設計的漸進或單光鏡片（如 HOYA iD EaZi、依視路 Varilux Comfort）能滿足基本需求，把預算花在精準驗光與鏡架調整上，CP 值更高。' },
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">依需求</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.need}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        YoYo 驗光師的原則：先分析你一天的視距分布（開車幾小時、螢幕幾小時、閱讀距離多遠），再決定品牌與等級——不是先決定產品再說服你適合。
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 等級比品牌更關鍵（深藍區段） -->
+  <section id="levels" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">鏡片「等級」比「品牌」更關鍵</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">同一品牌內不同系列的差距，往往比不同品牌之間更大。一片蔡司入門漸進，跟一片 HOYA 高端個人化漸進，後者的視覺舒適度很可能更好——反過來也成立。選對等級，比糾結品牌更重要。</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { level: '標準設計', desc: '用平均臉型與平均配戴參數設計，固定的通道與像差分布。預算有限、度數單純、初次嘗試者的入門選擇。例如 HOYA iD EaZi、依視路 Varilux Comfort。', fit: '入門' },
+          { level: '數位優化設計', desc: '依處方度數優化像差分布，通道更寬、周邊變形較少，多數中度使用者的甜蜜點。例如依視路 Varilux Physio 的波前像差補正、HOYA iD Space。', fit: '主流' },
+          { level: '個人化訂製', desc: '把你的頂點距離、前傾角、鏡面彎度、頭部轉動習慣全部納入計算，從源頭訂製、不用庫存半成品。例如蔡司 Individual²、NIKON SeeMax、依視路 Xclusive。高度數、高用眼強度者差異最明顯。', fit: '訂製' },
+        ].map(item => (
+          <div class="bg-white/5 rounded-2xl p-7 border border-white/10 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
+            <h3 class="font-serif text-white mb-3" style="font-size:19px;font-weight:600">{item.level}</h3>
+            <p class="text-white/60" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-white/70 mt-8" style="font-size:16px;line-height:1.8">
+        想知道個人化訂製到底值不值得？看這篇：<a href="/blog/zeiss-individual-worth-it/" class="text-brand-gold underline">蔡司個人化訂製鏡片值得嗎？費用、差異、適合族群完整分析</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section id="cluster" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：各品牌詳細介紹</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">不確定哪個品牌、哪個等級適合你？</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的視覺分析，YoYo 驗光師會先了解你的生活視距分布與度數狀況，再客觀比較品牌與等級——新莊、板橋兩店皆可預約。</p>
+      <a href="/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約免費視覺分析 →</a>
+    </div>
+  </section>
+
+</Layout>

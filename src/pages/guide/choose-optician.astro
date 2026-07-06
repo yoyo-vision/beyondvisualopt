@@ -1,0 +1,307 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'xinzhuang-glasses-guide',
+  'banqiao-glasses-guide',
+  'optometry-vs-ophthalmology',
+  'common-optometry-mistakes',
+];
+const allPosts = await getCollection('blog');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/guide/choose-optician/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: '驗光所和眼鏡行有什麼不同？',
+    a: '差別在法規。台灣的「驗光所」依《驗光人員法》設立，必須由持照驗光人員執行驗光，能合法開立驗光報告、執行完整的雙眼視覺評估；一般「眼鏡行」屬商業登記，無資格限制，不能合法開立驗光報告。實務上的意義是：如果只是配一副度數單純的近視眼鏡，眼鏡行也能應付；但只要你有頭暈、眼睛疲勞、老花或多焦點需求，請找驗光所，讓持照驗光人員做完整評估。',
+  },
+  {
+    q: '新莊哪裡配眼鏡比較好？',
+    a: '新莊中正路一帶眼鏡店家很多，選店的重點不是招牌大小，而是三件事：驗光師有沒有執照、驗光流程是否完整（45–60 分鐘）、配鏡後有沒有免費回診。能見度視覺中心 × 比泱驗光所位於新北市新莊區中正路 419-1 號（捷運輔大站步行 5 分鐘），由持照驗光師 YoYo 主理，提供完整臨床驗光與雙眼視覺評估，電話 02-2206-6700。',
+  },
+  {
+    q: '板橋驗光所怎麼選？',
+    a: '板橋從江子翠站到板橋車站一帶店家密集，價位與定位落差很大。挑選時看：是否為驗光所（而非只做商業登記的眼鏡行）、老花與多焦點是否有完整加入度與瞳高量測、高度近視是否做頂點距離補正。能見度眼鏡 × 能見度驗光所（板橋在地 1992 年創立至今）位於雙十路二段 47 巷 28 號、捷運江子翠站步行 5 分鐘，電話 02-2253-1246。',
+  },
+  {
+    q: '配眼鏡要先看眼科嗎？',
+    a: '單純配鏡不需要先掛眼科。除非你同時有眼部不適症狀——突然視力模糊、眼前飛蚊閃光黑影、眼睛紅痛、疑似青光眼——這些屬於醫療範疇，要先看眼科醫師。若只是想配一副舒服的眼鏡或戴了會頭暈，可以直接找驗光所。依《驗光人員法》，驗光人員不做醫療診斷，若在評估過程中發現視力異常，會依法轉介眼科醫師。',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "新北配眼鏡完整指南：驗光所 vs 眼鏡行怎麼選？新莊、板橋在地建議",
+      "description": "新北配眼鏡要選驗光所還是眼鏡行？法規差在哪、怎麼判斷一家好的驗光所、常見配鏡地雷、何時該看眼科——YoYo 驗光師一頁講透。新莊、板橋在地建議。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="新北配眼鏡完整指南｜驗光所 vs 眼鏡行怎麼選｜新莊 板橋 在地建議"
+  description="新北配眼鏡選驗光所還是眼鏡行？從法規差異、怎麼判斷好的驗光所、常見配鏡地雷到何時該看眼科，YoYo 驗光師一頁講透。新莊、板橋能見度視覺中心在地建議。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        新北配眼鏡：<br /><span class="text-brand-gold">驗光所 vs 眼鏡行怎麼選</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        新莊配眼鏡、板橋驗光所該怎麼挑？法規差在哪、怎麼判斷一家值得信任的驗光所、常見的配鏡地雷、什麼時候該去眼科——這一頁一次講清楚。由 YoYo 驗光師撰寫，依據臨床驗配實務。
+      </p>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '驗光所 vs 眼鏡行', href: '#difference' },
+        { label: '怎麼判斷好驗光所', href: '#howtochoose' },
+        { label: '常見配鏡地雷', href: '#mistakes' },
+        { label: '何時該看眼科', href: '#ophthalmology' },
+        { label: '新莊店 × 板橋店', href: '#stores' },
+        { label: '常見問題', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 驗光所 vs 眼鏡行 -->
+  <section id="difference" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">「驗光所」和「眼鏡行」，法律上就是兩回事</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">很多人以為都一樣，其實在台灣法規上這兩者的分工完全不同。差別不在裝潢，在誰能合法幫你驗光。</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">比較項目</th>
+              <th class="text-left px-5 py-4 font-semibold">驗光所</th>
+              <th class="text-left px-5 py-4 font-semibold">一般眼鏡行</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['法規依據', '驗光人員法', '商業登記'],
+              ['執行驗光', '需持照驗光人員', '無資格限制'],
+              ['開立驗光報告', '合法', '不合法'],
+              ['雙眼視覺評估', '可執行', '無法執行'],
+              ['複雜視覺問題處理', '有能力評估', '無法評估'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        白話結論：度數單純、只是想換一副近視眼鏡，一般眼鏡行也能處理；但只要你有頭暈、眼睛疲勞、老花或多焦點需求，請找驗光所讓持照驗光人員做完整評估。這不是選擇問題，是法規設計的分工。
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 怎麼判斷好驗光所 -->
+  <section id="howtochoose" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">怎麼判斷一家好的驗光所？看這 5 件事</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">不論你在新莊配眼鏡還是在板橋驗光，走進店裡前，先用這幾個問題篩掉不合格的店家。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { n: '01', title: '驗光師有沒有執照？', desc: '持照驗光師才能合法執行完整驗光。台灣驗光師執照可至衛福部醫事人員執照查詢系統確認。這是最基本、也最容易被忽略的一關。' },
+          { n: '02', title: '驗光流程有多長？', desc: '完整臨床驗光至少 45–60 分鐘。10–15 分鐘的「快速驗光」只能確認基本度數，無法評估雙眼視覺、調節力、隱斜視等影響視覺舒適度的關鍵指標。' },
+          { n: '03', title: '有沒有量頂點距離與雙眼視覺？', desc: '高度近視要靠頂點距離（Vertex Distance）補正才能確保有效度數正確；雙眼協調有問題（隱斜視、輻輳不足），光靠度數配出來還是會頭暈。這兩項有沒有做，決定戴起來舒不舒服。' },
+          { n: '04', title: '設備與鏡片來源清楚嗎？', desc: '確認是否為蔡司（ZEISS）、HOYA、Essilor、Nikon 等原廠授權經銷商，而非仿冒品或水貨。多焦點與個人化訂製鏡片，設備與授權尤其重要。' },
+          { n: '05', title: '配鏡後能不能免費回診？', desc: '正規驗光所應提供免費回診調整。取鏡時要當場試戴、確認遠中近視野與鏡架配適，而不是「做好寄給你，有問題再回來」。不提供售後的店家要小心。' },
+        ].map(item => (
+          <div class="border border-brand-ink/8 rounded-2xl p-7">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest mb-3 block" style="font-size:13px;letter-spacing:0.18em">{item.n}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見配鏡地雷 -->
+  <section id="mistakes" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見配鏡地雷：為什麼配了眼鏡還是不舒服</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">「配了還是頭暈」的案例，大半不是眼睛特別難配，而是驗光流程省掉了某個關鍵步驟。這些是門診最常見的地雷。</p>
+      <div class="space-y-6">
+        {[
+          { title: '① 快速驗光，只問「幾號比較清楚」', desc: '十分鐘看視力表、選比較清楚的那個就結束——這種流程漏掉雙眼視覺、調節力、眼位穩定性的評估。度數看似對了，戴起來卻怪怪的、頭重、容易疲勞。' },
+          { title: '② 沿用電腦驗光值，沒做主觀微調', desc: '綜合驗光儀給的是「電腦度數」，最終還需要讓你試戴、回饋、細部調整。省掉這一步，等於拿機器的初步估算直接配鏡。' },
+          { title: '③ 沒放鬆調節力就驗光，度數偏深', desc: '長時間盯螢幕的人睫狀肌容易緊繃，在這種狀態下驗出來的度數往往偏深。你以為近視 -4.00D，真正可能只有 -3.50D，配深了反而更累。' },
+          { title: '④ 光學中心沒對準瞳孔、瞳距只除以二', desc: '應分別量左右眼各自到鼻樑中線的單側瞳距。有些人左右不對稱，若只用總瞳距除以二估算，會產生稜鏡效應，讓大腦額外費力融合影像，造成疲勞頭暈。' },
+          { title: '⑤ 驗完就走，沒有當場試戴確認', desc: '配鏡最後一步應在驗光人員面前試戴、確認視覺品質——尤其多焦點鏡片要確認遠中近視野、兩眼平衡、鏡架有沒有滑落。省掉了，回家出問題就很難判斷是度數、位置還是適應期。' },
+        ].map(item => (
+          <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        完整的 5 個驗光誤區說明：<a href="/blog/common-optometry-mistakes/" class="text-brand-gold underline">配眼鏡常見的 5 個驗光誤區｜新莊板橋驗光人員的第一手觀察</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 何時該看眼科 -->
+  <section id="ophthalmology" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">驗光所 vs 眼科診所：各管一段，不是競爭關係</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">眼科負責確認眼睛健不健康，驗光所負責把視覺調到最佳狀態。搞清楚分工，能幫你少走很多冤枉路。</p>
+      <div class="overflow-x-auto mb-10">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">你的需求</th>
+              <th class="text-left px-5 py-4 font-semibold">建議去哪裡</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['眼睛突然不對勁、有症狀（紅痛、飛蚊閃光、突發模糊）', '眼科'],
+              ['定期眼底、眼壓檢查（糖尿病、高血壓患者）', '眼科'],
+              ['孩子 6 歲以下初次視力篩檢', '眼科'],
+              ['配一副舒服的眼鏡、想搞清楚每個參數', '驗光所'],
+              ['戴眼鏡頭暈、視覺不穩定', '驗光所'],
+              ['第一次配多焦點漸進鏡片', '驗光所'],
+              ['高度近視精密配鏡', '驗光所'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 1 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3" style="font-size:16px;line-height:1.8">
+        法規紅線很清楚：驗光人員不做醫療診斷、不能開藥。若在驗光過程中發現視力異常（如視野缺損、眼壓偏高的疑慮），會依《驗光人員法》主動轉介眼科醫師——這是保護你，不是把你推走。
+      </blockquote>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        完整分工對照：<a href="/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">眼科 vs 驗光所，差在哪裡？什麼時候該去哪裡？</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 新莊店 × 板橋店 -->
+  <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">新莊店 × 板橋店：在地選擇</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商，提供 45–60 分鐘完整臨床驗光與配鏡後免費回診。看哪間離你近。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="border-t border-white/10 pt-6">
+          <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">新莊店</p>
+          <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">能見度視覺中心 × 比泱驗光所</h3>
+          <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
+            <p>地址：新北市新莊區中正路 419-1 號</p>
+            <p>捷運：輔大站步行約 5 分鐘</p>
+            <p>電話：02-2206-6700</p>
+            <p>主理驗光師：鄭家侑（YoYo）</p>
+            <p class="text-white/50">臨床驗光、進階視覺管理、兒童近視追蹤、蔡司 Individual² 個人化訂製</p>
+          </div>
+          <a href="/xinzhuang" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">看新莊店詳細資訊 →</a>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">板橋店</p>
+          <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">能見度眼鏡 × 能見度驗光所</h3>
+          <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
+            <p>地址：新北市板橋區雙十路二段 47 巷 28 號</p>
+            <p>捷運：江子翠站步行約 5 分鐘</p>
+            <p>電話：02-2253-1246</p>
+            <p>在地：1992 年創立，超過 30 年</p>
+            <p class="text-white/50">老花多焦點專業配製、高度近視精密配鏡（頂點距離補正）、兒童近視追蹤</p>
+          </div>
+          <a href="/banqiao" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">看板橋店詳細資訊 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：新北配眼鏡主題文章</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">不確定該去哪裡配眼鏡？</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的視覺分析，YoYo 驗光師會先了解你的視覺狀況與生活型態，再談鏡片——新莊、板橋兩店皆可預約。</p>
+      <a href="/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約完整視覺分析 →</a>
+    </div>
+  </section>
+
+</Layout>
