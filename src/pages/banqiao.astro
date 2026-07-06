@@ -1,37 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// 該頁常見問題（schema 與畫面共用同一份，確保 FAQPage 標記與可見內容一致）
+const faqs = [
+  { q: '板橋能見度驗光所在哪裡？', a: '位於新北市板橋區雙十路二段 47 巷 28 號，捷運板南線新埔站步行約 5 分鐘。' },
+  { q: '板橋有蔡司鏡片可以配嗎？', a: '有。能見度眼鏡板橋店是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含多焦點漸進鏡片與個人化訂製。' },
+  { q: '板橋老花眼鏡哪裡配比較專業？', a: '能見度驗光所提供完整的老花配鏡諮詢，包含加入度評估、鏡片選配說明（單焦老花鏡、辦公室鏡片、多焦點漸進鏡片），不推銷最貴的，只推薦最適合的。' },
+  { q: '板橋高度近視可以配眼鏡嗎？', a: '可以。高度近視配鏡需要頂點距離補正與光學中心精準定位，能見度眼鏡板橋店提供完整的高度近視配鏡評估服務。' },
+];
+
+// Optician 節點（#banqiao，含完整地址/評分/營業時間/areaServed）已由 Layout 全站注入，
+// 此頁只補該頁專屬的 FAQPage，避免同一實體被重複宣告造成資料衝突
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Optician",
-  "name": "能見度眼鏡 × 能見度驗光所",
-  "alternateName": ["能見度驗光所", "板橋驗光所", "板橋眼鏡行"],
-  "url": "https://beyondvisualopt.com/banqiao",
-  "telephone": "+886-2-2253-1246",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "雙十路二段47巷28號",
-    "addressLocality": "板橋區",
-    "addressRegion": "新北市",
-    "postalCode": "220",
-    "addressCountry": "TW"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 25.0108,
-    "longitude": 121.4614
-  },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "10:00", "closes": "22:00" }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "47",
-    "bestRating": "5"
-  },
-  "hasMap": "https://maps.google.com/?q=新北市板橋區雙十路二段47巷28號",
-  "sameAs": ["https://share.google/lReL1vW8OEUXZBeVy"]
+  "@type": "FAQPage",
+  "@id": "https://beyondvisualopt.com/banqiao#faq",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
 };
 ---
 <Layout
@@ -148,12 +136,7 @@ const schema = {
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(22px,3vw,36px);font-weight:300">板橋配眼鏡常見問題</h2>
       <div class="space-y-6">
-        {[
-          { q: '板橋能見度驗光所在哪裡？', a: '位於新北市板橋區雙十路二段 47 巷 28 號，捷運板南線新埔站步行約 5 分鐘。' },
-          { q: '板橋有蔡司鏡片可以配嗎？', a: '有。能見度眼鏡板橋店是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含多焦點漸進鏡片與個人化訂製。' },
-          { q: '板橋老花眼鏡哪裡配比較專業？', a: '能見度驗光所提供完整的老花配鏡諮詢，包含加入度評估、鏡片選配說明（單焦老花鏡、辦公室鏡片、多焦點漸進鏡片），不推銷最貴的，只推薦最適合的。' },
-          { q: '板橋高度近視可以配眼鏡嗎？', a: '可以。高度近視配鏡需要頂點距離補正與光學中心精準定位，能見度眼鏡板橋店提供完整的高度近視配鏡評估服務。' },
-        ].map((faq, i) => (
+        {faqs.map((faq, i) => (
           <div class="border-t border-brand-ink/15 pt-6">
             <h3 class="font-serif text-brand-ink mb-3" style="font-size:16px;font-weight:400">Q{i+1}. {faq.q}</h3>
             <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>

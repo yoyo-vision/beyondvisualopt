@@ -1,38 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// 該頁常見問題（schema 與畫面共用同一份，確保 FAQPage 標記與可見內容一致）
+const faqs = [
+  { q: '新莊比泱驗光所在哪裡？', a: '位於新北市新莊區中正路 419-1 號，捷運新莊站步行約 8 分鐘，輔大站步行約 12 分鐘。門口有機車停車格，附近有停車場。' },
+  { q: '新莊這裡有蔡司鏡片嗎？', a: '有。能見度視覺中心是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含 Individual² 個人化訂製鏡片。' },
+  { q: '新莊哪裡有多焦點漸進鏡片可以驗配？', a: '比泱驗光所提供完整的多焦點漸進鏡片驗配服務，包含加入度評估、配鏡高度量測與適應期追蹤，由 YoYo 驗光師親自接診。' },
+  { q: '新莊孩子的近視可以追蹤嗎？', a: '可以。新莊店提供 6 歲以上兒童的定期視力評估與度數追蹤，搭配離焦鏡片配適建議。藥物相關治療請諮詢眼科醫師。' },
+];
+
+// Optician 節點（#xinzhuang，含完整地址/評分/營業時間/areaServed）已由 Layout 全站注入，
+// 此頁只補該頁專屬的 FAQPage，避免同一實體被重複宣告造成資料衝突
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Optician",
-  "name": "能見度視覺中心 × 比泱驗光所",
-  "alternateName": ["比泱驗光所", "新莊驗光所", "新莊眼鏡行"],
-  "url": "https://beyondvisualopt.com/xinzhuang",
-  "telephone": "+886-2-2206-6700",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "中正路419-1號",
-    "addressLocality": "新莊區",
-    "addressRegion": "新北市",
-    "postalCode": "242",
-    "addressCountry": "TW"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 25.0338,
-    "longitude": 121.4487
-  },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Friday","Saturday"], "opens": "11:00", "closes": "21:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "12:00", "closes": "21:00" }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "221",
-    "bestRating": "5"
-  },
-  "hasMap": "https://maps.google.com/?q=新北市新莊區中正路419-1號",
-  "sameAs": ["https://share.google/rMxJYqYZH6fR4QwrS"]
+  "@type": "FAQPage",
+  "@id": "https://beyondvisualopt.com/xinzhuang#faq",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
 };
 ---
 <Layout
@@ -149,12 +136,7 @@ const schema = {
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(22px,3vw,36px);font-weight:300">新莊驗光常見問題</h2>
       <div class="space-y-6">
-        {[
-          { q: '新莊比泱驗光所在哪裡？', a: '位於新北市新莊區中正路 419-1 號，捷運新莊站步行約 8 分鐘，輔大站步行約 12 分鐘。門口有機車停車格，附近有停車場。' },
-          { q: '新莊這裡有蔡司鏡片嗎？', a: '有。能見度視覺中心是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含 Individual² 個人化訂製鏡片。' },
-          { q: '新莊哪裡有多焦點漸進鏡片可以驗配？', a: '比泱驗光所提供完整的多焦點漸進鏡片驗配服務，包含加入度評估、配鏡高度量測與適應期追蹤，由 YoYo 驗光師親自接診。' },
-          { q: '新莊孩子的近視可以追蹤嗎？', a: '可以。新莊店提供 6 歲以上兒童的定期視力評估與度數追蹤，搭配離焦鏡片配適建議。藥物相關治療請諮詢眼科醫師。' },
-        ].map((faq, i) => (
+        {faqs.map((faq, i) => (
           <div class="border-t border-brand-ink/15 pt-6">
             <h3 class="font-serif text-brand-ink mb-3" style="font-size:16px;font-weight:400">Q{i+1}. {faq.q}</h3>
             <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>

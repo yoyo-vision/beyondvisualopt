@@ -14,6 +14,7 @@ const formatDate = (d: Date) =>
   d.toLocaleDateString('en-US', { timeZone: 'Asia/Taipei', year: 'numeric', month: 'short', day: 'numeric' });
 
 const isoDate = post.data.date.toISOString().split('T')[0];
+const modifiedIso = (post.data.updated ?? post.data.date).toISOString().split('T')[0];
 
 // 其他英文文章（排除自己）
 const related = allPosts.filter(p => p.slug !== post.slug).slice(0, 6);
@@ -55,7 +56,7 @@ const articleSchema = {
   "inLanguage": "en",
   "articleSection": post.data.tag,
   "datePublished": isoDate,
-  "dateModified": isoDate,
+  "dateModified": modifiedIso,
   "author": {
     "@type": "Person",
     "@id": "https://beyondvisualopt.com/author/yoyo/#person",
@@ -93,6 +94,10 @@ const pageSchema = {
   description={post.data.excerpt}
   schema={pageSchema}
   lang="en"
+  ogType="article"
+  publishedTime={isoDate}
+  modifiedTime={modifiedIso}
+  image={post.data.image || '/og-image.jpg'}
 >
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">

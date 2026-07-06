@@ -46,6 +46,8 @@ const formatDate = (d: Date) => {
 
 // Google 要求 ISO 8601 日期格式（YYYY-MM-DD）
 const isoDate = post.data.date.toISOString().split('T')[0];
+// 更新日：有填 updated 用之，否則同發布日（傳達內容新鮮度給 Google/AI）
+const modifiedIso = (post.data.updated ?? post.data.date).toISOString().split('T')[0];
 
 // ── 從文章內文的「常見問題」段落自動抽取 Q&A，產生 FAQPage schema ──
 // 支援兩種格式：**Q：問題**＋「A：答案」或直接接答案段落
@@ -96,7 +98,7 @@ const articleSchema = {
   "inLanguage": "zh-TW",
   "articleSection": post.data.tag,
   "datePublished": isoDate,
-  "dateModified": isoDate,
+  "dateModified": modifiedIso,
   "author": {
     "@type": "Person",
     "@id": "https://beyondvisualopt.com/author/yoyo/#person",
@@ -141,6 +143,10 @@ const pageSchema = {
   description={post.data.excerpt}
   schema={pageSchema}
   enPath={hasEn ? `/en/blog/${post.slug}` : undefined}
+  ogType="article"
+  publishedTime={isoDate}
+  modifiedTime={modifiedIso}
+  image={post.data.image || '/og-image.jpg'}
 >
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
@@ -158,12 +164,14 @@ const pageSchema = {
           <p class="text-gray-500 leading-relaxed" style="font-size:17px;line-height:1.8">{post.data.excerpt}</p>
         </div>
 
-        <!-- 封面圖 -->
+        <!-- 封面圖（首屏 LCP 元素：eager + 高優先，並帶尺寸避免版面位移 CLS） -->
         {post.data.image && (
-          <img src={post.data.image} alt={post.data.title} class="w-full h-64 object-cover rounded-2xl mb-10" />
+          <img src={post.data.image} alt={`${post.data.title}｜能見度視覺中心 YoYo 驗光師`}
+            width="800" height="256" loading="eager" fetchpriority="high"
+            class="w-full h-64 object-cover rounded-2xl mb-10" />
         )}
 
-        <!-- YouTube -->
+        <!-- YouTube（延遲載入，避免第三方 iframe 拖累 Core Web Vitals） -->
         {post.data.youtube && (
           <div class="mb-10 rounded-2xl overflow-hidden aspect-video">
             <iframe
@@ -171,6 +179,7 @@ const pageSchema = {
               title={post.data.title}
               class="w-full h-full"
               frameborder="0"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
