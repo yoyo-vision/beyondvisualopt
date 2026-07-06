@@ -211,6 +211,27 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"frame-face-shape.md": {
+	id: "frame-face-shape.md";
+  slug: "frame-face-shape";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"frame-fit-size.md": {
+	id: "frame-fit-size.md";
+  slug: "frame-fit-size";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"frame-material-guide.md": {
+	id: "frame-material-guide.md";
+  slug: "frame-material-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "glasses-dizzy.md": {
 	id: "glasses-dizzy.md";
   slug: "glasses-dizzy";
