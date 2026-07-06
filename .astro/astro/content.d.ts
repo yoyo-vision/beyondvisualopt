@@ -155,6 +155,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"children-frames-guide.md": {
+	id: "children-frames-guide.md";
+  slug: "children-frames-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "children-myopia-control-xinzhuang.md": {
 	id: "children-myopia-control-xinzhuang.md";
   slug: "children-myopia-control-xinzhuang";
@@ -260,6 +267,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"lens-coating-guide.md": {
+	id: "lens-coating-guide.md";
+  slug: "lens-coating-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "minamoto-eyewear-brand.md": {
 	id: "minamoto-eyewear-brand.md";
   slug: "minamoto-eyewear-brand";
@@ -277,6 +291,13 @@ declare module 'astro:content' {
 "optometry-vs-ophthalmology.md": {
 	id: "optometry-vs-ophthalmology.md";
   slug: "optometry-vs-ophthalmology";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"photochromic-sunglasses-guide.md": {
+	id: "photochromic-sunglasses-guide.md";
+  slug: "photochromic-sunglasses-guide";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -312,6 +333,13 @@ declare module 'astro:content' {
 "rgp-hard-contact-lens.md": {
 	id: "rgp-hard-contact-lens.md";
   slug: "rgp-hard-contact-lens";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"rimless-glasses-guide.md": {
+	id: "rimless-glasses-guide.md";
+  slug: "rimless-glasses-guide";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
