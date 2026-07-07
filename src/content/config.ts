@@ -37,7 +37,7 @@ const portfolio = defineCollection({
   type: 'content',
   schema: z.object({
     image: z.string(),                    // 照片路徑，例：/images/portfolio/lindberg-01.webp
-    brand: z.string(),                    // 鏡框品牌，例：Lindberg
+    brand: z.string().optional(),         // 鏡框品牌（選填），例：Lindberg
     model: z.string().optional(),         // 型號（選填）
     caption: z.string(),                  // 一句話描述（顯示在圖說與 alt）
     tags: z.array(z.string()).optional(), // 分類標籤（選填），例：["純鈦","無框"]

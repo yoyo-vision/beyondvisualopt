@@ -488,23 +488,212 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "portfolio": {
-"sample-01.md": {
-	id: "sample-01.md";
-  slug: "sample-01";
+"bronze-vintage-round.md": {
+	id: "bronze-vintage-round.md";
+  slug: "bronze-vintage-round";
   body: string;
   collection: "portfolio";
   data: InferEntrySchema<"portfolio">
 } & { render(): Render[".md"] };
-"sample-02.md": {
-	id: "sample-02.md";
-  slug: "sample-02";
+"champagne-gold-round.md": {
+	id: "champagne-gold-round.md";
+  slug: "champagne-gold-round";
   body: string;
   collection: "portfolio";
   data: InferEntrySchema<"portfolio">
 } & { render(): Render[".md"] };
-"sample-03.md": {
-	id: "sample-03.md";
-  slug: "sample-03";
+"chanel-quilted.md": {
+	id: "chanel-quilted.md";
+  slug: "chanel-quilted";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"charmant-rimless-round.md": {
+	id: "charmant-rimless-round.md";
+  slug: "charmant-rimless-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"charmant-rimless.md": {
+	id: "charmant-rimless.md";
+  slug: "charmant-rimless";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"clear-round-acetate.md": {
+	id: "clear-round-acetate.md";
+  slug: "clear-round-acetate";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"clear-square-acetate.md": {
+	id: "clear-square-acetate.md";
+  slug: "clear-square-acetate";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"clip-on-polarized.md": {
+	id: "clip-on-polarized.md";
+  slug: "clip-on-polarized";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"dior-clear-gold.md": {
+	id: "dior-clear-gold.md";
+  slug: "dior-clear-gold";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"dior-square.md": {
+	id: "dior-square.md";
+  slug: "dior-square";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"dita-detail.md": {
+	id: "dita-detail.md";
+  slug: "dita-detail";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"emporio-armani-metal.md": {
+	id: "emporio-armani-metal.md";
+  slug: "emporio-armani-metal";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"ferrari-sport-sunglasses.md": {
+	id: "ferrari-sport-sunglasses.md";
+  slug: "ferrari-sport-sunglasses";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"gucci-gg-sunglasses.md": {
+	id: "gucci-gg-sunglasses.md";
+  slug: "gucci-gg-sunglasses";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"gucci-round-metal.md": {
+	id: "gucci-round-metal.md";
+  slug: "gucci-round-metal";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"magnetic-clip-on.md": {
+	id: "magnetic-clip-on.md";
+  slug: "magnetic-clip-on";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"minamoto-silver-round.md": {
+	id: "minamoto-silver-round.md";
+  slug: "minamoto-silver-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"minamoto-titanium-round.md": {
+	id: "minamoto-titanium-round.md";
+  slug: "minamoto-titanium-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"minimal-titanium-round.md": {
+	id: "minimal-titanium-round.md";
+  slug: "minimal-titanium-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"miumiu-acetate.md": {
+	id: "miumiu-acetate.md";
+  slug: "miumiu-acetate";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"oliver-peoples-clear-round.md": {
+	id: "oliver-peoples-clear-round.md";
+  slug: "oliver-peoples-clear-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"oliver-peoples-titanium.md": {
+	id: "oliver-peoples-titanium.md";
+  slug: "oliver-peoples-titanium";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"rosegold-titanium-round.md": {
+	id: "rosegold-titanium-round.md";
+  slug: "rosegold-titanium-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"temple-hinge-macro.md": {
+	id: "temple-hinge-macro.md";
+  slug: "temple-hinge-macro";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"thin-metal-round.md": {
+	id: "thin-metal-round.md";
+  slug: "thin-metal-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"titanium-temple-detail.md": {
+	id: "titanium-temple-detail.md";
+  slug: "titanium-temple-detail";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"tomford-clear-blue.md": {
+	id: "tomford-clear-blue.md";
+  slug: "tomford-clear-blue";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"tomford-gold-round.md": {
+	id: "tomford-gold-round.md";
+  slug: "tomford-gold-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"tortoise-round.md": {
+	id: "tortoise-round.md";
+  slug: "tortoise-round";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"tortoise-texture-macro.md": {
+	id: "tortoise-texture-macro.md";
+  slug: "tortoise-texture-macro";
   body: string;
   collection: "portfolio";
   data: InferEntrySchema<"portfolio">

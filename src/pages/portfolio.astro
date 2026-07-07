@@ -77,16 +77,18 @@ const schema = {
               <div class="overflow-hidden">
                 <img
                   src={item.data.image}
-                  alt={`${item.data.brand}${item.data.model ? ' ' + item.data.model : ''}｜${item.data.caption}｜能見度視覺中心 新莊板橋`}
+                  alt={[[item.data.brand, item.data.model].filter(Boolean).join(' '), item.data.caption, '能見度視覺中心 新莊板橋'].filter(Boolean).join('｜')}
                   loading={i < 4 ? 'eager' : 'lazy'}
                   class="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
               <figcaption class="p-5">
-                <div class="flex items-center gap-2 flex-wrap mb-1.5">
-                  <span class="font-serif text-brand-navy" style="font-size:16px;font-weight:600">{item.data.brand}</span>
-                  {item.data.model && <span class="text-brand-ink-3 font-sans" style="font-size:13px">{item.data.model}</span>}
-                </div>
+                {item.data.brand && (
+                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                    <span class="font-serif text-brand-navy" style="font-size:16px;font-weight:600">{item.data.brand}</span>
+                    {item.data.model && <span class="text-brand-ink-3 font-sans" style="font-size:13px">{item.data.model}</span>}
+                  </div>
+                )}
                 <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">{item.data.caption}</p>
                 {item.data.tags && item.data.tags.length > 0 && (
                   <div class="flex flex-wrap gap-1.5 mt-3">
