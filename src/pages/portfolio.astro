@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 作品：featured 優先，其次日期新到舊
+const items = (await getCollection('portfolio')).sort((a, b) => {
+  const f = (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0);
+  if (f !== 0) return f;
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+
+const canonicalUrl = 'https://beyondvisualopt.com/portfolio/';
+const SITE = 'https://beyondvisualopt.com';
+
+// 圖片 SEO：ImageGallery + 每張 ImageObject
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": canonicalUrl,
+  "url": canonicalUrl,
+  "name": "選配作品集｜能見度視覺中心 × 比泱驗光所",
+  "description": "YoYo 驗光師的鏡框選配作品集：蔡司鏡片、國際手工鏡框與選配現場紀錄。新莊、板橋能見度視覺中心。",
+  "inLanguage": "zh-TW",
+  "isPartOf": { "@id": `${SITE}/#website` },
+  "about": { "@id": `${SITE}/#organization` },
+  "mainEntity": {
+    "@type": "ImageGallery",
+    "name": "選配作品集",
+    "associatedMedia": items.map(item => ({
+      "@type": "ImageObject",
+      "contentUrl": `${SITE}${item.data.image}`,
+      "name": [item.data.brand, item.data.model].filter(Boolean).join(' ') || item.data.caption,
+      "caption": item.data.caption,
+      "creditText": "能見度視覺中心 × 比泱驗光所",
+      "creator": { "@id": `${SITE}/author/yoyo/#person` }
+    }))
+  }
+};
+---
+<Layout
+  title="選配作品集｜鏡框攝影・選配現場｜能見度視覺中心 新莊板橋"
+  description="YoYo 驗光師的選配作品集：國際手工鏡框、蔡司鏡片與選配現場的第一手紀錄。走進能見度視覺中心的選配美學，新莊、板橋預約試戴。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Portfolio</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        選配<span class="text-brand-gold">作品集</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        每一副眼鏡，都是一次為臉型、度數與生活量身而成的選配。這裡是 YoYo 驗光師鏡頭下的鏡框與選配現場。
+      </p>
+    </div>
+  </section>
+
+  {items.length === 0 ? (
+    <section class="px-6 py-28 text-center" style="background:#f7f3ec">
+      <p class="text-brand-ink-3" style="font-size:17px">作品即將上架，敬請期待。</p>
+    </section>
+  ) : (
+    <!-- 相簿格線（masonry） -->
+    <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+      <div class="max-w-6xl mx-auto">
+        <div class="gallery-masonry">
+          {items.map((item, i) => (
+            <figure
+              class="gallery-item group cursor-pointer mb-5 overflow-hidden rounded-2xl bg-white border border-brand-ink/5"
+              data-index={i}
+              data-src={item.data.image}
+              data-brand={item.data.brand}
+              data-model={item.data.model ?? ''}
+              data-caption={item.data.caption}
+            >
+              <div class="overflow-hidden">
+                <img
+                  src={item.data.image}
+                  alt={`${item.data.brand}${item.data.model ? ' ' + item.data.model : ''}｜${item.data.caption}｜能見度視覺中心 新莊板橋`}
+                  loading={i < 4 ? 'eager' : 'lazy'}
+                  class="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
+              <figcaption class="p-5">
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <span class="font-serif text-brand-navy" style="font-size:16px;font-weight:600">{item.data.brand}</span>
+                  {item.data.model && <span class="text-brand-ink-3 font-sans" style="font-size:13px">{item.data.model}</span>}
+                </div>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">{item.data.caption}</p>
+                {item.data.tags && item.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mt-3">
+                    {item.data.tags.map(t => (
+                      <span class="bg-brand-light text-brand-navy rounded-full px-2.5 py-0.5" style="font-size:11px">{t}</span>
+                    ))}
+                  </div>
+                )}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">看到喜歡的，歡迎來試戴</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">鏡框合不合適，戴上去最準。新莊、板橋兩店都有 YoYo 驗光師依你的臉型、度數與需求協助選配。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約到店選配 →</a>
+        <a href="/guide/frames/" class="inline-block border border-white/40 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-white/10 transition-colors font-sans" style="font-size:15px">看鏡框選購指南</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 燈箱 -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" style="background:rgba(15,20,25,0.92)">
+    <button id="lb-close" class="absolute top-5 right-6 text-white/80 hover:text-white" aria-label="關閉" style="font-size:32px;line-height:1">&times;</button>
+    <button id="lb-prev" class="absolute left-4 md:left-8 text-white/70 hover:text-white" aria-label="上一張" style="font-size:40px;line-height:1">&#8249;</button>
+    <button id="lb-next" class="absolute right-4 md:right-8 text-white/70 hover:text-white" aria-label="下一張" style="font-size:40px;line-height:1">&#8250;</button>
+    <figure class="max-w-4xl max-h-[88vh] flex flex-col items-center">
+      <img id="lb-img" src="" alt="" class="max-h-[76vh] w-auto rounded-lg object-contain" />
+      <figcaption id="lb-cap" class="text-center text-white/85 mt-4 px-4" style="font-size:15px;line-height:1.7"></figcaption>
+    </figure>
+  </div>
+
+  <style>
+    /* CSS 多欄 masonry */
+    .gallery-masonry {
+      column-count: 1;
+      column-gap: 1.25rem;
+    }
+    @media (min-width: 640px) { .gallery-masonry { column-count: 2; } }
+    @media (min-width: 1024px) { .gallery-masonry { column-count: 3; } }
+    .gallery-item {
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+    }
+  </style>
+
+  <script>
+    const figures = Array.from(document.querySelectorAll<HTMLElement>('.gallery-item'));
+    const lb = document.getElementById('lightbox')!;
+    const lbImg = document.getElementById('lb-img') as HTMLImageElement;
+    const lbCap = document.getElementById('lb-cap')!;
+    let cur = 0;
+
+    function render(i: number) {
+      const el = figures[i];
+      if (!el) return;
+      cur = i;
+      const brand = el.dataset.brand || '';
+      const model = el.dataset.model || '';
+      const caption = el.dataset.caption || '';
+      lbImg.src = el.dataset.src || '';
+      lbImg.alt = `${brand} ${model}｜${caption}`.trim();
+      lbCap.textContent = [brand + (model ? ' ' + model : ''), caption].filter(Boolean).join(' — ');
+    }
+    function open(i: number) {
+      render(i);
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    function step(d: number) { render((cur + d + figures.length) % figures.length); }
+
+    figures.forEach((el, i) => el.addEventListener('click', () => open(i)));
+    document.getElementById('lb-close')!.addEventListener('click', close);
+    document.getElementById('lb-next')!.addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+    document.getElementById('lb-prev')!.addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (lb.classList.contains('hidden')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') step(1);
+      if (e.key === 'ArrowLeft') step(-1);
+    });
+  </script>
+
+</Layout>

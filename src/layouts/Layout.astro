@@ -26,7 +26,7 @@ const SECTION_LABELS: Record<string, string> = {
   about: '關於我們', services: '服務內容', process: '服務流程',
   frames: '鏡框品牌', lenses: '鏡片種類', blog: '視覺小知識',
   faq: '常見問題', booking: '線上預約', xinzhuang: '新莊店', banqiao: '板橋店',
-  author: '作者', guide: '完整指南', en: 'English',
+  author: '作者', guide: '完整指南', portfolio: '選配作品', en: 'English',
 };
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
 const breadcrumbSchema = pathSegments.length > 0 ? {
@@ -326,6 +326,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/process" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務流程</a></li>
           <li><a href="/frames" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡框品牌</a></li>
           <li><a href="/lenses" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡片種類</a></li>
+          <li><a href="/portfolio" class="text-brand-ink-2 hover:text-brand-ink transition-colors">選配作品</a></li>
           <li><a href="/blog" class="text-brand-ink-2 hover:text-brand-ink transition-colors">視覺小知識</a></li>
           <li><a href="/faq" class="text-brand-ink-2 hover:text-brand-ink transition-colors">常見問題</a></li>
         </>)}
@@ -366,6 +367,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/process" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">服務流程</a></li>
           <li><a href="/frames" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡框品牌</a></li>
           <li><a href="/lenses" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡片種類</a></li>
+          <li><a href="/portfolio" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">選配作品</a></li>
           <li><a href="/blog" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">視覺小知識</a></li>
           <li><a href="/faq" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">常見問題</a></li>
           <li><a href="/booking" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">立即預約 →</a></li>
@@ -434,6 +436,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/xinzhuang" class="hover:text-brand-paper transition-colors">新莊驗光所</a></li>
           <li><a href="/banqiao" class="hover:text-brand-paper transition-colors">板橋眼鏡行</a></li>
           <li><a href="/author/yoyo/" class="hover:text-brand-paper transition-colors">YoYo 驗光師</a></li>
+          <li><a href="/portfolio" class="hover:text-brand-paper transition-colors">選配作品集</a></li>
           <li><a href="/services" class="hover:text-brand-paper transition-colors">服務內容</a></li>
           <li><a href="/guide/" class="hover:text-brand-paper transition-colors">完整指南</a></li>
           <li><a href="/blog" class="hover:text-brand-paper transition-colors">視覺小知識</a></li>
