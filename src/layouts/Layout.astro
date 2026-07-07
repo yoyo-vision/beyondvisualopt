@@ -312,8 +312,8 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <span class="font-sans text-brand-ink-3" style="font-size:11px;font-weight:400;letter-spacing:0.18em;line-height:1">Beyond Visual</span>
         </div>
       </a>
-      <!-- 桌機選單 -->
-      <ul class="hidden md:flex items-center gap-8 font-sans" style="font-size:14px;letter-spacing:0.04em">
+      <!-- 桌機選單（lg 以上才展開，避免中等螢幕擠成兩行；文字不換行） -->
+      <ul class="hidden lg:flex items-center gap-x-5 xl:gap-x-6 font-sans whitespace-nowrap" style="font-size:14px;letter-spacing:0.02em">
         {isEn ? (<>
           <li><a href="/en/about" class="text-brand-ink-2 hover:text-brand-ink transition-colors">About</a></li>
           <li><a href="/en/services" class="text-brand-ink-2 hover:text-brand-ink transition-colors">Services</a></li>
@@ -321,7 +321,6 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/en/banqiao" class="text-brand-ink-2 hover:text-brand-ink transition-colors">Banqiao</a></li>
         </>) : (<>
           <li><a href="/about" class="text-brand-ink-2 hover:text-brand-ink transition-colors">關於我們</a></li>
-          <li><a href="/about#stores" class="text-brand-ink-2 hover:text-brand-ink transition-colors">門市資訊</a></li>
           <li><a href="/services" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務內容</a></li>
           <li><a href="/process" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務流程</a></li>
           <li><a href="/frames" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡框品牌</a></li>
@@ -339,12 +338,12 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           {isEn ? '中文' : 'EN'}
         </a>
         <a href={isEn ? '/en/booking' : '/booking'}
-          class="hidden md:inline-block font-sans border border-brand-ink text-brand-ink px-5 py-2 hover:bg-brand-ink hover:text-brand-paper transition-colors duration-300"
+          class="hidden lg:inline-block font-sans border border-brand-ink text-brand-ink px-5 py-2 hover:bg-brand-ink hover:text-brand-paper transition-colors duration-300"
           style="letter-spacing:0.1em;font-size:13px">
           {isEn ? 'Book Now' : '立即預約'}
         </a>
-        <!-- 手機漢堡按鈕 -->
-        <button id="menu-btn" type="button" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
+        <!-- 漢堡按鈕（lg 以下顯示） -->
+        <button id="menu-btn" type="button" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
           <span class="block w-6 h-0.5 bg-brand-ink"></span>
           <span class="block w-6 h-0.5 bg-brand-ink"></span>
           <span class="block w-6 h-0.5 bg-brand-ink"></span>
@@ -352,7 +351,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
       </div>
     </nav>
     <!-- 手機下拉選單 -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-brand-ink/10" style="background:rgba(247,243,236,0.98)">
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-brand-ink/10" style="background:rgba(247,243,236,0.98)">
       <ul class="font-sans px-6 py-4 space-y-0">
         {isEn ? (<>
           <li><a href="/en/about" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">About</a></li>
