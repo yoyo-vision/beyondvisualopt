@@ -488,6 +488,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "portfolio": {
+"black-gold-bold.md": {
+	id: "black-gold-bold.md";
+  slug: "black-gold-bold";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
 "bronze-vintage-round.md": {
 	id: "bronze-vintage-round.md";
   slug: "bronze-vintage-round";
@@ -519,13 +526,6 @@ declare module 'astro:content' {
 "charmant-rimless.md": {
 	id: "charmant-rimless.md";
   slug: "charmant-rimless";
-  body: string;
-  collection: "portfolio";
-  data: InferEntrySchema<"portfolio">
-} & { render(): Render[".md"] };
-"clear-round-acetate.md": {
-	id: "clear-round-acetate.md";
-  slug: "clear-round-acetate";
   body: string;
   collection: "portfolio";
   data: InferEntrySchema<"portfolio">
