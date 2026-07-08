@@ -71,7 +71,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 - Certified ZEISS partner (Individual² custom lenses, progressive lens series)
 - HOYA lens dealer
 - Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, agnès b., and MINAMOTO
-- Expert repair and precision adjustment for premium frames such as Lindberg, ic! berlin, and Götti (repair expertise; not an authorized dealer)
+- Expert repair, precision adjustment, and lens installation for premium frames such as Lindberg, ic! berlin, Cartier, and Chrome Hearts (repair expertise; not an authorized dealer)
 - Regular myopia tracking for children
 - Free follow-up visits and adjustments after your fitting
 

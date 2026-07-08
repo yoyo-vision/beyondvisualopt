@@ -20,7 +20,15 @@ const schema = {
           "name": "Lindberg、ic! berlin 這類無螺絲鏡架壞了可以修嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。無螺絲、純鈦與彈片扣合結構的維修需要專門技術與工具，能見度精通 Lindberg、ic! berlin、Götti 等高端鏡架的精密調整與維修。即使不是在本店購買的鏡架，也歡迎帶來評估。"
+            "text": "可以。無螺絲、純鈦與彈片扣合結構的維修需要專門技術與工具，能見度精通 Lindberg、ic! berlin、Götti 等高端鏡架的精密調整與維修，Cartier、Chrome Hearts、Linda Farrow 等精品鏡架的調整與鏡片安裝也有豐富經驗。即使不是在本店購買的鏡架，也歡迎帶來評估。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "自己買的精品鏡框（Cartier、Chrome Hearts）可以帶來配鏡片嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。精品鏡架的鏡片安裝對框型結構與拆裝手法的要求比一般鏡框高，能見度有豐富的精品框配鏡經驗，會先評估框況，再依你的度數與框型建議合適的鏡片與加工方式。"
           }
         },
         {
@@ -76,24 +84,24 @@ const brands = [
     tags: ['Ray-Ban', 'OLIVER PEOPLES', 'EMPORIO ARMANI', 'BVLGARI', 'agnès b.'],
   },
   {
-    name: '日系與機能鏡框',
-    origin: '日本・機能系列',
+    name: '日系與台灣工藝鏡框',
+    origin: '日本・台灣・機能系列',
     type: '經銷鏡框品牌',
     badge: '門市經銷',
     badgeColor: 'bg-brand-light text-brand-navy',
     highlight: false,
-    desc: 'MINAMOTO 源出自日本鯖江產地的細膩工藝，搭配 Masaki、Maji、Orient、STEEPER、Polaris、Sanjiaoti 等日系與機能品牌，涵蓋輕量、耐用、商務與日常的各種配戴需求。',
-    tags: ['MINAMOTO 源（鯖江）', 'Masaki・Maji・Orient', 'STEEPER・Polaris', '輕量機能'],
+    desc: 'MINAMOTO 源出自日本鯖江產地的細膩工藝，MASAKI MATSUSHIMA 帶著日本設計師的時尚語彙，Polaris 則是台灣自有的薄鋼工藝品牌——搭配 Maji、Orient、STEEPER、Sanjiaoti，涵蓋輕量、耐用、商務與日常的各種配戴需求。',
+    tags: ['MINAMOTO 源（鯖江）', 'MASAKI MATSUSHIMA', 'Polaris 台灣薄鋼', 'Maji・Orient・STEEPER'],
   },
   {
-    name: '高端鏡架維修調整',
-    origin: 'Lindberg・ic! berlin・Götti',
+    name: '高端鏡架維修調整・自帶鏡框配鏡',
+    origin: 'Lindberg・ic! berlin・Cartier・Chrome Hearts 等',
     type: '專業維修服務',
     badge: '維修專長',
     badgeColor: 'bg-brand-light text-brand-navy',
     highlight: false,
-    desc: 'Lindberg 的無螺絲純鈦結構、ic! berlin 的彈片扣合、Götti 的精密鈦工藝——這類高端鏡架的維修與調整需要專門技術。本店雖非上述品牌代理門市，但精通其結構的精密調整與維修，歡迎帶你的愛框來評估。',
-    tags: ['無螺絲結構維修', '純鈦鏡架調整', '彈片扣合維修', '非代理・專精維修'],
+    desc: 'Lindberg 的無螺絲純鈦結構、ic! berlin 的彈片扣合、Götti 的精密鈦工藝，到 Cartier、Chrome Hearts、Linda Farrow 等精品鏡架——本店雖非上述品牌代理門市，但長期為顧客做這類高端鏡架的精密調整、維修與鏡片安裝。自己收藏的精品框想配度數鏡片，歡迎帶來評估。',
+    tags: ['無螺絲結構維修', '精品框鏡片安裝', '純鈦鏡架調整', '非代理・專精維修'],
   },
   {
     name: '精密鏡架調整服務',
@@ -142,7 +150,11 @@ const faqs = [
   },
   {
     q: 'Lindberg、ic! berlin 這類無螺絲鏡架壞了可以修嗎？',
-    a: '可以。無螺絲、純鈦與彈片扣合結構的維修需要專門技術與工具，能見度精通 Lindberg、ic! berlin、Götti 等高端鏡架的精密調整與維修。即使不是在本店購買的鏡架，也歡迎帶來評估。',
+    a: '可以。無螺絲、純鈦與彈片扣合結構的維修需要專門技術與工具，能見度精通 Lindberg、ic! berlin、Götti 等高端鏡架的精密調整與維修，Cartier、Chrome Hearts、Linda Farrow 等精品鏡架的調整與鏡片安裝也有豐富經驗。即使不是在本店購買的鏡架，也歡迎帶來評估。',
+  },
+  {
+    q: '自己買的精品鏡框（Cartier、Chrome Hearts）可以帶來配鏡片嗎？',
+    a: '可以。精品鏡架的鏡片安裝對框型結構與拆裝手法的要求比一般鏡框高，能見度有豐富的精品框配鏡經驗，會先評估框況，再依你的度數與框型建議合適的鏡片與加工方式。',
   },
   {
     q: '蔡司鏡片一定要配蔡司鏡架嗎？',
@@ -156,7 +168,7 @@ const faqs = [
 ---
 <Layout
   title="鏡框品牌｜Ray-Ban・OLIVER PEOPLES・BVLGARI・MINAMOTO 源｜能見度視覺中心｜新莊板橋"
-  description="能見度視覺中心：蔡司 Zeiss、HOYA 鏡片簽約經銷，Ray-Ban、OLIVER PEOPLES、EMPORIO ARMANI、BVLGARI、agnès b.、MINAMOTO 源等鏡框品牌門市經銷，並精通 Lindberg、ic! berlin、Götti 高端鏡架維修調整。新莊、板橋門市。"
+  description="能見度視覺中心：蔡司 Zeiss、HOYA 鏡片簽約經銷，Ray-Ban、OLIVER PEOPLES、EMPORIO ARMANI、BVLGARI、agnès b.、MINAMOTO 源等鏡框品牌門市經銷，並精通 Lindberg、ic! berlin、Cartier、Chrome Hearts 等高端鏡架維修調整與精品框配鏡。新莊、板橋門市。"
   schema={schema}
 >
   <!-- Hero -->

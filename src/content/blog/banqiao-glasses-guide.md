@@ -67,7 +67,7 @@ instagram: ""
 - 蔡司 Zeiss 簽約認證經銷商
 - HOYA 鏡片經銷
 - Ray-Ban、OLIVER PEOPLES、EMPORIO ARMANI、BVLGARI、MINAMOTO 源等鏡框品牌
-- Lindberg、ic! berlin、Götti 等高端鏡架精密維修調整（維修專長）
+- Lindberg、ic! berlin、Cartier、Chrome Hearts 等高端鏡架精密維修調整與自帶鏡框配鏡（維修專長）
 - 老花多焦點專業配製與適應期追蹤
 - 兒童近視定期追蹤服務
 - 高度近視精密配鏡（頂點距離補正）
