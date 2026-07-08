@@ -162,9 +162,9 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"children-myopia-control-xinzhuang.md": {
-	id: "children-myopia-control-xinzhuang.md";
-  slug: "children-myopia-control-xinzhuang";
+"children-myopia-tracking-xinzhuang.md": {
+	id: "children-myopia-tracking-xinzhuang.md";
+  slug: "children-myopia-tracking-xinzhuang";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -374,9 +374,9 @@ declare module 'astro:content' {
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
 } & { render(): Render[".md"] };
-"children-myopia-control-xinzhuang.md": {
-	id: "children-myopia-control-xinzhuang.md";
-  slug: "children-myopia-control-xinzhuang";
+"children-myopia-tracking-xinzhuang.md": {
+	id: "children-myopia-tracking-xinzhuang.md";
+  slug: "children-myopia-tracking-xinzhuang";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">

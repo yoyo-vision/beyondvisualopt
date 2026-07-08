@@ -19,6 +19,9 @@ export default defineConfig({
   // /author 目前只有 YoYo 一位作者，直接轉址到作者頁（麵包屑中間層不落空）
   redirects: {
     '/author': '/author/yoyo',
+    // 舊文章網址含「myopia-control」字樣，因法規用詞調整改名，301 保留既有搜尋權重
+    '/blog/children-myopia-control-xinzhuang': '/blog/children-myopia-tracking-xinzhuang',
+    '/en/blog/children-myopia-control-xinzhuang': '/en/blog/children-myopia-tracking-xinzhuang',
   },
   integrations: [
     tailwind(),
