@@ -155,6 +155,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"banqiao-progressive-lens-guide.md": {
+	id: "banqiao-progressive-lens-guide.md";
+  slug: "banqiao-progressive-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"banqiao-zeiss-lens-guide.md": {
+	id: "banqiao-zeiss-lens-guide.md";
+  slug: "banqiao-zeiss-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "children-frames-guide.md": {
 	id: "children-frames-guide.md";
   slug: "children-frames-guide";
@@ -270,6 +284,13 @@ declare module 'astro:content' {
 "lens-coating-guide.md": {
 	id: "lens-coating-guide.md";
   slug: "lens-coating-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"luxury-frame-lens-guide.md": {
+	id: "luxury-frame-lens-guide.md";
+  slug: "luxury-frame-lens-guide";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
