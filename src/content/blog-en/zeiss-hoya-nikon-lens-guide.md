@@ -106,7 +106,7 @@ Not necessarily. Zeiss's personalized custom lenses (Individual²) do have an ed
 
 **Q: Where can I buy lenses from these brands?**
 
-Most optical shops carry them, but the series and tiers they stock vary. Beyond Visual Optometry is a contracted, certified Zeiss dealer in Taiwan and also offers the main series from HOYA, Nikon, and Essilor. You're welcome to consult us at either the Xinzhuang location (Beyond Visual Optometry) or the Banqiao location.
+Most optical shops carry them, but the series and tiers they stock vary. Beyond Visual Optometry is a contracted, certified Zeiss dealer and a HOYA dealer in Taiwan; for Nikon and Essilor we can help you compare options objectively. You're welcome to consult us at either the Xinzhuang location (Beyond Visual Optometry) or the Banqiao location.
 
 **Q: With the same Zeiss lens, does it make a difference which optical shop I go to?**
 

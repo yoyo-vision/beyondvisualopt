@@ -69,8 +69,9 @@ If you're getting glasses for your child, their prescription needs regular monit
 
 - Full 45–60 minute clinical eye exams (including binocular vision assessment)
 - Certified ZEISS partner (Individual² custom lenses, progressive lens series)
-- HOYA, Nikon Lenswear, and Essilor lenses
-- Premium European frames including Lindberg, ic! berlin, and Götti
+- HOYA lens dealer
+- Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, agnès b., and MINAMOTO
+- Expert repair and precision adjustment for premium frames such as Lindberg, ic! berlin, and Götti (repair expertise; not an authorized dealer)
 - Regular myopia tracking for children
 - Free follow-up visits and adjustments after your fitting
 

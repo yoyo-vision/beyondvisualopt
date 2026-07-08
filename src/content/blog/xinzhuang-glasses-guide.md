@@ -71,8 +71,9 @@ instagram: ""
 
 - 45–60 分鐘完整臨床驗光（含雙眼視覺評估）
 - 蔡司 Zeiss 簽約認證經銷商（Individual² 個人化訂製、多焦點系列）
-- HOYA、Nikon Lenswear、Essilor 鏡片
-- Lindberg、ic! berlin、Götti 等歐洲高端鏡架
+- HOYA 鏡片經銷
+- Ray-Ban、OLIVER PEOPLES、EMPORIO ARMANI、BVLGARI、agnès b.、MINAMOTO 源等鏡框品牌
+- Lindberg、ic! berlin、Götti 等高端鏡架精密維修調整（維修專長）
 - 兒童近視定期追蹤服務
 - 配鏡後免費回診調整
 
