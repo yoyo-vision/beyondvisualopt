@@ -122,6 +122,35 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
     }
   </script>
 
+  <!-- 自有流量追蹤（與 GA4 雙軌）：打點到 CRM 後台「流量分析」，匿名訪客碼、無個資 -->
+  <script is:inline>
+    (function(){
+      try{
+        var KEY='bv_vid';
+        var vid=localStorage.getItem(KEY);
+        if(!vid){
+          vid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);
+          localStorage.setItem(KEY,vid);
+        }
+        var q=new URLSearchParams(location.search);
+        var payload=JSON.stringify({
+          site:'official',
+          path:location.pathname,
+          vid:vid,
+          event:'pageview',
+          ref:document.referrer||null,
+          utm_source:q.get('utm_source'),
+          utm_medium:q.get('utm_medium'),
+          utm_campaign:q.get('utm_campaign'),
+          mobile:/Mobi|Android/i.test(navigator.userAgent)
+        });
+        var url='https://vision-platform-five.vercel.app/api/t';
+        if(navigator.sendBeacon){navigator.sendBeacon(url,payload);}
+        else{fetch(url,{method:'POST',body:payload,keepalive:true});}
+      }catch(e){/* 追蹤失敗靜默，不影響頁面 */}
+    })();
+  </script>
+
   <!-- 字型：完全延遲載入，不阻塞首屏渲染 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
