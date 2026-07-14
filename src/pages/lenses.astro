@@ -1,106 +1,96 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// ── 折射率對照（厚度示意，非療效宣稱）──
-const indexGuide = [
-  { ri: '1.50 / 1.56', use: '低度數（約 300 度以內）', note: '入門標準厚度，預算取向' },
-  { ri: '1.60', use: '中度數（約 300–500 度）', note: '厚度與價格的平衡點，最常見' },
-  { ri: '1.67', use: '中高度數（約 500–800 度）', note: '明顯比 1.60 薄，兼顧外觀' },
-  { ri: '1.74', use: '高度數（約 800 度以上）', note: '目前市面上最薄的主流樹脂鏡片之一，邊緣較不厚重' },
-];
+// ── 純客觀陳述：品名／系列英文名／折射率（規格）。不含任何用途、情境、功效描述 ──
 
-// ── 蔡司 ZEISS 鏡片系列（依用途分類，描述情境非產品療效）──
+// 蔡司 ZEISS 鏡片系列（品名 + 英文系列 + 折射率）
 const zeiss = [
   {
     group: '單光鏡片',
-    intro: '看遠或看近單一焦距的鏡片，依個人化程度分級。',
     items: [
-      { name: '清銳 ClearView', en: 'FSV / SV ClearView', ri: '1.56–1.74', for: '日常單光的標準與訂製選擇' },
-      { name: '超越型個人化', en: 'SV Superb Asiana', ri: '1.50–1.74', for: '納入亞洲臉型參數的個人化訂製' },
-      { name: '頂級個人化', en: 'SV Individual', ri: '1.50–1.74', for: '把鏡框前傾角、頂點距離全納入計算的最高階訂製' },
+      { name: '清銳', en: 'FSV / SV ClearView', ri: '1.56 / 1.60 / 1.67 / 1.74' },
+      { name: '超越型個人化', en: 'SV Superb Asiana', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '頂級型個人化', en: 'SV Individual', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '樹脂球面單光', en: 'SV SPH', ri: '1.50 / 1.60' },
     ],
   },
   {
     group: '智銳 SmartLife 系列',
-    intro: '為現代人整天在遠、中、近與螢幕之間頻繁切換的用眼型態設計的鏡片家族。',
     items: [
-      { name: '智銳單光', en: 'SmartLife Young / Asiana / Individual³', ri: '1.50–1.74', for: '不同個人化等級的智銳單光' },
-      { name: '智銳 3C 數位', en: 'Digital SmartLife', ri: '1.50–1.74', for: '強化中近距離的數位螢幕使用情境' },
-      { name: '智銳多焦點', en: 'Progressive SmartLife Pure / Plus / Superb / Individual³', ri: '1.50–1.74', for: '智銳家族的漸進多焦點，四種個人化等級' },
+      { name: '智銳單光', en: 'SmartLife Young / Asiana / Individual³', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '智銳 3C 數位', en: 'Digital SmartLife', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '智銳多焦點', en: 'Progressive SmartLife Pure / Plus / Superb / Individual³', ri: '1.50 / 1.60 / 1.67 / 1.74' },
     ],
   },
   {
-    group: '舒適多焦點 Progressive',
-    intro: '遠、中、近連續過渡的漸進多焦點鏡片，適合老花族群。',
+    group: '舒適多焦點',
     items: [
-      { name: '舒適多焦點', en: 'Progressive Light 2（輕亮／經典／超越／個人化）', ri: '1.50–1.74', for: '入門到個人化的漸進多焦點' },
-      { name: '舒適 3C 數位多焦', en: 'Digital Light 2', ri: '1.50–1.74', for: '結合漸進與數位螢幕使用情境' },
+      { name: '舒適多焦點', en: 'Progressive Light 2（輕亮／經典／超越／個人化）', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '舒適 3C 數位多焦', en: 'Digital Light 2', ri: '1.50 / 1.60 / 1.67 / 1.74' },
     ],
   },
   {
     group: '功能型系列',
-    intro: '針對特定生活情境設計的鏡片。',
     items: [
-      { name: '菁悅 EnergizeMe', en: 'SV / Digital EnergizeMe', ri: '1.50–1.74', for: '為隱形眼鏡族換戴框架時的用眼情境設計' },
-      { name: '駕車 DriveSafe', en: 'SV / Progressive DriveSafe', ri: '1.50–1.74', for: '針對夜間與雨天行車的視覺情境' },
-      { name: '新世代辦公型 Officelens', en: 'Officelens Plus / Superb / Individual', ri: '1.50–1.74', for: '長時間辦公室中近距離工作情境' },
+      { name: '菁悅 EnergizeMe', en: 'SV / Digital EnergizeMe', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '駕車 DriveSafe', en: 'SV / Progressive DriveSafe', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '新世代辦公型', en: 'Officelens Plus / Superb / Individual', ri: '1.50 / 1.60 / 1.67 / 1.74' },
     ],
   },
   {
-    group: '太陽・偏光・運動',
-    intro: '有度數需求的戶外與運動情境鏡片。',
+    group: '太陽・偏光・變色',
     items: [
-      { name: '個人化偏光', en: 'Superb / SmartLife Asiana Polarized', ri: '1.50–1.67', for: '過濾水平反光的開車與戶外情境' },
-      { name: '運動型', en: 'SV Superb Sport（含偏光）', ri: '1.50–1.67', for: '包覆式運動鏡框的度數需求' },
-      { name: '煥視 X 變色', en: 'PhotoFusion X', ri: '依系列', for: '室內外自動變色的一鏡兩用情境' },
+      { name: '個人化偏光', en: 'Superb / SmartLife Asiana Polarized', ri: '1.50 / 1.60 / 1.67' },
+      { name: '運動型', en: 'SV Superb Sport（含偏光）', ri: '1.50 / 1.60 / 1.67' },
+      { name: '煥視 X 變色', en: 'PhotoFusion X', ri: '依系列' },
+    ],
+  },
+  {
+    group: '成長系列',
+    items: [
+      { name: '成長悅', en: 'MyoKids Pro Asiana', ri: '1.50 / 1.60 / 1.67' },
+      { name: '成長樂', en: 'MyoVision Pro / Ace Asiana', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+    ],
+  },
+  {
+    group: '玻璃鏡片',
+    items: [
+      { name: '單光玻璃', en: 'SV SPH Min', ri: '1.50 / 1.60 / 1.70 / 1.80 / 1.90' },
     ],
   },
 ];
 
-// ── HOYA 鏡片系列 ──
+// HOYA 鏡片系列
 const hoya = [
   {
     group: '漸進多焦點',
-    intro: '從入門到頂級個人化的漸進多焦點完整分級。',
     items: [
-      { name: '金鑽頂級個人化', en: 'MyStyle V+', ri: '1.50–1.74', for: 'HOYA 最高階個人化漸進多焦' },
-      { name: '銀鑽個人化 4X', en: 'Lifestyle 4X', ri: '1.50–1.74', for: '四維個人化的高階漸進多焦' },
-      { name: '博銳視 / 菁英 / 活力', en: 'Balansis / Dynamic Premium / Summit', ri: '1.50–1.74', for: '不同設計取向的中高階漸進多焦' },
-      { name: '飛視 PRO / 新經典', en: 'VisuPro / AMP+', ri: '1.50–1.74', for: '主流與經典漸進多焦選擇' },
+      { name: '金鑽頂級個人化', en: 'MyStyle V+', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: '銀鑽個人化 4X', en: 'Lifestyle 4X', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+      { name: '博銳視 / 菁英 / 活力', en: 'Balansis / Dynamic Premium / Dynamic Summit', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+      { name: '飛視 PRO / 新經典', en: 'VisuPro / AMP+', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
     ],
   },
   {
     group: '室內・閱讀多焦',
-    intro: '為辦公室、居家與閱讀的中近距離情境設計。',
     items: [
-      { name: '室內頂級 / 卓越 / 智學', en: 'WorkStyle 3 / Business / WorkSmart', ri: '1.50–1.74', for: '辦公室中近距離工作情境' },
-      { name: '極致閱讀', en: 'SupeReader', ri: '1.50–1.67', for: '長時間閱讀的近用情境' },
+      { name: '室內頂級 / 卓越 / 智學', en: 'WorkStyle 3 / Business / WorkSmart', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+      { name: '極致閱讀', en: 'SupeReader', ri: '1.50 / 1.55 / 1.60 / 1.67' },
     ],
   },
   {
     group: '駕車鏡片',
-    intro: '針對行車視覺情境設計。',
     items: [
-      { name: '駕車多焦 / 單焦', en: 'EnRoute PAL / SV（標準・專業版）', ri: '1.60–1.67', for: '日夜行車的視覺情境' },
+      { name: '駕車多焦 / 單焦', en: 'EnRoute PAL / SV（標準・專業版）', ri: '1.60 / 1.67' },
     ],
   },
   {
     group: '單焦鏡片',
-    intro: '看遠或看近單一焦距，從球面到雙面非球面設計。',
     items: [
-      { name: '個人化 / 雙面非球面', en: 'Nulux V+ / EP', ri: '1.60–1.74', for: '高階單焦的個人化與薄型設計' },
-      { name: '非球面 / 球面', en: 'Nulux Classic / Hilux', ri: '1.50–1.74', for: '主流單焦的標準選擇' },
+      { name: '個人化 / 雙面非球面', en: 'Nulux V+ / EP', ri: '1.60 / 1.67 / 1.74' },
+      { name: '非球面 / 球面', en: 'Nulux Classic / Hilux', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
     ],
   },
-];
-
-// ── 鍍膜與功能設計（描述設計特性與適用情境，不宣稱療效）──
-const coatings = [
-  { name: '抗反射鍍膜', desc: '減少鏡片表面反光與鬼影、提升透光與視覺清晰度，是高階鏡片的基礎。蔡司分鉻金、鉑金、曜金等等級。' },
-  { name: '藍光過濾設計', desc: '針對長時間面對數位螢幕的使用情境，過濾部分短波藍光。適合螢幕工作型態，屬鏡片設計特性。' },
-  { name: '防污防水疏油層', desc: '讓指紋、油污、水滴不易附著，好擦拭、好保養，延長鏡片清晰使用的時間。' },
-  { name: '變色（感光）設計', desc: '隨紫外線強弱自動改變顏色，室內透明、戶外變深，適合頻繁進出室內外的生活型態。' },
-  { name: '偏光設計', desc: '過濾水平方向的反射眩光，適合開車、海邊、雪地等強反光的戶外情境。' },
 ];
 
 const canonicalUrl = 'https://beyondvisualopt.com/lenses/';
@@ -109,16 +99,16 @@ const schema = {
   "@type": "CollectionPage",
   "@id": canonicalUrl,
   "url": canonicalUrl,
-  "name": "鏡片種類｜蔡司 ZEISS × HOYA 鏡片系列",
-  "description": "蔡司 ZEISS 與 HOYA 鏡片完整系列介紹：單光、漸進多焦點、數位螢幕、駕車、辦公室、太陽偏光與折射率選擇。新莊、板橋能見度視覺中心。",
+  "name": "鏡片種類｜蔡司 ZEISS × HOYA 鏡片系列品名一覽",
+  "description": "能見度視覺中心提供的蔡司 ZEISS 與 HOYA 鏡片系列品名與折射率一覽。新莊、板橋門市。",
   "inLanguage": "zh-TW",
   "isPartOf": { "@id": "https://beyondvisualopt.com/#website" },
   "about": { "@id": "https://beyondvisualopt.com/#organization" },
 };
 ---
 <Layout
-  title="鏡片種類｜蔡司 ZEISS × HOYA 鏡片系列完整介紹｜新莊板橋配鏡片"
-  description="蔡司 ZEISS 與 HOYA 鏡片完整系列：單光、智銳 SmartLife、漸進多焦點、數位螢幕、駕車、辦公室、太陽偏光，以及 1.60/1.67/1.74 折射率怎麼選。能見度視覺中心，新莊、板橋。"
+  title="鏡片種類｜蔡司 ZEISS × HOYA 鏡片系列品名一覽｜新莊板橋"
+  description="能見度視覺中心提供的蔡司 ZEISS 與 HOYA 鏡片系列品名與折射率規格一覽。新莊、板橋門市，歡迎洽詢。"
   schema={schema}
 >
   <!-- Hero -->
@@ -126,86 +116,48 @@ const schema = {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">鏡片種類</p>
       <h1 class="font-serif text-white leading-tight mb-6" style="font-size:clamp(30px,4.5vw,50px);font-weight:300">
-        每種鏡片，都有它<br /><span class="text-brand-gold">最適合的使用者</span>
+        鏡片系列<span class="text-brand-gold">品名一覽</span>
       </h1>
-      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        能見度為蔡司 ZEISS 簽約認證經銷、HOYA 經銷門市；NIKON、依視路 Essilor 等品牌鏡片亦可代客訂購。這一頁帶你認識完整鏡片系列，以及該怎麼依你的用眼型態挑選。
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.8">
+        以下為門市提供的鏡片系列品名與折射率規格。實際選配與報價，歡迎洽詢門市。
       </p>
     </div>
   </section>
 
-  <!-- 選鏡片先搞懂三件事 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">選鏡片，先搞懂三件事</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">鏡片不是只有「哪個品牌」的差別。真正決定配戴體驗的，是這三個層面的組合。</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          { n: '01', t: '折射率（薄度）', d: '度數越深、折射率選越高，鏡片越薄越輕。選對折射率，外觀與重量差很多。' },
-          { n: '02', t: '功能設計（焦距）', d: '單光、漸進多焦、辦公室中近用、數位螢幕、駕車——依你一天的用眼場景決定。' },
-          { n: '03', t: '鍍膜（表面處理）', d: '抗反射、藍光過濾、防污、變色、偏光——影響清晰度、保養與使用年限。' },
-        ].map(x => (
-          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5">
-            <span class="font-sans text-brand-gold font-semibold block mb-3" style="font-size:13px;letter-spacing:0.1em">{x.n}</span>
-            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">{x.t}</h3>
-            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{x.d}</p>
-          </div>
-        ))}
+  <!-- 品牌供應（廠商資訊） -->
+  <section class="px-6 md:px-16 py-12 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+      <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+        <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">蔡司 ZEISS</p>
+        <p class="text-brand-ink-3" style="font-size:13px">簽約認證經銷</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+        <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">HOYA</p>
+        <p class="text-brand-ink-3" style="font-size:13px">經銷</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+        <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">NIKON・依視路 Essilor</p>
+        <p class="text-brand-ink-3" style="font-size:13px">可代客訂購</p>
       </div>
     </div>
   </section>
 
-  <!-- 折射率對照 -->
-  <section class="px-6 md:px-16 py-20 bg-white">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">折射率怎麼選：度數越深，選越高</h2>
-      <p class="text-brand-ink-3 mb-8" style="font-size:16px;line-height:1.8">以下為一般對照參考，實際仍需依你的度數、散光與鏡框大小由驗光人員評估。</p>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse" style="font-size:15px">
-          <thead>
-            <tr class="bg-brand-navy text-white">
-              <th class="text-left px-5 py-4 font-semibold">折射率</th>
-              <th class="text-left px-5 py-4 font-semibold">適合度數（參考）</th>
-              <th class="text-left px-5 py-4 font-semibold">特性</th>
-            </tr>
-          </thead>
-          <tbody class="text-brand-ink-2">
-            {indexGuide.map(r => (
-              <tr class="border-b border-brand-ink/8">
-                <td class="px-5 py-4 font-semibold text-brand-navy whitespace-nowrap">{r.ri}</td>
-                <td class="px-5 py-4">{r.use}</td>
-                <td class="px-5 py-4">{r.note}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="text-brand-ink-2 mt-6" style="font-size:15px;line-height:1.8">高度近視怎麼配更薄更輕？看：<a href="/guide/high-myopia/" class="text-brand-gold underline">高度近視配鏡完整指南</a></p>
-    </div>
-  </section>
-
-  <!-- 蔡司系列 -->
+  <!-- 蔡司系列品名 -->
   <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <div class="flex items-baseline gap-3 mb-3">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">蔡司 ZEISS 鏡片系列</h2>
-        <span class="font-sans text-brand-gold" style="font-size:13px;letter-spacing:0.1em">簽約認證經銷</span>
-      </div>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">德國光學品牌，從標準到頂級個人化訂製的完整分級。能見度提供以下系列的驗配與訂製。</p>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">蔡司 ZEISS 鏡片系列</h2>
       <div class="space-y-6">
         {zeiss.map(g => (
-          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5">
-            <h3 class="font-serif text-brand-navy mb-1" style="font-size:19px;font-weight:600">{g.group}</h3>
-            <p class="text-brand-ink-3 mb-5" style="font-size:14px;line-height:1.7">{g.intro}</p>
+          <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+            <h3 class="font-serif text-brand-navy mb-4 pb-2 border-b border-brand-ink/8" style="font-size:18px;font-weight:600">{g.group}</h3>
             <div class="divide-y divide-brand-ink/8">
               {g.items.map(it => (
                 <div class="py-3 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-                  <div class="sm:w-56 shrink-0">
+                  <div class="sm:w-64 shrink-0">
                     <span class="font-sans text-brand-navy font-semibold" style="font-size:15px">{it.name}</span>
                     <span class="text-brand-ink-3 block" style="font-size:12px">{it.en}</span>
                   </div>
-                  <span class="text-brand-gold font-sans shrink-0" style="font-size:12px;letter-spacing:0.03em">折射率 {it.ri}</span>
-                  <span class="text-brand-ink-2" style="font-size:14px;line-height:1.6">{it.for}</span>
+                  <span class="text-brand-gold font-sans" style="font-size:13px;letter-spacing:0.02em">折射率 {it.ri}</span>
                 </div>
               ))}
             </div>
@@ -215,69 +167,57 @@ const schema = {
     </div>
   </section>
 
-  <!-- HOYA 系列 -->
+  <!-- HOYA 系列品名 -->
   <section class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">HOYA 鏡片系列</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">日本光學品牌，以內面非球面與個人化漸進設計著稱，漸進多焦與室內鏡片線特別完整。</p>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">HOYA 鏡片系列</h2>
       <div class="space-y-6">
         {hoya.map(g => (
-          <div class="bg-brand-paper rounded-2xl p-7 border border-brand-ink/5">
-            <h3 class="font-serif text-brand-navy mb-1" style="font-size:19px;font-weight:600">{g.group}</h3>
-            <p class="text-brand-ink-3 mb-5" style="font-size:14px;line-height:1.7">{g.intro}</p>
+          <div class="bg-brand-paper rounded-2xl p-6 border border-brand-ink/5">
+            <h3 class="font-serif text-brand-navy mb-4 pb-2 border-b border-brand-ink/8" style="font-size:18px;font-weight:600">{g.group}</h3>
             <div class="divide-y divide-brand-ink/8">
               {g.items.map(it => (
                 <div class="py-3 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-                  <div class="sm:w-56 shrink-0">
+                  <div class="sm:w-64 shrink-0">
                     <span class="font-sans text-brand-navy font-semibold" style="font-size:15px">{it.name}</span>
                     <span class="text-brand-ink-3 block" style="font-size:12px">{it.en}</span>
                   </div>
-                  <span class="text-brand-gold font-sans shrink-0" style="font-size:12px;letter-spacing:0.03em">折射率 {it.ri}</span>
-                  <span class="text-brand-ink-2" style="font-size:14px;line-height:1.6">{it.for}</span>
+                  <span class="text-brand-gold font-sans" style="font-size:13px;letter-spacing:0.02em">折射率 {it.ri}</span>
                 </div>
               ))}
             </div>
           </div>
         ))}
       </div>
-      <p class="text-brand-ink-3 mt-6" style="font-size:14px">NIKON、依視路 Essilor 等品牌鏡片可代客訂購，歡迎門市洽詢。</p>
     </div>
   </section>
 
-  <!-- 鍍膜與功能設計 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鍍膜與功能設計</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">同一片鏡片，鍍膜與設計的差異直接影響清晰度、保養與使用年限。以下為各項設計特性與適用情境說明。</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {coatings.map(c => (
-          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5">
-            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">{c.name}</h3>
-            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{c.desc}</p>
-          </div>
-        ))}
-      </div>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">鍍膜完整解析：<a href="/blog/lens-coating-guide/" class="text-brand-gold underline">眼鏡鏡片鍍膜是什麼？抗反射、藍光過濾、防刮、防污完整解析</a></p>
-    </div>
-  </section>
-
-  <!-- 兒童視力定期追蹤用鏡片（合規：不宣稱近視控制療效） -->
-  <section class="px-6 md:px-16 py-20 bg-white">
+  <!-- 規格選項（材質／鍍膜名稱，客觀陳述） -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兒童視力定期追蹤用鏡片</h2>
-      <div class="space-y-4 text-brand-ink-2" style="font-size:16px;line-height:1.85">
-        <p>針對成長階段兒童，蔡司、HOYA 等品牌皆有專為定期視力追蹤設計的框架鏡片系列。這類鏡片的配適與追蹤屬驗光人員的服務範圍。</p>
-        <p>需要特別提醒：兒童視力涉及醫療評估的部分（例如是否需要藥物介入、眼底檢查），依《驗光人員法》會協助轉介眼科醫師，由醫師進行診斷與處置。我們與家長一起做的，是<strong>定期度數追蹤、眼軸長紀錄與鏡片配適</strong>。</p>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(22px,3vw,30px);font-weight:400">規格選項</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+          <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:12px;letter-spacing:0.1em">折射率</p>
+          <p class="text-brand-ink-2" style="font-size:14px;line-height:1.9">1.50 / 1.56 / 1.60 /<br />1.67 / 1.74（樹脂）<br />1.50–1.90（玻璃）</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+          <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:12px;letter-spacing:0.1em">鍍膜選項</p>
+          <p class="text-brand-ink-2" style="font-size:14px;line-height:1.9">抗反射鍍膜<br />藍光過濾<br />防污防水層</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+          <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:12px;letter-spacing:0.1em">片種</p>
+          <p class="text-brand-ink-2" style="font-size:14px;line-height:1.9">透明片<br />變色片<br />偏光片</p>
+        </div>
       </div>
-      <p class="text-brand-ink-2 mt-6" style="font-size:16px;line-height:1.8">完整說明：<a href="/guide/children-myopia/" class="text-brand-gold underline">兒童視力定期追蹤完整說明</a></p>
     </div>
   </section>
 
   <!-- 免責聲明 -->
-  <section class="px-6 md:px-16 py-10">
+  <section class="px-6 md:px-16 py-10 bg-white">
     <div class="max-w-4xl mx-auto border border-brand-ink/10 p-5" style="background:rgba(26,47,78,0.03);font-size:13px">
       <p class="text-brand-ink-3 leading-relaxed">
-        <strong class="text-brand-ink-2">產品說明聲明：</strong>本頁介紹之光學鏡片均為屈光矯正用光學器材，產品名稱與規格依各製造商公開資料整理，內容僅供認識鏡片種類與選配情境參考，不構成任何醫療診斷、療效承諾或病症預防宣稱。實際鏡片選擇需依個人度數、用眼需求與鏡框由驗光人員評估；如有視力健康疑慮，建議優先洽眼科醫師進行專業診斷。鏡片報價因度數、折射率、鍍膜與功能選項而異，請洽門市。
+        <strong class="text-brand-ink-2">說明：</strong>本頁僅列示鏡片系列品名與折射率規格，屬產品資訊陳述。實際鏡片選擇需依個人度數、散光與鏡框由驗光人員評估；鏡片報價因折射率、鍍膜與功能選項而異，請洽門市。如有視力健康疑慮，建議洽眼科醫師進行專業診斷。
       </p>
     </div>
   </section>
@@ -285,8 +225,8 @@ const schema = {
   <!-- CTA -->
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">哪片鏡片最適合你？</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">不是最貴的就最好。預約一次視覺諮詢，讓 YoYo 驗光師依你的用眼型態與需求，給你最精準的建議。</p>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">想了解鏡片系列與選配？</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">歡迎預約視覺諮詢，由 YoYo 驗光師依你的度數與需求協助評估。新莊、板橋門市皆可預約。</p>
       <a href="/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
     </div>
   </section>
