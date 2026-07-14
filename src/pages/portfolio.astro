@@ -32,7 +32,16 @@ const schema = {
       "name": [item.data.brand, item.data.model].filter(Boolean).join(' ') || item.data.caption,
       "caption": item.data.caption,
       "creditText": "能見度視覺中心 × 比泱驗光所",
-      "creator": { "@id": `${SITE}/author/yoyo/#person` }
+      // creator 需帶 @type，否則 Google 圖片授權驗證判「物件類型無效」（頁面上讀不到 #person 的型別）
+      "creator": {
+        "@type": "Person",
+        "@id": `${SITE}/author/yoyo/#person`,
+        "name": "鄭家侑",
+        "url": `${SITE}/author/yoyo/`
+      },
+      "copyrightNotice": "© 能見度視覺中心 × 比泱驗光所",
+      "license": `${SITE}/about/#image-rights`,
+      "acquireLicensePage": `${SITE}/about/#image-rights`
     }))
   }
 };
