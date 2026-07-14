@@ -122,7 +122,8 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
     }
   </script>
 
-  <!-- 自有流量追蹤（與 GA4 雙軌）：打點到 CRM 後台「流量分析」，匿名訪客碼、無個資 -->
+  <!-- 自有流量追蹤（與 GA4 雙軌）：打點到 CRM 後台「流量分析」，匿名訪客碼、無個資。
+       記錄：瀏覽(pageview)、停留時長(leave)、轉換點擊(加LINE/撥電話/開導航/看評論) -->
   <script is:inline>
     (function(){
       try{
@@ -133,20 +134,38 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           localStorage.setItem(KEY,vid);
         }
         var q=new URLSearchParams(location.search);
-        var payload=JSON.stringify({
-          site:'official',
-          path:location.pathname,
-          vid:vid,
-          event:'pageview',
-          ref:document.referrer||null,
-          utm_source:q.get('utm_source'),
-          utm_medium:q.get('utm_medium'),
-          utm_campaign:q.get('utm_campaign'),
-          mobile:/Mobi|Android/i.test(navigator.userAgent)
-        });
         var url='https://vision-platform-five.vercel.app/api/t';
-        if(navigator.sendBeacon){navigator.sendBeacon(url,payload);}
-        else{fetch(url,{method:'POST',body:payload,keepalive:true});}
+        function send(event,extra){
+          var p={site:'official',path:location.pathname,vid:vid,event:event,
+            ref:document.referrer||null,
+            utm_source:q.get('utm_source'),utm_medium:q.get('utm_medium'),utm_campaign:q.get('utm_campaign'),
+            mobile:/Mobi|Android/i.test(navigator.userAgent)};
+          if(extra){for(var k in extra){p[k]=extra[k];}}
+          var body=JSON.stringify(p);
+          if(navigator.sendBeacon){navigator.sendBeacon(url,body);}
+          else{fetch(url,{method:'POST',body:body,keepalive:true});}
+        }
+        send('pageview');
+        /* 停留時長：離開頁面（關閉/切背景）補送一筆，只送一次、上限 30 分鐘 */
+        var t0=Date.now(),sent=false;
+        function leave(){
+          if(sent)return;sent=true;
+          send('leave',{dur:Math.min(1800,Math.round((Date.now()-t0)/1000))});
+        }
+        window.addEventListener('pagehide',leave);
+        document.addEventListener('visibilitychange',function(){
+          if(document.visibilityState==='hidden')leave();
+        });
+        /* 轉換點擊：實體店四大行動——加 LINE、撥電話、開導航、看 Google 評論 */
+        document.addEventListener('click',function(ev){
+          var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+          if(!a)return;
+          var h=a.getAttribute('href')||'';
+          if(h.indexOf('lin.ee')>=0||h.indexOf('line.me')>=0)send('click_line');
+          else if(h.indexOf('tel:')===0)send('click_tel');
+          else if(h.indexOf('share.google')>=0)send('click_review');
+          else if(h.indexOf('maps.google')>=0||h.indexOf('goo.gl/maps')>=0||h.indexOf('maps.app')>=0)send('click_map');
+        },{capture:true,passive:true});
       }catch(e){/* 追蹤失敗靜默，不影響頁面 */}
     })();
   </script>
