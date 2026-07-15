@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 視光小百科聚落：驗光名詞 + 鏡片名詞
+const GROUP_EXAM = [
+  'diopter-explained',
+  'myopia-vs-astigmatism',
+  'hyperopia-vs-presbyopia',
+  'lens-addition-add',
+  'binocular-vision',
+  'pupillary-distance-pd',
+  'vertex-distance',
+  'optometry-vs-dispensing',
+];
+const GROUP_LENS = [
+  'lens-refractive-index',
+  'aspheric-vs-spherical-lens',
+  'progressive-corridor',
+  'anti-reflective-coating-principle',
+  'blue-light-filter-what',
+  'photochromic-lens-principle',
+  'polarized-lens-principle',
+];
+const CLUSTER_SLUGS = [...GROUP_EXAM, ...GROUP_LENS];
+
+const allPosts = await getCollection('blog');
+const pick = (slugs: string[]) => slugs.map(s => allPosts.find(p => p.slug === s)).filter(Boolean);
+const examPosts = pick(GROUP_EXAM);
+const lensPosts = pick(GROUP_LENS);
+
+const canonicalUrl = 'https://beyondvisualopt.com/guide/optical-basics/';
+
+const faqs = [
+  {
+    q: '驗光單上一堆英文和數字，看不懂正常嗎？',
+    a: '很正常。驗光單上的 SPH、CYL、AXIS、ADD、PD 各代表不同的量測值，多數人沒學過。這份小百科把每個名詞用白話拆開解釋——看懂它們，你在選配時就能問對問題、也更清楚自己配到的是什麼。看不懂的地方，也歡迎到門市請驗光人員當面說明。',
+  },
+  {
+    q: '台灣講的「度數」和驗光單上的「D」是同一件事嗎？',
+    a: '是同一件事的不同寫法。台灣口語講「100 度」，驗光的國際單位寫「1.00 D（Diopter，屈光度）」——100 度就等於 1.00 D。詳細換算與正負號的意義，可看〈屈光度數怎麼算〉那篇。',
+  },
+  {
+    q: '這些名詞我一定要全部搞懂嗎？',
+    a: '不用。這份小百科是給想多了解的人查閱用的，不是考試。實際配鏡時，驗光人員會依你的狀況做完整量測與說明；你先讀過幾個關鍵名詞（度數、瞳距、折射率），溝通起來會更順。',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "視光小百科：看懂驗光單與鏡片的專業名詞",
+      "description": "度數、屈光度、瞳距、頂點距離、折射率、非球面、鍍膜、藍光、偏光、變色——驗光與鏡片的專業名詞，YoYo 驗光師用白話一次講清楚。新莊、板橋能見度視覺中心。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="視光小百科｜看懂驗光單與鏡片的專業名詞｜新莊板橋能見度"
+  description="度數、屈光度、瞳距、頂點距離、折射率、非球面、鍍膜、藍光、偏光、變色——驗光與鏡片的專業名詞，YoYo 驗光師用白話一次講清楚。新莊、板橋能見度視覺中心。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        視光<span class="text-brand-gold">小百科</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        驗光單上的名詞、鏡片規格的術語——這一頁用白話把它們一個一個講清楚。看懂了，你在選配時就能問對問題。
+      </p>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '驗光與度數名詞', href: '#exam' },
+        { label: '鏡片與鍍膜名詞', href: '#lens' },
+        { label: '常見問題', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 驗光與度數名詞 -->
+  <section id="exam" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">驗光與度數名詞</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">看懂驗光單、聽懂驗光人員在說什麼，從這幾個名詞開始。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {examPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-6 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <h3 class="font-serif text-brand-navy mb-2 group-hover:text-brand-gold transition-colors" style="font-size:17px;font-weight:600;line-height:1.5">{post.data.title.split('｜')[0]}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 鏡片與鍍膜名詞 -->
+  <section id="lens" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡片與鍍膜名詞</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">折射率、非球面、鍍膜、藍光、偏光、變色——鏡片規格背後的原理。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {lensPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="bg-brand-paper rounded-2xl p-6 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <h3 class="font-serif text-brand-navy mb-2 group-hover:text-brand-gold transition-colors" style="font-size:17px;font-weight:600;line-height:1.5">{post.data.title.split('｜')[0]}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">還有名詞想問？</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">看不懂的驗光單、聽不懂的名詞，都歡迎預約視覺諮詢，由 YoYo 驗光師當面說明。新莊、板橋門市皆可預約。</p>
+      <a href="/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
+    </div>
+  </section>
+</Layout>

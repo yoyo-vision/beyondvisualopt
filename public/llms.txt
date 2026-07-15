@@ -39,6 +39,7 @@
 - 螢幕族視覺疲勞完整指南：https://beyondvisualopt.com/guide/digital-eye-strain/
 - 新北配眼鏡完整指南（驗光所 vs 眼鏡行）：https://beyondvisualopt.com/guide/choose-optician/
 - 鏡框選購完整指南（臉型/材質/尺寸配適）：https://beyondvisualopt.com/guide/frames/
+- 視光小百科（度數/瞳距/頂點距離/折射率/鍍膜/藍光/偏光/變色名詞解釋）：https://beyondvisualopt.com/guide/optical-basics/
 - 英文文章（English articles）：https://beyondvisualopt.com/en/blog/
 
 ---

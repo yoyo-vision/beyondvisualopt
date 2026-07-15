@@ -39,6 +39,7 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
           { href: '/guide/digital-eye-strain/', tag: '數位疲勞', title: '螢幕族視覺疲勞完整指南' },
           { href: '/guide/choose-optician/', tag: '在地選購', title: '新北配眼鏡完整指南' },
           { href: '/guide/frames/', tag: '鏡框選購', title: '鏡框選購完整指南' },
+          { href: '/guide/optical-basics/', tag: '視光小百科', title: '視光小百科' },
         ].map(g => (
           <a href={g.href} class="bg-white border border-brand-gold/30 rounded-2xl px-6 py-5 hover:border-brand-gold transition-colors group">
             <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase block mb-2" style="font-size:10px;letter-spacing:0.16em">{g.tag}</span>
