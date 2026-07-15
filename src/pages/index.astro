@@ -393,6 +393,10 @@ const processPhases = [
       ).join('');
     }
 
+    // 合規過濾：命中醫療紅線字眼的評論一律不顯示（避免自動照登成本店療效宣稱，A 級紅線）
+    var REVIEW_BAD = ['治療', '治好', '恢復視力', '近視控制', '控制度數', '延緩近視', '角膜塑形', 'OK鏡', 'OK 鏡', '散瞳', '阿托品', '根治', '痊癒', '矯正近視'];
+    function reviewSafe(r) { return r && r.text && r.rating >= 4 && !REVIEW_BAD.some(function (w) { return r.text.indexOf(w) > -1; }); }
+
     async function loadReviews() {
       try {
         const [rxRes, rbRes] = await Promise.all([
@@ -410,8 +414,8 @@ const processPhases = [
 
         // 合併評論，新莊優先取 4 則，板橋取 2 則
         const combined = [
-          ...(rx.reviews || []).slice(0, 4).map(r => ({ ...r, store: '新莊店' })),
-          ...(rb.reviews || []).slice(0, 2).map(r => ({ ...r, store: '板橋店' })),
+          ...(rx.reviews || []).filter(reviewSafe).slice(0, 4).map(r => ({ ...r, store: '新莊店' })),
+          ...(rb.reviews || []).filter(reviewSafe).slice(0, 2).map(r => ({ ...r, store: '板橋店' })),
         ];
 
         if (!combined.length) return;

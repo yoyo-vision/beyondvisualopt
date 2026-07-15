@@ -232,7 +232,7 @@ const faqs = [
             <div class="text-4xl">{s.icon}</div>
             <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{s.tag}</span>
           </div>
-          <h2 class="text-xl font-bold text-brand-navy mb-1">{s.title}</h2>
+          <h2 class="font-serif text-brand-navy mb-1" style="font-size:20px;font-weight:600">{s.title}</h2>
           <p class="text-brand-gray text-sm mb-1">{s.subtitle}</p>
           <p class="text-xs text-brand-gold mb-4">⏱ {s.duration}</p>
           <ul class="space-y-2 flex-1">
@@ -302,7 +302,7 @@ const faqs = [
   <!-- 與一般眼鏡行的差異 -->
   <section class="bg-brand-light py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy text-center mb-10">能見度 vs 一般配鏡行</h2>
+      <h2 class="font-serif text-brand-navy text-center mb-10" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">能見度 vs 一般配鏡行</h2>
       <div class="overflow-x-auto">
         <table class="w-full text-sm border-collapse">
           <thead>
@@ -336,7 +336,7 @@ const faqs = [
 
   <!-- FAQ -->
   <section class="max-w-3xl mx-auto px-4 py-20">
-    <h2 class="text-2xl font-bold text-brand-navy text-center mb-10">常見問題 FAQ</h2>
+    <h2 class="font-serif text-brand-navy text-center mb-10" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">常見問題 FAQ</h2>
     <div class="space-y-6">
       {faqs.map((faq, i) => (
         <div class="border border-gray-200 rounded-xl p-6">
@@ -349,7 +349,7 @@ const faqs = [
 
   <!-- CTA -->
   <section class="bg-brand-navy py-16 px-4 text-center text-white">
-    <h2 class="text-2xl font-bold mb-4">不確定自己需要哪個服務？</h2>
+    <h2 class="font-serif mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">不確定自己需要哪個服務？</h2>
     <p class="text-gray-300 mb-8 max-w-xl mx-auto">告訴我們你的視覺困擾，YoYo 驗光師會為你規劃最適合的方案——不推銷、不加壓，只給你真正需要的答案。</p>
     <a href="/booking" class="bg-brand-gold text-white font-bold px-8 py-4 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
       預約免費視覺諮詢 →

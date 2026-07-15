@@ -115,6 +115,25 @@ const schema = {
   )}
 
   <!-- CTA -->
+  <!-- 真實顧客回饋（Google 評論，遮名，與首頁同一套已上線機制；E-E-A-T Experience） -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Real Voices</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">真實顧客怎麼說</h2>
+        <p class="text-brand-ink-3 mt-3" style="font-size:14px">來自 Google 地圖的真實評價・顧客姓名已遮蔽</p>
+      </div>
+      <div id="pf-reviews" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[1,2,3].map(() => (
+          <div class="border-t border-brand-ink/15 pt-7 animate-pulse">
+            <div class="h-3 bg-brand-ink/8 rounded mb-4 w-24"></div>
+            <div class="space-y-2"><div class="h-3 bg-brand-ink/8 rounded w-full"></div><div class="h-3 bg-brand-ink/8 rounded w-4/5"></div></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">看到喜歡的，歡迎來試戴</h2>
@@ -192,6 +211,42 @@ const schema = {
       if (e.key === 'ArrowRight') step(1);
       if (e.key === 'ArrowLeft') step(-1);
     });
+  </script>
+
+  <script is:inline>
+    // 真實顧客回饋：拉 Google 評論，遮名顯示（與首頁同機制）
+    (function () {
+      var G = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>';
+      function stars(n) { var o = ''; for (var i = 0; i < 5; i++) o += '<span style="color:' + (i < n ? '#c9a84c' : '#d1c9bc') + ';font-size:13px">★</span>'; return o; }
+      // 合規過濾：命中醫療紅線字眼的評論一律不顯示（避免自動照登成本店療效宣稱，A 級紅線）
+      var BAD = ['治療', '治好', '恢復視力', '近視控制', '控制度數', '延緩近視', '角膜塑形', 'OK鏡', 'OK 鏡', '散瞳', '阿托品', '根治', '痊癒', '矯正近視'];
+      function safe(r) { return r && r.text && r.rating >= 4 && !BAD.some(function (w) { return r.text.indexOf(w) > -1; }); }
+      var grid = document.getElementById('pf-reviews');
+      if (!grid) return;
+      function load() {
+        Promise.all([
+          fetch('/api/google-reviews?store=xinzhuang').then(function (r) { return r.json(); }),
+          fetch('/api/google-reviews?store=banqiao').then(function (r) { return r.json(); })
+        ]).then(function (res) {
+          var combined = (res[0].reviews || []).filter(safe).slice(0, 4).map(function (r) { return Object.assign({}, r, { store: '新莊店' }); })
+            .concat((res[1].reviews || []).filter(safe).slice(0, 2).map(function (r) { return Object.assign({}, r, { store: '板橋店' }); }));
+          if (!combined.length) { grid.parentNode.parentNode.style.display = 'none'; return; }
+          grid.innerHTML = combined.map(function (r) {
+            var t = r.text.length > 110 ? r.text.slice(0, 110) + '…' : r.text;
+            var name = r.author ? r.author.charAt(0) + (r.author.length > 1 ? '**' : '') : '匿名';
+            return '<div class="border-t border-brand-ink/15 pt-7">'
+              + '<div class="flex items-center gap-2 mb-3"><span class="font-sans text-brand-ink" style="font-size:14px;font-weight:500">' + name + '</span>'
+              + '<span class="font-sans text-brand-ink-3" style="font-size:11px">・' + r.store + '</span><span class="ml-auto">' + G + '</span></div>'
+              + '<div class="flex gap-0.5 mb-3">' + stars(r.rating) + '</div>'
+              + '<p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">「' + t + '」</p></div>';
+          }).join('');
+        }).catch(function () { grid.parentNode.parentNode.style.display = 'none'; });
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: '200px' });
+        io.observe(grid);
+      } else { load(); }
+    })();
   </script>
 
 </Layout>
