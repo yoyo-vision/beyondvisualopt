@@ -449,13 +449,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"rgp-hard-contact-lens.md": {
-	id: "rgp-hard-contact-lens.md";
-  slug: "rgp-hard-contact-lens";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "rimless-glasses-guide.md": {
 	id: "rimless-glasses-guide.md";
   slug: "rimless-glasses-guide";

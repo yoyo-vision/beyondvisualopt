@@ -22,6 +22,8 @@ export default defineConfig({
     // 舊文章網址含「myopia-control」字樣，因法規用詞調整改名，301 保留既有搜尋權重
     '/blog/children-myopia-control-xinzhuang': '/blog/children-myopia-tracking-xinzhuang',
     '/en/blog/children-myopia-control-xinzhuang': '/en/blog/children-myopia-tracking-xinzhuang',
+    // RGP 硬式隱形眼鏡文章因醫療器材廣告合規問題下架（2026-07-15 法務審核🔴），導去合規的服務頁
+    '/blog/rgp-hard-contact-lens': '/services',
   },
   integrations: [
     tailwind(),
