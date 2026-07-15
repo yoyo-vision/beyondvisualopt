@@ -150,6 +150,23 @@ const services = [
     note: '每 1mm 頂點距離誤差 ≈ 0.25D 實際度數差異',
   },
   {
+    icon: '🔵',
+    title: 'RGP 硬式隱形眼鏡驗配',
+    subtitle: '高度散光、追求穩定清晰視覺品質的配戴選擇',
+    duration: '評估 + 試戴約 60 分鐘',
+    items: [
+      '角膜地形圖量測，評估鏡片適配曲率',
+      '高度散光視覺品質評估（一般約 200 度以上者適用，實際依個別評估）',
+      '高透氧材質與配戴時數個人化建議',
+      '個人化參數訂製與現場試戴確認',
+      '配戴、清潔衛教與定期複查追蹤',
+      '檢測發現角膜或屈光數據異常時，一律轉介眼科醫師診斷（如圓錐角膜等須由眼科醫師確診）',
+    ],
+    tag: '新莊店 / 板橋店',
+    note: '本項為一般硬式隱形眼鏡（RGP）驗配，非角膜塑形（OK 鏡）。依驗光人員法第 12 條，十五歲以下者（含 15 歲）之隱形眼鏡驗光應於眼科醫師指導下為之；未滿六歲兒童不予驗配。',
+    href: '/blog/rgp-hard-contact-lens/',
+  },
+  {
     icon: '🎓',
     title: '視覺健康諮詢',
     subtitle: '搞懂你的眼睛，再做決定',
@@ -191,16 +208,19 @@ const faqs = [
 ];
 ---
 <Layout
-  title="服務內容｜能見度視覺中心 × 比泱驗光所｜多焦點鏡片 蔡司鏡片 兒童近視追蹤 高度近視眼鏡｜YoYo 驗光師"
-  description="YoYo 驗光師主理。多焦點鏡片、蔡司鏡片個人化訂製、兒童近視追蹤（離焦鏡片評估 / 眼軸追蹤）、高度近視眼鏡專科、數位疲勞視覺方案。能見度視覺中心新莊、板橋門市。"
+  title="服務內容｜多焦點・兒童近視・高度近視配鏡｜能見度視覺中心 新莊板橋"
+  description="多焦點鏡片、蔡司個人化訂製、兒童近視追蹤、高度近視驗配、數位螢幕用眼方案——YoYo 驗光師主理，能見度視覺中心新莊、板橋門市。"
   schema={schema}
   enPath="/en/services"
 >
   <!-- Hero -->
-  <section class="bg-brand-navy text-white py-20 px-4 text-center">
-    <h1 class="text-4xl font-bold mb-4">服務內容</h1>
-    <p class="text-gray-300 text-lg max-w-2xl mx-auto">每一項服務，都從你的真實視覺需求出發，而不是從產品利潤出發。</p>
-    <p class="text-brand-gold text-sm mt-4 tracking-wider">新莊店 × 板橋店｜YoYo 驗光師主理</p>
+  <section class="bg-brand-navy text-white py-24 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="font-sans text-brand-gold tracking-widest uppercase block mb-5" style="font-size:12px;letter-spacing:0.22em">服務內容 · Our Services</span>
+      <h1 class="font-serif text-white mb-6" style="font-size:clamp(30px,5vw,56px);font-weight:300;line-height:1.2">你的用眼困擾，<br />我們一項一項陪你找方法</h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">每一項服務，都從你的真實視覺需求出發，而不是從產品利潤出發。</p>
+      <p class="text-brand-gold mt-5 tracking-wider" style="font-size:14px">新莊店 × 板橋店｜YoYo 驗光師主理</p>
+    </div>
   </section>
 
   <!-- 服務卡片 -->
@@ -225,6 +245,9 @@ const faqs = [
           </ul>
           {s.note && (
             <p class="mt-5 pt-4 border-t border-gray-100 text-xs text-gray-400 italic">{s.note}</p>
+          )}
+          {s.href && (
+            <a href={s.href} class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors">深入了解 RGP →</a>
           )}
         </div>
       ))}

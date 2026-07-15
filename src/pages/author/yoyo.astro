@@ -10,6 +10,18 @@ const posts = (await getCollection('blog')).sort(
 const formatDate = (d: Date) =>
   d.toLocaleDateString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' });
 
+// 精簡經歷 timeline（E-E-A-T Expertise，老闆提供之真實資歷；角膜塑形一列明確框為「過往資歷」，非本店服務）
+const career = [
+  { year: '2020', role: '國家考試合格驗光師（驗師字第 003309 號）' },
+  { year: '2020–2021', role: '三軍總醫院 眼科臨床視光團隊（過往臨床資歷）' },
+  { year: '2022–2023', role: '恩瑞亞太驗光所 驗光所所長' },
+  { year: '2024', role: '新北市驗光師公會 講師・新北市驗光生公會 顧問' },
+  { year: '2023–2026', role: '能見度視覺中心 負責人' },
+];
+
+// 去識別化服務對象（不具名，避個資法/姓名權；描述客群多元性作為 Experience 證明）
+const servedGroups = '從科技業工程師、企業經營者，到長時間用眼的專業工作者；也包含複雜屈光需求、雙眼協調不易、雷射術後視覺變化等需要細緻驗配處理的個案。涉及眼睛健康評估時，會與眼科醫師協同追蹤。';
+
 // Person schema：E-E-A-T 核心 — 持照專業人士身份，供 Google 與 AI 搜尋引擎驗證作者資格
 const schema = {
   "@context": "https://schema.org",
@@ -28,6 +40,10 @@ const schema = {
     "name": "中華民國驗光師證書",
     "identifier": "驗師字第 003309 號"
   },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "元培醫事科技大學"
+  },
   "knowsAbout": [
     "臨床驗光", "雙眼視覺評估", "多焦點漸進鏡片驗配", "兒童近視追蹤",
     "高度近視精密配鏡", "頂點距離量測", "鏡片傾斜角校正", "RGP 硬式隱形眼鏡配適", "蔡司 Zeiss 鏡片"
@@ -39,7 +55,9 @@ const schema = {
   ],
   "sameAs": [
     "https://www.instagram.com/youzi_yu/",
-    "https://www.instagram.com/bv_optical/"
+    "https://www.instagram.com/bv_optical/",
+    "https://www.threads.com/@youzi_yu",
+    "https://vocus.cc/salon/bv_optical"
   ]
 };
 ---
@@ -60,7 +78,8 @@ const schema = {
           <h1 class="font-serif text-white leading-tight mb-3" style="font-size:clamp(30px,4.5vw,48px);font-weight:300">鄭家侑 驗光師</h1>
           <p class="text-brand-gold font-sans mb-6" style="font-size:16px">YoYo｜主理驗光師｜驗師字第 003309 號</p>
           <div class="space-y-4 text-white/70" style="font-size:17px;line-height:1.85">
-            <p>台灣執照驗光師，能見度視覺中心 × 比泱驗光所（新莊）主理。專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配、兒童近視追蹤與 RGP 硬式隱形眼鏡配適，服務於蔡司 Zeiss 簽約經銷門市。</p>
+            <p>元培醫事科技大學畢業，國家考試合格驗光師（驗師字第 003309 號），新北市驗光師公會講師、新北市驗光生公會顧問。能見度視覺中心 × 比泱驗光所（新莊）主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配、兒童近視追蹤與 RGP 硬式隱形眼鏡配適，服務於蔡司 Zeiss 簽約經銷門市。</p>
+            <p>能見度眼鏡由家族於 1992 年在板橋創立，是逾 30 年的在地眼鏡老店，累計服務逾萬位在地顧客。YoYo 自家族店務中成長，完成國家驗光師養成後獨當一面，將完整的臨床驗光標準流程帶進新莊比泱驗光所。</p>
             <p>本站所有視覺健康文章皆由 YoYo 驗光師親自撰寫或審閱，內容依據臨床驗光實務與光學原理，不做誇大宣稱。發現視力異常或無法矯正至正常視力者，將依《驗光人員法》轉介眼科醫師。</p>
           </div>
           <div class="flex flex-wrap gap-3 justify-center md:justify-start mt-7">
@@ -96,6 +115,34 @@ const schema = {
             <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 經歷 Timeline + 服務對象（E-E-A-T Experience／Expertise） -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
+      <div>
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">臨床養成經歷</span>
+        <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">一路走來的專業養成</h2>
+        <ul class="space-y-5">
+          {career.map(c => (
+            <li class="flex gap-5">
+              <span class="font-sans text-brand-gold flex-shrink-0 pt-0.5" style="font-size:13px;font-weight:600;letter-spacing:0.03em;min-width:82px">{c.year}</span>
+              <span class="text-brand-ink-2 border-l-2 border-brand-gold/30 pl-5" style="font-size:15px;line-height:1.6">{c.role}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="md:pl-6">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">服務對象</span>
+        <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">從各行各業<br />到疑難個案</h2>
+        <p class="text-brand-ink-2 mb-6" style="font-size:16px;line-height:1.9">
+          多年臨床驗配，YoYo 的服務對象橫跨各行各業——{servedGroups}
+        </p>
+        <p class="text-brand-ink-3" style="font-size:14px;line-height:1.8">
+          每一種用眼型態、每一個難解的視覺問題，都是驗配功力的累積。這也是為什麼我們相信：驗光不能只量度數，要看懂你怎麼用眼睛。
+        </p>
       </div>
     </div>
   </section>

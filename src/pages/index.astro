@@ -47,6 +47,39 @@ const faqSchema = {
     }
   ]
 };
+
+// 驗配流程：以真實 8 步驟分三階段呈現，讓首頁具備 H2→H3→H4 的內容深度（GEO 友善）
+const processPhases = [
+  {
+    stage: '第一階段',
+    title: '先了解你',
+    en: 'Understand',
+    steps: [
+      { num: '01', name: '線上預約', desc: '透過官網、LINE OA 或 Google 行事曆選擇門市與時段，到店不必久候。' },
+      { num: '02', name: '到店問診', desc: 'YoYo 驗光師詳細了解你的視覺困擾、日常用眼習慣、工作環境與舊鏡處方——這比視力表更早決定一副眼鏡好不好戴。' },
+    ],
+  },
+  {
+    stage: '第二階段',
+    title: '精準檢測',
+    en: 'Measure',
+    steps: [
+      { num: '03', name: '全套儀器檢測', desc: '角膜地形圖、調節力測量搭配主客觀驗光，把度數、散光、軸度反覆比對到最清楚為止。' },
+      { num: '04', name: '雙眼視覺評估', desc: '評估兩眼協調、立體視與聚散能力，找出傳統驗光容易忽略、卻是長時間閱讀會不會累的根源。' },
+      { num: '05', name: '生活視覺分析', desc: '依你的工作距離、螢幕時數與戶外習慣，決定配鏡參數該落在哪裡——鏡片是為你的生活做的，不是為視力表。' },
+    ],
+  },
+  {
+    stage: '第三階段',
+    title: '為你打造',
+    en: 'Build',
+    steps: [
+      { num: '06', name: '鏡片選配說明', desc: '不推銷，而是說明每種鏡片的光學特性與生活適配度，讓你在理解之後自己選。' },
+      { num: '07', name: '鏡架調整與訂製', desc: '頂點距離、傾斜角、鼻托高度逐一調整，確保鏡片光學中心對準你的瞳距。' },
+      { num: '08', name: '取鏡與適應追蹤', desc: '取鏡時再次確認配戴感並提供適應期指引，有任何不適免費回診調整。' },
+    ],
+  },
+];
 ---
 <Layout
   title="能見度眼鏡｜能見度視覺中心・比泱驗光所｜新莊板橋蔡司多焦點"
@@ -68,10 +101,10 @@ const faqSchema = {
     <div class="relative max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">新北市新莊 × 板橋｜深耕在地 30 年專業驗光</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(32px,5.5vw,62px);font-weight:300">
-        能見度眼鏡｜新莊驗光所 × 板橋眼鏡行<br /><span class="text-brand-gold">蔡司鏡片</span>｜多焦點鏡片｜兒童近視追蹤
+        眼鏡不是越貴越好，<br />是越<span class="text-brand-gold">適合你</span>越好
       </h1>
       <p class="text-white/75 max-w-2xl mx-auto mb-10" style="font-size:18px;line-height:1.85">
-        新莊與板橋在地深耕超過 30 年的專業眼鏡行。從兒童近視追蹤到熟齡族老花配鏡，提供完整的專業驗光流程與國際鏡片品牌，為你打造真正適合的清晰視界。
+        我們是在新莊、板橋深耕 30 年的眼鏡行。從孩子的近視追蹤到爸媽的老花配鏡，先花時間搞懂你怎麼用眼睛，再幫你挑真正適合的那一副——不是最貴的，是最對的。
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/booking"
@@ -88,22 +121,43 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- 信任狀前置帶：資格・經銷・儀器・年資・評價，正面對打競品的認證/儀器權威牌（法務 🟡 已套改寫版：臨床級→專業、刪無據「三代信賴」） -->
+  <section class="px-6 md:px-16 py-10 border-b border-brand-ink/10" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-8 md:divide-x md:divide-brand-ink/10">
+        {[
+          { t: '國考持證驗光師主理', s: '鄭家侑（YoYo）／驗師字第 003309 號' },
+          { t: '蔡司 Zeiss 簽約經銷門市', s: '原廠簽約經銷，經銷憑證可查' },
+          { t: '專業檢測儀器', s: 'NIDEK 角膜地形圖儀・TOPCON 綜合驗光儀' },
+          { t: '深耕在地 30 年', s: '板橋總店 1992 年創立，在地服務逾 30 年' },
+          { t: 'Google 5.0・222 則評價', s: '新莊店真實顧客評分' },
+        ].map((item, i) => (
+          <div class={i === 0 ? 'md:pl-0 md:px-5' : 'md:px-5'}>
+            <div class="w-6 border-t-2 border-brand-gold mb-3"></div>
+            <div class="font-serif text-brand-navy mb-1.5" style="font-size:16px;font-weight:600;line-height:1.4">{item.t}</div>
+            <div class="font-sans text-brand-ink-3" style="font-size:12.5px;line-height:1.6">{item.s}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- 核心優勢 -->
   <section class="px-6 md:px-16 py-24" style="background:#eee8da">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-16 items-end">
         <h2 class="font-serif text-brand-ink" style="font-size:clamp(32px,4.5vw,56px);font-weight:300;line-height:1.15">
-          新莊、板橋配眼鏡<br />不只是選個框架那麼簡單
+          配眼鏡，我們在意的<br />不只是你戴起來好不好看
         </h2>
         <p class="text-brand-ink-2" style="font-size:18px;line-height:1.8">
-          每一次進門，我們做的不是快速出貨，而是完整了解你的視覺狀態、生活習慣與真正的需求，才給出建議。
+          在新莊、板橋配眼鏡，我們不急著讓你出貨。先坐下來，把你的用眼習慣、生活狀態、之前哪裡不舒服都聊清楚，再給建議。
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { num: '01', title: '新莊驗光所｜臨床等級驗光', desc: '完整雙眼視覺評估、頂點距離量測、鏡片傾斜角調整，每個參數精準到位，而不是十分鐘驗完出貨。' },
-          { num: '02', title: '蔡司 Zeiss 簽約經銷商', desc: '新莊、板橋蔡司鏡片正式簽約經銷商。Individual² 個人化訂製、多焦點漸進鏡片、數位防護系列，原廠品質有憑有據。' },
-          { num: '03', title: '新莊兒童近視追蹤', desc: '針對 6–14 歲兒童提供定期視力評估與度數變化追蹤，搭配離焦設計鏡片，協助家長掌握孩子視力發展趨勢。' },
+          { num: '01', title: '驗光，不是量個度數就結束', desc: '在新莊，我們做的是完整的臨床驗光——雙眼視覺評估、頂點距離量測、鏡片傾斜角調整，每個參數都對到位，而不是十分鐘驗完就叫你等取貨。' },
+          { num: '02', title: '要用好鏡片，我們有蔡司原廠', desc: '新莊、板橋蔡司 Zeiss 正式簽約經銷商。從 Individual² 個人化訂製、多焦點漸進到數位鏡片（藍光過濾設計），原廠品質，經銷憑證可查。' },
+          { num: '03', title: '孩子的近視，我們幫你一起盯', desc: '6–14 歲的孩子，我們提供定期視力檢查與度數變化追蹤，搭配離焦光學設計鏡片，讓你清楚看見孩子這半年、這一年的視力走向。依驗光人員法，十五歲以下者之驗光於眼科醫師指導下進行，需要時協同眼科醫師轉診追蹤。' },
         ].map(item => (
           <div class="border-t border-brand-ink/20 pt-8">
             <div class="font-sans text-brand-ink-3 mb-4" style="font-size:12px;letter-spacing:0.2em">{item.num}</div>
@@ -158,12 +212,55 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- 專業驗配流程（8 步驟／三階段：提供 H2→H3→H4 內容深度） -->
+  <section class="px-6 md:px-16 py-24" style="background:#1a2f4e">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16">
+        <span class="font-sans text-brand-gold tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">The Process</span>
+        <h2 class="font-serif text-brand-paper mb-6" style="font-size:clamp(28px,4vw,48px);font-weight:300;line-height:1.2">
+          配一副眼鏡，<br />我們會陪你走完這 8 步
+        </h2>
+        <p class="text-brand-paper/65" style="font-size:18px;line-height:1.85">
+          驗光不該是十分鐘的例行公事。從你坐下來的第一句話，到戴上眼鏡走出門，這八步我們一步都不跳——每一步都有它該在的理由，不是湊時間。
+        </p>
+      </div>
+
+      <div class="space-y-14">
+        {processPhases.map(phase => (
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-t border-brand-gold/25 pt-10">
+            <div>
+              <span class="font-sans text-brand-gold block mb-2" style="font-size:12px;letter-spacing:0.2em">{phase.en}</span>
+              <h3 class="font-serif text-brand-paper" style="font-size:24px;font-weight:400">{phase.stage}<br /><span class="text-brand-paper/70" style="font-size:0.72em">{phase.title}</span></h3>
+            </div>
+            <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
+              {phase.steps.map(step => (
+                <div>
+                  <div class="font-sans text-brand-gold/70 mb-2" style="font-size:12px;letter-spacing:0.15em">{step.num}</div>
+                  <h4 class="font-serif text-brand-paper mb-2" style="font-size:19px;font-weight:400">{step.name}</h4>
+                  <p class="text-brand-paper/60" style="font-size:15px;line-height:1.8">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16">
+        <a href="/process"
+          class="font-sans inline-flex items-center gap-3 border border-brand-gold/50 text-brand-gold px-8 py-4 hover:bg-brand-gold hover:text-brand-navy transition-colors duration-300"
+          style="font-size:14px;letter-spacing:0.1em">
+          看完整流程與檢測儀器 →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 兩大門市介紹 -->
   <section class="px-6 md:px-16 py-24 border-t border-brand-ink/10" style="background:#eee8da">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Two Locations</span>
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">新莊 × 板橋｜兩大門市</h2>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">新莊、板橋，挑離你近的那間</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -225,7 +322,7 @@ const faqSchema = {
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
           <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Google 真實評價</span>
-          <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">新莊與板橋地區<br />的信賴選擇</h2>
+          <h2 class="font-serif text-brand-ink" style="font-size:clamp(28px,4vw,48px);font-weight:300">客人怎麼說，<br />比我們自己講更實在</h2>
         </div>
         <div class="flex gap-8">
           <div id="rating-xinzhuang" class="text-center">
@@ -376,7 +473,7 @@ const faqSchema = {
   <!-- FAQ -->
   <section class="px-6 md:px-16 py-24 border-t border-brand-ink/10" style="background:#eee8da">
     <div class="max-w-3xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-14" style="font-size:clamp(28px,4vw,48px);font-weight:300">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-14" style="font-size:clamp(28px,4vw,48px);font-weight:300">配眼鏡前，你可能想問的</h2>
       <div class="space-y-0">
         {[
           { q: '老花一定要配多焦點嗎？', a: '不一定。老花的解決方案包含：單焦老花鏡、漸進多焦點鏡片、甚至接觸鏡選項。多焦點鏡片適合需要頻繁切換遠中近距離者，但工作以近距離為主的人不一定適合。YoYo 驗光師會根據你的真實生活習慣給出建議，而非一律推薦多焦點。' },

@@ -304,4 +304,21 @@ const schema = {
     </div>
   </section>
 
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">延伸閱讀｜其他完整指南</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/guide/optical-basics/', t: '視光小百科' },
+          { href: '/guide/lens-brands/', t: '鏡片品牌選購完整指南' },
+          { href: '/guide/progressive-lens/', t: '多焦點（漸進）鏡片完整指南' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← 回完整指南總覽</a>
+    </div>
+  </section>
+
 </Layout>
