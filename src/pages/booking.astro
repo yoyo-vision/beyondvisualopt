@@ -114,20 +114,20 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 線上預約（能見度預約系統：即時時段、LINE 通知、自助改期；2026-07 替換原 Google Calendar） -->
-  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+  <!-- 線上預約（能見度預約系統直接內嵌：2026-07-15 老闆指定，像掛號元件嵌在官網內，顧客不跳站）-->
+  <section id="book" class="px-6 md:px-16 py-20" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
         <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">線上預約</span>
         <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">選擇你方便的時段</h2>
         <p class="text-brand-ink-3" style="font-size:15px">即時查看可約時段，2 分鐘完成預約</p>
       </div>
-      <div class="border border-brand-ink/10 bg-white shadow-sm px-8 py-12 text-center">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-2xl mx-auto">
+      <div class="border border-brand-ink/10 bg-white shadow-sm text-center overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto px-8 pt-10 pb-8">
           {[
             { icon: '🗓', text: '即時查看兩間門市可約時段' },
             { icon: '⏱', text: '免註冊免下載，2 分鐘完成' },
-            { icon: '💬', text: 'LINE 登入可收預約確認與提醒' },
+            { icon: '💬', text: 'LINE 綁定可收預約確認與提醒' },
           ].map(f => (
             <div class="flex flex-col items-center gap-2">
               <span style="font-size:26px">{f.icon}</span>
@@ -135,12 +135,17 @@ import Layout from '../layouts/Layout.astro';
             </div>
           ))}
         </div>
-        <a href="https://vision-platform-five.vercel.app/booking"
-          class="inline-block font-sans font-bold text-white px-12 py-4 transition-opacity hover:opacity-90"
-          style="background:#1a2b4a;font-size:16px;letter-spacing:0.08em">
-          立即線上預約 →
-        </a>
-        <p class="text-brand-ink-3 mt-5" style="font-size:13px">預約成立後可隨時自助取消或改期</p>
+        <!-- 內嵌預約系統：iframe 內自帶捲動；高度給足讓月曆與時段一眼可見 -->
+        <iframe
+          src="https://vision-platform-five.vercel.app/booking"
+          title="能見度視覺中心線上預約"
+          loading="lazy"
+          style="width:100%;height:min(920px,88vh);border:0;display:block"
+        ></iframe>
+        <p class="text-brand-ink-3 py-4 border-t border-brand-ink/10" style="font-size:13px">
+          預約成立後可隨時自助取消或改期・
+          <a href="https://vision-platform-five.vercel.app/booking" target="_blank" rel="noreferrer" class="underline underline-offset-2">用全螢幕開啟預約頁 ↗</a>
+        </p>
       </div>
       <div class="mt-8 text-center">
         <p class="text-brand-ink-3 mb-5" style="font-size:15px">也可以透過 LINE OA 預約或詢問</p>
