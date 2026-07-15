@@ -103,7 +103,7 @@ Common causes of dizziness include: optical center misalignment, a change in ver
 
 **Q: Can people with high myopia wear contact lenses?**
 
-Yes. RGP (rigid gas permeable) lenses provide especially stable correction for high myopia, particularly when combined with high astigmatism. Soft monthly lenses are also available in high powers, though visual clarity is usually not as sharp as RGP.
+Yes — contact lenses come in different materials, including soft and rigid (RGP) options. For high myopia combined with high astigmatism, which material suits you depends on your corneal condition and prescription, and needs to be confirmed by an optometrist. We recommend booking a separate contact lens evaluation and trial fitting.
 
 **Q: Where can I get a precision fitting for high myopia in Xinzhuang or Banqiao (New Taipei)?**
 

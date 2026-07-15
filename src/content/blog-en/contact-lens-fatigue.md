@@ -2,7 +2,7 @@
 title: "Wearing Contact Lenses Every Day but Your Eyes Feel More Tired? The Problem May Not Be Your Eyes | Contact Lens Fatigue in Xinzhuang & Banqiao"
 date: "2025-07-01"
 tag: "Contact Lenses"
-excerpt: "Long-term soft contact lens wearer struggling with dry, tired eyes or blurry vision? Optometrist YoYo breaks down the real causes, with a clear soft vs. rigid RGP lens comparison."
+excerpt: "Long-term soft contact lens wearer struggling with dry, tired eyes or blurry vision? Optometrist YoYo breaks down 5 common causes and how to adjust your wearing habits."
 ---
 
 ## Wearing Contact Lenses Every Day but Your Eyes Feel More Tired?
@@ -68,37 +68,15 @@ Many put lenses in at 7 a.m. and don't take them out until 11 p.m. — 14 hours.
 
 ---
 
-## Should You Switch to Rigid RGP Lenses?
+## Think the Problem Is Your Lens Material? Get Evaluated First
 
-Not everyone needs to switch to RGP, but the following situations are worth a serious evaluation:
-
-| Your situation | Why RGP is worth considering |
-|---------|-----------------|
-| You have dry eye and soft lenses feel uncomfortable | RGP lenses don't absorb water, so they don't worsen dry eye |
-| High astigmatism (2.00 D or more) | RGP correction is more stable thanks to the tear-lens mechanism |
-| High demands on visual clarity (designers, drivers) | RGP has a stable optical surface and higher image quality |
-| Long wearing hours (10+ hours a day) | RGP has high oxygen transmission, better suited to long wear |
-| Post-surgical or irregular corneas | RGP can mask corneal surface irregularities |
-
----
-
-## Full Comparison: Soft vs. Rigid Contact Lenses
-
-| Comparison | Soft Daily (Silicone Hydrogel) | Soft Monthly | Rigid RGP |
-|---------|----------------|---------|---------|
-| Comfort (first wear) | ★★★★★ | ★★★★ | ★★★ (needs adaptation) |
-| Visual clarity | ★★★★ | ★★★ | ★★★★★ |
-| Oxygen transmission | ★★★★ | ★★★ | ★★★★★ |
-| Astigmatism correction | ★★★ | ★★★ | ★★★★★ |
-| Dry-eye friendliness | ★★★ | ★★ | ★★★★ |
-| Annual cost (estimate) | NT$10,000–18,000 | NT$4,000–8,000 | NT$5,000–10,000 |
-| Environmental impact | High (daily disposal) | Medium | Low |
+Contact lenses come in more than one material — soft dailies, soft monthlies, rigid RGP, and more — each with different physical properties and wearing considerations. What suits you depends on your corneal condition, tear film, and how you use your eyes day to day. Rather than deciding on your own to switch materials, it's best to have an optometrist evaluate you first.
 
 ---
 
 ## Suggestions for Improving Your Contact Lens Wear
 
-You don't necessarily need to switch to RGP right away. First, try these adjustments:
+Start by adjusting these areas:
 
 **1. Confirm your lens material**
 If your current soft lenses are HEMA material (conventional hydrogel), consider upgrading to silicone hydrogel. Oxygen transmissibility improves substantially, and the dry feeling usually eases too.
@@ -121,11 +99,11 @@ If you're a long-term lens wearer, we recommend an annual corneal health assessm
 
 **Q: How long can I wear contact lenses before my eyes get dry?**
 
-There's no fixed time — it varies with your tear production, lens material, and wearing environment. Generally, air-conditioned spaces, screen work, and wearing lenses for more than 10 hours all accelerate dryness. If your eyes start feeling uncomfortable by the afternoon every day, it's worth an assessment to see whether you need a different lens material or should consider RGP.
+There's no fixed time — it varies with your tear production, lens material, and wearing environment. Generally, air-conditioned spaces, screen work, and wearing lenses for more than 10 hours all accelerate dryness. If your eyes start feeling uncomfortable by the afternoon every day, it's worth booking an assessment of your wearing habits and lens choice.
 
-**Q: Are daily lenses healthier than monthly lenses?**
+**Q: How do I know if my current lens material suits me?**
 
-In terms of lens hygiene, dailies are better than monthlies (a fresh lens every day, no deposit buildup). But daily doesn't mean the oxygen issue is solved — that depends on the material. The best dailies are high-Dk silicone hydrogel dailies, which balance both hygiene and oxygen transmission.
+Lens hygiene, freshness, and oxygen transmission all affect wearing comfort, and different replacement schedules come with different cleaning and care needs. What actually suits you depends on your tear film, wearing habits, and lifestyle — best evaluated by an optometrist rather than judged by replacement schedule alone.
 
 **Q: Can I occasionally sleep in my contact lenses overnight?**
 
@@ -133,4 +111,4 @@ Strongly not recommended. Sleeping in soft lenses substantially raises the risk 
 
 **Q: Where in Xinzhuang or Banqiao can I get my contact lens wear evaluated?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao locations) with Optometrist YoYo (licensed optometrist) offers a complete contact lens wear assessment, including corneal topography, tear film analysis, an evaluation of your current lens material and wearing time, and a full consultation on whether RGP is right for you. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking).
+Beyond Visual Optometry (Xinzhuang and Banqiao locations) with Optometrist YoYo (licensed optometrist) offers a complete contact lens wear assessment, including corneal topography, tear film analysis, an evaluation of your current lens material and wearing time, and personalized lens recommendations. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking).

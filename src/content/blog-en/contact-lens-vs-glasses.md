@@ -63,21 +63,7 @@ From a clinical optometry perspective, contact lenses and glasses each have thei
 - Healthy eyes with normal tear production.
 - A reliable cleaning routine and correct wearing knowledge.
 
-> **An often-overlooked option: alternating daily disposable contacts with framed glasses.** Wear glasses for everyday work and pop in dailies when you need them — it's the compromise with the lowest health risk.
-
----
-
-## Daily, Monthly, or Yearly Lenses — Which Is Best?
-
-| | Daily Disposable | Monthly | Rigid Gas Permeable (RGP) |
-|--|------|------|------------|
-| Corneal hypoxia risk | Lowest | Higher (if overworn) | Lowest (high oxygen permeability) |
-| Cleaning required | None (replaced daily) | Daily cleaning essential | Daily cleaning |
-| Cost | About NT$800–2,500 per month | About NT$300–800 per month | High upfront, low long-term |
-| Suitability for astigmatism | Few toric daily options | More options | Best (RGP itself corrects corneal astigmatism) |
-| Long-term use | Healthiest | Requires strict cleaning | Requires an adaptation period |
-
-**From a health standpoint: dailies > monthlies.** But dailies cost more, and toric daily options are relatively limited.
+> **An option worth considering: alternating daily disposable contacts with framed glasses.** Wear glasses for everyday work and pop in dailies when you need them. What actually suits you, and which replacement schedule to choose, is best decided by an optometrist based on your corneal condition and how you use your eyes.
 
 ---
 
@@ -103,7 +89,7 @@ Strictly speaking, yes. Confirming the astigmatism power and axis, plus checking
 
 **Q: My eyes feel dry when I wear contacts — what can I do?**
 
-Check whether you're on a computer or in an air-conditioned environment (both reduce tear production), whether your wear time is too long, and whether you already have a tendency toward dry eye. Consider switching to daily disposables or silicone hydrogel material (higher oxygen permeability).
+Check whether you're on a computer or in an air-conditioned environment (both reduce tear production), whether your wear time is too long, and whether you already have a tendency toward dry eye. We recommend booking an assessment to see whether your lens material or wearing habits need adjusting.
 
 ---
 
