@@ -57,8 +57,8 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   {keywords && <meta name="keywords" content={keywords} />}
-  <meta name="author" content="鄭家侑（YoYo）・能見度眼鏡" />
-  <meta name="publisher" content="能見度眼鏡 Beyond Visual Optometry" />
+  <meta name="author" content="鄭家侑（YoYo）・能見度眼鏡行" />
+  <meta name="publisher" content="能見度眼鏡行 Beyond Visual Optometry" />
   <meta name="robots" content={robots ?? "index, follow"} />
   <meta name="google-site-verification" content="b9R-zvmjM3wN6sH5QabENei5LBkcg4sKtx3zIv0Jijw" />
   <link rel="canonical" href={canonicalURL} />
@@ -197,16 +197,16 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
         "@type": "WebSite",
         "@id": "https://beyondvisualopt.com/#website",
         "url": "https://beyondvisualopt.com",
-        "name": "能見度眼鏡｜能見度視覺中心",
-        "alternateName": ["Beyond Visual Optometry", "比泱驗光所", "能見度驗光所"],
+        "name": "能見度眼鏡行｜能見度視覺中心",
+        "alternateName": ["Beyond Visual Optometry", "能見度眼鏡", "比泱驗光所", "能見度驗光所"],
         "inLanguage": "zh-TW",
         "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
       },
       {
         "@type": "Organization",
         "@id": "https://beyondvisualopt.com/#organization",
-        "name": "能見度眼鏡",
-        "alternateName": "Beyond Visual Optometry",
+        "name": "能見度眼鏡行",
+        "alternateName": ["Beyond Visual Optometry", "能見度眼鏡", "能見度視覺中心"],
         "url": "https://beyondvisualopt.com",
         "logo": {
           "@type": "ImageObject",
@@ -214,7 +214,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
         },
         "email": "visibility.opticians@gmail.com",
         "description": "新北市新莊、板橋高端臨床驗光品牌。蔡司 Zeiss、HOYA 鏡片經銷商，提供多焦點漸進鏡片、數位疲勞解決方案、高度近視精密配鏡、兒童近視追蹤、RGP 硬式隱形眼鏡配適。適合醫師、工程師、業務等長時間高度用眼族群。",
-        "keywords": "新莊驗光,新莊眼鏡行推薦,板橋驗光,板橋眼鏡行推薦,新北驗光推薦,蔡司Zeiss,HOYA鏡片,NIKON鏡片,ESSILOR鏡片,多焦點鏡片,漸進鏡片,數位疲勞眼鏡,高度近視眼鏡,RGP硬式隱形眼鏡,兒童近視追蹤,老花眼鏡,能見度眼鏡,能見度視覺中心,比泱驗光所,能見度驗光所,YoYo驗光師",
+        "keywords": "新莊驗光,新莊眼鏡行推薦,板橋驗光,板橋眼鏡行推薦,新北驗光推薦,蔡司Zeiss,HOYA鏡片,NIKON鏡片,ESSILOR鏡片,多焦點鏡片,漸進鏡片,數位疲勞眼鏡,高度近視眼鏡,RGP硬式隱形眼鏡,兒童近視追蹤,老花眼鏡,能見度眼鏡行,能見度視覺中心,比泱驗光所,能見度驗光所,YoYo驗光師",
         "sameAs": [
           "https://www.instagram.com/bv_optical/",
           "https://www.instagram.com/youzi_yu/",
@@ -238,7 +238,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
       {
         "@type": "Optician",
         "@id": "https://beyondvisualopt.com/#xinzhuang",
-        "name": "能見度眼鏡-新莊店｜能見度視覺中心｜比泱驗光所",
+        "name": "能見度眼鏡行-新莊店｜能見度視覺中心｜比泱驗光所",
         "alternateName": ["比泱驗光所", "能見度視覺中心", "新莊驗光所", "能見度視覺中心 × 比泱驗光所"],
         "parentOrganization": { "@id": "https://beyondvisualopt.com/#organization" },
         "url": "https://beyondvisualopt.com/xinzhuang",
@@ -291,8 +291,8 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
       {
         "@type": "Optician",
         "@id": "https://beyondvisualopt.com/#banqiao",
-        "name": "能見度眼鏡-板橋店｜能見度視覺中心｜能見度驗光所",
-        "alternateName": ["能見度驗光所", "能見度眼鏡板橋", "板橋驗光所", "能見度眼鏡 × 能見度驗光所"],
+        "name": "能見度眼鏡行-板橋店｜能見度視覺中心｜能見度驗光所",
+        "alternateName": ["能見度驗光所", "能見度眼鏡行板橋", "板橋驗光所", "能見度眼鏡行 × 能見度驗光所"],
         "parentOrganization": { "@id": "https://beyondvisualopt.com/#organization" },
         "url": "https://beyondvisualopt.com/banqiao",
         "image": "https://beyondvisualopt.com/images/store-banqiao.webp",
@@ -356,10 +356,10 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
       <a href="/" class="flex items-center gap-3">
         <picture>
           <source srcset="/images/logo.webp" type="image/webp" />
-          <img src="/images/logo.png" alt="能見度眼鏡 Logo" width="88" height="44" class="h-11 w-auto" fetchpriority="high" />
+          <img src="/images/logo.png" alt="能見度眼鏡行 Logo" width="88" height="44" class="h-11 w-auto" fetchpriority="high" />
         </picture>
         <div class="flex flex-col" style="gap:1px">
-          <span class="font-serif text-brand-navy" style="font-size:17px;font-weight:600;letter-spacing:0.05em;line-height:1.1">能見度眼鏡</span>
+          <span class="font-serif text-brand-navy" style="font-size:17px;font-weight:600;letter-spacing:0.05em;line-height:1.1">能見度眼鏡行</span>
           <span class="font-sans text-brand-ink-3" style="font-size:11px;font-weight:400;letter-spacing:0.18em;line-height:1">Beyond Visual</span>
         </div>
       </a>
@@ -465,8 +465,8 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
   <footer class="text-brand-paper" style="background:#17140f;margin-top:0">
     <div class="max-w-6xl mx-auto px-6 md:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
       <div>
-        <h3 class="font-serif text-brand-paper mb-4" style="font-size:18px;font-weight:300">能見度眼鏡</h3>
-        <p class="text-brand-paper/50 leading-relaxed" style="font-size:15px">不追求最貴，只追求最適合。<br />新莊能見度視覺中心 × 比泱驗光所<br />板橋能見度眼鏡 × 能見度驗光所</p>
+        <h3 class="font-serif text-brand-paper mb-4" style="font-size:18px;font-weight:300">能見度眼鏡行</h3>
+        <p class="text-brand-paper/50 leading-relaxed" style="font-size:15px">不追求最貴，只追求最適合。<br />新莊能見度視覺中心 × 比泱驗光所<br />板橋能見度眼鏡行 × 能見度驗光所</p>
       </div>
       <div>
         <h3 class="font-sans text-brand-paper/60 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">門市資訊</h3>
@@ -474,7 +474,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li>新莊｜能見度視覺中心 × 比泱驗光所</li>
           <li class="text-brand-paper/60" style="font-size:13px">新北市新莊區中正路419-1號</li>
           <li>📞 02-2206-6700</li>
-          <li class="pt-2">板橋｜能見度眼鏡 × 能見度驗光所</li>
+          <li class="pt-2">板橋｜能見度眼鏡行 × 能見度驗光所</li>
           <li class="text-brand-paper/60" style="font-size:13px">新北市板橋區雙十路二段47巷28號</li>
           <li>📞 02-2253-1246</li>
           <li class="pt-1">✉️ visibility.opticians@gmail.com</li>

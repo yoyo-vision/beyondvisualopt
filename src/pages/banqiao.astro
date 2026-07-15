@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 
 // 該頁常見問題（schema 與畫面共用同一份，確保 FAQPage 標記與可見內容一致）
 const faqs = [
-  { q: '板橋能見度驗光所在哪裡？', a: '位於新北市板橋區雙十路二段 47 巷 28 號，捷運板南線江子翠站步行約 5 分鐘。' },
-  { q: '板橋有蔡司鏡片可以配嗎？', a: '有。能見度眼鏡板橋店是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含多焦點漸進鏡片與個人化訂製。' },
+  { q: '板橋能見度驗光所在哪裡？', a: '位於新北市板橋區雙十路二段47巷28號，捷運板南線江子翠站步行約 5 分鐘。' },
+  { q: '板橋有蔡司鏡片可以配嗎？', a: '有。能見度眼鏡行板橋店是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含多焦點漸進鏡片與個人化訂製。' },
   { q: '板橋老花眼鏡哪裡配比較專業？', a: '能見度驗光所提供完整的老花配鏡諮詢，包含加入度評估、鏡片選配說明（單焦老花鏡、辦公室鏡片、多焦點漸進鏡片），不推銷最貴的，只推薦最適合的。' },
-  { q: '板橋高度近視可以配眼鏡嗎？', a: '可以。高度近視配鏡需要頂點距離補正與光學中心精準定位，能見度眼鏡板橋店提供完整的高度近視配鏡評估服務。' },
+  { q: '板橋高度近視可以配眼鏡嗎？', a: '可以。高度近視配鏡需要頂點距離補正與光學中心精準定位，能見度眼鏡行板橋店提供完整的高度近視配鏡評估服務。' },
 ];
 
 // Optician 節點（#banqiao，含完整地址/評分/營業時間/areaServed）已由 Layout 全站注入，
@@ -23,9 +23,9 @@ const schema = {
 };
 ---
 <Layout
-  title="板橋驗光所｜板橋眼鏡行推薦｜能見度眼鏡 × 能見度驗光所｜蔡司鏡片"
-  description="板橋驗光所首選：能見度眼鏡 × 能見度驗光所，新北市板橋區雙十路二段47巷28號。1992年創立，蔡司 Zeiss 簽約經銷，多焦點鏡片、老花配鏡、高度近視眼鏡。捷運江子翠站步行5分鐘。"
-  keywords="板橋驗光,板橋驗光所,板橋眼鏡行,板橋配眼鏡,板橋眼鏡行推薦,板橋蔡司鏡片,板橋多焦點鏡片,板橋老花眼鏡,能見度驗光所,能見度眼鏡板橋"
+  title="板橋驗光所｜板橋眼鏡行推薦｜能見度眼鏡行 × 能見度驗光所｜蔡司鏡片"
+  description="板橋驗光所首選：能見度眼鏡行 × 能見度驗光所，新北市板橋區雙十路二段47巷28號。1992年創立，蔡司 Zeiss 簽約經銷，多焦點鏡片、老花配鏡、高度近視眼鏡。捷運江子翠站步行5分鐘。"
+  keywords="板橋驗光,板橋驗光所,板橋眼鏡行,板橋配眼鏡,板橋眼鏡行推薦,板橋蔡司鏡片,板橋多焦點鏡片,板橋老花眼鏡,能見度驗光所,能見度眼鏡行板橋"
   schema={schema}
   enPath="/en/banqiao"
 >
@@ -34,7 +34,7 @@ const schema = {
     <div class="max-w-4xl mx-auto">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">新北市板橋區｜1992 年創立</p>
       <h1 class="font-serif text-white mb-5" style="font-size:clamp(28px,5vw,54px);font-weight:300">
-        板橋眼鏡行<br /><span style="font-size:0.65em;opacity:0.8">能見度眼鏡 × 能見度驗光所</span>
+        板橋眼鏡行<br /><span style="font-size:0.65em;opacity:0.8">能見度眼鏡行 × 能見度驗光所</span>
       </h1>
       <p class="text-white/70 max-w-2xl mb-8" style="font-size:17px;line-height:1.85">
         板橋區在地深耕超過 30 年的眼鏡與驗光品牌。蔡司 Zeiss 簽約經銷商，提供多焦點漸進鏡片、老花配鏡、蔡司個人化訂製鏡片與高度近視眼鏡服務。
@@ -72,7 +72,7 @@ const schema = {
               <span class="text-brand-gold text-xl flex-shrink-0">📍</span>
               <div>
                 <p class="font-sans font-semibold text-brand-ink mb-1" style="font-size:15px">地址</p>
-                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">新北市板橋區雙十路二段 47 巷 28 號</p>
+                <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">新北市板橋區雙十路二段47巷28號</p>
                 <a href="https://maps.google.com/?q=新北市板橋區雙十路二段47巷28號" target="_blank" rel="noopener" class="text-brand-gold underline" style="font-size:13px">Google Maps 導航 →</a>
               </div>
             </div>
@@ -88,7 +88,7 @@ const schema = {
         <div class="space-y-4">
           <picture>
             <source srcset="/images/store-banqiao.webp" type="image/webp" />
-            <img src="/images/store-banqiao.webp" alt="能見度眼鏡 能見度驗光所 板橋雙十路二段 門市外觀" width="600" height="280" class="w-full object-cover" loading="lazy" />
+            <img src="/images/store-banqiao.webp" alt="能見度眼鏡行 能見度驗光所 板橋雙十路二段 門市外觀" width="600" height="280" class="w-full object-cover" loading="lazy" />
           </picture>
           <iframe
             src="https://maps.google.com/maps?q=新北市板橋區雙十路二段47巷28號&output=embed&hl=zh-TW&z=16"
@@ -98,7 +98,7 @@ const schema = {
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="能見度眼鏡 × 能見度驗光所 板橋位置地圖"
+            title="能見度眼鏡行 × 能見度驗光所 板橋位置地圖"
           ></iframe>
         </div>
       </div>
