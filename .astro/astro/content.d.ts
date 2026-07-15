@@ -141,6 +141,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"anti-reflective-coating-principle.md": {
+	id: "anti-reflective-coating-principle.md";
+  slug: "anti-reflective-coating-principle";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"aspheric-vs-spherical-lens.md": {
+	id: "aspheric-vs-spherical-lens.md";
+  slug: "aspheric-vs-spherical-lens";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "astigmatism-glasses-distortion.md": {
 	id: "astigmatism-glasses-distortion.md";
   slug: "astigmatism-glasses-distortion";
@@ -165,6 +179,20 @@ declare module 'astro:content' {
 "banqiao-zeiss-lens-guide.md": {
 	id: "banqiao-zeiss-lens-guide.md";
   slug: "banqiao-zeiss-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"binocular-vision.md": {
+	id: "binocular-vision.md";
+  slug: "binocular-vision";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"blue-light-filter-what.md": {
+	id: "blue-light-filter-what.md";
+  slug: "blue-light-filter-what";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -207,6 +235,13 @@ declare module 'astro:content' {
 "digital-eye-strain-solution.md": {
 	id: "digital-eye-strain-solution.md";
   slug: "digital-eye-strain-solution";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"diopter-explained.md": {
+	id: "diopter-explained.md";
+  slug: "diopter-explained";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -281,9 +316,30 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"hyperopia-vs-presbyopia.md": {
+	id: "hyperopia-vs-presbyopia.md";
+  slug: "hyperopia-vs-presbyopia";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"lens-addition-add.md": {
+	id: "lens-addition-add.md";
+  slug: "lens-addition-add";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "lens-coating-guide.md": {
 	id: "lens-coating-guide.md";
   slug: "lens-coating-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"lens-refractive-index.md": {
+	id: "lens-refractive-index.md";
+  slug: "lens-refractive-index";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -309,6 +365,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"myopia-vs-astigmatism.md": {
+	id: "myopia-vs-astigmatism.md";
+  slug: "myopia-vs-astigmatism";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"optometry-vs-dispensing.md": {
+	id: "optometry-vs-dispensing.md";
+  slug: "optometry-vs-dispensing";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "optometry-vs-ophthalmology.md": {
 	id: "optometry-vs-ophthalmology.md";
   slug: "optometry-vs-ophthalmology";
@@ -316,9 +386,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"photochromic-lens-principle.md": {
+	id: "photochromic-lens-principle.md";
+  slug: "photochromic-lens-principle";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "photochromic-sunglasses-guide.md": {
 	id: "photochromic-sunglasses-guide.md";
   slug: "photochromic-sunglasses-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"polarized-lens-principle.md": {
+	id: "polarized-lens-principle.md";
+  slug: "polarized-lens-principle";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -337,6 +421,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"progressive-corridor.md": {
+	id: "progressive-corridor.md";
+  slug: "progressive-corridor";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "progressive-lens-adaptation.md": {
 	id: "progressive-lens-adaptation.md";
   slug: "progressive-lens-adaptation";
@@ -351,6 +442,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"pupillary-distance-pd.md": {
+	id: "pupillary-distance-pd.md";
+  slug: "pupillary-distance-pd";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "rgp-hard-contact-lens.md": {
 	id: "rgp-hard-contact-lens.md";
   slug: "rgp-hard-contact-lens";
@@ -361,6 +459,13 @@ declare module 'astro:content' {
 "rimless-glasses-guide.md": {
 	id: "rimless-glasses-guide.md";
   slug: "rimless-glasses-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"vertex-distance.md": {
+	id: "vertex-distance.md";
+  slug: "vertex-distance";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
