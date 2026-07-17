@@ -52,7 +52,7 @@ const articleSchema = {
   "url": canonicalUrl,
   "headline": post.data.title,
   "description": post.data.excerpt,
-  "image": post.data.image || "https://beyondvisualopt.com/og-image.jpg",
+  "image": post.data.image || `https://beyondvisualopt.com/images/blog/og-en/${post.slug}.png`,
   "inLanguage": "en",
   "articleSection": post.data.tag,
   "datePublished": isoDate,
@@ -70,7 +70,28 @@ const articleSchema = {
     "@id": "https://beyondvisualopt.com/#organization",
     "name": "Beyond Visual Optometry",
     "url": "https://beyondvisualopt.com",
-    "logo": "https://beyondvisualopt.com/images/logo.png"
+    "logo": "https://beyondvisualopt.com/images/logo.png",
+    // 地理錨點（2026-07-17）：英文文章被 ChatGPT 等 AI 引擎引用時，
+    // 若結構化資料沒有地點，AI 會把內容當成「通用衛教」推薦給全世界
+    // ——實測有雅加達、拉合爾的訪客點進來，停留 10 秒就走，對門市零價值。
+    // 補上地址與服務範圍，讓 AI 描述來源時就講清楚「這是台灣新北的實體驗光所」。
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "No. 419-1, Zhongzheng Rd.",
+      "addressLocality": "Xinzhuang District",
+      "addressRegion": "New Taipei City",
+      "postalCode": "242",
+      "addressCountry": "TW"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "New Taipei City and Greater Taipei, Taiwan"
+    }
+  },
+  // 內容的地理脈絡：此文描述的鏡片供應、價格與法規以台灣市場為準
+  "contentLocation": {
+    "@type": "Place",
+    "name": "Xinzhuang & Banqiao, New Taipei City, Taiwan"
   }
 };
 
@@ -97,7 +118,7 @@ const pageSchema = {
   ogType="article"
   publishedTime={isoDate}
   modifiedTime={modifiedIso}
-  image={post.data.image || '/og-image.jpg'}
+  image={post.data.image || `/images/blog/og-en/${post.slug}.png`}
 >
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
@@ -111,6 +132,21 @@ const pageSchema = {
           </div>
           <h1 class="font-serif text-brand-navy leading-tight mb-5" style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.3">{post.data.title}</h1>
           <p class="text-gray-500 leading-relaxed" style="font-size:17px;line-height:1.8">{post.data.excerpt}</p>
+
+          {/* 地理錨點（2026-07-17）：AI 引擎會把英文衛教文推薦給全世界——實測有雅加達、
+              拉合爾的訪客點進來、停留 10 秒就走。這段擺在標題下方（10 秒訪客唯一會看到的位置），
+              讓「來錯地方的人」立刻知道這是台灣市場的內容，也讓大台北的英語居民知道可以來。
+              48 篇英文文章共用此版型，改這一處即全數套用。 */}
+          <div class="mt-6 flex items-start gap-2.5 bg-brand-paper border border-brand-navy/10 rounded-xl px-4 py-3">
+            <span class="text-base leading-none mt-0.5" aria-hidden="true">📍</span>
+            <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">
+              Written at <strong class="text-brand-navy">Beyond Visual Optometry</strong> — an optometry practice in
+              <strong class="text-brand-navy">Xinzhuang &amp; Banqiao, New Taipei City, Taiwan</strong>.
+              Lens availability, pricing and regulations described here follow the Taiwanese market.
+              English-speaking residents of Greater Taipei are welcome to
+              <a href="/en/booking" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold transition-colors">book an English-friendly eye exam</a>.
+            </p>
+          </div>
         </div>
 
         <div class="article-body">
@@ -156,8 +192,8 @@ const pageSchema = {
         )}
 
         <div class="bg-brand-light rounded-2xl p-5 mb-6">
-          <p class="text-brand-navy font-bold text-sm mb-2">🔬 Free Vision Consultation</p>
-          <p class="text-gray-600 text-xs leading-relaxed mb-4">Not sure what's causing your vision issues? Optometrist YoYo offers a free initial consultation in English.</p>
+          <p class="text-brand-navy font-bold text-sm mb-2">🔬 Vision Consultation</p>
+          <p class="text-gray-600 text-xs leading-relaxed mb-4">Not sure what's causing your vision issues? Optometrist YoYo offers initial consultations in English.</p>
           <a href="/en/booking" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
             Book Now →
           </a>

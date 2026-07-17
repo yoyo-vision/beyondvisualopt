@@ -486,9 +486,65 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "blog-en": {
+"anti-reflective-coating-principle.md": {
+	id: "anti-reflective-coating-principle.md";
+  slug: "anti-reflective-coating-principle";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"aspheric-vs-spherical-lens.md": {
+	id: "aspheric-vs-spherical-lens.md";
+  slug: "aspheric-vs-spherical-lens";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
 "astigmatism-glasses-distortion.md": {
 	id: "astigmatism-glasses-distortion.md";
   slug: "astigmatism-glasses-distortion";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"banqiao-glasses-guide.md": {
+	id: "banqiao-glasses-guide.md";
+  slug: "banqiao-glasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"banqiao-progressive-lens-guide.md": {
+	id: "banqiao-progressive-lens-guide.md";
+  slug: "banqiao-progressive-lens-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"banqiao-zeiss-lens-guide.md": {
+	id: "banqiao-zeiss-lens-guide.md";
+  slug: "banqiao-zeiss-lens-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"binocular-vision.md": {
+	id: "binocular-vision.md";
+  slug: "binocular-vision";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"blue-light-filter-what.md": {
+	id: "blue-light-filter-what.md";
+  slug: "blue-light-filter-what";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"children-frames-guide.md": {
+	id: "children-frames-guide.md";
+  slug: "children-frames-guide";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
@@ -528,9 +584,51 @@ declare module 'astro:content' {
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
 } & { render(): Render[".md"] };
+"diopter-explained.md": {
+	id: "diopter-explained.md";
+  slug: "diopter-explained";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
 "driving-lens-night-glare.md": {
 	id: "driving-lens-night-glare.md";
   slug: "driving-lens-night-glare";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"essilor-lens-guide.md": {
+	id: "essilor-lens-guide.md";
+  slug: "essilor-lens-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"frame-adjustment-handcraft.md": {
+	id: "frame-adjustment-handcraft.md";
+  slug: "frame-adjustment-handcraft";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"frame-face-shape.md": {
+	id: "frame-face-shape.md";
+  slug: "frame-face-shape";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"frame-fit-size.md": {
+	id: "frame-fit-size.md";
+  slug: "frame-fit-size";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"frame-material-guide.md": {
+	id: "frame-material-guide.md";
+  slug: "frame-material-guide";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
@@ -542,9 +640,65 @@ declare module 'astro:content' {
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
 } & { render(): Render[".md"] };
+"glasses-uncomfortable-3-reasons.md": {
+	id: "glasses-uncomfortable-3-reasons.md";
+  slug: "glasses-uncomfortable-3-reasons";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
 "high-myopia-glasses-guide.md": {
 	id: "high-myopia-glasses-guide.md";
   slug: "high-myopia-glasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"hoya-lens-guide.md": {
+	id: "hoya-lens-guide.md";
+  slug: "hoya-lens-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"hyperopia-vs-presbyopia.md": {
+	id: "hyperopia-vs-presbyopia.md";
+  slug: "hyperopia-vs-presbyopia";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"lens-addition-add.md": {
+	id: "lens-addition-add.md";
+  slug: "lens-addition-add";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"lens-coating-guide.md": {
+	id: "lens-coating-guide.md";
+  slug: "lens-coating-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"lens-refractive-index.md": {
+	id: "lens-refractive-index.md";
+  slug: "lens-refractive-index";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"luxury-frame-lens-guide.md": {
+	id: "luxury-frame-lens-guide.md";
+  slug: "luxury-frame-lens-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"minamoto-eyewear-brand.md": {
+	id: "minamoto-eyewear-brand.md";
+  slug: "minamoto-eyewear-brand";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
@@ -556,6 +710,20 @@ declare module 'astro:content' {
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
 } & { render(): Render[".md"] };
+"myopia-vs-astigmatism.md": {
+	id: "myopia-vs-astigmatism.md";
+  slug: "myopia-vs-astigmatism";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"optometry-vs-dispensing.md": {
+	id: "optometry-vs-dispensing.md";
+  slug: "optometry-vs-dispensing";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
 "optometry-vs-ophthalmology.md": {
 	id: "optometry-vs-ophthalmology.md";
   slug: "optometry-vs-ophthalmology";
@@ -563,9 +731,44 @@ declare module 'astro:content' {
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
 } & { render(): Render[".md"] };
+"photochromic-lens-principle.md": {
+	id: "photochromic-lens-principle.md";
+  slug: "photochromic-lens-principle";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"photochromic-sunglasses-guide.md": {
+	id: "photochromic-sunglasses-guide.md";
+  slug: "photochromic-sunglasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"polarized-lens-principle.md": {
+	id: "polarized-lens-principle.md";
+  slug: "polarized-lens-principle";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"presbyopia-lens-guide.md": {
+	id: "presbyopia-lens-guide.md";
+  slug: "presbyopia-lens-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
 "presbyopia-vs-progressive.md": {
 	id: "presbyopia-vs-progressive.md";
   slug: "presbyopia-vs-progressive";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"progressive-corridor.md": {
+	id: "progressive-corridor.md";
+  slug: "progressive-corridor";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">
@@ -580,6 +783,27 @@ declare module 'astro:content' {
 "progressive-lens-dizzy.md": {
 	id: "progressive-lens-dizzy.md";
   slug: "progressive-lens-dizzy";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"pupillary-distance-pd.md": {
+	id: "pupillary-distance-pd.md";
+  slug: "pupillary-distance-pd";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"rimless-glasses-guide.md": {
+	id: "rimless-glasses-guide.md";
+  slug: "rimless-glasses-guide";
+  body: string;
+  collection: "blog-en";
+  data: InferEntrySchema<"blog-en">
+} & { render(): Render[".md"] };
+"vertex-distance.md": {
+	id: "vertex-distance.md";
+  slug: "vertex-distance";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">

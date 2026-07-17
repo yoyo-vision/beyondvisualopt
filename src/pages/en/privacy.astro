@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// 隱私權政策頁：個資法合規，E-E-A-T 信任加分。內容以事實為主，無行銷宣稱。
+const sections = [
+  {
+    h: '1. Scope',
+    body: 'This policy applies to the beyondvisualopt.com website and to the online bookings and contact you make through it. When you visit third-party websites or services (such as Google, LINE, and social platforms), their handling of personal data is governed by each service\'s own privacy policy and falls outside the scope of this policy.',
+  },
+  {
+    h: '2. Personal Data We Collect',
+    list: [
+      'Online booking information: name, phone number, preferred location, appointment time, and a description of your vision needs.',
+      'Information you provide when you contact us proactively.',
+      'Website analytics data: de-identified statistical data collected via GA4 and cookies (such as pages visited, time on page, and device type), processed in a form that does not readily identify a specific individual.',
+    ],
+  },
+  {
+    h: '3. Purpose and Use of Collection',
+    body: 'We collect and use your personal data for the following specific purposes: scheduling appointments, vision analysis services, wearing follow-up and after-care, responding to inquiries, and website traffic analysis. We use it only to the extent necessary for those purposes, and we do not sell, rent, or provide it to third parties unrelated to our services.',
+  },
+  {
+    h: '4. Period, Region, Recipients, and Method of Use',
+    list: [
+      'Period: until the aforementioned collection purpose ceases, or until you request that we stop using or delete it (where the law provides a mandatory retention period, that period applies).',
+      'Region: the booking and contact data you provide directly is stored within Taiwan; however, data generated through third-party services such as GA4 and LINE may be processed on those providers\' servers outside Taiwan.',
+      'Recipients: limited to the optometry personnel and essential operating staff of our two stores; and processing by the aforementioned third-party analytics/communication services to the extent necessary.',
+      'Method: processed and used in electronic and/or paper form, within the scope of the aforementioned purposes.',
+    ],
+  },
+  {
+    h: '5. Your Rights Regarding the Data You Provide',
+    body: 'You are free to choose whether to provide personal data. However, if you do not provide the information necessary for a booking (such as name and phone number), we will be unable to complete the appointment arrangement or provide the corresponding services.',
+  },
+  {
+    h: '6. Cookies and Website Analytics',
+    body: 'This site uses cookies and GA4 for traffic analysis and experience optimization. You can refuse or delete cookies through your browser settings, though some features may be affected as a result. Third-party services embedded in this site are handled separately according to each service\'s terms and policies.',
+  },
+  {
+    h: '7. Your Rights as the Data Subject',
+    list: [
+      'To inquire about or request access to your data.',
+      'To request a copy of your data.',
+      'To request supplementation or correction.',
+      'To request that we stop collecting, processing, or using it.',
+      'To request deletion.',
+    ],
+    after: 'You may exercise these rights through the contact methods below, and we will respond within the statutory period; exercising these rights does not affect other agreements you have already consented to.',
+  },
+  {
+    h: '8. Personal Data of Minors',
+    body: 'If you are a minor, please provide personal data only after your legal guardian is aware of and consents to it; where personal data is provided for a minor (such as a child undergoing vision tracking), the legal guardian\'s consent is deemed to have been obtained.',
+  },
+  {
+    h: '9. Data Security',
+    body: 'We adopt reasonable technical and managerial measures to protect your personal data. However, transmission and storage over the internet cannot be guaranteed to be absolutely secure; if there is a risk of a personal-data breach, we will notify and act in accordance with the law.',
+  },
+  {
+    h: '10. Policy Revisions',
+    body: 'If this policy is revised, we will post the update on this page and note the last-updated date.',
+  },
+];
+---
+<Layout
+  title="Privacy Policy | Beyond Visual Optometry, Xinzhuang & Banqiao"
+  description="Beyond Visual Optometry × BiYang Optometry Clinic privacy policy: the categories of personal data the website collects, the purposes of collection, how it is used, and the rights you have under the Taiwan Personal Data Protection Act."
+  lang="en"
+>
+  <section class="bg-brand-navy text-white py-20 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="font-sans text-brand-gold tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Privacy Policy</span>
+      <h1 class="font-serif text-white mb-4" style="font-size:clamp(28px,4vw,44px);font-weight:300">Privacy Policy</h1>
+      <p class="text-white/60" style="font-size:15px">Last updated: July 15, 2026</p>
+    </div>
+  </section>
+
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto space-y-10">
+      <p class="text-brand-ink-2" style="font-size:16px;line-height:1.9">
+        Beyond Visual Optometry (hereinafter "we" or "the Center") respects and protects the personal data of every visitor and customer. This policy explains how we collect, use, and protect your personal data, and the rights you have under the law.
+      </p>
+
+      {sections.map(s => (
+        <div>
+          <h2 class="font-serif text-brand-navy mb-3" style="font-size:20px;font-weight:600">{s.h}</h2>
+          {s.body && <p class="text-brand-ink-2" style="font-size:16px;line-height:1.9">{s.body}</p>}
+          {s.list && (
+            <ul class="space-y-2 mt-2">
+              {s.list.map(item => (
+                <li class="flex items-start gap-2 text-brand-ink-2" style="font-size:16px;line-height:1.8">
+                  <span class="text-brand-gold mt-1 shrink-0">✦</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {s.after && <p class="text-brand-ink-2 mt-3" style="font-size:16px;line-height:1.9">{s.after}</p>}
+        </div>
+      ))}
+
+      <div class="border-t border-brand-ink/15 pt-8">
+        <h2 class="font-serif text-brand-navy mb-3" style="font-size:20px;font-weight:600">11. Contact Us</h2>
+        <p class="text-brand-ink-2 mb-4" style="font-size:16px;line-height:1.9">
+          If you have any questions about this policy or your personal data, or wish to exercise the rights above, you're welcome to reach us via our official LINE or at either store below:
+        </p>
+        <div class="space-y-3 text-brand-ink-2" style="font-size:15px;line-height:1.8">
+          <p><strong>Xinzhuang Store (BiYang Optometry Clinic)</strong><br />No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City | <a href="tel:0222066700" class="text-brand-navy hover:text-brand-gold transition-colors">02-2206-6700</a></p>
+          <p><strong>Banqiao Store (Neng Jian Du Optometry Clinic)</strong><br />No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City | <a href="tel:0222531246" class="text-brand-navy hover:text-brand-gold transition-colors">02-2253-1246</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

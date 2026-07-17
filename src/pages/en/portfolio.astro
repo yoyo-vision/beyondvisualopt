@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 作品：featured 優先，其次日期新到舊（沿用同一 collection，圖說為中文，照常輸出）
+const items = (await getCollection('portfolio')).sort((a, b) => {
+  const f = (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0);
+  if (f !== 0) return f;
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/portfolio/';
+const SITE = 'https://beyondvisualopt.com';
+
+// 圖片 SEO：ImageGallery + 每張 ImageObject
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": canonicalUrl,
+  "url": canonicalUrl,
+  "name": "Eyewear Portfolio | Beyond Visual Optometry × BiYang Optometry Clinic",
+  "description": "Optometrist YoYo's eyewear fitting portfolio: ZEISS lenses, international handcrafted frames, and on-site fitting records. Beyond Visual Optometry, Xinzhuang & Banqiao.",
+  "inLanguage": "en",
+  "isPartOf": { "@id": `${SITE}/#website` },
+  "about": { "@id": `${SITE}/#organization` },
+  "mainEntity": {
+    "@type": "ImageGallery",
+    "name": "Eyewear Portfolio",
+    "associatedMedia": items.map(item => ({
+      "@type": "ImageObject",
+      "contentUrl": `${SITE}${item.data.image}`,
+      "name": [item.data.brand, item.data.model].filter(Boolean).join(' ') || item.data.caption,
+      "caption": item.data.caption,
+      "creditText": "Beyond Visual Optometry × BiYang Optometry Clinic",
+      // creator 需帶 @type，否則 Google 圖片授權驗證判「物件類型無效」（頁面上讀不到 #person 的型別）
+      "creator": {
+        "@type": "Person",
+        "@id": `${SITE}/en/author/yoyo/#person`,
+        "name": "Cheng Chia-Yu (YoYo)",
+        "url": `${SITE}/en/author/yoyo/`
+      },
+      "copyrightNotice": "© Beyond Visual Optometry × BiYang Optometry Clinic",
+      "license": `${SITE}/en/about/#image-rights`,
+      "acquireLicensePage": `${SITE}/en/about/#image-rights`
+    }))
+  }
+};
+---
+<Layout
+  title="Eyewear Portfolio | Frame Photography · Fitting Sessions | Beyond Visual Optometry, Xinzhuang & Banqiao"
+  description="Optometrist YoYo's eyewear portfolio: international handcrafted frames, ZEISS lenses, and first-hand records from fitting sessions. Step into the fitting aesthetic of Beyond Visual Optometry — book a try-on in Xinzhuang or Banqiao."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Portfolio</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Eyewear <span class="text-brand-gold">Portfolio</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        Every pair of glasses is a fitting tailored to a face, a prescription, and a life. This is the frames and the fitting sessions, seen through Optometrist YoYo's lens.
+      </p>
+    </div>
+  </section>
+
+  {items.length === 0 ? (
+    <section class="px-6 py-28 text-center" style="background:#f7f3ec">
+      <p class="text-brand-ink-3" style="font-size:17px">Work coming soon — stay tuned.</p>
+    </section>
+  ) : (
+    <!-- 相簿方格（對齊網格） -->
+    <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+      <div class="max-w-6xl mx-auto">
+        <div class="gallery-grid">
+          {items.map((item, i) => (
+            <figure
+              class="gallery-item group cursor-pointer flex flex-col overflow-hidden rounded-2xl bg-white border border-brand-ink/5"
+              data-index={i}
+              data-src={item.data.image}
+              data-brand={item.data.brand}
+              data-model={item.data.model ?? ''}
+              data-caption={item.data.caption}
+            >
+              <div class="overflow-hidden aspect-[4/3] bg-brand-light shrink-0">
+                <img
+                  src={item.data.image}
+                  alt={[[item.data.brand, item.data.model].filter(Boolean).join(' '), item.data.caption, 'Beyond Visual Optometry Xinzhuang Banqiao'].filter(Boolean).join(' | ')}
+                  loading={i < 4 ? 'eager' : 'lazy'}
+                  class="w-full h-full object-cover block group-hover:scale-[1.04] transition-transform duration-500"
+                />
+              </div>
+              <figcaption class="p-5 flex flex-col flex-1">
+                {item.data.brand && (
+                  <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                    <span class="font-serif text-brand-navy" style="font-size:16px;font-weight:600">{item.data.brand}</span>
+                    {item.data.model && <span class="text-brand-ink-3 font-sans" style="font-size:13px">{item.data.model}</span>}
+                  </div>
+                )}
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{item.data.caption}</p>
+                {item.data.tags && item.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-brand-ink/5">
+                    {item.data.tags.map(t => (
+                      <span class="bg-brand-light text-brand-navy rounded-full px-2.5 py-0.5" style="font-size:11px">{t}</span>
+                    ))}
+                  </div>
+                )}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <!-- 真實顧客回饋（Google 評論，遮名，與首頁同一套已上線機制；E-E-A-T Experience；評論為中文，照常顯示不翻譯） -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Real Voices</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">What Real Customers Say</h2>
+        <p class="text-brand-ink-3 mt-3" style="font-size:14px">Genuine reviews from Google Maps · customer names masked</p>
+      </div>
+      <div id="pf-reviews" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[1,2,3].map(() => (
+          <div class="border-t border-brand-ink/15 pt-7 animate-pulse">
+            <div class="h-3 bg-brand-ink/8 rounded mb-4 w-24"></div>
+            <div class="space-y-2"><div class="h-3 bg-brand-ink/8 rounded w-full"></div><div class="h-3 bg-brand-ink/8 rounded w-4/5"></div></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">See something you like? Come try it on</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Whether a frame suits you is most accurate once it's on your face. At both the Xinzhuang and Banqiao stores, Optometrist YoYo helps you choose based on your face shape, prescription, and needs.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book an In-Store Fitting →</a>
+        <a href="/en/guide/frames/" class="inline-block border border-white/40 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-white/10 transition-colors font-sans" style="font-size:15px">See the Frame Buying Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 燈箱 -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" style="background:rgba(15,20,25,0.92)">
+    <button id="lb-close" class="absolute top-5 right-6 text-white/80 hover:text-white" aria-label="Close" style="font-size:32px;line-height:1">&times;</button>
+    <button id="lb-prev" class="absolute left-4 md:left-8 text-white/70 hover:text-white" aria-label="Previous" style="font-size:40px;line-height:1">&#8249;</button>
+    <button id="lb-next" class="absolute right-4 md:right-8 text-white/70 hover:text-white" aria-label="Next" style="font-size:40px;line-height:1">&#8250;</button>
+    <figure class="max-w-4xl max-h-[88vh] flex flex-col items-center">
+      <img id="lb-img" src="" alt="" class="max-h-[76vh] w-auto rounded-lg object-contain" />
+      <figcaption id="lb-cap" class="text-center text-white/85 mt-4 px-4" style="font-size:15px;line-height:1.7"></figcaption>
+    </figure>
+  </div>
+
+  <style>
+    /* 對齊網格：等寬、等高、圖片統一 4:3 裁切 */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    /* 同一列卡片等高 */
+    .gallery-item { height: 100%; }
+  </style>
+
+  <script>
+    const figures = Array.from(document.querySelectorAll<HTMLElement>('.gallery-item'));
+    const lb = document.getElementById('lightbox')!;
+    const lbImg = document.getElementById('lb-img') as HTMLImageElement;
+    const lbCap = document.getElementById('lb-cap')!;
+    let cur = 0;
+
+    function render(i: number) {
+      const el = figures[i];
+      if (!el) return;
+      cur = i;
+      const brand = el.dataset.brand || '';
+      const model = el.dataset.model || '';
+      const caption = el.dataset.caption || '';
+      lbImg.src = el.dataset.src || '';
+      lbImg.alt = `${brand} ${model}｜${caption}`.trim();
+      lbCap.textContent = [brand + (model ? ' ' + model : ''), caption].filter(Boolean).join(' — ');
+    }
+    function open(i: number) {
+      render(i);
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    function step(d: number) { render((cur + d + figures.length) % figures.length); }
+
+    figures.forEach((el, i) => el.addEventListener('click', () => open(i)));
+    document.getElementById('lb-close')!.addEventListener('click', close);
+    document.getElementById('lb-next')!.addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+    document.getElementById('lb-prev')!.addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (lb.classList.contains('hidden')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') step(1);
+      if (e.key === 'ArrowLeft') step(-1);
+    });
+  </script>
+
+  <script is:inline>
+    // 真實顧客回饋：拉 Google 評論，遮名顯示（與首頁同機制；過濾邏輯原樣保留）
+    (function () {
+      var G = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>';
+      function stars(n) { var o = ''; for (var i = 0; i < 5; i++) o += '<span style="color:' + (i < n ? '#c9a84c' : '#d1c9bc') + ';font-size:13px">★</span>'; return o; }
+      // 合規過濾：命中醫療紅線字眼的評論一律不顯示（避免自動照登成本店療效宣稱，A 級紅線）
+      var BAD = ['治療', '治好', '恢復視力', '近視控制', '控制度數', '延緩近視', '角膜塑形', 'OK鏡', 'OK 鏡', '散瞳', '阿托品', '根治', '痊癒', '矯正近視'];
+      function safe(r) { return r && r.text && r.rating >= 4 && !BAD.some(function (w) { return r.text.indexOf(w) > -1; }); }
+      var grid = document.getElementById('pf-reviews');
+      if (!grid) return;
+      function load() {
+        Promise.all([
+          fetch('/api/google-reviews?store=xinzhuang').then(function (r) { return r.json(); }),
+          fetch('/api/google-reviews?store=banqiao').then(function (r) { return r.json(); })
+        ]).then(function (res) {
+          var combined = (res[0].reviews || []).filter(safe).slice(0, 4).map(function (r) { return Object.assign({}, r, { store: 'Xinzhuang' }); })
+            .concat((res[1].reviews || []).filter(safe).slice(0, 2).map(function (r) { return Object.assign({}, r, { store: 'Banqiao' }); }));
+          if (!combined.length) { grid.parentNode.parentNode.style.display = 'none'; return; }
+          grid.innerHTML = combined.map(function (r) {
+            var t = r.text.length > 110 ? r.text.slice(0, 110) + '…' : r.text;
+            var name = r.author ? r.author.charAt(0) + (r.author.length > 1 ? '**' : '') : 'Anonymous';
+            return '<div class="border-t border-brand-ink/15 pt-7">'
+              + '<div class="flex items-center gap-2 mb-3"><span class="font-sans text-brand-ink" style="font-size:14px;font-weight:500">' + name + '</span>'
+              + '<span class="font-sans text-brand-ink-3" style="font-size:11px">・' + r.store + '</span><span class="ml-auto">' + G + '</span></div>'
+              + '<div class="flex gap-0.5 mb-3">' + stars(r.rating) + '</div>'
+              + '<p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">「' + t + '」</p></div>';
+          }).join('');
+        }).catch(function () { grid.parentNode.parentNode.style.display = 'none'; });
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: '200px' });
+        io.observe(grid);
+      } else { load(); }
+    })();
+  </script>
+
+</Layout>

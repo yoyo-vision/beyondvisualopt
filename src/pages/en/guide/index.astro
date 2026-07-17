@@ -1,0 +1,105 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+// 完整指南（支柱頁）
+const GUIDES = [
+  {
+    href: '/en/guide/progressive-lens/',
+    tag: 'Presbyopia · Progressive',
+    title: 'The Complete Guide to Progressive Lenses',
+    desc: 'How they work, a comparison of 4 presbyopia options, choosing a lens tier, troubleshooting dizziness, and how to adapt — every common progressive-lens question answered in one place.',
+  },
+  {
+    href: '/en/guide/children-myopia/',
+    tag: "Children's Vision",
+    title: "The Complete Guide to Children's Myopia Tracking",
+    desc: "Why myopia keeps progressing, how optometry clinics and ophthalmologists divide the work, the mistakes parents make most often, and why regular tracking is the key.",
+  },
+  {
+    href: '/en/guide/high-myopia/',
+    tag: 'High Myopia',
+    title: 'The Complete Guide to High-Myopia Eyewear',
+    desc: 'The optical differences of prescriptions above -6.00D, choosing a lens index, frame principles, and the trade-offs between glasses and contact lenses.',
+  },
+  {
+    href: '/en/guide/lens-brands/',
+    tag: 'Lens Brands',
+    title: 'The Complete Guide to Choosing a Lens Brand',
+    desc: 'A positioning comparison of ZEISS, HOYA, NIKON, and Essilor, how to choose by your needs, and why the "tier" matters more than the "brand".',
+  },
+  {
+    href: '/en/guide/digital-eye-strain/',
+    tag: 'Digital Eye Strain',
+    title: 'The Complete Guide to Screen-User Eye Strain',
+    desc: 'Why long screen time tires your eyes, a self-check of symptoms, viewing habits, and lens options — written for engineers, doctors, and office workers.',
+  },
+  {
+    href: '/en/guide/choose-optician/',
+    tag: 'Local Buying Guide',
+    title: 'The Complete Guide to Buying Glasses in New Taipei',
+    desc: 'How an optometry clinic differs from an eyewear shop, how to judge a good clinic, common eyewear pitfalls, and local choices in Xinzhuang and Banqiao.',
+  },
+  {
+    href: '/en/guide/frames/',
+    tag: 'Frame Selection',
+    title: 'The Complete Guide to Choosing Frames',
+    desc: 'Matching frames to your face shape, comparing acetate, metal, and titanium, reading frame sizing for a proper fit, and matching frames to your lens needs.',
+  },
+  {
+    href: '/en/guide/optical-basics/',
+    tag: 'Optical Basics',
+    title: 'Optical Basics Encyclopedia',
+    desc: 'Prescription power, diopters, PD, vertex distance, refractive index, aspheric, coatings, blue light, polarized, photochromic — the jargon on your prescription and lenses, explained in plain language.',
+  },
+];
+---
+<Layout
+  title="Vision Health Guides | Progressive, Myopia & Lens Brands | Beyond Visual Optometry"
+  description="Eight vision-health guides written by Optometrist YoYo: progressive lenses, children's myopia, high myopia, lens brands, digital eye strain, and frame selection — the principles and fitting essentials in one place. Beyond Visual Optometry, Xinzhuang & Banqiao."
+  lang="en"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guides</p>
+      <h1 class="font-serif text-white leading-tight mb-6" style="font-size:clamp(28px,4.5vw,46px);font-weight:300">
+        Vision Health Guides,<br /><span class="text-brand-gold">One Topic Per Page</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
+        Written by Optometrist YoYo, based on real clinical fitting practice. Each guide brings together every article on its topic, from the underlying principles to choosing an option.
+      </p>
+    </div>
+  </section>
+
+  <!-- 指南列表 -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      {GUIDES.map(g => (
+        <a href={g.href} class="bg-white rounded-2xl p-8 border border-brand-ink/5 hover:border-brand-gold transition-colors group flex flex-col">
+          <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-4" style="font-size:11px;letter-spacing:0.18em">{g.tag}</span>
+          <h2 class="font-serif text-brand-navy mb-4 group-hover:text-brand-gold transition-colors" style="font-size:20px;font-weight:600;line-height:1.5">{g.title}</h2>
+          <p class="text-brand-ink-3 flex-1" style="font-size:14px;line-height:1.75">{g.desc}</p>
+          <span class="font-sans text-brand-gold mt-6" style="font-size:14px">Read the guide →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 作者權威帶：這些指南出自誰、憑什麼可信（E-E-A-T Authoritativeness，連向有 Person schema 的作者頁） -->
+  <section class="px-6 md:px-16 py-16" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white border border-brand-ink/8 p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center">
+        <img src="/images/yoyo-optometrist.webp" alt="Optometrist YoYo Cheng — Beyond Visual Optometry, BiYang Optometry Clinic"
+          width="120" height="120" class="w-28 h-28 rounded-full object-cover object-top flex-shrink-0" loading="lazy" />
+        <div class="text-center md:text-left">
+          <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-2" style="font-size:12px;letter-spacing:0.18em">About the Author</span>
+          <h2 class="font-serif text-brand-navy mb-2" style="font-size:22px;font-weight:600">Optometrist YoYo Cheng</h2>
+          <p class="text-brand-ink-2 mb-4" style="font-size:15px;line-height:1.85">
+            Licensed optometrist of the Republic of China (License No. 003309), lead of Beyond Visual Optometry × BiYang Optometry Clinic. Every guide here is written by YoYo based on real clinical fitting practice — about the fitting and vision problems genuinely encountered and handled in the exam room every day, not a rehash of information found online.
+          </p>
+          <a href="/en/author/yoyo/" class="font-sans inline-flex items-center gap-2 text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">Meet Optometrist YoYo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

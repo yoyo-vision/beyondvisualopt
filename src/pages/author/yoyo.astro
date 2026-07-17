@@ -10,7 +10,7 @@ const posts = (await getCollection('blog')).sort(
 const formatDate = (d: Date) =>
   d.toLocaleDateString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' });
 
-// 精簡經歷 timeline（E-E-A-T Expertise，老闆提供之真實資歷；角膜塑形一列明確框為「過往資歷」，非本店服務）
+// 精簡經歷 timeline（E-E-A-T Expertise，老闆提供之真實資歷；醫療行為相關經歷一律標「過往資歷」，避免暗示為本店服務）
 const career = [
   { year: '2020', role: '國家考試合格驗光師（驗師字第 003309 號）' },
   { year: '2020–2021', role: '三軍總醫院 眼科臨床視光團隊（過往臨床資歷）' },
@@ -69,6 +69,7 @@ const schema = {
 <Layout
   title="YoYo 驗光師（鄭家侑）｜驗師字第 003309 號｜能見度視覺中心主理驗光師"
   description="鄭家侑（YoYo），台灣執照驗光師（驗師字第 003309 號），能見度視覺中心 × 比泱驗光所主理。專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤，新莊、板橋服務中。"
+  enPath="/en/author/yoyo"
   schema={schema}
 >
 

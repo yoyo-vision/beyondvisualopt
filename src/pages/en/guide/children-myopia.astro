@@ -1,0 +1,273 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'children-myopia-tracking-xinzhuang',
+  'myopia-getting-worse-truth',
+  'optometry-vs-ophthalmology',
+  'common-optometry-mistakes',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/children-myopia/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: "What's the point of children's myopia tracking? Can the prescription reverse?",
+    a: "Let's be clear first: once the axial length elongates it won't shrink back, and the prescription can't reverse. The value of tracking lies in grasping the trend — recording prescription and axial-length changes every 3–6 months, and making timely adjustments to the eyewear plan and viewing habits when the rate of progression changes, rather than discovering a year later that it has deepened by another 1.00 diopter. Fitting and tracking defocus-design lenses is something optometry personnel can do; whether medical intervention such as medication is needed should be assessed by an ophthalmologist. Combined with 2 hours of outdoor activity a day and regular tracking, that is the complete approach.",
+  },
+  {
+    q: 'At what age should a child start myopia tracking?',
+    a: 'The earlier the better. The peak period for the fastest progression is ages 8–14. For children over 6 whose prescription deepens by more than 0.50 diopter per year, we recommend starting regular tracking every 3–6 months. For a first vision screening under age 6, we recommend it be done first by an ophthalmologist (including cycloplegic refraction, which is a medical act). Tracking is generally recommended until ages 18–20, when axial-length development tends to stabilize — not stopping after a few years, but grasping the trend throughout the entire developmental period.',
+  },
+  {
+    q: 'How do defocus lenses differ from regular lenses?',
+    a: "A regular lens does one thing: it focuses light on the center of the retina so the child sees clearly. A defocus-design lens, while correcting central vision, adds a special optical structure at the lens periphery — for example, ZEISS MyoCare uses C.A.R.E.® technology, with nearly invisible concentric ring structures on the lens surface that alternate defocus and correction zones. The two look almost identical; the difference is in the optical design, and the precision of fitting height and optical-center alignment directly affects whether the defocus zone lands in the correct position. Whether this type of lens is suitable for your child is best assessed together with an ophthalmologist's examination.",
+  },
+  {
+    q: 'Where in Xinzhuang can I get children\'s myopia tracking?',
+    a: "Beyond Visual Optometry's Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) is the primary store for children's myopia tracking, offering axial-length measurement, prescription-change records, MiSight defocus daily-disposable fitting, and ZEISS MyoCare assessment, with regular tracking every 3–6 months by Optometrist YoYo. In the Banqiao area, contact our Banqiao store (02-2253-1246). If tracking reveals a need for medication assessment (such as low-concentration atropine) or a fundus examination, we will assist with a referral to an ophthalmologist in accordance with the Optometrists Act.",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "The Complete Guide to Children's Myopia Tracking: Why It Progresses, Dividing the Care, Parents' Common Mistakes, and the Tracking Mechanism",
+      "description": "Why does myopia keep progressing? From the irreversibility of axial length, how optometry clinics and ophthalmologists divide the care, and the mistakes parents make most often, to a 3–6 month regular tracking mechanism — Optometrist YoYo explains children's myopia tracking in one page. Serving Xinzhuang and Banqiao.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "YoYo Cheng",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="Children's Myopia Tracking Guide | Xinzhuang & Banqiao | Beyond Visual"
+  description="What to do when your child's myopia keeps progressing? From the irreversibility of axial length and how to read defocus lenses to parents' common mistakes and a 3–6 month tracking mechanism, Optometrist YoYo explains it all. Xinzhuang & Banqiao, Beyond Visual Optometry."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Children's Myopia Tracking<br /><span class="text-brand-gold">The Complete Guide</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        Why it progresses, how optometry clinics and ophthalmologists divide the work, the pitfalls parents fall into most, and how the tracking mechanism works — this one page addresses the questions about children's myopia that worry parents most. Written by Optometrist YoYo, based on real clinical practice and international research, not a scare piece.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Myopia is fundamentally an elongation of the axial length; once the axis lengthens it is irreversible and the prescription cannot reverse. Precisely because of this, grasping the trend of your child's prescription and axial-length changes early, every 3–6 months, is especially important — so that when progression accelerates, you can discuss a suitable intervention with an ophthalmologist as early as possible.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Taiwan's regulations divide the roles clearly: fitting defocus lenses and regular tracking are the work of optometry personnel; medication and pupil dilation are medical acts that must be assessed and performed by an ophthalmologist.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Two hours of outdoor activity a day is a common recommendation; lenses, outdoors, and viewing habits are a multiplicative relationship, not substitutes for one another.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The tracking mechanism is the core: recording prescription and axial-length changes every 3–6 months is what lets you adjust in time when progression accelerates, instead of discovering it deepened a year later.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'Why Myopia Progresses', href: '#why' },
+        { label: 'Dividing the Care', href: '#methods' },
+        { label: "Parents' Common Mistakes", href: '#mistakes' },
+        { label: 'The Tracking Mechanism', href: '#tracking' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 近視為什麼會加深 -->
+  <section id="why" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Myopia is fundamentally axial elongation — and once it lengthens, it doesn't go back</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>"It's not that I'm afraid of my child wearing glasses — I'm afraid the prescription keeps deepening every year and feels out of control." This is the sentence we hear most in the store. Your worry is valid, but the anxiety needs to be placed in the right spot.</p>
+        <p>The root cause of myopia is an <strong>overly long axial length (the front-to-back diameter of the eyeball)</strong>, with the focal point of light falling in front of the retina. Once the axial length elongates it cannot shrink back — this is an irreversible structural change. So the focus of myopia care has never been "making the prescription reverse," but <strong>grasping the trend of axial-length and prescription changes early</strong>, so that when progression accelerates you can discuss a suitable intervention with an ophthalmologist as early as possible.</p>
+        <p><strong>Why care?</strong> With high myopia (above -6.00D), the future risk of retinal detachment, macular disease, and glaucoma is 5–10 times that of a normal eye. Taiwan is one of the regions with the highest myopia prevalence in the world: around 5–10% in first grade, already 55–65% by sixth grade, and over 85% by high-school graduation. And the stage of fastest progression is <strong>ages 8–14</strong> — regular tracking and care at this stage matter most.</p>
+        <p>Three main drivers of continued axial elongation: <strong>too much prolonged near work</strong> (more than 3–4 hours a day staring at phones, books, or tablets, keeping the ciliary muscle contracted for long periods), <strong>insufficient outdoor activity</strong> (2 hours of outdoor activity a day is a common recommendation from bodies such as the <a href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">Health Promotion Administration, Ministry of Health and Welfare</a>, and research has observed an association between natural-light environments and axial development), and <strong>a lack of regular tracking</strong> (if you don't know whether the axial length is lengthening, you can't adjust the plan at the right time). In addition, children with two myopic parents have 6 times the myopia risk of the general population — genetics can't be changed, but that's all the more reason to start tracking early.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 照護分工比較 -->
+  <section id="methods" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">How myopia care divides up: what an optometry clinic can do, and what needs an ophthalmologist</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Under Taiwan's regulations the division is clear: fitting defocus lenses and regular tracking are the work of optometry personnel; medication and pupil dilation are medical acts requiring an ophthalmologist's prescription. It's collaboration, not either-or.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Method</th>
+              <th class="text-left px-5 py-4 font-semibold">Best For</th>
+              <th class="text-left px-5 py-4 font-semibold">Who Handles It</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['Outdoor activity, 2 hrs/day', 'Every child; the zero-cost first step', 'Parents (daily practice)'],
+              ['ZEISS MyoCare (spectacle defocus lens)', 'Children over 6 who won\'t accept contact lenses', 'Optometry personnel fit and track'],
+              ['MiSight defocus daily disposables (contact lens)', 'Children over 8 who can wear them independently and are active', 'Optometry personnel fit and track'],
+              ['Low-concentration atropine', 'Children assessed by a doctor as suitable for medication', 'Ophthalmologist prescription (a medical act)'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        Whether each option suits an individual child requires an in-person assessment; anything involving medication and medical treatment should be discussed with an ophthalmologist. Optometrist YoYo's principle: no matter how good the lens, it has no effect if the child won't cooperate — first find the combination the child is genuinely willing to wear and the family can sustain, rather than recommending the most expensive option.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 家長常犯的錯誤 -->
+  <section id="mistakes" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">The 4 mistakes parents make most — each one helps myopia progress faster</h2>
+      <div class="space-y-6">
+        {[
+          { title: "① Fearing the prescription will deepen, not daring to let the child wear glasses", desc: "\"Wearing glasses makes you dependent, and the prescription deepens the more you wear them\" is a myth passed down for decades. Myopia progression is caused by axial elongation, unrelated to whether glasses are worn. A developing visual system needs clear image stimulation, and some research suggests that long-term under-correction (insufficient prescription or not wearing glasses) is instead associated with faster progression — pushing through with blurry vision is counterproductive.", action: 'Correct when correction is due; full but not over-corrected' },
+          { title: "② Fitting glasses straight from a ten-minute rushed refraction", desc: "Children have strong ciliary accommodation, and after prolonged near work it stays tense, so autorefractor readings often come out deeper than reality. Using them directly causes over-correction — and some research considers over-correction to be associated with faster progression. A full subjective and objective exam requires fully relaxing accommodation before measuring, and in certain situations an ophthalmologist may recommend cycloplegic refraction (a medical act that must be performed by an ophthalmologist).", action: 'Choose a refraction with a full accommodation-relaxation process' },
+          { title: "③ Getting the glasses, but not changing viewing habits", desc: "Defocus lenses aren't a talisman. If the child still does more than 3–4 hours of near work a day with outdoor time near zero, the axial length lengthens all the same. Rest 20 seconds looking 6 meters away every 20–30 minutes of near work, keep reading distance above 33 cm, 2 hours outdoors a day — lenses and habits multiply, they don't substitute.", action: 'Lenses + outdoors + viewing habits, all three together' },
+          { title: "④ Fitting once and being done, never coming back to track", desc: "Without tracking, you don't know whether the current plan is working. The prescription is affected by accommodation state; axial length is the objective indicator that reflects eyeball development. Track once every 3–6 months to adjust the plan in time when the child's progression accelerates, instead of discovering a year later that it deepened by another 1.00 diopter.", action: 'Put the 3–6 month follow-up on the calendar' },
+        ].map(item => (
+          <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2 mb-3" style="font-size:16px;line-height:1.8">{item.desc}</p>
+            <p class="font-sans text-brand-gold" style="font-size:14px">→ {item.action}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        Want to know which other refraction steps often get skipped? Read this: <a href="/en/blog/common-optometry-mistakes/" class="text-brand-gold underline">5 Common Refraction Mistakes When Getting Glasses</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 定期追蹤機制 -->
+  <section id="tracking" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">Regular tracking is the true core of children's vision care</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">Lenses are just a tool; tracking is the mechanism. Without data every 3–6 months, you never know whether the current plan is working for your child. Beyond Visual Optometry's children's myopia tracking includes the following.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {[
+          ['Axial-length measurement (every 3–6 months)', 'Axial-length change is the objective indicator of eyeball development, reflecting the real trend better than the prescription — the prescription is affected by accommodation state, axial length is not'],
+          ['Prescription-change records and trend analysis', 'A single data point is meaningless; only continuous records reveal whether the rate of progression is easing or accelerating, serving as the basis for adjusting the plan'],
+          ['Full subjective & objective exam (relaxed accommodation)', 'Children have strong accommodation and refraction values easily come out deeper; measuring after full relaxation avoids over-correction — over-correction itself is associated with faster progression'],
+          ['Defocus-lens fitting and optical-center confirmation', 'The defocus zone is positioned in millimeters; if the frame slips or the optical center is misaligned, the defocus design is compromised'],
+          ["Children's frame fit adjustment", "A light, snug, slip-resistant, drop-tough frame is what makes a child willing to wear it every day — if it stays on, the fitting means something"],
+          ['Referral to an ophthalmologist for abnormalities', 'If tracking reveals a vision abnormality or a need for medication assessment (such as low-concentration atropine), we assist with a referral to an ophthalmologist in accordance with the Optometrists Act — collaboration, not working in isolation'],
+        ].map(([title, desc]) => (
+          <div class="border-t border-white/10 pt-5">
+            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on children's myopia</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Rather than worry, start by grasping your child's prescription trend</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full children's vision assessment. Optometrist YoYo will first establish your child's prescription and axial-length baseline, then discuss a suitable eyewear and tracking plan. Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.), Banqiao 02-2253-1246.</p>
+      <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Children's Vision Assessment →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/high-myopia/', t: 'The Complete Guide to High-Myopia Eyewear' },
+          { href: '/en/guide/choose-optician/', t: 'The Complete Guide to Buying Glasses in New Taipei' },
+          { href: '/en/guide/optical-basics/', t: 'Optical Basics Encyclopedia' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all guides</a>
+    </div>
+  </section>
+
+</Layout>

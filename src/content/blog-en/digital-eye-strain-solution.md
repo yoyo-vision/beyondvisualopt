@@ -4,8 +4,8 @@ date: "2026-06-24"
 tag: "Eye Care"
 excerpt: "Staring at screens 8+ hours a day and dealing with dry eyes, headaches, and blurry distance vision after work? It's not just 'tired eyes'—there's a clear visual mechanism behind it. Optometrist YoYo breaks down the real causes of digital eye strain and the lens solutions engineers, doctors, and sales professionals need most."
 seoTitle: "How to Fix Digital Eye Strain? A Screen Worker's Lens Guide | ZEISS Digital Lens | Beyond Visual Optometry, Xinzhuang & Banqiao"
-seoDescription: "The dry eyes, headaches, and fluctuating vision from long screen hours come down to sustained ciliary muscle tension and accommodative imbalance. Understand the optometric causes of digital eye strain, plus the selection logic behind ZEISS Digital Lenses, office lenses, and HOYA anti-fatigue lenses. Led by Optometrist YoYo at Beyond Visual Optometry, Xinzhuang."
-keywords: "digital eye strain,screen eye fatigue,computer eye strain,computer glasses Taiwan,anti-fatigue lenses,ZEISS Digital Lens,office lenses,optometry Xinzhuang,optometry Banqiao,Beyond Visual Optometry,glasses for engineers,glasses for doctors,expat optometrist Taiwan"
+seoDescription: "The dry eyes, headaches, and fluctuating vision from long screen hours come down to sustained ciliary muscle tension and accommodative imbalance. Understand the optometric causes of digital eye strain, plus the selection logic behind ZEISS Digital Lenses, office lenses, and HOYA near-support lenses. Led by Optometrist YoYo at Beyond Visual Optometry, Xinzhuang."
+keywords: "digital eye strain,screen eye fatigue,computer eye strain,computer glasses Taiwan,near-support lenses,ZEISS Digital Lens,office lenses,optometry Xinzhuang,optometry Banqiao,Beyond Visual Optometry,glasses for engineers,glasses for doctors,expat optometrist Taiwan"
 ---
 
 ## Eight Hours a Day Staring at a Screen—What Are Your Eyes Actually Going Through?
@@ -82,7 +82,7 @@ Traditional progressive multifocal lenses are designed for the "far–intermedia
 
 Office lenses maximize the clear field of view at intermediate and near distances, sacrificing some distance vision (they're not suitable for driving) in exchange for a wider computer and reading field, with less peripheral aberration and a lower tendency to cause dizziness.
 
-### Option 3: HOYA Anti-Fatigue Lens Series
+### Option 3: HOYA Near-Support Lens Series
 
 **Best for:** Younger people with myopia who do extended near work but don't need multifocals
 
@@ -124,7 +124,7 @@ They help somewhat, but they're not the main solution. The core of digital eye s
 
 **Q: I'm only 30—do I really need a Digital Lens?**
 
-Yes, you might. A Digital Lens isn't a reading lens—it's an accommodative aid. If you're over 30 and do extended near work, your accommodative facility is starting its natural decline, and a Digital Lens or anti-fatigue lens is worth evaluating.
+Yes, you might. A Digital Lens isn't a reading lens—it's an accommodative aid. If you're over 30 and do extended near work, your accommodative facility is starting its natural decline, and a Digital Lens or near-support lens is worth evaluating.
 
 **Q: My eyes are dry every day—is it a prescription problem?**
 

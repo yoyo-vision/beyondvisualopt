@@ -1,0 +1,344 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'high-myopia-glasses-guide',
+  'glasses-uncomfortable-3-reasons',
+  'astigmatism-glasses-distortion',
+  'contact-lens-vs-glasses',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/high-myopia/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: 'Can I get thin lenses at -10.00D?',
+    a: 'Yes — and this is exactly the prescription range where 1.74 high-index lenses deliver their greatest value. But "thin" doesn\'t come from index alone: frame size (a small frame under 50mm noticeably reduces edge thickness) and how well the PD matches the frame\'s optical-center distance often affect finished thickness more than moving up one index step. The right approach at -10.00D is to choose the right frame first, measure monocular PD accurately, then decide on the index — get the order backwards and even the priciest lens can\'t rescue the edge thickness of a big frame.',
+  },
+  {
+    q: 'Why are high-myopia lenses so thick at the edges?',
+    a: 'A myopic lens is a concave lens: thinnest at the center, thicker toward the edge, and the higher the prescription the bigger that gap. The larger the frame, the farther the cut sits from the optical center, leaving the thickest edge region behind. So the same -8.00D can be much thicker at the edge in a 56mm frame than in a 48mm one. The three ways to reduce thickness, ranked by effect: choose a small frame, keep the frame\'s optical-center distance close to the PD, and raise the index.',
+  },
+  {
+    q: 'Is a 1.74 lens worth the extra cost?',
+    a: 'It depends on the prescription. Above -8.00D, the thickness difference between 1.74 and 1.67 is visible and the weight difference is noticeable — the extra cost pays off. Between -4.00D and -8.00D, 1.67 is usually the best balance of thinness, Abbe number (chromatic-dispersion control), and price. Below -4.00D, 1.74 makes almost no visible difference, and the money is better spent on coating quality or fitting precision. Also, 1.74 has a lower Abbe number and theoretically more dispersion; while modern coatings have greatly reduced the real-world impact, "higher index is always better" is still a myth — it should be judged by prescription, frame type, and visual needs together.',
+  },
+  {
+    q: 'Where in Xinzhuang or Banqiao can I get high-myopia glasses?',
+    a: "Beyond Visual Optometry's Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) offers a full high-myopia fitting assessment: vertex-distance compensation calculation, monocular PD and pupil-height measurement, frame-fit assessment, and wear follow-up. Our Banqiao store (Beyond Visual Optometry × Neng Jian Du Optometry Clinic, 02-2253-1246) also offers consultation and dispensing. If glasses fitted elsewhere are uncomfortable, you're also welcome to bring them in for a second-opinion assessment.",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "The Complete Guide to High-Myopia Eyewear: Vertex Distance, Choosing an Index, Frame Principles, and a Comparison of Correction Options",
+      "description": "Why are glasses above -6.00D so prone to causing dizziness? From the optics of vertex-distance compensation and the 1.60/1.67/1.74 index trade-offs to frame-selection principles and a comparison of glasses, contacts, and RGP, Optometrist YoYo explains high-myopia eyewear in one page.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "YoYo Cheng",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="High Myopia Eyewear Guide | Vertex Distance & Lens Index | Beyond Visual"
+  description="Why do glasses above -6.00D cause dizziness so easily? Is 1.74 worth the extra? From vertex-distance compensation and index comparison to frame choice and RGP trade-offs, Optometrist YoYo explains high-myopia eyewear. Xinzhuang & Banqiao, Beyond Visual Optometry."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        High-Myopia Eyewear<br /><span class="text-brand-gold">The Complete Guide</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        Vertex distance, lens index, frame choice, and correction trade-offs — the pitfalls easiest to fall into with prescriptions above -6.00D, all covered on this one page. Written by Optometrist YoYo, based on real clinical fitting practice, not a product catalog.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The key to fitting above -6.00D is the amplification of optical error: tiny errors in vertex distance, monocular PD, and pupil height get magnified into blurry distance vision, dizziness, and distortion.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Higher index isn't always better: 1.60 suits below -4.00D, 1.67 is the balance point for -4 to -8D, and 1.74 suits above -8.00D — and it also depends on frame size and face shape.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The frame often affects thickness more than the index: choosing a small frame and keeping its optical-center distance close to the PD often reduces thickness more noticeably than moving up one index step.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Glasses, soft contacts, and RGP each have their place; high-myopia contact-lens power must be converted via vertex distance and is usually weaker than the spectacle prescription.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'Why High Prescriptions Differ', href: '#vertex' },
+        { label: 'Choosing an Index', href: '#index' },
+        { label: 'Frame-Selection Principles', href: '#frame' },
+        { label: 'Three Correction Options', href: '#options' },
+        { label: 'Precision Fitting Essentials', href: '#fitting' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 為什麼高度數配鏡不一樣：頂點距離 -->
+  <section id="vertex" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Above -6.00D, why is fitting glasses different from usual?</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>The core reason is <strong>the amplification of optical error at high prescriptions</strong>. The same parameter error is barely felt at -2.00D but can become obvious visual distortion, dizziness, or discomfort at -8.00D. The parameter with the largest impact — yet the one most often skipped — is <strong>vertex distance</strong>: the distance from the back surface of the lens to the apex of the cornea.</p>
+        <p>During refraction, the phoropter's vertex distance is about 12–13mm; but the frame you actually wear lands anywhere from 8mm to 16mm depending on nose-pad height and face shape. The closer the lens sits to the eye, the stronger the actual correction; the farther, the weaker — and the higher the prescription, the more pronounced this difference:</p>
+      </div>
+      <div class="overflow-x-auto mt-8">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Rx Power</th>
+              <th class="text-left px-5 py-4 font-semibold">Vertex Distance 12mm</th>
+              <th class="text-left px-5 py-4 font-semibold">Effective at 8mm</th>
+              <th class="text-left px-5 py-4 font-semibold">Difference</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2 bg-white">
+            {[
+              ['-6.00D', '-6.00D', '-5.75D', '0.25D'],
+              ['-10.00D', '-10.00D', '-9.50D', '0.50D'],
+              ['-14.00D', '-14.00D', '-13.25D', '0.75D'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="space-y-5 text-brand-ink-2 mt-8" style="font-size:17px;line-height:1.85">
+        <p>The same prescription gives different actual correction at different wearing positions. This is why "the prescription is clearly right, but distance vision is a bit foggy once fitted" is especially common in high myopia — <strong>a high-myopia prescription must have vertex-distance compensation calculated for the actual frame wearing position</strong>.</p>
+        <p>Another amplification effect is the <strong>prism effect</strong>: the visual shift produced when the line of sight strays from the lens's optical center, with a magnitude equal to the power times the decentration. The same 3mm optical-center offset produces only 0.6Δ at -2.00D — imperceptible to most — but 2.4Δ at -8.00D, enough to disrupt binocular fusion and cause dizziness. So high-myopia fitting must precisely measure monocular PD and pupil height to align the optical center with your visual axis.</p>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        An important note: beyond fitting precision, high myopia also carries a higher risk of retinal disease. That part falls within ophthalmic medical care — we recommend an annual fundus examination at an ophthalmologist. Fitting glasses and a fundus examination are two separate things, and you need both.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 折射率選擇 -->
+  <section id="index" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">How to choose a lens index: the real trade-offs of 1.60, 1.67, 1.74</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Many people assume high myopia means going straight to 1.74, but higher index isn't always better — there are trade-offs between thinness, weight, and optical quality.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Index</th>
+              <th class="text-left px-5 py-4 font-semibold">Pros</th>
+              <th class="text-left px-5 py-4 font-semibold">Limitations</th>
+              <th class="text-left px-5 py-4 font-semibold">Suitable Rx Range</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['1.60', 'Low cost, less aberration, good dispersion control', 'Noticeably thicker edges at high prescriptions', 'Below -4.00D'],
+              ['1.67', 'The best balance of thinness and optical quality', 'Still thick at very high prescriptions', '-4.00D to -8.00D'],
+              ['1.74', 'The thinnest among mass-produced lenses today', 'Lower Abbe number (more dispersion), higher price', 'Above -8.00D'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="space-y-5 text-brand-ink-2 mt-8" style="font-size:17px;line-height:1.85">
+        <p>The <strong>Abbe number</strong> measures a lens's chromatic dispersion: the higher the value, the less dispersion and the purer the vision. The Abbe number of 1.74 (around 33) is slightly lower than 1.67 (around 32), so it theoretically disperses more, but modern coating technology has greatly reduced the real-world impact — what truly deserves weighing is whether your prescription needs that thinness, and whether the frame you choose can make the most of it.</p>
+        <p>For a -9.00D office worker in glasses more than 12 hours a day, the weight 1.74 shaves off is the difference on the bridge of the nose all day; but for someone at -5.00D, the same budget put into a smaller frame plus 1.67 often yields a thinner, lighter result with better optical quality too. <strong>Index should be judged by prescription, frame size, face shape, and visual needs together — not a tier race on the price list.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 鏡框選擇原則 -->
+  <section id="frame" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frame-selection principles: often more impactful on thickness than the index</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Choosing a frame for high myopia isn't purely about aesthetics — pick the wrong frame and even the priciest lens can't save it.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { level: 'Small and symmetrical', desc: "A myopic lens gets thicker toward the edge; the bigger the frame, the thicker, heavier, and more aberrated the edge region left after cutting. We suggest a frame size under 50mm, and a left-right symmetrical shape also keeps the two lenses equal in thickness for a more balanced look.", fit: 'Size' },
+          { level: 'Optical-center distance close to the PD', desc: "A PD of 62mm in a big frame with a 70mm optical-center distance forces a large decentration; a big offset worsens both the prism effect and edge thickness at high prescriptions. Factor the PD in when choosing the frame, not as a fix at fitting time.", fit: 'Optics' },
+          { level: 'Thick acetate, stable fit', desc: "A thicker acetate rim can conceal the lens's edge thickness for a visually thinner look. The frame must also sit snug without sliding — once it slips, the vertex distance changes, and high myopia feels the visual instability directly. Silicone anti-slip nose pads or spring temples are a necessary consideration.", fit: 'Fit' },
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.level}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        Still uncomfortable in your glasses? Sometimes the problem isn't the prescription but the frame and lens design: <a href="/en/blog/glasses-uncomfortable-3-reasons/" class="text-brand-gold underline">Still Uncomfortable in Your Glasses? The 3 Real Causes and Fixes</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 三種矯正方案比較 -->
+  <section id="options" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Glasses, soft contacts, RGP: three options for high myopia</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">There's no absolute better or worse — only what suits your eye condition and lifestyle.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Option</th>
+              <th class="text-left px-5 py-4 font-semibold">Advantages for High Myopia</th>
+              <th class="text-left px-5 py-4 font-semibold">Limitations</th>
+              <th class="text-left px-5 py-4 font-semibold">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['Glasses', 'Stable astigmatism correction, no corneal-health risk, no time limit on wear', 'High prescriptions have edge aberration and weight issues; field of view limited by the frame', 'Long screen work, dry-eye tendency, everyday primary wear'],
+              ['Soft contact lenses', 'Wide field, no frame obstruction, vertex distance near zero (power usually weaker than glasses)', 'Unstable positioning with high astigmatism, worsen dry eye; we suggest no more than 8–12 hours a day', 'Sports, special occasions, alternating with glasses'],
+              ['RGP rigid contact lenses', 'Oxygen-permeable material, custom-made', 'A 1–3 month adaptation period; require professional fitting and regular follow-up', 'Suitability confirmed after optometry personnel assess corneal and astigmatism status'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        An often-overlooked detail: high-myopia (above -4.00D) contact-lens power needs to be converted via vertex distance and is usually weaker than the spectacle prescription — buying contacts straight from a glasses prescription may over-correct, so we recommend confirming it through professional fitting.
+      </blockquote>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        A deeper comparison: <a href="/en/blog/contact-lens-vs-glasses/" class="text-brand-gold underline">Contact Lenses vs. Glasses: Which Is Better?</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 精密驗配流程重點 -->
+  <section id="fitting" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">High-myopia fitting: these measurements can't be skipped</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">A high prescription magnifies every millimeter of error several times over — every step a rushed exam skips ends up as dizziness and distortion on your face.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {[
+          ['Vertex-distance measurement and compensation', "Converts effective power for the actual frame wearing position you chose; a must above -6.00D, not just copying the phoropter's numbers"],
+          ['Monocular PD (MPD-L / MPD-R)', 'Each eye measured separately, not total PD divided by two — at high prescriptions, a 1–2mm offset is enough to produce a perceptible prism effect'],
+          ['Pupil height (Fitting Height)', 'Ensures the optical center\'s vertical position aligns with the visual axis; vertical decentration is more easily overlooked than horizontal'],
+          ['Subjective confirmation of cylinder axis (JCC)', 'The autorefractor\'s axis is only a starting value. Every 10° of axis error loses about 30% of the correction; subjective confirmation is essential with high prescriptions plus astigmatism'],
+          ['Frame fit and optical-center-distance assessment', 'Compare PD and frame optical-center distance at the frame-selection stage, confirming the frame is level and snug — pick the wrong frame and everything after is wasted'],
+          ['Post-pickup wear follow-up', 'Frames shift after some wear; once vertex distance and level change, high myopia feels it immediately. Regular in-store adjustment is part of the process, not an after-sales courtesy'],
+        ].map(([title, desc]) => (
+          <div class="border-t border-white/10 pt-5">
+            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on high myopia</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">High-myopia fitting shouldn't just be "pick a 1.74 and go home"</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. Optometrist YoYo will confirm every item from vertex distance and monocular PD to frame fit — Xinzhuang 02-2206-6700, Banqiao 02-2253-1246, available at both stores.</p>
+      <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Analysis →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/lens-brands/', t: 'The Complete Guide to Choosing a Lens Brand' },
+          { href: '/en/guide/optical-basics/', t: 'Optical Basics Encyclopedia' },
+          { href: '/en/guide/frames/', t: 'The Complete Guide to Choosing Frames' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all guides</a>
+    </div>
+  </section>
+
+</Layout>

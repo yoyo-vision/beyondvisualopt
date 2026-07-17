@@ -66,7 +66,7 @@ At Beyond Visual Optometry we sell both the Zeiss standard lines and the Individ
 **Customers with the most dramatic response after switching to Individual²:**
 - High myopia combined with high astigmatism, previously unable to adapt to progressives → fully adapted within 1 week of switching to Individual²
 - An oblique-axis astigmatism customer who always felt their glasses were "just slightly off" → after switching: "This is the vision I was supposed to have"
-- A designer with long screen hours saw a clear improvement in afternoon eye fatigue
+- A designer with long screen hours reported a clear improvement in afternoon visual comfort
 
 **Customers where the difference was minimal:**
 - Young wearers with around -2.00D and no astigmatism → the subjective difference was small; we don't recommend spending the extra money

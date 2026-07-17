@@ -66,7 +66,7 @@ There are a few possible reasons myopia progresses:
 ### Prescribing strategy
 - Make sure the prescription is **not overcorrected**: a subjective refraction should fully relax accommodation (fogging test) rather than simply copying the autorefractor value
 - Get re-examined regularly (children every 3–6 months, adults once a year)
-- Consider **defocus-design lenses**: some research suggests they may slow myopia progression in children (suitability must be assessed by an optometrist)
+- Consider **defocus-design lenses**: a special optical design — product characteristics are as approved in the Taiwan FDA (MOHW) license; suitability must be assessed by a licensed optometric professional with regular follow-up tracking
 
 ### Children's myopia tracking
 For myopic children aged 6–14, Beyond Visual Optometry (Xinzhuang) provides vision assessments and prescription-change records every 3–6 months, helping parents keep track of how their child's vision is developing.
@@ -81,7 +81,7 @@ For most people, myopia stabilizes after age 18–25. But habits involving prolo
 
 **Q: My child's myopia is progressing quickly — is there any way to slow it down?**
 
-Yes. Research-supported approaches include: increasing time spent outdoors, low-concentration atropine (requires a prescription from an ophthalmologist), and fitting defocus-design lenses. Beyond Visual Optometry offers children's myopia tracking and defocus-lens assessments.
+There are directions worth working on. Research supports increasing time spent outdoors; medication (such as low-concentration atropine) falls under an ophthalmologist's prescription — please consult an eye doctor for evaluation. On the lens side, whether a defocus-design lens is suitable must be assessed by a licensed optometric professional with regular follow-up tracking. Beyond Visual Optometry offers children's myopia tracking and defocus-lens fitting assessments.
 
 **Q: Can myopia return after laser surgery?**
 

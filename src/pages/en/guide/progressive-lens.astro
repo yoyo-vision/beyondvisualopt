@@ -1,0 +1,299 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'presbyopia-vs-progressive',
+  'presbyopia-lens-guide',
+  'progressive-lens-dizzy',
+  'progressive-lens-adaptation',
+  'zeiss-individual-worth-it',
+  'driving-lens-night-glare',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/progressive-lens/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: 'How much do progressive lenses cost?',
+    a: 'In the Taiwan market, progressive multifocal lenses range from a few thousand to twenty or thirty thousand TWD depending on the design tier: standard designs run a few thousand, digitally optimized designs around ten thousand, and personalized custom lenses (such as ZEISS Individual²) start above twenty thousand. The price gap comes mainly from the precision of aberration control and the number of custom parameters, not simply a brand premium. We suggest a full eye exam and lifestyle vision analysis first, then choosing a tier based on your actual needs.',
+  },
+  {
+    q: 'At what age do I start needing progressive lenses?',
+    a: 'Presbyopia usually appears around age 40. Early symptoms include needing to hold your phone farther away to see clearly and tiring easily during close reading. Starting progressive lenses in early presbyopia (when the add power is still low) is far easier to adapt to than waiting until presbyopia exceeds +2.00 — because the near-far gap is smaller and the progressive corridor is gentler.',
+  },
+  {
+    q: 'Can I get by with just one pair — progressive or office lenses?',
+    a: 'It depends on your lifestyle. People who drive daily or are often outdoors suit progressive multifocals (covering far, intermediate, and near). People who spend 8+ hours a day in an office, with most viewing distances within 6 meters, get a wider, more comfortable intermediate-near field from office lenses. Many heavy screen users end up using both: progressives for commuting, office lenses for work.',
+  },
+  {
+    q: 'My progressives from another shop make me dizzy — can you assess them?',
+    a: 'Yes. Beyond Visual Optometry (BiYang Optometry Clinic in Xinzhuang × our Banqiao store) offers second-opinion assessments for progressive-lens dizziness: we re-measure the prescription, monocular PD, pupil height, and frame fit to first clarify whether it is an adaptation-period issue or a fitting-parameter issue, then discuss how to address it. Xinzhuang 02-2206-6700, Banqiao 02-2253-1246.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "The Complete Guide to Progressive Lenses: How They Work, How to Choose, Why They Cause Dizziness, and How to Adapt",
+      "description": "From the optics of progressive lenses, a comparison of 4 presbyopia options, and choosing a lens design tier, to troubleshooting dizziness and adaptation tips — Optometrist YoYo explains progressive lenses in one page. ZEISS fitting in Xinzhuang and Banqiao.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "YoYo Cheng",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="Progressive Lens Guide | How They Work, Dizziness & Fitting | Beyond Visual"
+  description="Why do progressives make you dizzy? Do you have to get progressives for presbyopia? From the optics and a 4-option comparison to choosing a lens tier and adapting, Optometrist YoYo explains it all. Xinzhuang & Banqiao, Beyond Visual Optometry."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Progressive (Multifocal) Lenses<br /><span class="text-brand-gold">The Complete Guide</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        How they work, how to choose, troubleshooting dizziness, and how to adapt — this one page answers the most common questions about progressive lenses. Written by Optometrist YoYo, based on real clinical fitting practice, not a product catalog.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>A progressive lens is a continuously changing surface — one pair covers far, intermediate, and near. The corridor always has aberration zones on either side that no brand can fully eliminate; the difference is how small they can make them.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Presbyopia doesn't always mean progressives: single-vision reading glasses, office lenses, progressive multifocals, and multifocal contacts each have their place, depending on how your viewing distances are spread across a day.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The difference between tiers within the same brand (standard / digitally optimized / personalized custom) is often larger than the difference between brands — choosing the right tier matters more than agonizing over the brand.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Dizziness has three causes: a normal adaptation period (eases over 1–3 weeks, keep wearing them), fitting parameters that weren't measured accurately, or a lens design that doesn't match. The last two won't improve no matter how long you tough it out — go back for a re-measure.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'How Progressives Work', href: '#principle' },
+        { label: '4 Presbyopia Options', href: '#options' },
+        { label: 'Choosing a Lens Tier', href: '#levels' },
+        { label: 'Why They Cause Dizziness', href: '#dizzy' },
+        { label: 'Key Fitting Measurements', href: '#fitting' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 原理 -->
+  <section id="principle" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">A progressive lens isn't "three sections" — it's a continuously changing surface</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>A Progressive Addition Lens (PAL) uses a <strong>continuous change</strong> in the lens surface curvature to achieve a smooth transition between far, intermediate, and near focus on a single lens — the top for distance (driving, watching TV), the central progressive corridor for the transition, and the bottom for near (phone, documents).</p>
+        <p><strong>The key limitation:</strong> there are inevitably "aberration zones" on either side of the progressive corridor where the image is distorted and blurry, and no brand can fully eliminate them. The core difference between premium and budget lenses is how small they can make those aberration zones and how far they can push them to the edge — which directly determines how wide your usable clear field of view is.</p>
+        <p>For someone switching between screen and documents ten hours a day, the width of the progressive corridor isn't a number on a spec sheet — it's the difference between a stiff neck and eye strain at the end of the day, or not.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 老花 4 種方案 -->
+  <section id="options" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Do you have to get progressives for presbyopia? A comparison of 4 options</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Progressives aren't the only answer, and they aren't right for everyone. Start with where your daily life falls.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Option</th>
+              <th class="text-left px-5 py-4 font-semibold">Best For</th>
+              <th class="text-left px-5 py-4 font-semibold">Pros</th>
+              <th class="text-left px-5 py-4 font-semibold">Limitations</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['Single-vision reading glasses', 'Only need help when reading', 'Cheap, wide field, zero adaptation', 'Must take them off to see far — constant on and off'],
+              ['Progressive multifocals', 'Need far/intermediate/near, no swapping', 'One pair covers every distance, no visible dividing line', 'Adaptation period; aberration zones take getting used to'],
+              ['Office lenses', 'Long hours at a desk and screen', 'Much wider intermediate-near field than progressives', "Can't drive in them; blurry beyond 6 meters"],
+              ['Multifocal contact lenses', "Don't want to wear frames", 'Freedom for sports and appearance', 'More visual-quality compromise; needs an adaptation assessment'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        Optometrist YoYo's principle: first analyze how your viewing distances are spread across a day (how many hours driving, how many on screens, how far your reading distance is), then decide on an option — not decide on a product first and then talk you into it.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 鏡片等級 -->
+  <section id="levels" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">How to choose a lens tier: standard, optimized, personalized custom</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Within the same brand of progressive lens, the difference between tiers is bigger than the difference between brands.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { level: 'Standard Design', desc: 'A fixed corridor and aberration distribution, designed around an average face shape and average fitting parameters. An entry choice for limited budgets, simple prescriptions, and first-timers.', fit: 'Entry' },
+          { level: 'Digitally Optimized Design', desc: 'Aberration distribution optimized to your prescription power, with a wider corridor and less peripheral distortion. The sweet spot for most moderate users — a balance of price and experience.', fit: 'Mainstream' },
+          { level: 'Personalized Custom', desc: "Such as ZEISS Individual²: it factors in your frame's pantoscopic tilt, vertex distance, and lens curvature to tailor the optical design to your face and frame. The difference is most noticeable for high prescriptions, heavy visual demands, and those sensitive to visual quality.", fit: 'Custom' },
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.level}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        Want to know if personalized custom is worth it? Read this: <a href="/en/blog/zeiss-individual-worth-it/" class="text-brand-gold underline">Is ZEISS Individual² Worth It? An Optometrist's Honest Analysis</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 為什麼會暈 -->
+  <section id="dizzy" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Why do progressives make you dizzy? Three causes — only one worth "toughing out"</h2>
+      <div class="space-y-6">
+        {[
+          { title: '① Normal Adaptation Period', desc: 'Your brain is learning the new logic that "looking down = looking near." The hallmark is that the dizziness decreases day by day and improves noticeably within 1–3 weeks. This is the only case worth toughing out.', action: 'Keep wearing them; avoid frequently taking them on and off' },
+          { title: '② Fitting Parameter Problems', desc: "Prescription error, monocular PD or pupil height not measured accurately, a frame that has shifted — if the parameters are wrong, no amount of toughing it out will fix it. Still dizzy after 4 weeks of wear, or images that sway when you're still, is a signal to go back.", action: 'Return for a re-measure; most adjustments are free' },
+          { title: '③ Lens Design Mismatch', desc: 'A near-dominant work style fitted with a distance-oriented design; or a frame so small it cuts off the progressive corridor. These problems require a lens replacement — prevention beats cure.', action: 'Describe your viewing-distance habits in detail before fitting' },
+        ].map(item => (
+          <div class="border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2 mb-3" style="font-size:16px;line-height:1.8">{item.desc}</p>
+            <p class="font-sans text-brand-gold" style="font-size:14px">→ {item.action}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        A full dizziness troubleshooting reference: <a href="/en/blog/progressive-lens-dizzy/" class="text-brand-gold underline">Why Do Progressive Lenses Make You Dizzy? The 3 Most Common Causes and Fixes</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 驗配關鍵 -->
+  <section id="fitting" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">Progressive fitting: these measurements can't be skipped</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">A progressive lens's visual design is built in millimeters. Every step a rushed exam skips ends up as dizziness on your face.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {[
+          ['Full subjective & objective exam (45–60 min)', "Confirms accommodation is fully relaxed — early presbyopia most easily 'pretends it isn't there' and throws off the prescription"],
+          ['Monocular PD (MPD-L / MPD-R)', "Each eye measured separately, not total PD divided by two — a progressive's visual zones are centered on this"],
+          ['Fitting Height', "Determines the vertical position of the fitting cross; skip measuring it and you're guessing — a 2–3mm error is the norm"],
+          ['Vertex distance and pantoscopic tilt', 'Essential parameters for personalized custom lenses; they directly affect effective power and corridor position'],
+          ['Confirming near working distance', 'Whether you habitually read at 40cm or 33cm determines the design basis for the add power'],
+          ['Post-dispensing frame adjustment', "Nose pads, temple tension, level alignment — 'fine at pickup, dizzy a few months later' usually traces back here"],
+        ].map(([title, desc]) => (
+          <div class="border-t border-white/10 pt-5">
+            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on progressive lenses</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Not sure which option is right for you?</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. Optometrist YoYo will first understand how your daily viewing distances are spread out, then talk lenses — available at both our Xinzhuang and Banqiao stores.</p>
+      <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Analysis →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/optical-basics/', t: 'Optical Basics Encyclopedia' },
+          { href: '/en/guide/lens-brands/', t: 'The Complete Guide to Choosing a Lens Brand' },
+          { href: '/en/guide/digital-eye-strain/', t: 'The Complete Guide to Screen-User Eye Strain' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all guides</a>
+    </div>
+  </section>
+
+</Layout>

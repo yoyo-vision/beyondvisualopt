@@ -1,0 +1,338 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）——英文版取 blog-en 集合
+const CLUSTER_SLUGS = [
+  'xinzhuang-glasses-guide',
+  'banqiao-glasses-guide',
+  'optometry-vs-ophthalmology',
+  'common-optometry-mistakes',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/choose-optician/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: 'What is the difference between an optometry clinic and an optical shop?',
+    a: 'The difference is legal. In Taiwan an "optometry clinic" is established under the Optometrists Act and must have a licensed optometrist perform the eye exam; it can legally issue an optometry report and carry out a full binocular vision assessment. An ordinary "optical shop" is a commercial registration with no qualification requirement and cannot legally issue an optometry report. In practice this means: if you only need a simple single-vision myopia pair, an optical shop can handle it; but the moment you have dizziness, eye fatigue, presbyopia or a progressive-lens need, go to an optometry clinic and have a licensed optometrist do a full assessment.',
+  },
+  {
+    q: 'Where is a good place to get glasses in Xinzhuang?',
+    a: 'There are many optical shops along Zhongzheng Rd. in Xinzhuang, and the key to choosing isn\'t the size of the sign but three things: whether the optometrist is licensed, whether the exam is thorough (45–60 minutes), and whether there is a free follow-up after fitting. Beyond Visual Optometry × BiYang Optometry Clinic is at No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City (an 8-minute walk from Xinzhuang MRT station), led by licensed Optometrist YoYo, offering full clinical eye exams and binocular vision assessment. Tel: 02-2206-6700.',
+  },
+  {
+    q: 'How do I choose an optometry clinic in Banqiao?',
+    a: 'From Jiangzicui station to Banqiao station the shops are dense and the price and positioning vary widely. When choosing, look at: whether it is an optometry clinic (not just a commercially registered optical shop), whether presbyopia and progressives include a full add-power and fitting-height measurement, and whether high myopia gets vertex-distance compensation. Beyond Visual Optometry × Neng Jian Du Optometry Clinic (a Banqiao local established in 1992) is at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., a 5-minute walk from Jiangzicui MRT station. Tel: 02-2253-1246.',
+  },
+  {
+    q: 'Do I need to see an ophthalmologist before getting glasses?',
+    a: 'Getting glasses alone does not require seeing an ophthalmologist first — unless you also have eye symptoms, such as sudden blurred vision, floaters, flashes or dark shadows, or a red, painful eye, or suspected glaucoma. These are medical matters and you should see an ophthalmologist first. If you simply want a comfortable pair of glasses, or your glasses make you dizzy, you can go straight to an optometry clinic. Under Taiwan\'s Optometrists Act, optometrists do not make medical diagnoses; if an abnormality is found during the assessment, they will refer you to an ophthalmologist as required by law.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "Choosing an Optician in New Taipei: Optometry Clinic vs Optical Shop, with Xinzhuang and Banqiao advice",
+      "description": "Optometry clinic or optical shop for glasses in New Taipei? The legal difference, how to judge a good optometry clinic, common fitting pitfalls, and when to see an ophthalmologist — Optometrist YoYo explains it in one page, with local advice for Xinzhuang and Banqiao.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guide",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "Cheng Chia-Yu (YoYo)",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="How to Choose an Optician | Beyond Visual Optometry"
+  description="Optometry clinic or optical shop for glasses in New Taipei? From the legal difference and how to judge a good clinic to common fitting pitfalls and when to see an ophthalmologist, Optometrist YoYo explains it in one page. Beyond Visual Optometry, Xinzhuang and Banqiao."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Glasses in New Taipei:<br /><span class="text-brand-gold">Optometry Clinic vs Optical Shop</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        How should you choose for glasses in Xinzhuang or an optometry clinic in Banqiao? The legal difference, how to judge a trustworthy clinic, common fitting pitfalls, and when to go to an ophthalmologist — this page covers it all at once. Written by Optometrist YoYo, based on clinical fitting practice.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>An optometry clinic is established under Taiwan's Optometrists Act, must have a licensed optometrist perform the exam, and can legally issue an optometry report; an ordinary optical shop is a commercial registration and cannot.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>For a simple single-vision myopia pair, an optical shop will do; if you have dizziness, eye fatigue, presbyopia or a progressive-lens need, go to an optometry clinic for a full assessment.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Judge a good clinic on five things: whether the optometrist is licensed, whether the exam runs 45–60 minutes, whether vertex distance and binocular vision are measured, whether the lens source is clear, and whether follow-up after fitting is free.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Clinics and ophthalmology each cover a lane: with eye symptoms (redness and pain, floaters and flashes, sudden blur) see an ophthalmologist first; to get a comfortable pair of glasses or fix dizziness, go to an optometry clinic.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'Clinic vs Optical Shop', href: '#difference' },
+        { label: 'How to Judge a Good Clinic', href: '#howtochoose' },
+        { label: 'Common Fitting Pitfalls', href: '#mistakes' },
+        { label: 'When to See an Ophthalmologist', href: '#ophthalmology' },
+        { label: 'Xinzhuang × Banqiao', href: '#stores' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 驗光所 vs 眼鏡行 -->
+  <section id="difference" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">An "optometry clinic" and an "optical shop" are two different things in law</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Many people assume they're the same, but under <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">Taiwan's Optometrists Act</a>, the two have completely different roles in law. The difference isn't the decor — it's who can legally perform your eye exam.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Comparison</th>
+              <th class="text-left px-5 py-4 font-semibold">Optometry Clinic</th>
+              <th class="text-left px-5 py-4 font-semibold">Ordinary Optical Shop</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['Legal basis', 'Optometrists Act', 'Commercial registration'],
+              ['Performing the exam', 'Requires a licensed optometrist', 'No qualification requirement'],
+              ['Issuing an optometry report', 'Legal', 'Not legal'],
+              ['Binocular vision assessment', 'Can perform', 'Cannot perform'],
+              ['Handling complex visual issues', 'Able to assess', 'Unable to assess'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        The plain-language conclusion: if your prescription is simple and you just want a new single-vision myopia pair, an ordinary optical shop can handle it; but the moment you have dizziness, eye fatigue, presbyopia or a progressive-lens need, go to an optometry clinic and have a licensed optometrist do a full assessment. This isn't a matter of preference — it's the division of roles the law was designed around.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 怎麼判斷好驗光所 -->
+  <section id="howtochoose" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">How to judge a good optometry clinic: look at these 5 things</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Whether you're getting glasses in Xinzhuang or having an exam in Banqiao, use these questions before you walk in to screen out the shops that don't make the grade.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { n: '01', title: 'Is the optometrist licensed?', desc: 'Only a licensed optometrist (optometrist or associate optometrist) can legally perform the exam. By law, optometry clinics in Taiwan must display their optometrists\' license numbers on site, and a proper clinic will mark them openly, so you can confirm directly. This is the most basic — and most often overlooked — checkpoint.' },
+          { n: '02', title: 'How long is the exam?', desc: 'A full clinical eye exam takes at least 45–60 minutes. A 10–15 minute "quick check" only confirms the basic prescription and can\'t assess binocular vision, accommodation, latent squint and other key factors that affect visual comfort.' },
+          { n: '03', title: 'Are vertex distance and binocular vision measured?', desc: 'High myopia relies on vertex distance compensation to ensure the effective power is correct; and if binocular coordination has a problem (latent squint, convergence insufficiency), glasses made on prescription alone will still cause dizziness. Whether these two are done decides how comfortable the glasses feel.' },
+          { n: '04', title: 'Are the equipment and lens source clear?', desc: 'Confirm whether it is an authorized dealer for ZEISS, HOYA, Essilor, Nikon and the like — not counterfeits or grey-market goods. For progressives and personalized custom lenses, the equipment and authorization matter especially.' },
+          { n: '05', title: 'Is there a free follow-up after fitting?', desc: 'A proper optometry clinic should offer free follow-up adjustments. At collection you should try the glasses on the spot and confirm the far, intermediate and near fields and the frame fit — not "we\'ll make it and mail it, come back if there\'s a problem." Be wary of shops that offer no aftercare.' },
+        ].map(item => (
+          <div class="border border-brand-ink/8 rounded-2xl p-7">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest mb-3 block" style="font-size:13px;letter-spacing:0.18em">{item.n}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見配鏡地雷 -->
+  <section id="mistakes" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Common fitting pitfalls: why glasses still feel wrong</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">In most "still dizzy after fitting" cases, the eyes aren't especially hard to fit — the exam simply skipped a key step. These are the pitfalls we see most often.</p>
+      <div class="space-y-6">
+        {[
+          { title: '① Quick exam, only asking "which is clearer"', desc: 'Ten minutes at the chart, pick the clearer option, done — this kind of process skips assessment of binocular vision, accommodation and eye-position stability. The prescription looks right, but the glasses feel off, heavy on the head and quick to tire.' },
+          { title: '② Using the autorefractor value with no subjective fine-tuning', desc: 'The phoropter gives a "machine prescription"; it still needs you to try lenses, give feedback and fine-tune. Skip this step and you\'re essentially fitting glasses to the machine\'s first estimate.' },
+          { title: '③ Refracting without relaxing accommodation, giving an over-strong prescription', desc: 'People on screens for long hours have a ciliary muscle prone to tension, and a prescription measured in that state tends to run too strong. You think you\'re -4.00 D when you might really be -3.50 D — over-prescribed, and more tiring for it.' },
+          { title: '④ Optical centre not aligned to the pupils, PD simply halved', desc: 'Each eye\'s monocular PD to the bridge midline should be measured separately. Some people are asymmetric, and estimating with total PD divided by two produces a prism effect, forcing the brain to work harder to fuse the images, causing fatigue and dizziness.' },
+          { title: '⑤ Leaving right after the exam, with no on-the-spot try-on', desc: 'The last step of fitting should be trying the glasses on in front of the optometrist to confirm visual quality — especially with progressives, confirming the far, intermediate and near fields, the balance between the two eyes, and whether the frame slips. Skip it, and if a problem shows up at home it\'s hard to tell whether it\'s the prescription, the positioning or the adaptation period.' },
+        ].map(item => (
+          <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        A full look at the 5 fitting mistakes: <a href="/en/blog/common-optometry-mistakes/" class="text-brand-gold underline">5 common eye-exam mistakes | first-hand observations from a Xinzhuang and Banqiao optometrist</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 何時該看眼科 -->
+  <section id="ophthalmology" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Optometry clinic vs eye clinic: two lanes, not competitors</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Ophthalmology checks whether the eye is healthy; the optometry clinic tunes your vision to its best state. Understanding the split saves you a lot of wasted trips.</p>
+      <div class="overflow-x-auto mb-10">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Your need</th>
+              <th class="text-left px-5 py-4 font-semibold">Where to go</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['Eyes suddenly wrong, with symptoms (redness and pain, floaters and flashes, sudden blur)', 'Ophthalmologist'],
+              ['Regular fundus and eye-pressure checks (diabetes, hypertension patients)', 'Ophthalmologist'],
+              ['First vision screening for a child under 6', 'Ophthalmologist'],
+              ['A comfortable pair of glasses, understanding every parameter', 'Optometry clinic'],
+              ['Dizziness with glasses, unstable vision', 'Optometry clinic'],
+              ['First-time progressive lens fitting', 'Optometry clinic'],
+              ['Precision fitting for high myopia', 'Optometry clinic'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 1 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3" style="font-size:16px;line-height:1.8">
+        The legal line is clear: optometrists do not make medical diagnoses and cannot prescribe medication. If an abnormality is found during the exam (such as a visual-field defect or a suspected high eye pressure), they will proactively refer you to an ophthalmologist under Taiwan's Optometrists Act — that's to protect you, not push you away.
+      </blockquote>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        A full side-by-side of the roles: <a href="/en/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">Eye clinic vs optometry clinic — what's the difference, and when do you go where?</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 新莊店 × 板橋店 -->
+  <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">Xinzhuang × Banqiao: your local choice</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">Both stores are licensed optometry clinics and ZEISS contracted certified dealers, offering a full 45–60 minute clinical eye exam and free follow-up after fitting. See which is closer to you.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="border-t border-white/10 pt-6">
+          <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">Xinzhuang</p>
+          <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">Beyond Visual Optometry × BiYang Optometry Clinic</h3>
+          <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
+            <p>Address: No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City</p>
+            <p>MRT: about an 8-minute walk from Xinzhuang station</p>
+            <p>Tel: 02-2206-6700</p>
+            <p>Lead optometrist: Cheng Chia-Yu (YoYo)</p>
+            <p class="text-white/50">Clinical eye exams, advanced vision management, children's myopia tracking, ZEISS Individual² personalized custom lenses</p>
+          </div>
+          <a href="/en/xinzhuang" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">See Xinzhuang store details →</a>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">Banqiao</p>
+          <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">Beyond Visual Optometry × Neng Jian Du Optometry Clinic</h3>
+          <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
+            <p>Address: No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City</p>
+            <p>MRT: about a 5-minute walk from Jiangzicui station</p>
+            <p>Tel: 02-2253-1246</p>
+            <p>Local since: established 1992, over 30 years</p>
+            <p class="text-white/50">Professional presbyopia and progressive fitting, precision high-myopia fitting (vertex-distance compensation), children's myopia tracking</p>
+          </div>
+          <a href="/en/banqiao" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">See Banqiao store details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on getting glasses in New Taipei</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Not sure where to get your glasses?</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. Optometrist YoYo will first understand your visual condition and lifestyle, and then discuss lenses — appointments available at both the Xinzhuang and Banqiao stores.</p>
+      <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Full Vision Analysis →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/optical-basics/', t: 'Optical Terms Explained' },
+          { href: '/en/guide/lens-brands/', t: 'Lens Brands Buying Guide' },
+          { href: '/en/guide/progressive-lens/', t: 'Progressive Lens Complete Guide' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all complete guides</a>
+    </div>
+  </section>
+
+</Layout>

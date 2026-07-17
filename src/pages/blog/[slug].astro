@@ -128,7 +128,7 @@ const articleSchema = {
   "url": canonicalUrl,
   "headline": post.data.title,
   "description": post.data.excerpt,
-  "image": post.data.image || "https://beyondvisualopt.com/og-image.jpg",
+  "image": post.data.image || `https://beyondvisualopt.com/images/blog/og/${post.slug}.png`,
   "inLanguage": "zh-TW",
   "articleSection": post.data.tag,
   "datePublished": isoDate,
@@ -167,9 +167,21 @@ const faqSchema = faqs.length > 0 ? {
   })),
 } : null;
 
+// 文章有嵌 YouTube 影片時輸出 VideoObject schema（Google 影片搜尋收錄）
+const videoSchema = post.data.youtube ? {
+  "@type": "VideoObject",
+  "name": post.data.title,
+  "description": post.data.excerpt,
+  "thumbnailUrl": `https://i.ytimg.com/vi/${post.data.youtube}/hqdefault.jpg`,
+  "embedUrl": `https://www.youtube.com/embed/${post.data.youtube}`,
+  "contentUrl": `https://www.youtube.com/shorts/${post.data.youtube}`,
+  "uploadDate": isoDate,
+  "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+} : null;
+
 const pageSchema = {
   "@context": "https://schema.org",
-  "@graph": faqSchema ? [articleSchema, faqSchema] : [articleSchema],
+  "@graph": [articleSchema, faqSchema, videoSchema].filter(Boolean),
 };
 ---
 <Layout
@@ -180,7 +192,7 @@ const pageSchema = {
   ogType="article"
   publishedTime={isoDate}
   modifiedTime={modifiedIso}
-  image={post.data.image || '/og-image.jpg'}
+  image={post.data.image || `/images/blog/og/${post.slug}.png`}
 >
   <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
@@ -207,7 +219,8 @@ const pageSchema = {
 
         <!-- YouTube（延遲載入，避免第三方 iframe 拖累 Core Web Vitals） -->
         {post.data.youtube && (
-          <div class="mb-10 rounded-2xl overflow-hidden aspect-video">
+          <!-- 目前頻道影片皆為直式 Shorts（9:16），置中窄版呈現避免左右黑邊 -->
+          <div class="mb-10 rounded-2xl overflow-hidden mx-auto max-w-[320px]" style="aspect-ratio:9/16">
             <iframe
               src={`https://www.youtube.com/embed/${post.data.youtube}`}
               title={post.data.title}

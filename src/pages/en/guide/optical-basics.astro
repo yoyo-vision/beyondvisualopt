@@ -1,0 +1,200 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 視光小百科聚落：驗光名詞 + 鏡片名詞——英文版取 blog-en 集合
+const GROUP_EXAM = [
+  'diopter-explained',
+  'myopia-vs-astigmatism',
+  'hyperopia-vs-presbyopia',
+  'lens-addition-add',
+  'binocular-vision',
+  'pupillary-distance-pd',
+  'vertex-distance',
+  'optometry-vs-dispensing',
+];
+const GROUP_LENS = [
+  'lens-refractive-index',
+  'aspheric-vs-spherical-lens',
+  'progressive-corridor',
+  'anti-reflective-coating-principle',
+  'blue-light-filter-what',
+  'photochromic-lens-principle',
+  'polarized-lens-principle',
+];
+const CLUSTER_SLUGS = [...GROUP_EXAM, ...GROUP_LENS];
+
+const allPosts = await getCollection('blog-en');
+const pick = (slugs: string[]) => slugs.map(s => allPosts.find(p => p.slug === s)).filter(Boolean);
+const examPosts = pick(GROUP_EXAM);
+const lensPosts = pick(GROUP_LENS);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/optical-basics/';
+
+const faqs = [
+  {
+    q: 'Is it normal not to understand all the letters and numbers on an optometry report?',
+    a: 'Completely normal. SPH, CYL, AXIS, ADD and PD on the report each stand for a different measurement, and most people were never taught them. This glossary breaks each term down in plain language — understanding them lets you ask the right questions when choosing lenses and know exactly what you\'re getting. For anything still unclear, you\'re welcome to have an optometrist explain it in person at the store.',
+  },
+  {
+    q: 'Is the "degree" people talk about in Taiwan the same as the "D" on an optometry report?',
+    a: 'They\'re the same thing written two ways. In everyday Taiwanese speech people say "100 degrees," while the international optometry unit is written "1.00 D (Diopter)" — 100 degrees equals 1.00 D. For the detailed conversion and what the plus/minus signs mean, see the article "How diopter power is calculated."',
+  },
+  {
+    q: 'Do I really have to understand all of these terms?',
+    a: 'No. This glossary is a reference for those who want to know more — it\'s not a test. When you actually get glasses, the optometrist will do a full measurement and explanation based on your situation; reading a few key terms first (power, PD, refractive index) simply makes the conversation smoother.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "Optical Terms Explained: Understanding Your Optometry Report and Lens Jargon",
+      "description": "Power, diopter, PD, vertex distance, refractive index, aspheric, coatings, blue light, polarized, photochromic — Optometrist YoYo explains the professional terms of eye exams and lenses in plain language, all at once. Beyond Visual Optometry, Xinzhuang and Banqiao.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guide",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "Cheng Chia-Yu (YoYo)",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="Optical Terms Explained | Beyond Visual Optometry"
+  description="Power, diopter, PD, vertex distance, refractive index, aspheric, coatings, blue light, polarized, photochromic — Optometrist YoYo explains eye-exam and lens jargon in plain language, all at once. Beyond Visual Optometry, Xinzhuang and Banqiao."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Optical <span class="text-brand-gold">Terms Explained</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        The terms on your optometry report and the jargon of lens specifications — this page explains them one by one in plain language. Once you understand them, you can ask the right questions when choosing lenses.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The everyday Taiwanese "100 degrees" equals the "1.00 D (Diopter)" on an optometry report — the same thing written two ways.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Common fields on a report: SPH (sphere power), CYL (cylinder power), AXIS (cylinder axis), ADD (near add power), PD (pupillary distance).</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>You don't need to memorise all of these; understand the three keys — power, PD, refractive index — and you can ask the right questions when choosing lenses.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Refractive index, aspheric, coatings, blue light, polarized and photochromic are common lens-spec terms, each corresponding to a different optical principle and use.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'Exam and Power Terms', href: '#exam' },
+        { label: 'Lens and Coating Terms', href: '#lens' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 驗光與度數名詞 -->
+  <section id="exam" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Exam and Power Terms</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Understanding your optometry report and what the optometrist is saying starts with these terms.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {examPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-6 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <h3 class="font-serif text-brand-navy mb-2 group-hover:text-brand-gold transition-colors" style="font-size:17px;font-weight:600;line-height:1.5">{post.data.title.split('｜')[0]}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 鏡片與鍍膜名詞 -->
+  <section id="lens" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Lens and Coating Terms</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Refractive index, aspheric, coatings, blue light, polarized, photochromic — the principles behind the lens specs.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {lensPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-brand-paper rounded-2xl p-6 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <h3 class="font-serif text-brand-navy mb-2 group-hover:text-brand-gold transition-colors" style="font-size:17px;font-weight:600;line-height:1.5">{post.data.title.split('｜')[0]}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Still have a term to ask about?</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">For any optometry report you can't read or term you don't follow, you're welcome to book a vision consultation and have Optometrist YoYo explain it in person. Appointments available at the Xinzhuang and Banqiao stores.</p>
+      <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Consultation →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/progressive-lens/', t: 'Progressive Lens Complete Guide' },
+          { href: '/en/guide/lens-brands/', t: 'Lens Brands Buying Guide' },
+          { href: '/en/guide/children-myopia/', t: 'Children\'s Myopia Tracking Complete Guide' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all complete guides</a>
+    </div>
+  </section>
+</Layout>

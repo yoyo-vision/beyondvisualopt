@@ -30,7 +30,7 @@ In the eyeglass lens world, Zeiss is known for its **personalized customization 
 - **DriveSafe lenses for night driving**: Designed to address glare and blurred vision during night driving, ideal for those who regularly drive after dark
 - **Digital Lens**: Designed for modern life with long hours on phones and computers, providing near-intermediate support that eases the eye's focusing strain
 - **SmartLife series**: Modern lenses for everyday multi-scenario use, available in single-vision, progressive, and other versions
-- **MyoCare myopia management lenses**: Framed lenses for children's myopia management, using C.A.R.E.® technology (concentric ring-shaped defocus), with a MyoCare S version also available (subject to assessment by a physician or optometrist)
+- **MyoCare defocus-design lenses**: Spectacle lenses with a defocus design for children, using C.A.R.E.® technology (concentric ring-shaped defocus), with a MyoCare S version also available (subject to assessment by a physician or optometrist)
 
 Beyond Visual Optometry is a contracted, certified Zeiss dealer in Taiwan. Both the Xinzhuang location (Beyond Visual Optometry) and the Banqiao location offer the full range of Zeiss lens series.
 
@@ -40,13 +40,13 @@ Beyond Visual Optometry is a contracted, certified Zeiss dealer in Taiwan. Both 
 
 HOYA is a Japanese brand founded in 1941. It began with optical glass manufacturing and is now one of the world's largest eyeglass lens manufacturers, with enormous production volume and consistent quality.
 
-HOYA's lens factories are spread across the globe, and the HOYA lenses circulating in the Taiwan market are mostly produced in Japan or at Asian facilities. The brand has deep expertise in progressive multifocal lenses and anti-fatigue lenses.
+HOYA's lens factories are spread across the globe, and the HOYA lenses circulating in the Taiwan market are mostly produced in Japan or at Asian facilities. The brand has deep expertise in progressive multifocal lenses and near-support lenses.
 
 **HOYA's main lens series (a brief overview):**
 
 - **iD progressive lens series**: HOYA's personalized multifocal lenses, supporting freeform design, positioned as HOYA's premium progressive option
-- **Sync III anti-fatigue lenses**: For people who spend long hours on digital devices, adding a slight boost in the near zone to relieve focusing strain
-- **MiSight defocus daily disposables**: A contact lens product for children's myopia management, licensed from CooperVision; HOYA also has its own defocus design versions
+- **Sync III near-support lenses**: For people who spend long hours on digital devices, adding slight near-zone power support to reduce the accommodative load
+- **MiSight defocus daily disposables**: A defocus-design contact lens for children, licensed from CooperVision; HOYA also has its own defocus design versions
 - **NULUX series**: Everyday single-vision lenses with a complete range of index options, from 1.60 to 1.74
 
 HOYA's strength lies in a complete product lineup, mature technology, and a wide price range—there's a choice for everyone from entry-level to premium.
@@ -75,7 +75,7 @@ Essilor comes from France and is the world's highest market-share eyeglass lens 
 
 - **Varilux progressive lenses**: The original progressive lens series, ranging from Comfort to the X series across multiple tiers, and the best-selling progressive lens brand in the world
 - **Crizal coating series**: Essilor's signature anti-reflective coating, often paired with lenses from other brands
-- **Eyezen blue-light / anti-fatigue lenses**: A single-vision series designed for digital life
+- **Eyezen blue-light filter / near-support lenses**: A single-vision series designed for digital life
 
 Essilor's advantage lies in its deep history in progressive lens technology and its global reach—Varilux has an extremely high penetration rate in eyewear markets worldwide.
 

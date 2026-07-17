@@ -1,0 +1,277 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'zeiss-hoya-nikon-lens-guide',
+  'hoya-lens-guide',
+  'essilor-lens-guide',
+  'zeiss-individual-worth-it',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/lens-brands/';
+
+// 指南頁 FAQ（與聚落文章互補，不重複）
+const faqs = [
+  {
+    q: 'Is ZEISS or HOYA better?',
+    a: "There's no absolute \"which is better\" — every brand has its strengths. ZEISS is known for personalized custom technology (Individual²) and its German optical heritage; HOYA is one of the world's largest lens makers, and its vertically integrated manufacturing gives high consistency and a complete product line from entry to premium. In practice, the design tier and measurement precision matter more: a HOYA premium personalized progressive lens may well beat an entry-tier ZEISS in visual comfort. The difference between brands is often smaller than the difference between series within a single brand. We suggest a full eye exam and lifestyle vision analysis first, then having optometry personnel recommend a choice based on your prescription mix and viewing habits.",
+  },
+  {
+    q: 'What actually differs between lens brands?',
+    a: "The difference isn't in the logo but on three levels: one, optical design capability (aberration control, corridor width, smoothness of the visual transition); two, coating technology (anti-reflective, scratch-resistant, anti-smudge, and blue-light filtering directly affect clarity and service life); and three, personalized custom capability (whether they can factor your vertex distance, pantoscopic tilt, and frame curvature into the calculation). These are the real sources of the price gap, not a simple brand premium. Even among progressive lenses, Essilor invented the progressive lens in 1959, ZEISS is strong on custom precision, and HOYA and NIKON share Japanese precision-manufacturing roots — each has its own forte.",
+  },
+  {
+    q: 'Are expensive lenses really worth it?',
+    a: "It depends on whether you're the person who \"actually benefits from the difference.\" Take ZEISS Individual²: those who benefit most are high myopia (above -6.00D, where vertex-distance error has the biggest impact), high astigmatism (above -2.00), oblique-axis astigmatism, and professionals who use their eyes intensively all day and are sensitive to visual quality (designers, doctors, precision workers). Conversely, for someone under -3.00D with no astigmatism who picks a small, flat frame, the subjective difference is usually not obvious and we don't recommend spending the money. Whether an expensive lens is worth it is a question of need, not prestige — the role of optometry personnel is to help you find the lens that fits, not to push the priciest.",
+  },
+  {
+    q: 'Which brands can I get in Xinzhuang or Banqiao?',
+    a: "Beyond Visual Optometry is a ZEISS Taiwan authorized dealer. Both our Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, 02-2253-1246) offer the full ZEISS lens range; we're also a HOYA dealer, offering major series such as HOYA iD. For NIKON, Essilor, and other brands, Optometrist YoYo can also give an objective comparison and recommendation based on your viewing needs.",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "How to Choose a Lens Brand: A Complete Comparison of ZEISS, HOYA, NIKON, and Essilor",
+      "description": "What differs between the four major lens brands — ZEISS, HOYA, NIKON, and Essilor? From optical design and coatings to personalized custom capability and how to choose by need, Optometrist YoYo gives an objective comparison in one page. Xinzhuang & Banqiao, Beyond Visual Optometry.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "YoYo Cheng",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="How to Choose a Lens Brand | ZEISS, HOYA, NIKON, Essilor | Beyond Visual"
+  description="What differs between ZEISS, HOYA, NIKON, and Essilor? From optical design and coatings to personalized custom capability, Optometrist YoYo objectively compares the four major brands and shows you how to choose by need. Xinzhuang & Banqiao, Beyond Visual Optometry."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Choosing a Lens Brand<br /><span class="text-brand-gold">Where the Difference Lies</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        ZEISS, HOYA, NIKON, Essilor — with quotes differing by thousands, where does the difference actually lie? This page objectively compares the four brands' optical design, coatings, and custom capability, then shows you how to choose by need. Written by Optometrist YoYo — no brand disparaged, and no pushing the priciest.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>What differs isn't the logo but three things: optical design capability, coating technology, and personalized custom capability — that's the real source of quotes differing by thousands.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>ZEISS, HOYA, NIKON, and Essilor each have their strengths; there's no absolute "which is better" — what suits your prescription mix and viewing habits is the point.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The lens "tier" (standard / digitally optimized / personalized custom) matters more than the "brand"; the gap between series within one brand is often larger than across brands.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Whether an expensive lens is worth it is a question of need: high prescriptions, high astigmatism, and long-hours users benefit most, while those with simple prescriptions usually see little subjective difference.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'Where Brands Differ', href: '#difference' },
+        { label: 'Comparing the Four Brands', href: '#compare' },
+        { label: 'How to Choose by Need', href: '#choose' },
+        { label: 'Tier Beats Brand', href: '#levels' },
+        { label: 'Read More', href: '#cluster' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 品牌差在哪 -->
+  <section id="difference" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">What differs between lens brands isn't the logo — it's these three things</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>Many people assume the difference between lens brands is just "how big the name is" or "where it's made." In reality, when the same pair of progressive lenses is quoted thousands apart, the gap comes from three invisible levels:</p>
+        <p><strong>One: optical design capability.</strong> A progressive lens inevitably has aberration zones on either side of the corridor, where the view is distorted and blurry. The core difference between premium and budget lenses is how small they can make those zones and how wide they can push the clear field. Essilor invented the progressive lens in 1959, ZEISS is strong on custom precision, and HOYA's iD series uses a dual-surface composite design to trade for a wider field — each takes a different optical path.</p>
+        <p><strong>Two: coating technology.</strong> Anti-reflective, scratch-resistant, anti-smudge, and blue-light filtering directly affect a lens's clarity and service life. This is the part most easily overlooked when choosing a lens, yet felt every day. Essilor's Crizal and HOYA's Hi-Vision are their respective signature coatings.</p>
+        <p><strong>Three: personalized custom capability.</strong> Whether they can factor your vertex distance, pantoscopic tilt, and lens curvature into the calculation to tailor the optical design to your face — this is where premium lenses truly pull ahead. For an engineer facing a screen ten hours a day, these three things together are the difference between eye strain and a stiff neck at the end of the day, or not.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 四大品牌比較 -->
+  <section id="compare" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Positioning of the four brands: each with its own strength</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Beyond Visual is a <a href="https://www.zeiss.com.tw/" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">ZEISS</a> Taiwan authorized dealer and also a HOYA dealer. The comparison below strives to be objective and disparages no one.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Brand</th>
+              <th class="text-left px-5 py-4 font-semibold">Background & Strengths</th>
+              <th class="text-left px-5 py-4 font-semibold">Flagship Series</th>
+              <th class="text-left px-5 py-4 font-semibold">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['ZEISS', 'German optics brand since 1846, known for personalized custom technology, with custom precision as its strength', 'Individual² custom, DriveSafe night driving, Digital Lens, MyoCare children\'s defocus-design lens (C.A.R.E. technology)', 'High prescriptions, high astigmatism, quality-sensitive professionals seeking personalized custom'],
+              ['HOYA', 'Japanese brand since 1941, one of the world\'s largest lens makers, vertically integrated with high consistency', 'iD progressive (dual-surface composite), Sync III digital near-support, Nulux single vision, MiYOSMART children\'s defocus (DIMS technology)', 'Those wanting a complete product line, flexible price range, and mature, stable technology'],
+              ['NIKON', 'Deep optical expertise, lenses made from the same source as HOYA\'s series, positioned between HOYA and ZEISS', 'SeeMax personalized progressive, Presio standard progressive, Light / Relaxsee single vision', 'Those who trust NIKON optics and want free-form progressive design'],
+              ['Essilor', 'French brand since 1849, the world\'s highest market share, inventor of the progressive multifocal lens in 1959', 'Varilux progressive (the original progressive lens), Eyezen digital near-support, Crizal coating, Stellest children\'s defocus (H.A.L.T. technology)', 'Those needing mature, widespread progressive tech, valuing coating quality, with a flexible budget'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        Note: Stellest is Essilor's children's defocus-design lens, using H.A.L.T. technology (1,021 tiny aspheric lenslets); ZEISS's children's defocus-design lens is MyoCare, using C.A.R.E. technology (concentric ring defocus) — the two are often confused, but they are different products from different brands.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 怎麼依需求選 -->
+  <section id="choose" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">How to choose by your needs? First see which box you fall into</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">The brand isn't the point — first confirm your viewing scenario, then match it back to a suitable series.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { need: 'Progressive / Presbyopia', desc: 'Need clarity at far, intermediate, and near without constantly swapping glasses. All four brands have a flagship progressive: ZEISS Individual², HOYA iD, NIKON SeeMax, Essilor Varilux. There are tiers from entry to personalized custom — confirm how your daily viewing distances are spread before choosing.' },
+          { need: 'High Myopia / High Astigmatism', desc: 'Above -6.00D myopia or -2.00 astigmatism, where vertex-distance and pantoscopic-tilt compensation matter most. Personalized custom lenses (such as ZEISS Individual²) make the biggest difference at these prescriptions; without compensation, effective power and cylinder axis may shift.' },
+          { need: 'Digital Eye Strain (long screen hours)', desc: "More than 6 hours a day on screens with tired, dry eyes after work, but no need for reading correction yet. Consider digital-relief single-vision lenses: HOYA Sync III, Essilor Eyezen, ZEISS Digital Lens, which add slight accommodation support at the bottom and look identical to regular lenses." },
+          { need: 'Limited Budget / Simple Prescription', desc: 'Entry tier is enough. Standard-design progressives or single-vision lenses (such as HOYA iD EaZi, Essilor Varilux Comfort) meet basic needs; putting the budget into precise refraction and frame adjustment gives better value.' },
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">By Need</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.need}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        Optometrist YoYo's principle: first analyze how your viewing distances are spread across a day (how many hours driving, how many on screens, how far your reading distance is), then decide on the brand and tier — not decide on a product first and then talk you into it.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 等級比品牌更關鍵（深藍區段） -->
+  <section id="levels" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">The lens "tier" matters more than the "brand"</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">The gap between different series within one brand is often larger than the gap between brands. An entry ZEISS progressive versus a HOYA premium personalized progressive — the latter may well be more comfortable, and the reverse holds too. Choosing the right tier matters more than agonizing over the brand.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { level: 'Standard Design', desc: 'Designed around an average face shape and average fitting parameters, with a fixed corridor and aberration distribution. An entry choice for limited budgets, simple prescriptions, and first-timers. E.g. HOYA iD EaZi, Essilor Varilux Comfort.', fit: 'Entry' },
+          { level: 'Digitally Optimized Design', desc: 'Aberration distribution optimized to prescription power, with a wider corridor and less peripheral distortion — the sweet spot for most moderate users. E.g. Essilor Varilux Physio\'s wavefront aberration correction, HOYA iD Space.', fit: 'Mainstream' },
+          { level: 'Personalized Custom', desc: 'Factors your vertex distance, pantoscopic tilt, lens curvature, and head-turning habits into the calculation, made to order from the source rather than a stock semi-finished blank. E.g. ZEISS Individual², NIKON SeeMax, Essilor Xclusive. The difference is most noticeable for high prescriptions and heavy visual demands.', fit: 'Custom' },
+        ].map(item => (
+          <div class="bg-white/5 rounded-2xl p-7 border border-white/10 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
+            <h3 class="font-serif text-white mb-3" style="font-size:19px;font-weight:600">{item.level}</h3>
+            <p class="text-white/60" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-white/70 mt-8" style="font-size:16px;line-height:1.8">
+        Want to know whether personalized custom is really worth it? Read this: <a href="/en/blog/zeiss-individual-worth-it/" class="text-brand-gold underline">Are ZEISS Personalized Custom Lenses Worth It? A Full Analysis of Cost, Difference, and Who Benefits</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section id="cluster" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: a closer look at each brand</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Not sure which brand or tier suits you?</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. Optometrist YoYo will first understand how your daily viewing distances are spread and your prescription status, then objectively compare brands and tiers — available at both our Xinzhuang and Banqiao stores.</p>
+      <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Analysis →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/progressive-lens/', t: 'The Complete Guide to Progressive Lenses' },
+          { href: '/en/guide/high-myopia/', t: 'The Complete Guide to High-Myopia Eyewear' },
+          { href: '/en/guide/optical-basics/', t: 'Optical Basics Encyclopedia' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all guides</a>
+    </div>
+  </section>
+
+</Layout>

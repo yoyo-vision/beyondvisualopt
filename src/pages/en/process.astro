@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const steps = [
+  { num: '01', title: 'Book Online', desc: 'Choose your location and time slot via the website, LINE OA, or Google Calendar — no waiting.' },
+  { num: '02', title: 'In-Store Consultation', desc: 'Optometrist YoYo takes a detailed look at your vision concerns, daily habits, work environment, and current prescription.' },
+  { num: '03', title: 'Full Instrument Assessment', desc: 'Corneal mapping and accommodation measurement, paired with subjective and objective refraction, establish precise baseline data.' },
+  { num: '04', title: 'Binocular Vision Assessment', desc: 'Assessing the coordination of both eyes, stereopsis, and convergence to find the root cause of visual issues that a standard exam often overlooks.' },
+  { num: '05', title: 'Lifestyle Vision Analysis', desc: 'We design the most suitable fitting parameters around your working distance, screen time, and outdoor habits.' },
+  { num: '06', title: 'Lens Selection Explained', desc: 'No sales pitch — we explain the optical characteristics and everyday suitability of each lens, so you make an informed choice.' },
+  { num: '07', title: 'Frame Adjustment & Ordering', desc: 'Vertex distance, pantoscopic tilt, and nose-pad height are each adjusted so the lens optical center aligns with your pupillary distance.' },
+  { num: '08', title: 'Collection & Adaptation Follow-Up', desc: 'On collection we reconfirm the fit and provide adaptation guidance. Any discomfort? Free follow-up adjustment.' },
+];
+---
+<Layout
+  title="Our Process | 8-Step Professional Fitting & Complete Eye Exam | Beyond Visual Optometry, Xinzhuang & Banqiao"
+  description="Beyond Visual Optometry's 8-step fitting SOP with Optometrist YoYo: consultation → instrument assessment → binocular vision assessment → lifestyle analysis → progressive / ZEISS / defocus lens selection → precision adjustment → collection follow-up."
+  lang="en"
+>
+  <section class="bg-brand-navy text-white py-24 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="font-sans text-brand-gold tracking-widest uppercase block mb-5" style="font-size:12px;letter-spacing:0.22em">The Process</span>
+      <h1 class="font-serif text-white mb-6" style="font-size:clamp(30px,5vw,56px);font-weight:300;line-height:1.2">The Hour You Spend Getting Glasses —<br />How We Walk It With You</h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">From booking and consultation to collection, every step has a reason to exist — not to fill time, but to make these glasses genuinely comfortable to wear.</p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 py-20">
+    <div class="space-y-8">
+      {steps.map((step, i) => (
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-14 h-14 bg-brand-navy text-white rounded-2xl flex items-center justify-center font-bold text-lg">
+            {step.num}
+          </div>
+          <div class="border-l-2 border-brand-gold pl-6 pb-8 flex-1" style={i === steps.length - 1 ? 'border-left-color: transparent' : ''}>
+            <h2 class="font-serif text-brand-navy mb-2" style="font-size:20px;font-weight:600">{step.title}</h2>
+            <p class="text-gray-600 leading-relaxed">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 儀器設備展示 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Equipment</span>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,40px);font-weight:300">Clinical-Grade Measurement Tools</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="overflow-hidden">
+          <picture>
+            <source srcset="/images/instrument-corneal-map.webp" type="image/webp" />
+            <img src="/images/instrument-corneal-map.webp" alt="TOPCON CA-800 Corneal Topographer & Aberrometer at Beyond Visual Optometry BiYang clinic, Xinzhuang" width="600" height="400" class="w-full h-64 object-cover" loading="lazy" />
+          </picture>
+          <div class="pt-5">
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">TOPCON CA-800 Corneal Topographer & Aberrometer</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.7">Measures corneal curvature distribution and higher-order aberrations at once; this corneal aberration analysis is an advanced visual measurement service, used for RGP lens fitting, high astigmatism, and precision-fitting assessment.</p>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <picture>
+            <source srcset="/images/instrument-phoropter.webp" type="image/webp" />
+            <img src="/images/instrument-phoropter.webp" alt="TOPCON integrated phoropter for subjective and objective refraction, BiYang Optometry Clinic Xinzhuang" width="600" height="400" class="w-full h-64 object-cover" loading="lazy" />
+          </picture>
+          <div class="pt-5">
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">TOPCON Integrated Phoropter</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.7">Double confirmation through subjective and objective refraction, precisely measuring spherical power, cylinder power, and axis to establish each customer's exact prescription.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-light py-16 px-4 text-center">
+    <h2 class="font-serif text-brand-navy mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Ready to get started?</h2>
+    <a href="/en/booking" class="bg-brand-navy text-white font-bold px-8 py-4 rounded-full hover:bg-brand-navy/90 transition-colors inline-block">
+      Book a Vision Analysis →
+    </a>
+  </section>
+</Layout>

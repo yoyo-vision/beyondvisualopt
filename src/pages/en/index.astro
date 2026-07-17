@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 ---
 <Layout
   title="Beyond Visual Optometry | Professional Eye Care in Xinzhuang & Banqiao, New Taipei"
-  description="Beyond Visual Optometry offers complete clinical eye exams, ZEISS lenses, progressive lenses, and myopia management. Two locations in Xinzhuang and Banqiao, New Taipei City."
+  description="Beyond Visual Optometry offers complete clinical eye exams, ZEISS lenses, progressive lenses, and children's myopia tracking. Two locations in Xinzhuang and Banqiao, New Taipei City."
   lang="en"
   enPath="/en"
 >
@@ -80,8 +80,8 @@ import Layout from '../../layouts/Layout.astro';
       <div class="grid md:grid-cols-3 gap-6">
         {[
           { num: '01', title: 'Clinical-Grade Eye Exams', desc: 'Full binocular vision assessment, vertex distance measurement, and lens tilt adjustment. Every parameter is precisely calibrated — not a 10-minute rush job.' },
-          { num: '02', title: 'ZEISS Certified Partner', desc: 'Authorized ZEISS dealer in Xinzhuang and Banqiao. Individual² personalized lenses, progressive lenses, and digital protection series — genuine quality guaranteed.' },
-          { num: '03', title: 'Myopia Management', desc: 'Regular vision assessments and prescription tracking for children aged 6–14, with defocus lens fitting recommendations to help parents monitor their child\'s vision development.' },
+          { num: '02', title: 'ZEISS Certified Partner', desc: 'Authorized ZEISS dealer in Xinzhuang and Banqiao. Individual² personalized lenses, progressive lenses, and digital lens series — authentic products through authorized channels.' },
+          { num: '03', title: 'Myopia Tracking', desc: 'Regular vision assessments and prescription tracking for children aged 6–14, with defocus lens fitting recommendations to help parents monitor their child\'s vision development.' },
         ].map(item => (
           <div class="bg-white border border-brand-ink/10 p-8">
             <p class="font-sans text-brand-gold mb-4" style="font-size:12px;letter-spacing:0.2em">{item.num}</p>
@@ -118,7 +118,7 @@ import Layout from '../../layouts/Layout.astro';
   <!-- CTA -->
   <section class="px-6 py-16 text-center" style="background:#eee8da">
     <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(22px,3vw,34px);font-weight:300">Ready for a Clearer Vision?</h2>
-    <p class="font-sans text-brand-ink-2 mb-8" style="font-size:15px">Book a free vision consultation at either of our locations.</p>
+    <p class="font-sans text-brand-ink-2 mb-8" style="font-size:15px">Book a vision consultation at either of our locations.</p>
     <a href="/en/booking" class="font-sans bg-brand-navy text-white px-10 py-4 hover:bg-brand-navy/90 transition-colors" style="font-size:14px;letter-spacing:0.1em">Book an Exam</a>
   </section>
 </Layout>

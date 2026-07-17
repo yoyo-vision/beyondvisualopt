@@ -1,0 +1,234 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// ── 純客觀陳述：品名／系列英文名／折射率（規格）。不含任何用途、情境、功效描述 ──
+
+// 蔡司 ZEISS 鏡片系列（品名 + 英文系列 + 折射率）
+const zeiss = [
+  {
+    group: 'Single Vision',
+    items: [
+      { name: 'ClearView', en: 'FSV / SV ClearView', ri: '1.56 / 1.60 / 1.67 / 1.74' },
+      { name: 'Superb Personalized', en: 'SV Superb Asiana', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'Individual Premium', en: 'SV Individual', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'Spherical Resin Single Vision', en: 'SV SPH', ri: '1.50 / 1.60' },
+    ],
+  },
+  {
+    group: 'SmartLife Series',
+    items: [
+      { name: 'SmartLife Single Vision', en: 'SmartLife Young / Asiana / Individual³', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'SmartLife Digital', en: 'Digital SmartLife', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'SmartLife Progressive', en: 'Progressive SmartLife Pure / Plus / Superb / Individual³', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+    ],
+  },
+  {
+    group: 'Progressive Comfort',
+    items: [
+      { name: 'Progressive Comfort', en: 'Progressive Light 2 (Pure / Classic / Superb / Individual)', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'Digital Progressive Comfort', en: 'Digital Light 2', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+    ],
+  },
+  {
+    group: 'Functional Series',
+    items: [
+      { name: 'EnergizeMe', en: 'SV / Digital EnergizeMe', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'DriveSafe', en: 'SV / Progressive DriveSafe', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'Office Lens', en: 'Officelens Plus / Superb / Individual', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+    ],
+  },
+  {
+    group: 'Sun · Polarized · Photochromic',
+    items: [
+      { name: 'Personalized Polarized', en: 'Superb / SmartLife Asiana Polarized', ri: '1.50 / 1.60 / 1.67' },
+      { name: 'Sport', en: 'SV Superb Sport (with polarized)', ri: '1.50 / 1.60 / 1.67' },
+      { name: 'PhotoFusion X Photochromic', en: 'PhotoFusion X', ri: 'By series' },
+    ],
+  },
+  {
+    group: 'Kids Growth Series',
+    items: [
+      { name: 'MyoKids', en: 'MyoKids Pro Asiana', ri: '1.50 / 1.60 / 1.67' },
+      { name: 'MyoVision', en: 'MyoVision Pro / Ace Asiana', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+    ],
+  },
+  {
+    group: 'Glass Lenses',
+    items: [
+      { name: 'Single Vision Glass', en: 'SV SPH Min', ri: '1.50 / 1.60 / 1.70 / 1.80 / 1.90' },
+    ],
+  },
+];
+
+// HOYA 鏡片系列
+const hoya = [
+  {
+    group: 'Progressive Multifocal',
+    items: [
+      { name: 'Premium Personalized', en: 'MyStyle V+', ri: '1.50 / 1.60 / 1.67 / 1.74' },
+      { name: 'Personalized 4X', en: 'Lifestyle 4X', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+      { name: 'Balansis / Dynamic', en: 'Balansis / Dynamic Premium / Dynamic Summit', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+      { name: 'VisuPro / New Classic', en: 'VisuPro / AMP+', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+    ],
+  },
+  {
+    group: 'Indoor · Reading Multifocal',
+    items: [
+      { name: 'WorkStyle / Business / WorkSmart', en: 'WorkStyle 3 / Business / WorkSmart', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+      { name: 'SupeReader', en: 'SupeReader', ri: '1.50 / 1.55 / 1.60 / 1.67' },
+    ],
+  },
+  {
+    group: 'Driving Lenses',
+    items: [
+      { name: 'EnRoute Progressive / Single Vision', en: 'EnRoute PAL / SV (Standard · Pro)', ri: '1.60 / 1.67' },
+    ],
+  },
+  {
+    group: 'Single Vision',
+    items: [
+      { name: 'Personalized / Double Aspheric', en: 'Nulux V+ / EP', ri: '1.60 / 1.67 / 1.74' },
+      { name: 'Aspheric / Spheric', en: 'Nulux Classic / Hilux', ri: '1.50 / 1.55 / 1.60 / 1.67 / 1.74' },
+    ],
+  },
+];
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/lenses/';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": canonicalUrl,
+  "url": canonicalUrl,
+  "name": "Lens Types | ZEISS × HOYA Lens Series Directory",
+  "description": "A directory of the ZEISS and HOYA lens series names and refractive indices offered by Beyond Visual Optometry. Xinzhuang & Banqiao locations.",
+  "inLanguage": "en",
+  "isPartOf": { "@id": "https://beyondvisualopt.com/#website" },
+  "about": { "@id": "https://beyondvisualopt.com/#organization" },
+};
+---
+<Layout
+  title="Lens Types | ZEISS × HOYA Lens Series Directory | Beyond Visual Optometry"
+  description="A directory of the ZEISS and HOYA lens series names and refractive-index specs offered by Beyond Visual Optometry. Xinzhuang & Banqiao locations — inquiries welcome."
+  lang="en"
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Lens Types</p>
+      <h1 class="font-serif text-white leading-tight mb-6" style="font-size:clamp(30px,4.5vw,50px);font-weight:300">
+        Lens Series <span class="text-brand-gold">Directory</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.8">
+        Below are the lens series names and refractive-index specs offered in-store. For actual selection and pricing, please inquire at either location.
+      </p>
+    </div>
+  </section>
+
+  <!-- 品牌供應（廠商資訊） -->
+  <section class="px-6 md:px-16 py-12 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+      <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+        <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">ZEISS</p>
+        <p class="text-brand-ink-3" style="font-size:13px">Authorized dealer</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+        <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">HOYA</p>
+        <p class="text-brand-ink-3" style="font-size:13px">Dealer</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+        <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">NIKON · Essilor</p>
+        <p class="text-brand-ink-3" style="font-size:13px">Available by special order</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 蔡司系列品名 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">ZEISS Lens Series</h2>
+      <div class="space-y-6">
+        {zeiss.map(g => (
+          <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+            <h3 class="font-serif text-brand-navy mb-4 pb-2 border-b border-brand-ink/8" style="font-size:18px;font-weight:600">{g.group}</h3>
+            <div class="divide-y divide-brand-ink/8">
+              {g.items.map(it => (
+                <div class="py-3 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                  <div class="sm:w-64 shrink-0">
+                    <span class="font-sans text-brand-navy font-semibold" style="font-size:15px">{it.name}</span>
+                    <span class="text-brand-ink-3 block" style="font-size:12px">{it.en}</span>
+                  </div>
+                  <span class="text-brand-gold font-sans" style="font-size:13px;letter-spacing:0.02em">Index {it.ri}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOYA 系列品名 -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">HOYA Lens Series</h2>
+      <div class="space-y-6">
+        {hoya.map(g => (
+          <div class="bg-brand-paper rounded-2xl p-6 border border-brand-ink/5">
+            <h3 class="font-serif text-brand-navy mb-4 pb-2 border-b border-brand-ink/8" style="font-size:18px;font-weight:600">{g.group}</h3>
+            <div class="divide-y divide-brand-ink/8">
+              {g.items.map(it => (
+                <div class="py-3 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                  <div class="sm:w-64 shrink-0">
+                    <span class="font-sans text-brand-navy font-semibold" style="font-size:15px">{it.name}</span>
+                    <span class="text-brand-ink-3 block" style="font-size:12px">{it.en}</span>
+                  </div>
+                  <span class="text-brand-gold font-sans" style="font-size:13px;letter-spacing:0.02em">Index {it.ri}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 規格選項（材質／鍍膜名稱，客觀陳述） -->
+  <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(22px,3vw,30px);font-weight:400">Specification Options</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+          <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:12px;letter-spacing:0.1em">Refractive Index</p>
+          <p class="text-brand-ink-2" style="font-size:14px;line-height:1.9">1.50 / 1.56 / 1.60 /<br />1.67 / 1.74 (resin)<br />1.50–1.90 (glass)</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+          <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:12px;letter-spacing:0.1em">Coating Options</p>
+          <p class="text-brand-ink-2" style="font-size:14px;line-height:1.9">Anti-reflective coating<br />Blue-light filtering<br />Anti-smudge / water-repellent</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-brand-ink/5">
+          <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:12px;letter-spacing:0.1em">Lens Type</p>
+          <p class="text-brand-ink-2" style="font-size:14px;line-height:1.9">Clear<br />Photochromic<br />Polarized</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 免責聲明 -->
+  <section class="px-6 md:px-16 py-10 bg-white">
+    <div class="max-w-4xl mx-auto border border-brand-ink/10 p-5" style="background:rgba(26,47,78,0.03);font-size:13px">
+      <p class="text-brand-ink-3 leading-relaxed">
+        <strong class="text-brand-ink-2">Note:</strong> This page lists only lens series names and refractive-index specs, as a statement of product information. Actual lens selection must be assessed by our optometry team according to your individual prescription, astigmatism, and frame; pricing varies by refractive index, coating, and functional options — please inquire in-store. If you have any eye-health concerns, we recommend consulting an ophthalmologist for a professional diagnosis.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Want to learn about the lens series and selection?</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a vision consultation, and Optometrist YoYo will help assess your prescription and needs. Available at both the Xinzhuang and Banqiao locations.</p>
+      <a href="/en/booking" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Consultation →</a>
+    </div>
+  </section>
+</Layout>

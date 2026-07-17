@@ -2,7 +2,7 @@
 title: "Unstable Vision While Driving? Night Glare? The Right Lenses Make Driving Safer | ZEISS Night Driving Glare Lenses in Banqiao & Xinzhuang"
 date: "2025-06-10"
 tag: "Lenses"
-excerpt: "Ghosting during the day, blinding headlights at night? It may not be a prescription problem—Optometrist YoYo breaks down the real causes of visual discomfort for drivers, and how the ZEISS DriveSafe range improves the wearing experience."
+excerpt: "Ghosting during the day, blinding headlights at night? It may not be a prescription problem—Optometrist YoYo breaks down the real causes of visual discomfort for drivers, and how the ZEISS DriveSafe range is designed around the demands of night driving."
 ---
 
 ## Do You Feel Any of These When Driving?
@@ -48,7 +48,7 @@ Many people assume night glare is a problem of "aging eyes," but in most cases i
 
 As light passes through a lens, it reflects off the front and back surfaces. Lenses without an anti-reflective coating (AR coating) lose about 8–10% of light at the lens surface as reflections, and this reflected light forms a "halo" on your retina—the ring of light you see around oncoming headlights.
 
-**The ZEISS DuraVision anti-reflective coating** is designed to raise light transmission to over 99%, dramatically reducing surface reflections so that the light you perceive while driving at night is purer and less harsh.
+**The ZEISS DuraVision anti-reflective coating** is designed to raise light transmission to over 99% (per ZEISS published data), dramatically reducing surface reflections so that the light you perceive while driving at night is purer and less harsh.
 
 ---
 
