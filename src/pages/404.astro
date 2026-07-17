@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 404 頁：網址打錯或頁面已下架時顯示。
+// 為什麼要有這一頁：沒有 404.html 時 Cloudflare Pages 會拿首頁頂替並回「HTTP 200 正常」，
+// Google 視為 soft 404（無限重複首頁、浪費爬取配額），流量報表也會被機器人亂試的網址污染。
+// 有了這頁，錯誤網址會正確回傳 404，同時把訪客接回真正想找的地方。
+// robots：noindex, follow —— 不讓 404 頁本身被索引，但頁內連結仍可被爬取。
+
+const LINKS = [
+  { href: '/booking', label: '線上預約', desc: '預約完整驗光，為你保留專屬時段', primary: true },
+  { href: '/services', label: '服務內容', desc: '完整臨床驗光、多焦點驗配、視覺管理' },
+  { href: '/lenses', label: '鏡片種類', desc: '蔡司 ZEISS、HOYA 等鏡片選擇' },
+  { href: '/frames', label: '鏡框品牌', desc: '選框與臉型、用途的搭配' },
+  { href: '/faq', label: '常見問題', desc: '多焦點會暈？眼鏡戴了頭暈？' },
+  { href: '/blog', label: '視覺小知識', desc: '用眼觀念、選配知識與實際案例' },
+];
+
+const STORES = [
+  { href: '/xinzhuang', name: '新莊店', sub: '能見度視覺中心 × 比泱驗光所' },
+  { href: '/banqiao', name: '板橋店', sub: '能見度眼鏡 × 能見度驗光所' },
+];
+---
+
+<Layout
+  title="找不到這個頁面｜能見度視覺中心"
+  description="您要找的頁面不存在或已調整位置。歡迎從下方連結前往線上預約、服務內容或門市資訊。"
+  robots="noindex, follow"
+  trackEvent="404"
+>
+  <!-- 頁首區：沿用全站 hero 樣式（藏藍漸層＋金色點綴） -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5">404 Not Found</p>
+      <h1 class="font-serif text-white leading-tight mb-7">
+        這個頁面<span class="text-brand-gold">對不到焦</span>
+      </h1>
+      <p class="text-white/70 max-w-xl mx-auto">
+        您要找的網址不存在，可能是連結輸入有誤，或這個頁面已經調整了位置。
+        別擔心，以下是大家最常找的幾個地方。
+      </p>
+    </div>
+  </section>
+
+  <!-- 常用連結 -->
+  <section class="px-6 md:px-16 py-24" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-5 text-center">您可能想找</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+        {LINKS.map(l => (
+          <a
+            href={l.href}
+            class={`block rounded-2xl p-6 transition-all hover:-translate-y-1 ${
+              l.primary
+                ? 'bg-brand-navy text-white hover:shadow-xl'
+                : 'bg-white text-brand-ink hover:shadow-lg'
+            }`}
+          >
+            <p class={`font-serif text-xl mb-2 ${l.primary ? 'text-brand-gold' : 'text-brand-navy'}`}>{l.label}</p>
+            <p class={`text-sm leading-relaxed ${l.primary ? 'text-white/70' : 'text-brand-ink-3'}`}>{l.desc}</p>
+          </a>
+        ))}
+      </div>
+
+      <!-- 門市 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+        {STORES.map(s => (
+          <a href={s.href} class="block bg-white rounded-2xl p-6 hover:shadow-lg transition-all hover:-translate-y-1">
+            <p class="font-serif text-xl text-brand-navy mb-1">📍 {s.name}</p>
+            <p class="text-sm text-brand-ink-3">{s.sub}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-14">
+        <a href="/" class="inline-block font-sans text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-gold transition-colors">
+          ← 回到首頁
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -13,8 +13,10 @@ export interface Props {
   ogType?: string;
   publishedTime?: string;
   modifiedTime?: string;
+  /** 流量追蹤的事件名，預設 pageview；404 頁傳 '404' 才不會被當成正常瀏覽污染報表 */
+  trackEvent?: string;
 }
-const { title, description, keywords, image = '/og-image.jpg', schema, preloadHeroMobile, preloadHeroDesktop, robots, lang = 'zh', enPath, ogType = 'website', publishedTime, modifiedTime } = Astro.props;
+const { title, description, keywords, image = '/og-image.jpg', schema, preloadHeroMobile, preloadHeroDesktop, robots, lang = 'zh', enPath, ogType = 'website', publishedTime, modifiedTime, trackEvent = 'pageview' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const isEn = lang === 'en';
 const langSwitchHref = isEn
@@ -123,8 +125,9 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
   </script>
 
   <!-- 自有流量追蹤（與 GA4 雙軌）：打點到 CRM 後台「流量分析」，匿名訪客碼、無個資。
-       記錄：瀏覽(pageview)、停留時長(leave)、轉換點擊(加LINE/撥電話/開導航/看評論) -->
-  <script is:inline>
+       記錄：瀏覽(pageview)、停留時長(leave)、轉換點擊(加LINE/撥電話/開導航/看評論)。
+       404 頁傳 trackEvent='404'：仍留紀錄（可查失效連結），但不算瀏覽量、不記停留，避免污染報表 -->
+  <script is:inline define:vars={{ trackEvent }}>
     (function(){
       try{
         var KEY='bv_vid';
@@ -145,17 +148,21 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           if(navigator.sendBeacon){navigator.sendBeacon(url,body);}
           else{fetch(url,{method:'POST',body:body,keepalive:true});}
         }
-        send('pageview');
-        /* 停留時長：離開頁面（關閉/切背景）補送一筆，只送一次、上限 30 分鐘 */
-        var t0=Date.now(),sent=false;
-        function leave(){
-          if(sent)return;sent=true;
-          send('leave',{dur:Math.min(1800,Math.round((Date.now()-t0)/1000))});
+        var ev=(typeof trackEvent==='string'&&trackEvent)||'pageview';
+        send(ev);
+        /* 停留時長：離開頁面（關閉/切背景）補送一筆，只送一次、上限 30 分鐘。
+           404 頁不記停留——那不是真的在讀內容，記了只會拉歪平均停留 */
+        if(ev==='pageview'){
+          var t0=Date.now(),sent=false;
+          var leave=function(){
+            if(sent)return;sent=true;
+            send('leave',{dur:Math.min(1800,Math.round((Date.now()-t0)/1000))});
+          };
+          window.addEventListener('pagehide',leave);
+          document.addEventListener('visibilitychange',function(){
+            if(document.visibilityState==='hidden')leave();
+          });
         }
-        window.addEventListener('pagehide',leave);
-        document.addEventListener('visibilitychange',function(){
-          if(document.visibilityState==='hidden')leave();
-        });
         /* 轉換點擊：實體店四大行動——加 LINE、撥電話、開導航、看 Google 評論 */
         document.addEventListener('click',function(ev){
           var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
