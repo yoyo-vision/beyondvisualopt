@@ -130,6 +130,15 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
   <script is:inline define:vars={{ trackEvent }}>
     (function(){
       try{
+        /* 內部流量排除（2026-07-17）：老闆與開發自己的測試會污染報表——
+           查預約漏斗時發現「93% 放棄率」多半是自己人反覆重整造成的假象。
+           官網沒有登入機制，故用手動標記：開一次 ?internal=1 即永久排除這台裝置
+           （?internal=0 解除）。CRM 顧客端另有自動判定（有後台登入憑證＝員工）。 */
+        var iq=new URLSearchParams(location.search).get('internal');
+        if(iq==='1'){localStorage.setItem('bv_internal','1');}
+        if(iq==='0'){localStorage.removeItem('bv_internal');}
+        if(localStorage.getItem('bv_internal')==='1')return;
+
         var KEY='bv_vid';
         var vid=localStorage.getItem(KEY);
         if(!vid){
