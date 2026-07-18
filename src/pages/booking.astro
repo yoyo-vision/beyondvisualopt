@@ -6,16 +6,64 @@ import Layout from '../layouts/Layout.astro';
   description="預約能見度眼鏡行 YoYo 驗光師。多焦點鏡片諮詢、蔡司鏡片訂製、兒童近視追蹤、高度近視配鏡、數位疲勞評估。新莊中正路 × 板橋門市，45–60 分鐘完整評估。"
   enPath="/en/booking"
 >
-  <!-- Hero -->
-  <section class="bg-brand-navy text-white py-20 px-6 text-center">
+  <!-- Hero（緊湊版：社會證明＋風險反轉直接進場，預約元件就在下一屏）-->
+  <section class="bg-brand-navy text-white pt-16 pb-12 px-6 text-center">
     <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">新莊 × 板橋｜YoYo 驗光師</p>
-    <h1 class="font-serif text-white mb-5" style="font-size:clamp(30px,5vw,54px);font-weight:300">預約視覺評估</h1>
-    <p class="text-white/70 max-w-xl mx-auto" style="font-size:17px;line-height:1.85">
-      不是快速配鏡出貨。預約後，YoYo 驗光師會花 45–60 分鐘真正了解你的視覺狀況——從生活習慣到光學參數，每個細節都有意義。
+    <h1 class="font-serif text-white mb-4" style="font-size:clamp(30px,5vw,54px);font-weight:300">查看可約時段</h1>
+    <p class="text-white/70 max-w-xl mx-auto mb-6" style="font-size:17px;line-height:1.85">
+      不是快速配鏡出貨。我們會保留一段完整屬於你的時間，由驗光人員真正了解你的視覺狀況——想先了解流程與門市資訊，往下捲都有。
     </p>
+    <p class="text-white/90 mb-2" style="font-size:14.5px">
+      <span class="text-brand-gold">★</span> Google 5.0・222 則評價 <span class="text-white/40">｜新莊店真實顧客評分</span>
+    </p>
+    <p class="text-white/50" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
   </section>
 
-  <!-- 預約前先了解 -->
+  <!-- 線上預約（時段先行：進頁第一件事就是看到可約時段）-->
+  <section id="book" class="px-6 md:px-16 py-14" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">線上預約</span>
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">選擇你方便的時段</h2>
+        <p class="text-brand-ink-3" style="font-size:15px">即時查看可約時段，2 分鐘完成預約</p>
+      </div>
+      <div class="border border-brand-ink/10 bg-white shadow-sm text-center overflow-hidden">
+        <!-- 內嵌預約系統：iframe 內自帶捲動；高度給足讓月曆與時段一眼可見 -->
+        <iframe
+          src="https://vision-platform-five.vercel.app/booking?embed=1"
+          title="能見度視覺中心線上預約"
+          style="width:100%;height:min(920px,88vh);border:0;display:block"
+        ></iframe>
+        <p class="text-brand-ink-3 py-4 border-t border-brand-ink/10" style="font-size:13px">
+          預約成立後可隨時自助取消或改期・
+          <a href="https://vision-platform-five.vercel.app/booking" target="_blank" rel="noreferrer" class="underline underline-offset-2">用全螢幕開啟預約頁 ↗</a>
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto px-4 pt-8">
+        {[
+          { icon: '🗓', text: '即時查看兩間門市可約時段' },
+          { icon: '⏱', text: '免註冊免下載，2 分鐘完成' },
+          { icon: '💬', text: 'LINE 綁定可收預約確認與提醒' },
+        ].map(f => (
+          <div class="flex flex-col items-center gap-2">
+            <span style="font-size:26px">{f.icon}</span>
+            <p class="text-brand-ink-3" style="font-size:13.5px;line-height:1.6">{f.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-brand-ink-3 mb-5" style="font-size:15px">也可以透過 LINE OA 預約或詢問</p>
+        <a href="https://lin.ee/SoWj9Ft"
+          class="inline-flex items-center gap-2 font-sans font-bold px-8 py-4 transition-colors text-white"
+          style="background:#06C755;font-size:15px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.630 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINE OA 聯絡我們
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 預約前先了解（想深入了解的人往下讀；資訊卡移到預約元件之後）-->
   <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
@@ -52,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
             num: '03',
             title: '當天流程是什麼？',
             items: [
-              '問診：了解視覺困擾與生活習慣',
+              '視覺需求諮詢：了解視覺困擾與生活習慣',
               '儀器檢測：角膜地形圖、自動驗光',
               '主客觀驗光：確立精準處方',
               '雙眼視覺評估：排查頭暈根源',
@@ -109,51 +157,6 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-brand-ink-3 border-t border-brand-ink/10 pt-4" style="font-size:13px;line-height:1.7">
             捷運江子翠站步行約 5 分鐘<br />附近有公共停車場
           </p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 線上預約（能見度預約系統直接內嵌：2026-07-15 老闆指定，像掛號元件嵌在官網內，顧客不跳站）-->
-  <section id="book" class="px-6 md:px-16 py-20" style="background:#eee8da">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-10">
-        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">線上預約</span>
-        <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">選擇你方便的時段</h2>
-        <p class="text-brand-ink-3" style="font-size:15px">即時查看可約時段，2 分鐘完成預約</p>
-      </div>
-      <div class="border border-brand-ink/10 bg-white shadow-sm text-center overflow-hidden">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto px-8 pt-10 pb-8">
-          {[
-            { icon: '🗓', text: '即時查看兩間門市可約時段' },
-            { icon: '⏱', text: '免註冊免下載，2 分鐘完成' },
-            { icon: '💬', text: 'LINE 綁定可收預約確認與提醒' },
-          ].map(f => (
-            <div class="flex flex-col items-center gap-2">
-              <span style="font-size:26px">{f.icon}</span>
-              <p class="text-brand-ink-3" style="font-size:13.5px;line-height:1.6">{f.text}</p>
-            </div>
-          ))}
-        </div>
-        <!-- 內嵌預約系統：iframe 內自帶捲動；高度給足讓月曆與時段一眼可見 -->
-        <iframe
-          src="https://vision-platform-five.vercel.app/booking?embed=1"
-          title="能見度視覺中心線上預約"
-          loading="lazy"
-          style="width:100%;height:min(920px,88vh);border:0;display:block"
-        ></iframe>
-        <p class="text-brand-ink-3 py-4 border-t border-brand-ink/10" style="font-size:13px">
-          預約成立後可隨時自助取消或改期・
-          <a href="https://vision-platform-five.vercel.app/booking" target="_blank" rel="noreferrer" class="underline underline-offset-2">用全螢幕開啟預約頁 ↗</a>
-        </p>
-      </div>
-      <div class="mt-8 text-center">
-        <p class="text-brand-ink-3 mb-5" style="font-size:15px">也可以透過 LINE OA 預約或詢問</p>
-        <a href="https://lin.ee/SoWj9Ft"
-          class="inline-flex items-center gap-2 font-sans font-bold px-8 py-4 transition-colors text-white"
-          style="background:#06C755;font-size:15px">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.630 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          LINE OA 聯絡我們
         </a>
       </div>
     </div>

@@ -412,7 +412,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
         <a href={isEn ? '/en/booking' : '/booking'}
           class="hidden lg:inline-block font-sans border border-brand-ink text-brand-ink px-5 py-2 hover:bg-brand-ink hover:text-brand-paper transition-colors duration-300"
           style="letter-spacing:0.1em;font-size:13px">
-          {isEn ? 'Book Now' : '立即預約'}
+          {isEn ? 'Book Now' : '查看可約時段'}
         </a>
         <!-- 漢堡按鈕（lg 以下顯示） -->
         <button id="menu-btn" type="button" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
@@ -448,7 +448,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/portfolio" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">選配作品</a></li>
           <li><a href="/blog" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">視覺小知識</a></li>
           <li><a href="/faq" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">常見問題</a></li>
-          <li><a href="/booking" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">立即預約 →</a></li>
+          <li><a href="/booking" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">查看可約時段 →</a></li>
         </>)}
       </ul>
     </div>
@@ -680,5 +680,22 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
 
     });
   </script>
+  <!-- 手機黏底雙鍵列（預約頁本身不顯示；48px+ 拇指可及；lg 以上隱藏） -->
+  {!Astro.url.pathname.startsWith('/booking') && !Astro.url.pathname.startsWith('/en/booking') && (<>
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex" style="box-shadow:0 -2px 12px rgba(0,0,0,.12);padding-bottom:env(safe-area-inset-bottom);background:#fff">
+      <a href="https://lin.ee/SoWj9Ft"
+        class="flex-1 flex items-center justify-center gap-2 font-sans font-bold text-white"
+        style="background:#06C755;font-size:15px;min-height:52px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE 預約
+      </a>
+      <a href="/booking"
+        class="flex-1 flex items-center justify-center font-sans font-bold text-brand-paper"
+        style="background:#1a2f4e;font-size:15px;min-height:52px">
+        查看可約時段
+      </a>
+    </div>
+    <div class="lg:hidden" style="height:52px"></div>
+  </>)}
 </body>
 </html>
