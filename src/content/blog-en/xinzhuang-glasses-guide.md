@@ -1,8 +1,8 @@
 ---
-title: "Where to Get an Eye Exam and Glasses in Xinzhuang, New Taipei: A Guide for English Speakers"
+title: "Where to Get a Vision Exam and Glasses in Xinzhuang, New Taipei: A Guide for English Speakers"
 date: 2026-06-25
 tag: "Local Guide"
-excerpt: "Living in Xinzhuang and need glasses or an eye exam? Here's how Taiwan's optometry clinics differ from regular glasses shops, what to ask before you buy, and where to find English-friendly service near Fuda MRT Station."
+excerpt: "Living in Xinzhuang and need glasses or a vision exam? Here's how Taiwan's optometry clinics differ from regular glasses shops, what to ask before you buy, and where to find English-friendly service near Fuda MRT Station."
 image: ""
 youtube: ""
 instagram: ""
@@ -10,7 +10,7 @@ instagram: ""
 
 ## Getting Glasses in Xinzhuang as an English Speaker
 
-If you live in Xinzhuang (New Taipei City) — maybe you're teaching, studying at Fu Jen Catholic University, or working nearby — sooner or later you'll need an eye exam or a new pair of glasses. The good news: Taiwan's optical scene is excellent and far more affordable than most Western countries. The tricky part: knowing which shops offer proper clinical eye exams, and finding one where you can communicate comfortably in English.
+If you live in Xinzhuang (New Taipei City) — maybe you're teaching, studying at Fu Jen Catholic University, or working nearby — sooner or later you'll need a vision exam or a new pair of glasses. The good news: Taiwan's optical scene is excellent and far more affordable than most Western countries. The tricky part: knowing which shops offer proper clinical vision exams, and finding one where you can communicate comfortably in English.
 
 There are plenty of optical shops along Zhongzheng Road in Xinzhuang, but more choice doesn't make choosing easier. This isn't a sponsored ranking — it's a guide to **the questions you should ask before getting glasses in Taiwan**.
 
@@ -23,7 +23,7 @@ Something many newcomers to Taiwan don't realize: a licensed "optometry clinic" 
 | | Optometry clinic | Regular glasses shop |
 |--|------|----------|
 | Legal basis | Optometrists Act | Standard business registration |
-| Performing eye exams | Licensed optometrists required | No qualification requirement |
+| Performing vision exams | Licensed optometrists required | No qualification requirement |
 | Issuing refraction reports | Legal | Not legal |
 | Binocular vision assessment | Available | Not available |
 | National Health Insurance contracts | Some clinics | No |
@@ -35,10 +35,10 @@ Something many newcomers to Taiwan don't realize: a licensed "optometry clinic" 
 ## 5 Questions to Ask Any Glasses Shop in Xinzhuang
 
 **1. Is the optometrist licensed?**
-Taiwan's Ministry of Health and Welfare maintains a public registry of licensed medical personnel, including optometrists. Only licensed optometrists can legally perform a full eye examination.
+Taiwan's Ministry of Health and Welfare maintains a public registry of licensed medical personnel, including optometrists. Only licensed optometrists can legally perform a full vision examination.
 
 **2. How long does the exam take?**
-A complete clinical eye exam takes at least 45 minutes. A 10–15 minute "quick refraction" only confirms your basic prescription — it can't assess binocular vision, accommodation, or phorias, which are the key factors behind visual comfort.
+A complete clinical vision exam takes at least 45 minutes. A 10–15 minute "quick refraction" only confirms your basic prescription — it can't assess binocular vision, accommodation, or phorias, which are the key factors behind visual comfort.
 
 **3. Which lens brands do they carry?**
 ZEISS, HOYA, Essilor, and Nikon are the mainstream premium lens brands in Taiwan. Confirm the shop is an authorized dealer rather than selling counterfeits or grey-market imports.
@@ -67,7 +67,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 
 ### What we offer
 
-- Full 45–60 minute clinical eye exams (including binocular vision assessment)
+- Full 45–60 minute clinical vision exams (including binocular vision assessment)
 - Certified ZEISS partner (Individual² custom lenses, progressive lens series)
 - HOYA lens dealer
 - Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, agnès b., and MINAMOTO
@@ -79,7 +79,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 
 ## FAQ
 
-**Q: Where can I get an eye exam in Xinzhuang as an English speaker?**
+**Q: Where can I get a vision exam in Xinzhuang as an English speaker?**
 
 Beyond Visual Optometry is located at No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City, a 5-minute walk from Fuda MRT Station. It's run by Optometrist YoYo (licensed optometrist) and holds a 5.0 Google rating with 221 reviews.
 

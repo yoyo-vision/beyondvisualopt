@@ -28,7 +28,7 @@ Factors that influence your ADD include:
 - **Your existing myopia / hyperopia**: highly myopic people tend to notice presbyopia later, but the correction is more complex
 - **Work environment**: dentists, jewelers, and typical office workers all use their eyes at completely different distances
 
-> This is why fitting presbyopia lenses is more complex than a standard eye exam: it isn't about "looking up a number in a table and adding power," but about designing an optical solution around the way you actually move through your day.
+> This is why fitting presbyopia lenses is more complex than a standard vision exam: it isn't about "looking up a number in a table and adding power," but about designing an optical solution around the way you actually move through your day.
 
 ---
 
@@ -148,7 +148,7 @@ Yes, but with limitations. Presbyopia laser procedures (such as PresbyLASIK) use
 
 **Q: Does presbyopia keep getting worse?**
 
-Yes. It typically increases by about 0.50–1.00D every 3–5 years starting around age 40, then stabilizes after 60. That's why many people who get progressive lenses in their 40s need to have their addition power re-evaluated a few years later. Regular eye exams are the key to maintaining visual quality.
+Yes. It typically increases by about 0.50–1.00D every 3–5 years starting around age 40, then stabilizes after 60. That's why many people who get progressive lenses in their 40s need to have their addition power re-evaluated a few years later. Regular vision exams are the key to maintaining visual quality.
 
 **Q: Where can I get a presbyopia lens consultation in Xinzhuang or Banqiao?**
 

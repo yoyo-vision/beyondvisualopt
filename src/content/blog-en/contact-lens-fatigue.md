@@ -12,7 +12,7 @@ Do any of these symptoms sound familiar?
 - Dry eyes all day, getting noticeably worse in the afternoon
 - Vision blurs easily, with occasional stinging
 - By evening you just want to take your lenses out, but you don't want to switch back to glasses
-- Your vision feels worse than it used to, even though you haven't had an eye exam recently
+- Your vision feels worse than it used to, even though you haven't had a vision exam recently
 
 If you wear soft contact lenses every day and have been living with this kind of discomfort long-term, **the problem may not be your eyes. It may be a mismatch between your lens choice, your wearing habits, and how you actually use your eyes.**
 
@@ -87,7 +87,7 @@ Try to keep daily wear under 10–12 hours. Switch to glasses once you get home 
 **3. Use preservative-free artificial tears**
 While wearing lenses, you can use preservative-free artificial tears (such as hyaluronic acid formulas) to supplement the tear film and reduce friction. Note: ordinary eye drops that contain preservatives are not suitable for use while wearing lenses.
 
-**4. Get regular eye exams to confirm your prescription**
+**4. Get regular vision exams to confirm your prescription**
 Contact lens power differs from spectacle power (it requires a vertex distance correction), and your prescription can change over time. We recommend an annual exam to confirm your contact lens prescription is still appropriate.
 
 **5. Regular ocular surface health assessments**

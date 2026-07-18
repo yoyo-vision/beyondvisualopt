@@ -77,7 +77,7 @@ At Beyond Visual Optometry we sell both the Zeiss standard lines and the Individ
 
 Beyond Visual Optometry uses the Zeiss i.Profiler® for full personalized measurement, including:
 
-1. A complete 45–60 minute clinical eye exam
+1. A complete 45–60 minute clinical vision exam
 2. i.Profiler® scan (wavefront aberration analysis + personalized refraction data)
 3. Physical measurement of vertex distance, pantoscopic tilt, and face form angle (taken while you wear your chosen frame)
 4. Data sent to the Zeiss factory in Germany for custom manufacturing

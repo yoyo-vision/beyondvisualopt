@@ -75,8 +75,8 @@ No. The axis describes "direction," not "severity." How much astigmatism you hav
 
 **Q: How can I tell if I have myopia, astigmatism, or both?**
 
-It's hard to tell just from how things feel, since blur and ghosting can feel similar. Your actual refractive status needs to be determined through a complete eye exam, measured by a licensed optometrist and read off the SPH, CYL, and AXIS values on your prescription.
+It's hard to tell just from how things feel, since blur and ghosting can feel similar. Your actual refractive status needs to be determined through a complete vision exam, measured by a licensed optometrist and read off the SPH, CYL, and AXIS values on your prescription.
 
 ---
 
-Understanding the difference between myopia and astigmatism is the foundation for understanding your own eyes. If your visual situation is more complex and you'd like to know how a complete eye exam breaks down these refractive values, feel free to bring your prescription to our Xinzhuang or Banqiao location for a closer look.
+Understanding the difference between myopia and astigmatism is the foundation for understanding your own eyes. If your visual situation is more complex and you'd like to know how a complete vision exam breaks down these refractive values, feel free to bring your prescription to our Xinzhuang or Banqiao location for a closer look.

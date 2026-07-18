@@ -4,7 +4,7 @@ date: "2026-07-15"
 tag: "Optometry"
 excerpt: "We have two eyes, yet we see one single world with depth and dimension — that's binocular vision. Optometrists at Beyond Visual Optometry in Xinzhuang and Banqiao break down, in plain language, how your two eyes coordinate and the three levels behind it."
 seoTitle: "What Is Binocular Vision? How Do Your Two Eyes Work Together? | Beyond Visual Optometry, Xinzhuang & Banqiao"
-seoDescription: "Binocular vision is the mechanism by which your brain fuses the images from your left and right eyes into a single, three-dimensional picture, made up of three levels: simultaneous perception, fusion, and stereopsis. This article explains the principle behind two-eye coordination in plain language, and why a full eye exam should assess binocular vision function. For eye exams in Xinzhuang and progressive lens fittings in Banqiao, come see us at Beyond Visual Optometry."
+seoDescription: "Binocular vision is the mechanism by which your brain fuses the images from your left and right eyes into a single, three-dimensional picture, made up of three levels: simultaneous perception, fusion, and stereopsis. This article explains the principle behind two-eye coordination in plain language, and why a full vision exam should assess binocular vision function. For vision exams in Xinzhuang and progressive lens fittings in Banqiao, come see us at Beyond Visual Optometry."
 keywords: "what is binocular vision, binocular vision function, stereopsis, fusion, depth perception, convergence, two-eye coordination, Xinzhuang optometry, Banqiao glasses, Beyond Visual Optometry"
 ---
 
@@ -54,7 +54,7 @@ You're never consciously aware of any of this in daily life, because it's all to
 
 Here's a concept that's often overlooked: **even if your left and right eyes each see clearly on their own, that doesn't mean using them "together" is effortless.**
 
-That's because binocular vision is specifically about how the two eyes perform "together." Eye alignment, convergence, fusion — these can only be measured when both eyes are working at the same time. This is exactly why a complete eye exam assesses binocular vision function, not just each eye's individual prescription. A clear single eye tells you the "parts" are fine; binocular coordination tells you whether those parts can actually do the job together.
+That's because binocular vision is specifically about how the two eyes perform "together." Eye alignment, convergence, fusion — these can only be measured when both eyes are working at the same time. This is exactly why a complete vision exam assesses binocular vision function, not just each eye's individual prescription. A clear single eye tells you the "parts" are fine; binocular coordination tells you whether those parts can actually do the job together.
 
 ---
 
@@ -66,8 +66,8 @@ Not necessarily. Seeing clearly with one eye tests "that eye's individual refrac
 **Q2: Where does stereopsis (that sense of "3D") come from?**
 It comes from the slight difference in position between your two eyes. Because the angle at which your left and right eyes see the same object differs just a little, your brain compares that difference and calculates distance and depth from it. This is also why 3D movies use two separate images, one sent to each eye.
 
-**Q3: Does a standard eye exam test binocular vision function?**
-A complete eye exam typically assesses two-eye coordination — things like eye alignment and fusion — in addition to each eye's individual prescription. If the assessment suggests something that may require a medical diagnosis, we'll recommend a referral to an ophthalmologist for further evaluation.
+**Q3: Does a standard vision exam test binocular vision function?**
+A complete vision exam typically assesses two-eye coordination — things like eye alignment and fusion — in addition to each eye's individual prescription. If the assessment suggests something that may require a medical diagnosis, we'll recommend a referral to an ophthalmologist for further evaluation.
 
 **Q4: Why do children need their binocular vision checked?**
 Children's binocular vision is still developing, and how well the two eyes coordinate is part of that developmental process. This kind of assessment and interpretation falls within professional scope, and if something suggests the need for medical evaluation, it should be diagnosed by an ophthalmologist.

@@ -10,7 +10,7 @@ instagram: ""
 
 ## Which Distance Is "Vertex Distance," Exactly?
 
-**Vertex distance refers to the horizontal distance between the back surface of the lens and the front surface of the cornea.** In plain terms, it's that small gap between the lens and your eyeball. Standard eye exams typically set the reference vertex distance at **around 12 millimeters (mm)**.
+**Vertex distance refers to the horizontal distance between the back surface of the lens and the front surface of the cornea.** In plain terms, it's that small gap between the lens and your eyeball. Standard vision exams typically set the reference vertex distance at **around 12 millimeters (mm)**.
 
 That sounds like a trivial fraction of a centimeter—hardly worth worrying about. But in optics, this small distance is exactly what shapes the prescription your eye "actually experiences," and the higher your prescription, the more pronounced the effect becomes.
 
@@ -63,7 +63,7 @@ Generally, not much. Within ±4.00D, the difference caused by vertex distance is
 
 **Q: Do I need to measure vertex distance myself?**
 
-No, and it's not recommended that you do. It's one of the measurements taken during the eye exam process, handled by a licensed optometrist alongside your frame selection. What you should do is wear the frame in its usual position so the measurement reflects how you actually wear your glasses.
+No, and it's not recommended that you do. It's one of the measurements taken during the vision exam process, handled by a licensed optometrist alongside your frame selection. What you should do is wear the frame in its usual position so the measurement reflects how you actually wear your glasses.
 
 ---
 

@@ -87,4 +87,4 @@ Not always exactly the same. The refraction measures your eye's refractive statu
 
 ---
 
-Understanding your prescription power is the starting point for understanding your own eyes. If you'd like to go deeper into what a complete eye exam actually measures, and how that string of numbers on your prescription becomes a genuinely well-fitted pair of glasses, feel free to bring your prescription slip in and chat with us — both our Xinzhuang and Banqiao stores welcome the conversation.
+Understanding your prescription power is the starting point for understanding your own eyes. If you'd like to go deeper into what a complete vision exam actually measures, and how that string of numbers on your prescription becomes a genuinely well-fitted pair of glasses, feel free to bring your prescription slip in and chat with us — both our Xinzhuang and Banqiao stores welcome the conversation.

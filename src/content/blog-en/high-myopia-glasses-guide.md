@@ -14,7 +14,7 @@ If your prescription is stronger than -6.00D, every new pair of glasses can feel
 
 The reason is the **magnification of optical errors at high prescriptions**. The same measurement error that's barely noticeable at -2.00D can cause obvious visual distortion, dizziness, or wearing discomfort at -8.00D.
 
-This article covers the most commonly overlooked factors in fitting glasses for high myopia, and the questions you should ask during your eye exam.
+This article covers the most commonly overlooked factors in fitting glasses for high myopia, and the questions you should ask during your vision exam.
 
 ---
 

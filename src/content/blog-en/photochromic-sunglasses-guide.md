@@ -103,7 +103,7 @@ They solve different problems, so there's no absolute answer. Photochromic lense
 
 **Q: Can someone with myopia get prescription sunglasses?**
 
-Yes. Myopia, hyperopia, and astigmatism can all be built into a prescription sun solution—all four options above (photochromic, polarized, tinted, and clip-on) can be made to your prescription. One thing to keep in mind: with high prescriptions combined with large or wraparound frames, lens edge thickness, distortion, and peripheral vision need to be evaluated and adjusted by a licensed optometrist, so we recommend a complete eye exam beforehand to confirm your prescription and frame are a good match.
+Yes. Myopia, hyperopia, and astigmatism can all be built into a prescription sun solution—all four options above (photochromic, polarized, tinted, and clip-on) can be made to your prescription. One thing to keep in mind: with high prescriptions combined with large or wraparound frames, lens edge thickness, distortion, and peripheral vision need to be evaluated and adjusted by a licensed optometrist, so we recommend a complete vision exam beforehand to confirm your prescription and frame are a good match.
 
 ---
 

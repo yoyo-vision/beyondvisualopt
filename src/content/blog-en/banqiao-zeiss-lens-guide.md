@@ -35,7 +35,7 @@ Common price points in the Banqiao market (in New Taiwan Dollars):
 - **ZEISS digital comfort / functional single-vision lenses:** about NT$6,000–12,000
 - **ZEISS progressive lenses:** about NT$12,000–30,000 or more (depending on personalization level)
 
-The core driver of price is the **optical design and personalized parameters**, not the raw material cost. Do a full eye exam first, confirm what you actually need, and then choose a tier — that way you don't overspend. "We don't chase the most expensive option, only the one that actually fits you" has been Beyond Visual Optometry's principle for 30 years.
+The core driver of price is the **optical design and personalized parameters**, not the raw material cost. Do a full vision exam first, confirm what you actually need, and then choose a tier — that way you don't overspend. "We don't chase the most expensive option, only the one that actually fits you" has been Beyond Visual Optometry's principle for 30 years.
 
 ## Same ZEISS Lens, So Why Does the Result Differ From Store to Store?
 
@@ -45,7 +45,7 @@ The lens is identical — the difference is in **the fitting**:
 - Whether the personal parameters Individual² needs (wearing distance, pantoscopic tilt, head-turning habits) are actually measured
 - Fitting height and optical-center alignment — a 2mm difference is noticeable for high-prescription wearers
 
-ZEISS provides the optical ceiling; the fitting determines how much of it you actually get to use. Beyond Visual Optometry's full eye exam takes about 45–60 minutes, performed one-on-one by a licensed optometrist, with free follow-up adjustments after your fitting.
+ZEISS provides the optical ceiling; the fitting determines how much of it you actually get to use. Beyond Visual Optometry's full vision exam takes about 45–60 minutes, performed one-on-one by a licensed optometrist, with free follow-up adjustments after your fitting.
 
 ---
 
@@ -76,4 +76,4 @@ Not necessarily. HOYA's premium series is very competitive on value, and the dif
 
 **Q: Do I need an appointment to get ZEISS lenses in Banqiao?**
 
-We recommend booking ahead, since a full eye exam takes about 45–60 minutes. You can [book online](/en/booking) or call +886-2-2253-1246.
+We recommend booking ahead, since a full vision exam takes about 45–60 minutes. You can [book online](/en/booking) or call +886-2-2253-1246.

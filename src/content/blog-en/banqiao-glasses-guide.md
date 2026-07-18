@@ -63,7 +63,7 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 
 ### What we offer
 
-- Full clinical eye exams (binocular vision assessment, accommodation testing)
+- Full clinical vision exams (binocular vision assessment, accommodation testing)
 - Certified ZEISS partner dealer
 - HOYA lens dealer
 - Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, and MINAMOTO
@@ -79,7 +79,7 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 
 Since opening in 1992, Beyond Visual Optometry has seen far too many customers pay a much higher price for "cheap glasses" — refitting, dizziness, worsening vision.
 
-Our position is clear: **we don't chase the most expensive option, only the one that actually fits you.** Every pair we fit is recommended after a full eye exam, based on your visual needs, lifestyle, and face shape — never just pulled off a shelf to fill an order.
+Our position is clear: **we don't chase the most expensive option, only the one that actually fits you.** Every pair we fit is recommended after a full vision exam, based on your visual needs, lifestyle, and face shape — never just pulled off a shelf to fill an order.
 
 ---
 

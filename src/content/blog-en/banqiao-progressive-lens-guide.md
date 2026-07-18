@@ -75,7 +75,7 @@ Beyond Visual Optometry is located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Ban
 
 **Q: How much do progressive lenses cost?**
 
-It varies widely by brand and level of personalization, with common price ranges around NT$12,000–30,000 or more (ZEISS Individual² custom lenses are the premium option). We recommend a full eye exam first to confirm your prescription combination and visual needs before choosing a tier — more expensive doesn't automatically mean more suitable for you.
+It varies widely by brand and level of personalization, with common price ranges around NT$12,000–30,000 or more (ZEISS Individual² custom lenses are the premium option). We recommend a full vision exam first to confirm your prescription combination and visual needs before choosing a tier — more expensive doesn't automatically mean more suitable for you.
 
 **Q: Do I have to get progressive lenses for presbyopia?**
 

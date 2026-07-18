@@ -1,28 +1,28 @@
 ---
-title: "5 Common Eye Exam Mistakes When Getting Glasses | A Firsthand Look from a Xinzhuang & Banqiao Optometrist"
+title: "5 Common Vision Exam Mistakes When Getting Glasses | A Firsthand Look from a Xinzhuang & Banqiao Optometrist"
 date: "2026-06-24"
 tag: "Optometry"
-excerpt: "\"Isn't an eye exam just picking which number looks clearer?\" That one sentence sums up the most common problem in Taiwan's eyewear market. From day-to-day clinical practice, Optometrist YoYo has pulled together the 5 most common eye exam mistakes—because plenty of people have bought several pairs of glasses without their real problem ever being solved."
-seoTitle: "Common Eye Exam Mistakes When Getting Glasses | Xinzhuang & Banqiao Optometrist Explains Why Your Glasses Still Feel Off"
-seoDescription: "Why do new glasses cause dizziness, why is your prescription never quite right, and why do progressive lenses never feel comfortable? Optometrist YoYo at Beyond Visual Optometry in Xinzhuang and Banqiao breaks down the 5 most common eye exam mistakes and what a proper fitting process should look like."
-keywords: "eye exam mistakes, glasses dizziness causes, inaccurate prescription, Xinzhuang optometrist, Banqiao glasses, Beyond Visual Optometry, Optometrist YoYo, binocular vision, uncomfortable glasses causes"
+excerpt: "\"Isn't a vision exam just picking which number looks clearer?\" That one sentence sums up the most common problem in Taiwan's eyewear market. From day-to-day clinical practice, Optometrist YoYo has pulled together the 5 most common vision exam mistakes—because plenty of people have bought several pairs of glasses without their real problem ever being solved."
+seoTitle: "Common Vision Exam Mistakes When Getting Glasses | Xinzhuang & Banqiao Optometrist Explains Why Your Glasses Still Feel Off"
+seoDescription: "Why do new glasses cause dizziness, why is your prescription never quite right, and why do progressive lenses never feel comfortable? Optometrist YoYo at Beyond Visual Optometry in Xinzhuang and Banqiao breaks down the 5 most common vision exam mistakes and what a proper fitting process should look like."
+keywords: "vision exam mistakes, glasses dizziness causes, inaccurate prescription, Xinzhuang optometrist, Banqiao glasses, Beyond Visual Optometry, Optometrist YoYo, binocular vision, uncomfortable glasses causes"
 ---
 
-## "Isn't an eye exam just picking which number looks clearer?"
+## "Isn't a vision exam just picking which number looks clearer?"
 
-That's how a lot of people picture an eye exam. Sit down, read the chart, choose whichever option looks sharper, wrap it up in ten minutes, and head home to order your glasses.
+That's how a lot of people picture a vision exam. Sit down, read the chart, choose whichever option looks sharper, wrap it up in ten minutes, and head home to order your glasses.
 
 That kind of process isn't completely useless—but it leaves far too much out.
 
 After years in optometry, Optometrist YoYo has seen countless "I got new glasses and they still don't feel right" cases—and more than half of them come down to a key step being skipped during the exam. Not on purpose, but because most people have no idea that step is even supposed to exist.
 
-Here are the 5 most common eye exam mistakes.
+Here are the 5 most common vision exam mistakes.
 
 ---
 
 ## Mistake 1: No assessment of how the two eyes work together
 
-In a traditional eye exam, one eye is usually measured, then the other, and finally the two are checked together—"Is this clear?" That process measures the prescription for each eye on its own, but your eyes work as a pair.
+In a traditional vision exam, one eye is usually measured, then the other, and finally the two are checked together—"Is this clear?" That process measures the prescription for each eye on its own, but your eyes work as a pair.
 
 **Binocular vision** involves how well the two eyes coordinate, how synchronized their focusing is, and how stable the eye alignment is (whether there's a latent or exotropic deviation). Ignore these, and even if the prescription for each eye is correct on its own, the finished glasses can still leave you feeling that something is "off"—heaviness in the head, quick fatigue.
 
@@ -89,7 +89,7 @@ If these checks are skipped and a problem shows up after you get home, it become
 
 All five of these mistakes share one root cause: there wasn't enough time for the exam.
 
-A ten-minute exam can't accomplish any of the complete assessments above. A full clinical eye exam takes 45–60 minutes—not because the process is needlessly elaborate, but because every step is there for a reason.
+A ten-minute exam can't accomplish any of the complete assessments above. A full clinical vision exam takes 45–60 minutes—not because the process is needlessly elaborate, but because every step is there for a reason.
 
 If your glasses have always felt "somehow just a bit off" in the past, it's very likely not that your eyes are unusually hard to fit—it's that one of the assessment steps wasn't done.
 

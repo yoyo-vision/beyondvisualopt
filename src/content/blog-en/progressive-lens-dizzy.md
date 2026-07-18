@@ -55,7 +55,7 @@ Auto-refractor results are objective starting values. They need to be confirmed 
 
 The addition power is designed around **your habitual near working distance**. If you normally read at 40cm but your lenses were calculated for the standard 33cm, the near zone simply won't match how you actually use your eyes.
 
-> **What to do:** Book a full eye exam (at least 45 minutes) that includes subjective confirmation (red-green test), binocular balance testing, and a check of your actual near working distance. Don't settle for a "quick 10-minute recheck."
+> **What to do:** Book a full vision exam (at least 45 minutes) that includes subjective confirmation (red-green test), binocular balance testing, and a check of your actual near working distance. Don't settle for a "quick 10-minute recheck."
 
 ---
 

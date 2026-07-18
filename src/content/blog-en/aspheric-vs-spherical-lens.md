@@ -28,7 +28,7 @@ The simple way to remember it: spherical is "one curve, start to finish"; aspher
 
 **Third, the "eye-size" effect is milder.** A strong prescription tends to make your eyes look smaller or larger to other people — smaller with myopia, larger with hyperopia — and a spherical lens's deeper curve exaggerates this. A flatter aspheric lens moderates that effect.
 
-One thing worth flagging: these are all **optical differences that come from the lens's geometric design** — they're about the physical phenomenon of image distortion, not about the vision correction itself. Whether your prescription is accurately fitted is a matter of the eye exam; that's a separate question from spherical vs. aspheric.
+One thing worth flagging: these are all **optical differences that come from the lens's geometric design** — they're about the physical phenomenon of image distortion, not about the vision correction itself. Whether your prescription is accurately fitted is a matter of the vision exam; that's a separate question from spherical vs. aspheric.
 
 ## Spherical vs. Aspheric vs. Double-Aspheric: A Comparison
 
