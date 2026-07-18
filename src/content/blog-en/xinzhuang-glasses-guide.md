@@ -35,7 +35,7 @@ Something many newcomers to Taiwan don't realize: a licensed "optometry clinic" 
 ## 5 Questions to Ask Any Glasses Shop in Xinzhuang
 
 **1. Is the optometrist licensed?**
-Taiwan's Ministry of Health and Welfare maintains a public registry of licensed medical personnel, including optometrists. Only licensed optometrists can legally perform a full vision examination.
+Taiwan's Ministry of Health and Welfare maintains a public registry of licensed medical personnel, including optometrists. A full vision examination must be performed by a licensed optometrist — or by a physician.
 
 **2. How long does the exam take?**
 A complete clinical vision exam takes at least 45 minutes. A 10–15 minute "quick refraction" only confirms your basic prescription — it can't assess binocular vision, accommodation, or phorias, which are the key factors behind visual comfort.
