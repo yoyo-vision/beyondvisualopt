@@ -241,6 +241,21 @@ const schema = {
               + '<div class="flex gap-0.5 mb-3">' + stars(r.rating) + '</div>'
               + '<p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">「' + t + '」</p></div>';
           }).join('');
+          // Review 結構化資料（GEO）：用頁面實際顯示、已過合規過濾的真實 Google 評論注入 JSON-LD，不捏造
+          try {
+            var reviewGraph = combined.map(function (r) {
+              var storeId = r.store === '板橋店' ? 'https://beyondvisualopt.com/#banqiao' : 'https://beyondvisualopt.com/#xinzhuang';
+              var storeName = r.store === '板橋店' ? '能見度眼鏡行-板橋店｜能見度視覺中心｜能見度驗光所' : '能見度眼鏡行-新莊店｜能見度視覺中心｜比泱驗光所';
+              var maskedAuthor = r.author ? r.author.charAt(0) + (r.author.length > 1 ? '**' : '') : '匿名';
+              return { '@type': 'Review', 'itemReviewed': { '@type': 'Optician', '@id': storeId, 'name': storeName }, 'author': { '@type': 'Person', 'name': maskedAuthor }, 'reviewRating': { '@type': 'Rating', 'ratingValue': String(r.rating), 'bestRating': '5', 'worstRating': '1' }, 'reviewBody': r.text, 'publisher': { '@type': 'Organization', 'name': 'Google' } };
+            });
+            if (reviewGraph.length) {
+              var reviewLd = document.createElement('script');
+              reviewLd.type = 'application/ld+json';
+              reviewLd.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': reviewGraph });
+              document.head.appendChild(reviewLd);
+            }
+          } catch (e) { /* 注入失敗不影響頁面 */ }
         }).catch(function () { grid.parentNode.parentNode.style.display = 'none'; });
       }
       if ('IntersectionObserver' in window) {

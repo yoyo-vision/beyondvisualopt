@@ -40,6 +40,8 @@
 - 新北配眼鏡完整指南（驗光所 vs 眼鏡行）：https://beyondvisualopt.com/guide/choose-optician/
 - 鏡框選購完整指南（臉型/材質/尺寸配適）：https://beyondvisualopt.com/guide/frames/
 - 視光小百科（度數/瞳距/頂點距離/折射率/鍍膜/藍光/偏光/變色名詞解釋）：https://beyondvisualopt.com/guide/optical-basics/
+- 不等像完整指南（兩眼度數差大/影像大小不一/久讀頭暈/立體感差/放大率與基弧中心厚度頂點距離）：https://beyondvisualopt.com/guide/aniseikonia/
+- RGP 硬式隱形眼鏡完整指南（硬式透氧/高度散光/與角膜塑形 OK 鏡的差別/驗配流程/驗光人員法第 12 條）：https://beyondvisualopt.com/guide/rgp-contact-lens/
 - 英文文章（English articles）：https://beyondvisualopt.com/en/blog/
 
 ---

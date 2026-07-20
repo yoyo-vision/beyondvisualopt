@@ -40,6 +40,8 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
           { href: '/guide/choose-optician/', tag: '在地選購', title: '新北配眼鏡完整指南' },
           { href: '/guide/frames/', tag: '鏡框選購', title: '鏡框選購完整指南' },
           { href: '/guide/optical-basics/', tag: '視光小百科', title: '視光小百科' },
+          { href: '/guide/aniseikonia/', tag: '雙眼視覺', title: '不等像完整指南' },
+          { href: '/guide/rgp-contact-lens/', tag: '硬式隱形眼鏡', title: 'RGP 硬式隱形眼鏡完整指南' },
         ].map(g => (
           <a href={g.href} class="bg-white border border-brand-gold/30 rounded-2xl px-6 py-5 hover:border-brand-gold transition-colors group">
             <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase block mb-2" style="font-size:10px;letter-spacing:0.16em">{g.tag}</span>
