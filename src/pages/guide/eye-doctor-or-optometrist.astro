@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// 眼科 vs 驗光所 症狀分流指南：承接 GBP「眼科」搜尋流量（月千次級）的誠實分流頁
+// 合規基準：明確自稱驗光所非眼科；紅旗症狀一律「建議儘速至眼科就醫」；發現異常依法轉介。
+const faqs = [
+  {
+    q: '能見度是眼科診所嗎？',
+    a: '不是。我們是合法立案的驗光所（比泱驗光所・能見度驗光所），由持照驗光人員執行驗光與配鏡，不是醫療診所、沒有醫師駐診。眼睛疾病的診斷與治療請掛眼科；驗光配鏡過程中如發現視力異常無法有效補正，我們也會依法建議您轉診眼科醫師。',
+  },
+  {
+    q: '看不清楚，要先掛眼科還是先來驗光？',
+    a: '看狀況。如果是慢慢變得看不清楚、眼鏡度數好像不夠了，多半是屈光問題，可以先來驗光所做完整驗光；如果是突然看不清楚、單眼視力驟降、視野缺損，請直接掛眼科，這可能是需要醫療處置的狀況。不確定的話歡迎先透過 LINE 描述狀況，我們誠實告訴你該去哪。',
+  },
+  {
+    q: '眼睛紅、痛、有分泌物，可以來驗光所處理嗎？',
+    a: '不行，這類症狀請直接掛眼科。紅腫、疼痛、分泌物、畏光等屬於眼睛疾病的範疇，需要眼科醫師診斷治療，驗光所依法不能也不應處理。等症狀治療好之後要配眼鏡，再來找我們。',
+  },
+  {
+    q: '小朋友第一次檢查視力，去眼科還是驗光所？',
+    a: '未滿 6 歲的幼童請先至眼科，由醫師進行醫療評估；6 歲以上、15 歲以下學童的驗光，依法應於眼科醫師指導下進行，我們會在此前提下協同做視力評估與度數追蹤，若過程中發現異常，會建議轉由眼科醫師進一步檢查。兩邊是分工合作，不是二選一。',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+<Layout
+  title="眼睛不舒服，掛眼科還是找驗光所？症狀分流完整指南｜新莊板橋"
+  description="能見度是驗光所，不是眼科——這頁誠實告訴你差別在哪：哪些症狀請直接掛眼科（紅痛、視力驟降、飛蚊暴增）、哪些狀況驗光所就能處理（度數變化、眼鏡不適、配鏡評估）。新莊、板橋能見度視覺中心。"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">先說清楚：我們不是眼科</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        眼睛不舒服，<br />該掛眼科，還是找<span class="text-brand-gold">驗光所</span>？
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
+        很多人搜「眼科」找到我們。能見度是合法立案的驗光所，不是眼科診所——這一頁把兩者的分工誠實講清楚：有些狀況你該直接去掛號，有些狀況其實不用掛號，來驗光所就能處理。
+      </p>
+    </div>
+  </section>
+
+  <!-- 分流表 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">30 秒分流：你的狀況該去哪？</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white border-t-4 p-8" style="border-top-color:#b0413e">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">請直接掛眼科</h3>
+          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">這些屬於眼睛疾病範疇，需要醫師診斷治療，請儘速就醫</p>
+          <ul class="space-y-3">
+            {[
+              '眼睛紅、腫、痛、有分泌物、畏光',
+              '視力突然變差、單眼看不見、視野缺損',
+              '飛蚊突然大量增加、伴隨閃光',
+              '眼睛外傷、異物入眼',
+              '未滿 6 歲幼童的視力檢查（屬醫療評估，請由眼科醫師執行）',
+              '糖尿病、高血壓等慢性病的定期眼底追蹤',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">
+                <span class="flex-shrink-0 mt-1" style="color:#b0413e;font-size:12px">●</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white border-t-4 border-brand-gold p-8">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">來驗光所就能處理</h3>
+          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">屈光與配鏡問題不需要掛號，由持照驗光人員完整評估</p>
+          <ul class="space-y-3">
+            {[
+              '慢慢覺得看不清楚，想確認度數有沒有變',
+              '眼鏡戴了頭暈、疲勞、怎麼調都不舒服',
+              '想配新眼鏡、多焦點鏡片、自帶框配鏡片',
+              '長時間看螢幕眼睛痠，想做視覺評估',
+              '6 歲以上學童的度數追蹤與配鏡評估（15 歲以下依法於眼科醫師指導下進行）',
+              '一般隱形眼鏡配戴評估、鏡架調整維修',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">
+                <span class="text-brand-gold flex-shrink-0 mt-1" style="font-size:12px">●</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p class="text-brand-ink-3 mt-8 text-center max-w-2xl mx-auto" style="font-size:14px;line-height:1.8">
+        拿不準的狀況，歡迎先透過 LINE 描述，我們會誠實告訴你該去哪——<strong class="text-brand-ink">告訴你「不需要我們」，也是專業的一部分。</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- 分工說明 -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">眼科和驗光所，是分工不是競爭</h2>
+      </div>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
+        <p><strong>眼科醫師</strong>負責眼睛的「健康」：疾病診斷、治療、手術、醫療程序（如散瞳檢查）。<strong>驗光所</strong>負責眼睛的「視覺品質」：完整驗光、雙眼視覺評估、鏡片驗配與調整，由持照驗光人員依《驗光人員法》執行。</p>
+        <p>兩邊常常互相補位：眼科治療好眼疾後，配鏡的細活來驗光所做；我們在驗光過程中發現視力無法有效補正或疑似異常，也會依法建議你轉診眼科。你的眼睛同時需要這兩種專業，只是不同狀況找不同的門。</p>
+        <p>所以如果你是搜「眼科」找到這裡的——先對照上面的分流表。真的需要就醫，請別耽誤；如果其實是配鏡問題，那你來對地方了。</p>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/booking"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">查看可約時段</a>
+        <p class="text-brand-ink-3 mt-4" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">常見問題</h2>
+      </div>
+      <div class="space-y-6">
+        {faqs.map((faq, i) => (
+          <div class="border-t border-brand-ink/15 pt-6">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">Q{i + 1}. {faq.q}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-3 mt-10 text-center" style="font-size:13px;line-height:1.8">
+        延伸閱讀：<a href="/blog/optometry-vs-ophthalmology/" class="underline underline-offset-2">驗光所和眼科差在哪？</a>｜新莊店 02-2206-6700・板橋店 02-2253-1246
+      </p>
+    </div>
+  </section>
+
+</Layout>
