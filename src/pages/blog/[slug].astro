@@ -175,7 +175,7 @@ const videoSchema = post.data.youtube ? {
   "thumbnailUrl": `https://i.ytimg.com/vi/${post.data.youtube}/hqdefault.jpg`,
   "embedUrl": `https://www.youtube.com/embed/${post.data.youtube}`,
   "contentUrl": `https://www.youtube.com/shorts/${post.data.youtube}`,
-  "uploadDate": isoDate,
+  "uploadDate": `${isoDate}T09:00:00+08:00`,
   "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
 } : null;
 
