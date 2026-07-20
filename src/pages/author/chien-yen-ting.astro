@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Person schema：錢彥廷驗光師（僅列已確認事實；證書字號待補後再加 hasCredential）
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://beyondvisualopt.com/author/chien-yen-ting/#person",
+  "name": "錢彥廷",
+  "alternateName": ["錢彥廷 驗光師"],
+  "jobTitle": "驗光師",
+  "url": "https://beyondvisualopt.com/author/chien-yen-ting/",
+  "image": "https://beyondvisualopt.com/images/chien-yen-ting-optometrist.webp",
+  "description": "台灣執照驗光師，服務於能見度視覺中心 × 比泱驗光所（新莊）。自身為高度近視族群，專注於把度數驗準之外的配戴舒適度：雙眼視覺、配鏡高度與鏡架配適。",
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "驗光師",
+    "occupationalCategory": "醫事人員／驗光人員（依中華民國驗光人員法）"
+  },
+  "knowsAbout": [
+    "臨床驗光", "高度近視配鏡", "雙眼視覺評估", "多焦點鏡片驗配", "鏡架調整與配適"
+  ],
+  "worksFor": { "@id": "https://beyondvisualopt.com/#organization" },
+  "workLocation": [
+    { "@id": "https://beyondvisualopt.com/#xinzhuang" }
+  ]
+};
+---
+<Layout
+  title="錢彥廷 驗光師｜能見度視覺中心 × 比泱驗光所｜新莊驗光"
+  description="錢彥廷，台灣執照驗光師，服務於新莊能見度視覺中心 × 比泱驗光所。自己也是高度近視族群，最懂「看得到卻看得很累」——不是把度數驗準就好，而是讓你戴得舒服、看得輕鬆。"
+  schema={schema}
+>
+
+  <!-- Hero：作者介紹 -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-12 items-center md:items-start">
+        <img src="/images/chien-yen-ting-optometrist.webp" alt="錢彥廷 驗光師 能見度視覺中心 比泱驗光所 新莊驗光"
+          width="288" height="384" class="w-64 h-auto object-cover flex-shrink-0" loading="eager" />
+        <div>
+          <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">OPTOMETRIST</p>
+          <h1 class="font-serif text-white mb-2" style="font-size:clamp(30px,5vw,50px);font-weight:300">錢彥廷 驗光師</h1>
+          <p class="text-brand-gold mb-8" style="font-size:15px;letter-spacing:0.08em">能見度視覺中心 × 比泱驗光所（新莊）</p>
+          <div class="space-y-4 text-white/80" style="font-size:16.5px;line-height:1.9">
+            <p>我自己就是高度近視。從小換過無數副眼鏡——太緊的、會暈的、度數明明對了卻怎麼戴都不舒服的。那種「看得到，卻看得很累」的感覺，我比誰都懂。</p>
+            <p>所以成為驗光人員之後，我給自己一個原則：<strong class="text-white">不是把度數驗準就好，而是要讓你戴得舒服、看得輕鬆。</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 理念內文 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-6 text-brand-ink-2" style="font-size:17px;line-height:1.9">
+        <p>現代人的眼睛比任何時代都辛苦——每天盯螢幕超過 10 小時、下班眼睛又乾又緊的你；開始把手機拿遠一點才看得清楚、猶豫要不要換多焦點的你；看著孩子度數一直往上加、不知道該怎麼辦的你。</p>
+        <p>這些狀況需要的不只是「一副新眼鏡」，而是一次把用眼習慣、工作距離、生活情境都算進去的完整視覺分析。在能見度，我依循 14 步驗配流程，從雙眼協調到鏡架配戴角度一項項確認——因為差一點點，戴起來就差很多。</p>
+        <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 italic" style="font-size:17px;line-height:1.8">
+          「不追求最貴，只追求最適合。如果你的眼鏡總讓你覺得哪裡不對勁，來，讓我幫你找出原因。」
+        </blockquote>
+      </div>
+      <div class="mt-12 flex flex-col sm:flex-row gap-4">
+        <a href="/booking"
+          class="font-sans text-center bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">查看可約時段</a>
+        <a href="/about/"
+          class="font-sans text-center border border-brand-ink/30 text-brand-ink-2 px-8 py-4 hover:border-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">認識整個團隊</a>
+      </div>
+      <p class="text-brand-ink-3 mt-6" style="font-size:13px;letter-spacing:0.03em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
+    </div>
+  </section>
+
+</Layout>
