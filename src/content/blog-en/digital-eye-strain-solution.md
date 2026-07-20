@@ -112,7 +112,7 @@ Reviewing reports for long stretches before procedures, fine focusing during sur
 All-day meetings, reading presentations, replying to messages—constant switching between near, intermediate, and far. Traditional single-vision lenses can't handle multi-distance needs, while standard progressives may cause discomfort during fast-paced switching. Office lenses are often the best fit.
 
 **Designers / Visual Media Professionals**
-Color recognition and visual precision are core needs. A blue-light filter can slightly affect color rendering, so there's a trade-off to weigh between color accuracy and eye protection—this calls for an individual discussion, not a one-size-fits-all solution.
+Color recognition and visual precision are core needs. A blue-light filter can slightly affect color rendering, so there's a trade-off to weigh between color accuracy and the filtering ratio—this calls for an individual discussion, not a one-size-fits-all solution.
 
 ---
 

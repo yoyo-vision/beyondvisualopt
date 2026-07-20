@@ -28,9 +28,9 @@ In the eyeglass lens world, Zeiss is known for its **personalized customization 
 
 - **Individual² personalized custom lenses**: The premium choice among progressive multifocal lenses, made to order after measuring individual parameters, offering a wider zone of clear vision than standard lenses
 - **DriveSafe lenses for night driving**: Designed to address glare and blurred vision during night driving, ideal for those who regularly drive after dark
-- **Digital Lens**: Designed for modern life with long hours on phones and computers, providing near-intermediate support that eases the eye's focusing strain
+- **Digital Lens**: Adds near-intermediate support in the lower part of the lens, matching a usage pattern of long hours on phones and computers
 - **SmartLife series**: Modern lenses for everyday multi-scenario use, available in single-vision, progressive, and other versions
-- **MyoCare defocus-design lenses**: Spectacle lenses with a defocus design for children, using C.A.R.E.® technology (concentric ring-shaped defocus), with a MyoCare S version also available (subject to assessment by a physician or optometrist)
+- **MyoCare defocus-design lenses**: Spectacle-form defocus optical design for school-age children, using C.A.R.E.® technology (concentric ring-shaped defocus), with a MyoCare S version also available (indications follow the content approved in the MOHW license; suitability assessed by an optometrist)
 
 Beyond Visual Optometry is a contracted, certified Zeiss dealer in Taiwan. Both the Xinzhuang location (Beyond Visual Optometry) and the Banqiao location offer the full range of Zeiss lens series.
 
@@ -45,8 +45,8 @@ HOYA's lens factories are spread across the globe, and the HOYA lenses circulati
 **HOYA's main lens series (a brief overview):**
 
 - **iD progressive lens series**: HOYA's personalized multifocal lenses, supporting freeform design, positioned as HOYA's premium progressive option
-- **Sync III near-support lenses**: For people who spend long hours on digital devices, adding slight near-zone power support to reduce the accommodative load
-- **MiSight defocus daily disposables**: A defocus-design contact lens for children, licensed from CooperVision; HOYA also has its own defocus design versions
+- **Sync III near-support lenses**: Adds slight near-zone power in the near zone, matching prolonged digital-device use
+- **MiYOSMART defocus-design lenses**: HOYA's spectacle-form defocus optical design, using DIMS technology (indications follow the content approved in the MOHW license; suitability assessed by an optometrist)
 - **NULUX series**: Everyday single-vision lenses with a complete range of index options, from 1.60 to 1.74
 
 HOYA's strength lies in a complete product lineup, mature technology, and a wide price range—there's a choice for everyone from entry-level to premium.

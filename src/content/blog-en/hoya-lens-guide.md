@@ -30,7 +30,7 @@ Nulux EP (Enhanced Performance) further optimizes the design around the eye's na
 
 ### Digital-Strain Relief Lenses: Sync III
 
-For people who spend long hours on their phone or computer, the ciliary muscle can end up in a prolonged state of tension. Sync III is HOYA's functional lens designed for exactly this problem, building a subtle **accommodation-assist design** into the lower part of the lens to reduce the ciliary muscle's workload during near-distance use.
+For people who spend long hours on their phone or computer, near-distance use dominates the visual routine. Sync III is HOYA's functional lens designed for this usage pattern, building a subtle **near-support design** into the lower part of the lens. It looks identical to a regular single-vision lens and needs no adaptation to a progressive zone; whether it suits you depends on your individual visual needs and should be assessed through an eye exam.
 
 This isn't a reading lens, and it isn't a progressive multifocal. It has virtually no effect on appearance, making it suited to people aged 20–40 who use screens more than 6 hours a day but don't yet need multifocal correction.
 
@@ -94,7 +94,7 @@ Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., N
 
 **Q: How does HOYA Sync III differ from a regular lens?**
 
-Sync III builds a subtle accommodation-assist design into the lower part of the lens to reduce the ciliary muscle's workload during long near-distance use. It looks identical to a regular single-vision lens and requires no adaptation to a progressive zone. It's suited to people who don't yet need reading correction but whose eyes tire easily after long hours of use.
+Sync III builds a subtle near-support design into the lower part of the lens, designed for a work pattern of long-hours near-distance use. It looks identical to a regular single-vision lens and requires no adaptation to a progressive zone. Whether it suits you depends on your individual visual context and should be assessed through an eye exam.
 
 **Q: What age is MiYOSMART suitable for?**
 

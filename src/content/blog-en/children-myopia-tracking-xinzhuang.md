@@ -14,7 +14,7 @@ instagram: ""
 
 That's the sentence we hear most often at Beyond Visual Optometry. And your worry is well-founded.
 
-**Myopia is fundamentally the eyeball growing too long (axial elongation) — and once the eye elongates, it cannot shrink back.** High myopia (worse than -6.00D) carries a 5–10 times higher lifetime risk of retinal detachment, macular degeneration, and glaucoma compared to a normal eye. Tracking your child's prescription trend early is the first step in protecting their vision.
+**Myopia is fundamentally the eyeball growing too long (axial elongation) — and once the eye elongates, it cannot shrink back.** High myopia (worse than -6.00D) carries a significantly higher lifetime risk of retinal detachment, macular degeneration, and glaucoma compared to a normal eye (per public health-education materials from Taiwan's Health Promotion Administration and ophthalmology associations). Tracking your child's prescription trend early is the first step in protecting their vision.
 
 ---
 
@@ -26,6 +26,8 @@ Taiwan has one of the highest myopia prevalence rates in the world:
 - **End of elementary school (sixth grade):** roughly 55–65%
 - **High school graduation:** over 85%
 - **High myopia prevalence (adults):** roughly 20–25%
+
+(Prevalence figures reference Taiwan's Health Promotion Administration school-age vision monitoring and public health-education data.)
 
 Myopia progresses fastest between **ages 8 and 14** — which makes regular tracking during this window especially important.
 
@@ -47,11 +49,11 @@ The root cause of myopia is an **excessively long eye axis** — the eyeball's f
 
 Many parents are confused about who should handle their child's myopia. Here's the correct division of roles under Taiwanese regulations:
 
-| Service | Licensed Optometrist (Beyond Visual — YoYo) | Ophthalmologist (MD) |
+| Service | Licensed Optometrist (Beyond Visual) | Ophthalmologist (MD) |
 |------|----------------------|---------|
 | Vision and prescription assessment | ✅ | ✅ |
 | Axial length measurement | ✅ | ✅ |
-| Defocus lens fitting (MiSight, Zeiss MyoCare) | ✅ | ✅ |
+| Defocus lens fitting (defocus-design soft contact lenses, Zeiss MyoCare) | ✅ | ✅ |
 | Regular tracking records and trend analysis | ✅ | ✅ |
 | Low-dose atropine prescription | ❌ Requires a physician's prescription | ✅ |
 | Fundus examination, cycloplegic refraction | ❌ Classified as medical procedures | ✅ |
@@ -64,26 +66,24 @@ Many parents are confused about who should handle their child's myopia. Here's t
 
 **Peripheral-defocus lenses** are the tools that licensed optometrists can fit and track:
 
-| Lens | Type | Recommended Age | Best For |
-|------|------|---------|---------|
-| **MiSight daily disposables** | Contact lenses | 8 and up | Active kids who are comfortable with contact lenses |
-| **Zeiss MyoCare** | Spectacle lenses | 6 and up | Kids who won't wear contact lenses |
+| Lens | Type | Notes |
+|------|------|------|
+| **Defocus-design soft contact lenses (daily disposable)** | Contact lenses (medical device) | Require an in-person corneal and wearing-condition assessment by a licensed optometrist; for those under 15, fitting must be conducted under an ophthalmologist's guidance |
+| **Zeiss MyoCare** | Spectacle lenses | A spectacle-form defocus design for school-age children; daily care is the same as ordinary glasses |
 
-> Whether these lenses suit an individual child requires an in-person assessment of wearing conditions and lifestyle. For medication or any medical treatment, please consult an ophthalmologist.
+> Whether these lenses suit an individual child requires an in-person assessment of wearing conditions and lifestyle. Product indications follow the content approved in the MOHW license. For medication or any medical treatment, please consult an ophthalmologist.
 
 ---
 
-## Option 1: MiSight Daily Disposable Contact Lenses
+## Option 1: Defocus-Design Soft Contact Lenses (Daily Disposable)
 
-### What Is MiSight?
+### What Are Defocus-Design Soft Contact Lenses?
 
-MiSight, made by CooperVision, is a daily disposable contact lens with a **dual-focus optical design**: the central zone corrects refractive error, while the peripheral zones use a special defocus structure — giving children clear, natural vision quality.
+These are soft daily-disposable contact lenses with a central-and-peripheral zoned optical design: the central zone corrects refractive error while the peripheral zones use a defocus structure. Contact lenses are medical devices; their product characteristics and indications follow the content approved in the MOHW license.
 
-### Who It Suits
+### Before Wearing
 
-- Children aged 8 and up who can handle contact lenses on their own
-- Families willing to follow the daily hygiene routine
-- Highly active kids who don't want to wear glasses all day
+Contact-lens fitting must be carried out by a licensed optometrist who assesses corneal condition, tear film, and wearing habits in person. Under Article 12 of the Optometrists Act, **fitting contact lenses for anyone under 15 must be conducted under an ophthalmologist's guidance, and it may not be performed for children under 6**. Whether the lenses are suitable, and whether daily cleaning and care can be maintained, all require an in-person assessment.
 
 ---
 
@@ -146,4 +146,4 @@ Absolutely. The point of tracking is knowing the trend — where the prescriptio
 
 **Q: Where can I get children's myopia tracking in Xinzhuang?**
 
-Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, MiSight daily disposable fitting, and Zeiss MyoCare evaluation. Optometrist YoYo (licensed optometrist) tracks progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking).
+Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, defocus-design soft contact lens fitting, and Zeiss MyoCare evaluation. Our licensed optometrists track progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking).
