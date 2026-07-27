@@ -4,6 +4,10 @@ const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    // 搜尋結果專用標題（選填）：填了就整串當 <title>，不再自動加品牌後綴。
+    // 2026-07-27 修：本欄位早就寫在 36 篇文章的 frontmatter 裡，但 schema 從未定義，
+    // 被 Zod 當未知鍵剝掉 → 一直沒生效，搜尋結果顯示的是「原標題＋28 字長後綴」被截斷的樣子。
+    seoTitle: z.string().optional(),
     // 用 date 型別保存，輸出 schema 時才轉 ISO 8601（避免變成英文長字串）
     date: z.coerce.date(),
     // 內容更新日（選填）：改文時填入，供 schema dateModified 傳達新鮮度；未填則同發布日
@@ -21,6 +25,8 @@ const blogEn = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    // 同中文版：填了就整串當 <title>（英文版有 15 篇已寫，同樣一直被剝掉沒生效）
+    seoTitle: z.string().optional(),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     tag: z.string(),

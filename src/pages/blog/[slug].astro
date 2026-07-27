@@ -196,7 +196,12 @@ const pageSchema = {
 };
 ---
 <Layout
-  title={`${post.data.title}｜YoYo 驗光師｜能見度視覺中心 × 比泱驗光所 新莊板橋驗光`}
+  {/* 標題策略（2026-07-27 修 CTR）：
+      填了 seoTitle 就整串照用；沒填才用「原標題＋短後綴」。
+      舊版一律接 28 字長後綴（YoYo 驗光師｜能見度視覺中心 × 比泱驗光所 新莊板橋驗光），
+      中文 Google 大約只顯示 30 字，等於把後綴連同標題尾巴一起截掉，
+      有些文章的標題本身已含「能見度視覺中心」，接上去還會重複兩次。 */}
+  title={post.data.seoTitle ?? `${post.data.title}｜能見度視覺中心 新莊板橋`}
   description={post.data.excerpt}
   schema={pageSchema}
   enPath={hasEn ? `/en/blog/${post.slug}` : undefined}
