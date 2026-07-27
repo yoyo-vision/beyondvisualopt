@@ -197,6 +197,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"blurry-vision-see-doctor.md": {
+	id: "blurry-vision-see-doctor.md";
+  slug: "blurry-vision-see-doctor";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"child-vision-check-where.md": {
+	id: "child-vision-check-where.md";
+  slug: "child-vision-check-where";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "children-frames-guide.md": {
 	id: "children-frames-guide.md";
   slug: "children-frames-guide";
@@ -260,6 +274,34 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"eye-exam-before-glasses.md": {
+	id: "eye-exam-before-glasses.md";
+  slug: "eye-exam-before-glasses";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"eye-exam-duration-difference.md": {
+	id: "eye-exam-duration-difference.md";
+  slug: "eye-exam-duration-difference";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"eye-exam-preparation-tips.md": {
+	id: "eye-exam-preparation-tips.md";
+  slug: "eye-exam-preparation-tips";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"eye-strain-see-doctor.md": {
+	id: "eye-strain-see-doctor.md";
+  slug: "eye-strain-see-doctor";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "frame-adjustment-handcraft.md": {
 	id: "frame-adjustment-handcraft.md";
   slug: "frame-adjustment-handcraft";
@@ -302,6 +344,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"good-lens-needs-good-fitting.md": {
+	id: "good-lens-needs-good-fitting.md";
+  slug: "good-lens-needs-good-fitting";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "high-myopia-glasses-guide.md": {
 	id: "high-myopia-glasses-guide.md";
   slug: "high-myopia-glasses-guide";
@@ -337,6 +386,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"lens-only-service.md": {
+	id: "lens-only-service.md";
+  slug: "lens-only-service";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "lens-refractive-index.md": {
 	id: "lens-refractive-index.md";
   slug: "lens-refractive-index";
@@ -368,6 +424,20 @@ declare module 'astro:content' {
 "myopia-vs-astigmatism.md": {
 	id: "myopia-vs-astigmatism.md";
   slug: "myopia-vs-astigmatism";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"old-frame-relens.md": {
+	id: "old-frame-relens.md";
+  slug: "old-frame-relens";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"online-frame-lens-fitting.md": {
+	id: "online-frame-lens-fitting.md";
+  slug: "online-frame-lens-fitting";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -456,9 +526,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"same-prescription-different-feel.md": {
+	id: "same-prescription-different-feel.md";
+  slug: "same-prescription-different-feel";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "vertex-distance.md": {
 	id: "vertex-distance.md";
   slug: "vertex-distance";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"vintage-frame-lens.md": {
+	id: "vintage-frame-lens.md";
+  slug: "vintage-frame-lens";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

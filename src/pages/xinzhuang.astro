@@ -2,7 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 
 // 該頁常見問題（schema 與畫面共用同一份，確保 FAQPage 標記與可見內容一致）
+// ⚠️ 2026-07-27 關鍵字集中：本頁為「新莊眼鏡行／新莊眼鏡行推薦」唯一主力頁，
+//    首頁、選配指南、新莊配鏡文章均已弱化精準詞並內鏈導向此頁，勿再於他頁強打同一字
 const faqs = [
+  { q: '在新莊要怎麼挑眼鏡行或驗光所？', a: '先確認三件事。第一，執行驗光的是不是持照驗光人員——依《驗光人員法》，驗光所須由持照驗光人員執行驗光，執照可於衛福部醫事人員查詢系統核對。第二，驗光時間夠不夠：完整的臨床驗光含雙眼視覺評估，通常需要 45–60 分鐘，十分鐘量完度數只能確認基本屈光狀況。第三，配鏡後有沒有免費回診調整——不舒服的眼鏡多半是靠後續調整才救得回來。' },
+  { q: '新莊的眼鏡行和驗光所差在哪裡？', a: '差在法規依據。「驗光所」依《驗光人員法》設立登記，須由持照驗光人員執行驗光；一般「眼鏡行」屬商業登記，法規上不具備執行驗光的資格條件。能見度視覺中心在新莊的門市為比泱驗光所（新北府莊衛驗光字第 5Y31060655 號），驗光由持照驗光人員執行。' },
   { q: '新莊比泱驗光所在哪裡？', a: '位於新北市新莊區中正路419-1號，捷運新莊站步行約 8 分鐘，輔大站步行約 12 分鐘。門口有機車停車格，附近有停車場。' },
   { q: '新莊這裡有蔡司鏡片嗎？', a: '有。能見度視覺中心是蔡司 Zeiss 台灣簽約經銷商，提供完整蔡司鏡片系列，包含 Individual² 個人化訂製鏡片。' },
   { q: '新莊哪裡有多焦點漸進鏡片可以驗配？', a: '比泱驗光所提供完整的多焦點漸進鏡片驗配服務，包含加入度評估、配鏡高度量測與適應期追蹤，由持照驗光人員一對一接診（主理驗光師 YoYo）。' },
@@ -24,7 +28,7 @@ const schema = {
 ---
 <Layout
   title="新莊驗光所｜新莊眼鏡行推薦｜能見度視覺中心 × 比泱驗光所｜YoYo 驗光師"
-  description="新莊驗光所首選：能見度視覺中心 × 比泱驗光所，新北市新莊區中正路419-1號。YoYo 驗光師主理，蔡司鏡片、多焦點漸進鏡片、兒童近視追蹤、高度近視配鏡。捷運新莊站步行8分鐘。"
+  description="在找新莊眼鏡行、新莊驗光所？能見度視覺中心 × 比泱驗光所位於新北市新莊區中正路419-1號，YoYo 驗光師主理，持照驗光人員一對一接診：蔡司鏡片、多焦點漸進鏡片、兒童視力追蹤、高度近視配鏡。捷運新莊站步行8分鐘。"
   keywords="新莊驗光,新莊驗光所,新莊眼鏡行,新莊配眼鏡,新莊眼鏡行推薦,新莊蔡司鏡片,新莊多焦點鏡片,新莊兒童近視,比泱驗光所,能見度視覺中心,YoYo驗光師"
   schema={schema}
   enPath="/en/xinzhuang"
@@ -37,7 +41,7 @@ const schema = {
         新莊驗光所<br /><span style="font-size:0.65em;opacity:0.8">能見度視覺中心 × 比泱驗光所</span>
       </h1>
       <p class="text-white/70 max-w-2xl mb-8" style="font-size:17px;line-height:1.85">
-        新莊區在地專業驗光所。由驗光師鄭家侑（YoYo）主理，提供臨床等級驗光、蔡司鏡片、多焦點漸進鏡片、兒童近視定期追蹤與 RGP 硬式隱形眼鏡配適服務。
+        中正路上的在地驗光所。新莊的眼鏡行選擇很多，我們的做法是先花時間搞懂你怎麼用眼睛——由驗光師鄭家侑（YoYo）主理，提供臨床等級驗光、蔡司鏡片、多焦點漸進鏡片、兒童視力定期追蹤與 RGP 硬式隱形眼鏡配適服務。
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="/booking" class="font-sans font-bold px-8 py-4 transition-colors text-brand-navy" style="background:#c9a96e;font-size:15px">立即預約</a>
@@ -131,10 +135,29 @@ const schema = {
     </div>
   </section>
 
+  <!-- 新莊在地服務範圍（關鍵字集中：強化本頁在地權威訊號） -->
+  <section class="px-6 md:px-16 py-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">在地服務</span>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(22px,3vw,36px);font-weight:300">在新莊，我們服務哪些人</h2>
+      <div class="space-y-5 text-brand-ink-3" style="font-size:15px;line-height:1.9">
+        <p>
+          門市在<strong class="text-brand-ink">新莊中正路</strong>上，走路 8 分鐘到捷運新莊站、12 分鐘到輔大站，中正路沿線公車站牌下車即到。開車、騎車來的客人，門口有機車停車格，步行 3 分鐘有中正路停車場。
+        </p>
+        <p>
+          常來的客人多半住在<strong class="text-brand-ink">新莊、頭前庄、副都心、思源路一帶</strong>，也有從泰山、五股、三重、林口特地過來的。輔大的師生因為近，配鏡和後續調整都跑得勤——這也是我們把回診調整做成免費服務的原因：眼鏡舒不舒服，往往不是取件當天決定的。
+        </p>
+        <p>
+          新莊的眼鏡店家密度高，選擇不少。我們不做快篩式驗光，一個預約時段保留 <strong class="text-brand-ink">60–90 分鐘</strong>，由持照驗光人員一對一接診，把雙眼視覺、用眼情境問清楚再談鏡片。如果你正在比較新莊的眼鏡行與驗光所，下面幾題可以先看看。
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- 常見問題 -->
   <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
     <div class="max-w-3xl mx-auto">
-      <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(22px,3vw,36px);font-weight:300">新莊驗光常見問題</h2>
+      <h2 class="font-serif text-brand-ink text-center mb-12" style="font-size:clamp(22px,3vw,36px);font-weight:300">新莊配眼鏡・驗光常見問題</h2>
       <div class="space-y-6">
         {faqs.map((faq, i) => (
           <div class="border-t border-brand-ink/15 pt-6">
