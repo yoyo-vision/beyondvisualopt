@@ -70,7 +70,10 @@ import Layout from '../../layouts/Layout.astro';
           <div class="space-y-4 font-sans text-brand-ink-2 text-sm leading-relaxed">
           <p>YoYo (Cheng Chia-Yu) is a licensed optometrist (License No. 003309) and the lead clinician at Beyond Visual Optometry's Xinzhuang location.</p>
           <p>Her approach is rooted in the belief that a proper vision exam takes time. Every consultation includes full binocular vision assessment, accommodation testing, and personalized lens planning — not just a quick prescription check.</p>
-          <p>She specializes in progressive lens adaptation, high myopia precision fitting, children's myopia tracking, and digital eye strain management.</p>
+          {/* 合規（法務部 2026-07-25）：eye strain management → assessment，疲勞的處置只能掛評估／流程，不能帶治療語感。
+              註：myopia tracking 全站 20+ 處沿用（對應中文站已用的合規詞「近視追蹤」），是否全站改詞待老闆決定，
+              未定案前本頁與全站保持一致，不單獨改這一頁。 */}
+          <p>She specializes in progressive lens adaptation, high myopia precision fitting, children's myopia tracking, and digital eye strain assessment.</p>
           </div>
         </div>
         <div class="space-y-3 font-sans text-sm">
@@ -90,11 +93,20 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 圖片版權與授權：/en/portfolio 的 ImageObject license／acquireLicensePage 指向此錨點，
-       缺這段的話 Google 圖片授權功能點過來會落在頁頂，讀者看不到授權說明（中文版 about 早有此區塊） -->
+  <!-- 醫療免責＋圖片版權：對齊中文版 about 的頁尾兩個區塊
+       圖片版權區塊的 #image-rights 是 /en/portfolio 的 ImageObject license／acquireLicensePage 指向的錨點，
+       缺這段的話 Google 圖片授權功能點過來會落在頁頂，讀者看不到授權說明 -->
   <section class="px-6 md:px-16 py-12" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
-      <div id="image-rights" class="p-5 border border-brand-ink/10" style="background:rgba(26,47,78,0.03);scroll-margin-top:100px">
+      <!-- 醫療免責聲明：法務部 2026-07-25 審核 🟢 通過。
+           核心三意涵不可刪改：僅供屈光矯正／有疑慮先就醫／依驗光人員法轉介眼科醫師 -->
+      <div class="p-5 border border-brand-ink/10" style="background:rgba(26,47,78,0.03)">
+        <h3 class="font-serif text-brand-ink mb-2" style="font-size:15px;font-weight:400">Medical Disclaimer</h3>
+        <p class="text-brand-ink-3" style="font-size:13px;line-height:1.8">
+          The optical products and optometry services described on this website are intended solely for refractive vision correction and do not constitute medical diagnosis or treatment advice of any kind. If you have any concerns about your eye health, please seek a professional medical evaluation at a medical institution, such as a hospital or ophthalmology clinic, as your first step. Our optometrists practice strictly within the scope defined by the Optometric Personnel Act (驗光人員法) of Taiwan. If an examination reveals any abnormality, or if your vision cannot be effectively corrected through optical means, we will refer you to an ophthalmologist as required by law.
+        </p>
+      </div>
+      <div id="image-rights" class="mt-4 p-5 border border-brand-ink/10" style="background:rgba(26,47,78,0.03);scroll-margin-top:100px">
         <h3 class="font-serif text-brand-ink mb-2" style="font-size:15px;font-weight:400">Image Copyright &amp; Licensing</h3>
         <p class="text-brand-ink-3" style="font-size:13px;line-height:1.8">
           All frame photography and in-store imagery in our eyewear portfolio are the copyright of Beyond Visual Optometry × BiYang Optometry Clinic. All rights reserved. Reproduction, distribution, or commercial use without written permission is prohibited. For licensing enquiries, please call +886-2-2206-6700 or contact us in store.
