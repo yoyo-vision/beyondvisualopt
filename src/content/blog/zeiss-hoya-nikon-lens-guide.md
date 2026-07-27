@@ -3,7 +3,7 @@ title: "蔡司、HOYA、NIKON 鏡片是什麼？新莊驗光人員帶你認識�
 date: "2026-06-24"
 tag: "鏡片知識"
 excerpt: "蔡司、HOYA、NIKON、ESSILOR——這些名字你在眼鏡行都聽過，但它們各自在做什麼？為什麼有的人說蔡司最好，有的人說差不多？這篇文章用介紹的角度，幫你建立對國際鏡片品牌的基本認識。"
-seoTitle: "蔡司 HOYA NIKON 鏡片介紹｜國際品牌鏡片有什麼不同｜新莊板橋能見度眼鏡行"
+seoTitle: "蔡司 HOYA NIKON 鏡片差在哪？國際品牌比較｜能見度眼鏡行"
 seoDescription: "蔡司 Zeiss、HOYA、NIKON、ESSILOR 鏡片各自的品牌定位與特色。了解這些國際鏡片品牌在做什麼、適合哪些視覺需求，新莊板橋能見度眼鏡行 YoYo 驗光師解說。"
 keywords: "蔡司鏡片,HOYA鏡片,NIKON鏡片,ESSILOR鏡片,國際品牌鏡片,蔡司Zeiss介紹,多焦點鏡片品牌,新莊驗光,板橋配眼鏡,能見度眼鏡行,YoYo驗光師"
 ---

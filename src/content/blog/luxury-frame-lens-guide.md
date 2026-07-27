@@ -1,5 +1,6 @@
 ---
 title: "Cartier、Chrome Hearts 眼鏡可以配度數鏡片嗎？精品鏡框配鏡與維修完整指南"
+seoTitle: "精品鏡框可以配度數嗎？Cartier 配鏡與維修指南｜能見度眼鏡行"
 date: "2026-07-08"
 tag: "鏡架鏡框"
 excerpt: "收藏的 Cartier、Chrome Hearts、Linda Farrow 鏡框想配度數鏡片，卻被眼鏡行婉拒？精品框配鏡難在哪、Lindberg 無螺絲框壞了找誰修——新莊板橋能見度把精品框的配鏡與維修一次講清楚。"

@@ -3,7 +3,7 @@ title: "依視路 Essilor 鏡片介紹｜法國光學大廠的設計哲學與主
 date: "2026-06-24"
 tag: "鏡片知識"
 excerpt: "依視路是全球鏡片市場佔有率最高的品牌之一，旗下涵蓋從日常單光到高階個人化漸進鏡片的完整產品線。YoYo 驗光師帶你認識 Essilor 的核心技術與各系列設計邏輯。"
-seoTitle: "依視路 Essilor 鏡片介紹｜Varilux 漸進鏡片說明｜新莊板橋能見度眼鏡行"
+seoTitle: "依視路 Essilor 鏡片介紹｜Varilux 漸進鏡片｜能見度眼鏡行"
 seoDescription: "依視路 Essilor 鏡片系列完整介紹：Varilux 漸進多焦點、Eyezen 數位減壓、Crizal 鍍膜。法國光學品牌設計邏輯與適合族群說明，新莊板橋能見度眼鏡行提供選配諮詢。"
 keywords: "依視路鏡片,Essilor鏡片,Varilux漸進鏡片,Eyezen,Crizal鍍膜,法國鏡片,新莊依視路,板橋Essilor鏡片,能見度眼鏡行"
 ---
