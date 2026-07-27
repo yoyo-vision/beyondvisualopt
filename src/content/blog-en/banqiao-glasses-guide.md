@@ -99,3 +99,11 @@ A: Standard single-vision lenses generally take 3–7 business days; ZEISS Indiv
 To book a visual assessment, call +886-2-2253-1246 or reach us via LINE OA: https://lin.ee/SoWj9Ft
 
 Beyond Visual Optometry | No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City
+
+---
+
+Banqiao really is dense with opticians. Walk the stretch from Jiangzicui to Banqiao Station and you'll pass a dozen.
+
+Choosing between them is less about which shop is best and more about which one matches what you're after. If you just want a spare pair quickly, an efficient shop is plenty. If something about your current glasses has felt wrong for months, you need somewhere willing to spend the time taking full measurements. Those are two different needs, and one yardstick was never going to cover both.
+
+The fastest way to see how we work is to drop in. No. 28, Lane 47, Section 2, Shuangshi Road — Beyond Visual Optical × Beyond Visual Optometry.

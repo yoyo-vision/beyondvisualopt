@@ -99,6 +99,19 @@ After a complete visual behavior assessment, we found that in dynamic visual sit
 
 ---
 
+## But Driving Lenses Aren't a Cure-All — When Not to Rush Into Them
+
+After all that design detail, here's the other side: **driving lenses solve optical and visual-condition problems, not every problem you have seeing at night.**
+
+In a few situations they won't give you the difference you're hoping for:
+
+- **The problem isn't the lens.** Night vision that has genuinely deteriorated, or lights that scatter unusually badly, can involve the eye itself. That's an ophthalmologist's territory. Rule out the medical side first, then talk lenses — not the other way round.
+- **Your current prescription was never accurate.** A cylinder axis that's off by a few degrees hides well in daylight and shows up the moment your pupils dilate at night. That calls for remeasuring, not for buying an extra pair.
+- **You barely drive after dark.** A dedicated tool earns its keep through use. If night driving is occasional, putting the money into getting your main pair measured and fitted properly usually feels better day to day.
+- **Windshields, headlights and fatigue.** Hazed glass, ageing headlamps and driving tired all degrade what you see, and no lens compensates for those.
+
+So we ask first: how many nights a week do you actually drive, and on what kind of roads? Sometimes the answer is that you don't need a new pair at all — realigning the axis and optical center of the one you own is enough. Saying that out loud costs us a sale, and it's also why people come back to us.
+
 ## FAQ
 
 **Q: What's the difference between an ordinary anti-reflective coating and the ZEISS DriveSafe coating?**

@@ -40,7 +40,7 @@ Your eye has a ciliary muscle that controls focus—it contracts to thicken the 
 
 A prescription measured while accommodation is tensed up often comes out **too strong**. You think you're a -4.00 D myope, but your true prescription might only be -3.50 D or even less.
 
-This is especially common in children and teenagers, and it's why some optometrists and ophthalmologists recommend a **cycloplegic (dilated) refraction** in certain cases—letting the ciliary muscle fully relax before measuring, so the result is closer to the true prescription.
+This is especially common in children and teenagers, and it's why, in certain cases, **an ophthalmologist may assess whether a cycloplegic (dilated) refraction is needed** — letting the ciliary muscle fully relax before measuring, so the result is closer to the true prescription. That assessment is a physician's scope of practice, and we refer you to an ophthalmologist when it's called for.
 
 For adults, getting enough sleep before the exam, avoiding long stretches of close-up work beforehand, and having the optometrist choose the right combination of subjective and objective refraction techniques all help reduce this kind of error.
 
@@ -108,3 +108,11 @@ We recommend coming into the Beyond Visual Optometry Banqiao store (No. 28, Ln. 
 **Q: My prescription has never been quite right over the years—is that normal?**
 
 Not necessarily. If every new pair of glasses takes a long time to get used to, or always feels a little off, we recommend a complete assessment rather than just another refraction. The problem may not be the prescription itself, but one of the other parameters that got skipped.
+
+---
+
+A ten-minute eye exam isn't cutting corners. It simply answers a very narrow question: can you read the chart?
+
+The trouble is that what your eyes do all day is far more complicated than reading a chart. How the two eyes work together, how long you can hold near focus, where the lens actually sits on your face — none of that fits in those ten minutes. Which is why "the prescription is right but they feel wrong" is such a common sentence. What was measured and what wasn't are simply two different lists.
+
+If every new pair takes you weeks to settle into, that isn't sensitivity. Something wasn't measured. Xinzhuang +886-2-2206-6700, Banqiao +886-2-2253-1246.

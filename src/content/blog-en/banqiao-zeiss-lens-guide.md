@@ -77,3 +77,11 @@ Not necessarily. HOYA's premium series is very competitive on value, and the dif
 **Q: Do I need an appointment to get ZEISS lenses in Banqiao?**
 
 We recommend booking ahead, since a full vision exam takes about 45–60 minutes. You can [book online](/en/booking) or call +886-2-2253-1246.
+
+---
+
+Being an authorised dealer really guarantees two things: the lenses are genuine, and there's someone to go back to afterwards.
+
+It doesn't guarantee the glasses will suit you. The same ZEISS lens, fitted with measurements that are off by a few numbers, can feel very different on your face — and that part has nothing to do with the brand. It's the shop's responsibility. So when you're choosing where to go, "do you carry ZEISS?" is a weaker question than "what exactly will you measure?"
+
+If you'd like to hear how we measure, set aside 45 to 60 minutes. Book via [LINE](/booking/) or call +886-2-2253-1246.

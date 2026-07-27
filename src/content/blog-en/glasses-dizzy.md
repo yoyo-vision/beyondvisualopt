@@ -139,3 +139,11 @@ A new frame has a different frame size and face-form angle. Even with the same p
 **Q: Where in Xinzhuang or Banqiao can I get my glasses-dizziness problem assessed?**
 
 Beyond Visual Optometry (Xinzhuang and Banqiao locations) offers a complete follow-up assessment for fitting problems with Optometrist YoYo (licensed optometrist). No matter where your glasses were made, you're welcome to bring them in and let us help you find the cause. You don't need to have bought your glasses from us to book a consultation. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or book online at [/en/booking](/en/booking).
+
+---
+
+"You'll get used to it" is half right.
+
+A change in prescription, a new lens design, or a first pair of progressives really can feel strange for a few days. But it should ease day by day, not still be there a week later. More importantly, some kinds of dizziness deserve checking from day one — a sense of missing a step when you walk, straight lines that bow, one eye covered feeling better than both. Those usually point to measurement or frame position, not to patience.
+
+Not sure which one you have? The quickest route is to have someone measure it again. It doesn't have to be a pair we made. Both locations can help.

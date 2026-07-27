@@ -91,3 +91,11 @@ In adults, astigmatism is usually stable and does not keep increasing the way my
 ---
 
 You're welcome to book a complete astigmatism assessment with Optometrist YoYo (licensed optometrist) at Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), phone +886-2-2206-6700. [Book an appointment](/en/booking).
+
+---
+
+That line at the top — "why does the floor look tilted?" — usually makes people laugh at themselves, because it sounds so exaggerated. It isn't. There's real optics behind it.
+
+Telling the two cases apart is not difficult: **normal adaptation gets a little easier every day, while a fitting problem feels much the same on day seven as it did on day one.** The first belongs to time. The second belongs to measurement.
+
+If it's still tilting in week two, stop toughing it out. Bring the glasses in and we'll recheck the axis and the optical center. Xinzhuang: +886-2-2206-6700.

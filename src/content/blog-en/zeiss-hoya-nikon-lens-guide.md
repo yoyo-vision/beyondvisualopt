@@ -115,3 +115,11 @@ The lens itself is the same; the difference lies in how precisely the optometris
 **Q: Where in Xinzhuang can I get a Zeiss lens consultation?**
 
 Beyond Visual Optometry (No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City) is a contracted, certified Zeiss dealer in Taiwan. Optometrist YoYo, a licensed optometrist, provides full Zeiss lens consultations and personalized measurement services. You can reach us at +886-2-2206-6700 or +886-2-2253-1246.
+
+---
+
+ZEISS, HOYA, NIKON, ESSILOR. Having read this far, you've probably noticed something: at the top of their ranges, the gap between them is smaller than the marketing suggests.
+
+What really separates one pair from another is the tier you're in and how the glasses were measured. Choose the right tier and get the parameters right, and a mid-range lens will beat a badly fitted premium one. In reverse, the most expensive lens on the shelf won't rescue a progressive whose fitting height was never taken.
+
+To work out where you belong, just describe how you use your eyes each day and we'll narrow it from there. Beyond Visual Optometry × Biyang Optometry Clinic is an authorised ZEISS dealer in Taiwan, at No. 419-1, Zhongzheng Rd., Xinzhuang.

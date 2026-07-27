@@ -112,3 +112,11 @@ Strongly not recommended. Sleeping in soft lenses substantially raises the risk 
 **Q: Where in Xinzhuang or Banqiao can I get my contact lens wear evaluated?**
 
 Beyond Visual Optometry (Xinzhuang and Banqiao locations) with Optometrist YoYo (licensed optometrist) offers a complete contact lens wear assessment, including corneal topography, tear film analysis, an evaluation of your current lens material and wearing time, and personalized lens recommendations. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking).
+
+---
+
+Looking back at the list of symptoms this article opened with: if three or more of them are yours, it's worth dealing with properly.
+
+Contact lens fatigue is rarely down to one thing. Material, wearing hours, tear film, the air conditioning and monitor height at your desk — usually several of them combine and arrive together at four in the afternoon. Which is why "try a different lens" doesn't reliably help. You need to know which part of the chain is failing first.
+
+One caution: if your eyes are already red, painful or light-sensitive, that isn't a comfort question — please see an ophthalmologist first. For everything else, Xinzhuang +886-2-2206-6700 or Banqiao +886-2-2253-1246.

@@ -80,6 +80,16 @@ Ideally, your eyebrows sit right around the top edge of the frame — just barel
 
 ---
 
+## Honestly, That Chart Is a Starting Point, Not a Rule
+
+Time for a confession: **roughly three in ten people who walk into our shop end up contradicting the table above.**
+
+It isn't hard to see why. Face-shape categories capture the outline and nothing else. What actually decides whether a frame works on you also includes the height of your nose bridge, the distance between your eyes, where your cheekbones sit, your hairstyle — even how you dress and how your face moves when you talk. None of that fits inside the words "round" or "square."
+
+The clearest example we've had was a customer with a textbook round face who, by the chart, should have avoided large round frames. She tried one on and looked better in it than in anything on the recommended list, because her features are quite sculpted and the round shape softened them. We stopped arguing with the chart that day.
+
+So use these principles the way they work best: **to narrow fifty frames down to eight**, not to name the one. After that, hand the decision to the mirror and your own eyes. When you truly can't choose, photograph yourself rather than staring into the mirror — in a mirror you unconsciously adjust your expression, and a photo doesn't let you.
+
 ## An Optometrist's Reminder: Looking Good Isn't Enough — the Frame Also Has to Fit Your Lenses
 
 Everything above is about aesthetics. But as an optometry practice, we have to flag something many people don't realize, even though it directly affects your final result:

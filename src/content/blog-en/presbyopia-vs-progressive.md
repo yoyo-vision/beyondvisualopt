@@ -157,3 +157,11 @@ At Beyond Visual Optometry (Xinzhuang × Banqiao), Optometrist YoYo (licensed op
 **Q: Why are progressive lenses so expensive?**
 
 Progressive lenses are far more complex to design than single-vision lenses. High-end progressives (such as ZEISS Individual²) require 12+ personalized parameters (including wearing posture, head-turning habits, and pupil height), so each lens is essentially an optical component calculated specifically for you. Cheap progressives use standardized designs with narrower adaptation zones and greater peripheral distortion, which is the fundamental reason for the price gap.
+
+---
+
+Presbyopia isn't your eyes breaking. That's the thing this article most wants to leave you with.
+
+It's the natural stiffening of the crystalline lens, something everyone reaches sooner or later. The only real variables are when, and how you decide to handle it. Some people choose a dedicated near pair, some choose progressives, some start with an office design. None of those ranks above the others — only one of them sits closest to the distances you genuinely spend your day at.
+
+So rather than asking which type to buy, the more useful question to answer first is: how many centimetres away is the thing you look at most? That answer usually settles half of it.

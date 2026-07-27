@@ -115,3 +115,11 @@ None of the four options is universally "best"—only the one that fits your act
 
 - **Xinzhuang store (Biyang Optometry Practice):** +886-2-2206-6700
 - **Banqiao store (Beyond Visual Optometry):** +886-2-2253-1246
+
+---
+
+The problem this article opened with — how someone with a prescription is supposed to be comfortable outdoors — should be clearer now: each of the four approaches owns a situation, and none of them wins everywhere.
+
+Photochromics are convenient but limited inside a car. Prescription sunglasses perform best but mean carrying a second pair. Clip-ons are economical with a cosmetic trade-off. Polarised lenses handle glare off water and asphalt better than anything else. Which one to choose depends on where you're usually standing when the sun hits you, not on which specification reads as most premium.
+
+If it's genuinely hard to call, describe a typical week outdoors and we'll narrow it down. Xinzhuang +886-2-2206-6700, Banqiao +886-2-2253-1246.

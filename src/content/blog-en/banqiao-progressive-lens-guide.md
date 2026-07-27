@@ -84,3 +84,11 @@ Not necessarily. Single-vision reading glasses, office lenses, and bifocals are 
 **Q: I got progressive lenses before and they made me dizzy — is there still hope?**
 
 It's worth getting re-checked. Dizziness is usually caused by pantoscopic tilt, fitting height, pupillary distance measurement, or frame drift — not because "you're simply not suited to progressives." Bring in your current glasses and an optometrist will go through each factor to pin down the cause.
+
+---
+
+That moment when holding the phone a little further away brings the text back — most people file it away as a one-off, then notice months later that the distance keeps growing.
+
+Presbyopia doesn't arrive on a particular birthday, so there's no age at which you're suddenly allowed to do something about it. What's worth watching is how much extra work you're doing to see clearly: holding things away, squinting, turning up the lights, enlarging the font. The fatigue those small habits add up to is a more honest signal than any number on a chart.
+
+Banqiao: +886-2-2253-1246. Bring the glasses you wear now, and we'll start with whether you need anything at all — not with which tier to sell you.

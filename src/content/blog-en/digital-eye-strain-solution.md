@@ -142,7 +142,7 @@ These can ease symptoms but won't cure the underlying issue—if symptoms persis
 
 **Q: Where in Xinzhuang or Banqiao can I get a digital eye strain evaluation?**
 
-Beyond Visual Optometry's Xinzhuang location offers a complete digital fatigue evaluation, including accommodative facility testing, binocular vision function assessment, preliminary dry eye screening, and lens recommendations tailored to your work environment. Our Banqiao location provides basic consultation and dispensing services.
+Beyond Visual Optometry's Xinzhuang location offers a complete digital fatigue evaluation, including accommodative facility testing, binocular vision function assessment, an initial check of tear film and wearing comfort (if dry eye is suspected, we refer you to an ophthalmologist), and lens recommendations tailored to your work environment. Our Banqiao location provides basic consultation and dispensing services.
 
 You don't need to wait until symptoms get severe. A preventive visual evaluation usually saves more time and money than waiting until things become uncomfortable to deal with.
 

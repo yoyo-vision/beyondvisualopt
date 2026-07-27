@@ -40,7 +40,7 @@ This isn't a reading lens, and it isn't a progressive multifocal. It has virtual
 
 ### Progressive Multifocal Lenses: The iD Series
 
-HOYA's iD series is its flagship progressive multifocal lens line, using a **double-surface design** — the optical design for the distance, intermediate, and near zones is distributed across both the front and back surfaces of the lens. Compared to traditional single-surface progressive designs, this provides a wider field of clear vision and a shorter adaptation period.
+HOYA's iD series is its flagship progressive multifocal lens line, using a **double-surface design** — the optical design for the distance, intermediate, and near zones is distributed across both the front and back surfaces of the lens. **According to HOYA's published materials**, compared with traditional single-surface progressive designs, this approach aims for a wider field of clear vision and a shorter adaptation period.
 
 The iD series comes in several versions:
 - **iD EaZi:** an entry-level progressive, suited to people trying progressive lenses for the first time
@@ -99,3 +99,11 @@ Sync III builds a subtle near-support design into the lower part of the lens, de
 **Q: What age is MiYOSMART suitable for?**
 
 It's recommended for school-age children 6 and older who need regular vision assessments, with suitability determined by a licensed optometrist. We recommend a follow-up vision check every 3–6 months during wear.
+
+---
+
+We're both reading the same specification sheet. What the lens does on your face is another matter entirely.
+
+HOYA's technical strengths are real, and like every brand, they depend on a correct set of measurements to show up. A lens is a half-finished component; the fitting is the finished product. That's especially true at the premium end, because the finer the design, the less measurement error it forgives.
+
+If you want to know which tier suits you, describing how you actually use your eyes all day gets you there faster than starting with the price list.

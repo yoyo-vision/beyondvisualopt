@@ -96,3 +96,11 @@ Varilux's core technology lies in wavefront aberration correction and personaliz
 **Q: What age is Eyezen suitable for?**
 
 There's no strict age limit for Eyezen — it's mainly suited to people who use digital devices heavily and feel eye fatigue after long stretches of close-range work. It's generally recommended for adults 18 and up; for minors, we recommend having an optometrist assess suitability first.
+
+---
+
+After a long run of brand history and product lines, one honest closing thought: **most people cannot feel the differences between these specifications, and most people can immediately feel a difference in measurement.**
+
+The brand sets the ceiling of what a lens design can do. The measurement decides how much of that ceiling you actually receive. A premium lens fitted with a pupillary distance 2mm out, in a frame that was never adjusted, can end up feeling worse than a carefully fitted mid-range one. So the order runs: work out what problem you're solving, then choose the design, and compare brands last.
+
+If you have a quote from somewhere else and can't decode it, bring it in — we'll tell you what those specifications actually mean for you.

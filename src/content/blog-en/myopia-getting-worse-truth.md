@@ -92,3 +92,11 @@ Laser surgery corrects the refractive prescription — it does not change axial 
 If you have concerns about how fast your child's myopia is progressing, or you want to confirm whether your own prescription is correct, you're welcome to book a full visual assessment at Beyond Visual Optometry in Xinzhuang.
 
 No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City | +886-2-2206-6700 | [Book online](/en/booking)
+
+---
+
+Back to the myth at the top: not wearing glasses for fear of getting worse.
+
+What actually happens is that pushing through blurred vision mostly buys you squinting, leaning in closer and tiring faster. Whether to wear correction, and how much, is a question answered by measurement, not by endurance or guesswork. This goes double for children: anything requiring medical assessment we refer to an ophthalmologist, while keeping a record of how the numbers change over time is something you can leave with us.
+
+No. 419-1, Zhongzheng Rd., Xinzhuang | +886-2-2206-6700 | LINE OA: https://lin.ee/SoWj9Ft

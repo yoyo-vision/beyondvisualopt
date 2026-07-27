@@ -79,3 +79,11 @@ In most cases, yes. Converting sunglasses to prescription lenses requires attent
 **Q: My Lindberg's temple arm is loose, or my ic! berlin's spring clip is deformed — can you fix it?**
 
 Yes. Adjusting and repairing screwless and spring-clip constructions is one of our specialties, and we welcome frames purchased elsewhere. Whether it can be fixed, how, and whether it needs to be sent out for repair will be explained to you in person after assessment.
+
+---
+
+That opening line — "we don't dare touch this one" — is an honest answer. Not every shop is equipped to handle unusual frame construction, and declining beats attempting.
+
+For you, though, it means the frame stays in its box. So our approach is to assess first and quote after: frame condition, material, construction, whether the lens can be made — each checked before we tell you whether it's viable. If we judge the risk too high, we'll say so plainly, which is more responsible than breaking it and apologising afterwards.
+
+Just bring the frame. We assess first and quote after, whether or not you bought it from us.

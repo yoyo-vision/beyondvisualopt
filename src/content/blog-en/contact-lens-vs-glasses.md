@@ -97,3 +97,14 @@ To assess whether your eyes are suited to contact lenses, or to confirm that you
 
 Beyond Visual Optometry (Xinzhuang): No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City | +886-2-2206-6700
 Beyond Visual Optometry (Banqiao): No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City | +886-2-2253-1246
+
+---
+
+So "which is better" turns out to be the wrong question.
+
+Glasses and contact lenses aren't rivals; they divide the work. Most people are happiest owning both and switching by situation — glasses for the commute and the office, contacts for sport or an occasion that matters. The effort is better spent making sure both are measured properly than on picking a side.
+
+Both locations can assess them together:
+
+・Beyond Visual Optometry × Biyang Optometry Clinic (Xinzhuang), No. 419-1, Zhongzheng Rd. | +886-2-2206-6700
+・Beyond Visual Optical × Beyond Visual Optometry (Banqiao), No. 28, Lane 47, Sec. 2, Shuangshi Rd. | +886-2-2253-1246

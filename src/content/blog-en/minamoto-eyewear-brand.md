@@ -111,3 +111,11 @@ Pure titanium resists corrosion and doesn't rust easily, so day-to-day care is t
 **Q: Where in Xinzhuang can I try on MINAMOTO?**
 
 Beyond Visual Optometry (Xinzhuang, Biyang Optometry) carries the MINAMOTO series for in-person try-on. Optometrist YoYo can help recommend the best frame shape and size based on your facial features and prescription (especially lens thickness considerations for high myopia).
+
+---
+
+Sabae manufacturing is a good starting point, but it's still only a place of origin.
+
+Whether a frame ends up working comes down to its relationship with your face: the height of your nose bridge, where your ears sit, how wide your face is, and how thick your lenses will be. Beautifully made frames still pinch at the temples if the size is wrong. Get the size right, then have every angle adjusted by hand, and a frame finally becomes yours.
+
+The MINAMOTO range can be tried on at our Xinzhuang store. Bring your prescription and we'll factor in how thick the lenses will look, too.

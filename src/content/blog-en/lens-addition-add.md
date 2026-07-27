@@ -60,6 +60,16 @@ One note: everything above describes **general trends and calculation logic.** I
 
 ---
 
+## That Said: The Same ADD Can Turn Into Very Different Glasses
+
+Everything above is about where that number comes from and how it's calculated. What we see day to day is that **getting ADD right is only half the job.**
+
+The same +2.00 addition can become a fixed reading pair, a progressive lens, or an office lens built mainly around arm's-length distance — and those are three genuinely different experiences to wear. What you feel depends not only on the number but on the height it sits at in the lens, the angle at which you drop your gaze, and where the frame rests on your nose. Hand the same prescription to different people and the results differ, usually for these reasons.
+
+One more thing worth saying early: **higher ADD is not better.** The more the lens adds, the closer it pulls your sharpest working distance. Someone gets a pair that reads a newspaper beautifully and then finds the computer screen has gone soft — that isn't a mistake, it's a pair built for a nearer distance. How much ADD you need depends on where you spend your day looking, not on an age chart.
+
+So reading your prescription is step one. Step two is telling your optometrist what distances you actually work at. That sentence matters more than 0.25 either way on the ADD.
+
 ## Common Misunderstandings / FAQ
 
 ### Q1: Is ADD different between the two eyes?

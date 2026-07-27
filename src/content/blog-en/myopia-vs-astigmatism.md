@@ -59,6 +59,16 @@ If you have your prescription in hand, you can tell the two apart at a glance:
 
 That `× 180` describes the astigmatism's "direction," ranging from 0 to 180 degrees—it tells you which way the football shape's flatter axis is pointing. Myopia has no direction; astigmatism does. That's the easiest way to tell them apart on a prescription.
 
+## Once You Can Tell Them Apart, Here's What Actually Affects You
+
+Knowing that myopia and astigmatism are two separate things sounds like tidy background knowledge. In the fitting room it turns into something very practical, because **astigmatism is easier to get wrong than myopia.**
+
+Myopia is one number. A little more or a little less, and what you feel changes in a fairly linear way. Astigmatism carries two variables: the power (CYL) and the direction (AXIS). Get the direction off by a few degrees and, however correct the power is, floors look slightly tilted and text sits slightly askew. That wrongness is hard to describe, too — most people can only say "it just feels odd" without being able to point at anything.
+
+There's another common situation: some prescriptions deliberately under-correct astigmatism. Measured at -1.25, made at -0.75. There's a reason for it, usually to make a first pair easier to adapt to. But if the discount is repeated every time you change glasses and never restored, you may spend years in glasses that never quite deliver, quietly concluding that you're just someone whose eyes tire easily.
+
+So when you get your prescription, alongside understanding what SPH and CYL each mean, it's worth asking one more question: **was my astigmatism corrected in full this time, and if not, why?** An optometrist willing to explain that answer is usually the kind who gets the other details right too.
+
 ## Common Misconceptions / FAQ
 
 **Q: Is astigmatism just what happens when myopia gets bad enough?**

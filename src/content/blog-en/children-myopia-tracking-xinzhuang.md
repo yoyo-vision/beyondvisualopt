@@ -2,7 +2,7 @@
 title: "Your Child's Myopia Keeps Getting Worse? A Parent's Guide to Myopia Tracking and Lens Options in Xinzhuang"
 date: "2025-06-13"
 tag: "Kids Vision"
-excerpt: "Worried about your child's prescription climbing every year? Learn what a licensed optometrist can do, what an ophthalmologist handles, and how regular tracking plus defocus-design lenses help you stay on top of your child's vision development."
+excerpt: "Worried about your child's prescription climbing every year? Learn what a licensed optometrist can do, what an ophthalmologist handles, and how regular tracking helps you stay on top of your child's vision development, plus the optics behind defocus-design lenses."
 image: ""
 youtube: ""
 instagram: ""
@@ -147,3 +147,11 @@ Absolutely. The point of tracking is knowing the trend — where the prescriptio
 **Q: Where can I get children's myopia tracking in Xinzhuang?**
 
 Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, defocus-design soft contact lens fitting, and Zeiss MyoCare evaluation. Our licensed optometrists track progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking).
+
+---
+
+"It feels like I can't keep up with the changes" — the important word in that sentence is *feels*.
+
+Without records, parents have only impressions to go on, and impressions are easily dominated by whatever the last check-up said. Line up each visit's prescription and axial length in date order, though, and the things worth worrying about separate themselves from the things that aren't. Anything requiring medical judgement, we refer to an ophthalmologist. Keeping the data properly is the part you can leave to us.
+
+Xinzhuang (Biyang Optometry Clinic): +886-2-2206-6700. Start the record now, then come back every three to six months to add to it.

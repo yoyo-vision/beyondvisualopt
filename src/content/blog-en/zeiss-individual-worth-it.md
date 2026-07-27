@@ -102,3 +102,11 @@ No. Individual² lenses can be fitted into any frame — but the pantoscopic til
 ---
 
 Wondering whether Zeiss Individual² is right for you? Book a free visual consultation at Beyond Visual Optometry — Xinzhuang store: No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, phone +886-2-2206-6700, or [book online](/en/booking).
+
+---
+
+As we said at the start, we'd rather you spent the money well. So here's the part about when not to buy it.
+
+If your prescription is moderate, you've chosen a standard frame shape, and your day doesn't involve unusual switching between distances, Individual² has limited room to show what it can do. Putting that budget into coatings and one thorough set of measurements will be more noticeable. Where it earns its price is unusual fitting parameters, or eyes that are particularly sensitive to peripheral distortion.
+
+Not sure which you are? One set of measurements will tell us — and if the answer is that you don't need it, we'll say so. Biyang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang, +886-2-2206-6700.
