@@ -1,6 +1,18 @@
+# 安全標頭（2026-07-27 資安加固）
+#
+# ⚠️ frame-src 踩過的坑：地圖 iframe 的 src 是 https://maps.google.com/maps?...&output=embed，
+# 但該網址會 301 轉址到 https://www.google.com/maps/embed?...。CSP 的 frame-src 會一路檢查
+# 到轉址後的最終網址，所以只放行 maps.google.com 不夠，www.google.com 也必須在白名單裡，
+# 否則兩店地圖全部被擋成破圖（2026-07-27 老闆回報首頁地圖打不開，即為此因）。
+# 動這行之前請先實際開首頁看地圖有沒有出來。
+#
+# ⚠️ connect-src 踩過的坑：GA4 的 gtag.js 是從 googletagmanager.com「載入」，
+# 但實際「回傳數據」是打 google-analytics.com（含 regionN.google-analytics.com）。
+# 只放行 googletagmanager 會讓腳本載得進來、數據卻送不出去，GA4 靜默停止收數，
+# 畫面完全正常、console 也不一定看得到，最難察覺。改動前請到 GA4 即時報表確認有數字。
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://vision-platform-five.vercel.app; frame-src 'self' https://maps.google.com https://www.youtube.com https://vision-platform-five.vercel.app; frame-ancestors 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://vision-platform-five.vercel.app; frame-src 'self' https://maps.google.com https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com https://vision-platform-five.vercel.app; frame-ancestors 'self'
