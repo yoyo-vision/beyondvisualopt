@@ -113,7 +113,8 @@ const pageSchema = {
 <Layout
   {/* 同中文版（2026-07-27）：填了 seoTitle 就整串照用，沒填才接品牌後綴 */}
   title={post.data.seoTitle ?? `${post.data.title} | Beyond Visual Optometry, New Taipei`}
-  description={post.data.excerpt}
+  {/* 同 seoTitle：填了 seoDescription 就用它當 meta description，沒填才退回 excerpt */}
+  description={post.data.seoDescription ?? post.data.excerpt}
   schema={pageSchema}
   lang="en"
   ogType="article"

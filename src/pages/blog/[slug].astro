@@ -202,7 +202,8 @@ const pageSchema = {
       中文 Google 大約只顯示 30 字，等於把後綴連同標題尾巴一起截掉，
       有些文章的標題本身已含「能見度視覺中心」，接上去還會重複兩次。 */}
   title={post.data.seoTitle ?? `${post.data.title}｜能見度視覺中心 新莊板橋`}
-  description={post.data.excerpt}
+  {/* 同 seoTitle：填了 seoDescription 就用它當 meta description，沒填才退回 excerpt */}
+  description={post.data.seoDescription ?? post.data.excerpt}
   schema={pageSchema}
   enPath={hasEn ? `/en/blog/${post.slug}` : undefined}
   ogType="article"
