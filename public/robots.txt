@@ -1,6 +1,16 @@
+# ⚠️ /api/ 整段擋掉會連帶擋死首頁與作品集頁的顧客評論區、兩店即時評分、實拍照片牆
+# ——那些內容全靠 JS 打 /api/google-reviews 與 /api/place-photo 取得，Googlebot 渲染時
+# 遵守 robots.txt，被自己擋住＝ 226 則五星評論對 Google 完全隱形，連 JS 注入的
+# Review 結構化資料也永遠不會產生（2026-07-28 官網部體檢抓出）。
+# 這兩支是公開唯讀端點（金鑰在 server 端、各自帶 1h／24h 快取，爬蟲流量由 CDN 吸收），
+# 必須放行。真正要擋的只有 /api/auth（GitHub OAuth token 交換）。
+# 註：robots.txt 採最長匹配優先，下方兩條 Allow 會蓋過 Disallow: /api/。
+
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Allow: /api/google-reviews
+Allow: /api/place-photo
 
 Sitemap: https://beyondvisualopt.com/sitemap-index.xml
