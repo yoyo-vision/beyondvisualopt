@@ -1,5 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 指南 → 文章的聚落連結（與 blog/[slug].astro 的 PILLAR_MAP 對稱，形成雙向互連）
+const CLUSTER_SLUGS = [
+  'optometry-vs-ophthalmology',
+  'blurry-vision-see-doctor',
+  'eye-strain-see-doctor',
+  'child-vision-check-where',
+  'eye-exam-before-glasses',
+];
+const allPosts = await getCollection('blog');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
 
 // 眼科 vs 驗光所 症狀分流指南：承接 GBP「眼科」搜尋流量（月千次級）的誠實分流頁
 // 合規基準：明確自稱驗光所非眼科；紅旗症狀一律「建議儘速至眼科就醫」；發現異常依法轉介。
@@ -136,8 +150,24 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-3 mt-10 text-center" style="font-size:13px;line-height:1.8">
-        延伸閱讀：<a href="/blog/optometry-vs-ophthalmology/" class="underline underline-offset-2">驗光所和眼科差在哪？</a>｜新莊店 02-2206-6700・板橋店 02-2253-1246
+        新莊店 02-2206-6700・板橋店 02-2253-1246
       </p>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 

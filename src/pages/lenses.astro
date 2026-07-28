@@ -214,6 +214,25 @@ const schema = {
     </div>
   </section>
 
+  <!-- 延伸閱讀（純導覽連結，不含產品效能敘述） -->
+  <section class="px-6 md:px-16 py-14 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(22px,3vw,30px);font-weight:400">延伸閱讀</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {[
+          { href: '/guide/lens-brands/', text: '鏡片品牌怎麼選' },
+          { href: '/guide/progressive-lens/', text: '多焦點鏡片完整指南' },
+          { href: '/guide/rgp-contact-lens/', text: 'RGP 硬式隱形眼鏡入門' },
+          { href: '/guide/aniseikonia/', text: '兩眼度數差很多？認識不等像' },
+        ].map(l => (
+          <li>
+            <a href={l.href} class="block border border-brand-ink/10 rounded-xl px-5 py-4 text-brand-navy hover:border-brand-gold transition-colors" style="font-size:15px">{l.text} →</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <!-- 免責聲明 -->
   <section class="px-6 md:px-16 py-10 bg-white">
     <div class="max-w-4xl mx-auto border border-brand-ink/10 p-5" style="background:rgba(26,47,78,0.03);font-size:13px">

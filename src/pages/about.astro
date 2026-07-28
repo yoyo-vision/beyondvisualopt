@@ -123,14 +123,15 @@ const schema = {
         <div class="space-y-6">
           {[
             { num: '2023', label: '臨床驗光所開業', sub: '新北市新莊區中正路419-1號，合法立案驗光所' },
-            { num: '221+', label: '顧客五星評價', sub: 'Google 評分 5.0，高度近視與多焦點配鏡口碑' },
+            // 評分與則數由頁尾 script 即時覆寫；靜態值僅為 fallback，實查日 2026-07-28（新莊 5.0／226）
+            { num: '221+', label: '顧客五星評價', sub: 'Google 評分 5.0，高度近視與多焦點配鏡口碑', numId: 'about-review-count', subId: 'about-review-rating' },
             { num: '蔡司', label: 'Zeiss 簽約經銷', sub: 'Individual² 個人化訂製鏡片授權合作店' },
           ].map(item => (
             <div class="border-t border-brand-ink/15 pt-6 flex gap-8 items-start">
-              <div class="font-serif text-brand-gold flex-shrink-0" style="font-size:30px;font-weight:300;line-height:1">{item.num}</div>
+              <div id={item.numId} class="font-serif text-brand-gold flex-shrink-0" style="font-size:30px;font-weight:300;line-height:1">{item.num}</div>
               <div>
                 <p class="font-sans text-brand-ink font-semibold mb-1" style="font-size:15px">{item.label}</p>
-                <p class="text-brand-ink-3" style="font-size:14px">{item.sub}</p>
+                <p id={item.subId} class="text-brand-ink-3" style="font-size:14px">{item.sub}</p>
               </div>
             </div>
           ))}
@@ -394,5 +395,20 @@ const schema = {
       </a>
     </div>
   </section>
+
+  <script>
+    // 顧客評價數字改抓 Google 即時資料，不再寫死（寫死會隨評論變動失真，涉公平法 §21 不實廣告風險）。
+    // 取不到就沿用 HTML 內的靜態 fallback。
+    fetch('/api/google-reviews?store=xinzhuang')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.rating || !d.total) return;
+        var num = document.getElementById('about-review-count');
+        var sub = document.getElementById('about-review-rating');
+        if (num) num.textContent = String(d.total);
+        if (sub) sub.textContent = 'Google 評分 ' + d.rating.toFixed(1) + '，高度近視與多焦點配鏡口碑';
+      })
+      .catch(function () { /* 靜默失敗，保留靜態 fallback */ });
+  </script>
 
 </Layout>

@@ -148,6 +148,8 @@ const services = [
     ],
     tag: '高近視族群',
     note: '每 1mm 頂點距離誤差 ≈ 0.25D 實際度數差異',
+    href: '/guide/aniseikonia/',
+    linkText: '兩眼度數差很多？先看不等像這篇',
   },
   {
     icon: '🔵',
@@ -164,6 +166,8 @@ const services = [
     ],
     tag: '新莊店 / 板橋店',
     note: '本項為一般硬式隱形眼鏡（RGP）驗配，非角膜塑形（OK 鏡）。依驗光人員法第 12 條，十五歲以下者（含 15 歲）之隱形眼鏡驗光應於眼科醫師指導下為之；未滿六歲兒童不予驗配。',
+    href: '/guide/rgp-contact-lens/',
+    linkText: 'RGP 硬式隱形眼鏡入門',
   },
   {
     icon: '🎓',
@@ -246,7 +250,7 @@ const faqs = [
             <p class="mt-5 pt-4 border-t border-gray-100 text-xs text-gray-400 italic">{s.note}</p>
           )}
           {s.href && (
-            <a href={s.href} class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors">深入了解 RGP →</a>
+            <a href={s.href} class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors">{s.linkText} →</a>
           )}
         </div>
       ))}

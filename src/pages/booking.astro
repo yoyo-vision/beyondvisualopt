@@ -13,8 +13,9 @@ import Layout from '../layouts/Layout.astro';
     <p class="text-white/70 max-w-xl mx-auto mb-6" style="font-size:17px;line-height:1.85">
       不是快速配鏡出貨。我們會保留一段完整屬於你的時間，由驗光人員真正了解你的視覺狀況——想先了解流程與門市資訊，往下捲都有。
     </p>
+    <!-- 評分數字由頁尾 script 從 /api/google-reviews 即時覆寫；內文靜態值僅為 fallback，實查日 2026-07-28（新莊 5.0／226）-->
     <p class="text-white/90 mb-2" style="font-size:14.5px">
-      <span class="text-brand-gold">★</span> Google 5.0・226 則評價 <span class="text-white/40">｜新莊店真實顧客評分</span>
+      <span class="text-brand-gold">★</span> <span id="booking-google-rating">Google 5.0・226 則評價</span> <span class="text-white/40">｜新莊店真實顧客評分</span>
     </p>
     <p class="text-white/50" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
   </section>
@@ -199,5 +200,19 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <script>
+    // Hero 評分：改抓 Google 即時資料，避免硬編碼數字隨評論變動而失真（公平法 §21 不實廣告風險）。
+    // 取不到就沿用 HTML 內的靜態 fallback，畫面不會空掉。
+    fetch('/api/google-reviews?store=xinzhuang')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var el = document.getElementById('booking-google-rating');
+        if (el && d && d.rating && d.total) {
+          el.textContent = 'Google ' + d.rating.toFixed(1) + '・' + d.total + ' 則評價';
+        }
+      })
+      .catch(function () { /* 靜默失敗，保留靜態 fallback */ });
+  </script>
 
 </Layout>

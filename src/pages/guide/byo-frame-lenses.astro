@@ -1,5 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 指南 → 文章的聚落連結（與 blog/[slug].astro 的 PILLAR_MAP 對稱，形成雙向互連）
+const CLUSTER_SLUGS = [
+  'lens-only-service',
+  'online-frame-lens-fitting',
+  'old-frame-relens',
+  'vintage-frame-lens',
+];
+const allPosts = await getCollection('blog');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
 
 // 自帶鏡框配鏡片：服務主承接頁（吃「自帶鏡框 配鏡片」「網購鏡框 配鏡」「只配鏡片」意圖）
 // 營運事實依老闆 2026-07-20 拍板：全類型框經評估後承作＋風險告知同意；鏡片＋固定加工費；兩店服務。
@@ -126,6 +139,22 @@ const schema = {
           class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
           style="font-size:15px;letter-spacing:0.08em">查看可約時段</a>
         <p class="text-brand-ink-3 mt-4" style="font-size:13px">新莊店 02-2206-6700｜板橋店 02-2253-1246</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>

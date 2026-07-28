@@ -63,7 +63,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 - Sunday: 12:00–21:00
 - Closed Thursdays (phone appointments available for urgent needs)
 
-**Google rating:** 5.0 (221 reviews)
+**Google reviews:** See our Xinzhuang Google Business Profile for the current rating and customer comments
 
 ### What we offer
 
@@ -81,7 +81,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 
 **Q: Where can I get a vision exam in Xinzhuang as an English speaker?**
 
-Beyond Visual Optometry is located at No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City, a 5-minute walk from Fuda MRT Station. It's run by Optometrist YoYo (licensed optometrist) and holds a 5.0 Google rating with 221 reviews.
+Beyond Visual Optometry is located at No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City, about an 8-minute walk from Xinzhuang MRT Station. It's run by Optometrist YoYo (licensed optometrist, License No. 003309). You can check the store's current Google rating and customer reviews on its Google Business Profile.
 
 **Q: How much do glasses cost in Xinzhuang?**
 
