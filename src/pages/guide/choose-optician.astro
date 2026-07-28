@@ -26,7 +26,7 @@ const faqs = [
     // 2026-07-27 關鍵字集中：本題原為「新莊哪裡配眼鏡比較好」，與新莊店頁 /xinzhuang/ 互搶精準詞，
     // 已改為跨區泛用問法，在地細節交由店頁承接（見本頁「新莊店 × 板橋店」區塊內鏈）
     q: '新北配眼鏡，怎麼挑一家可以信任的店？',
-    a: '不是看招牌大小，而是三件事：執行驗光的是不是持照驗光人員（執照可於衛福部醫事人員查詢系統核對）、驗光流程是否完整（含雙眼視覺評估通常需要 45–60 分鐘）、配鏡後有沒有免費回診調整——眼鏡舒不舒服，往往是取件之後才決定的。能見度在新莊與板橋各有一間門市，兩店的地址、交通與服務內容整理在本頁下方「新莊店 × 板橋店」區塊，可直接點進各店詳細介紹。',
+    a: '不是看招牌大小，而是三件事：執行驗光的是不是持照驗光人員（執照可於衛福部醫事人員查詢系統核對）、驗光流程是否完整（含雙眼視覺評估通常需要 45–60 分鐘）、配鏡後有沒有免費回店調整——眼鏡舒不舒服，往往是取件之後才決定的。能見度在新莊與板橋各有一間門市，兩店的地址、交通與服務內容整理在本頁下方「新莊店 × 板橋店」區塊，可直接點進各店詳細介紹。',
   },
   {
     q: '板橋驗光所怎麼選？',
@@ -98,7 +98,7 @@ const schema = {
       <ul class="space-y-2.5">
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>驗光所依《驗光人員法》設立、須由持照驗光人員執行驗光、可合法開立驗光報告；一般眼鏡行屬商業登記，不能開立。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>度數單純換一副近視眼鏡，眼鏡行可應付；有頭暈、眼睛疲勞、老花或多焦點需求，請找驗光所做完整評估。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>判斷好驗光所看五件事：驗光人員有無執照、流程是否 45–60 分鐘、有無量頂點距離與雙眼視覺、鏡片來源清楚、配鏡後能否免費回診。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>判斷好驗光所看五件事：驗光人員有無執照、流程是否 45–60 分鐘、有無量頂點距離與雙眼視覺、鏡片來源清楚、配鏡後回店調整收不收費。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>驗光所與眼科各管一段：眼睛有症狀（紅痛、飛蚊閃光、突發模糊）先看眼科；想配一副舒服的眼鏡、戴了會暈找驗光所。</span></li>
       </ul>
     </div>
@@ -168,7 +168,7 @@ const schema = {
           { n: '02', title: '驗光流程有多長？', desc: '完整臨床驗光至少 45–60 分鐘。10–15 分鐘的「快速驗光」只能確認基本度數，無法評估雙眼視覺、調節力、隱斜視等影響視覺舒適度的關鍵指標。' },
           { n: '03', title: '有沒有量頂點距離與雙眼視覺？', desc: '高度近視要靠頂點距離（Vertex Distance）補正才能確保有效度數正確；雙眼協調有問題（隱斜視、輻輳不足），光靠度數配出來還是會頭暈。這兩項有沒有做，決定戴起來舒不舒服。' },
           { n: '04', title: '設備與鏡片來源清楚嗎？', desc: '確認是否為蔡司（ZEISS）、HOYA、Essilor、Nikon 等原廠授權經銷商，而非仿冒品或水貨。多焦點與個人化訂製鏡片，設備與授權尤其重要。' },
-          { n: '05', title: '配鏡後能不能免費回診？', desc: '正規驗光所應提供免費回診調整。取鏡時要當場試戴、確認遠中近視野與鏡架配適，而不是「做好寄給你，有問題再回來」。不提供售後的店家要小心。' },
+          { n: '05', title: '配鏡後能不能免費回店調整？', desc: '正規驗光所應提供免費回店調整。取鏡時要當場試戴、確認遠中近視野與鏡架配適，而不是「做好寄給你，有問題再回來」。不提供售後的店家要小心。' },
         ].map(item => (
           <div class="border border-brand-ink/8 rounded-2xl p-7">
             <span class="font-sans text-brand-gold font-semibold tracking-widest mb-3 block" style="font-size:13px;letter-spacing:0.18em">{item.n}</span>
@@ -184,7 +184,7 @@ const schema = {
   <section id="mistakes" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見配鏡地雷：為什麼配了眼鏡還是不舒服</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">「配了還是頭暈」的案例，大半不是眼睛特別難配，而是驗光流程省掉了某個關鍵步驟。這些是門診最常見的地雷。</p>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">「配了還是頭暈」的案例，大半不是眼睛特別難配，而是驗光流程省掉了某個關鍵步驟。這些是驗光現場最常見的地雷。</p>
       <div class="space-y-6">
         {[
           { title: '① 快速驗光，只問「幾號比較清楚」', desc: '十分鐘看視力表、選比較清楚的那個就結束——這種流程漏掉雙眼視覺、調節力、眼位穩定性的評估。度數看似對了，戴起來卻怪怪的、頭重、容易疲勞。' },
@@ -250,7 +250,7 @@ const schema = {
   <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-5xl mx-auto">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">新莊店 × 板橋店：在地選擇</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商，提供 45–60 分鐘完整臨床驗光與配鏡後免費回診。看哪間離你近。</p>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商，提供 45–60 分鐘完整臨床驗光，配鏡後回店調整不收費。看哪間離你近。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="border-t border-white/10 pt-6">
           <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">新莊店</p>

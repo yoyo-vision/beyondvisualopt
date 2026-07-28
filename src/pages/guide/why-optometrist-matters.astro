@@ -162,7 +162,7 @@ const schema = {
           { n: '02', title: '完整驗光：客觀＋主觀＋雙眼視覺', desc: '電腦驗光（客觀）給的是起點，接著要用綜合驗光儀讓你試戴、回饋、細部微調（主觀），再評估兩眼協不協調、調節力夠不夠、有沒有隱斜視。看得清楚只是及格線，看得舒服、久看不累才是這一段的目標。' },
           { n: '03', title: '配鏡參數量測：把度數對準你的臉', desc: '度數對了，還要讓鏡片正確坐在你臉上。這一段要分別量左右眼各自的單側瞳距、配多焦點時的瞳高，以及頂點距離（鏡片到眼睛的距離）與鏡框傾斜角。這些參數任何一項偏掉，都會讓好鏡片發揮不出應有的效果。' },
           { n: '04', title: '鏡框選配與調整：讓鏡框穩定坐好', desc: '鏡框不只是外觀，它決定鏡片能不能維持在剛剛量好的位置。鼻墊、鏡腳、傾斜角要依你的臉調整，鏡框滑一點、歪一點，前面量得再精準也會跑掉。' },
-          { n: '05', title: '戴後追蹤：不是做好就結束', desc: '取鏡當場要戴上確認遠中近視野、兩眼平衡與鏡架配適，之後也應提供回診調整。多焦點與高度近視尤其需要適應期回訪。「做好給你、有問題再說」不是完整流程的樣子。' },
+          { n: '05', title: '戴後追蹤：不是做好就結束', desc: '取鏡當場要戴上確認遠中近視野、兩眼平衡與鏡架配適，之後也應提供回店調整。多焦點與高度近視尤其需要適應期回訪。「做好給你、有問題再說」不是完整流程的樣子。' },
         ].map(item => (
           <div class="border border-brand-ink/8 rounded-2xl p-7">
             <span class="font-sans text-brand-gold font-semibold tracking-widest mb-3 block" style="font-size:13px;letter-spacing:0.18em">{item.n}</span>
@@ -192,7 +192,7 @@ const schema = {
             ['配多焦點時量了瞳高', '漸進鏡片的視線通道要靠瞳高定位，沒量就等於通道放錯位置。'],
             ['考量了頂點距離與鏡框傾斜角', '高度數與多焦點特別依賴這兩項，決定有效度數與視野。'],
             ['取鏡當場讓你試戴確認', '確認遠中近視野、兩眼平衡、鏡框有沒有坐穩，而非直接打包。'],
-            ['說明了回診與售後', '完整流程會留一段適應期追蹤，不是做好就沒事。'],
+            ['說明了回店與售後', '完整流程會留一段適應期追蹤，不是做好就沒事。'],
           ].map(([t, d]) => (
             <li class="flex items-start gap-4">
               <span class="flex-shrink-0 mt-1 text-brand-gold" style="font-size:15px">✔</span>
@@ -240,7 +240,7 @@ const schema = {
         <p>很多人不知道，台灣的「驗光」在 2016 年《驗光人員法》上路後，已經是一門受國家規範的醫事專業，不再是誰都能做的商業服務。</p>
         <p><strong>驗光師與驗光生，都是通過國家考試的醫事人員。</strong>驗光師通過的是專門職業及技術人員「高等考試」，驗光生通過的是「普通考試」，兩者在法定業務範圍上有部分差異，但都能合法為你執行一般驗光。門市裡實際為你服務的，我們統一稱「驗光人員」。</p>
         <p><strong>「驗光所」是政府核可立案的醫事機構</strong>，必須由持照驗光人員執行驗光、可合法開立驗光報告，這和只做商業登記的一般眼鏡行在法規上是兩回事。走進店裡，驗光人員的證書字號依法應揭示於門市，你可以直接確認。</p>
-        <p class="text-brand-ink-3" style="font-size:15px">要提醒的是：驗光人員負責的是你眼睛的「視覺品質」，不做疾病診斷與醫療處置。像散瞳這類屬於醫療行為的項目，請洽眼科醫師；驗光過程中若發現視力異常無法有效補正，我們也會依法建議你轉診眼科。至於 6 歲以上、15 歲以下學童的驗光，依法應在眼科醫師指導下進行。想更完整分辨「該掛眼科還是找驗光所」，可以看我們的分流指南。</p>
+        <p class="text-brand-ink-3" style="font-size:15px">要提醒的是：驗光人員負責的是你眼睛的「視覺品質」，不做疾病診斷與醫療處置。像散瞳這類屬於醫療行為的項目，請洽眼科醫師；驗光過程中若發現視力異常無法有效補正，我們也會依法協助轉介眼科。至於 6 歲以上、15 歲以下學童的驗光，依法應在眼科醫師指導下進行。想更完整分辨「該掛眼科還是找驗光所」，可以看我們的分流指南。</p>
       </div>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
         延伸：<a href="/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">眼睛不舒服，該掛眼科還是找驗光所？症狀分流完整指南</a>
@@ -252,7 +252,7 @@ const schema = {
   <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-5xl mx-auto">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">把「乘法」做完整的地方：新莊店 × 板橋店</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商，提供 45–60 分鐘完整臨床驗光、配鏡參數量測與配鏡後回診。我們不勸你只挑最貴的鏡片，只把該做完的驗配環節做完。看哪間離你近。</p>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商，提供 45–60 分鐘完整臨床驗光、配鏡參數量測與配鏡後回店。我們不勸你只挑最貴的鏡片，只把該做完的驗配環節做完。看哪間離你近。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="border-t border-white/10 pt-6">
           <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">新莊店</p>

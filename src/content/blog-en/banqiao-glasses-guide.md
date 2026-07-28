@@ -59,7 +59,7 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 - Daily, 10:00–22:00
 - Closed the 2nd and 4th Sunday of each month
 
-**Google rating:** 4.7 (15 reviews)
+**Google rating:** 4.5 (16 reviews)
 
 ### What we offer
 
