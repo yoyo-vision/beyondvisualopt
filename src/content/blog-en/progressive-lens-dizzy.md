@@ -150,7 +150,7 @@ Not necessarily. Premium lenses offer wider corridors and smaller aberration zon
 
 **Q: Where can I get progressive lens dizziness sorted out in Xinzhuang or Banqiao?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao, New Taipei City) offers a complete progressive-lens dizziness assessment with Optometrist YoYo: re-measuring PD and fitting height, verifying the prescription, adjusting the frame, and evaluating whether the lens design suits you. Even if your progressives were made elsewhere, you're welcome to come in for a second opinion. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking).
+Beyond Visual Optometry (Xinzhuang and Banqiao, New Taipei City) offers a complete progressive-lens dizziness assessment with Optometrist YoYo: re-measuring PD and fitting height, verifying the prescription, adjusting the frame, and evaluating whether the lens design suits you. Even if your progressives were made elsewhere, you're welcome to come in for a second opinion. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
 
 ---
 

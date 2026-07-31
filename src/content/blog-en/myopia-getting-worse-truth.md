@@ -91,7 +91,7 @@ Laser surgery corrects the refractive prescription — it does not change axial 
 
 If you have concerns about how fast your child's myopia is progressing, or you want to confirm whether your own prescription is correct, you're welcome to book a full visual assessment at Beyond Visual Optometry in Xinzhuang.
 
-No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City | +886-2-2206-6700 | [Book online](/en/booking)
+No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City | +886-2-2206-6700 | [Book online](/en/booking/)
 
 ---
 

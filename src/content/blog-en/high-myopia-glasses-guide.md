@@ -107,6 +107,6 @@ Yes — contact lenses come in different materials, including soft and rigid (RG
 
 **Q: Where can I get a precision fitting for high myopia in Xinzhuang or Banqiao (New Taipei)?**
 
-At Beyond Visual Optometry in Xinzhuang, Optometrist YoYo (licensed optometrist) provides complete high myopia fitting evaluations, including vertex distance compensation calculations, precise optical center positioning, frame suitability assessment, and post-fitting follow-up. Our Banqiao branch also offers consultations and fittings. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking).
+At Beyond Visual Optometry in Xinzhuang, Optometrist YoYo (licensed optometrist) provides complete high myopia fitting evaluations, including vertex distance compensation calculations, precise optical center positioning, frame suitability assessment, and post-fitting follow-up. Our Banqiao branch also offers consultations and fittings. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
 
 Fitting glasses for high myopia should never be "pick a 1.74 lens and go home." Every detail deserves careful attention — because your eyes depend on that pair of glasses for 16 hours a day.

@@ -146,7 +146,7 @@ Absolutely. The point of tracking is knowing the trend — where the prescriptio
 
 **Q: Where can I get children's myopia tracking in Xinzhuang?**
 
-Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, defocus-design soft contact lens fitting, and Zeiss MyoCare evaluation. Our licensed optometrists track progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking).
+Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, defocus-design soft contact lens fitting, and Zeiss MyoCare evaluation. Our licensed optometrists track progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking/).
 
 ---
 

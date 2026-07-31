@@ -44,7 +44,7 @@ function extractFaq(body: string) {
 }
 const faqs = extractFaq(post.body);
 
-const canonicalUrl = `https://beyondvisualopt.com/en/blog/${post.slug}`;
+const canonicalUrl = `https://beyondvisualopt.com/en/blog/${post.slug}/`;
 const articleSchema = {
   "@type": "Article",
   "@id": canonicalUrl,
@@ -146,7 +146,7 @@ const pageSchema = {
               <strong class="text-brand-navy">Xinzhuang &amp; Banqiao, New Taipei City, Taiwan</strong>.
               Lens availability, pricing and regulations described here follow the Taiwanese market.
               English-speaking residents of Greater Taipei are welcome to
-              <a href="/en/booking" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold transition-colors">book an English-friendly vision exam</a>.
+              <a href="/en/booking/" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold transition-colors">book an English-friendly vision exam</a>.
             </p>
           </div>
         </div>
@@ -159,13 +159,13 @@ const pageSchema = {
         <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
           <h2 class="text-xl font-bold mb-3">Questions about your vision?</h2>
           <p class="text-gray-300 mb-6" style="font-size:15px">Beyond Visual Optometry — English-friendly vision exams in Xinzhuang &amp; Banqiao, New Taipei City</p>
-          <a href="/en/booking" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+          <a href="/en/booking/" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
             Book an Appointment →
           </a>
         </div>
 
         <div class="mt-10 text-center">
-          <a href="/en/blog" class="text-brand-navy font-semibold hover:underline text-sm">← Back to all articles</a>
+          <a href="/en/blog/" class="text-brand-navy font-semibold hover:underline text-sm">← Back to all articles</a>
         </div>
       </article>
 
@@ -196,7 +196,7 @@ const pageSchema = {
         <div class="bg-brand-light rounded-2xl p-5 mb-6">
           <p class="text-brand-navy font-bold text-sm mb-2">🔬 Vision Consultation</p>
           <p class="text-gray-600 text-xs leading-relaxed mb-4">Not sure what's causing your vision issues? Optometrist YoYo offers initial consultations in English.</p>
-          <a href="/en/booking" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
+          <a href="/en/booking/" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
             Book Now →
           </a>
         </div>

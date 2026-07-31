@@ -93,7 +93,7 @@ Check whether you're on a computer or in an air-conditioned environment (both re
 
 ---
 
-To assess whether your eyes are suited to contact lenses, or to confirm that your contact lens prescription is correct, you're welcome to [book an appointment](/en/booking) at Beyond Visual Optometry for a complete evaluation.
+To assess whether your eyes are suited to contact lenses, or to confirm that your contact lens prescription is correct, you're welcome to [book an appointment](/en/booking/) at Beyond Visual Optometry for a complete evaluation.
 
 Beyond Visual Optometry (Xinzhuang): No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City | +886-2-2206-6700
 Beyond Visual Optometry (Banqiao): No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City | +886-2-2253-1246

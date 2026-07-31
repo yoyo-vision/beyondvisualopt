@@ -128,4 +128,4 @@ Yes, but with conditions. The distance zone of a progressive lens is in the uppe
 
 **Q: Where in Xinzhuang or Banqiao can I get lenses made specifically for driving?**
 
-Beyond Visual Optometry is an authorized ZEISS dealer, and both the Xinzhuang store (Biyang Optometry) and the Banqiao store offer ZEISS DriveSafe range consultation and fitting. Optometrist YoYo (licensed optometrist) will first perform a complete visual assessment to identify the root of your problem before recommending a suitable lens solution. To book, call the Xinzhuang store at +886-2-2206-6700 or the Banqiao store at +886-2-2253-1246, or [book online](/en/booking).
+Beyond Visual Optometry is an authorized ZEISS dealer, and both the Xinzhuang store (Biyang Optometry) and the Banqiao store offer ZEISS DriveSafe range consultation and fitting. Optometrist YoYo (licensed optometrist) will first perform a complete visual assessment to identify the root of your problem before recommending a suitable lens solution. To book, call the Xinzhuang store at +886-2-2206-6700 or the Banqiao store at +886-2-2253-1246, or [book online](/en/booking/).

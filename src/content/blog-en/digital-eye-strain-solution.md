@@ -146,4 +146,4 @@ Beyond Visual Optometry's Xinzhuang location offers a complete digital fatigue e
 
 You don't need to wait until symptoms get severe. A preventive visual evaluation usually saves more time and money than waiting until things become uncomfortable to deal with.
 
-To book an evaluation, visit [/en/booking](/en/booking) or call our Xinzhuang store at +886-2-2206-6700 or our Banqiao store at +886-2-2253-1246.
+To book an evaluation, visit [/en/booking](/en/booking/) or call our Xinzhuang store at +886-2-2206-6700 or our Banqiao store at +886-2-2253-1246.

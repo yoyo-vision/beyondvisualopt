@@ -64,7 +64,7 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {latest.map(post => (
-          <a href={`/blog/${post.slug}`} class="bg-white border border-brand-ink/10 p-6 hover:shadow-md transition-shadow group block">
+          <a href={`/blog/${post.slug}/`} class="bg-white border border-brand-ink/10 p-6 hover:shadow-md transition-shadow group block">
             <div class="flex items-center gap-2 mb-4">
               <span class="font-sans text-brand-gold text-xs font-semibold px-2 py-1 border border-brand-gold">{post.data.tag}</span>
               <span class="text-brand-ink-3 text-xs">{new Date(post.data.date).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
@@ -112,7 +112,7 @@ const allTags = [...new Set(posts.map(p => p.data.tag))].sort(
       <div class="space-y-5" id="post-list">
         {posts.map(post => (
           <a
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.slug}/`}
             data-tag={post.data.tag}
             data-title={post.data.title}
             data-excerpt={post.data.excerpt}

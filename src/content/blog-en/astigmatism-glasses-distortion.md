@@ -90,7 +90,7 @@ In adults, astigmatism is usually stable and does not keep increasing the way my
 
 ---
 
-You're welcome to book a complete astigmatism assessment with Optometrist YoYo (licensed optometrist) at Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), phone +886-2-2206-6700. [Book an appointment](/en/booking).
+You're welcome to book a complete astigmatism assessment with Optometrist YoYo (licensed optometrist) at Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), phone +886-2-2206-6700. [Book an appointment](/en/booking/).
 
 ---
 

@@ -152,7 +152,7 @@ Yes. It typically increases by about 0.50–1.00D every 3–5 years starting aro
 
 **Q: Where can I get a presbyopia lens consultation in Xinzhuang or Banqiao?**
 
-At Beyond Visual Optometry (Xinzhuang × Banqiao), Optometrist YoYo (licensed optometrist) provides a complete presbyopia vision assessment, including subjective refraction, accommodation measurement, precise addition-power setting, and lifestyle vision analysis. It's a top choice for optometry in Xinzhuang, New Taipei, with the same service available at the Banqiao location. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao) to book. Or [book online here](/en/booking).
+At Beyond Visual Optometry (Xinzhuang × Banqiao), Optometrist YoYo (licensed optometrist) provides a complete presbyopia vision assessment, including subjective refraction, accommodation measurement, precise addition-power setting, and lifestyle vision analysis. It's a top choice for optometry in Xinzhuang, New Taipei, with the same service available at the Banqiao location. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao) to book. Or [book online here](/en/booking/).
 
 **Q: Why are progressive lenses so expensive?**
 

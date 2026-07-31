@@ -135,7 +135,7 @@ Not necessarily. An incorrect fitting height, a slipping frame, or a wrongly set
 
 **Q: Where in Xinzhuang or Banqiao can I have my progressive lenses re-evaluated?**
 
-At Beyond Visual Optometry's Xinzhuang store (Beyond Visual Optometry × Biyang Optometry Practice), Optometrist YoYo (licensed optometrist) offers a complete progressive lens fitting evaluation, including precise fitting-height marking, add-power measurement, frame-fit adjustment, and post-fitting adaptation follow-up. If you had progressives made elsewhere but have struggled to adapt, you're welcome to bring your old glasses in so we can pinpoint where the problem lies. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao) to book, or [reserve online](/en/booking).
+At Beyond Visual Optometry's Xinzhuang store (Beyond Visual Optometry × Biyang Optometry Practice), Optometrist YoYo (licensed optometrist) offers a complete progressive lens fitting evaluation, including precise fitting-height marking, add-power measurement, frame-fit adjustment, and post-fitting adaptation follow-up. If you had progressives made elsewhere but have struggled to adapt, you're welcome to bring your old glasses in so we can pinpoint where the problem lies. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao) to book, or [reserve online](/en/booking/).
 
 ---
 

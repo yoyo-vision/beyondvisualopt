@@ -93,7 +93,7 @@ Absolutely. Beyond Visual Optometry is about a 5-minute walk from Fu Jen Catholi
 
 ---
 
-To book a visual assessment, call +886-2-2206-6700, [book online](/en/booking), or reach us via LINE: https://lin.ee/SoWj9Ft
+To book a visual assessment, call +886-2-2206-6700, [book online](/en/booking/), or reach us via LINE: https://lin.ee/SoWj9Ft
 
 Beyond Visual Optometry | No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City
 

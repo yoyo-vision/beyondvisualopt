@@ -76,7 +76,7 @@ Not necessarily. HOYA's premium series is very competitive on value, and the dif
 
 **Q: Do I need an appointment to get ZEISS lenses in Banqiao?**
 
-We recommend booking ahead, since a full vision exam takes about 45–60 minutes. You can [book online](/en/booking) or call +886-2-2253-1246.
+We recommend booking ahead, since a full vision exam takes about 45–60 minutes. You can [book online](/en/booking/) or call +886-2-2253-1246.
 
 ---
 

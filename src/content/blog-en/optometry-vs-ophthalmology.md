@@ -139,4 +139,4 @@ Beyond Visual Optometry (No. 419-1, Zhongzheng Rd, Xinzhuang District, New Taipe
 
 ---
 
-**You don't have to guess about your eyes.** If you're not sure which one fits your situation, message us on LINE OA and tell us what's going on. We'll tell you straight whether you're a good fit for a refraction or whether you should see an ophthalmologist first—we answer this question every day, and there's nothing awkward about asking. You can also [book an appointment](/en/booking) directly.
+**You don't have to guess about your eyes.** If you're not sure which one fits your situation, message us on LINE OA and tell us what's going on. We'll tell you straight whether you're a good fit for a refraction or whether you should see an ophthalmologist first—we answer this question every day, and there's nothing awkward about asking. You can also [book an appointment](/en/booking/) directly.

@@ -133,7 +133,7 @@ const related = allPosts
   })
   .slice(0, 6);
 
-const canonicalUrl = `https://beyondvisualopt.com/blog/${post.slug}`;
+const canonicalUrl = `https://beyondvisualopt.com/blog/${post.slug}/`;
 const articleSchema = {
   "@type": "Article",
   "@id": canonicalUrl,
@@ -206,7 +206,7 @@ const pageSchema = {
   {/* 同 seoTitle：填了 seoDescription 就用它當 meta description，沒填才退回 excerpt */}
   description={post.data.seoDescription ?? post.data.excerpt}
   schema={pageSchema}
-  enPath={hasEn ? `/en/blog/${post.slug}` : undefined}
+  enPath={hasEn ? `/en/blog/${post.slug}/` : undefined}
   ogType="article"
   publishedTime={isoDate}
   modifiedTime={modifiedIso}
@@ -279,13 +279,13 @@ const pageSchema = {
         <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
           <h2 class="text-xl font-bold mb-3">還有問題？歡迎預約驗光人員</h2>
           <p class="text-gray-300 mb-6" style="font-size:15px">能見度視覺中心（新莊比泱驗光所 × 板橋店）｜新北市驗光所推薦首選</p>
-          <a href="/booking" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+          <a href="/booking/" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
             查看可約時段 →
           </a>
         </div>
 
         <div class="mt-10 text-center">
-          <a href="/blog" class="text-brand-navy font-semibold hover:underline text-sm">← 回到視覺小知識</a>
+          <a href="/blog/" class="text-brand-navy font-semibold hover:underline text-sm">← 回到視覺小知識</a>
         </div>
       </article>
 
@@ -300,7 +300,7 @@ const pageSchema = {
           <ul class="divide-y divide-gray-100">
             {related.map(p => (
               <li>
-                <a href={`/blog/${p.slug}`}
+                <a href={`/blog/${p.slug}/`}
                   class="flex items-start gap-3 px-5 py-4 hover:bg-brand-light transition-colors group">
                   <span class="text-brand-gold mt-0.5 shrink-0 text-sm">▶</span>
                   <div class="min-w-0">
@@ -317,7 +317,7 @@ const pageSchema = {
         <div class="bg-brand-light rounded-2xl p-5 mb-6">
           <p class="text-brand-navy font-bold text-sm mb-2">🔬 免費視覺諮詢</p>
           <p class="text-gray-600 text-xs leading-relaxed mb-4">不確定自己的視覺問題？YoYo 驗光師提供免費初步諮詢，找出真正原因。</p>
-          <a href="/booking" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
+          <a href="/booking/" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
             查看可約時段 →
           </a>
         </div>

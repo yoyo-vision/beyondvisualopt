@@ -111,7 +111,7 @@ Strongly not recommended. Sleeping in soft lenses substantially raises the risk 
 
 **Q: Where in Xinzhuang or Banqiao can I get my contact lens wear evaluated?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao locations) with Optometrist YoYo (licensed optometrist) offers a complete contact lens wear assessment, including corneal topography, tear film analysis, an evaluation of your current lens material and wearing time, and personalized lens recommendations. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking).
+Beyond Visual Optometry (Xinzhuang and Banqiao locations) with Optometrist YoYo (licensed optometrist) offers a complete contact lens wear assessment, including corneal topography, tear film analysis, an evaluation of your current lens material and wearing time, and personalized lens recommendations. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
 
 ---
 

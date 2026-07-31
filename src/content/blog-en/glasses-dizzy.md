@@ -138,7 +138,7 @@ A new frame has a different frame size and face-form angle. Even with the same p
 
 **Q: Where in Xinzhuang or Banqiao can I get my glasses-dizziness problem assessed?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao locations) offers a complete follow-up assessment for fitting problems with Optometrist YoYo (licensed optometrist). No matter where your glasses were made, you're welcome to bring them in and let us help you find the cause. You don't need to have bought your glasses from us to book a consultation. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or book online at [/en/booking](/en/booking).
+Beyond Visual Optometry (Xinzhuang and Banqiao locations) offers a complete follow-up assessment for fitting problems with Optometrist YoYo (licensed optometrist). No matter where your glasses were made, you're welcome to bring them in and let us help you find the cause. You don't need to have bought your glasses from us to book a consultation. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or book online at [/en/booking](/en/booking/).
 
 ---
 
