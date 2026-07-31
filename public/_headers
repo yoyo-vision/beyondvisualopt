@@ -16,3 +16,23 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://vision-platform-five.vercel.app; frame-src 'self' https://maps.google.com https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com https://vision-platform-five.vercel.app; frame-ancestors 'self'
+
+# ── 快取（2026-07-27）──
+# Cloudflare Pages 預設一律給 max-age=14400（4 小時）＋ must-revalidate，
+# 對「檔名帶內容雜湊」的檔案來說太保守：回訪者每 4 小時就要重新驗證一次，
+# 多繞一趟網路卻幾乎總是拿到 304。
+#
+# /_astro/* 的檔名長這樣：about.lbWjT6oF.css、hoisted.BBZMar63.js
+# ——雜湊由內容算出，內容一改檔名就跟著改，所以舊網址永遠不會指到新內容，
+# 設一年 immutable 是安全的（immutable 讓瀏覽器連 304 都不用問）。
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 圖片沒有雜湊（logo.png 換圖後網址不變），不能設 immutable，
+# 否則換了圖、老客人的瀏覽器還會拿舊的。給 7 天，兼顧效能與可更新性。
+/images/*
+  Cache-Control: public, max-age=604800
+
+# 註：HTML 目前是 cf-cache-status: DYNAMIC（不做邊緣快取），這是 Pages 預設。
+# 要改成邊緣快取可加 s-maxage，但部署後有機率短暫供應舊頁，
+# 依老闆目前「改完立刻要看到」的節奏，暫不啟用。
