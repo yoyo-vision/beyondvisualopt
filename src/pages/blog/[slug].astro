@@ -244,7 +244,10 @@ const pageSchema = {
               title={post.data.title}
               class="w-full h-full"
               frameborder="0"
-              loading="lazy"
+              {/* 2026-07-27：拿掉 loading="lazy"。GSC 回報 6 篇「影片不在觀賞頁面上」，
+                  尺寸（320×569，符合 140–1080 寬／≥140 高）與位置（正文上方、無遮蓋）都合格，
+                  延遲載入是唯一可疑的技術點——爬蟲若在 iframe 尚未載入時取頁面，就偵測不到影片。
+                  影片只出現在 6 篇文章、且位於首屏，改為立即載入對效能影響有限。 */}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
