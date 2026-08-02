@@ -26,7 +26,10 @@ fi
 
 if [ $# -gt 0 ]; then
   # 指定路徑模式
-  URLS=$(printf '"https://%s%s",' "$HOST" "$@" | sed 's/,$//')
+  # ⚠️ 不要寫成 printf '"https://%s%s",' "$HOST" "$@"——printf 的格式字串會循環吃參數，
+  #    第二輪之後會拿路徑當 HOST 用，網址整個接錯（送 4 條只會產出 3 條垃圾，回 400）。
+  #    HOST 是固定值，直接內嵌進格式字串，每個路徑各跑一次才對。
+  URLS=$(printf "\"https://${HOST}%s\"," "$@" | sed 's/,$//')
 else
   # 全站模式：從 sitemap 撈
   # ⚠️ 不要用 sed 's/<\/\?loc>//g'——macOS 內建的是 BSD sed，基本正則不支援 \?，
