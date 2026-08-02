@@ -4,6 +4,7 @@ seoTitle: "訂製鏡片值得配嗎？蔡司個人化費用與差異｜新莊板
 date: 2026-06-25
 tag: "鏡片知識"
 excerpt: 蔡司 Individual² 比一般鏡片貴 2–3 倍，差在哪裡？什麼人真的需要？YoYo 驗光師不業配、只說真相。
+seoDescription: "蔡司 Individual² 比一般鏡片貴 2–3 倍，差在哪裡？什麼人真的需要？YoYo 驗光師不業配、只說真相：從個人化參數怎麼量、哪些族群感受得到差異，到新莊、板橋的配鏡流程。"
 image: ""
 youtube: ""
 instagram: ""

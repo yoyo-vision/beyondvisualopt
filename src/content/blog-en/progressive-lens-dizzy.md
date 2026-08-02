@@ -3,6 +3,7 @@ title: "Why Do Progressive Lenses Make You Dizzy? 3 Common Causes and How to Fix
 date: 2026-06-01
 tag: "Lenses"
 excerpt: "Still dizzy after getting progressive lenses? It's probably not you — it's one of these three fitting parameters that wasn't set correctly."
+seoDescription: "Still dizzy after getting progressive lenses? It's not you — it's one of three fitting parameters: prescription accuracy, pupillary distance, or lens design."
 image: ""
 youtube: ""
 instagram: ""
