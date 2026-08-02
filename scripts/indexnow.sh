@@ -29,8 +29,11 @@ if [ $# -gt 0 ]; then
   URLS=$(printf '"https://%s%s",' "$HOST" "$@" | sed 's/,$//')
 else
   # 全站模式：從 sitemap 撈
+  # ⚠️ 不要用 sed 's/<\/\?loc>//g'——macOS 內建的是 BSD sed，基本正則不支援 \?，
+  #    標籤會原封不動留在字串裡，整包 JSON 變成 "<loc>https://…</loc>" 而被 IndexNow 回 400。
+  #    拆成兩條替換是最穩的寫法，BSD 與 GNU sed 都吃。
   URLS=$(curl -s "https://${HOST}/sitemap-0.xml" \
-    | grep -o '<loc>[^<]*</loc>' | sed 's/<\/\?loc>//g' \
+    | grep -o '<loc>[^<]*</loc>' | sed 's|<loc>||g; s|</loc>||g' \
     | sed 's/.*/"&",/' | tr -d '\n' | sed 's/,$//')
 fi
 
