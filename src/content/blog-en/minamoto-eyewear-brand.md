@@ -2,14 +2,14 @@
 title: "MINAMOTO: A Handcrafted Pure Titanium Eyewear Brand from Sabae, Japan | Beyond Visual Optometry Xinzhuang"
 date: "2025-06-15"
 tag: "Frames"
-excerpt: "Born in Sabae, Japan's legendary eyewear town — 99.4% pure titanium construction, screwless design, and a handmade washi paper case. MINAMOTO is a brand made for people who appreciate detail."
+excerpt: "Born in Sabae, Japan's legendary eyewear town — Japanese pure titanium construction, screwless design, and a handmade washi paper case. MINAMOTO is a brand made for people who appreciate detail."
 ---
 
 ## MINAMOTO: Back to the Purest Starting Point of Eyewear
 
 In the eyewear industry, "Made in Sabae" is shorthand for quality.
 
-Sabae City, in Japan's Fukui Prefecture, produces about 20% of the world's eyeglass frames — yet accounts for more than 90% of the world's high-end titanium frames. The craftsmanship here has been passed down through generations of artisans, with tolerances controlled to within 0.1mm at every step — a depth of skill that's difficult to replicate in factories in Italy, Korea, or China.
+Sabae City, in Japan's Fukui Prefecture, is the birthplace of Japanese eyewear production, and the place where titanium frame fabrication matured into a craft. The skills here have been passed down through generations of artisans, and much of the work — cutting, welding, surface finishing — is still checked by hand and by experience.
 
 **MINAMOTO** was born here.
 
@@ -17,25 +17,25 @@ Sabae City, in Japan's Fukui Prefecture, produces about 20% of the world's eyegl
 
 ---
 
-## Why Is MINAMOTO Different From Other Titanium Frame Brands?
+## Four Places Where MINAMOTO's Care Shows
 
-There's no shortage of eyewear brands claiming "pure titanium" — but the gap between purity, manufacturing process, and design philosophy is exactly what determines how a frame feels on your face.
+Namely: what the frame is made of, how the temple arms attach, how the case is made, and what the design has to show for itself. None of the four is a big thing on its own. Together they are what this brand looks like.
 
-### 99.4% Pure Japanese Titanium
+### The Material Is Japanese Pure Titanium
 
-MINAMOTO uses titanium at 99.4% purity — Grade 1, the highest grade of pure titanium — rather than the Grade 5 (Ti-6Al-4V, a titanium alloy containing 6% aluminum and 4% vanadium) commonly seen elsewhere.
+MINAMOTO says one thing about its material: it uses Japanese pure titanium.
 
-The difference between the two:
+To hear what's in that sentence, it helps to know how pure titanium and titanium alloy differ as materials:
 
-| Spec | Grade 1 Pure Titanium (MINAMOTO) | Grade 5 Titanium Alloy (common on the market) |
+| Material property | Pure titanium | Titanium alloy (e.g. Ti-6Al-4V) |
 |------|------------------------|------------------------|
-| Titanium purity | 99.4%+ | 90% |
-| Weight | Lighter | Slightly heavier |
-| Allergic reaction | Very low (medical-grade) | Low |
-| Elasticity | Superelastic memory properties | High strength but less elastic |
-| Manufacturing difficulty | High (hard to shape) | Easier to process |
+| Composition | Predominantly titanium, with very low levels of other elements | Titanium base with aluminum, vanadium, and other metals added |
+| Weight | Low density, far lighter than stainless steel | Also titanium-based, and equally light |
+| Strength and hardness | Relatively lower, softer to the touch | Relatively higher |
+| Forming and machining | Soft, with spring-back that's hard to control; demanding to shape | Easier to machine and produce at scale |
+| Skin friendliness | Titanium has high biocompatibility and is widely used in medical implants | Also titanium-based, with other metal elements present |
 
-Pure titanium is harder to work with precisely because it's "too soft" and resistant to being bent into shape — it takes exceptional skill to craft a structurally sound frame from it. This is the core technical barrier that Sabae's artisans have mastered.
+There's no winner in that table, only trade-offs. Pure titanium is hard to work with because it's soft and its spring-back is hard to predict; bending it into a frame that's both structurally sound and comfortable comes down to process and handwork. That's why the origin and artisan tradition behind a pure titanium frame keep coming up.
 
 ### Screwless Hinge Design
 
@@ -55,6 +55,12 @@ Every MINAMOTO frame comes with a case made from **traditional Fukui washi paper
 Echizen washi paper, from Fukui Prefecture, has a history of more than 1,500 years and is recognized as an important part of Japan's intangible cultural heritage. The grain of the paper on every case varies slightly, making each one a genuinely handmade object.
 
 This detail isn't just for show. It reflects MINAMOTO's overall approach to craftsmanship, from the product itself to its packaging: **every detail deserves to be taken seriously.**
+
+### Whether the Design Is Good Shouldn't Be the Brand's Call: iF Design Award 2022
+
+MINAMOTO won an iF Design Award for product design in 2022.
+
+In eyewear, it costs a brand nothing to call its own work "masterfully crafted," and nobody can really argue with it. What's different about this award: **the jury has no relationship with the brand, and the record is there to check.** Though a design award judges design — how a frame wears is a separate question.
 
 ---
 
@@ -77,16 +83,16 @@ Choosing Kurosawa as the brand's cultural anchor isn't just a tribute to a filmm
 MINAMOTO isn't designed for people chasing a new style every season. It's made for:
 
 **People who wear glasses long hours (12+ hours a day)**
-The extreme lightness of 99.4% pure titanium, paired with screwless flexible temple arms, means far less pressure behind the ears and on the nose during long wear compared to a typical frame.
+Pure titanium is light to begin with, and the temple arms are a screwless flexible structure. After a full day on your face, the pressure behind your ears and on your nose bridge comes out lower than a heavier frame would leave there.
 
 **People with sensitive skin or metal allergies**
-Titanium is the mainstream material for medical implants, with extremely high biocompatibility. If you've ever had a reaction to stainless steel, copper alloys, or even some "titanium alloy" frames, pure titanium is usually the solution.
+Titanium is widely used in medical implants and has high biocompatibility. If wearing stainless steel, copper alloy, or frames containing other metal elements has given you trouble, a pure titanium frame is a common alternative. That's if metal is genuinely the cause: skin reactions have more than one, and if yours won't clear up, it's safer to have a dermatologist look at it first.
 
 **Anyone who appreciates craftsmanship detail**
 People who can appreciate "the precision of a single joint" or "the texture of a surface finish" usually have the same first reaction when they put on MINAMOTO: "this build quality isn't what I expected."
 
 **People who don't want to replace their frame every year**
-A well-made pure titanium frame, properly cared for, can last 8–10 years or more (lens prescription aside). MINAMOTO's design is deliberately understated and doesn't chase trends, so it still looks right five years from now.
+A well-made pure titanium frame, properly cared for, will keep going for years (lens prescription aside). MINAMOTO's design is deliberately understated and doesn't chase trends, so it still looks right five years from now.
 
 ---
 

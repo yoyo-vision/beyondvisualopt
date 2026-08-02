@@ -58,7 +58,7 @@ Titanium is the top-tier material for high-end frames, and the one we most often
 - **Beta titanium:** a titanium alloy that keeps titanium's light weight and low allergy risk while offering better flexibility and shapeability — often used in temple arms or anywhere that needs spring-back.
 - **Why it's especially good for high prescriptions:** high-myopia lenses are already heavy on their own, and a heavy frame on top of that means the whole thing presses uncomfortably on your nose all day. Pure titanium's light weight noticeably reduces that burden, and its sweat resistance and corrosion resistance make it especially friendly for people who sweat easily.
 
-To learn more about pure titanium craftsmanship, see our feature on the Japanese Sabae brand MINAMOTO — its 99.4%-pure titanium, screwless construction is a standout example of pure titanium frame craft.
+To learn more about pure titanium craftsmanship, see our feature on the Japanese Sabae brand MINAMOTO — its Japanese pure titanium, screwless construction is a standout example of pure titanium frame craft.
 
 ### TR90
 
@@ -84,7 +84,7 @@ Composite frames mix different materials — usually a "metal front + acetate te
 | **Cellulose Acetate** | Medium-heavy | Medium (sensitive to heat and sun) | Very low (almost no metal) | High (heat-shapeable) | Mid–high | Rich color and texture, metal-allergy sufferers |
 | **Stainless Steel** | Light | High | Medium (often contains nickel) | Medium | Low–mid | Thin-frame fans, entry-level budgets |
 | **Monel** | Light–medium | Medium-high | Medium–high (contains nickel) | High (easy to shape) | Mid | Classic metal-frame fans |
-| **Pure Titanium** | Very light | Very high (sweat- and corrosion-resistant) | Very low (medical-grade compatible) | Medium-high (needs specialized tools) | High | Long wear time, high prescriptions, metal-allergy sufferers |
+| **Pure Titanium** | Very light | Very high (sweat- and corrosion-resistant) | Very low (highly biocompatible) | Medium-high (needs specialized tools) | High | Long wear time, high prescriptions, metal-allergy sufferers |
 | **Beta Titanium** | Very light | High | Very low | High (elastic, easy to shape) | Mid–high | Need for spring-back, lightweight priority |
 | **TR90** | Lightest | High (impact- and drop-resistant) | Low (metal-free) | Low–medium (springs back) | Low–mid | Kids, sports, minimal-weight needs |
 | **Composite** | Depends on combination | Medium-high | Depends on the metal component | Depends on the part | Mid–high | Wanting both light weight and texture |
