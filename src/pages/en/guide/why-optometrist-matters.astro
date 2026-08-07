@@ -1,0 +1,360 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 指南 → 文章的聚落連結（英文版取 blog-en 集合；尚未翻譯的英文文章由 .filter(Boolean) 濾掉）
+const CLUSTER_SLUGS = [
+  'eye-exam-duration-difference',
+  'same-prescription-different-feel',
+  'good-lens-needs-good-fitting',
+  'eye-exam-preparation-tips',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+// 內容戰役支柱頁（英文版）：「選好的鏡片，不如選好的驗光師」
+// 核心論述＝乘法定調：鏡片是硬體，驗光與驗配是讓硬體發揮的那一半。絕不貶低鏡片（本店為蔡司簽約經銷、HOYA 經銷）。
+// 合規基準：服務執行者一律「驗光人員」＝optometrist；不宣稱近視控制/角膜塑形/散瞳療效；
+//          散瞳＝屬醫療行為請洽眼科；不比較貶抑同業、不點名。
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/why-optometrist-matters/';
+
+// 指南頁 FAQ（FAQPage schema；答案導向、語意豐富，供 AI 引擎精選摘要抓取）
+const faqs = [
+  {
+    q: "What is the difference between an optometrist and an assistant optometrist in Taiwan?",
+    a: "Both are healthcare professionals regulated under Taiwan's Optometrists Act who have passed a national examination, and both may legally perform general refraction. The difference is the level of that examination: an optometrist passes the senior professional and technical examination, an assistant optometrist passes the ordinary examination, and their statutory scopes of practice differ in part. For an everyday pair of glasses, though, either can carry out a full exam for you. What actually decides whether your glasses feel comfortable is not the title, but whether that person is willing to work through the whole assessment properly.",
+  },
+  {
+    q: "Why does a vision exam take so long? Isn't ten minutes enough?",
+    a: "Because \"seeing clearly\" and \"seeing comfortably\" are two different things. A ten-minute quick check can confirm how short-sighted you are, but a pair you can wear comfortably all day also calls for assessing how well your two eyes work together, whether your focusing ability is sufficient, and whether there is a latent eye turn — plus the pupillary distance, fitting height, vertex distance and pantoscopic tilt measured at the dispensing stage. A full clinical exam usually takes 45 to 60 minutes, and the extra time all goes into confirming that you not only see it, but can keep looking without tiring.",
+  },
+  {
+    q: "Same prescription — so why are the glasses from another shop uncomfortable?",
+    a: "Because the prescription is only part of the recipe. The same -4.00D placed in a different position can feel completely different: whether the optical centre of the lens lines up with your pupil, how far the lens sits from your eye (vertex distance), the angle at which the frame sits on your face — any one of these being off can leave you dizzy, tired, or uncomfortable after a while. That is why \"the prescription is right\" does not mean \"the glasses are right\". For a fuller picture, see our article on the three usual reasons glasses feel uncomfortable.",
+  },
+  {
+    q: "Are premium lenses just a rip-off?",
+    a: "They are not a rip-off, but paying more doesn't automatically mean you will notice a difference. Higher-priced lenses do carry real optical design differences — aspheric designs that reduce peripheral distortion, a smoother progressive corridor on multifocals, more durable anti-reflective and anti-smudge coatings. But those differences only come through when the full set of dispensing parameters (pupillary distance, fitting height, vertex distance) has been aligned to your eyes. So our framing is multiplication: a good lens x a complete fitting = money well spent; a good lens x a rushed measurement = money wasted. The point was never the most expensive — it is the most suitable.",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "Choosing a Good Optometrist Beats Choosing a Good Lens: Why the Exam Decides Whether Your Glasses Work",
+      "description": "A pair of glasses is the product of lens x fitting. This page explains why the exam decides the outcome, what a complete vision exam actually involves, and how to judge whether the exam you had was thorough enough. Beyond Visual Optometry, Xinzhuang & Banqiao.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "Cheng Chia-Yu (YoYo)",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="Why the Optometrist Matters More Than the Lens | Beyond Visual"
+  description="A pair of glasses is the product of lens x fitting: however good the lens, an incomplete exam won't let it perform. This page covers why the exam matters, the five links in the chain, a green-flag checklist for a complete exam, signals worth noticing, and how optometry is regulated in Taiwan. Beyond Visual Optometry, Xinzhuang & Banqiao."
+  lang="en"
+  ogType="article"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(28px,4.5vw,50px);font-weight:300">
+        Choosing a good <span class="text-brand-gold">optometrist</span> beats choosing a good lens<br />
+        <span style="font-size:0.62em">— why the exam decides whether your glasses work</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
+        The same ZEISS or HOYA lens, handed to two different exam processes, can feel worlds apart to wear. The lens is the hardware; the exam and the fitting are the half that lets the hardware perform. This page sets out why the exam decides the outcome, what a complete exam is actually doing, and how to tell whether the one you had went far enough.
+      </p>
+    </div>
+  </section>
+
+  <!-- 30 秒先講結論（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>A pair of glasses is <strong>multiplication, not addition</strong>: a good lens x a complete fitting = money well spent; a good lens x an incomplete fitting = hardware that never performs, however good it is.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The lens decides how well you <em>could</em> see; the exam and the fitting decide whether that potential actually reaches your eyes. Neither works without the other, and we never tell you to just pick the expensive one.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>There are five links in the chain: <strong>consultation → full vision exam → dispensing measurements → frame adjustment → follow-up after wear</strong>. Skip any one and the finished pair is discounted.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>"Seeing clearly" is not the same as "seeing comfortably". The autorefractor reading is only a starting point; subjective refinement, binocular vision assessment and the fitting measurements are what produce glasses you can wear for hours.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'Lens x Fitting', href: '#multiply' },
+        { label: 'The Five-Link Chain', href: '#chain' },
+        { label: 'Green-Flag Checklist', href: '#greenflags' },
+        { label: 'Signals Worth Noticing', href: '#signals' },
+        { label: 'Optometry in Taiwan', href: '#system' },
+        { label: 'Xinzhuang & Banqiao', href: '#stores' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 鏡片 × 驗配的乘法 -->
+  <section id="multiply" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">A pair of glasses is the product of lens x fitting, not the sum</h2>
+      <div class="space-y-5 text-brand-ink-2 mb-10" style="font-size:16.5px;line-height:1.9">
+        <p>Let's say this up front: we are a contracted, certified ZEISS dealer and a HOYA dealer, so we know perfectly well how much the lens hardware matters. The aspheric designs of higher-priced lenses, the progressive corridor on multifocals, anti-reflective coatings — these are genuine optical differences, not marketing talk.</p>
+        <p>But however good the lens, all it has decided is how clearly and how comfortably you <em>could</em> see. Whether that potential actually reaches your eyes depends on the second half — the exam and the fitting: whether the prescription is accurate, whether the optical centre lines up with your pupil, how far the lens sits from your eye, how the frame sits on your face. Do that second half thoroughly and a good lens can perform; do it carelessly and even the most expensive lens is just a piece of glass that never showed what it could do.</p>
+        <p><strong>So a pair of glasses is multiplication, not addition.</strong> You are paying for two things: one buys the lens hardware, the other buys the fitting that aligns that hardware to you. Increase only the first and ignore the second, and the product of the two won't look good.</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Your combination</th>
+              <th class="text-left px-5 py-4 font-semibold">What it multiplies out to</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['Good lens x complete fitting', 'Money well spent: you see clearly, and you can keep looking without tiring'],
+              ['Good lens x incomplete fitting', "The hardware never performs — and can leave you dizzy or fatigued"],
+              ['Standard lens x complete fitting', 'Prescription and position both aligned — at minimum, glasses you can actually live in'],
+              ['Standard lens x incomplete fitting', 'Neither half in place: the classic "I got new glasses and they still feel wrong"'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        For an engineer or an editor on a screen more than ten hours a day, a cylinder axis off by a few degrees or a vertex distance off by two or three millimetres barely shows in the short term — but the soreness and fatigue by the end of the day are very noticeable. That kind of "I can't say what's wrong, I just can't wear them for long" usually isn't a bad lens; it's the other half of the multiplication that never got aligned.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 一副眼鏡的成敗鏈 -->
+  <section id="chain" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">The chain: from sitting down to walking out wearing them</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Between sitting down in the exam chair and walking out of the door in new glasses there is an interlocking chain. These five links are universal — they apply wherever you buy your glasses — and if any one of them is skipped, the finished pair is discounted.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { n: '01', title: 'Consultation: understanding how you use your eyes', desc: "A good exam doesn't start by pointing you at a chart the moment you sit down; it starts by asking how you actually use your eyes — what your work is like, how many hours a day you spend on screens, whether you drive, whether you have particular hobbies. At the same -4.00D, an engineer on a screen all day and a salesperson driving all day don't suit the same solution. Without this step, even an accurate prescription may not fit your life." },
+          { n: '02', title: 'Full exam: objective + subjective + binocular vision', desc: 'The autorefractor (objective) gives you a starting point. Next comes the phoropter, where you try lenses, give feedback and refine the detail (subjective), followed by assessing how well the two eyes work together, whether focusing ability is sufficient, and whether there is a latent eye turn. Seeing clearly is only the pass mark; seeing comfortably for long stretches is what this link is aiming at.' },
+          { n: '03', title: 'Dispensing measurements: aligning the prescription to your face', desc: "With the prescription settled, the lenses still have to sit correctly on your face. This link measures each eye's monocular pupillary distance separately, the fitting height for progressives, plus the vertex distance (how far the lens sits from the eye) and the pantoscopic tilt. Any one of these being off keeps a good lens from delivering what it should." },
+          { n: '04', title: 'Frame selection and adjustment: keeping the frame seated', desc: 'A frame is not just how it looks — it decides whether the lenses stay in the position you just measured. Nose pads, temples and tilt have to be adjusted to your face; if the frame slips or sits crooked, all that precise measurement drifts anyway.' },
+          { n: '05', title: "Follow-up: it doesn't end at collection", desc: 'At collection you should put them on and confirm the far, intermediate and near fields, binocular balance and frame fit, and there should be in-store adjustments available afterwards. Progressives and high prescriptions especially warrant a return visit during the adaptation period. "Here they are, come back if there\'s a problem" is not what a complete process looks like.' },
+        ].map(item => (
+          <div class="border border-brand-ink/8 rounded-2xl p-7">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest mb-3 block" style="font-size:13px;letter-spacing:0.18em">{item.n}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        At Beyond Visual we break this chain down into 14 checkpoints, so every link has a defined action rather than running on "that looks about right". But the point isn't how many steps we split it into — it's whether all five links are worked through. That is also the division between the exam and the fitting: the exam finds the prescription your eyes need, the fitting puts that prescription accurately onto the lens. For more on the difference, see <a href="/en/blog/optometry-vs-dispensing/" class="text-brand-gold underline">Refraction vs Dispensing: What's the Difference?</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 完整驗光綠旗清單 -->
+  <section id="greenflags" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">What does a complete exam involve? Take this green-flag checklist with you</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">You don't need to understand optometry to judge whether the exam you had was thorough. Take this list to any store and compare — the more of it shows up, the more complete the process. It isn't exclusive to Beyond Visual; it is simply what a complete fitting is supposed to look like.</p>
+      <div class="bg-white border border-brand-ink/8 rounded-2xl p-8">
+        <ul class="space-y-4">
+          {[
+            ['They asked how you normally use your eyes', 'Rather than pointing you at a chart the moment you sat down — how you use your eyes shapes the solution.'],
+            ['There was subjective refinement after the autorefractor', 'You tried lenses in the phoropter and gave feedback, instead of the machine reading being dispensed as-is.'],
+            ['A binocular vision assessment was done', 'Checking how the two eyes work together, focusing ability and eye alignment — this is the key to comfort.'],
+            ['Left and right monocular PD measured separately', 'Rather than estimating by halving the total PD; especially important for asymmetric faces.'],
+            ['Fitting height measured for progressives', 'A progressive corridor is positioned by fitting height; not measuring it means the corridor is in the wrong place.'],
+            ['Vertex distance and pantoscopic tilt taken into account', 'High prescriptions and progressives depend heavily on these two; they determine effective power and field of view.'],
+            ['You tried them on at collection to confirm', 'Confirming the far, intermediate and near fields, binocular balance and whether the frame sits properly — not just handing over a case.'],
+            ['Follow-up and aftercare were explained', 'A complete process leaves room for tracking through the adaptation period; it does not end at handover.'],
+          ].map(([t, d]) => (
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 mt-1 text-brand-gold" style="font-size:15px">✔</span>
+              <span class="text-brand-ink-2" style="font-size:16px;line-height:1.75"><strong class="text-brand-navy">{t}</strong> — {d}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        For a more systematic way to judge whether a store is worth trusting, read alongside it: <a href="/en/guide/choose-optician/" class="text-brand-gold underline">The Complete Guide to Buying Glasses in New Taipei</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 值得留意的訊號（教育性，不點名同業） -->
+  <section id="signals" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">A few signals worth noticing</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">This isn't about judging any particular store — it is to help you understand which steps, if left out, may affect the finished pair. When you notice one, ask one more question; that usually tells you whether this fitting went far enough.</p>
+      <div class="space-y-6">
+        {[
+          { title: 'Dispensing straight from the autorefractor reading', desc: "An autorefractor reading is a starting point, not an answer. It is a machine's first estimate of your eyes; after it, a person still needs to have you try lenses, give feedback and refine, and to assess binocular vision. If the whole process is machine-only with no subjective confirmation, the resulting prescription may come out too strong or too weak." },
+          { title: 'Never asking how you use your eyes', desc: 'A prescription with no account of how you use your eyes is like a medicine prescribed without asking what it is for. At the same prescription, someone on a screen all day and someone driving all day may suit different lens designs and add powers. Without that consultation, even an accurate prescription may not match your life.' },
+          { title: 'Finished in ten minutes', desc: 'A quick check can confirm your myopia, hyperopia and astigmatism, but a pair you can wear comfortably all day also takes time to assess binocular coordination, focusing ability and the fitting measurements. Longer is not automatically better, but conspicuously short usually means something was skipped.' },
+          { title: 'Fitting progressives without measuring fitting height', desc: 'The far, intermediate and near corridor of a progressive lens is positioned on the lens by fitting height. Dispensing progressives without measuring it puts the corridor at a guessed position, and the odds of dizziness and difficult adaptation rise sharply.' },
+          { title: 'No try-on confirmation at collection', desc: 'The last step of dispensing should be putting them on in front of the optometrist and confirming visual quality and frame fit. Without it, any problem that appears at home is hard to trace to the prescription, the position, or the adaptation period.' },
+        ].map(item => (
+          <div class="bg-brand-paper border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">{item.title}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        We have written up the common mistakes behind these signals as a first-hand account: <a href="/en/blog/common-optometry-mistakes/" class="text-brand-gold underline">5 Common Mistakes in Getting Glasses Fitted</a>. And if you already have glasses that don't feel right, <a href="/en/blog/glasses-uncomfortable-3-reasons/" class="text-brand-gold underline">Glasses That Feel Wrong: The 3 Usual Reasons</a> is a good place to start troubleshooting.
+      </p>
+    </div>
+  </section>
+
+  <!-- 台灣驗光制度 30 秒科普 -->
+  <section id="system" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Optometrists, assistant optometrists, optometry clinics — how it works in Taiwan, in 30 seconds</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
+        <p>Many people don't realise that since Taiwan's Optometrists Act came into force in 2016, refraction has been a state-regulated healthcare profession — no longer a commercial service anyone can offer.</p>
+        <p><strong>Optometrists and assistant optometrists are both healthcare professionals who have passed a national examination.</strong> An optometrist passes the senior professional and technical examination, an assistant optometrist the ordinary examination; their statutory scopes of practice differ in part, but both may lawfully perform general refraction for you. For whoever actually serves you in store, we use the single term "optometrist".</p>
+        <p><strong>An "optometry clinic" is a government-approved, licensed healthcare institution</strong>: refraction must be performed by licensed optometrists, and it may lawfully issue an optometry report. In regulatory terms that is a different thing from an ordinary optical shop holding only a commercial registration. When you walk in, the optometrists' license numbers must by law be displayed in the store, so you can check for yourself.</p>
+        <p class="text-brand-ink-3" style="font-size:15px">Worth stressing: optometrists are responsible for the "visual quality" of your eyes, and do not make disease diagnoses or carry out medical procedures. Procedures such as dilated examination are medical acts — please see an ophthalmologist for those; and if a vision exam finds that vision cannot be effectively corrected, we will assist with a referral to an ophthalmologist as the law requires. As for children aged 6 to under 15, refraction must by law be carried out under the guidance of an ophthalmologist. For a fuller way to tell whether you need an ophthalmologist or an optometry clinic, see our triage guide.</p>
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        Read next: <a href="/en/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">Eye Doctor or Optometrist? A Symptom Triage Guide</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 新莊店 × 板橋店 NAP -->
+  <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">Where the multiplication gets done properly: Xinzhuang & Banqiao</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">Both stores are licensed optometry clinics and contracted, certified ZEISS dealers, offering a 45–60 minute full clinical vision exam, dispensing measurements, and post-fitting return visits. We won't push you towards the most expensive lens; we simply finish every link of the fitting that should be finished. Pick whichever is closer to you.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="border-t border-white/10 pt-6">
+          <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">Xinzhuang</p>
+          <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">Beyond Visual Optometry × BiYang Optometry Clinic</h3>
+          <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
+            <p>Address: No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City</p>
+            <p>MRT: about an 8-minute walk from Xinzhuang station</p>
+            <p>Tel: 02-2206-6700</p>
+            <p>Lead optometrist: Cheng Chia-Yu (YoYo)</p>
+            <p class="text-white/50">Clinical vision exams, advanced vision management, ZEISS Individual² personalized custom lenses, vision assessment for heavy screen users</p>
+          </div>
+          <a href="/en/xinzhuang/" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">More about the Xinzhuang store →</a>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">Banqiao</p>
+          <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">Beyond Visual Optometry × Neng Jian Du Optometry Clinic</h3>
+          <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
+            <p>Address: No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City</p>
+            <p>MRT: about a 5-minute walk from Jiangzicui station</p>
+            <p>Tel: 02-2253-1246</p>
+            <p>Local since 1992 — more than 30 years in the neighbourhood</p>
+            <p class="text-white/50">Presbyopia and progressive multifocal fitting, precision dispensing for high myopia (with vertex-distance compensation)</p>
+          </div>
+          <a href="/en/banqiao/" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">More about the Banqiao store →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: related articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Rather than asking which lens is best, start by doing the exam properly</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. The optometrist will first understand your vision and your lifestyle and work through every link in the chain, and only then talk lenses — available at both our Xinzhuang and Banqiao stores.</p>
+      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Full Vision Analysis →</a>
+      <p class="text-white/40 mt-4" style="font-size:13px;letter-spacing:0.05em">A consultation is not a commitment to buy · No sales pressure · Reschedule any time</p>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Related Guides & Articles</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/choose-optician/', t: 'Buying Glasses in New Taipei' },
+          { href: '/en/guide/eye-doctor-or-optometrist/', t: 'Eye Doctor or Optometrist?' },
+          { href: '/en/blog/optometry-vs-dispensing/', t: 'Refraction vs Dispensing' },
+          { href: '/en/blog/common-optometry-mistakes/', t: '5 Common Fitting Mistakes' },
+          { href: '/en/blog/glasses-uncomfortable-3-reasons/', t: 'Why Glasses Feel Wrong' },
+          { href: '/en/guide/optical-basics/', t: 'Optical Basics Encyclopedia' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all guides</a>
+    </div>
+  </section>
+
+</Layout>

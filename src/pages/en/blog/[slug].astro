@@ -16,6 +16,73 @@ const formatDate = (d: Date) =>
 const isoDate = post.data.date.toISOString().split('T')[0];
 const modifiedIso = (post.data.updated ?? post.data.date).toISOString().split('T')[0];
 
+// 主題聚落：文章所屬的英文完整指南（與中文版 PILLAR_MAP 鏡像，形成英文 topic cluster 雙向連結）
+const PILLAR_MAP: Record<string, { title: string; href: string }> = {
+  'presbyopia-vs-progressive': { title: "The Complete Guide to Progressive Lenses", href: '/en/guide/progressive-lens/' },
+  'presbyopia-lens-guide': { title: "The Complete Guide to Progressive Lenses", href: '/en/guide/progressive-lens/' },
+  'progressive-lens-dizzy': { title: "The Complete Guide to Progressive Lenses", href: '/en/guide/progressive-lens/' },
+  'progressive-lens-adaptation': { title: "The Complete Guide to Progressive Lenses", href: '/en/guide/progressive-lens/' },
+  'zeiss-individual-worth-it': { title: "The Complete Guide to Progressive Lenses", href: '/en/guide/progressive-lens/' },
+  'driving-lens-night-glare': { title: "The Complete Guide to Progressive Lenses", href: '/en/guide/progressive-lens/' },
+  'children-myopia-tracking-xinzhuang': { title: "The Complete Guide to Children's Myopia Tracking", href: '/en/guide/children-myopia/' },
+  'myopia-getting-worse-truth': { title: "The Complete Guide to Children's Myopia Tracking", href: '/en/guide/children-myopia/' },
+  'optometry-vs-ophthalmology': { title: "Eye Doctor or Optometry Clinic? The Symptom Triage Guide", href: '/en/guide/eye-doctor-or-optometrist/' },
+  'common-optometry-mistakes': { title: "The Complete Guide to Children's Myopia Tracking", href: '/en/guide/children-myopia/' },
+  'high-myopia-glasses-guide': { title: "The Complete Guide to High-Myopia Eyewear", href: '/en/guide/high-myopia/' },
+  'astigmatism-glasses-distortion': { title: "The Complete Guide to High-Myopia Eyewear", href: '/en/guide/high-myopia/' },
+  'glasses-uncomfortable-3-reasons': { title: "The Complete Guide to High-Myopia Eyewear", href: '/en/guide/high-myopia/' },
+  'contact-lens-vs-glasses': { title: "The Complete Guide to High-Myopia Eyewear", href: '/en/guide/high-myopia/' },
+  'zeiss-hoya-nikon-lens-guide': { title: "The Complete Guide to Choosing a Lens Brand", href: '/en/guide/lens-brands/' },
+  'hoya-lens-guide': { title: "The Complete Guide to Choosing a Lens Brand", href: '/en/guide/lens-brands/' },
+  'essilor-lens-guide': { title: "The Complete Guide to Choosing a Lens Brand", href: '/en/guide/lens-brands/' },
+  'digital-eye-strain-solution': { title: "The Complete Guide to Screen-User Eye Strain", href: '/en/guide/digital-eye-strain/' },
+  'contact-lens-fatigue': { title: "The Complete Guide to Screen-User Eye Strain", href: '/en/guide/digital-eye-strain/' },
+  'glasses-dizzy': { title: "The Complete Guide to Screen-User Eye Strain", href: '/en/guide/digital-eye-strain/' },
+  'xinzhuang-glasses-guide': { title: "The Complete Guide to Buying Glasses in New Taipei", href: '/en/guide/choose-optician/' },
+  'banqiao-glasses-guide': { title: "The Complete Guide to Buying Glasses in New Taipei", href: '/en/guide/choose-optician/' },
+  'banqiao-progressive-lens-guide': { title: "The Complete Guide to Progressive Lenses", href: '/en/guide/progressive-lens/' },
+  'banqiao-zeiss-lens-guide': { title: "The Complete Guide to Choosing a Lens Brand", href: '/en/guide/lens-brands/' },
+  'luxury-frame-lens-guide': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'frame-face-shape': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'frame-material-guide': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'frame-fit-size': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'frame-adjustment-handcraft': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'minamoto-eyewear-brand': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'children-frames-guide': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'rimless-glasses-guide': { title: "The Complete Guide to Choosing Frames", href: '/en/guide/frames/' },
+  'lens-coating-guide': { title: "The Complete Guide to Choosing a Lens Brand", href: '/en/guide/lens-brands/' },
+  'photochromic-sunglasses-guide': { title: "The Complete Guide to Choosing a Lens Brand", href: '/en/guide/lens-brands/' },
+  'glass-vs-resin-lens': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'diopter-explained': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'myopia-vs-astigmatism': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'hyperopia-vs-presbyopia': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'lens-addition-add': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'binocular-vision': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'pupillary-distance-pd': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'vertex-distance': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'optometry-vs-dispensing': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'lens-refractive-index': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'aspheric-vs-spherical-lens': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'progressive-corridor': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'anti-reflective-coating-principle': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'blue-light-filter-what': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'photochromic-lens-principle': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'polarized-lens-principle': { title: "Optical Basics Encyclopedia", href: '/en/guide/optical-basics/' },
+  'online-frame-lens-fitting': { title: "The Complete Guide to Bring-Your-Own-Frame Lens Fitting", href: '/en/guide/byo-frame-lenses/' },
+  'old-frame-relens': { title: "The Complete Guide to Bring-Your-Own-Frame Lens Fitting", href: '/en/guide/byo-frame-lenses/' },
+  'lens-only-service': { title: "The Complete Guide to Bring-Your-Own-Frame Lens Fitting", href: '/en/guide/byo-frame-lenses/' },
+  'vintage-frame-lens': { title: "The Complete Guide to Bring-Your-Own-Frame Lens Fitting", href: '/en/guide/byo-frame-lenses/' },
+  'blurry-vision-see-doctor': { title: "Eye Doctor or Optometry Clinic? The Symptom Triage Guide", href: '/en/guide/eye-doctor-or-optometrist/' },
+  'eye-exam-before-glasses': { title: "Eye Doctor or Optometry Clinic? The Symptom Triage Guide", href: '/en/guide/eye-doctor-or-optometrist/' },
+  'eye-strain-see-doctor': { title: "Eye Doctor or Optometry Clinic? The Symptom Triage Guide", href: '/en/guide/eye-doctor-or-optometrist/' },
+  'child-vision-check-where': { title: "Eye Doctor or Optometry Clinic? The Symptom Triage Guide", href: '/en/guide/eye-doctor-or-optometrist/' },
+  'same-prescription-different-feel': { title: "Why Your Optometrist Matters More Than Your Lenses", href: '/en/guide/why-optometrist-matters/' },
+  'eye-exam-duration-difference': { title: "Why Your Optometrist Matters More Than Your Lenses", href: '/en/guide/why-optometrist-matters/' },
+  'good-lens-needs-good-fitting': { title: "Why Your Optometrist Matters More Than Your Lenses", href: '/en/guide/why-optometrist-matters/' },
+  'eye-exam-preparation-tips': { title: "Why Your Optometrist Matters More Than Your Lenses", href: '/en/guide/why-optometrist-matters/' },
+};
+const pillar = PILLAR_MAP[post.slug];
+
 // 其他英文文章（排除自己）
 const related = allPosts.filter(p => p.slug !== post.slug).slice(0, 6);
 
@@ -150,6 +217,13 @@ const pageSchema = {
             </p>
           </div>
         </div>
+
+        {pillar && (
+          <a href={pillar.href} class="flex items-center gap-3 bg-brand-light border border-brand-gold/30 rounded-2xl px-6 py-4 mb-10 hover:border-brand-gold transition-colors group">
+            <span style="font-size:20px">📚</span>
+            <span class="text-brand-navy" style="font-size:15px">This article is part of <strong class="group-hover:text-brand-gold transition-colors">{pillar.title}</strong> — see the full picture on one page →</span>
+          </a>
+        )}
 
         <div class="article-body">
           <Content />

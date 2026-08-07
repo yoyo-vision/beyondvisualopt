@@ -1,0 +1,313 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'contact-lens-vs-glasses',
+  'contact-lens-fatigue',
+  'myopia-vs-astigmatism',
+  'high-myopia-glasses-guide',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/rgp-contact-lens/';
+
+// 指南頁 FAQ（自動化為 FAQPage schema）
+const faqs = [
+  {
+    q: 'What is an RGP contact lens, and how does it differ from an ordinary soft lens?',
+    a: 'RGP stands for Rigid Gas Permeable — a rigid, oxygen-permeable contact lens. It is harder and smaller in diameter than a soft lens, covering only the central corneal area, and the material has high oxygen permeability. The biggest difference from soft lenses is this: an RGP lens holds its shape, and a layer of tear film forms between the lens and the cornea when worn, so for people with high astigmatism or an irregularly shaped cornea the visual quality is usually more stable and clear. Soft lenses, on the other hand, win on early comfort and quick adaptation. Neither is absolutely better; who each suits depends on corneal condition, refractive status, and lifestyle, and requires an in-person assessment by optometry personnel.',
+  },
+  {
+    q: 'Is RGP the same thing as orthokeratology (Ortho-K)?',
+    a: 'No — this is the point most often confused. The RGP discussed on this page is a daily-wear ordinary rigid contact lens: worn during the day to correct your current vision, and removed at night. Orthokeratology (commonly called Ortho-K) is worn overnight and reshapes the cornea through applied pressure; it is a different category of medical procedure. What Beyond Visual Optometry provides is standard daily-wear RGP fitting, not orthokeratology. The two differ in purpose, wearing schedule, and who they apply to — do not treat them as the same thing.',
+  },
+  {
+    q: 'Who might be suitable for considering RGP?',
+    a: 'Situations in which an RGP assessment is commonly suggested include: high astigmatism (generally around 2.00D / 200 degrees or above, though this still depends on individual assessment), a less regular corneal shape, wanting stable and clear visual quality, or dryness and discomfort after wearing soft lenses. But "might be suitable" is not the same as "definitely suitable" — the final answer depends on corneal topography, tear film status, prescription, and daily routine, assessed in person by optometry personnel and confirmed through a trial fitting. Nothing decided without measurement counts.',
+  },
+  {
+    q: 'Does RGP need an adaptation period? Will it feel like something is in my eye at first?',
+    a: 'Yes. Because RGP is a rigid material, early wear usually brings a noticeable foreign-body sensation, and wearing time needs to be extended gradually so the eyes can adapt; this adaptation period is longer than with soft lenses. That is exactly why RGP needs thorough wearer education and regular follow-up checks — covering the correct insertion, removal, and cleaning routine, along with return visits to confirm lens fit and wearing comfort. Whether you are willing to keep up with that adaptation and care routine is itself part of assessing whether RGP suits you.',
+  },
+  {
+    q: 'What steps does the RGP fitting process involve?',
+    a: 'A complete RGP fitting usually includes: corneal topography measurement (to understand corneal curvature and shape), refractive and visual quality assessment, planning the lens parameters from the corneal data, an in-person trial fitting and fit confirmation, wearing and cleaning education, and ongoing regular follow-up checks. RGP is a highly individualized fitting in which parameters are fine-tuned into place step by step — not a ready-made lens you put on and walk out with — so it needs a generous allowance of assessment and trial-fitting time.',
+  },
+  {
+    q: 'Is wearing RGP safe? What should I watch out for?',
+    a: 'Contact lenses are a medical device, and every contact lens requires correct wearing hygiene and regular follow-up to reduce risk. Under Article 12 of Taiwan’s Optometrists Act, contact lens fitting for those aged fifteen and under must be carried out under the guidance of an ophthalmologist, and no fitting is provided for children under six. In addition, if the fitting process reveals abnormal corneal or refractive data (for example, a suspicion of keratoconus), the case is always referred to an ophthalmologist for diagnosis rather than handled on the optometry side — leaving to the physician what belongs with the physician is our principle.',
+  },
+  {
+    q: 'RGP, spectacles, or soft contact lenses — which should I choose?',
+    a: 'There is no standard answer; it depends on your corneal condition, your prescription (especially astigmatism), your visual situations, and your daily habits. Some people wear RGP at work during the day for stable vision and switch to spectacles after hours to rest their eyes; others have low astigmatism and are perfectly comfortable in soft lenses or spectacles. Rather than asking "which is best," have a full assessment done and lay your actual needs on the table for discussion — which is exactly the point of our lifestyle vision analysis: first understand how you use your eyes, then pick the option that genuinely fits.',
+  },
+  {
+    q: 'Where in Xinzhuang or Banqiao can I get an RGP fitting?',
+    a: 'Beyond Visual Optometry’s Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (02-2253-1246) both provide ordinary rigid gas permeable (RGP) contact lens fitting, including corneal topography measurement, individualized parameter ordering, in-person trial fitting, and regular follow-up checks. This is standard daily-wear RGP fitting, not orthokeratology (Ortho-K). We suggest booking ahead so there is ample time for assessment and trial fitting.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "The Complete Guide to RGP Contact Lenses: What They Are, Who Might Be Suitable, the Fitting Process, and Safety Notes",
+      "description": "What is a rigid gas permeable (RGP) contact lens? How does it differ from soft lenses and from orthokeratology (Ortho-K)? Who might be suitable, what the fitting process involves, and what safety and regulatory points to know — all on one page. Beyond Visual Optometry provides daily-wear RGP fitting in Xinzhuang and Banqiao.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "YoYo Cheng",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="RGP Contact Lens Guide | What It Is, Who It Suits, How It Differs from Ortho-K | Beyond Visual"
+  description="What is a rigid gas permeable (RGP) contact lens? How it differs from soft lenses and from orthokeratology (Ortho-K), who might be suitable, the fitting process, and safety notes — all on one page. Beyond Visual Optometry provides daily-wear RGP fitting in Xinzhuang and Banqiao."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        High Astigmatism, or Soft Lenses You Can't Keep In?<br /><span class="text-brand-gold">The Complete Guide to RGP Contact Lenses</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        What RGP is, how it differs from soft lenses, and why it is an entirely different thing from the orthokeratology (Ortho-K) people so often confuse it with — this page explains rigid gas permeable contact lenses, who they might suit, the fitting process, and the safety notes, all at once. Written by Optometrist YoYo, based on clinical fitting practice.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP means a rigid gas permeable contact lens — it holds its shape and has high oxygen permeability, so for people with high astigmatism or a less regular cornea the visual quality is usually more stable and clear.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP is not orthokeratology (Ortho-K): RGP is worn during the day to correct your current vision; Ortho-K is worn at night and reshapes the cornea, a different category of medical procedure. What Beyond Visual provides is daily-wear RGP, not orthokeratology.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Groups commonly suggested for assessment: high astigmatism (around 2.00D / 200 degrees or above, still subject to individual assessment), an irregular corneal shape, and those who find soft lenses dry and uncomfortable. Whether it suits you must be confirmed by corneal topography measurement and an in-person trial fitting.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Contact lenses are a medical device: under Article 12 of Taiwan’s Optometrists Act, fitting for those aged fifteen and under must be under the guidance of an ophthalmologist, and no fitting is provided for children under six; any corneal abnormality found during fitting is always referred to an ophthalmologist.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'What RGP Is', href: '#what' },
+        { label: 'RGP vs Soft vs Ortho-K', href: '#compare' },
+        { label: 'Who Might Be Suitable', href: '#who' },
+        { label: 'The Fitting Process', href: '#fitting' },
+        { label: 'Safety & Regulations', href: '#safety' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- RGP 是什麼 -->
+  <section id="what" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">RGP: a rigid, oxygen-permeable lens that holds its ground</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>RGP is short for <strong>Rigid Gas Permeable</strong> — a rigid, oxygen-permeable contact lens. Compared with the soft lenses everyone knows, it is harder and smaller in diameter, covering only the central corneal area, and the material has good oxygen permeability.</p>
+        <p>Its most important property is that it <strong>holds its shape</strong>. A soft lens drapes onto the cornea and follows every irregular contour; an RGP lens keeps its own shape, and a layer of tear film forms between lens and cornea when worn. For people with high astigmatism, or a less regular corneal shape, that tear layer plus the lens's own stable optical surface can often deliver more stable, clearer visual quality.</p>
+        <p>Of course, a rigid material also means a more noticeable foreign-body sensation early on and a longer adaptation period. It is not "the more premium contact lens" — it is "one option that may be more appropriate in certain situations." Whether it is your cup of tea only becomes clear after an assessment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 和軟式、OK 鏡的差別 -->
+  <section id="compare" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Don't mix them up: RGP, soft lenses, and orthokeratology are three different things</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Many people hear "rigid contact lens" and assume it means orthokeratology (Ortho-K), but the two are very different. Sort out where each one sits first, then talk about whether it suits you.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold">Type</th>
+              <th class="text-left px-5 py-4 font-semibold">How It Is Worn</th>
+              <th class="text-left px-5 py-4 font-semibold">Purpose</th>
+              <th class="text-left px-5 py-4 font-semibold">Offered at Beyond Visual?</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['RGP rigid contact lens (daily wear)', 'Worn during the day, removed at night', 'Corrects your current vision; holds its shape, so visual quality is stable', '✅ Daily-wear RGP fitting offered'],
+              ['Soft contact lens', 'Worn during the day, removed at night (daily, monthly, etc.)', 'Corrects your current vision; comfortable early on, quick to adapt to', '✅ Fitting offered'],
+              ['Orthokeratology (Ortho-K)', 'Worn overnight during sleep', 'Reshapes the cornea through applied pressure; a medical procedure', '❌ Not offered'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        Remember one sentence: the RGP on this page is the daily-wear rigid lens that is "worn during the day to correct your current vision," and that is a different matter from orthokeratology (Ortho-K), which is "worn at night to reshape the cornea." This is standard RGP fitting, not orthokeratology (Ortho-K).
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 誰可能適合 -->
+  <section id="who" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Who might be suitable for considering RGP?</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Below are the groups clinically suggested most often for an assessment. But please remember: might be suitable is not the same as definitely suitable — it always has to be confirmed by in-person measurement and a trial fitting.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {[
+          ['High astigmatism', 'Generally around 2.00D (200 degrees) of astigmatism or above, where visual quality still isn’t stable enough after soft lens or spectacle correction (still subject to individual assessment)'],
+          ['A less regular corneal shape', 'People whose corneal curvature or shape is more unusual, and who need a shape-stable lens to provide a stable optical surface'],
+          ['Wanting stable, clear visual quality', 'Those with high demands on visual stability, willing to invest in a longer adaptation period in exchange for visual quality'],
+          ['Dryness and discomfort in soft lenses', 'People who get dry and tired easily during long hours in soft lenses and want to assess other options'],
+        ].map(([title, desc]) => (
+          <div class="bg-white border border-brand-ink/8 rounded-2xl p-6">
+            <p class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">{title}</p>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-3 mt-8" style="font-size:15px;line-height:1.8">
+        RGP has a longer adaptation period than soft lenses and needs fuller wearer education and follow-up checks. Whether you are willing to keep up with that care routine is part of assessing whether it suits you — that isn’t a drawback, it is simply the care a rigid lens has always required.
+      </p>
+    </div>
+  </section>
+
+  <!-- 驗配流程 -->
+  <section id="fitting" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">An RGP fitting is a highly individualized process</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">RGP is not a ready-made lens you put on and walk out with — it is fine-tuned into place step by step from your corneal data. The full process covers the following steps.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {[
+          ['Corneal topography measurement', 'Understanding corneal curvature and shape as the basis for the lens fitting curve'],
+          ['Refractive and visual quality assessment', 'Confirming the prescription (especially astigmatism) and your visual quality needs after correction'],
+          ['Lens parameter planning', 'Planning individualized parameters such as lens curvature and size from the corneal data'],
+          ['Trial fitting and fit confirmation', 'Actually wearing the lens to confirm its position on the cornea, its movement, and how it feels'],
+          ['Wearing and cleaning education', 'Teaching you the correct insertion, removal, and cleaning routine, extending wearing time gradually through the adaptation period'],
+          ['Regular follow-up checks', 'Returning to the store to confirm lens fit and wearing comfort, fine-tuning parameters when needed'],
+        ].map(([title, desc]) => (
+          <div class="border-t border-white/10 pt-5">
+            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-white/50 mt-8" style="font-size:14px;line-height:1.7">Because it needs ample measurement and trial-fitting time, we suggest booking ahead rather than squeezing it into a rushed slot.</p>
+    </div>
+  </section>
+
+  <!-- 安全與法規 -->
+  <section id="safety" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Safety and regulations: what belongs with a physician goes to a physician</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>Contact lenses are a medical device, and every contact lens requires correct wearing hygiene and regular follow-up to reduce risk. Please keep these points in mind:</p>
+      </div>
+      <div class="mt-6 space-y-4">
+        {[
+          ['Age limits (Article 12 of the Optometrists Act)', 'Contact lens refraction for those aged fifteen and under (inclusive) shall be carried out under the guidance of an ophthalmologist; no fitting is provided for children under six years of age.'],
+          ['Abnormalities are always referred to ophthalmology', 'If abnormal corneal or refractive data is found during the fitting process (for example, a suspicion of keratoconus), the case is always referred to an ophthalmologist for diagnosis, not handled on the optometry side.'],
+          ['Wearing hygiene and follow-up checks', 'Correct cleaning, not exceeding the wearing schedule, and returning for follow-up checks as arranged are the keys to reducing the risk of infection and complications — a well-fitted lens still needs to be well cared for.'],
+          ['Stop wearing and seek care if uncomfortable', 'If redness, pain, light sensitivity, or blurred vision occurs while wearing the lenses, stop wearing them immediately and seek medical care — do not push through it.'],
+        ].map(([title, desc]) => (
+          <div class="border-l-2 border-brand-gold pl-5">
+            <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">{title}</p>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on related topics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">High astigmatism, or soft lenses you can't keep in? Come in for an assessment</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis and RGP fit assessment, and our optometry personnel will discuss with you whether it suits your corneal condition and the way you use your eyes. This is daily-wear RGP fitting, not orthokeratology. Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.), Banqiao 02-2253-1246.</p>
+      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book an RGP Fit Assessment →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/high-myopia/', t: 'The Complete Guide to High-Myopia Eyewear' },
+          { href: '/en/guide/optical-basics/', t: 'Optical Basics Encyclopedia' },
+          { href: '/en/guide/choose-optician/', t: 'The Complete Guide to Buying Glasses in New Taipei' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all guides</a>
+    </div>
+  </section>
+
+</Layout>

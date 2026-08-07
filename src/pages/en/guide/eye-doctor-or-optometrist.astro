@@ -1,0 +1,179 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 指南 → 文章的聚落連結（英文版取 blog-en 集合；尚未翻譯的英文文章由 .filter(Boolean) 濾掉）
+const CLUSTER_SLUGS = [
+  'optometry-vs-ophthalmology',
+  'blurry-vision-see-doctor',
+  'eye-strain-see-doctor',
+  'child-vision-check-where',
+  'eye-exam-before-glasses',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/eye-doctor-or-optometrist/';
+
+// 眼科 vs 驗光所 症狀分流指南（英文版）：承接「eye doctor」意圖搜尋的誠實分流頁
+// 合規基準：明確自稱驗光所非眼科；紅旗症狀一律「建議儘速至眼科就醫」；發現異常依法轉介。
+const faqs = [
+  {
+    q: 'Is Beyond Visual Optometry an eye clinic with a doctor?',
+    a: 'No. We are licensed optometry clinics (BiYang Optometry Clinic in Xinzhuang and Neng Jian Du Optometry Clinic in Banqiao). Refraction and dispensing are carried out by licensed optometrists — we are not a medical clinic and there is no physician on site. For the diagnosis and treatment of eye disease, please see an ophthalmologist. If during the exam we find that vision cannot be effectively corrected, we will assist with a referral to an ophthalmologist as required under Taiwan\'s Optometrists Act.',
+  },
+  {
+    q: 'My vision is blurry — should I see an ophthalmologist first, or come for a vision exam?',
+    a: 'It depends. If things have gradually become less clear and your prescription simply feels out of date, that is usually a refractive issue and you can come to the optometry clinic for a full exam first. If your vision dropped suddenly, one eye has gone dark, or part of your visual field is missing, please go straight to an ophthalmologist — that may need medical attention. If you are unsure, describe what you are experiencing over LINE and we will tell you honestly where to go.',
+  },
+  {
+    q: 'My eye is red, painful, or has discharge — can an optometry clinic handle that?',
+    a: 'No. Please go directly to an ophthalmologist. Redness, swelling, pain, discharge and light sensitivity fall under eye disease, which requires diagnosis and treatment by a physician; an optometry clinic neither may nor should handle it under Taiwan\'s Optometrists Act. Once the condition has been treated and you need glasses, come and see us then.',
+  },
+  {
+    q: 'For a child\'s first vision check, ophthalmologist or optometry clinic?',
+    a: 'For children under 6, please see an ophthalmologist first for a medical assessment — under Taiwan\'s Optometrists Act, optometrists may not perform refraction for children under six. For children aged 6 to under 15, refraction must be carried out under the guidance of an ophthalmologist; on that basis we can work alongside the physician on vision assessment and prescription tracking, and if anything unusual comes up we will suggest further examination by an ophthalmologist. The two roles work together — it is not an either-or choice.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${canonicalUrl}#faq`,
+  "inLanguage": "en",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+<Layout
+  title="Eye Doctor or Optometrist? A Symptom Triage Guide | Beyond Visual"
+  description="Beyond Visual is an optometry clinic, not an eye clinic — this page tells you honestly where the line falls: which symptoms need an ophthalmologist right away (redness, pain, sudden vision loss, a surge of floaters), and which an optometry clinic can handle (prescription changes, uncomfortable glasses, fitting assessment). Xinzhuang & Banqiao, Beyond Visual Optometry."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">First, to be clear: we are not an eye clinic</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Something's wrong with your eyes.<br />Eye doctor, or <span class="text-brand-gold">optometry clinic</span>?
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
+        Plenty of people find us while searching for an "eye doctor". Beyond Visual is a licensed optometry clinic, not a medical eye clinic — so this page lays out the division of work honestly: some situations mean you should go and see a physician, and some don't need an appointment with one at all, because an optometry clinic can handle them.
+      </p>
+    </div>
+  </section>
+
+  <!-- 分流表 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">A 30-second triage: where should you go?</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white border-t-4 p-8" style="border-top-color:#b0413e">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">See an ophthalmologist</h3>
+          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">These fall under eye disease and need a physician's diagnosis and treatment — please seek medical care promptly</p>
+          <ul class="space-y-3">
+            {[
+              'A red, swollen or painful eye, discharge, or light sensitivity',
+              'Vision that dropped suddenly, one eye that cannot see, or a missing part of your visual field',
+              'A sudden surge of floaters, especially with flashes of light',
+              'Eye injury or a foreign body in the eye',
+              'Vision checks for children under 6 (a medical assessment — please have an ophthalmologist perform it)',
+              'Routine retinal follow-up for chronic conditions such as diabetes or high blood pressure',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">
+                <span class="flex-shrink-0 mt-1" style="color:#b0413e;font-size:12px">●</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white border-t-4 border-brand-gold p-8">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">An optometry clinic can handle it</h3>
+          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">Refraction and dispensing questions need no medical appointment — a licensed optometrist assesses them in full</p>
+          <ul class="space-y-3">
+            {[
+              'Things gradually looking less clear, and you want to check whether your prescription has changed',
+              'Glasses that leave you dizzy or tired, and that no adjustment seems to fix',
+              'Wanting new glasses, progressive lenses, or lenses fitted into a bring-your-own frame',
+              'Sore eyes after long hours on screens, and wanting a vision assessment',
+              'Prescription tracking and fitting assessment for children aged 6 and over (for children under 15 this is carried out under the guidance of an ophthalmologist, as required by law)',
+              'General contact lens wear assessment, and frame adjustment and repair',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">
+                <span class="text-brand-gold flex-shrink-0 mt-1" style="font-size:12px">●</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p class="text-brand-ink-3 mt-8 text-center max-w-2xl mx-auto" style="font-size:14px;line-height:1.8">
+        Not sure which side you fall on? Describe it to us over LINE first and we will tell you honestly where to go — <strong class="text-brand-ink">telling you that you don't need us is part of the job too.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- 分工說明 -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">Ophthalmologists and optometry clinics divide the work — they don't compete</h2>
+      </div>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
+        <p>An <strong>ophthalmologist</strong> looks after the "health" of your eyes: diagnosing disease, treatment, surgery, and medical procedures such as dilated examination. An <strong>optometry clinic</strong> looks after the "visual quality" of your eyes: full refraction, binocular vision assessment, and lens fitting and adjustment, carried out by licensed optometrists under Taiwan's Optometrists Act.</p>
+        <p>The two sides cover for each other constantly: once an ophthalmologist has treated an eye condition, the fine work of fitting glasses comes to the optometry clinic; and if during a vision exam we find that vision cannot be effectively corrected, or something looks unusual, we refer you to an ophthalmologist as the law requires. Your eyes need both kinds of expertise — it's just that different situations call for a different door.</p>
+        <p>So if you landed here searching for an "eye doctor", start with the triage list above. If you genuinely need medical care, please don't delay it. And if it turns out to be a glasses problem, you're in the right place.</p>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/en/booking/"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">See available times</a>
+        <p class="text-brand-ink-3 mt-4" style="font-size:13px;letter-spacing:0.05em">A consultation is not a commitment to buy · No sales pressure · Reschedule any time</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-6">
+        {faqs.map((faq, i) => (
+          <div class="border-t border-brand-ink/15 pt-6">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">Q{i + 1}. {faq.q}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-3 mt-10 text-center" style="font-size:13px;line-height:1.8">
+        Xinzhuang 02-2206-6700 · Banqiao 02-2253-1246
+      </p>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: related articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>

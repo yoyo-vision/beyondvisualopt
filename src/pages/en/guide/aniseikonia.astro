@@ -1,0 +1,279 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 本指南的主題聚落文章（依閱讀順序排列）
+const CLUSTER_SLUGS = [
+  'binocular-vision',
+  'high-myopia-glasses-guide',
+  'glasses-dizzy',
+  'progressive-lens-dizzy',
+];
+const allPosts = await getCollection('blog-en');
+const clusterPosts = CLUSTER_SLUGS
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter(Boolean);
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/aniseikonia/';
+
+// 指南頁 FAQ（自動化為 FAQPage schema）
+const faqs = [
+  {
+    q: 'My two eyes have very different prescriptions — why do I get dizzy and see text jump after a while?',
+    a: 'When the gap between your two prescriptions is large (medically called anisometropia), the left and right images you see through your glasses can differ in size even when each eye on its own is corrected clearly — that is aniseikonia. Fusing two images of different sizes at the same time is hard work for the brain, and over time it easily shows up as dizziness, eye strain, text that jumps or line-skipping while reading, and reduced stereopsis (depth perception). This is not your imagination; it is a real optical phenomenon caused by a difference in spectacle magnification.',
+  },
+  {
+    q: 'Are aniseikonia and anisometropia the same thing?',
+    a: 'Not quite. Anisometropia means the two eyes have different prescriptions; aniseikonia means the two eyes see images of different sizes. The two often appear together — the larger the prescription gap, the more noticeable the image-size difference produced through glasses usually is — but aniseikonia can also arise from situations such as cataract surgery in one eye or an intraocular lens implanted in one eye. Our optometry personnel use a full eye exam and lifestyle vision analysis to determine whether your discomfort is related to a difference in image size.',
+  },
+  {
+    q: 'What determines the magnification of a pair of glasses? Can it be adjusted?',
+    a: "The magnification of a pair of glasses is mainly affected by four factors: lens power, lens base curve, lens center thickness, and vertex distance (the distance from lens to eye). That means with the same prescription, different lens designs paired with different frames can redistribute the left-right image-size difference and bring it as close together as possible. What optometry personnel can do is this: while keeping the prescription correct, use lens design parameters and frame choice to bring the image-size difference between the two eyes into a range your brain can fuse more comfortably.",
+  },
+  {
+    q: 'Why does vertex distance matter so much for people with a large prescription gap?',
+    a: 'Vertex distance is the distance from the back surface of the lens to the cornea. The higher the prescription, the more noticeable the change in effective power and image magnification for every 1mm of vertex-distance difference (at high powers, each 1mm causes roughly a 0.25D difference in effective power). For someone with a large gap between the two eyes, a poorly adjusted frame, lenses sitting too far from the eyes, or asymmetry between the two sides will all amplify the image-size difference. So precise measurement and frame adjustment are not a bonus for people with aniseikonia — they are a requirement.',
+  },
+  {
+    q: 'Are contact lenses less likely to cause aniseikonia?',
+    a: 'For some people with a large gap between the two prescriptions, contact lenses sit directly on the cornea so the vertex distance approaches zero, and the left-right image-size difference is usually smaller than with spectacles. But whether contact lenses are suitable depends on corneal condition, tear film status, daily routine, and willingness to wear them; they are a medical device and require an in-person assessment by optometry personnel. Under Article 12 of Taiwan’s Optometrists Act, contact lens fitting for those aged fifteen and under must be carried out under the guidance of an ophthalmologist, and no fitting is provided for children under six. Spectacles and contact lenses each involve trade-offs; there is no one-size-fits-all answer.',
+  },
+  {
+    q: 'Does aniseikonia go away?',
+    a: 'First, separate two situations. If the image-size difference comes from how the spectacle prescription is configured, that is an optical matter, and lens design and dispensing adjustments can reduce the difference and improve visual comfort. If a cataract in one eye, a retinal issue, or another pathological factor in the eye is suspected, that falls within medical care, and our optometry personnel will assist with a referral to an ophthalmologist for diagnosis. What we can do is get the optical conditions on the dispensing side as right as possible so your two eyes work together more comfortably — not claim to treat any disease.',
+  },
+  {
+    q: 'How do I know whether my dizziness is caused by aniseikonia?',
+    a: 'If several of the following apply to you, a full binocular vision and lifestyle vision analysis is worth doing: a clear gap between the two prescriptions, feeling worse rather than better in new glasses, skipping lines or misjudging distance while reading, weaker depth perception going down stairs or reversing the car, and aching temples after long periods of visual work. These are not necessarily all aniseikonia — they can also come from prescription, cylinder axis, PD, or binocular coordination issues. Precisely because there are many possible causes, both eyes need to be measured and assessed together in one session, rather than simply changing the prescription.',
+  },
+  {
+    q: 'Where in Xinzhuang or Banqiao can I get an aniseikonia-related assessment?',
+    a: 'Beyond Visual Optometry’s Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (02-2253-1246) both offer full binocular vision assessment and lifestyle vision analysis. For people with a large prescription gap, dizziness after long reading sessions, or poor depth perception, our optometry personnel assess prescription, image magnification, and frame pairing together. If the assessment indicates a need for medical diagnosis (such as a cataract in one eye or a retinal problem), we assist with a referral to an ophthalmologist.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "The Complete Guide to Aniseikonia: Why Unequal Image Sizes Between Your Eyes Cause Dizziness, and How Fitting Handles It",
+      "description": "A large gap between your two prescriptions, dizzy after long reading, text that jumps, weaker depth perception? From the difference between aniseikonia and anisometropia, and how spectacle magnification is affected by base curve, center thickness, and vertex distance, to how Beyond Visual uses lens design and frame pairing to reduce the image-size difference — all on one page. Serving Xinzhuang and Banqiao.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "YoYo Cheng",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="Aniseikonia Guide | Large Prescription Gap, Dizziness & Jumping Text | Beyond Visual"
+  description="A big gap between your two prescriptions, dizzier in new glasses, text that jumps, weaker depth perception? This complete guide to aniseikonia covers the optics, a symptom self-check, and how fitting reduces the image-size difference. Beyond Visual Optometry, Xinzhuang & Banqiao."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        When Your Two Eyes See Different Image Sizes<br /><span class="text-brand-gold">The Complete Guide to Aniseikonia</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
+        A large gap between your two prescriptions, feeling dizzier in new glasses, text that jumps while reading, misjudging the distance going down stairs — many people assume the prescription is wrong, when in fact the left and right images may simply be different sizes. This page explains the optics of aniseikonia, its symptoms, and how fitting handles it. Written by Optometrist YoYo, based on clinical fitting practice.
+      </p>
+    </div>
+  </section>
+
+  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Aniseikonia means the two eyes see images of different sizes; it often comes alongside a large gap between the two prescriptions (anisometropia). Fusing two differently sized images is hard work for the brain, and over time it brings dizziness, fatigue, jumping text, and weaker depth perception.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Spectacle magnification is affected by four things: lens power, base curve, center thickness, and vertex distance. That means the image-size difference can be brought as close together as possible through lens design and frame pairing.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The higher the prescription, the more critical vertex distance and frame adjustment become — get them wrong and the image difference is amplified. For this group, precise measurement and frame adjustment are a requirement, not a bonus.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>What the dispensing side can do is reduce the image-size difference and improve visual comfort. If a cataract in one eye, a retinal issue, or another pathological factor is suspected, that falls within medical care and our optometry personnel will assist with a referral to an ophthalmologist.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: 'What Aniseikonia Is', href: '#what' },
+        { label: 'Symptom Self-Check', href: '#symptoms' },
+        { label: 'Why It Happens', href: '#why' },
+        { label: 'How Fitting Handles It', href: '#how' },
+        { label: 'FAQ', href: '#faq' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 不等像是什麼 -->
+  <section id="what" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Aniseikonia: your two eyes see the same world at different sizes</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>Normally, when both eyes look at the same object, the two images sent to the brain are close to the same size, and the brain fuses them into one with little effort while extracting depth from the tiny differences. <strong>Aniseikonia means the two eyes see images that are noticeably different in size</strong> — the brain is forced to fuse one larger and one smaller picture, which is exhausting work.</p>
+        <p>Picture two projectors set to different magnifications, projecting the same film onto the same wall: the images overlap but never line up, and watching it for long tires both your eyes and your head. That is what people with aniseikonia go through every day, except they often can't put their finger on what is wrong — they only feel that "these glasses just aren't right."</p>
+        <p><strong>The most common cause is a large gap between the two prescriptions (anisometropia).</strong> When one eye is -1.00D and the other is -4.00D, even if both eyes are each corrected to clear vision, the magnification produced through the glasses differs, and a size difference appears. Beyond that, situations such as cataract surgery in one eye or an intraocular lens implanted in one eye can also cause aniseikonia — in those cases, the pathological side needs to be handled by an ophthalmologist first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 症狀自我檢核 -->
+  <section id="symptoms" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">These symptoms may be aniseikonia at work</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">The situations below are not necessarily all aniseikonia — they can also come from prescription, cylinder axis, PD, or binocular coordination issues. But if several apply to you at once, a full binocular vision assessment is well worth doing to find the cause.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {[
+          ['Dizziness and aching temples after long reading', 'After long stretches of reading or screen work, a dull pressure between the brows or at the temples, and the urge to close your eyes and rest'],
+          ['Text jumps while reading; skipping lines', 'While reading books or documents the characters seem to sway, and you find yourself jumping to the next line'],
+          ['Weaker stereopsis and depth perception', 'Missing a step going downstairs, misjudging distance when reversing the car, reaching for something and being slightly off'],
+          ['New glasses feel worse, not better', 'The prescription is clearly correct, yet the new glasses leave you dizzier and more tired'],
+          ['A clear gap between the two prescriptions', 'The sphere or cylinder values for the two eyes differ substantially on your prescription record'],
+          ['Wanting to close one eye after a while', 'Squinting or closing one eye without realizing it, because using both eyes together is too tiring'],
+        ].map(([title, desc]) => (
+          <div class="border border-brand-ink/8 rounded-2xl p-6" style="background:#f7f3ec">
+            <p class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">{title}</p>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 為什麼會發生 -->
+  <section id="why" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">A pair of glasses hides its "magnification" in four details you never see</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>Many people assume getting glasses is simply "measure the prescription, fill in the numbers." But for someone with a large gap between the two eyes, what really decides whether the glasses feel comfortable is <strong>the difference in magnification between the two eyes</strong> — and magnification is not determined by power alone. These four things affect it:</p>
+      </div>
+      <div class="mt-8 space-y-4">
+        {[
+          ['① Lens power', 'Power is the lead actor in magnification. The larger the difference in power, the more noticeable the gap in magnification between the two eyes usually is — this is the most common starting point for aniseikonia.'],
+          ['② Lens base curve', 'The curvature of the front surface of the lens. At the same power, a different base curve changes magnification — one of the levers optometry personnel can use to redistribute image size between the two eyes.'],
+          ['③ Lens center thickness', 'How thick or thin the center of the lens is. Thickness affects magnification, and it is linked to refractive index and frame size — choosing the right index and a slightly smaller frame helps too.'],
+          ['④ Vertex distance', 'The distance from lens to eye. The higher the prescription, the more sensitive it is: at high powers each 1mm of difference causes roughly a 0.25D change in effective power, and if the two eyes are asymmetric the image difference is amplified.'],
+        ].map(([title, desc]) => (
+          <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
+            <p class="font-serif text-brand-navy mb-2" style="font-size:18px;font-weight:600">{title}</p>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{desc}</p>
+          </div>
+        ))}
+      </div>
+      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
+        The key idea: the difference in image size cannot be eliminated one hundred percent in physical terms, but it can be brought as close together as possible through lens design parameters and frame choice, so the brain can fuse the two images more comfortably. So people with a large gap between the two eyes shouldn't only care whether "the prescription is right" — they should care whether "this pair of glasses was designed with both eyes in mind."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 能見度怎麼處理 -->
+  <section id="how" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">How Beyond Visual fits glasses for a large gap between the two eyes</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">For people with aniseikonia, the point of a fitting has never been "getting it done fast" — it is "calculating both eyes together as one system." Our approach covers the following steps.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
+        {[
+          ['Full binocular vision assessment', 'Not just measuring each eye’s prescription, but assessing how the two eyes work together — fusion, stereopsis, and binocular balance — to find out whether the discomfort comes from a difference in image size'],
+          ['Lifestyle vision analysis', 'At what distances and in what situations do you mainly use your eyes? How reading, driving, and screen time are weighted affects the lens-design trade-offs and the acceptable range of image difference'],
+          ['Lens design parameter planning', 'While keeping the prescription correct, pairing base curve, center thickness, and refractive index to bring the magnification difference between the two eyes as close together as possible'],
+          ['Precise vertex distance measurement', 'A large prescription gap is especially sensitive to vertex distance; precise measurement and symmetry between the two eyes are prerequisites for comfort'],
+          ['Frame choice and adjustment', 'Frame size and the position of the temples and nose pads all affect the lens-to-eye distance and symmetry — a frame is not only about how it looks'],
+          ['Contact lens option assessment', 'For some people, contact lenses bring the vertex distance close to zero, so the image-size difference is usually smaller; whether they are suitable requires an in-person assessment, as they are a medical device fitted in accordance with regulations'],
+          ['Referral to an ophthalmologist when needed', 'If a cataract in one eye, a retinal issue, or another pathological factor is suspected, we assist with a referral to an ophthalmologist in accordance with Taiwan’s Optometrists Act — collaboration, not working in isolation'],
+          ['Post-dispensing follow-up adjustment', 'Binocular fusion takes time to settle in, so after pickup we proactively follow up on how the glasses feel and fine-tune when needed — the job isn’t done until they fit right'],
+        ].map(([title, desc]) => (
+          <div class="border-t border-white/10 pt-5">
+            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on related topics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {clusterPosts.map(post => (
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">If your two eyes never quite agree, stop just changing the prescription</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full binocular vision and lifestyle vision analysis, and let our optometry personnel assess both eyes together as one system to find the real reason behind your dizziness after long reading and your weaker depth perception. Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.), Banqiao 02-2253-1246.</p>
+      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Binocular Vision Assessment →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（純導覽） -->
+  <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">Read More | Other Complete Guides</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { href: '/en/guide/high-myopia/', t: 'The Complete Guide to High-Myopia Eyewear' },
+          { href: '/en/guide/progressive-lens/', t: 'The Complete Guide to Progressive Lenses' },
+          { href: '/en/guide/choose-optician/', t: 'The Complete Guide to Buying Glasses in New Taipei' },
+        ].map(g => (
+          <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
+        ))}
+      </div>
+      <a href="/en/guide/" class="inline-block mt-6 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">← Back to all guides</a>
+    </div>
+  </section>
+
+</Layout>
