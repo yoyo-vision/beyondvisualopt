@@ -1,0 +1,30 @@
+# Cloudflare Pages 轉址規則
+#
+# ⚠️ 為什麼要有這個檔：astro.config.mjs 的 `redirects` 在靜態輸出下**不會產生真正的 HTTP 301**，
+#    它產生的是一個 meta refresh 的 HTML 頁，而且頁內帶 <meta name="robots" content="noindex">。
+#    後果：Google 不當它是轉址，而是回報成「遭到 noindex 標記排除」，
+#    舊網址累積的權重也不會轉移到新網址。GSC 索引報告的 noindex 那幾頁就是這樣來的。
+#
+#    本檔的規則「優先於」靜態檔案（Cloudflare 官方：Redirects are always followed,
+#    regardless of whether or not an asset matches the incoming request），
+#    所以這裡寫的 301 會蓋過 Astro 產出的 meta refresh 頁。
+#
+# ⚠️ astro.config.mjs 的 redirects 設定「刻意保留不刪」當作退路：
+#    萬一本檔語法寫錯被 Cloudflare 整份忽略，舊網址還有 meta refresh 頁可以走，不會變 404。
+#
+# 格式：<來源>  <目的地>  <狀態碼>
+#    含／不含結尾斜線兩式都要寫，Google 收錄的通常是帶斜線版。
+
+# 作者頁：舊的 /author 索引頁併入 YoYo 個人頁
+/author                                  /author/yoyo/                          301
+/author/                                 /author/yoyo/                          301
+
+# 2026-07：兒童近視文章改名（原檔名帶「control」有合規疑慮，改為「tracking」）
+/blog/children-myopia-control-xinzhuang  /blog/children-myopia-tracking-xinzhuang/  301
+/blog/children-myopia-control-xinzhuang/ /blog/children-myopia-tracking-xinzhuang/  301
+/en/blog/children-myopia-control-xinzhuang   /en/blog/children-myopia-tracking-xinzhuang/  301
+/en/blog/children-myopia-control-xinzhuang/  /en/blog/children-myopia-tracking-xinzhuang/  301
+
+# 2026-07-15：RGP 硬式隱形眼鏡文章因醫療器材廣告合規（法務審核 🔴）下架，導去合規的服務頁
+/blog/rgp-hard-contact-lens              /services/                             301
+/blog/rgp-hard-contact-lens/             /services/                             301
