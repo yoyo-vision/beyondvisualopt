@@ -74,15 +74,15 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
 
   <!-- hreflang：告知 Google 中英文版本對應關係 -->
   {isEn ? (<>
-    <link rel="alternate" hreflang="en" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang="en" href={`https://beyondvisualopt.com${canonicalPath}`} />
     <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${langSwitchHref}`} />
     <link rel="alternate" hreflang="x-default" href={`https://beyondvisualopt.com${langSwitchHref}`} />
   </>) : enPath ? (<>
-    <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${canonicalPath}`} />
     <link rel="alternate" hreflang="en" href={`https://beyondvisualopt.com${enPath}`} />
-    <link rel="alternate" hreflang="x-default" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://beyondvisualopt.com${canonicalPath}`} />
   </>) : (
-    <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${Astro.url.pathname}`} />
+    <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${canonicalPath}`} />
   )}
 
   <!-- Hero 圖優先預載（LCP 優化） -->
@@ -255,7 +255,7 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           "alternateName": "YoYo",
           "jobTitle": "驗光師",
           "identifier": "驗師字第 003309 號",
-          "url": "https://beyondvisualopt.com/about"
+          "url": "https://beyondvisualopt.com/about/"
         }
       },
       {
