@@ -6,7 +6,9 @@ import { getCollection } from 'astro:content';
 const CLUSTER_SLUGS = [
   'eye-exam-duration-difference',
   'same-prescription-different-feel',
-  'good-lens-needs-good-fitting',
+  // 2026-08-07：good-lens-needs-good-fitting 中英兩版均已併入支柱頁並 301，
+  // 聚落位由 vertex-distance 遞補（同屬「參數精準度」主題），與中文版對稱
+  'vertex-distance',
   'eye-exam-preparation-tips',
 ];
 const allPosts = await getCollection('blog-en');

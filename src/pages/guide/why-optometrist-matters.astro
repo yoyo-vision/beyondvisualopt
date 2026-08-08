@@ -3,10 +3,12 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 // 指南 → 文章的聚落連結（與 blog/[slug].astro 的 PILLAR_MAP 對稱，形成雙向互連）
+// 2026-08-07：good-lens-needs-good-fitting 已併入本頁 #individual 段並 301 導向，
+// 聚落位由 vertex-distance 遞補（同屬「參數精準度」主題，與本頁新段落直接呼應）
 const CLUSTER_SLUGS = [
   'eye-exam-duration-difference',
   'same-prescription-different-feel',
-  'good-lens-needs-good-fitting',
+  'vertex-distance',
   'eye-exam-preparation-tips',
 ];
 const allPosts = await getCollection('blog');
@@ -39,6 +41,14 @@ const faqs = [
     q: '高價鏡片是不是智商稅？',
     a: '不是智商稅，但也不是買貴就一定有感。高單價鏡片確實有真實的光學設計差異——例如非球面設計降低邊緣變形、多焦點的漸進通道更順、抗反射與抗污鍍膜更耐久。但這些差異要靠完整的驗配參數（瞳距、瞳高、頂點距離）對準你的眼睛才發揮得出來。所以我們的定調是乘法：好鏡片 × 完整驗配 = 錢花在刀口上；好鏡片 × 隨便量一量 = 白花錢。重點從來不是最貴，是最適合。',
   },
+  {
+    q: '我換了蔡司高階鏡片，卻覺得跟以前差不多，是被騙了嗎？',
+    a: '不一定是鏡片的問題。個人化訂製鏡片的價值，建立在瞳距、瞳高、頂點距離、前傾角這些參數的精準度上，只要有一項沒抓準，你感受到的就會打折。另外鏡框戴久了往下滑、往前推，也會讓當初算好的頂點距離補正對不準。建議帶著這副眼鏡回門市，讓驗光人員把配戴參數重新量一輪、把鏡框調回該有的位置——很多「換了好鏡片卻沒感覺」，其實是參數或配戴位置跑掉了。',
+  },
+  {
+    q: '一般鏡片配得準，會不會比高階鏡片配不準還好？',
+    a: '很可能。這正是「相乘」在講的事。一片寬容度高的一般鏡片，加上精準的驗光與參數量測，日常使用未必輸給一片裝歪了的頂級鏡片。所以與其只盯著鏡片等級，不如先確認驗配這一關夠不夠扎實——這是決定成敗、卻最容易被忽略的一半。也要說清楚：這不是勸你別升級好鏡片，而是提醒你，升級了就更該把驗配顧好，別讓花出去的錢卡在最後一哩。',
+  },
 ];
 
 const schema = {
@@ -50,7 +60,7 @@ const schema = {
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
       "headline": "選好的鏡片，不如選好的驗光師：為什麼「驗光」決定一副眼鏡的成敗",
-      "description": "一副眼鏡的好壞是「鏡片 × 驗配」的乘積。這頁講清楚驗光為什麼決定成敗、一場完整驗光會做哪些事、怎麼判斷你遇到的驗光夠不夠完整。新莊、板橋能見度視覺中心。",
+      "description": "一副眼鏡的好壞是「鏡片 × 驗配」的乘積。這頁講清楚驗光為什麼決定成敗、一場完整驗光會做哪些事、為什麼蔡司這類個人化訂製鏡片更依賴精準參數（升級了卻沒感覺常是參數或配戴位置跑掉），以及怎麼判斷你遇到的驗光夠不夠完整。新莊、板橋能見度視覺中心。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
       "articleSection": "完整指南",
@@ -76,7 +86,7 @@ const schema = {
 ---
 <Layout
   title="選好的鏡片，不如選好的驗光師｜驗光為什麼決定一副眼鏡的成敗｜新莊 板橋"
-  description="一副眼鏡是「鏡片 × 驗配」的乘積：再好的鏡片，配上不完整的驗光也發揮不出來。這頁講透驗光為什麼重要、一場完整驗光會做哪些事、驗光師怎麼選，以及怎麼判斷你遇到的驗光夠不夠完整。新莊、板橋能見度視覺中心。"
+  description="升級了個人化訂製鏡片，卻覺得跟以前差不多？多半是瞳距、瞳高、頂點距離這些參數或配戴位置跑掉了。一副眼鏡是「鏡片 × 驗配」的乘積，這頁講透完整驗光該做哪些事。"
   enPath="/en/guide/why-optometrist-matters/"
   ogType="article"
   schema={schema}
@@ -114,6 +124,7 @@ const schema = {
     <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
       {[
         { label: '鏡片 × 驗配的乘法', href: '#multiply' },
+        { label: '個人化鏡片與參數', href: '#individual' },
         { label: '一副眼鏡的成敗鏈', href: '#chain' },
         { label: '完整驗光綠旗清單', href: '#greenflags' },
         { label: '值得留意的訊號', href: '#signals' },
@@ -162,6 +173,55 @@ const schema = {
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
         對每天盯螢幕超過 10 小時的工程師或編輯來說，散光軸度差個幾度、頂點距離差兩三公釐，短時間看不太出來，但一整天下來的痠澀與疲勞感很有感。這種「說不上哪裡怪、就是戴不久」的不適，多半不是鏡片不好，而是相乘的另一半沒對準。
       </blockquote>
+    </div>
+  </section>
+
+  <!-- 越個人化的鏡片，越依賴精準參數（2026-08-07 併入原 /blog/good-lens-needs-good-fitting/） -->
+  <section id="individual" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">越是個人化的好鏡片，越依賴精準的參數</h2>
+      <div class="space-y-5 text-brand-ink-2 mb-10" style="font-size:16.5px;line-height:1.9">
+        <p>「我升級了蔡司的個人化訂製鏡片，可是戴起來好像跟以前差不多。」這句話我們在門市聽過不少次。多數情況下問題不在鏡片本身，而在這片好鏡片的驗配參數沒被抓準——而且，<strong>鏡片的設計越個人化，這件事就越關鍵。</strong></p>
+        <p>一般非訂製鏡片的光學設計是建立在「平均值」上：平均臉型、平均鼻高、平均配戴位置。它的優點是寬容，你的臉不完全等於平均，戴起來也還過得去。</p>
+        <p>個人化訂製鏡片走的是另一條路：它把平均值拿掉，改用<strong>你的個人參數</strong>去重算每一個光學區域。要餵給它的資料，包括下面這些。</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse" style="font-size:15px">
+          <thead>
+            <tr class="bg-brand-navy text-white">
+              <th class="text-left px-5 py-4 font-semibold whitespace-nowrap">參數</th>
+              <th class="text-left px-5 py-4 font-semibold">這片好鏡片為什麼需要它</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink-2">
+            {[
+              ['瞳距（單眼分開量）', '光學中心要精準對準你的瞳孔'],
+              ['瞳高', '度數與視線在鏡片上的垂直落點，多焦點尤其關鍵'],
+              ['頂點距離', '鏡片離角膜多遠，直接影響有效度數'],
+              ['前傾角', '鏡框往前傾的角度，牽動散光軸向的補正'],
+              ['環曲角', '鏡框包覆臉部的弧度'],
+              ['慣用閱讀距離', '近用區要對準你真正的工作距離'],
+            ].map(row => (
+              <tr class="border-b border-brand-ink/8">
+                {row.map((cell, i) => (
+                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="space-y-5 text-brand-ink-2 mt-10" style="font-size:16.5px;line-height:1.9">
+        <p>看出關鍵了嗎？這套設計的威力，來自「它是照你的參數算的」。一旦參數量得不準，就等於拿別人的身形去訂做你的西裝——布料再高級，版型對不上，穿起來還是彆扭。<strong>設計越個人化，對參數精準度的要求就越高，這是它厲害的地方，也是它脆弱的地方。</strong></p>
+      </div>
+
+      <h3 class="font-serif text-brand-navy mt-12 mb-4" style="font-size:21px;font-weight:600">一個很具體的例子：頂點距離差幾公釐</h3>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
+        <p>個人化鏡片會把頂點距離（鏡片後表面到角膜的距離）算進度數補正裡。但這個補正有個前提：<strong>配戴後鏡框實際落在你臉上的位置，要跟量測當下對得起來。</strong></p>
+        <p>假設量測時鏡框服貼、頂點距離抓在標準值，但交件後鏡框往下滑、往前推了幾公釐（度數越高越明顯），你眼睛實際感受到的有效度數就跟著跑掉。鏡片裡那套為你精算的補正，是對著「原本的位置」算的；位置一變，補正就對不準了。結果是一片頂級鏡片，因為戴歪了，發揮不出它該有的清晰。</p>
+        <p>所以驗配到位其實包含兩層：一是量測當下把參數抓準，二是交件時把鏡框調到跟量測一致、之後戴久滑掉了還能回來調。兩層都做到，那片好鏡片才真的發揮得出來。</p>
+        <p class="text-brand-ink-3" style="font-size:15.5px">延伸閱讀：<a href="/blog/vertex-distance/" class="text-brand-gold underline">「頂點距離」是什麼？為什麼高度數眼鏡要算它</a>。至於個人化訂製鏡片該不該升級、哪些族群最有感、哪些人差異不明顯，我們誠實整理在<a href="/blog/zeiss-individual-worth-it/" class="text-brand-gold underline">蔡司個人化訂製鏡片值得嗎？</a>——不業配，只講適配。</p>
+      </div>
     </div>
   </section>
 

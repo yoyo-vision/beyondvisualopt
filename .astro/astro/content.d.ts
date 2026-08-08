@@ -351,13 +351,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"good-lens-needs-good-fitting.md": {
-	id: "good-lens-needs-good-fitting.md";
-  slug: "good-lens-needs-good-fitting";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "high-myopia-glasses-guide.md": {
 	id: "high-myopia-glasses-guide.md";
   slug: "high-myopia-glasses-guide";
@@ -783,13 +776,6 @@ declare module 'astro:content' {
 "glasses-uncomfortable-3-reasons.md": {
 	id: "glasses-uncomfortable-3-reasons.md";
   slug: "glasses-uncomfortable-3-reasons";
-  body: string;
-  collection: "blog-en";
-  data: InferEntrySchema<"blog-en">
-} & { render(): Render[".md"] };
-"good-lens-needs-good-fitting.md": {
-	id: "good-lens-needs-good-fitting.md";
-  slug: "good-lens-needs-good-fitting";
   body: string;
   collection: "blog-en";
   data: InferEntrySchema<"blog-en">

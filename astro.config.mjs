@@ -24,6 +24,10 @@ export default defineConfig({
     '/en/blog/children-myopia-control-xinzhuang': '/en/blog/children-myopia-tracking-xinzhuang/',
     // RGP 硬式隱形眼鏡文章因醫療器材廣告合規問題下架（2026-07-15 法務審核🔴），導去合規的服務頁
     '/blog/rgp-hard-contact-lens': '/services/',
+    // 2026-08-07：本文與支柱頁主題重疊，GSC 判「已檢索但未建立索引」（爬過決定不收）。
+    // 獨有內容（個人化鏡片六參數表、頂點距離補正機制）已併入支柱頁 #individual 段，301 集中權重。
+    '/blog/good-lens-needs-good-fitting': '/guide/why-optometrist-matters/',
+    '/en/blog/good-lens-needs-good-fitting': '/en/guide/why-optometrist-matters/',
   },
   integrations: [
     tailwind(),

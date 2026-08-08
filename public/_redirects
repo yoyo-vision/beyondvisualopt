@@ -28,3 +28,12 @@
 # 2026-07-15：RGP 硬式隱形眼鏡文章因醫療器材廣告合規（法務審核 🔴）下架，導去合規的服務頁
 /blog/rgp-hard-contact-lens              /services/                             301
 /blog/rgp-hard-contact-lens/             /services/                             301
+
+# 2026-08-07：good-lens-needs-good-fitting 併入支柱頁
+#   起因：GSC 判「已檢索 - 目前尚未建立索引」＝Google 爬完決定不收，研判與支柱頁主題重疊。
+#   處理：獨有內容（個人化鏡片六參數表、頂點距離補正機制、2 則 FAQ）已併入支柱頁 #individual 段，
+#         原網址 301 集中權重。中英兩版一起處理，否則 hreflang 會指向一個轉址網址。
+/blog/good-lens-needs-good-fitting       /guide/why-optometrist-matters/        301
+/blog/good-lens-needs-good-fitting/      /guide/why-optometrist-matters/        301
+/en/blog/good-lens-needs-good-fitting    /en/guide/why-optometrist-matters/     301
+/en/blog/good-lens-needs-good-fitting/   /en/guide/why-optometrist-matters/     301
