@@ -2,7 +2,7 @@
 title: "Essilor Lenses Explained: The French Optical Giant's Design Philosophy and Flagship Series"
 date: "2026-06-24"
 tag: "Lenses"
-excerpt: "Essilor is one of the highest market-share lens brands in the world, with a product line spanning everyday single-vision lenses all the way to premium personalized progressives. Optometrist YoYo walks you through Essilor's core technologies and how each series is designed."
+excerpt: "Essilor is one of the world's largest lens manufacturing groups, with a product line spanning everyday single-vision lenses all the way to premium personalized progressives. Optometrist YoYo walks you through Essilor's core technologies and how each series is designed."
 seoTitle: "Essilor Lenses Explained | Varilux Progressive Lenses | Beyond Visual Optometry, Xinzhuang & Banqiao"
 seoDescription: "A complete introduction to Essilor's lens lineup: Varilux progressive multifocals, Eyezen digital-comfort lenses, and Crizal coatings. The French brand's design logic and who each series suits, with fitting consultations available at Beyond Visual Optometry in Xinzhuang and Banqiao."
 keywords: "Essilor lenses, Varilux progressive lenses, Eyezen, Crizal coating, French lenses, Xinzhuang Essilor, Banqiao Essilor lenses, Beyond Visual Optometry"

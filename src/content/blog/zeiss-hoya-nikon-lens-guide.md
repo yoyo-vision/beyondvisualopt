@@ -67,9 +67,9 @@ NIKON 在台灣的定位介於 HOYA 與蔡司之間，品牌知名度高，消�
 
 ---
 
-## ESSILOR 依視路｜法國品牌，市占最廣
+## ESSILOR 依視路｜法國品牌，漸進鏡片的發明者
 
-ESSILOR（依視路）來自法國，是全球眼鏡鏡片市占率最高的品牌，也是 1959 年漸進多焦點鏡片的發明者。目前 ESSILOR 已與義大利 Luxottica（旗下有 Ray-Ban、Oakley 等鏡架品牌）合併，成為「EssilorLuxottica」集團。
+ESSILOR（依視路）來自法國，是全球規模最大的鏡片製造集團之一，也是 1959 年漸進多焦點鏡片的發明者。目前 ESSILOR 已與義大利 Luxottica（旗下有 Ray-Ban、Oakley 等鏡架品牌）合併，成為「EssilorLuxottica」集團。
 
 **ESSILOR 主要鏡片系列（簡要介紹）：**
 

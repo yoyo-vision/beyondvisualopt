@@ -67,9 +67,9 @@ In Taiwan, Nikon sits between HOYA and Zeiss in positioning. The brand enjoys hi
 
 ---
 
-## Essilor | The French brand with the widest market share
+## Essilor | The French brand that invented the progressive lens
 
-Essilor comes from France and is the world's highest market-share eyeglass lens brand, as well as the inventor of the progressive multifocal lens back in 1959. Essilor has since merged with Italy's Luxottica (whose frame brands include Ray-Ban and Oakley) to form the "EssilorLuxottica" group.
+Essilor comes from France and is one of the world's largest eyeglass lens manufacturing groups, as well as the inventor of the progressive multifocal lens back in 1959. Essilor has since merged with Italy's Luxottica (whose frame brands include Ray-Ban and Oakley) to form the "EssilorLuxottica" group.
 
 **Essilor's main lens series (a brief overview):**
 

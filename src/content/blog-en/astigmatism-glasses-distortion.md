@@ -58,7 +58,7 @@ The following situations warrant a follow-up re-evaluation:
 - There's an **obvious deviation in the astigmatism axis** (an error of 15° or more during refraction has a major impact)
 - Distortion only started after the frame was adjusted (**a crooked frame** causing axis misalignment)
 
-> **Important reminder:** For every 10° the astigmatism axis is off, the correction loses about 30% of its effect; beyond 30° of deviation, it becomes almost entirely ineffective. The frame must be adjusted level—never worn crooked.
+> **Important reminder:** An axis that is off leaves "residual astigmatism" behind. A 10° error leaves roughly one third of the original cylinder uncorrected; at 30°, the residual equals the original cylinder power outright, so the correction is effectively cancelled out. The frame must be adjusted level—never worn crooked. (The residual works out to roughly 2 × cylinder power × the sine of the axis error.)
 
 ---
 

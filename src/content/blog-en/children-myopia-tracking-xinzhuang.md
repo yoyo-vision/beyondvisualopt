@@ -22,14 +22,16 @@ That's the sentence we hear most often at Beyond Visual Optometry. And your worr
 
 Taiwan has one of the highest myopia prevalence rates in the world:
 
-- **First grade of elementary school:** roughly 5–10% myopic
-- **End of elementary school (sixth grade):** roughly 55–65%
-- **High school graduation:** over 85%
-- **High myopia prevalence (adults):** roughly 20–25%
+- **Senior year of kindergarten:** 9.0%
+- **First grade of elementary school:** 19.8%
+- **End of elementary school (sixth grade):** 70.6%
+- **Third year of junior high:** 89.3%
 
-(Prevalence figures reference Taiwan's Health Promotion Administration school-age vision monitoring and public health-education data.)
+(Source: the 2017 Child and Adolescent Vision Monitoring Survey, Health Promotion Administration, Ministry of Health and Welfare, Taiwan.)
 
-Myopia progresses fastest between **ages 8 and 14** — which makes regular tracking during this window especially important.
+High myopia (above -6.00D) is not rare among adults, and the risks of retinal detachment, macular disease, and glaucoma are all tied to it (per public health-education materials from Taiwan's Health Promotion Administration and ophthalmology associations).
+
+So what really matters is not "how many diopters now" but "how fast it is climbing". Progression is fastest between **ages 8 and 14** — these are the years to track prescription and axial length regularly, and if progression accelerates, to have an ophthalmologist evaluate suitable interventions early.
 
 ---
 

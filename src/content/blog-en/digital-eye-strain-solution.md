@@ -33,7 +33,7 @@ After 4–6 hours, the ciliary muscle begins to fatigue, accommodation accuracy 
 ### Fewer Blinks → Worsening Dry Eye
 
 Normal blink rate: about 15–20 times per minute.
-While using a screen: about **5–7 times per minute**—a drop of roughly 60%.
+While using a screen: about **5–7 times per minute**.
 
 The tear film is refreshed with every blink. Blink less, and your tear film break-up time (TBUT) shortens, the cornea stays exposed longer, and dryness, burning, and a gritty foreign-body sensation follow.
 

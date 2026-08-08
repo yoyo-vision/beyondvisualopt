@@ -28,7 +28,7 @@ In an air-conditioned office, staring at a screen for long stretches with a redu
 
 Eyes get drier → lens draws more water → the ocular surface gets even drier → your eyes feel worse
 
-A typical person blinks about 15–20 times per minute, but while focused on a screen that can drop to 5–7 times per minute, reducing how long the tear film stays stable by 60–70%.
+A typical person blinks about 15–20 times per minute, but while focused on a screen that rate can drop to 5–7. Every blink re-spreads the tear film, so with fewer blinks it stays stable for less time.
 
 ### Reason 2: Insufficient oxygen transmission and chronic corneal hypoxia
 

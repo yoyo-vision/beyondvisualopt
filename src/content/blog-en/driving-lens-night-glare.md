@@ -46,9 +46,9 @@ At high speed, your visual system needs to continuously sense peripheral movemen
 
 Many people assume night glare is a problem of "aging eyes," but in most cases it is a **lens coating problem**.
 
-As light passes through a lens, it reflects off the front and back surfaces. Lenses without an anti-reflective coating (AR coating) lose about 8–10% of light at the lens surface as reflections, and this reflected light forms a "halo" on your retina—the ring of light you see around oncoming headlights.
+As light passes through a lens, it reflects off the front and back surfaces. Lenses without an anti-reflective coating (AR coating) lose about 8% of light to reflections across the two surfaces combined (per standard surface-reflection optics for lenses with a refractive index around 1.5, roughly 4% per surface). This reflected light forms a "halo" on your retina—the ring of light you see around oncoming headlights.
 
-**The ZEISS DuraVision anti-reflective coating** is designed to raise light transmission to over 99% (per ZEISS published data), dramatically reducing surface reflections so that the light you perceive while driving at night is purer and less harsh.
+**A high-quality anti-reflective coating** is designed to keep surface reflections to a minimum so that the light you perceive while driving at night is purer and less harsh (ZEISS's DuraVision Platinum white paper, for example, lists residual reflectance of roughly 0.5% per lens surface, with luminous transmittance raised to over 98%).
 
 ---
 
