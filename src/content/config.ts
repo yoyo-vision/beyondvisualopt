@@ -19,6 +19,11 @@ const blog = defineCollection({
     excerpt: z.string(),
     image: z.string().optional(),
     youtube: z.string().optional(),
+    // 自架影片（選填）：放 public/videos/ 的 mp4 路徑，例：/videos/xxx.mp4
+    // 填了會輸出 VideoObject schema（與 youtube 欄位二選一），需搭配 image 當縮圖
+    video: z.string().optional(),
+    // 自架影片長度（選填）：秒數，供 schema 轉 ISO 8601 duration
+    videoDuration: z.number().optional(),
     instagram: z.string().optional(),
   }),
 });

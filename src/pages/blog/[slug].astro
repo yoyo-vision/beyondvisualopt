@@ -51,6 +51,7 @@ const PILLAR_MAP: Record<string, { title: string; href: string }> = {
   'minamoto-eyewear-brand':             { title: '鏡框選購完整指南', href: '/guide/frames/' },
   'children-frames-guide':              { title: '鏡框選購完整指南', href: '/guide/frames/' },
   'rimless-glasses-guide':              { title: '鏡框選購完整指南', href: '/guide/frames/' },
+  'rimless-lens-drilling-fitting':      { title: '鏡框選購完整指南', href: '/guide/frames/' },
   'lens-coating-guide':                 { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
   'photochromic-sunglasses-guide':      { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
   'glass-vs-resin-lens':                { title: '視光小百科', href: '/guide/optical-basics/' },
@@ -184,7 +185,8 @@ const faqSchema = faqs.length > 0 ? {
   })),
 } : null;
 
-// 文章有嵌 YouTube 影片時輸出 VideoObject schema（Google 影片搜尋收錄）
+// 文章有影片時輸出 VideoObject schema（Google 影片搜尋收錄）
+// 兩種來源：YouTube 用 embedUrl，自架 mp4 用 contentUrl（縮圖取 image 欄位）
 const videoSchema = post.data.youtube ? {
   "@type": "VideoObject",
   "name": post.data.title,
@@ -192,6 +194,15 @@ const videoSchema = post.data.youtube ? {
   "thumbnailUrl": `https://i.ytimg.com/vi/${post.data.youtube}/hqdefault.jpg`,
   "embedUrl": `https://www.youtube.com/embed/${post.data.youtube}`,
   "uploadDate": `${isoDate}T09:00:00+08:00`,
+  "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+} : post.data.video ? {
+  "@type": "VideoObject",
+  "name": post.data.title,
+  "description": post.data.excerpt,
+  "thumbnailUrl": `https://beyondvisualopt.com${post.data.image}`,
+  "contentUrl": `https://beyondvisualopt.com${post.data.video}`,
+  "uploadDate": `${isoDate}T09:00:00+08:00`,
+  ...(post.data.videoDuration ? { "duration": `PT${Math.round(post.data.videoDuration)}S` } : {}),
   "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
 } : null;
 

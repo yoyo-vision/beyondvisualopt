@@ -358,6 +358,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"high-myopia-lens-brand-choice.md": {
+	id: "high-myopia-lens-brand-choice.md";
+  slug: "high-myopia-lens-brand-choice";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "hoya-lens-guide.md": {
 	id: "hoya-lens-guide.md";
   slug: "hoya-lens-guide";
@@ -491,6 +498,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"progressive-corridor-brands.md": {
+	id: "progressive-corridor-brands.md";
+  slug: "progressive-corridor-brands";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "progressive-corridor.md": {
 	id: "progressive-corridor.md";
   slug: "progressive-corridor";
@@ -522,6 +536,20 @@ declare module 'astro:content' {
 "rimless-glasses-guide.md": {
 	id: "rimless-glasses-guide.md";
   slug: "rimless-glasses-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"rimless-lens-drilling-fitting.md": {
+	id: "rimless-lens-drilling-fitting.md";
+  slug: "rimless-lens-drilling-fitting";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"same-index-different-feel.md": {
+	id: "same-index-different-feel.md";
+  slug: "same-index-different-feel";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
