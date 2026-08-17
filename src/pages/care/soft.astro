@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Layout.astro';
+// 顧客照護頁：軟式隱形眼鏡配戴指南（配鏡完成後由門市 LINE 傳送連結，顧客手機直接觀看）
+// 系列第二頁，規格沿用 /care/rgp/（2026-08-08 老闆定案）：條列操作手冊、進搜尋索引、
+// 藏藍金品牌版、手機優先、hero 內嵌 SVG、區塊編號浮水印、趣味小標、三大禁忌圖卡帶
+// 軟式專屬重點：正反面判斷、拋棄週期從開封起算、鏡片不會跑到眼球後面（安撫常見恐懼）
+
+// 各區塊資料（條列操作手冊；粗體判準：只給禁止項與數字；sub＝趣味小標）
+// ⚠️ 上線前置（2026-08-17 國文編審）：保存盒要用什麼沖洗尚未定案，04 區塊刻意不寫「洗」的液體。
+//    RGP 頁已定案「沖鏡片＝生理緩衝液」，鏡盒未定案；老闆定案後在 04 補一條，編審不代填。
+const SECTIONS = [
+  {
+    icon: '🧼', num: '01', title: '配戴前', sub: '乾淨的手，是一切的起點',
+    items: [
+      '洗手，並把手擦乾（別用含油脂、香精、乳液的洗手乳）',
+      '把指甲修短、磨平，軟式鏡片很薄，指甲一勾就破',
+      '檢查鏡片有沒有破損、缺口、夾到毛屑',
+      '看到任何一項就**別戴**：日拋直接換一片，雙週拋、月拋帶回店裡讓我們看',
+      '分清楚正反面：鏡片放在指腹上，邊緣像「碗」一樣向內收＝可以戴；邊緣外翻像「盤子」＝反了，翻回來再戴',
+      '固定順序拿取（例如先右後左），兩眼度數不一樣時才不會拿錯邊',
+      '眼睛紅、癢、痛，或分泌物變多，**當天就別戴**，讓眼睛休息；休息後還是沒好，照本頁最下面的警訊處理',
+    ],
+  },
+  {
+    icon: '👁', num: '02', title: '戴上鏡片', sub: '不急，鏡片比你想的聽話',
+    items: [
+      '鏡片放在食指指腹，正面朝上（上面的保養液太多會黏手指，反而貼不上眼睛）',
+      '撐開上下眼皮，眼睛直視前方，把鏡片輕輕貼上黑眼珠',
+      '慢慢放開眼皮，眨幾下眼睛，讓鏡片服貼定位',
+      '沖洗鏡片一律用**多功能保養液**：**絕對不能用自來水、礦泉水或口水**，生水不是無菌的',
+      '戴上後有明顯異物感，先取下來看：反戴就翻回正面，夾到毛屑就用保養液沖乾淨再戴，破損就換一片',
+      '鏡片在眼睛裡「不見了」不要慌：它不可能跑到眼球後面（眼白外圍的結膜是封閉的）。先把手洗乾淨擦乾，多眨幾下、照鏡子輕拉眼皮找，多半捲在上眼皮內側；真的找不到，回店讓我們幫你看，或就近眼科處理',
+      '重戴後還是不舒服，**就別再戴**，打電話問我們',
+    ],
+  },
+  {
+    icon: '⏱', num: '03', title: '配戴時數與拋棄週期', sub: '週期看開封，不是看次數',
+    items: [
+      '每天戴多久，依你手上鏡片的包裝標示，以及驗光人員給你的建議',
+      '沒有特別交代時，一天控制在 **8–10 小時**內，讓角膜有喘息時間',
+      '**日拋戴一次就丟**：乾掉再泡開、不管用什麼洗過，都**不能再戴第二次**',
+      '雙週拋、月拋的週期從**開封那天**起算，不是從戴過幾次算',
+      '開封滿 **14 天／30 天**就換新，就算只戴過幾次也一樣',
+      '中斷幾天沒戴，先確認鏡片還在拋棄週期內、保養液有定期換新，再繼續戴',
+    ],
+  },
+  {
+    icon: '🌙', num: '04', title: '取下與清潔（非日拋）', sub: '每天洗，每天換新液',
+    items: [
+      '日拋不用清潔：**取下直接丟**，這一區可以跳過',
+      '取下後馬上清潔：鏡片放掌心，滴多功能保養液，用指腹輕輕搓洗兩面，各 **20 秒**',
+      '就算保養液標示可以免搓洗，這一步還是要做（實際做法以仿單為準）',
+      '搓完用保養液沖乾淨，再泡進當天新倒的保養液，泡滿仿單要求的時間',
+      '保養液每天換新：泡過的**不重複使用，也不要在舊的裡面補加**',
+      '保存盒是最常被忽略的污染源：每天倒空、晾乾，大約**每 3 個月**換一個新的',
+    ],
+  },
+  {
+    icon: '📅', num: '05', title: '日常生活', sub: '出門前後，多想它一秒',
+    items: [
+      '化妝：先戴鏡片再上妝，卸妝前先把鏡片取下',
+      '噴髮膠、防曬噴霧的時候先閉眼',
+      '游泳、泡溫泉、淋浴、洗頭之前把鏡片取下，**不要戴著碰水**',
+      '風沙進眼睛**不要揉**：取下鏡片用保養液沖乾淨，順便看一下有沒有破損，再戴回去',
+      '覺得乾澀，點隱形眼鏡適用的潤濕液（用哪一種、多久點一次，依仿單）',
+      '一直乾澀或眼睛容易紅，回店讓我們重新看一次配適，也看你平常怎麼戴',
+      '**每 3–6 個月**回店追蹤一次',
+      '重新驗光或做眼科角膜檢查之前，先停戴幾天（停幾天依驗光人員或醫師指示），讓量測回到最準的狀態',
+      '鏡片和鏡盒**不要**跟別人共用',
+      '隨身帶一副度數夠用的眼鏡，眼睛不舒服就換戴眼鏡',
+    ],
+  },
+];
+
+// 三大禁忌（軟式版；內容取自上方已審條目的濃縮標籤，圖卡是複述、不是唯一出處）
+const NEVER = [
+  { icon: '🛌', label: '戴著過夜', note: '午睡也要取下' },
+  { icon: '🚰', label: '碰生水', note: '沖洗・游泳・淋浴都算' },
+  { icon: '♻️', label: '日拋重複用', note: '戴一次就丟，沒有例外' },
+];
+
+// 警訊區獨立呈現（醫療分流，白話化描述，與 RGP 頁同款）
+const WARNING_SIGNS = [
+  '眼睛紅、痛，休息過還是沒好',
+  '怕光、看到光就不舒服',
+  '眼淚一直流，停不下來',
+  '視力突然變模糊',
+  '眼屎、分泌物明顯變多',
+  '一直覺得眼睛裡有東西',
+];
+
+// 粗體標記 → <strong>（條列文字用 ** ** 標重點，渲染時轉換）
+const bold = (s: string) => s.replace(/\*\*([^*]+)\*\*/g, '<strong class="text-brand-navy" style="font-weight:600">$1</strong>');
+---
+<Layout
+  title="軟式隱形眼鏡配戴照護指南｜正反面判斷・清潔・拋棄週期｜能見度視覺中心"
+  description="軟式隱形眼鏡怎麼戴、怎麼清潔？正反面判斷、配戴步驟、每日時數、日拋雙週拋月拋的拋棄週期（從開封起算）、保養液使用，以及該立即停戴就醫的警訊，一頁看完。能見度視覺中心 新莊・板橋。"
+>
+  <!-- 頁首：品牌藏藍＋內嵌 SVG 插圖（指尖上的軟式鏡片＋水滴），顧客一打開就知道是誰發的 -->
+  <section class="bg-brand-navy text-white pt-12 pb-10 px-6 text-center overflow-hidden relative">
+    <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.22em">能見度視覺中心｜顧客照護指南</p>
+    <!-- 指尖托著軟式鏡片的手繪風線圖（金線、全內嵌；軟式=更薄的碗型+水滴意象） -->
+    <svg viewBox="0 0 200 110" class="mx-auto mb-5" style="width:150px" aria-hidden="true">
+      <!-- 軟式鏡片（薄碗型，弧線更軟） -->
+      <path d="M66 40 Q100 14 134 40 Q100 48 66 40 Z" fill="none" stroke="#c9a84c" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M76 37 Q100 22 124 37" fill="none" stroke="#c9a84c" stroke-width="1.2" opacity="0.55"/>
+      <!-- 水滴（含水材質意象） -->
+      <path d="M150 18 Q156 28 150 33 Q144 28 150 18 Z" fill="none" stroke="#c9a84c" stroke-width="1.8" opacity="0.8"/>
+      <!-- 指尖 -->
+      <path d="M82 58 Q82 46 100 46 Q118 46 118 58 L118 100 L82 100 Z" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+      <path d="M92 60 Q100 55 108 60" fill="none" stroke="#ffffff" stroke-width="1.3" opacity="0.4"/>
+      <!-- 閃光點 -->
+      <path d="M50 24 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3 Z" fill="#c9a84c" opacity="0.9"/>
+      <circle cx="162" cy="52" r="2" fill="#ffffff" opacity="0.5"/>
+      <circle cx="42" cy="54" r="1.6" fill="#ffffff" opacity="0.4"/>
+    </svg>
+    <h1 class="font-serif text-white mb-4" style="font-size:clamp(28px,6vw,40px);font-weight:300">軟式隱形眼鏡<br />配戴指南</h1>
+    <p class="text-white/70 max-w-md mx-auto" style="font-size:15px;line-height:1.8">
+      這份指南是通用原則。驗光人員當面教你的方式、你手上產品的仿單，優先於本頁內容。
+    </p>
+  </section>
+
+  <!-- 操作區塊（順序：戴前→戴上→時數週期→〔三大禁忌帶〕→取下清潔→日常生活→警訊→聯絡） -->
+  <section class="px-5 py-10" style="background:#f7f3ec">
+    <div class="max-w-lg mx-auto space-y-6">
+      {SECTIONS.map((sec, i) => (
+        <>
+          <div class="bg-white border border-brand-ink/8 rounded-2xl p-6 relative overflow-hidden">
+            <!-- 區塊編號浮水印（版面節奏感） -->
+            <span class="absolute font-serif text-brand-navy select-none" style="font-size:64px;font-weight:600;opacity:0.05;top:-10px;right:14px" aria-hidden="true">{sec.num}</span>
+            <div class="flex items-center gap-3.5 mb-1.5">
+              <span class="flex items-center justify-center rounded-full shrink-0" style="width:44px;height:44px;background:#f3ead6;font-size:22px">{sec.icon}</span>
+              <div>
+                <h2 class="font-serif text-brand-navy" style="font-size:19px;font-weight:600;line-height:1.3">{sec.title}</h2>
+                <p class="text-brand-gold font-sans" style="font-size:12.5px;letter-spacing:0.06em">{sec.sub}</p>
+              </div>
+            </div>
+            <ul class="space-y-3 mt-4">
+              {sec.items.map(item => (
+                <li class="flex items-start gap-2.5 text-brand-ink-2" style="font-size:15.5px;line-height:1.75">
+                  <span class="text-brand-gold mt-0.5 shrink-0">✦</span>
+                  <span set:html={bold(item)} />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- 三大禁忌圖卡帶：插在「配戴時數與拋棄週期」之後 -->
+          {i === 2 && (
+            <div class="rounded-2xl p-6" style="background:#1a2f4e">
+              <p class="text-center font-serif text-brand-gold mb-4" style="font-size:18px;font-weight:600">三件事，永遠不要做</p>
+              <div class="grid grid-cols-3 gap-3">
+                {NEVER.map(n => (
+                  <div class="bg-white/5 border border-white/15 rounded-xl px-2 py-4 text-center relative">
+                    <span class="absolute -top-2 -right-2 flex items-center justify-center rounded-full bg-brand-gold text-brand-navy font-bold" style="width:22px;height:22px;font-size:12px">✕</span>
+                    <div style="font-size:30px" class="mb-1.5">{n.icon}</div>
+                    <p class="text-white font-semibold mb-1" style="font-size:14.5px">{n.label}</p>
+                    <p class="text-white/55" style="font-size:11px;line-height:1.5">{n.note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      ))}
+
+      <!-- 🚨 警訊區：金框強調 -->
+      <div class="bg-brand-navy rounded-2xl p-6 text-white border-2 border-brand-gold">
+        <h2 class="font-serif text-brand-gold mb-3 flex items-center gap-2.5" style="font-size:19px;font-weight:600">
+          <span style="font-size:22px">🚨</span>立即停戴、盡快到眼科就診的警訊
+        </h2>
+        <ul class="space-y-2 mb-4">
+          {WARNING_SIGNS.map(w => (
+            <li class="text-white/90 flex items-start gap-2" style="font-size:15px;line-height:1.6">
+              <span class="text-brand-gold shrink-0">•</span>{w}
+            </li>
+          ))}
+        </ul>
+        <p class="text-white/85 border-t border-white/20 pt-3" style="font-size:14.5px;line-height:1.8">
+          出現<strong class="text-brand-gold">任何一項</strong>：先把鏡片取下，<strong class="text-brand-gold">不要硬撐，也不要再戴回去</strong>。<strong class="text-brand-gold">當天就去眼科</strong>，不要等下次回店；把鏡片和保養液一起帶去，幫醫師判斷。
+        </p>
+      </div>
+
+      <!-- 頁尾：門市聯絡＋回店提醒（顧客照護頁的行動出口） -->
+      <div class="bg-white border border-brand-ink/8 rounded-2xl p-6 text-center">
+        <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.2em">有任何配戴問題，隨時找我們</p>
+        <p class="text-brand-ink-2 mb-1" style="font-size:15px"><strong style="font-weight:600">新莊店</strong>｜新北市新莊區中正路419-1號｜<a href="tel:02-2206-6700" class="text-brand-navy underline underline-offset-2">02-2206-6700</a></p>
+        <p class="text-brand-ink-2 mb-4" style="font-size:15px"><strong style="font-weight:600">板橋店</strong>｜新北市板橋區雙十路二段47巷28號｜<a href="tel:02-2253-1246" class="text-brand-navy underline underline-offset-2">02-2253-1246</a></p>
+        <a href="https://lin.ee/SoWj9Ft" class="inline-block bg-brand-gold text-brand-navy font-bold px-7 py-3 rounded-full font-sans" style="font-size:14.5px">LINE 線上詢問 →</a>
+        <p class="text-brand-ink-3 mt-4" style="font-size:13px;line-height:1.7">
+          下次回店追蹤的時間，以取件時驗光人員跟你約好的為準；<br />在猶豫隱形眼鏡和眼鏡怎麼搭配，可以讀 <a href="/blog/contact-lens-vs-glasses/" class="underline underline-offset-2 text-brand-navy">隱形眼鏡 vs 眼鏡</a>；戴 RGP 的朋友看 <a href="/care/rgp/" class="underline underline-offset-2 text-brand-navy">RGP 配戴指南</a>。
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
