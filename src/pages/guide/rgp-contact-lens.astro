@@ -258,6 +258,11 @@ const schema = {
   <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
       <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
+      <!-- 已配戴顧客的操作工具頁（老闆 2026-08-08：配鏡後 LINE 直接傳給顧客用） -->
+      <a href="/care/rgp/" class="flex items-center gap-3 bg-brand-navy text-white rounded-2xl px-7 py-5 mb-8 hover:opacity-95 transition-opacity group">
+        <span style="font-size:22px">📋</span>
+        <span style="font-size:15.5px">已經在戴 RGP？<strong class="text-brand-gold" style="font-weight:600">配戴照護指南（操作版）</strong>——配戴步驟、清潔四步、停戴警訊，一頁對照 →</span>
+      </a>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
           <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
