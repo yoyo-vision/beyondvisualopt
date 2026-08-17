@@ -4,12 +4,13 @@ import Layout from '../../layouts/Layout.astro';
 // 老闆定案（2026-08-08）：本頁進搜尋索引——條列操作手冊對準「RGP 怎麼戴/怎麼清潔」的 how-to 搜尋意圖，
 // 與部落格敘事文（/blog/rgp-daily-wear-care/）分工互連，不互斥
 // 設計依「顧客端頁面一律品牌版」：藏藍 #1a2f4e ＋金 #c9a84c，手機優先、單欄、大字級
-// ⚠️ 待補（YoYo 店內標準）：沖洗鏡片／洗鏡盒的指定液體，目前寫「依驗光人員教的方式／仿單」
+// 2026-08-08 老闆追加：側風提醒＋版面圖文化（區塊趣味小標、三大禁忌圖卡帶、內嵌 SVG 插圖）
+// 2026-08-08 老闆定案：沖鏡片指定液體＝生理緩衝液（店內標準）
 
-// 各區塊資料（條列操作手冊；粗體判準：只給禁止項與數字）
+// 各區塊資料（條列操作手冊；粗體判準：只給禁止項與數字；sub＝趣味小標）
 const SECTIONS = [
   {
-    icon: '🧼', title: '配戴前',
+    icon: '🧼', num: '01', title: '配戴前', sub: '乾淨的手，是一切的起點',
     items: [
       '洗手，並把手**徹底擦乾**（別用含油脂、香精、乳液的洗手乳）',
       '把**指甲修短、磨平**，避免刮傷鏡片和角膜',
@@ -20,42 +21,40 @@ const SECTIONS = [
     ],
   },
   {
-    icon: '👁', title: '戴上鏡片',
+    icon: '👁', num: '02', title: '戴上鏡片', sub: '在桌面上方操作，失手也不怕',
     items: [
       '把鏡片**凹面朝上**放在指腹，滴 1–2 滴潤濕液',
       '**在桌面上方操作**，桌面先鋪一條淺色毛巾；鏡片萬一滑掉才不會彈走或摔破',
       '撐開上下眼皮，**眼睛直視前方**，把鏡片輕輕放在角膜（黑眼珠）正中央',
       '剛戴會流淚是正常的，眨幾下眼睛等淚液穩定',
-      '**一直刺痛就取下**，依驗光人員教的方式沖乾淨再戴一次（**絕對不能用自來水**）',
+      '**一直刺痛就取下**，用**生理緩衝液**沖乾淨再戴一次（**絕對不能用自來水**）',
       '重戴後還是痛，**就別再戴**，打電話問我們',
     ],
   },
   {
-    icon: '⏱', title: '配戴時數（適應期關鍵）',
+    icon: '⏱', num: '03', title: '配戴時數（適應期關鍵）', sub: '慢慢加，眼睛才跟得上',
     items: [
       '第 1 天大約戴 **4 小時**，之後每天多戴 1–2 小時（實際進度依驗光人員給你的安排）',
       '大約 **1–2 週**可以戴到全天',
       '每天最多戴 **10–12 小時**',
-      '**絕對不要戴著睡覺**，午睡也不行',
       '中斷幾天沒戴，**從比較短的時數重新往上加**，不要一次戴回全天',
     ],
   },
   {
-    icon: '🌙', title: '取下與清潔',
+    icon: '🌙', num: '04', title: '取下與清潔', sub: '鏡片每天也要洗澡',
     items: [
       '取下後**馬上**用 RGP 專用清潔液，用指腹**單方向搓洗 20–30 秒**',
       '就算產品標示可以免搓洗，**這一步還是要做**（實際做法以仿單為準）',
-      '依仿單沖洗乾淨，再泡進**當天新倒的保存液**',
-      '**自來水、生水、口水都不能碰到鏡片**',
+      '用**生理緩衝液**沖洗乾淨，再泡進**當天新倒的保存液**',
       '保存液**每天換新**：不重複使用，也不要在舊的裡面補加',
       '**每週去蛋白**一次（實際週期照產品指示）',
       '保存盒每天倒空、洗過、晾乾，大約**每 3 個月換一個新的**——它是最常被忽略的污染源',
     ],
   },
   {
-    icon: '📅', title: '日常生活',
+    icon: '📅', num: '05', title: '日常生活', sub: '這些場合，先想到鏡片',
     items: [
-      '**游泳、泡溫泉、三溫暖、淋浴前，先把鏡片取下**',
+      '騎車或大風天遇到**側風**，留意一下風向：風大時**把眼睛微微瞇起**、側個頭避一下風再走——鏡片有可能被強風吹走',
       '化妝：**先戴鏡片再上妝**；卸妝前先把鏡片取下',
       '**每 3–6 個月回店追蹤**一次',
       '鏡片壽命大約 **2–3 年**，實際看磨損程度和檢查結果',
@@ -66,6 +65,13 @@ const SECTIONS = [
       '隨身帶一副度數夠用的眼鏡',
     ],
   },
+];
+
+// 三大禁忌（內容取自上方已審條目的濃縮標籤，獨立圖卡帶強化記憶）
+const NEVER = [
+  { icon: '🛌', label: '戴著睡覺', note: '午睡也不行' },
+  { icon: '🚰', label: '碰自來水', note: '生水不是無菌的' },
+  { icon: '🏊', label: '戴著下水', note: '游泳・溫泉・三溫暖・淋浴' },
 ];
 
 // 警訊區獨立呈現（醫療分流，白話化描述，視覺上要跳出來）
@@ -85,32 +91,71 @@ const bold = (s: string) => s.replace(/\*\*([^*]+)\*\*/g, '<strong class="text-b
   title="RGP 硬式隱形眼鏡配戴照護指南｜配戴步驟・清潔・停戴警訊｜能見度視覺中心"
   description="RGP 硬式隱形眼鏡怎麼戴、怎麼清潔？配戴前準備、上鏡步驟、適應期時數（第 1 天 4 小時起）、每日清潔四步、每週去蛋白，以及該立即停戴就醫的警訊，一頁看完。能見度視覺中心 新莊・板橋。"
 >
-  <!-- 頁首：品牌藏藍，顧客一打開就知道是誰發的 -->
-  <section class="bg-brand-navy text-white pt-14 pb-10 px-6 text-center">
-    <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:12px;letter-spacing:0.22em">能見度視覺中心｜顧客照護指南</p>
+  <!-- 頁首：品牌藏藍＋內嵌 SVG 插圖（指尖上的鏡片），顧客一打開就知道是誰發的 -->
+  <section class="bg-brand-navy text-white pt-12 pb-10 px-6 text-center overflow-hidden relative">
+    <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.22em">能見度視覺中心｜顧客照護指南</p>
+    <!-- 指尖托著 RGP 鏡片的手繪風線圖（金線、全內嵌） -->
+    <svg viewBox="0 0 200 110" class="mx-auto mb-5" style="width:150px" aria-hidden="true">
+      <!-- 鏡片（弧形碗狀） -->
+      <path d="M70 38 Q100 18 130 38 Q100 50 70 38 Z" fill="none" stroke="#c9a84c" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M78 36 Q100 24 122 36" fill="none" stroke="#c9a84c" stroke-width="1.2" opacity="0.55"/>
+      <!-- 指尖 -->
+      <path d="M82 58 Q82 46 100 46 Q118 46 118 58 L118 100 L82 100 Z" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+      <path d="M92 60 Q100 55 108 60" fill="none" stroke="#ffffff" stroke-width="1.3" opacity="0.4"/>
+      <!-- 閃光點 -->
+      <path d="M52 26 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3 Z" fill="#c9a84c" opacity="0.9"/>
+      <path d="M150 50 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2 Z" fill="#c9a84c" opacity="0.6"/>
+      <circle cx="160" cy="24" r="2" fill="#ffffff" opacity="0.5"/>
+      <circle cx="40" cy="56" r="1.6" fill="#ffffff" opacity="0.4"/>
+    </svg>
     <h1 class="font-serif text-white mb-4" style="font-size:clamp(28px,6vw,40px);font-weight:300">RGP 硬式隱形眼鏡<br />配戴指南</h1>
     <p class="text-white/70 max-w-md mx-auto" style="font-size:15px;line-height:1.8">
       這份指南是通用原則。驗光人員當面教你的方式、你手上產品的仿單，優先於本頁內容。
     </p>
   </section>
 
-  <!-- 操作區塊（順序：戴前→戴上→時數→取下清潔→日常生活，之後接警訊區與門市聯絡） -->
+  <!-- 操作區塊（順序：戴前→戴上→時數→〔三大禁忌帶〕→取下清潔→日常生活→警訊→聯絡） -->
   <section class="px-5 py-10" style="background:#f7f3ec">
     <div class="max-w-lg mx-auto space-y-6">
-      {SECTIONS.map(sec => (
-        <div class="bg-white border border-brand-ink/8 rounded-2xl p-6">
-          <h2 class="font-serif text-brand-navy mb-4 flex items-center gap-2.5" style="font-size:19px;font-weight:600">
-            <span style="font-size:22px">{sec.icon}</span>{sec.title}
-          </h2>
-          <ul class="space-y-3">
-            {sec.items.map(item => (
-              <li class="flex items-start gap-2.5 text-brand-ink-2" style="font-size:15.5px;line-height:1.75">
-                <span class="text-brand-gold mt-0.5 shrink-0">✦</span>
-                <span set:html={bold(item)} />
-              </li>
-            ))}
-          </ul>
-        </div>
+      {SECTIONS.map((sec, i) => (
+        <>
+          <div class="bg-white border border-brand-ink/8 rounded-2xl p-6 relative overflow-hidden">
+            <!-- 區塊編號浮水印（版面節奏感） -->
+            <span class="absolute font-serif text-brand-navy select-none" style="font-size:64px;font-weight:600;opacity:0.05;top:-10px;right:14px" aria-hidden="true">{sec.num}</span>
+            <div class="flex items-center gap-3.5 mb-1.5">
+              <span class="flex items-center justify-center rounded-full shrink-0" style="width:44px;height:44px;background:#f3ead6;font-size:22px">{sec.icon}</span>
+              <div>
+                <h2 class="font-serif text-brand-navy" style="font-size:19px;font-weight:600;line-height:1.3">{sec.title}</h2>
+                <p class="text-brand-gold font-sans" style="font-size:12.5px;letter-spacing:0.06em">{sec.sub}</p>
+              </div>
+            </div>
+            <ul class="space-y-3 mt-4">
+              {sec.items.map(item => (
+                <li class="flex items-start gap-2.5 text-brand-ink-2" style="font-size:15.5px;line-height:1.75">
+                  <span class="text-brand-gold mt-0.5 shrink-0">✦</span>
+                  <span set:html={bold(item)} />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- 三大禁忌圖卡帶：插在「配戴時數」之後（時數區的「不可戴睡」濃縮於此，全頁最好記的一格） -->
+          {i === 2 && (
+            <div class="rounded-2xl p-6" style="background:#1a2f4e">
+              <p class="text-center font-serif text-brand-gold mb-4" style="font-size:18px;font-weight:600">三件事，永遠不要做</p>
+              <div class="grid grid-cols-3 gap-3">
+                {NEVER.map(n => (
+                  <div class="bg-white/5 border border-white/15 rounded-xl px-2 py-4 text-center relative">
+                    <span class="absolute -top-2 -right-2 flex items-center justify-center rounded-full bg-brand-gold text-brand-navy font-bold" style="width:22px;height:22px;font-size:12px">✕</span>
+                    <div style="font-size:30px" class="mb-1.5">{n.icon}</div>
+                    <p class="text-white font-semibold mb-1" style="font-size:14.5px">{n.label}</p>
+                    <p class="text-white/55" style="font-size:11px;line-height:1.5">{n.note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       ))}
 
       <!-- 🚨 警訊區：金框強調 -->
