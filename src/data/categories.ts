@@ -26,7 +26,7 @@ export const CATEGORIES: Category[] = [
       { slug: 'lens-types', name: '老花鏡片種類', posts: ['presbyopia-vs-progressive', 'progressive-corridor', 'progressive-corridor-brands', 'zeiss-individual-worth-it'] },
       { slug: 'fitting', name: '老花眼鏡怎麼配', guide: '/guide/progressive-lens/', posts: ['presbyopia-lens-guide', 'banqiao-progressive-lens-guide'] },
       { slug: 'adaptation', name: '適應與常見問題', posts: ['progressive-lens-dizzy', 'progressive-lens-adaptation'] },
-      { slug: 'buying', name: '選購與價格', posts: [] },
+      { slug: 'buying', name: '選購與價格', posts: ['presbyopia-glasses-recommend', 'presbyopia-glasses-cost'] },
     ],
   },
   {
