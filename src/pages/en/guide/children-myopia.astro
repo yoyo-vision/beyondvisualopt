@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'At what age should a child start myopia tracking?',
-    a: 'From age 6, once the first pair of glasses has been fitted, you can start recording every 3–6 months. Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they must be examined by an ophthalmologist. For children aged 6 to 15, the first refraction and glasses fitting require a physician to first confirm the myopia is not pseudomyopia. In the Health Promotion Administration (HPA) 2017 survey, first grade through the third year of junior high was the stage where the myopia rate climbed fastest. Tracking is generally recommended until ages 18–20, when axial-length development tends to stabilize — not stopping after a few years, but following the trend throughout the developmental period.',
+    a: 'From age 6, once the first pair of glasses has been fitted, you can start recording every 3–6 months. Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they must be examined by an ophthalmologist. For children aged 6 to 15, the first refraction and glasses fitting require a physician to first confirm the myopia is not pseudomyopia. In the Health Promotion Administration (HPA) 2017 survey, first grade through the third year of junior high was the stage where the myopia rate climbed fastest. Tracking is generally recommended until adulthood, when the prescription tends to stabilize, without gaps along the way.',
   },
   {
     q: 'How do defocus lenses differ from regular lenses?',
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Where in Xinzhuang can I get children\'s myopia tracking?',
-    a: "Beyond Visual Optometry's Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) is the primary store for children's myopia tracking, offering prescription records measured after accommodation relaxes, binocular vision assessment, defocus-design soft contact lens fitting, and ZEISS MyoCare assessment, with regular tracking every 3–6 months by our licensed optometry personnel. In the Banqiao area, contact our Banqiao store (02-2253-1246). Axial length is an examination performed by ophthalmologists; if it needs to be tracked, please have an ophthalmologist arrange it. If tracking reveals a need for medication assessment (such as low-concentration atropine) or a fundus examination, we will assist with a referral to an ophthalmologist in accordance with the Optometrists Act.",
+    a: "Beyond Visual Optometry's Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) is the primary store for children's myopia tracking, offering prescription records measured after accommodation relaxes, binocular vision assessment, defocus-design soft contact lens fitting (suitability assessed by an ophthalmologist; fitted under an ophthalmologist's guidance), and ZEISS MyoCare spectacle lens assessment, with regular tracking every 3–6 months by our licensed optometry personnel. In the Banqiao area, contact our Banqiao store (02-2253-1246). Axial length is an examination performed by ophthalmologists; if it needs to be tracked, please have an ophthalmologist arrange it. If tracking reveals a need for medication assessment (such as low-concentration atropine) or a fundus examination, we will assist with a referral to an ophthalmologist in accordance with the Optometrists Act.",
   },
 ];
 
@@ -148,7 +148,7 @@ const schema = {
             {[
               ['Outdoor activity, 2 hrs/day', 'Every child; the zero-cost first step', 'Parents (daily practice)'],
               ['ZEISS MyoCare (spectacle defocus lens)', 'A spectacle-form defocus design for school-age children', 'Optometry personnel fit and track'],
-              ['Defocus-design soft contact lenses (daily disposable)', 'Requires an optometrist assessment; for those under 15, fitting must be under an ophthalmologist\'s guidance', 'Optometry personnel fit and track'],
+              ['Defocus-design soft contact lenses (daily disposable)', 'Suitability assessed by an ophthalmologist; optometry staff fit and track under an ophthalmologist\'s guidance', 'Ophthalmologist assesses; optometry staff fit and track'],
               ['Low-concentration atropine', 'Children assessed by a doctor as suitable for medication', 'Ophthalmologist prescription (a medical act)'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">

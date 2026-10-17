@@ -1,14 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../data/categories';
 
-// 本指南的主題聚落文章（依閱讀順序排列）
-const CLUSTER_SLUGS = [
-  'children-myopia-tracking-xinzhuang',
-  'myopia-getting-worse-truth',
-  'optometry-vs-ophthalmology',
-  'common-optometry-mistakes',
-];
+// 本指南的主題聚落文章：直接讀分類表「兒童視力」全部文章，順序＝分類頁閱讀順序
+const CLUSTER_SLUGS = CATEGORIES.find(c => c.slug === 'kids-vision')!.subs.flatMap(s => s.posts);
 const allPosts = await getCollection('blog');
 const clusterPosts = CLUSTER_SLUGS
   .map(slug => allPosts.find(p => p.slug === slug))
@@ -24,7 +20,7 @@ const faqs = [
   },
   {
     q: '孩子幾歲開始做近視追蹤？',
-    a: '滿 6 歲、完成第一次配鏡之後就可以開始每 3–6 個月記錄。依《驗光人員法》第十二條，未滿 6 歲不得由驗光人員驗光，須由眼科醫師檢查；6 到 15 歲第一次驗光配鏡，須先經醫師確診非假性近視。國健署 106 年的調查裡，小一到國三是近視率爬升最快的階段。追蹤一般建議持續到 18–20 歲眼軸發育趨於穩定為止——不是做幾年就停，而是整個發育期都掌握趨勢。',
+    a: '滿 6 歲、完成第一次配鏡之後就可以開始每 3–6 個月記錄。依《驗光人員法》第十二條，未滿 6 歲不得由驗光人員驗光，須由眼科醫師檢查；6 到 15 歲第一次驗光配鏡，須先經醫師確診非假性近視。國健署 106 年的調查裡，小一到國三是近視率爬升最快的階段。追蹤一般建議持續到成年、度數趨於穩定為止，中間不要斷。',
   },
   {
     q: '離焦鏡片和一般鏡片差在哪裡？',
@@ -32,7 +28,7 @@ const faqs = [
   },
   {
     q: '新莊哪裡可以做兒童近視追蹤？',
-    a: '能見度視覺中心新莊店（比泱驗光所，新北市新莊區中正路419-1號，02-2206-6700）是兒童近視追蹤的主力服務門市，提供放鬆調節後的度數紀錄、雙眼視覺評估、離焦設計軟式隱形眼鏡驗配與蔡司 MyoCare 評估，由驗光人員每 3–6 個月定期追蹤。眼軸長則屬眼科的檢查項目，要追蹤請由眼科醫師安排。板橋地區可洽能見度眼鏡行板橋店（02-2253-1246）。若追蹤過程發現需要藥物評估（如低濃度阿托品）或眼底檢查，會依《驗光人員法》協助轉介眼科醫師。',
+    a: '能見度視覺中心新莊店（比泱驗光所，新北市新莊區中正路419-1號，02-2206-6700）是兒童近視追蹤的主力服務門市，提供放鬆調節後的度數紀錄、雙眼視覺評估、離焦設計軟式隱形眼鏡（是否適用由眼科醫師評估，驗光人員於醫師指導下驗配）與蔡司 MyoCare 框架鏡片評估，由驗光人員每 3–6 個月定期追蹤。眼軸長則屬眼科的檢查項目，要追蹤請由眼科醫師安排。板橋地區可洽能見度眼鏡行板橋店（02-2253-1246）。若追蹤過程發現需要藥物評估（如低濃度阿托品）或眼底檢查，會依《驗光人員法》協助轉介眼科醫師。',
   },
 ];
 
@@ -44,7 +40,8 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "兒童近視追蹤完整指南：加深原因、照護分工、家長常犯錯誤與追蹤機制",
+      "headline": "兒童近視追蹤完整指南：近視為什麼加深、第一次配眼鏡怎麼走、多久追蹤一次",
+      "dateModified": "2026-10-17",
       "description": "近視為什麼會一直加深？從眼軸不可逆的原理、驗光所與眼科的照護分工、家長最常犯的錯誤，到 3–6 個月定期追蹤機制，YoYo 驗光師一頁講透兒童近視追蹤。新莊、板橋服務。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
@@ -71,7 +68,7 @@ const schema = {
 ---
 <Layout
   title="兒童近視追蹤完整指南｜孩子近視一直加深怎麼辦｜新莊板橋兒童近視追蹤"
-  description="孩子近視一直加深怎麼辦？從眼軸不可逆的原理、離焦鏡片怎麼看、家長最常犯的錯誤到 3–6 個月追蹤機制，YoYo 驗光師一頁講透。新莊、板橋能見度視覺中心。"
+  description="孩子近視一直加深怎麼辦？從眼軸不可逆的原理、第一次配眼鏡先眼科後驗光所、家長最常犯的錯誤到 3–6 個月追蹤，YoYo 驗光師一頁講透。新莊、板橋能見度視覺中心。"
   enPath="/en/guide/children-myopia/"
   schema={schema}
 >
@@ -81,10 +78,10 @@ const schema = {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        兒童近視追蹤<br /><span class="text-brand-gold">完整指南</span>
+        兒童近視追蹤完整指南<br /><span class="text-brand-gold" style="font-size:0.6em">近視為什麼加深、第一次配眼鏡怎麼走、多久追蹤一次</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        為什麼會加深、驗光所與眼科怎麼分工、家長最常踩的坑、追蹤機制怎麼運作——這一頁把兒童近視最讓家長焦慮的問題一次講清楚。由 YoYo 驗光師撰寫，依據臨床驗光實務與國際研究，不是恐嚇文。
+        驗光所與眼科各管哪一段、家長最常踩的四個坑，也一起寫在這一頁。兒童近視最讓家長焦慮的幾件事，由 YoYo 驗光師依臨床驗光實務、法規與國際研究寫成，不是恐嚇文。
       </p>
     </div>
   </section>
@@ -95,6 +92,7 @@ const schema = {
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
       <ul class="space-y-2.5">
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>近視的本質是眼軸拉長，眼軸一旦變長就不可逆、度數無法倒退；正因如此，及早、每 3–6 個月定期掌握孩子的度數變化趨勢格外重要，才能在度數加深加速時，儘早與眼科醫師討論合適的介入方式。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>第一次配眼鏡先看眼科：6–15 歲第一次驗光配鏡，依法須先經醫師確診非假性近視；未滿 6 歲由眼科醫師檢查，驗光人員不得驗光。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>台灣法規分工明確：離焦鏡片配適與定期追蹤是驗光人員的工作；藥物與散瞳屬醫療行為，須由眼科醫師評估與執行。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>每天戶外活動 120 分鐘是常見建議；配鏡處理的是看不看得清楚，戶外與用眼習慣要另外顧，兩者不能互相替代。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>追蹤機制才是核心：每 3–6 個月記錄度數與雙眼視覺的變化，才能在加深加速時及早請眼科醫師評估，而不是一年後才發現又深了。</span></li>
@@ -107,10 +105,12 @@ const schema = {
     <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
       {[
         { label: '近視為什麼會加深', href: '#why' },
-        { label: '照護分工與方法', href: '#methods' },
+        { label: '第一次配眼鏡', href: '#first' },
+        { label: '照護分工', href: '#methods' },
         { label: '家長常犯的錯誤', href: '#mistakes' },
         { label: '定期追蹤機制', href: '#tracking' },
         { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
@@ -120,12 +120,30 @@ const schema = {
   <!-- 近視為什麼會加深 -->
   <section id="why" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">近視的本質是眼軸拉長——而且拉長了就回不去</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兒童近視為什麼會一直加深：眼軸拉長就回不去</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
         <p>「不是怕孩子戴眼鏡，是怕他每年度數一直加深，不知道會深到哪裡。」這是門市最常聽到的一句話。你的擔心是對的，但焦慮要放在對的地方。</p>
         <p>近視的根本原因是<strong>眼軸（眼球前後徑）過長</strong>，光線焦點落在視網膜前方。眼軸一旦延長就無法縮回——這是不可逆的結構性改變。所以近視照護的重點從來不是「讓度數倒退」，而是<strong>及早掌握度數的變化趨勢</strong>，在度數加深加速時，儘早與眼科醫師討論合適的介入方式。</p>
-        <p><strong>為什麼要在意？</strong>高度近視（-6.00D 以上）未來發生視網膜剝離、黃斑部病變、青光眼的風險顯著較高（依國健署與眼科醫學會公開衛教資料）。台灣是全球近視盛行率最高的地區之一：小一 19.8%，小六已達 70.6%，國三 89.3%（國健署 106 年視力監測調查）。從這串數字看，小學到國中是近視率爬升最快的幾年，這幾年的定期追蹤最重要。</p>
-        <p>造成眼軸持續延長的三個主因：<strong>近距離用眼過久</strong>（每天超過 3–4 小時盯著手機、書本、平板，睫狀肌長期緊縮）、<strong>戶外活動不足</strong>（每天戶外活動 120 分鐘是<a href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">衛福部國民健康署視力保健</a>等單位的常見建議，相關研究顯示自然光環境與眼軸發展有觀察上的關聯）、<strong>缺乏定期追蹤</strong>（不知道度數變得多快，就不知道什麼時候該請眼科醫師評估）。另外，父母雙方都近視的孩子，近視風險顯著較高（依公開衛教資料）——遺傳改變不了，但更該提早追蹤。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">台灣學童近視率：小一 19.8% 到國三 89.3%</h3>
+        <p>台灣是全球近視盛行率最高的地區之一：小一 19.8%，小六已達 70.6%，國三 89.3%（國健署 106 年視力監測調查）。小學到國中是近視率爬升最快的幾年。會在意這串數字，是因為高度近視（-6.00D 以上）未來發生視網膜剝離、黃斑部病變、青光眼的風險顯著較高（依國健署公開衛教資料），所以這幾年的定期追蹤最重要。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">近視加深的原因：近距離用眼、戶外不足、遺傳</h3>
+        <p>造成眼軸持續延長的，有兩件是每天生活裡的事：<strong>近距離用眼過久</strong>（長時間盯著手機、書本、平板，睫狀肌長期緊縮；統合研究顯示近距離用眼時間越長，近視風險越高）、<strong>戶外活動不足</strong>（每天戶外活動 120 分鐘是<a href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">衛福部國民健康署視力保健</a>等單位的常見建議，相關研究顯示自然光環境與眼軸發展有觀察上的關聯）。第三件改不了：<strong>遺傳</strong>，父母雙方都近視的孩子，近視風險明顯較高（國民健康署視力保健資料），更該提早追蹤。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第一次配眼鏡：法定順序 -->
+  <section id="first" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">孩子第一次配眼鏡：先眼科、後驗光所</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>近視追蹤從第一副眼鏡開始，而第一副眼鏡怎麼配，法規按年齡畫了三條線。每個年齡、每種狀況該先找誰，<a href="/blog/child-vision-check-where/" class="text-brand-gold underline">依年齡分流的總表</a>列得更細。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">未滿 6 歲：驗光人員不得驗光</h3>
+        <p>依《驗光人員法》第十二條，未滿 6 歲兒童的驗光，驗光人員不得為之。這個年紀的視力與屈光檢查，請由眼科醫師進行。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">6–15 歲：第一次須醫師確診非假性近視</h3>
+        <p>依《驗光人員法施行細則》第六條第二項，6 歲以上 15 歲以下的孩子第一次驗光及配鏡，須先由醫師確診為非假性近視；之後的驗光，15 歲以下仍於眼科醫師指導下進行。四個步驟各由誰負責、到驗光所要帶哪三樣東西，寫在<a href="/blog/elementary-school-first-glasses/" class="text-brand-gold underline">學童第一次配眼鏡的步驟</a>。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">滿 16 歲以後：可直接驗光配鏡</h3>
+        <p>法條的「15 歲以下」把 15 歲算在裡面，要等滿 16 歲，才能直接找驗光人員驗光配鏡；眼睛紅、痛、怕光或突然看不清楚，仍請先給眼科醫師檢查。</p>
       </div>
     </div>
   </section>
@@ -133,13 +151,13 @@ const schema = {
   <!-- 照護分工比較 -->
   <section id="methods" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">近視照護怎麼分工：哪些是驗光所能做的，哪些要找眼科</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兒童近視照護分工：驗光所做什麼、眼科做什麼</h2>
       <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">台灣法規下的分工很明確：離焦鏡片配適與定期追蹤是驗光人員的工作；藥物與散瞳屬醫療行為，需由眼科醫師處方。分工合作，不是二選一。</p>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse" style="font-size:15px">
           <thead>
             <tr class="bg-brand-navy text-white">
-              <th class="text-left px-5 py-4 font-semibold">方法</th>
+              <th class="text-left px-5 py-4 font-semibold">項目</th>
               <th class="text-left px-5 py-4 font-semibold">說明</th>
               <th class="text-left px-5 py-4 font-semibold">誰負責</th>
             </tr>
@@ -148,7 +166,7 @@ const schema = {
             {[
               ['戶外活動 120 分鐘/天', '每個孩子都做得到的第一步', '家長（日常執行）'],
               ['蔡司 MyoCare（框架離焦鏡片）', '框架形式的學童離焦設計鏡片', '驗光人員配適與追蹤'],
-              ['離焦設計軟式隱形眼鏡（日拋）', '需驗光人員評估；十五歲以下須眼科醫師指導下驗配', '驗光人員配適與追蹤'],
+              ['離焦設計軟式隱形眼鏡（日拋）', '是否適用由眼科醫師評估；驗光人員於醫師指導下驗配與定期追蹤', '眼科醫師評估、驗光人員驗配與追蹤'],
               ['低濃度阿托品', '須經眼科醫師評估', '眼科醫師處方（醫療行為）'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
@@ -161,7 +179,7 @@ const schema = {
         </table>
       </div>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        各方案是否適合個別孩子，需經現場評估；涉及藥物與醫療處置，請諮詢眼科醫師。YoYo 驗光師的原則：再合適的鏡片，孩子不願意戴就等於沒配——先找出孩子真正願意戴、家庭能持續執行的組合，而不是推薦最貴的方案。
+        每一項是否適合個別孩子，需經現場評估；涉及藥物與醫療處置，請諮詢眼科醫師。YoYo 驗光師的原則：再合適的鏡片，孩子不願意戴就等於沒配——先找出孩子真正願意戴、家庭能持續執行的組合，而不是推薦最貴的選項。
       </blockquote>
     </div>
   </section>
@@ -172,9 +190,9 @@ const schema = {
       <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">家長最常犯的 4 個錯誤</h2>
       <div class="space-y-6">
         {[
-          { title: '① 怕度數加深，不敢讓孩子戴眼鏡', desc: '「戴眼鏡會依賴、度數越戴越深」是流傳幾十年的迷思。近視加深的原因是眼軸拉長，與戴不戴眼鏡無關。發育期的視覺系統需要清晰的影像刺激，部分研究顯示長期欠矯（度數不足或不配鏡）反而與近視加深有相關性——用模糊視力硬撐，是反效果。', action: '該配就配，配足但不過矯' },
-          { title: '② 用十分鐘快速驗光的度數直接配鏡', desc: '兒童的睫狀肌調節力強，長時間近距離用眼後處於緊繃狀態，電腦驗光值往往偏深。直接沿用會造成過矯——有研究認為過矯與近視加深有關聯。完整的主客觀驗光需要充分放鬆調節力再測量，特定情況下眼科醫師會建議散瞳驗光（屬醫療行為，需由眼科醫師執行）。', action: '選擇有完整放鬆調節流程的驗光' },
-          { title: '③ 配了眼鏡，卻沒改用眼習慣', desc: '眼鏡處理的是現在看不看得清楚。配了眼鏡，孩子每天近距離用眼還是超過 3–4 小時、戶外時間趨近於零，他只是把黑板看清楚了，眼睛每天扛的近距離時數一分鐘都沒少。近距離用眼每 20–30 分鐘休息 20 秒看 6 公尺遠、閱讀距離維持 33 公分以上、每天戶外活動 120 分鐘。', action: '配鏡之外，戶外與用眼習慣也要顧' },
+          { title: '① 怕度數加深，不敢讓孩子戴眼鏡', desc: '「戴眼鏡會依賴、度數越戴越深」是流傳幾十年的迷思。近視加深的原因是眼軸拉長，與戴不戴眼鏡無關。度數配不足或乾脆不配，孩子坐在教室後排，黑板上的字只能用猜的。', action: '該配就配，配足但不過矯' },
+          { title: '② 用十分鐘快速驗光的度數直接配鏡', desc: '兒童的睫狀肌調節力強，長時間近距離用眼後處於緊繃狀態，電腦驗光值往往偏深。直接沿用，度數可能比孩子實際需要的深，看書、寫功課反而更費力。完整的主客觀驗光需要充分放鬆調節力再測量，特定情況下眼科醫師會建議散瞳驗光（屬醫療行為，需由眼科醫師執行）。', action: '選擇有完整放鬆調節流程的驗光' },
+          { title: '③ 配了眼鏡，卻沒改用眼習慣', desc: '眼鏡處理的是現在看不看得清楚。配了眼鏡，孩子每天還是長時間近距離用眼、戶外時間趨近於零，他只是把黑板看清楚了，眼睛每天扛的近距離時數一分鐘都沒少。該補的是習慣：近距離用眼每 30 分鐘休息 10 分鐘、閱讀距離維持 35 公分以上、每天戶外活動 120 分鐘（依國健署視力保健建議）。', action: '配鏡之外，戶外與用眼習慣也要顧' },
           { title: '④ 配一次就結束，沒有回來追蹤', desc: '沒有追蹤，就不知道度數走到哪裡。每 3–6 個月回店記錄一次度數與雙眼視覺，度數變化較快時才能及早帶著紀錄請眼科醫師評估，而不是一年後才發現又深了 100 度。', action: '把 3–6 個月回店寫進行事曆' },
         ].map(item => (
           <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
@@ -193,19 +211,19 @@ const schema = {
   <!-- 定期追蹤機制 -->
   <section id="tracking" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">定期追蹤，才是兒童視力照護真正的核心</h2>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">兒童近視追蹤怎麼做：每 3–6 個月回店做什麼</h2>
       <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">鏡片只是工具，追蹤才是機制。沒有每 3–6 個月的數據，你看不到孩子的度數往哪個方向走。能見度視覺中心的兒童近視追蹤包含以下幾件事。眼軸長不在其中：它屬眼科的檢查項目，需要追蹤，請由眼科醫師安排。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
         {[
           ['雙眼視覺評估（每次回店都做）', '兩隻眼睛能不能一起對準、一起對焦，看近時配合得好不好；結果跟度數記在同一份紀錄，前後對照'],
           ['度數變化紀錄與趨勢分析', '單次數據看不出趨勢，連續紀錄才看得出度數變化的快慢，需要時帶著紀錄請眼科醫師評估'],
-          ['完整主客觀驗光（放鬆調節力）', '兒童調節力強、驗光值容易偏深，充分放鬆後測量才不會過矯——過矯本身就與近視加深有關聯'],
+          ['完整主客觀驗光（放鬆調節力）', '兒童調節力強、驗光值容易偏深，充分放鬆後再測量，才不會把一時的緊繃量成度數'],
           ['離焦鏡片配適與光學中心確認', '離焦區的位置以毫米為單位，鏡架滑落或光學中心偏移，離焦區就對不到設計位置'],
           ['兒童鏡架配適調整', '輕盈服貼、不易滑落、耐摔的鏡架，孩子才願意天天戴——戴得住，配鏡才有意義'],
           ['異常狀況轉介眼科醫師', '追蹤中若發現視力異常或需要藥物評估（如低濃度阿托品），依《驗光人員法》協助轉介眼科醫師，分工合作而非各自為政'],
         ].map(([title, desc]) => (
           <div class="border-t border-white/10 pt-5">
-            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <h3 class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</h3>
             <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
           </div>
         ))}
@@ -216,7 +234,7 @@ const schema = {
   <!-- 聚落文章 -->
   <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：兒童近視主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兒童視力主題文章</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
           <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
@@ -226,13 +244,14 @@ const schema = {
           </a>
         ))}
       </div>
+      <a href="/topics/kids-vision/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看兒童視力全部文章 →</a>
     </div>
   </section>
 
   <!-- FAQ -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兒童近視追蹤常見問題</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
@@ -241,6 +260,51 @@ const schema = {
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字沿用文章作者框（已過法務），照片用現有門市實拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-examination.webp" alt="驗光人員進行完整驗光 能見度視覺中心 新莊" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">放鬆調節後再做主客觀驗光</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON 綜合驗光儀 新莊比泱驗光所" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">綜合驗光儀：度數與雙眼視覺評估</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+          { t: '驗光人員法施行細則（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020194' },
+          { t: '衛生福利部國民健康署：106 年兒童青少年視力監測調查', u: 'https://www.mohw.gov.tw/dl-45478-7f230403-7349-4faf-8493-510bc3527d23.html' },
+          { t: '衛生福利部國民健康署：視力保健', u: 'https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45' },
+          { t: 'He M, et al. Effect of Time Spent Outdoors at School on the Development of Myopia Among Children in China. JAMA. 2015', u: 'https://jamanetwork.com/journals/jama/fullarticle/2441261' },
+          { t: 'Wu PC, et al. Outdoor Activity during Class Recess Reduces Myopia Onset and Progression in School Children. Ophthalmology. 2013', u: 'https://pubmed.ncbi.nlm.nih.gov/23462271/' },
+          { t: 'Huang HM, et al. The Association between Near Work Activities and Myopia in Children: A Systematic Review and Meta-Analysis. PLoS ONE. 2015', u: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0140419' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">法規條文、近視率、戶外活動與近距離用眼的研究，出處都在上列 7 筆；放鬆調節再驗光、每 3–6 個月追蹤的做法，來自門市的臨床驗光實務。涉及眼睛疾病、用藥與醫療處置，請由眼科醫師評估。最後更新：2026 年 10 月 17 日。</p>
     </div>
   </section>
 
