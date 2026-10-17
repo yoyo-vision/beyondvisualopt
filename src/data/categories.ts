@@ -22,7 +22,7 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'presbyopia', name: '老花眼鏡', keyword: '老花眼鏡', guide: '/guide/progressive-lens/',
     subs: [
-      { slug: 'basics', name: '認識老花', posts: ['hyperopia-vs-presbyopia', 'lens-addition-add'] },
+      { slug: 'basics', name: '認識老花', posts: ['presbyopia-signs-40', 'hyperopia-vs-presbyopia', 'lens-addition-add', 'presbyopia-progression'] },
       { slug: 'lens-types', name: '老花鏡片種類', posts: ['presbyopia-vs-progressive', 'progressive-corridor', 'progressive-corridor-brands', 'zeiss-individual-worth-it'] },
       { slug: 'fitting', name: '老花眼鏡怎麼配', guide: '/guide/progressive-lens/', posts: ['presbyopia-lens-guide', 'banqiao-progressive-lens-guide'] },
       { slug: 'adaptation', name: '適應與常見問題', posts: ['progressive-lens-dizzy', 'progressive-lens-adaptation'] },
