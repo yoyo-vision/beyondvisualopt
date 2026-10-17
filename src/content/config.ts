@@ -25,6 +25,9 @@ const blog = defineCollection({
     // 自架影片長度（選填）：秒數，供 schema 轉 ISO 8601 duration
     videoDuration: z.number().optional(),
     instagram: z.string().optional(),
+    // 參考資料（選填）：內文提到的出處多數由 [slug].astro 自動偵測；
+    // 偵測不到的（例如只在這篇用到的論文）才手動寫在這裡，兩者合併去重後顯示在文末
+    references: z.array(z.object({ title: z.string(), url: z.string() })).optional(),
   }),
 });
 

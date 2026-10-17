@@ -8,7 +8,31 @@ export async function getStaticPaths() {
 }
 
 const { post, allPosts } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
+
+// 文內目錄：取內文的 H2／H3（Astro 已自動替標題加 id，slug 與 headings 一致）
+// H2 少於 3 個的短文不顯示，避免目錄比內文還顯眼
+const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+const showToc = headings.filter(h => h.depth === 2).length >= 3;
+
+// 參考資料：內文提到這些關鍵字就自動列出對應的官方或期刊來源（網址皆已查證過原文）
+// 新增來源時只加在這裡；只有單篇用到的來源，改寫在該篇 frontmatter 的 references
+const REFERENCE_SOURCES = [
+  { match: ['驗光人員法'], title: '驗光人員法（全國法規資料庫）', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+  { match: ['施行細則'], title: '驗光人員法施行細則（全國法規資料庫）', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020194' },
+  { match: ['106 年'], title: '衛生福利部國民健康署：106 年兒童青少年視力監測調查', url: 'https://www.mohw.gov.tw/dl-45478-7f230403-7349-4faf-8493-510bc3527d23.html' },
+  { match: ['國健署', '3010120'], title: '衛生福利部國民健康署：視力保健', url: 'https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45' },
+  { match: ['JAMA'], title: 'He M, et al. Effect of Time Spent Outdoors at School on the Development of Myopia Among Children in China. JAMA. 2015', url: 'https://jamanetwork.com/journals/jama/fullarticle/2441261' },
+  { match: ['吳佩昌', 'Ophthalmology》'], title: 'Wu PC, et al. Outdoor Activity during Class Recess Reduces Myopia Onset and Progression in School Children. Ophthalmology. 2013', url: 'https://pubmed.ncbi.nlm.nih.gov/23462271/' },
+  { match: ['PLoS ONE'], title: 'Huang HM, et al. The Association between Near Work Activities and Myopia in Children: A Systematic Review and Meta-Analysis. PLoS ONE. 2015', url: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0140419' },
+  { match: ['Ophthalmic and Physiological Optics', 'Lanca'], title: 'Lanca C, Saw SM. The association between digital screen time and myopia: A systematic review. Ophthalmic Physiol Opt. 2020', url: 'https://onlinelibrary.wiley.com/doi/abs/10.1111/opo.12657' },
+  { match: ['道路交通安全規則'], title: '道路交通安全規則（全國法規資料庫）', url: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040013' },
+  { match: ['定期審驗'], title: '交通部公路局：職業駕照定期審驗', url: 'https://www.thb.gov.tw/cp.aspx?n=548' },
+];
+const references = [
+  ...REFERENCE_SOURCES.filter(s => s.match.some(k => post.body.includes(k))),
+  ...(post.data.references ?? []),
+].filter((r, i, arr) => arr.findIndex(x => x.url === r.url) === i);
 
 // 若有英文版（blog-en 同 slug），輸出 hreflang 對應
 const enPosts = await getCollection('blog-en');
@@ -298,10 +322,49 @@ const pageSchema = {
           </a>
         )}
 
+        <!-- 文內目錄：用 <p> 當標籤而不是 <h2>，避免多出一個與內容無關的標題干擾 H1～H6 結構 -->
+        {showToc && (
+          <nav aria-label="文章目錄" class="toc mb-10 rounded-2xl border border-gray-200 px-6 py-5">
+            <p class="text-brand-navy font-bold mb-3" style="font-size:15px">目錄</p>
+            <ol class="toc-list">
+              {tocHeadings.map(h => (
+                <li class={h.depth === 3 ? 'toc-sub' : 'toc-main'}>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
         <!-- 文章內文 -->
         <div class="article-body">
           <Content />
         </div>
+
+        <!-- 作者框（E-E-A-T）：資歷文字沿用作者頁已過法務的寫法 -->
+        <div class="mt-12 flex gap-5 items-start rounded-2xl border border-gray-200 p-6">
+          <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師"
+            width="72" height="72" loading="lazy" class="w-18 h-18 rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+          <div>
+            <p class="text-xs text-gray-400 mb-1">本文作者</p>
+            <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+            <p class="text-gray-500 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+            <p class="text-gray-600 mb-3" style="font-size:14px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。本站文章皆由 YoYo 驗光師撰寫或審閱，內容依據臨床驗光實務與光學原理。</p>
+            <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+          </div>
+        </div>
+
+        <!-- 參考資料：內文有引用法規、官方調查或期刊才顯示 -->
+        {references.length > 0 && (
+          <div class="mt-8 rounded-2xl bg-gray-50 px-6 py-5">
+            <p class="text-brand-navy font-bold mb-3" style="font-size:15px">參考資料</p>
+            <ol class="list-decimal pl-5 space-y-2" style="font-size:13px;line-height:1.7">
+              {references.map(r => (
+                <li class="text-gray-600"><a href={r.url} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.title}</a></li>
+              ))}
+            </ol>
+          </div>
+        )}
 
         <!-- Instagram -->
         {post.data.instagram && (
@@ -383,6 +446,16 @@ const pageSchema = {
 
 <style is:global>
 /* ── 文章內文排版 ── */
+/* 文內目錄：H2 編號、H3 縮排；點目錄跳段時留出頂部導覽列的高度 */
+.toc-list { counter-reset: toc; list-style: none; padding: 0; margin: 0; }
+.toc-list li { font-size: 14px; line-height: 1.6; padding: 3px 0; }
+.toc-list a { color: #4a5568; }
+.toc-list a:hover { color: #c9a84c; }
+.toc-main { counter-increment: toc; }
+.toc-main::before { content: counter(toc) ". "; color: #c9a84c; font-weight: 600; }
+.toc-sub { padding-left: 1.5rem !important; font-size: 13px !important; }
+.article-body :is(h2, h3) { scroll-margin-top: 6rem; }
+
 .article-body {
   color: #3a3530;
   font-size: 17px;
