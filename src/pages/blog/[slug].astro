@@ -13,7 +13,12 @@ const { Content, headings } = await post.render();
 
 // 文內目錄：取內文的 H2／H3（Astro 已自動替標題加 id，slug 與 headings 一致）
 // H2 少於 3 個的短文不顯示，避免目錄比內文還顯眼
-const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+// 「常見問題」底下的 H3 問句不列進目錄，避免目錄被一串問句撐長
+let inFaq = false;
+const tocHeadings = headings.filter(h => {
+  if (h.depth === 2) { inFaq = h.text.includes('常見問題'); return true; }
+  return h.depth === 3 && !inFaq;
+});
 const showToc = headings.filter(h => h.depth === 2).length >= 3;
 
 // 參考資料：內文提到這些關鍵字就自動列出對應的官方或期刊來源（網址皆已查證過原文）
@@ -74,16 +79,17 @@ function extractFaq(body: string) {
   if (nextH2 !== -1) section = section.slice(0, nextH2);
 
   const faqs: { q: string; a: string }[] = [];
-  const qRegex = /\*\*Q[：:]\s*([\s\S]+?)\*\*\s*\n+([\s\S]*?)(?=\n\s*\*\*Q[：:]|$)/g;
+  // 問句兩種寫法都收：粗體「**Q1：…**」與 H3「### Q1：…」（2026-10-17 起 FAQ 問句改用 H3）；題號可有可無
+  const qRegex = /(?:\*\*Q\d*[：:]\s*([^\n]+?)\*\*|(?:^|\n)###\s*Q\d*[：:]\s*([^\n]+))\s*\n+([\s\S]*?)(?=\n\s*(?:\*\*Q\d*[：:]|###\s*Q\d*[：:])|$)/g;
   let m;
   while ((m = qRegex.exec(section))) {
-    const answer = m[2].trim()
+    const answer = m[3].trim()
       .replace(/^A[：:]\s*/, '')          // 去掉 A： 前綴
       .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // markdown 連結只留文字
       .replace(/\*\*/g, '')                // 去掉粗體符號
       .replace(/\s*\n+\s*/g, ' ')          // 摺疊換行
       .trim();
-    if (answer) faqs.push({ q: m[1].trim(), a: answer });
+    if (answer) faqs.push({ q: (m[1] ?? m[2]).trim(), a: answer });
   }
   return faqs;
 }

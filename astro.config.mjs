@@ -21,6 +21,8 @@ export default defineConfig({
     '/author': '/author/yoyo/',
     // 2026-10-17：指南與文章合併成「視覺知識」單一入口，指南總覽頁轉到 /blog/（13 篇指南本身網址不變）
     '/guide': '/blog/',
+    // 2026-10-17 老闆：鏡框定位是門市驗光人員用的後台工具，不放官網（門市實際使用 bv-fitting.pages.dev）
+    '/tools/frame-fitting': '/services/',
     // 舊文章網址含「myopia-control」字樣，因法規用詞調整改名，301 保留既有搜尋權重
     '/blog/children-myopia-control-xinzhuang': '/blog/children-myopia-tracking-xinzhuang/',
     '/en/blog/children-myopia-control-xinzhuang': '/en/blog/children-myopia-tracking-xinzhuang/',
