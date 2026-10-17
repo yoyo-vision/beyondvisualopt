@@ -3,7 +3,7 @@ title: "Children's Myopia Tracking in Xinzhuang: Back Every 3 to 6 Months, and W
 date: "2025-06-13"
 updated: "2026-10-17"
 tag: "Kids Vision"
-excerpt: "What does children's myopia tracking at our Xinzhuang store involve? The first visit is to an ophthalmologist for a diagnosis. After that, your child comes back every 3 to 6 months: we measure axial length, measure the prescription after accommodation has relaxed, and check the frame position, comparing each visit with the last. If anything unusual turns up, we refer your child to an ophthalmologist with the records in hand."
+excerpt: "What does children's myopia tracking at our Xinzhuang store involve? The first visit is to an ophthalmologist for a diagnosis. After that, your child comes back every 3 to 6 months: we measure the prescription after accommodation has relaxed, assess binocular vision, and check the frame position, comparing each visit with the last. If anything unusual turns up, we refer your child to an ophthalmologist with the records in hand."
 image: ""
 youtube: ""
 instagram: ""
@@ -11,7 +11,7 @@ instagram: ""
 
 ## What Parents Are Missing Is a Record
 
-Ask parents what their child's prescription is now, and most can give a rough answer: "Last year it was a little over -2.00, I think, and this year it went up a bit more." Ask a little further (how much higher, which month it started changing, whether the axial length grew along with it) and the conversation usually stops there. Some prescription slips are tucked away in a drawer, some are photos somewhere in a phone album. Each one was measured at a different time in a different place, and even laid out on a table, they don't line up.
+Ask parents what their child's prescription is now, and most can give a rough answer: "Last year it was a little over -2.00, I think, and this year it went up a bit more." Ask a little further (how much higher, which month it started changing, whether both eyes changed together) and the conversation usually stops there. Some prescription slips are tucked away in a drawer, some are photos somewhere in a phone album. Each one was measured at a different time in a different place, and even laid out on a table, they don't line up.
 
 What parents are missing isn't concern. It's a record that can be compared from one visit to the next. A prescription measured once is just a single point; only when several points are lined up in time order do they form a line. With that line, you can see which stretch your child changed quickly and which stretch barely moved.
 
@@ -29,13 +29,13 @@ So on your first visit to our Xinzhuang store, please bring the ophthalmologist'
 
 ## What Children's Myopia Tracking at Our Xinzhuang Store Includes
 
-On the first visit, our optometry staff set up baseline data for your child's prescription and axial length; this first visit takes about 60 minutes. On each return visit after that, we measure the same few things and compare the numbers side by side with the previous visit.
+On the first visit, our optometry staff set up baseline data for your child's prescription and binocular vision; this first visit takes about 60 minutes. On each return visit after that, we measure the same few things and compare the numbers side by side with the previous visit.
 
-### Axial Length Measurement
+### Visual Acuity and Binocular Vision
 
-Myopia is mostly a matter of the eye's front-to-back length, the axial length, growing too long, so that light comes to a focus in front of the retina. Once axial length increases, it doesn't shrink back, which makes it the number most worth watching in tracking.
+At every return visit, our optometry staff check which line your child can read with their glasses on, that is, their corrected visual acuity, and carry out a binocular vision assessment: whether both eyes can aim at the same point together, focus together, and work well as a pair at near. Both of our stores do this at every visit, and the results go into the same record as the prescription.
 
-The prescription measures how your child's eyes are focusing at that moment. If they stayed up late doing homework the night before, or were staring at a tablet right before coming in, the number can drift a little. Axial length measures the length of the eyeball itself, so it's less affected by these things. The first value we measure is the baseline, and every later measurement is compared against it.
+Myopia is mostly a matter of the eye's front-to-back length, the axial length, growing too long, so that light comes to a focus in front of the retina, and once it has lengthened it doesn't shrink back. Axial length is an examination performed by ophthalmologists; our stores do not measure it. If your child's axial length needs to be tracked, please have an ophthalmologist arrange it.
 
 ### Prescription Recorded After Accommodation Has Relaxed
 
@@ -58,7 +58,7 @@ Here is who handles what, in one table (the age limits and the line drawn around
 | Item | Optometry staff (Xinzhuang store) | Ophthalmologist |
 |------|------|------|
 | Refraction for ages 6 and up (aged 15 and under: under an ophthalmologist's guidance) | Yes | Yes |
-| Axial length measurement | Yes | Yes |
+| Axial length measurement | Not performed; it is an ophthalmology examination | Responsible |
 | Regular tracking records | Yes | Yes |
 | Confirming not pseudomyopia before the first glasses at ages 6–15 | No | Responsible |
 | Cycloplegic refraction, fundus examination | No, these are medical procedures | Responsible |
@@ -89,11 +89,11 @@ The record itself won't make the prescription stop changing; your child's prescr
 
 **Q: At what age can my child start myopia tracking at the Xinzhuang store?**
 
-Once they turn 6. Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance, and under Article 6 of the Enforcement Rules, a physician must first confirm the myopia is not pseudomyopia before the first refraction and glasses. Children already diagnosed by an ophthalmologist and fitted with glasses can come to our Xinzhuang store to set up a baseline record of prescription and axial length, then return every 3 to 6 months for tracking.
+Once they turn 6. Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance, and under Article 6 of the Enforcement Rules, a physician must first confirm the myopia is not pseudomyopia before the first refraction and glasses. Children already diagnosed by an ophthalmologist and fitted with glasses can come to our Xinzhuang store to set up a baseline record of prescription and binocular vision, then return every 3 to 6 months for tracking.
 
-**Q: My child is already using eye drops from an ophthalmologist. Do they still need prescription and axial length measurements at an optometry clinic?**
+**Q: My child is already using eye drops from an ophthalmologist. Do they still need prescription measurements at an optometry clinic?**
 
-Eye drops are prescribed by an ophthalmologist, so follow-up visits during the medication period, and what gets checked, should follow the ophthalmologist's plan. An optometry clinic does something different: it regularly measures the prescription and axial length, records them, and updates the glasses prescription to match the latest measurement. The two don't conflict. If needed, the optometry clinic's records can be issued to parents to take to the ophthalmologist for reference.
+Eye drops are prescribed by an ophthalmologist, so follow-up visits during the medication period, and what gets checked (including axial length), should follow the ophthalmologist's plan. An optometry clinic does something different: it regularly measures the prescription after accommodation has relaxed, assesses binocular vision, records the results, and updates the glasses prescription to match the latest measurement. The two don't conflict. If needed, the optometry clinic's records can be issued to parents to take to the ophthalmologist for reference.
 
 **Q: Until what age should children's myopia tracking continue?**
 

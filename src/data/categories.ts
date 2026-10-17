@@ -33,9 +33,9 @@ export const CATEGORIES: Category[] = [
     slug: 'kids-vision', name: '兒童視力', keyword: '兒童近視', guide: '/guide/children-myopia/',
     subs: [
       { slug: 'by-age', name: '各年齡怎麼顧', posts: ['infant-vision-development', 'preschool-vision-reserve', 'elementary-school-first-glasses', 'junior-high-myopia-peak', 'high-school-vision-stability'] },
-      { slug: 'causes', name: '近視成因與迷思', posts: ['myopia-real-culprit', 'myopia-getting-worse-truth'] },
-      { slug: 'exams', name: '檢查與法規', posts: ['vision-test-vs-refraction', 'child-vision-check-where'] },
-      { slug: 'tracking', name: '追蹤與配鏡', guide: '/guide/children-myopia/', posts: ['children-myopia-tracking-xinzhuang', 'children-frames-guide'] },
+      { slug: 'causes', name: '近視成因與迷思', posts: ['myopia-real-culprit', 'myopia-getting-worse-truth', 'kids-glasses-wear-all-day'] },
+      { slug: 'exams', name: '檢查與法規', posts: ['vision-test-vs-refraction', 'child-vision-check-where', 'kids-vision-check-frequency'] },
+      { slug: 'tracking', name: '追蹤與配鏡', guide: '/guide/children-myopia/', posts: ['kids-glasses-recommend', 'kids-glasses-process', 'kids-glasses-cost', 'children-myopia-tracking-xinzhuang', 'children-frames-guide'] },
     ],
   },
   {
