@@ -31,8 +31,8 @@ const langSwitchHref = isEn
 
 // ── BreadcrumbList：由路徑自動產生麵包屑結構化資料 ──
 const SECTION_LABELS: Record<string, string> = {
-  about: '關於我們', services: '服務項目', process: '服務流程',
-  frames: '鏡框品牌', lenses: '鏡片種類', blog: '視覺知識', topics: '視覺知識',
+  about: '關於我們', services: '配鏡服務', process: '服務流程',
+  frames: '鏡框品牌', lenses: '鏡片種類', blog: '配鏡知識', topics: '配鏡知識',
   faq: '常見問題', booking: '線上預約', xinzhuang: '新莊店', banqiao: '板橋店',
   author: '作者', guide: '完整指南', portfolio: '選配作品', care: '配戴照護', tools: '顧客工具', en: 'English',
 };
@@ -40,12 +40,12 @@ const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
 const pageName = title.split('｜')[0];
 const SITE = 'https://beyondvisualopt.com';
 
-// 中文的文章、指南、大分類頁：麵包屑照分類表走「首頁 › 視覺知識 › 大分類 › 本頁」，
+// 中文的文章、指南、大分類頁：麵包屑照分類表走「首頁 › 配鏡知識 › 大分類 › 本頁」，
 // 不照網址走（網址是 /blog/、/guide/ 兩套，但對讀者是同一個知識區）
 let crumbs: { name: string; item: string }[] | null = null;
 if (!isEn && pathSegments.length === 2) {
   const [section, slug] = pathSegments;
-  const knowledge = { name: '視覺知識', item: `${SITE}/blog/` };
+  const knowledge = { name: '配鏡知識', item: `${SITE}/blog/` };
   const catCrumb = (c: { slug: string; name: string }) => ({ name: c.name, item: `${SITE}/topics/${c.slug}/` });
   if (section === 'blog') {
     const found = findCategory(slug);
@@ -71,33 +71,34 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
   ],
 } : null;
 
-// ── 中文導覽列：照訪客目的分 4 區（2026-10-17 老闆定案），網址一律不動 ──
-const NAV = [
-  { label: '關於能見度', href: '/about/', items: [
+// ── 中文導覽列：用顧客的說法分 6 項（2026-10-17 老闆參考靖美眼鏡後定案），網址一律不動 ──
+// items 為空＝沒有下拉，直接連到 href
+const NAV: { label: string; href: string; items: { label: string; href: string }[] }[] = [
+  { label: '關於我們', href: '/about/', items: [
     { label: '品牌故事', href: '/about/' },
     { label: 'YoYo 驗光師', href: '/author/yoyo/' },
     { label: '錢彥廷 驗光師', href: '/author/chien-yen-ting/' },
-    { label: '選配作品', href: '/portfolio/' },
-    { label: '新莊門市', href: '/xinzhuang/' },
-    { label: '板橋門市', href: '/banqiao/' },
   ]},
-  { label: '服務項目', href: '/services/', items: [
+  { label: '配鏡服務', href: '/services/', items: [
     { label: '驗光服務', href: '/services/' },
     { label: '配鏡流程', href: '/process/' },
     { label: '眼鏡調整與維修', href: '/services/adjustment/' },
-    { label: '鏡片', href: '/lenses/' },
-    { label: '鏡框', href: '/frames/' },
     { label: '自帶鏡框配鏡片', href: '/guide/byo-frame-lenses/' },
   ]},
-  { label: '視覺知識', href: '/blog/', items: [
+  { label: '鏡框與鏡片', href: '/frames/', items: [
+    { label: '鏡框品牌', href: '/frames/' },
+    { label: '鏡片種類', href: '/lenses/' },
+    { label: '選配作品', href: '/portfolio/' },
+  ]},
+  { label: '配鏡知識', href: '/blog/', items: [
     ...CATEGORIES.map(c => ({ label: c.name, href: `/topics/${c.slug}/` })),
     { label: '視光名詞索引', href: '/guide/optical-basics/' },
   ]},
-  { label: '顧客專區', href: '/faq/', items: [
-    { label: '常見問題', href: '/faq/' },
-    { label: 'RGP 配戴照護', href: '/care/rgp/' },
-    { label: '軟式隱形眼鏡照護', href: '/care/soft/' },
+  { label: '門市資訊', href: '/about/#stores', items: [
+    { label: '新莊店', href: '/xinzhuang/' },
+    { label: '板橋店', href: '/banqiao/' },
   ]},
+  { label: '常見問題', href: '/faq/', items: [] },
 ];
 ---
 <!DOCTYPE html>
@@ -437,7 +438,9 @@ const NAV = [
           <li><a href="/en/faq/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">FAQ</a></li>
         </>) : (<>
           {/* 下拉選單：滑鼠移入或鍵盤 Tab 進入都會展開（focus-within）；觸控點標題直接進該區主頁 */}
-          {NAV.map(group => (
+          {NAV.map(group => group.items.length === 0 ? (
+            <li><a href={group.href} class="text-brand-ink-2 hover:text-brand-ink transition-colors py-6 inline-block">{group.label}</a></li>
+          ) : (
             <li class="relative group">
               <a href={group.href} class="text-brand-ink-2 hover:text-brand-ink transition-colors py-6 inline-flex items-center gap-1">
                 {group.label}<span aria-hidden="true" style="font-size:10px">▾</span>
@@ -491,7 +494,9 @@ const NAV = [
           <li><a href="/en/booking/" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">Book Now →</a></li>
         </>) : (<>
           {/* 手機版：四區各一個可展開的段落，避免一長串連結 */}
-          {NAV.map(group => (
+          {NAV.map(group => group.items.length === 0 ? (
+            <li class="border-b border-brand-ink/8"><a href={group.href} class="block py-3.5 text-brand-ink-2" style="font-size:16px">{group.label}</a></li>
+          ) : (
             <li class="border-b border-brand-ink/8">
               <details>
                 <summary class="flex items-center justify-between py-3.5 text-brand-ink-2 cursor-pointer list-none" style="font-size:16px">
@@ -528,7 +533,7 @@ const NAV = [
   <!-- 頁尾小導覽列 -->
   <nav class="border-t border-brand-paper/10" style="background:#17140f">
     <div class="max-w-6xl mx-auto px-6 md:px-16">
-      <div class="grid grid-cols-3 md:grid-cols-5 divide-x divide-brand-paper/10">
+      <div class="grid grid-cols-4 md:grid-cols-7 divide-x divide-brand-paper/10">
         {[
           ...NAV.map(g => ({ label: g.label, href: g.href })),
           { label: '立即預約', href: '/booking/' },
@@ -569,9 +574,11 @@ const NAV = [
           <li><a href="/author/yoyo/" class="hover:text-brand-paper transition-colors">YoYo 驗光師</a></li>
           <li><a href="/author/chien-yen-ting/" class="hover:text-brand-paper transition-colors">錢彥廷 驗光師</a></li>
           <li><a href="/portfolio/" class="hover:text-brand-paper transition-colors">選配作品集</a></li>
-          <li><a href="/services/" class="hover:text-brand-paper transition-colors">服務項目</a></li>
+          <li><a href="/services/" class="hover:text-brand-paper transition-colors">配鏡服務</a></li>
           <li><a href="/services/adjustment/" class="hover:text-brand-paper transition-colors">眼鏡調整與維修</a></li>
-          <li><a href="/blog/" class="hover:text-brand-paper transition-colors">視覺知識</a></li>
+          <li><a href="/care/rgp/" class="hover:text-brand-paper transition-colors">RGP 配戴照護</a></li>
+          <li><a href="/care/soft/" class="hover:text-brand-paper transition-colors">軟式隱形眼鏡照護</a></li>
+          <li><a href="/blog/" class="hover:text-brand-paper transition-colors">配鏡知識</a></li>
           <li><a href="/booking/" class="hover:text-brand-paper transition-colors">線上預約</a></li>
         </ul>
         <h3 class="font-sans text-brand-paper/60 mt-8 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">追蹤我們</h3>

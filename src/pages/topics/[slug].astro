@@ -1,5 +1,5 @@
 ---
-// 大分類頁（10 頁）：首頁 › 視覺知識 › 大分類。內容全部讀 src/data/categories.ts，
+// 大分類頁（10 頁）：首頁 › 配鏡知識 › 大分類。內容全部讀 src/data/categories.ts，
 // 文章標題與摘要讀各篇 frontmatter（皆已過審），本頁不另寫宣稱性文案。
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
@@ -45,7 +45,7 @@ const schema = {
   <section class="bg-brand-navy text-white pt-10 pb-14 px-6">
     <div class="max-w-4xl mx-auto">
       <nav aria-label="麵包屑" class="font-sans text-white/60 mb-8" style="font-size:13px">
-        <a href="/" class="hover:text-white">首頁</a> › <a href="/blog/" class="hover:text-white">視覺知識</a> › <span class="text-white/90">{cat.name}</span>
+        <a href="/" class="hover:text-white">首頁</a> › <a href="/blog/" class="hover:text-white">配鏡知識</a> › <span class="text-white/90">{cat.name}</span>
       </nav>
       <h1 class="font-serif text-white mb-4" style="font-size:clamp(30px,5vw,46px);font-weight:300">{cat.name}</h1>
       <p class="text-white/70" style="font-size:16px">{subs.length} 個主題・{total} 篇文章｜由能見度視覺中心驗光人員撰寫</p>
