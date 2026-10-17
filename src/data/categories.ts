@@ -108,7 +108,7 @@ export const CATEGORIES: Category[] = [
 
 // 指南頁名稱（文章頂端「本文屬於《指南》」與大分類頁的指南卡片用）
 export const GUIDE_TITLES: Record<string, string> = {
-  '/guide/progressive-lens/': '多焦點鏡片完整指南',
+  '/guide/progressive-lens/': '老花眼鏡完整指南',
   '/guide/children-myopia/': '兒童近視追蹤完整指南',
   '/guide/why-optometrist-matters/': '選好的鏡片，不如選好的驗光師',
   '/guide/eye-doctor-or-optometrist/': '掛眼科還是找驗光所？症狀分流指南',
