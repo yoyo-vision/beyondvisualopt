@@ -70,13 +70,14 @@ const modifiedIso = (post.data.updated ?? post.data.date).toISOString().split('T
 // ── 從文章內文的「常見問題」段落自動抽取 Q&A，產生 FAQPage schema ──
 // 支援兩種格式：**Q：問題**＋「A：答案」或直接接答案段落
 function extractFaq(body: string) {
-  // 找到「## 常見問題」標題，取到下一個 H2 標題（或文末）為止
+  // 找到「## 常見問題」標題，取到下一個 H2 標題、分隔線或文末為止
   const start = body.search(/^##[^\n]*常見問題/m);
   if (start === -1) return [];
   let section = body.slice(start);
   section = section.slice(section.indexOf('\n') + 1);
-  const nextH2 = section.search(/^## /m);
-  if (nextH2 !== -1) section = section.slice(0, nextH2);
+  // 停在下一個 H2 或分隔線 ---（FAQ 後面接「--- 合段」時，合段不可被算進最後一題的答案）
+  const nextBreak = section.search(/^(?:## |---\s*$)/m);
+  if (nextBreak !== -1) section = section.slice(0, nextBreak);
 
   const faqs: { q: string; a: string }[] = [];
   // 問句兩種寫法都收：粗體「**Q1：…**」與 H3「### Q1：…」（2026-10-17 起 FAQ 問句改用 H3）；題號可有可無

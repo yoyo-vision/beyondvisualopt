@@ -94,8 +94,9 @@ function extractFaq(body: string) {
   if (start === -1) return [];
   let section = body.slice(start);
   section = section.slice(section.indexOf('\n') + 1);
-  const nextH2 = section.search(/^## /m);
-  if (nextH2 !== -1) section = section.slice(0, nextH2);
+  // 停在下一個 H2 或分隔線 ---（FAQ 後面接「--- 合段」時，合段不可被算進最後一題的答案）
+  const nextBreak = section.search(/^(?:## |---\s*$)/m);
+  if (nextBreak !== -1) section = section.slice(0, nextBreak);
 
   const faqs: { q: string; a: string }[] = [];
   const qRegex = /\*\*Q[:：]\s*([\s\S]+?)\*\*\s*\n+([\s\S]*?)(?=\n\s*\*\*Q[:：]|$)/g;
