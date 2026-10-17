@@ -1,159 +1,108 @@
 ---
-title: "Your Child's Myopia Keeps Getting Worse? A Parent's Guide to Myopia Tracking and Lens Options in Xinzhuang"
+title: "Children's Myopia Tracking in Xinzhuang: Back Every 3 to 6 Months, and What Our Optometry Staff Measure and Record"
 date: "2025-06-13"
+updated: "2026-10-17"
 tag: "Kids Vision"
-excerpt: "Worried about your child's prescription climbing every year? Learn what a licensed optometrist can do, what an ophthalmologist handles, and how regular tracking helps you stay on top of your child's vision development, plus the optics behind defocus-design lenses."
+excerpt: "What does children's myopia tracking at our Xinzhuang store involve? The first visit is to an ophthalmologist for a diagnosis. After that, your child comes back every 3 to 6 months: we measure axial length, measure the prescription after accommodation has relaxed, and check the frame position, comparing each visit with the last. If anything unusual turns up, we refer your child to an ophthalmologist with the records in hand."
 image: ""
 youtube: ""
 instagram: ""
 ---
 
-## When Myopia Keeps Progressing, What Worries Parents Most?
+## What Parents Are Missing Is a Record
 
-"I'm not afraid of my kid wearing glasses. I'm afraid of the prescription getting worse every year and feeling like there's nothing we can do about it."
+Ask parents what their child's prescription is now, and most can give a rough answer: "Last year it was a little over -2.00, I think, and this year it went up a bit more." Ask a little further (how much higher, which month it started changing, whether the axial length grew along with it) and the conversation usually stops there. Some prescription slips are tucked away in a drawer, some are photos somewhere in a phone album. Each one was measured at a different time in a different place, and even laid out on a table, they don't line up.
 
-That's the sentence we hear most often at Beyond Visual Optometry. And your worry is well-founded.
+What parents are missing isn't concern. It's a record that can be compared from one visit to the next. A prescription measured once is just a single point; only when several points are lined up in time order do they form a line. With that line, you can see which stretch your child changed quickly and which stretch barely moved.
 
-**Myopia is fundamentally the eyeball growing too long (axial elongation) — and once the eye elongates, it cannot shrink back.** High myopia (worse than -6.00D) carries a significantly higher lifetime risk of retinal detachment, macular degeneration, and glaucoma compared to a normal eye (per public health-education materials from Taiwan's Health Promotion Administration and ophthalmology associations). Tracking your child's prescription trend early is the first step in protecting their vision.
+The years when this line most needs to be recorded without gaps are exactly elementary school through junior high. In the Health Promotion Administration (HPA)'s 2017 Child and Adolescent Vision Monitoring Survey, myopia prevalence climbed from 19.8% in first grade to 89.3% in the third year of junior high. Children's myopia tracking at our Xinzhuang store means measuring the same items at regular intervals through these years and entering them into the same record.
 
----
+## Before Tracking Starts: The First Visit Is to an Ophthalmologist
 
-## Childhood Myopia in Taiwan: The Numbers
+If your child has never had glasses, the first stop is an ophthalmologist. This order is set by law, and an optometry clinic cannot skip it.
 
-Taiwan has one of the highest myopia prevalence rates in the world:
+### Rules for a First Eye Exam and Glasses at Ages 6–15
 
-- **Senior year of kindergarten:** 9.0%
-- **First grade of elementary school:** 19.8%
-- **End of elementary school (sixth grade):** 70.6%
-- **Third year of junior high:** 89.3%
+Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance. Article 6 of the Enforcement Rules of the Optometrists Act is more specific: for a child aged 6 to 15 having their first refraction and glasses, a physician must first confirm that the myopia is not pseudomyopia.
 
-(Source: the 2017 Child and Adolescent Vision Monitoring Survey, Health Promotion Administration, Ministry of Health and Welfare, Taiwan.)
+So on your first visit to our Xinzhuang store, please bring the ophthalmologist's diagnosis. Children who have already been diagnosed by an ophthalmologist and have had glasses fitted can start tracking right away; refraction for children aged 15 and under continues to be carried out under an ophthalmologist's guidance from then on.
 
-High myopia (above -6.00D) is not rare among adults, and the risks of retinal detachment, macular disease, and glaucoma are all tied to it (per public health-education materials from Taiwan's Health Promotion Administration and ophthalmology associations).
+## What Children's Myopia Tracking at Our Xinzhuang Store Includes
 
-So what really matters is not "how many diopters now" but "how fast it is climbing". Progression is fastest between **ages 8 and 14** — these are the years to track prescription and axial length regularly, and if progression accelerates, to have an ophthalmologist evaluate suitable interventions early.
+On the first visit, our optometry staff set up baseline data for your child's prescription and axial length; this first visit takes about 60 minutes. On each return visit after that, we measure the same few things and compare the numbers side by side with the previous visit.
 
----
+### Axial Length Measurement
 
-## Why Does Myopia Keep Progressing?
+Myopia is mostly a matter of the eye's front-to-back length, the axial length, growing too long, so that light comes to a focus in front of the retina. Once axial length increases, it doesn't shrink back, which makes it the number most worth watching in tracking.
 
-The root cause of myopia is an **excessively long eye axis** — the eyeball's front-to-back length exceeds normal, so light focuses in front of the retina instead of on it.
+The prescription measures how your child's eyes are focusing at that moment. If they stayed up late doing homework the night before, or were staring at a tablet right before coming in, the number can drift a little. Axial length measures the length of the eyeball itself, so it's less affected by these things. The first value we measure is the baseline, and every later measurement is compared against it.
 
-**Three main drivers of continued axial elongation:**
+### Prescription Recorded After Accommodation Has Relaxed
 
-- **Too much near work:** More than 3–4 hours daily on phones, books, or tablets keeps the ciliary muscles chronically contracted, stimulating axial growth
-- **Not enough outdoor time:** Natural light (above 10,000 lux) is associated with dopamine release, and research has observed a relationship between outdoor time and axial development. Two hours of outdoor activity per day is a common recommendation in the ophthalmology community
-- **No regular tracking:** If you don't know whether the eye axis is lengthening, you can't adjust the lens strategy at the right time
+Children have strong accommodation. After a long stretch of near work, the ciliary muscle that handles focusing is still tensed, and an autorefractor reading taken at that point often comes out too strong. Fitting glasses to a too-strong number means overcorrecting.
 
----
+Our optometry staff first help your child's accommodation relax, then perform objective and subjective refraction. Only the prescription measured this way goes into the record, and the glasses prescription is updated to match the latest measurement. Cycloplegic (dilated) refraction is a medical procedure; if it's needed, it is performed by an ophthalmologist.
 
-## Optometrist vs. Ophthalmologist: Who Does What
+### Frame Position and Optical Center Check
 
-Many parents are confused about who should handle their child's myopia. Here's the correct division of roles under Taiwanese regulations:
+Kids wear their glasses to and from school, playing ball, and napping face-down on their desks, so bent frames and nose pads pushed out of place are normal. The optical center of each lens needs to line up with your child's eye; once the frame is crooked, the point they look through shifts as well.
 
-| Service | Licensed Optometrist (Beyond Visual) | Ophthalmologist (MD) |
-|------|----------------------|---------|
-| Vision and prescription assessment | ✅ | ✅ |
-| Axial length measurement | ✅ | ✅ |
-| Defocus lens fitting (defocus-design soft contact lenses, Zeiss MyoCare) | ✅ | ✅ |
-| Regular tracking records and trend analysis | ✅ | ✅ |
-| Low-dose atropine prescription | ❌ Requires a physician's prescription | ✅ |
-| Fundus examination, cycloplegic refraction | ❌ Classified as medical procedures | ✅ |
+For each return visit, please have your child wear their everyday glasses. Our optometry staff check whether the frame is bent, whether the nose pads are pressing, and whether the optical centers still line up, and adjust things if needed. To learn about the designs of children's lenses themselves, see the [Children's Myopia Tracking Complete Guide](/en/guide/children-myopia/).
 
-> Beyond Visual Optometry's role is **regular measurement, record-keeping and tracking, and defocus lens fitting**. Children who need medication are referred to an ophthalmologist — it's a collaboration, not a turf war.
+### Referral to an Ophthalmologist When Something Is Unusual
 
----
+If tracking turns up abnormal vision (for example, your child still can't see clearly even with correction), or if parents want to learn about medical approaches such as medication, our optometry staff will help with a referral to an ophthalmologist in accordance with the Optometrists Act. This is where the records built up over earlier visits come in. The records are normally kept at the store; when you need to take them to an ophthalmologist, just let us know and we'll issue them, so the physician sees more than that day's single number.
 
-## Defocus-Design Lenses: What an Optometrist Can Do
+Here is who handles what, in one table (the age limits and the line drawn around medical procedures follow Article 12 of the Optometrists Act):
 
-**Peripheral-defocus lenses** are the tools that licensed optometrists can fit and track:
-
-| Lens | Type | Notes |
+| Item | Optometry staff (Xinzhuang store) | Ophthalmologist |
 |------|------|------|
-| **Defocus-design soft contact lenses (daily disposable)** | Contact lenses (medical device) | Require an in-person corneal and wearing-condition assessment by a licensed optometrist; for those under 15, fitting must be conducted under an ophthalmologist's guidance |
-| **Zeiss MyoCare** | Spectacle lenses | A spectacle-form defocus design for school-age children; daily care is the same as ordinary glasses |
+| Refraction for ages 6 and up (aged 15 and under: under an ophthalmologist's guidance) | Yes | Yes |
+| Axial length measurement | Yes | Yes |
+| Regular tracking records | Yes | Yes |
+| Confirming not pseudomyopia before the first glasses at ages 6–15 | No | Responsible |
+| Cycloplegic refraction, fundus examination | No, these are medical procedures | Responsible |
+| Medication such as low-dose atropine | No, this is prescribed by an ophthalmologist | Responsible |
 
-> Whether these lenses suit an individual child requires an in-person assessment of wearing conditions and lifestyle. Product indications follow the content approved in the MOHW license. For medication or any medical treatment, please consult an ophthalmologist.
+## How Often to Come Back: Scheduling the Tracking Interval
 
----
+The interval is once every 3 to 6 months. Which end of that range your child falls at depends on how they changed over the previous visits, and on the ophthalmologist's advice.
 
-## Option 1: Defocus-Design Soft Contact Lenses (Daily Disposable)
+The easiest schedule to remember follows the school year: once during winter break and once during summer break, which is exactly six months apart. If visits need to be closer together, add one in the middle of the semester. Coming back to the same place each time and being measured the same way removes one variable when comparing the numbers.
 
-### What Are Defocus-Design Soft Contact Lenses?
+For children already diagnosed by an ophthalmologist who are ready to start a record, book at our Xinzhuang store: Beyond Visual Optometry Xinzhuang store (Biyang Optometry Clinic), No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, +886-2-2206-6700, [book online](/en/booking/).
 
-These are soft daily-disposable contact lenses with a central-and-peripheral zoned optical design: the central zone corrects refractive error while the peripheral zones use a defocus structure. Contact lenses are medical devices; their product characteristics and indications follow the content approved in the MOHW license.
+### If Something Comes Up Between Tracking Visits
 
-### Before Wearing
+Tracking happens on a schedule, but eye problems don't wait for the date. If any of the following happens, take your child straight to an ophthalmologist:
 
-Contact-lens fitting must be carried out by a licensed optometrist who assesses corneal condition, tear film, and wearing habits in person. Under Article 12 of the Optometrists Act, **fitting contact lenses for anyone under 15 must be conducted under an ophthalmologist's guidance, and it may not be performed for children under 6**. Whether the lenses are suitable, and whether daily cleaning and care can be maintained, all require an in-person assessment.
+- Between visits, your child suddenly says they can't see clearly, or things look warped or distorted
+- Red, painful, or light-sensitive eyes, or an eye that has been hit or injured
+- You notice that one of your child's eyes seems to turn inward or outward
+- You want to learn about eye drops (such as low-dose atropine); these are prescribed by an ophthalmologist, so please consult one
 
----
+## However Careful the Tracking, the Prescription Will Still Change
 
-## Option 2: Zeiss MyoCare Spectacle Lenses
+The record itself won't make the prescription stop changing; your child's prescription will still change as it's going to. What our Xinzhuang store can offer is letting those changes be seen a little earlier. Whether to intervene medically, and how, is decided by an ophthalmologist; we don't provide treatment.
 
-### What Is MyoCare?
+## Xinzhuang Children's Myopia Tracking FAQ
 
-Zeiss MyoCare is a **spectacle-lens** defocus design for school-age children using **C.A.R.E.® technology** (Cylindrical Annular Refractive Elements) — nearly invisible concentric rings that alternate defocus and correction zones across the lens, giving the child clear vision with the same wearing experience as ordinary glasses.
+**Q: At what age can my child start myopia tracking at the Xinzhuang store?**
 
-No contact lenses required, so acceptance among children is high, and daily care is the same as ordinary glasses. The portfolio also includes **MyoCare S**, designed for younger children.
+Once they turn 6. Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance, and under Article 6 of the Enforcement Rules, a physician must first confirm the myopia is not pseudomyopia before the first refraction and glasses. Children already diagnosed by an ophthalmologist and fitted with glasses can come to our Xinzhuang store to set up a baseline record of prescription and axial length, then return every 3 to 6 months for tracking.
 
-### Who It Suits
+**Q: My child is already using eye drops from an ophthalmologist. Do they still need prescription and axial length measurements at an optometry clinic?**
 
-- Children who refuse to wear contact lenses
-- Younger children (6 and up)
-- Parents who want something simple to use and easy to maintain
+Eye drops are prescribed by an ophthalmologist, so follow-up visits during the medication period, and what gets checked, should follow the ophthalmologist's plan. An optometry clinic does something different: it regularly measures the prescription and axial length, records them, and updates the glasses prescription to match the latest measurement. The two don't conflict. If needed, the optometry clinic's records can be issued to parents to take to the ophthalmologist for reference.
 
----
+**Q: Until what age should children's myopia tracking continue?**
 
-## The Real Key: A Solution Your Child Will Actually Stick With
+Usually until around 18 to 20, when axial development levels off. Stopping partway through the growth years leaves a gap in the record, and later measurements are missing the earlier points they could be compared against.
 
-**Even the best lens does nothing if your child won't wear it.**
+**Q: Besides regular tracking visits, what can parents do at home?**
 
-What Beyond Visual Optometry cares about most is not recommending the most expensive option, but finding the combination your child will genuinely cooperate with and your family can sustain.
-
-### Choosing a Frame (for the Spectacle Option)
-
-For children's frames, the key isn't the brand — it's:
-
-- **Light and snug:** silicone nose pads that don't press on the nose bridge
-- **Doesn't slip:** temple curvature that fits your child's face
-- **Drop- and impact-resistant:** memory-material frames that hold their shape through daily use
-- **Correct sizing:** oversized frames increase optical-center alignment error
-
-### The Regular Tracking Routine
-
-- Measure **axial length** every 3–6 months
-- Axial length change is the true objective indicator — it reflects eye development better than prescription numbers alone
-- Adjust the plan based on tracking results; this is an ongoing program, not a one-time fitting
+The HPA recommends that children spend 120 minutes outdoors every day. Outdoor time and visual habits can only be looked after at home; glasses can't help with this part. At each return visit, our optometry staff will also talk with you about your child's visual habits over the past few months, and any changes can be noted down together.
 
 ---
 
-## FAQ
-
-**Q: At what age should tracking start?**
-
-The earlier the better. The fastest-progression window is ages 6–14. For children aged 6 and up whose myopia increases by more than 0.50D per year, regular tracking is recommended. The younger you start, the more complete a picture you'll have of axial development.
-
-**Q: Do we still need to see an ophthalmologist?**
-
-We recommend doing both. The optometrist handles lens fitting and regular tracking; the ophthalmologist handles fundus health checks and medication evaluation (such as low-dose atropine). The two roles don't conflict — together they give your child the most complete care.
-
-**Q: How long does myopia tracking continue?**
-
-Generally until age 18–20, when axial development stabilizes. It's not something you do for a few years and stop — the goal is continuous tracking through the growth years so your child's prescription at 18 is as low as possible.
-
-**Q: My child is already at -5.00D. Is tracking still worth it?**
-
-Absolutely. The point of tracking is knowing the trend — where the prescription and axial length stand — so the lens plan and visual habits can be adjusted at the right time, and so an ophthalmologist has complete records whenever a medical evaluation is needed.
-
-**Q: Where can I get children's myopia tracking in Xinzhuang?**
-
-Beyond Visual Optometry's Xinzhuang store is our primary location for children's myopia tracking, offering axial length measurement, prescription trend records, defocus-design soft contact lens fitting, and Zeiss MyoCare evaluation. Our licensed optometrists track progress every 3–6 months, and children who need medication evaluation are referred to an ophthalmologist. Call +886-2-2206-6700 or [book online](/en/booking/).
-
----
-
-"It feels like I can't keep up with the changes" — the important word in that sentence is *feels*.
-
-Without records, parents have only impressions to go on, and impressions are easily dominated by whatever the last check-up said. Line up each visit's prescription and axial length in date order, though, and the things worth worrying about separate themselves from the things that aren't. Anything requiring medical judgement, we refer to an ophthalmologist. Keeping the data properly is the part you can leave to us.
-
-Xinzhuang (Biyang Optometry Clinic): +886-2-2206-6700. Start the record now, then come back every three to six months to add to it.
+That stack of mismatched prescription slips in the drawer can become a line, starting with the next visit. On the first visit, remember to bring the ophthalmologist's diagnosis with you.

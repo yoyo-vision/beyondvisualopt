@@ -1,51 +1,85 @@
 ---
-title: "My Child's Vision Isn't Good — Ophthalmologist First, or Get Glasses First? A Guide by Age"
+title: "My Child's Vision Isn't Good: Ophthalmologist First, or Glasses First? A Guide by Age"
 date: 2026-07-21
+updated: 2026-10-17
 tag: "Kids Vision"
-excerpt: "When a child fails a vision check, the first question parents ask is: ophthalmologist first, or glasses first? The answer depends on age—under 6, always see an ophthalmologist first; age 6 and up, kids can start with a vision assessment and prescription tracking at Beyond Visual Optometry in Xinzhuang or Banqiao, with a referral if anything unusual turns up."
+excerpt: "Your child failed a vision check. Ophthalmologist first, or glasses first? It depends on age: under 6, always see an ophthalmologist first; ages 6–15 getting glasses for the first time, an ophthalmologist must first confirm it is not pseudomyopia; if your child already has glasses, refraction is carried out under an ophthalmologist's guidance; only over 15 can your child go directly to optometry staff. For redness, pain, or suddenly blurry vision, see an ophthalmologist first at any age."
 image: ""
 youtube: ""
 instagram: ""
 ---
 
-## My Child's Vision Isn't Good — Ophthalmologist First, or Glasses First? It Comes Down to Age
+## Ophthalmologist First or Glasses First: It Depends on Your Child's Age
 
-Here's the most useful answer first: it depends on how old your child is. For children **under 6**, please see an ophthalmologist first—this age is a critical period for vision development, and it needs a full medical evaluation by a physician (under Taiwan's Optometrists Act, optometrists are also not permitted to perform refraction on children under 6). For children **6 and up**, if they failed a school vision screening, or you've noticed them sitting closer to the TV, squinting a lot, or complaining they can't see the blackboard clearly, they can start with a vision assessment and prescription tracking at an optometry practice (under Taiwan's Optometrists Act, refraction for schoolchildren under 15 must be carried out under an ophthalmologist's guidance, and we coordinate with ophthalmologists on that basis for follow-up tracking). If anything unusual turns up along the way, we'll recommend a referral to an ophthalmologist.
+"How old is your child?" Every semester, parents ask us whether they should take their child to an ophthalmologist first or come straight in for glasses, and our answer always starts with that question back. Under 6: see an ophthalmologist first. Ages 6–15 getting glasses for the first time: also go to an ophthalmologist first, so a physician can confirm it isn't pseudomyopia; if your child already has glasses, refraction is carried out under an ophthalmologist's guidance. Only over 15 can your child go directly to optometry staff.
 
-So really, this isn't a binary choice between "ophthalmologist or glasses"—it's about your child's age and situation, and which step comes first.
+This order isn't something any one store came up with. It's written in Article 12 of the Optometrists Act and Article 6 of the Enforcement Rules of the Optometrists Act. Parents really only need to remember two things: how old the child is, and whether this is their first pair of glasses.
 
-Let's be clear about who we are: Beyond Visual Optometry is a licensed optometry practice (Beyond Visual Optometry / Biyang Optometry), not an ophthalmology clinic, and we don't diagnose or treat eye disease. When it comes to caring for a child's vision, we and ophthalmologists divide the work: medical evaluation and medication are the physician's responsibility; measuring, tracking, and dispensing for vision are handled by licensed optometrists. Refraction for schoolchildren under 15 is, by law, carried out under an ophthalmologist's guidance.
+## Children's Vision: Which Way to Go by Age
 
-### Triage by Age and Situation: Which Step Should Your Child Take First?
+Here are ages and situations in one table. First, find the row your child falls into:
 
-| Child's Age / Situation | Which Step First |
+| Child's age / situation | First step |
 |-----------------|-----------|
-| Under 6 | Always see an ophthalmologist first for a medical evaluation |
-| 6 and up, failed a school vision screening | Can start with a vision assessment and prescription tracking at an optometry practice |
-| 6 and up, squinting at distance / sitting closer and closer | Can start with an assessment at an optometry practice, with referral if anything unusual turns up |
-| Physician has ordered tests requiring pupil dilation | Dilation is a medical procedure — please see an ophthalmologist |
-| Any age with redness, swelling, pain, or injury | See an ophthalmologist as soon as possible |
+| Under 6 | Always go to an ophthalmologist first for a medical evaluation by a physician |
+| Ages 6–15, never had glasses (failed a screening, squints at distance) | Go to an ophthalmologist first, so a physician can confirm it is not pseudomyopia |
+| Ages 6–15, already has glasses | Can come to an optometry clinic for prescription tracking and glasses (under an ophthalmologist's guidance), with referral to an ophthalmologist if anything unusual is found |
+| Over 15 | Can go directly to an optometry clinic for refraction and glasses |
+| Physician has ordered tests such as dilation | Dilation is a medical procedure; please consult an ophthalmologist |
+| Redness, swelling, pain, or injury at any age | Please see an ophthalmologist as soon as possible |
 
-Many parents worry: "If we get glasses first, does that mean we've given up on treatment?" Not at all. A child's vision needs long-term records — whether the prescription changes, and how fast, is important information in itself. What we do is track and record the prescription change at each visit, so both you and your child's ophthalmologist have a clear picture of how their vision is developing. Whether and how to bring in medical treatment is the ophthalmologist's professional call to make — we don't cross that line.
+### Under 6: Always See an Ophthalmologist First
 
-## Parents' FAQ
+At this age, under Article 12 of the Optometrists Act, optometry staff may not perform refraction. So no matter what the screening slip says or how close your child sits to the TV, the first stop has to be an ophthalmologist; all an optometry clinic can do at this stage is remind you to make the appointment. For ages 0 to 3, see [infant vision development](/blog/infant-vision-development/) (in Chinese); for ages 3 to 6, see [preschool vision](/blog/preschool-vision-reserve/) (in Chinese).
 
-**Q1. This is my child's first vision check — should we go to an ophthalmologist or an optometry practice?**
+### Ages 6–15, First Pair of Glasses: Confirm It Isn't Pseudomyopia at an Ophthalmologist First
 
-It depends on age. Under 6, please see an ophthalmologist first for a medical evaluation — by law, an exam at this age falls under medical care. For children 6 and up, they can start with a vision assessment and prescription tracking at an optometry practice (carried out under an ophthalmologist's guidance, as required by law). If we notice anything unusual along the way, we'll recommend a referral to an ophthalmologist for further evaluation. The two sides work together — it's not an either-or choice.
+Most first and second graders bringing home their first re-check notice fall into this row. Article 6 of the Enforcement Rules requires that before a child aged 6 to 15 has their first refraction and glasses, a physician must first confirm the myopia is not pseudomyopia; only then can optometry staff take over. So there's only one route: book an ophthalmologist first, get the physician's result, then come in for refraction and glasses. The process details are in [a schoolchild's first pair of glasses](/blog/elementary-school-first-glasses/) (in Chinese).
 
-**Q2. What should we bring the first time we bring our child in?**
+### Ages 6–15, Already Has Glasses: Refraction Under an Ophthalmologist's Guidance
 
-Bring your child's current glasses (if they have any), the notice from the school vision screening, and any previous records from an ophthalmologist or optometry visit. If you have a sense of roughly when the vision problem started, or whether it runs in the family, feel free to mention that too — it helps us do a more complete assessment. One more tip: try to have your child well-rested and not overtired that day. Better cooperation means more accurate measurements.
+Once the diagnosis step is done, later lens changes and prescription records can be handled at an optometry clinic. But Article 12 states clearly that refraction for those aged 15 and under must be carried out under an ophthalmologist's guidance, and the same goes for contact lens refraction. "Aged 15 and under" includes 15: students in their third year of junior high, and those just starting senior high who haven't turned 16 yet, are still in this row. For how to track through the three junior high years, see [junior high myopia tracking](/blog/junior-high-myopia-peak/) (in Chinese).
 
-**Q3. How often should a child's prescription be tracked?**
+### Over 15: Go Directly to Optometry Staff
 
-Generally, we recommend recording the prescription change every 3 to 6 months, though the actual interval can be adjusted based on your child's situation and their ophthalmologist's recommendation. A child's vision is still developing, and prescription changes happen faster than in adults. The point of tracking regularly is to capture the trend over time — that gives you and your child's ophthalmologist a clear basis to work from.
+Once your child is past 15, refraction no longer needs an ophthalmologist's guidance, and they can come directly to an optometry clinic. From this point on, no one will be checking "where to go first" for them, so they need to be able to recognize things like redness, pain, or suddenly blurry vision on their own. For the senior high years, see [high school vision](/blog/high-school-vision-stability/) (in Chinese).
 
-**Q4. I've heard there are ways to slow down how fast a child's myopia progresses — do you offer that?**
+## In These Situations, See an Ophthalmologist First, at Any Age
 
-Measures aimed at slowing the progression of myopia fall under medical treatment and are within an ophthalmologist's professional scope — an optometry practice doesn't perform or claim to offer that. What we can do is regularly track and record your child's prescription changes, keeping the data from every visit. If medical treatment is ever needed, those records help the ophthalmologist get up to speed faster. In short: tracking and recording is our job, medical decisions belong to the physician.
+Whatever your child's age, if any of the following appears, there's no need to stop at an optometry clinic first:
+
+- Red, swollen, or painful eyes, discharge, or sensitivity to light
+- A sudden drop in vision, loss of sight in one eye, or gaps in the visual field
+- A sudden large increase in floaters, with flashes of light
+- Seeing double
+- An eye injury, or something in the eye
+
+These need a physician's diagnosis; a pair of glasses won't solve them. If optometry staff find during measurement that vision can't be corrected to normal, they will also refer to a medical institution under Article 12, Paragraph 3 of the Optometrists Act. The full symptom comparison is in [Ophthalmologist or optometry clinic?](/en/guide/eye-doctor-or-optometrist/).
+
+## How Optometry Clinics and Ophthalmologists Divide the Work
+
+Our Biyang Optometry Clinic in Xinzhuang and Beyond Visual Optometry Clinic in Banqiao are both optometry clinics, not ophthalmology clinics. There are four things we can do: measure vision, measure the prescription within the age range the law allows, fit glasses, and record each prescription so visits can be compared. And to be clear about what we can't do: diagnosing eye disease, dilation, determining whether it's pseudomyopia, prescribing medication, and any other medical intervention all belong to an ophthalmologist.
+
+To put it plainly, for children aged 15 and under, an optometry clinic is never the first stop. It's the second. What actually worries us more is a different situation: parents bring a child in for a prescription check and assume that counts as having seen an ophthalmologist. We can measure how much the prescription has increased. Why it increased, and whether anything should be done about it, we don't answer, and we shouldn't. What we can hand over is a series of records; the judgment belongs to the physician.
+
+## Children's Vision Check FAQ
+
+**Q: For my child's first vision check, should we go to an ophthalmologist or an optometry clinic?**
+
+It depends on age. Under 6, please go to an ophthalmologist first; at this age, optometry staff are not permitted by law to perform refraction. For schoolchildren aged 6 to 15, the first refraction and glasses require a visit to an ophthalmologist first, so a physician can confirm it isn't pseudomyopia; after that, prescription tracking can be done at an optometry clinic (under an ophthalmologist's guidance, as the law requires). Over 15, your child can go directly to an optometry clinic. If we notice anything unusual along the way, we'll help with a referral to an ophthalmologist for further examination.
+
+**Q: What should we bring the first time we bring our child in?**
+
+Bring the glasses your child currently wears (if any), the school vision screening notice, and any earlier records from an ophthalmologist or optometry visit. For children aged 6 to 15 getting their first glasses, the ophthalmologist's diagnosis is a must. If you know roughly when things started looking blurry, or whether related conditions run in the family, you can also tell us beforehand. Don't schedule the visit right after cram school or after-school classes; a tired child cooperates a lot less.
+
+**Q: How often should a schoolchild's prescription be tracked?**
+
+For most children, it's recorded every 3 to 6 months, with the actual interval adjusted to the child's situation and the ophthalmologist's advice. What gets measured at each visit is listed in [Xinzhuang children's myopia tracking](/en/blog/children-myopia-tracking-xinzhuang/).
+
+**Q: Can an optometry clinic provide myopia eye drops or other medical interventions?**
+
+These all fall within the medical domain and are an ophthalmologist's expertise. Optometry clinics don't do them and don't claim to. What we can do is track your child regularly, record changes in the prescription, and keep the data from every visit. When medical intervention is truly needed, you can ask us to issue the records to help the ophthalmologist get a picture of the situation faster.
 
 ---
 
-For a fuller comparison of "ophthalmologist or optometry practice," see this page: [Eye Discomfort: Ophthalmologist or Optometrist?](/en/guide/eye-doctor-or-optometrist/). If you'd like to bring your child in for a vision assessment and prescription tracking, feel free to contact us first: Xinzhuang +886-2-2206-6700, Banqiao +886-2-2253-1246. Caring for a child's vision is a long-term process — we're here to track it with you, one visit at a time.
+That question, "How old is your child?", is asking exactly this: where to go first depends on age and on whether it's the first pair, not on which place is closer to home or easier to book. When you really can't tell, going to an ophthalmologist first is never wrong.
