@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { findCategory, GUIDE_TITLES } from '../../data/categories';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -38,98 +39,13 @@ const references = [
 const enPosts = await getCollection('blog-en');
 const hasEn = enPosts.some(p => p.slug === post.slug);
 
-// 主題聚落：文章所屬的完整指南（與指南頁雙向連結，形成 topic cluster）
-const PILLAR_MAP: Record<string, { title: string; href: string }> = {
-  'presbyopia-vs-progressive':          { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'presbyopia-lens-guide':              { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'progressive-lens-dizzy':             { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'progressive-lens-adaptation':        { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'zeiss-individual-worth-it':          { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'driving-lens-night-glare':           { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'children-myopia-tracking-xinzhuang': { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'myopia-getting-worse-truth':         { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'optometry-vs-ophthalmology':         { title: '掛眼科還是找驗光所？症狀分流指南', href: '/guide/eye-doctor-or-optometrist/' },
-  'common-optometry-mistakes':          { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'high-myopia-glasses-guide':          { title: '高度近視配鏡完整指南', href: '/guide/high-myopia/' },
-  'astigmatism-glasses-distortion':     { title: '高度近視配鏡完整指南', href: '/guide/high-myopia/' },
-  'glasses-uncomfortable-3-reasons':    { title: '高度近視配鏡完整指南', href: '/guide/high-myopia/' },
-  'contact-lens-vs-glasses':            { title: '高度近視配鏡完整指南', href: '/guide/high-myopia/' },
-  'progressive-corridor-brands':        { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'same-index-different-feel':          { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'high-myopia-lens-brand-choice':      { title: '高度近視配鏡完整指南', href: '/guide/high-myopia/' },
-  'zeiss-hoya-nikon-lens-guide':        { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'hoya-lens-guide':                    { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'essilor-lens-guide':                 { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'digital-eye-strain-solution':        { title: '螢幕族視覺疲勞完整指南', href: '/guide/digital-eye-strain/' },
-  'contact-lens-fatigue':               { title: '螢幕族視覺疲勞完整指南', href: '/guide/digital-eye-strain/' },
-  'glasses-dizzy':                      { title: '螢幕族視覺疲勞完整指南', href: '/guide/digital-eye-strain/' },
-  'xinzhuang-glasses-guide':            { title: '新北配眼鏡完整指南', href: '/guide/choose-optician/' },
-  'banqiao-glasses-guide':              { title: '新北配眼鏡完整指南', href: '/guide/choose-optician/' },
-  'banqiao-progressive-lens-guide':     { title: '多焦點鏡片完整指南', href: '/guide/progressive-lens/' },
-  'banqiao-zeiss-lens-guide':           { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'luxury-frame-lens-guide':            { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'frame-face-shape':                   { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'frame-material-guide':               { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'frame-fit-size':                     { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'frame-adjustment-handcraft':         { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'minamoto-eyewear-brand':             { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'children-frames-guide':              { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'rimless-glasses-guide':              { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'rimless-lens-drilling-fitting':      { title: '鏡框選購完整指南', href: '/guide/frames/' },
-  'lens-coating-guide':                 { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'photochromic-sunglasses-guide':      { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'glass-vs-resin-lens':                { title: '視光小百科', href: '/guide/optical-basics/' },
-  'diopter-explained':                  { title: '視光小百科', href: '/guide/optical-basics/' },
-  'myopia-vs-astigmatism':              { title: '視光小百科', href: '/guide/optical-basics/' },
-  'hyperopia-vs-presbyopia':            { title: '視光小百科', href: '/guide/optical-basics/' },
-  'lens-addition-add':                  { title: '視光小百科', href: '/guide/optical-basics/' },
-  'binocular-vision':                   { title: '視光小百科', href: '/guide/optical-basics/' },
-  'pupillary-distance-pd':              { title: '視光小百科', href: '/guide/optical-basics/' },
-  'vertex-distance':                    { title: '視光小百科', href: '/guide/optical-basics/' },
-  'optometry-vs-dispensing':            { title: '視光小百科', href: '/guide/optical-basics/' },
-  'lens-refractive-index':              { title: '視光小百科', href: '/guide/optical-basics/' },
-  'aspheric-vs-spherical-lens':         { title: '視光小百科', href: '/guide/optical-basics/' },
-  'progressive-corridor':               { title: '視光小百科', href: '/guide/optical-basics/' },
-  'anti-reflective-coating-principle':  { title: '視光小百科', href: '/guide/optical-basics/' },
-  'blue-light-filter-what':             { title: '視光小百科', href: '/guide/optical-basics/' },
-  'photochromic-lens-principle':        { title: '視光小百科', href: '/guide/optical-basics/' },
-  'polarized-lens-principle':           { title: '視光小百科', href: '/guide/optical-basics/' },
-  'online-frame-lens-fitting':          { title: '自帶鏡框配鏡片完整指南', href: '/guide/byo-frame-lenses/' },
-  'old-frame-relens':                   { title: '自帶鏡框配鏡片完整指南', href: '/guide/byo-frame-lenses/' },
-  'lens-only-service':                  { title: '自帶鏡框配鏡片完整指南', href: '/guide/byo-frame-lenses/' },
-  'vintage-frame-lens':                 { title: '自帶鏡框配鏡片完整指南', href: '/guide/byo-frame-lenses/' },
-  'rgp-daily-wear-care':                { title: 'RGP 硬式隱形眼鏡完整指南', href: '/guide/rgp-contact-lens/' },
-  // 2026-08-08：比較系列三篇
-  'daily-vs-monthly-contacts':          { title: '視光小百科', href: '/guide/optical-basics/' },
-  'rgp-vs-soft-contacts':               { title: 'RGP 硬式隱形眼鏡完整指南', href: '/guide/rgp-contact-lens/' },
-  'online-glasses-vs-store':            { title: '自帶鏡框配鏡片完整指南', href: '/guide/byo-frame-lenses/' },
-  'blurry-vision-see-doctor':           { title: '掛眼科還是找驗光所？症狀分流指南', href: '/guide/eye-doctor-or-optometrist/' },
-  'eye-exam-before-glasses':            { title: '掛眼科還是找驗光所？症狀分流指南', href: '/guide/eye-doctor-or-optometrist/' },
-  'eye-strain-see-doctor':              { title: '掛眼科還是找驗光所？症狀分流指南', href: '/guide/eye-doctor-or-optometrist/' },
-  'child-vision-check-where':           { title: '掛眼科還是找驗光所？症狀分流指南', href: '/guide/eye-doctor-or-optometrist/' },
-  'same-prescription-different-feel':   { title: '選好的鏡片，不如選好的驗光師', href: '/guide/why-optometrist-matters/' },
-  'eye-exam-duration-difference':       { title: '選好的鏡片，不如選好的驗光師', href: '/guide/why-optometrist-matters/' },
-  'eye-exam-preparation-tips':          { title: '選好的鏡片，不如選好的驗光師', href: '/guide/why-optometrist-matters/' },
-  // 2026-08-07：good-lens-needs-good-fitting 已併入支柱頁並 301，由 vertex-distance 遞補聚落位（主題＝參數精準度）
-  'vertex-distance':                    { title: '選好的鏡片，不如選好的驗光師', href: '/guide/why-optometrist-matters/' },
-  // 2026-08-08：比較系列三篇
-  'lens-index-160-vs-167-vs-174':       { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'zeiss-vs-essilor':                   { title: '鏡片品牌選購完整指南', href: '/guide/lens-brands/' },
-  'polarized-vs-photochromic-vs-sunglasses': { title: '視光小百科', href: '/guide/optical-basics/' },
-  // 2026-09-01：開學季兒童視力分齡系列三篇
-  'infant-vision-development':          { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'preschool-vision-reserve':           { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'elementary-school-first-glasses':    { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'junior-high-myopia-peak':            { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'high-school-vision-stability':       { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'myopia-real-culprit':                { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'vision-test-vs-refraction':          { title: '兒童近視追蹤完整指南', href: '/guide/children-myopia/' },
-  'professional-driver-vision-standard': { title: '選好的鏡片，不如選好的驗光師', href: '/guide/why-optometrist-matters/' },
-  // 2026-09-01：職業用眼系列兩篇變體（母文 professional-driver-vision-standard）
-  'delivery-rider-vision':              { title: '選好的鏡片，不如選好的驗光師', href: '/guide/why-optometrist-matters/' },
-  'night-shift-commuter-vision':        { title: '選好的鏡片，不如選好的驗光師', href: '/guide/why-optometrist-matters/' },
-};
-const pillar = PILLAR_MAP[post.slug];
+// 主題聚落：所屬分類與完整指南一律讀 src/data/categories.ts（2026-10-17 取代舊的 PILLAR_MAP）
+// 回連順序：小分類的指南 → 大分類的指南 → 沒有指南就連回大分類頁
+const found = findCategory(post.slug);
+const pillarHref = found ? (found.sub.guide ?? found.cat.guide ?? `/topics/${found.cat.slug}/`) : null;
+const pillar = pillarHref
+  ? { href: pillarHref, title: GUIDE_TITLES[pillarHref] ?? `${found!.cat.name}主題文章` }
+  : null;
 
 // 台灣時區（UTC+8）日期格式化
 const formatDate = (d: Date) => {
@@ -280,8 +196,12 @@ const pageSchema = {
 
         <!-- 文章 header -->
         <div class="mb-8 pb-8 border-b border-gray-100">
+          <nav aria-label="麵包屑" class="font-sans text-gray-400 mb-4" style="font-size:13px">
+            <a href="/" class="hover:text-brand-gold">首頁</a> › <a href="/blog/" class="hover:text-brand-gold">視覺知識</a>
+            {found && (<> › <a href={`/topics/${found.cat.slug}/`} class="hover:text-brand-gold">{found.cat.name}</a> › <a href={`/topics/${found.cat.slug}/#${found.sub.slug}`} class="hover:text-brand-gold">{found.sub.name}</a></>)}
+          </nav>
           <div class="flex items-center gap-3 mb-4">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{found?.cat.name ?? post.data.tag}</span>
             <span class="text-gray-400 text-sm">{formatDate(post.data.date)} · <a href="/author/yoyo/" class="hover:text-brand-gold transition-colors underline decoration-dotted underline-offset-2">YoYo 驗光師</a></span>
           </div>
           <h1 class="font-serif text-brand-navy leading-tight mb-5" style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.3">{post.data.title}</h1>

@@ -1,4 +1,5 @@
 ---
+import { CATEGORIES, findCategory, findGuideCategory } from '../data/categories';
 export interface Props {
   title: string;
   description: string;
@@ -30,32 +31,75 @@ const langSwitchHref = isEn
 
 // ── BreadcrumbList：由路徑自動產生麵包屑結構化資料 ──
 const SECTION_LABELS: Record<string, string> = {
-  about: '關於我們', services: '服務內容', process: '服務流程',
-  frames: '鏡框品牌', lenses: '鏡片種類', blog: '視覺小知識',
+  about: '關於我們', services: '服務項目', process: '服務流程',
+  frames: '鏡框品牌', lenses: '鏡片種類', blog: '視覺知識', topics: '視覺知識',
   faq: '常見問題', booking: '線上預約', xinzhuang: '新莊店', banqiao: '板橋店',
-  author: '作者', guide: '完整指南', portfolio: '選配作品', en: 'English',
+  author: '作者', guide: '完整指南', portfolio: '選配作品', care: '配戴照護', tools: '顧客工具', en: 'English',
 };
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const pageName = title.split('｜')[0];
+const SITE = 'https://beyondvisualopt.com';
+
+// 中文的文章、指南、大分類頁：麵包屑照分類表走「首頁 › 視覺知識 › 大分類 › 本頁」，
+// 不照網址走（網址是 /blog/、/guide/ 兩套，但對讀者是同一個知識區）
+let crumbs: { name: string; item: string }[] | null = null;
+if (!isEn && pathSegments.length === 2) {
+  const [section, slug] = pathSegments;
+  const knowledge = { name: '視覺知識', item: `${SITE}/blog/` };
+  const catCrumb = (c: { slug: string; name: string }) => ({ name: c.name, item: `${SITE}/topics/${c.slug}/` });
+  if (section === 'blog') {
+    const found = findCategory(slug);
+    crumbs = found ? [knowledge, catCrumb(found.cat), { name: pageName, item: `${SITE}${canonicalPath}` }] : null;
+  } else if (section === 'guide') {
+    const cat = findGuideCategory(`/guide/${slug}/`);
+    crumbs = [knowledge, ...(cat ? [catCrumb(cat)] : []), { name: pageName, item: `${SITE}${canonicalPath}` }];
+  } else if (section === 'topics') {
+    crumbs = [knowledge, { name: pageName, item: `${SITE}${canonicalPath}` }];
+  }
+}
+const crumbItems = crumbs ?? pathSegments.map((seg, i) => ({
+  // 最後一層用頁面標題（取「｜」前的主標）；中間層用固定對照表
+  name: i === pathSegments.length - 1 ? (pageName || SECTION_LABELS[seg] || seg) : (SECTION_LABELS[seg] || seg),
+  item: `${SITE}/${pathSegments.slice(0, i + 1).join('/')}/`,
+}));
 const breadcrumbSchema = pathSegments.length > 0 ? {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": isEn ? 'Home' : '首頁', "item": "https://beyondvisualopt.com/" },
-    ...pathSegments.map((seg, i) => {
-      const isLast = i === pathSegments.length - 1;
-      // 最後一層用頁面標題（取「｜」前的主標）；中間層用固定對照表
-      const name = isLast
-        ? (title.split('｜')[0] || SECTION_LABELS[seg] || seg)
-        : (SECTION_LABELS[seg] || seg);
-      return {
-        "@type": "ListItem",
-        "position": i + 2,
-        "name": name,
-        "item": `https://beyondvisualopt.com/${pathSegments.slice(0, i + 1).join('/')}/`,
-      };
-    }),
+    { "@type": "ListItem", "position": 1, "name": isEn ? 'Home' : '首頁', "item": `${SITE}/` },
+    ...crumbItems.map((c, i) => ({ "@type": "ListItem", "position": i + 2, "name": c.name, "item": c.item })),
   ],
 } : null;
+
+// ── 中文導覽列：照訪客目的分 4 區（2026-10-17 老闆定案），網址一律不動 ──
+const NAV = [
+  { label: '關於能見度', href: '/about/', items: [
+    { label: '品牌故事', href: '/about/' },
+    { label: 'YoYo 驗光師', href: '/author/yoyo/' },
+    { label: '錢彥廷 驗光師', href: '/author/chien-yen-ting/' },
+    { label: '選配作品', href: '/portfolio/' },
+    { label: '新莊門市', href: '/xinzhuang/' },
+    { label: '板橋門市', href: '/banqiao/' },
+  ]},
+  { label: '服務項目', href: '/services/', items: [
+    { label: '驗光服務', href: '/services/' },
+    { label: '配鏡流程', href: '/process/' },
+    { label: '眼鏡調整與維修', href: '/services/adjustment/' },
+    { label: '鏡片', href: '/lenses/' },
+    { label: '鏡框', href: '/frames/' },
+    { label: '自帶鏡框配鏡片', href: '/guide/byo-frame-lenses/' },
+  ]},
+  { label: '視覺知識', href: '/blog/', items: [
+    ...CATEGORIES.map(c => ({ label: c.name, href: `/topics/${c.slug}/` })),
+    { label: '視光名詞索引', href: '/guide/optical-basics/' },
+  ]},
+  { label: '顧客專區', href: '/faq/', items: [
+    { label: '常見問題', href: '/faq/' },
+    { label: 'RGP 配戴照護', href: '/care/rgp/' },
+    { label: '軟式隱形眼鏡照護', href: '/care/soft/' },
+    { label: '鏡框定位工具', href: '/tools/frame-fitting/' },
+  ]},
+];
 ---
 <!DOCTYPE html>
 <html lang={isEn ? 'en' : 'zh-TW'}>
@@ -361,6 +405,10 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
   )}
 
   <title>{title}</title>
+  <style is:global>
+    /* 手機選單的 <details>：Safari 要另外藏掉預設三角形 */
+    #mobile-menu summary::-webkit-details-marker { display: none; }
+  </style>
 </head>
 <body class="bg-brand-paper font-serif text-brand-ink antialiased" style="font-size:17px;line-height:1.75">
   <!-- 導覽列 -->
@@ -389,14 +437,21 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/en/blog/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">Blog</a></li>
           <li><a href="/en/faq/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">FAQ</a></li>
         </>) : (<>
-          <li><a href="/about/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">關於我們</a></li>
-          <li><a href="/services/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務內容</a></li>
-          <li><a href="/process/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">服務流程</a></li>
-          <li><a href="/frames/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡框品牌</a></li>
-          <li><a href="/lenses/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">鏡片種類</a></li>
-          <li><a href="/portfolio/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">選配作品</a></li>
-          <li><a href="/blog/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">視覺小知識</a></li>
-          <li><a href="/faq/" class="text-brand-ink-2 hover:text-brand-ink transition-colors">常見問題</a></li>
+          {/* 下拉選單：滑鼠移入或鍵盤 Tab 進入都會展開（focus-within）；觸控點標題直接進該區主頁 */}
+          {NAV.map(group => (
+            <li class="relative group">
+              <a href={group.href} class="text-brand-ink-2 hover:text-brand-ink transition-colors py-6 inline-flex items-center gap-1">
+                {group.label}<span aria-hidden="true" style="font-size:10px">▾</span>
+              </a>
+              <div class="nav-drop absolute left-1/2 -translate-x-1/2 top-full pt-1 hidden group-hover:block group-focus-within:block">
+                <ul class={`bg-white border border-brand-ink/10 shadow-lg py-2 ${group.items.length > 7 ? 'grid grid-cols-2 w-[340px]' : 'w-[200px]'}`}>
+                  {group.items.map(item => (
+                    <li><a href={item.href} class="block px-5 py-2 text-brand-ink-2 hover:text-brand-navy hover:bg-brand-paper transition-colors" style="font-size:14px">{item.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
         </>)}
       </ul>
       <div class="flex items-center gap-3">
@@ -436,15 +491,21 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/en/faq/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">FAQ</a></li>
           <li><a href="/en/booking/" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">Book Now →</a></li>
         </>) : (<>
-          <li><a href="/about/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">關於我們</a></li>
-          <li><a href="/about#stores" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">門市資訊</a></li>
-          <li><a href="/services/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">服務內容</a></li>
-          <li><a href="/process/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">服務流程</a></li>
-          <li><a href="/frames/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡框品牌</a></li>
-          <li><a href="/lenses/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">鏡片種類</a></li>
-          <li><a href="/portfolio/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">選配作品</a></li>
-          <li><a href="/blog/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">視覺小知識</a></li>
-          <li><a href="/faq/" class="block py-3.5 text-brand-ink-2 border-b border-brand-ink/8 hover:text-brand-ink" style="font-size:16px">常見問題</a></li>
+          {/* 手機版：四區各一個可展開的段落，避免一長串連結 */}
+          {NAV.map(group => (
+            <li class="border-b border-brand-ink/8">
+              <details>
+                <summary class="flex items-center justify-between py-3.5 text-brand-ink-2 cursor-pointer list-none" style="font-size:16px">
+                  {group.label}<span aria-hidden="true" style="font-size:12px">▾</span>
+                </summary>
+                <ul class="pb-3 pl-3 grid grid-cols-2 gap-x-4">
+                  {group.items.map(item => (
+                    <li><a href={item.href} class="block py-2 text-brand-ink-3 hover:text-brand-ink" style="font-size:15px">{item.label}</a></li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          ))}
           <li><a href="/booking/" class="block py-3.5 text-brand-navy font-semibold" style="font-size:16px">查看可約時段 →</a></li>
         </>)}
       </ul>
@@ -468,13 +529,9 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
   <!-- 頁尾小導覽列 -->
   <nav class="border-t border-brand-paper/10" style="background:#17140f">
     <div class="max-w-6xl mx-auto px-6 md:px-16">
-      <div class="grid grid-cols-3 md:grid-cols-6 divide-x divide-brand-paper/10">
+      <div class="grid grid-cols-3 md:grid-cols-5 divide-x divide-brand-paper/10">
         {[
-          { label: '關於我們', href: '/about/' },
-          { label: '服務項目', href: '/services/' },
-          { label: '鏡框品牌', href: '/frames/' },
-          { label: '鏡片種類', href: '/lenses/' },
-          { label: '視覺小知識', href: '/blog/' },
+          ...NAV.map(g => ({ label: g.label, href: g.href })),
           { label: '立即預約', href: '/booking/' },
         ].map(item => (
           <a href={item.href}
@@ -513,9 +570,9 @@ const breadcrumbSchema = pathSegments.length > 0 ? {
           <li><a href="/author/yoyo/" class="hover:text-brand-paper transition-colors">YoYo 驗光師</a></li>
           <li><a href="/author/chien-yen-ting/" class="hover:text-brand-paper transition-colors">錢彥廷 驗光師</a></li>
           <li><a href="/portfolio/" class="hover:text-brand-paper transition-colors">選配作品集</a></li>
-          <li><a href="/services/" class="hover:text-brand-paper transition-colors">服務內容</a></li>
-          <li><a href="/guide/" class="hover:text-brand-paper transition-colors">完整指南</a></li>
-          <li><a href="/blog/" class="hover:text-brand-paper transition-colors">視覺小知識</a></li>
+          <li><a href="/services/" class="hover:text-brand-paper transition-colors">服務項目</a></li>
+          <li><a href="/services/adjustment/" class="hover:text-brand-paper transition-colors">眼鏡調整與維修</a></li>
+          <li><a href="/blog/" class="hover:text-brand-paper transition-colors">視覺知識</a></li>
           <li><a href="/booking/" class="hover:text-brand-paper transition-colors">線上預約</a></li>
         </ul>
         <h3 class="font-sans text-brand-paper/60 mt-8 mb-4 tracking-widest uppercase" style="font-size:11px;letter-spacing:0.2em">追蹤我們</h3>

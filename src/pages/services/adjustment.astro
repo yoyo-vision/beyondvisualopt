@@ -1,0 +1,133 @@
+---
+// 服務項目｜眼鏡調整與維修（2026-10-17 老闆指定：調整是能見度的核心優勢，要在服務項目獨立一頁）
+// 事實來源（皆已過審）：/blog/frame-adjustment-handcraft/（8 步驟、取件後調整不另收費、非本店視狀況協助）、
+// /frames/（高端鏡架維修專長、非代理、建議 3–6 個月回店微調）。本頁不新增上述以外的服務承諾。
+import Layout from '../../layouts/Layout.astro';
+
+const STEPS = [
+  { name: '鼻托位置', desc: '鼻托的高低與角度決定鏡框坐在臉上的高度，也決定鏡片中心有沒有對到瞳孔。' },
+  { name: '前傾角', desc: '鏡片往臉頰方向傾斜的角度。多焦點鏡片的看近區在下方，前傾角不對，看書、看手機就得低頭去找。' },
+  { name: '面彎角', desc: '把鏡框的弧度順著臉型彎。彎得不合，從鏡片邊緣看出去容易變形。' },
+  { name: '頂點距離', desc: '鏡片到眼睛的距離。度數越深，距離差一點，實際感受到的度數就差越多。' },
+  { name: '腳架彎折', desc: '耳後這一彎決定眼鏡會不會滑：太緊壓耳朵，太鬆往下掉。' },
+  { name: '鏡框水平', desc: '左右鏡片要在同一個水平上，歪一邊，兩眼看出去的位置就不一樣高。' },
+  { name: '整體服貼', desc: '戴上之後低頭、轉頭、看手機，確認眼鏡不會滑、不會壓。' },
+  { name: '取件後追蹤', desc: '新眼鏡戴一陣子，鼻托和腳架會隨配戴習慣微微移位，取件後約 2 週回來看一次。' },
+];
+
+const SIGNS = [
+  '眼鏡一直往下滑，要常常推',
+  '鼻樑或耳後被壓出紅印、會痛',
+  '鏡框看起來歪一邊',
+  '看近或看遠時，要偏頭或低頭才清楚',
+  '摔過、壓過之後，戴起來感覺不太一樣',
+];
+
+const FAQS = [
+  { q: '眼鏡多久要回來調整一次？', a: '建議每 3～6 個月回店微調一次。眼鏡天天戴，鼻托和腳架會慢慢走位，鏡片中心也跟著偏。新眼鏡則在取件後約 2 週先回來看一次。' },
+  { q: '在能見度配的眼鏡，調整要另外收費嗎？', a: '不用。在能見度配的眼鏡，取件後的調整不另外收費。' },
+  { q: '不是在能見度買的眼鏡，可以拿來調整嗎？', a: '可以帶來，我們會先看鏡架的材質與狀況，再告訴你能不能調、怎麼調。Lindberg、ic! berlin 這類無螺絲結構或精品鏡架也歡迎帶來評估；能見度並非這些品牌的代理門市，提供的是調整與維修服務。' },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "眼鏡調整與維修",
+      "serviceType": "鏡架調整與維修",
+      "provider": { "@id": "https://beyondvisualopt.com/#organization" },
+      "areaServed": ["新北市新莊區", "新北市板橋區"],
+      "url": "https://beyondvisualopt.com/services/adjustment/",
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+    },
+  ],
+};
+---
+<Layout
+  title="眼鏡調整與維修｜手工調整 8 步驟・高端鏡架維修｜能見度眼鏡行 新莊板橋"
+  description="眼鏡戴起來滑、壓、歪，常常不是度數的問題，是鏡架沒調好。能見度用 8 個步驟手工調整鼻托、前傾角、面彎、頂點距離，也接 Lindberg、ic! berlin 等高端鏡架的調整與維修。新莊、板橋門市。"
+  schema={schema}
+>
+  <section class="bg-brand-navy text-white pt-10 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav aria-label="麵包屑" class="font-sans text-white/60 mb-8" style="font-size:13px">
+        <a href="/" class="hover:text-white">首頁</a> › <a href="/services/" class="hover:text-white">服務項目</a> › <span class="text-white/90">眼鏡調整與維修</span>
+      </nav>
+      <p class="text-brand-gold font-sans font-semibold mb-4" style="font-size:13px;letter-spacing:0.2em">服務項目</p>
+      <h1 class="font-serif text-white mb-6" style="font-size:clamp(30px,5vw,48px);font-weight:300">眼鏡調整與維修：<br />配好之後，還要調好</h1>
+      <p class="text-white/75 max-w-2xl" style="font-size:17px;line-height:1.85">度數驗得再準，鏡架沒調好，鏡片就不會待在對的位置。眼鏡會滑、會壓、會歪，很多人以為要重驗度數，其實該先看的是鏡架。</p>
+    </div>
+  </section>
+
+  <section class="px-6 py-16" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-navy mb-6" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">為什麼眼鏡要調整</h2>
+      <h3 class="font-serif text-brand-ink mb-2" style="font-size:19px;font-weight:600">鏡架走位，光學中心就偏了</h3>
+      <p class="text-brand-ink-2 mb-6" style="font-size:16px;line-height:1.85">每片鏡片都有一個光學中心，設計上要對準瞳孔。鼻托下滑、腳架外擴、鏡框歪斜，鏡片就跟著移位，就算度數正確，看出去也可能模糊、累、頭暈。</p>
+      <h3 class="font-serif text-brand-ink mb-2" style="font-size:19px;font-weight:600">多焦點、高度近視更需要調到位</h3>
+      <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">多焦點鏡片的看遠、看中、看近分布在不同高度，鏡架高低差一點，看近就要低頭找。高度近視的鏡片則對頂點距離特別敏感，鏡片離眼睛遠一點、近一點，感受到的度數就不同。</p>
+    </div>
+  </section>
+
+  <section class="px-6 py-16" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-navy mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">手工調整的 8 個步驟</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {STEPS.map((s, i) => (
+          <div class="bg-white rounded-2xl border border-brand-ink/8 px-6 py-5">
+            <h3 class="font-serif text-brand-navy mb-2" style="font-size:18px;font-weight:600"><span class="text-brand-gold mr-2">{String(i + 1).padStart(2, '0')}</span>{s.name}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-brand-ink-3" style="font-size:14px">每個步驟的細節，寫在<a href="/blog/frame-adjustment-handcraft/" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold">手工鏡架調整的 8 個關鍵步驟</a>。</p>
+    </div>
+  </section>
+
+  <section class="px-6 py-16" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-navy mb-6" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">高端鏡架的調整與維修</h2>
+      <h3 class="font-serif text-brand-ink mb-2" style="font-size:19px;font-weight:600">無螺絲、純鈦結構</h3>
+      <p class="text-brand-ink-2 mb-6" style="font-size:16px;line-height:1.85">Lindberg 的無螺絲純鈦結構、ic! berlin 的彈片扣合、Götti 的精密鈦工藝，維修需要專門的技術與工具。</p>
+      <h3 class="font-serif text-brand-ink mb-2" style="font-size:19px;font-weight:600">精品鏡架的調整與鏡片安裝</h3>
+      <p class="text-brand-ink-2 mb-6" style="font-size:16px;line-height:1.85">Cartier、Chrome Hearts、Linda Farrow 等精品鏡架，我們長期幫顧客做調整與鏡片安裝。自己收藏的鏡框想配度數鏡片，可以參考<a href="/guide/byo-frame-lenses/" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold">自帶鏡框配鏡片指南</a>。</p>
+      <p class="text-brand-ink-3 border-l-2 border-brand-gold pl-4" style="font-size:14px;line-height:1.8">能見度並非上述品牌的代理門市，提供的是調整、維修與鏡片安裝服務。</p>
+    </div>
+  </section>
+
+  <section class="px-6 py-16" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-navy mb-6" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">出現這些情況，就該回來調一下</h2>
+      <ul class="space-y-3 mb-6">
+        {SIGNS.map(s => (
+          <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px"><span class="text-brand-gold mt-0.5">✦</span>{s}</li>
+        ))}
+      </ul>
+      <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">平常建議每 3～6 個月回店微調一次。如果調整後還是看不清楚、眼睛不舒服，可能不是鏡架的問題，我們會建議重新驗光，或請你先給眼科醫師檢查。</p>
+    </div>
+  </section>
+
+  <section class="px-6 py-16" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-navy mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">眼鏡調整常見問題</h2>
+      <div class="space-y-6">
+        {FAQS.map(f => (
+          <div>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:600">{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-navy text-white px-6 py-16 text-center">
+    <h2 class="font-serif mb-4" style="font-size:clamp(22px,3vw,30px);font-weight:300">眼鏡戴起來不對勁，帶來給我們看看</h2>
+    <p class="text-white/70 mb-8" style="font-size:15px">新莊店 02-2206-6700｜板橋店 02-2253-1246</p>
+    <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-7 py-3 rounded-full hover:bg-brand-gold/90 transition-colors font-sans">查看可約時段 →</a>
+  </section>
+</Layout>

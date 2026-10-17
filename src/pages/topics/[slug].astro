@@ -1,0 +1,111 @@
+---
+// 大分類頁（10 頁）：首頁 › 視覺知識 › 大分類。內容全部讀 src/data/categories.ts，
+// 文章標題與摘要讀各篇 frontmatter（皆已過審），本頁不另寫宣稱性文案。
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES, GUIDE_TITLES, type Category } from '../../data/categories';
+
+export function getStaticPaths() {
+  return CATEGORIES.map(cat => ({ params: { slug: cat.slug }, props: { cat } }));
+}
+
+const { cat } = Astro.props as { cat: Category };
+const posts = await getCollection('blog');
+const bySlug = new Map(posts.map(p => [p.slug, p]));
+
+// 沒有文章也沒有指南的小分類先不顯示（等文章上線、寫進分類表後自動出現）
+const subs = cat.subs
+  .map(s => ({ ...s, items: s.posts.map(slug => bySlug.get(slug)).filter(Boolean) }))
+  .filter(s => s.items.length > 0 || (s.guide && s.guide !== cat.guide));
+const total = subs.reduce((n, s) => n + s.items.length, 0);
+const others = CATEGORIES.filter(c => c.slug !== cat.slug);
+const pageUrl = `https://beyondvisualopt.com/topics/${cat.slug}/`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": pageUrl,
+  "url": pageUrl,
+  "name": `${cat.name}主題文章`,
+  "inLanguage": "zh-TW",
+  "isPartOf": { "@id": "https://beyondvisualopt.com/#website" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": subs.flatMap(s => s.items).map((p, i) => ({
+      "@type": "ListItem", "position": i + 1, "url": `https://beyondvisualopt.com/blog/${p!.slug}/`, "name": p!.data.title,
+    })),
+  },
+};
+---
+<Layout
+  title={`${cat.name}主題文章｜驗光人員整理｜能見度視覺中心 新莊板橋`}
+  description={`${cat.name}相關文章總覽：${subs.map(s => s.name).join('、')}。能見度視覺中心驗光人員撰寫，新莊・板橋。`}
+  schema={schema}
+>
+  <section class="bg-brand-navy text-white pt-10 pb-14 px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav aria-label="麵包屑" class="font-sans text-white/60 mb-8" style="font-size:13px">
+        <a href="/" class="hover:text-white">首頁</a> › <a href="/blog/" class="hover:text-white">視覺知識</a> › <span class="text-white/90">{cat.name}</span>
+      </nav>
+      <h1 class="font-serif text-white mb-4" style="font-size:clamp(30px,5vw,46px);font-weight:300">{cat.name}</h1>
+      <p class="text-white/70" style="font-size:16px">{subs.length} 個主題・{total} 篇文章｜由能見度視覺中心驗光人員撰寫</p>
+    </div>
+  </section>
+
+  <section class="px-6 py-12" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+
+      {cat.guide && (
+        <a href={cat.guide} class="flex items-center gap-4 bg-white border border-brand-gold/40 rounded-2xl px-6 py-5 mb-8 hover:border-brand-gold transition-colors group">
+          <span style="font-size:22px">📚</span>
+          <span>
+            <span class="block font-sans text-brand-gold font-semibold mb-1" style="font-size:12px;letter-spacing:0.1em">完整指南・從這裡開始</span>
+            <span class="font-serif text-brand-navy group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600">{GUIDE_TITLES[cat.guide]} →</span>
+          </span>
+        </a>
+      )}
+
+      <!-- 目錄：用 <p> 當標籤，不佔 H 層級 -->
+      <nav aria-label="本頁目錄" class="bg-white rounded-2xl border border-gray-200 px-6 py-5 mb-12">
+        <p class="text-brand-navy font-bold mb-3" style="font-size:15px">目錄</p>
+        <ol class="space-y-1.5">
+          {subs.map((s, i) => (
+            <li style="font-size:15px">
+              <a href={`#${s.slug}`} class="text-gray-600 hover:text-brand-gold"><span class="text-brand-gold font-semibold">{i + 1}.</span> {s.name}</a>
+              <span class="text-gray-400" style="font-size:13px">（{s.items.length + (s.guide && s.guide !== cat.guide ? 1 : 0)}）</span>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      {subs.map((s, i) => (
+        <section id={s.slug} class="mb-12" style="scroll-margin-top:6rem">
+          <h2 class="font-serif text-brand-navy mb-5 pb-3 border-b border-brand-gold/40" style="font-size:clamp(20px,3vw,26px);font-weight:600">{i + 1}. {s.name}</h2>
+          <div class="space-y-3">
+            {s.guide && s.guide !== cat.guide && (
+              <a href={s.guide} class="block bg-white border border-brand-gold/40 rounded-xl px-5 py-4 hover:border-brand-gold transition-colors group">
+                <span class="font-sans text-brand-gold font-semibold mr-2" style="font-size:12px">完整指南</span>
+                <span class="font-serif text-brand-navy group-hover:text-brand-gold" style="font-size:17px;font-weight:600">{GUIDE_TITLES[s.guide]} →</span>
+              </a>
+            )}
+            {s.items.map(p => (
+              <a href={`/blog/${p!.slug}/`} class="block bg-white border border-brand-ink/10 rounded-xl px-5 py-4 hover:shadow-md transition-shadow group">
+                <h3 class="font-serif text-brand-ink group-hover:text-brand-gold transition-colors mb-1" style="font-size:17px;font-weight:500;line-height:1.5">{p!.data.title}</h3>
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{p!.data.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <div class="border-t border-brand-ink/10 pt-8">
+        <p class="text-brand-navy font-bold mb-4" style="font-size:15px">其他主題</p>
+        <div class="flex flex-wrap gap-2">
+          {others.map(c => (
+            <a href={`/topics/${c.slug}/`} class="font-sans border border-brand-ink/20 bg-white px-4 py-2 text-brand-ink-2 hover:border-brand-navy hover:text-brand-navy transition-colors" style="font-size:14px">{c.name}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
