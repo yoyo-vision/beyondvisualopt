@@ -97,7 +97,7 @@ const schema = {
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
       <ul class="space-y-2.5">
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>驗光所依《驗光人員法》設立、須由持照驗光人員執行驗光、可合法開立驗光報告；眼鏡行要驗光，須先在店內設立驗光所，一樣由持照驗光人員執行（施行細則第四條）。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>度數單純換一副近視眼鏡，眼鏡行可應付；有頭暈、眼睛疲勞、老花或多焦點需求，請找驗光所做完整評估。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>先確認店裡有登記驗光所；有頭暈、眼睛疲勞、老花或多焦點需求，再多問一句：「驗光有包含雙眼視覺評估嗎？」</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>判斷好驗光所看五件事：驗光人員有無執照、流程是否 45–60 分鐘、有無量頂點距離與雙眼視覺、鏡片來源清楚、配鏡後回店調整收不收費。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>驗光所與眼科各管一段：眼睛有症狀（紅痛、飛蚊閃光、突發模糊）先看眼科；想配一副舒服的眼鏡、戴了會暈找驗光所。</span></li>
       </ul>
@@ -136,10 +136,7 @@ const schema = {
           </thead>
           <tbody class="text-brand-ink-2">
             {[
-              ['執行驗光者', '持照驗光人員', '須確認有沒有登記執業的驗光人員'],
-              ['開立驗光報告', '合法', '不合法'],
-              ['雙眼視覺評估', '可執行', '無法執行'],
-              ['複雜視覺問題處理', '有能力評估', '無法評估'],
+              ['執行驗光者', '持照驗光人員', '須在店內設立驗光所，由登記執業的持照驗光人員執行（施行細則第四條）'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
                 {row.map((cell, i) => (
@@ -150,8 +147,9 @@ const schema = {
           </tbody>
         </table>
       </div>
+      <p class="text-brand-ink-3 mt-6" style="font-size:16px;line-height:1.8">怎麼查一家店有沒有登記驗光所：<a href="/blog/optometrist-license-check/" class="text-brand-gold underline">驗光師和驗光生差在哪？怎麼確認幫你驗光的人有執照</a></p>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        白話結論：度數單純、只是想換一副近視眼鏡，一般眼鏡行也能處理；但只要你有頭暈、眼睛疲勞、老花或多焦點需求，請找驗光所讓持照驗光人員做完整評估。這不是選擇問題，是法規設計的分工。
+        白話結論：先看店裡有沒有登記驗光所、由誰幫你驗光。只要你有頭暈、眼睛疲勞、老花或多焦點需求，再多確認一件事：驗光有沒有包含雙眼視覺評估，而不是只量度數。
       </blockquote>
     </div>
   </section>
@@ -187,7 +185,7 @@ const schema = {
       <div class="space-y-6">
         {[
           { title: '① 快速驗光，只問「幾號比較清楚」', desc: '十分鐘看視力表、選比較清楚的那個就結束——這種流程漏掉雙眼視覺、調節力、眼位穩定性的評估。度數看似對了，戴起來卻怪怪的、頭重、容易疲勞。' },
-          { title: '② 沿用電腦驗光值，沒做主觀微調', desc: '綜合驗光儀給的是「電腦度數」，最終還需要讓你試戴、回饋、細部調整。省掉這一步，等於拿機器的初步估算直接配鏡。' },
+          { title: '② 沿用電腦驗光值，沒做主觀微調', desc: '電腦驗光機給的是「電腦度數」，最終還要用綜合驗光儀做主觀驗光，讓你試戴、回饋、細部調整。省掉這一步，等於拿機器的初步估算直接配鏡。' },
           { title: '③ 沒放鬆調節力就驗光，度數偏深', desc: '長時間盯螢幕的人睫狀肌容易緊繃，在這種狀態下驗出來的度數往往偏深。你以為近視 -4.00D，真正可能只有 -3.50D，配深了反而更累。' },
           { title: '④ 光學中心沒對準瞳孔、瞳距只除以二', desc: '應分別量左右眼各自到鼻樑中線的單側瞳距。有些人左右不對稱，若只用總瞳距除以二估算，會產生稜鏡效應，讓大腦額外費力融合影像，造成疲勞頭暈。' },
           { title: '⑤ 驗完就走，沒有當場試戴確認', desc: '配鏡最後一步應在驗光人員面前試戴、確認視覺品質——尤其多焦點鏡片要確認遠中近視野、兩眼平衡、鏡架有沒有滑落。省掉了，回家出問題就很難判斷是度數、位置還是適應期。' },
@@ -221,7 +219,8 @@ const schema = {
             {[
               ['眼睛突然不對勁、有症狀（紅痛、飛蚊閃光、突發模糊）', '眼科'],
               ['定期眼底、眼壓檢查（糖尿病、高血壓患者）', '眼科'],
-              ['孩子 6 歲以下初次視力篩檢', '眼科'],
+              ['孩子未滿 6 歲（驗光人員依法不得驗光）', '眼科'],
+              ['孩子 6～15 歲第一次驗光配鏡（須先經醫師確診為非假性近視，之後 15 歲以下於眼科醫師指導下驗光；超過 15 歲可直接驗光）', '先眼科，再驗光所'],
               ['配一副舒服的眼鏡、想搞清楚每個參數', '驗光所'],
               ['戴眼鏡頭暈、視覺不穩定', '驗光所'],
               ['第一次配多焦點漸進鏡片', '驗光所'],
@@ -237,7 +236,7 @@ const schema = {
         </table>
       </div>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3" style="font-size:16px;line-height:1.8">
-        法規紅線很清楚：驗光人員不做醫療診斷、不能開藥。若在驗光過程中發現視力異常（如視野缺損、眼壓偏高的疑慮），會依《驗光人員法》主動轉介眼科醫師——這是保護你，不是把你推走。
+        法規紅線很清楚：驗光人員不做醫療診斷、不能開藥。若驗光時發現視力不能矯正至正常，會依《驗光人員法》第十二條第三項轉介就醫；發現疑似眼睛疾病的跡象，也會建議你先看眼科——這是保護你，不是把你推走。
       </blockquote>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
         完整分工對照：<a href="/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">眼科 vs 驗光所，差在哪裡？什麼時候該去哪裡？</a>

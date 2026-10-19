@@ -45,7 +45,7 @@ Assembly is also a craft in itself. Rimless frames, semi-rimless frames, or anyt
 No. We put this in plain terms:
 
 > **Cost = lens price + a fixed fitting fee.**
-> The lens is priced by the brand and tier you choose (we're an authorized ZEISS and HOYA dealer), and the fitting fee is a flat amount. **There's no surcharge just because the frame wasn't bought in our store.**
+> The lens is priced by the brand and tier you choose (we're a contracted ZEISS dealer and a HOYA dealer), and the fitting fee is a flat amount. **There's no surcharge just because the frame wasn't bought in our store.**
 
 You can get a specific quote by visiting in person or messaging us on LINE — we'll explain it clearly before starting, so you're never hit with an unexpected number after the fact.
 

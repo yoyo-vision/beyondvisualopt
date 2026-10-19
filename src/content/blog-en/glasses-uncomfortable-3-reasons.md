@@ -32,7 +32,7 @@ If you have **phoria** — a tendency for your eyes to drift out of alignment wh
 
 **Phoria is not the same as strabismus.** It's not a visible misalignment of the eyes, so most people have no idea they have this issue — and it's never been picked up, because a standard refraction doesn't test for it.
 
-### What Is Phoria?
+### What Does It Mean When Your Eyes Have to Work to Line Up?
 
 There's usually a slight gap between where your eyes naturally point at rest (with one eye covered) and where they actively align when working together with both eyes open — this gap is called the **phoria amount**.
 
@@ -48,7 +48,7 @@ A complete refraction at Beyond Visual Optometry includes:
 - **AC/A ratio assessment:** analyzes the relationship between accommodation and convergence
 - **Worth 4-dot test / stereopsis testing:** confirms binocular fusion function
 
-If the phoria amount exceeds what your eye muscles can compensate for, our licensed optometry staff will assess whether prism compensation should be added to your prescription; if vision therapy or further medical treatment is warranted, we'll help refer you to an ophthalmologist.
+If the phoria amount exceeds what your eye muscles can compensate for, our licensed optometry staff will assess whether prism compensation should be included in your refraction result; if vision therapy or further medical treatment is warranted, we'll help refer you to an ophthalmologist.
 
 ---
 
@@ -62,7 +62,7 @@ Glasses aren't as simple as "put the prescription into the lens." Lens design ha
 
 Single-vision lenses are optically optimized for static distance vision. If you sit in front of a computer for 8 hours, your eyes are constantly accommodating to a 50–70cm screen distance, keeping your ciliary muscle in a prolonged contracted state — feeling "exhausted" by the time you get home is a direct result.
 
-**Office lenses** or **ZEISS Digital Lens** build in a subtle accommodation-assist zone in the lower part of the lens, so your ciliary muscle doesn't have to work at full capacity for screen viewing, reducing fatigue at the source.
+**Office lenses** or **digital single-vision lenses** add a slight near power in the lower part of the lens; whether they suit you depends on your exam results and actual working distances.
 
 **Scenario 2: You have an early tendency toward presbyopia, but got fitted with a standard myopia prescription**
 
@@ -151,9 +151,9 @@ So the order matters: first establish whether the discomfort is even related to 
 
 Completely — and it's very common. The eye chart only tests static distance clarity; it doesn't test binocular coordination, accommodation, or visual comfort at your actual working distance. Someone can have 20/20 vision on the chart and still have poor binocular efficiency, leading to fatigue with extended use.
 
-**Q: Does phoria require surgery?**
+**Q: If your eyes have to work to line up, who handles treatment beyond glasses?**
 
-Most phoria doesn't require surgery. Mild phoria can often be improved with prism compensation added to the prescription for visual comfort; treatments like vision therapy and surgery fall under an ophthalmologist's evaluation, and are usually only considered for larger-angle, severe cases that can't be relieved another way.
+An ophthalmologist. A licensed optometrist can, where appropriate, include prism in the refraction result as the basis for your lenses, to make using both eyes together easier; treatments such as vision therapy or surgery are medical procedures, and whether they're needed is for an ophthalmologist to evaluate.
 
 **Q: If I'm still uncomfortable after getting glasses, should I go straight to an ophthalmologist or back to the optometrist?**
 

@@ -45,7 +45,7 @@ The lens is identical — the difference is in **the fitting**:
 - Whether the personal parameters Individual² needs (wearing distance, pantoscopic tilt, head-turning habits) are actually measured
 - Fitting height and optical-center alignment — a 2mm difference is noticeable for high-prescription wearers
 
-ZEISS provides the optical ceiling; the fitting determines how much of it you actually get to use. Beyond Visual Optometry's full vision exam takes about 45–60 minutes, performed one-on-one by a licensed optometrist, with free follow-up adjustments after your fitting.
+ZEISS provides the optical ceiling; the fitting determines how much of it you actually get to use. Beyond Visual Optometry's full vision exam takes about 45–60 minutes, performed one-on-one by our licensed optometry staff; for glasses fitted with us, frame adjustments after pickup are included at no extra charge.
 
 ---
 

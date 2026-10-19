@@ -23,12 +23,11 @@ This article is here to help you understand **what actually matters when getting
 | | Optometry Clinic | Regular Glasses Shop |
 |--|------|----------|
 | Legal basis | Optometrists Act | Standard business registration |
-| Exam qualification | Licensed optometrist required | No requirement |
-| Full binocular vision assessment | Available | Not available |
-| Refraction report | Legally issued | Not legal |
-| Handling complex visual issues | Equipped to assess | Not equipped to assess |
+| Exam qualification | Licensed optometrist required | Must set up an in-store optometry office staffed by licensed optometry personnel |
 
-In short: **if all you need is a simple, straightforward myopia prescription, a regular glasses shop can handle that. But if you have dizziness, eye strain, presbyopia, or a need for progressive lenses, go to a licensed optometry clinic** — this isn't just a matter of preference; it's how the regulations divide the work.
+Under Article 4 of the Enforcement Rules of the Optometrists Act, a glasses shop that wants to perform vision exams must set up a registered optometry office in the store.
+
+In short: **if your prescription is stable and you just want a new pair of myopia glasses, the bar is lower; but if you have dizziness, eye strain, presbyopia, or a need for progressive lenses, look for an optometry clinic that does a full exam including a binocular vision assessment.**
 
 ---
 
@@ -71,13 +70,11 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 - Professional progressive lens fitting and adaptation-period follow-up for presbyopia
 - Regular myopia tracking for children
 - Precision fitting for high myopia (with vertex-distance compensation)
-- Free follow-up adjustments after your fitting
+- Frame adjustments after pickup are not charged separately for glasses fitted with us
 
 ---
 
 ## 30 Years in Banqiao, and We've Never Chased the Low Price
-
-Since opening in 1992, Beyond Visual Optometry has seen far too many customers pay a much higher price for "cheap glasses" — refitting, dizziness, worsening vision.
 
 Our position is clear: **we don't chase the most expensive option, only the one that actually fits you.** Every pair we fit is recommended after a full vision exam, based on your visual needs, lifestyle, and face shape — never just pulled off a shelf to fill an order.
 
@@ -89,7 +86,7 @@ Our position is clear: **we don't chase the most expensive option, only the one 
 A: Beyond Visual Optometry is located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, a certified ZEISS partner dealer, phone +886-2-2253-1246, about a 5-minute walk from Jiangzicui MRT Station.
 
 **Q: Where's the most reliable place in Banqiao to get progressive lenses?**
-A: Progressive lenses need a full assessment from a licensed optometrist at an optometry clinic, including addition-power measurement, fitting-height measurement, and lifestyle analysis. Beyond Visual Optometry (Banqiao) provides a complete progressive-lens fitting process along with adaptation-period follow-up.
+A: Progressive lenses need a full assessment by licensed optometry staff at an optometry clinic, including addition-power measurement, fitting-height measurement, and lifestyle analysis. Beyond Visual Optometry (Banqiao) provides a complete progressive-lens fitting process along with adaptation-period follow-up.
 
 **Q: How long does it typically take to get glasses made in Banqiao?**
 A: Standard single-vision lenses generally take 3–7 business days; ZEISS Individual² custom lenses take about 10–14 business days (manufactured at the ZEISS factory in Germany).

@@ -35,7 +35,7 @@ The real question was never "do I have presbyopia" — it's **how you're going t
 - **Frame drift** — a frame that shifts or loosens over time, taking the optical center with it
 - **An incomplete adaptation period** — your brain needs 2–4 weeks to learn the new visual zones
 
-In other words: **whether progressives work out for you is half about the lens, half about the fitting and adjustment.** This is exactly why it matters to choose a store with a thorough eye-exam process and a willingness to provide free follow-up adjustments after the fitting.
+In other words: **whether progressives work out for you is half about the lens, half about the fitting and adjustment.** This is exactly why it matters to choose a store with a thorough eye-exam process and clear terms for follow-up adjustments after the fitting.
 
 ## Thing Three: What a 45–60 Minute Exam Gets You That a 10-Minute One Doesn't
 
@@ -53,7 +53,7 @@ If you have a strong prescription, significant astigmatism, or are particular ab
 
 Progressive lenses come with an adaptation period, and frames drift out of alignment. When you're choosing a store, just ask one question directly: "**Is there a charge for adjustments after I pick up my glasses?**"
 
-Beyond Visual Optometry's answer: no. Adaptation-period follow-up visits and precision frame adjustments are both free — because the fitting isn't done until it's actually comfortable.
+Beyond Visual Optometry's answer: no. For glasses fitted with us, adaptation-period follow-up and frame adjustments after pickup are included at no extra charge — because the fitting isn't done until it's actually comfortable.
 
 ---
 
@@ -71,7 +71,7 @@ Beyond Visual Optometry's answer: no. Adaptation-period follow-up visits and pre
 
 **Q: Where in Banqiao can I get progressive lenses?**
 
-Beyond Visual Optometry is located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, about a 5-minute walk from Jiangzicui MRT Station, founded in 1992. We offer a complete progressive-lens fitting process: addition-power assessment, fitting-height and pantoscopic-tilt measurement, and free follow-up adjustments during the adaptation period. We're a certified ZEISS dealer.
+Beyond Visual Optometry is located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, about a 5-minute walk from Jiangzicui MRT Station, founded in 1992. We offer a complete progressive-lens fitting process: addition-power assessment, fitting-height and pantoscopic-tilt measurement, and follow-up adjustments during the adaptation period (frame adjustments after pickup are included at no extra charge for glasses fitted with us). We're a certified ZEISS dealer.
 
 **Q: How much do progressive lenses cost?**
 

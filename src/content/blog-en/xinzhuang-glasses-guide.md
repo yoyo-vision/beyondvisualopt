@@ -2,7 +2,7 @@
 title: "Where to Get a Vision Exam and Glasses in Xinzhuang, New Taipei: A Guide for English Speakers"
 date: 2026-06-25
 tag: "Local Guide"
-excerpt: "Living in Xinzhuang and need glasses or a vision exam? Here's how Taiwan's optometry clinics differ from regular glasses shops, what to ask before you buy, and where to find a store near Fuda MRT Station that can explain the basics in English."
+excerpt: "Living in Xinzhuang and need glasses or a vision exam? Here's how Taiwan's optometry clinics differ from regular glasses shops, what to ask before you buy, and where to find a store near Xinzhuang MRT Station that can explain the basics in English."
 image: ""
 youtube: ""
 instagram: ""
@@ -23,12 +23,11 @@ Something many newcomers to Taiwan don't realize: a licensed "optometry clinic" 
 | | Optometry clinic | Regular glasses shop |
 |--|------|----------|
 | Legal basis | Optometrists Act | Standard business registration |
-| Performing vision exams | Licensed optometrists required | No qualification requirement |
-| Issuing refraction reports | Legal | Not legal |
-| Binocular vision assessment | Available | Not available |
-| National Health Insurance contracts | Some clinics | No |
+| Performing vision exams | Licensed optometrists required | Must set up an in-store optometry office staffed by licensed optometry personnel |
 
-**Bottom line: if you have any visual complaints — dizziness with glasses, eye strain, prescriptions that never seem right — go to a licensed optometry clinic, not a regular glasses shop.** If you just need a new pair, your prescription has been stable for years, and you have no special needs, a regular shop can handle it.
+Under Article 4 of the Enforcement Rules of the Optometrists Act, a glasses shop that wants to perform vision exams must set up a registered optometry office in the store.
+
+**Bottom line: if you have any visual complaints — dizziness with glasses, eye strain, prescriptions that never seem right — look for a place that does a full exam including a binocular vision assessment, not just a prescription check.** If your prescription has been stable for years and you have no special needs, you have more options.
 
 ---
 
@@ -44,7 +43,7 @@ A complete clinical vision exam takes at least 45 minutes. A 10–15 minute "qui
 ZEISS, HOYA, Essilor, and Nikon are the mainstream premium lens brands in Taiwan. Confirm the shop is an authorized dealer rather than selling counterfeits or grey-market imports.
 
 **4. Can I come back for adjustments if the glasses feel off?**
-A reputable clinic or shop should offer free follow-up visits and adjustments. Be cautious of anywhere that doesn't provide after-sales service.
+Before choosing a shop, ask whether you can come back for adjustments and whether there's a charge. For glasses fitted at Beyond Visual, frame adjustments after pickup are not charged separately.
 
 **5. Do they offer myopia tracking for children?**
 If you're getting glasses for your child, their prescription needs regular monitoring. Make sure the shop offers scheduled re-examinations rather than a one-and-done sale.
@@ -53,7 +52,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 
 ## Beyond Visual Optometry (Xinzhuang)
 
-**Address:** No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City (about a 5-minute walk from Fuda MRT Station)
+**Address:** No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City (about an 8-minute walk from Xinzhuang MRT Station)
 **Phone:** +886-2-2206-6700
 **License:** New Taipei City Optometry Clinic License No. 5Y31060655
 **Lead optometrist:** Optometrist YoYo (licensed optometrist, License No. 003309)
@@ -73,7 +72,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 - Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, agnès b., and MINAMOTO
 - Expert repair, precision adjustment, and lens installation for premium frames such as Lindberg, ic! berlin, Cartier, and Chrome Hearts (repair expertise; not an authorized dealer)
 - Regular myopia tracking for children
-- Free follow-up visits and adjustments after your fitting
+- Frame adjustments after pickup are not charged separately for glasses fitted with us
 
 ---
 
@@ -85,7 +84,7 @@ Beyond Visual Optometry is located at No. 419-1, Zhongzheng Road, Xinzhuang Dist
 
 **Q: How much do glasses cost in Xinzhuang?**
 
-Lens prices vary widely by brand and function. Basic single-vision lenses run about NT$2,000–6,000; ZEISS progressive lenses start around NT$12,000 and can exceed NT$30,000 depending on the level of customization. It's worth clarifying your own needs before setting a budget.
+The cost depends on lens type, refractive index, coatings and frame, so an accurate quote comes after the exam and once you've chosen a frame. As an optometry clinic, our fee schedule is posted in the store as required by law.
 
 **Q: Is it convenient for Fu Jen Catholic University students and staff?**
 

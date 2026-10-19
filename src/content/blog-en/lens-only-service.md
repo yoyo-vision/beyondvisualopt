@@ -44,7 +44,7 @@ No old glasses, no prescription record? No problem at all. A full eye exam alway
 | 2. Risk disclosure | If there's any risk of damage during fitting, we'll say so upfront; we proceed only with your understanding and agreement, and we'll recommend against fitting a frame that's not up to it |
 | 3. Full eye exam | A complete exam based on your visual needs, confirming your current prescription |
 | 4. Fitting measurements | Pupillary distance, fitting height, vertex distance, and frame fit are each measured individually — aligning the prescription to your eyes, not just fitting the lens into the frame |
-| 5. Lens selection and quote | Lens options explained based on your needs and budget (we're an authorized ZEISS and HOYA dealer); cost = lens price + fixed fitting fee, quoted clearly |
+| 5. Lens selection and quote | Lens options explained based on your needs and budget (we're a contracted ZEISS dealer and a HOYA dealer); cost = lens price + fixed fitting fee, quoted clearly |
 | 6. Production and follow-up adjustment | Try the finished glasses on in store to confirm fit; if the frame shifts afterward, come back anytime for an adjustment |
 
 See steps 3 and 4? **That's where the real work of a lens fitting happens.** For the same prescription, whether the pupillary distance is correct, whether the lens's optical center lands on your line of sight, and what the vertex distance is between the frame and your eyes — these make a real difference in clarity and comfort. Where you bought the frame has nothing to do with whether these measurements get done — none of them get skipped.

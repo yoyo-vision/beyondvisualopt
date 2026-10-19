@@ -69,9 +69,9 @@ If the pupillary distance (PD) is measured incorrectly, or the frame ends up cro
 
 The effective power of a lens changes depending on the **position of the frame relative to your eye**.
 
-**Vertex distance** is the distance from the back surface of the lens to the cornea—standard is about 12–14mm. For every 1mm this distance changes, the effective power of a high-prescription lens shifts by roughly 0.12–0.25D.
+**Vertex distance** is the distance from the back surface of the lens to the cornea—standard is about 12–14mm. The higher the prescription, the more a change in this distance shifts the effective power.
 
-For example: if you're highly myopic at -8.00D and the vertex distance is off by 3mm, the effective power could shift by about 0.75D—a full three quarter-diopter steps.
+For example: if you're highly myopic at -8.00D and the vertex distance is off by 3mm, the effective power shifts by about 0.2D; at -12.00D, the same 3mm shifts it by about 0.4D (formula: Fc = F ÷ (1 − dF)).
 
 **Pantoscopic tilt** is the angle of the frame relative to the vertical—standard is about 8–12 degrees. The wrong tilt changes how the astigmatism axis performs effectively, and the impact is even greater with progressive multifocal lenses.
 
@@ -89,7 +89,7 @@ High-power lenses inherently have a stronger prismatic effect. The greater the d
 
 Severe anisometropia can even cause the brain to chronically "suppress" the eye with the stronger prescription, leading toward amblyopia—so even when the measured prescription is correct, visual performance stays poor.
 
-> **How to fix it:** Tell our licensed optometry staff about the difference between your two eyes so we can assess whether the prescription needs prism compensation, or whether an asymmetric power strategy is worth considering (slightly under-correcting the stronger eye to reduce the fusion burden).
+> **How to fix it:** Tell our licensed optometry staff about the difference between your two eyes so we can assess whether the refraction result needs prism compensation, or whether an asymmetric power strategy is worth considering (slightly under-correcting the stronger eye to reduce the fusion burden).
 
 ---
 

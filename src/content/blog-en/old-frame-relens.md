@@ -58,7 +58,7 @@ Whether you're leaning toward lens replacement or considering a new frame, the f
 - **Frame evaluation**: checking material, structure, and wear to judge whether it's suitable for disassembly and refitting.
 - **Risk disclosure**: any risk of damage gets flagged upfront, and we proceed only with your agreement; if it's not suitable, we'll recommend against it directly.
 - **Full eye exam and measurements**: whether you're replacing lenses or getting a new frame, pupillary distance, fitting height, vertex distance, and frame fit all get remeasured — the same standard as a full fitting.
-- **Lens selection and a transparent quote**: we're an authorized ZEISS and HOYA dealer; cost is lens price plus a fixed fitting fee, clearly explained before we start.
+- **Lens selection and a transparent quote**: we're a contracted ZEISS dealer and a HOYA dealer; cost is lens price plus a fixed fitting fee, clearly explained before we start.
 
 In short: **we'll save you money by replacing just the lenses whenever that makes sense, and we'll only recommend a new frame when it genuinely does — we won't push a new purchase by default.**
 

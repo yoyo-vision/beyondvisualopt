@@ -39,7 +39,7 @@ Our process is "**assess first, then act**":
 | ② Complete Refraction | A licensed optometrist performs a 45–60 minute complete refraction to establish a precise prescription |
 | ③ Lens Recommendation | Recommend refractive index and lens type based on frame shape, prescription, and intended use (including converting sunglasses to prescription lenses) |
 | ④ Precision Fabrication and Fitting | Disassembly and reassembly tailored to that specific frame's construction, with precise optical center alignment |
-| ⑤ Fit Adjustment | Precision adjustment to fit your face, with free follow-up adjustments afterward |
+| ⑤ Fit Adjustment | Precision adjustment to fit your face; frame adjustments after pickup are included at no extra charge |
 
 Beyond Visual Optometry has long experience fitting lenses and adjustments for luxury frames like Cartier, Chrome Hearts, and Linda Farrow (**we are not an authorized dealer for these brands — our specialty is fitting and repair**). If, after assessment, we determine a frame isn't suited to disassembly, we'll tell you directly rather than forcing it.
 

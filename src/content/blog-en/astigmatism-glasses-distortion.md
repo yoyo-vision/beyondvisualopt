@@ -70,7 +70,7 @@ The steps most likely to go wrong when fitting astigmatism lenses:
 2. **Simply reusing an old prescription:** Astigmatism power and axis change with age, so they must be reconfirmed at every fitting.
 3. **Poor frame choice:** Large frames and high-curve frames make peripheral distortion more obvious for high astigmatism.
 
-At Beyond Visual Optometry (Xinzhuang), the refraction process includes complete subjective confirmation of the astigmatism axis and a binocular vision assessment, with free follow-up adjustments after your glasses are made.
+At Beyond Visual Optometry (Xinzhuang), the refraction process includes complete subjective confirmation of the astigmatism axis and a binocular vision assessment, and for glasses fitted with us, frame adjustments after pickup are included at no extra charge.
 
 ---
 
