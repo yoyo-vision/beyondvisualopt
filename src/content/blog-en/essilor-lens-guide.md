@@ -83,7 +83,7 @@ The visual-quality difference between tiers within the same series is real, but 
 
 **Q: Where in Xinzhuang can I get a consultation on Essilor Varilux progressive lenses?**
 
-Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City) can have Optometrist YoYo compare Essilor Varilux objectively against ZEISS and HOYA progressive options, based on your visual habits and presbyopia level. Book at +886-2-2206-6700.
+At Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), our licensed optometry staff can compare Essilor Varilux objectively against ZEISS and HOYA progressive options, based on your visual habits and presbyopia level. Book at +886-2-2206-6700.
 
 **Q: Where in Banqiao can I find Essilor lenses?**
 

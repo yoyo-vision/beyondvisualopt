@@ -49,7 +49,7 @@ An astigmatism axis that's off by 10–15 degrees can affect visual quality more
 
 This test requires repeated back-and-forth confirmation between the optometrist and the patient, and a quick refraction usually omits or shortens it.
 
-> **How to fix it:** Come back in and ask Optometrist YoYo to redo the astigmatism axis fine-tuning. Tell the optometrist clearly that "my vision feels a bit warped" or "the edges of the letters aren't sharp enough." Those two descriptions help the optometrist pinpoint the problem quickly.
+> **How to fix it:** Come back in and ask our licensed optometry staff to redo the astigmatism axis fine-tuning, and tell them clearly that "my vision feels a bit warped" or "the edges of the letters aren't sharp enough." Those two descriptions help them pinpoint the problem quickly.
 
 ---
 
@@ -89,7 +89,7 @@ High-power lenses inherently have a stronger prismatic effect. The greater the d
 
 Severe anisometropia can even cause the brain to chronically "suppress" the eye with the stronger prescription, leading toward amblyopia—so even when the measured prescription is correct, visual performance stays poor.
 
-> **How to fix it:** Tell Optometrist YoYo about the difference between your two eyes so we can assess whether the prescription needs prism compensation, or whether an asymmetric power strategy is worth considering (slightly under-correcting the stronger eye to reduce the fusion burden).
+> **How to fix it:** Tell our licensed optometry staff about the difference between your two eyes so we can assess whether the prescription needs prism compensation, or whether an asymmetric power strategy is worth considering (slightly under-correcting the stronger eye to reduce the fusion burden).
 
 ---
 
@@ -138,7 +138,7 @@ A new frame has a different frame size and face-form angle. Even with the same p
 
 **Q: Where in Xinzhuang or Banqiao can I get my glasses-dizziness problem assessed?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao locations) offers a complete follow-up assessment for fitting problems with Optometrist YoYo (licensed optometrist). No matter where your glasses were made, you're welcome to bring them in and let us help you find the cause. You don't need to have bought your glasses from us to book a consultation. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or book online at [/en/booking](/en/booking/).
+Beyond Visual Optometry (Xinzhuang and Banqiao locations) offers a complete follow-up assessment for fitting problems, carried out by our licensed optometry staff. No matter where your glasses were made, you're welcome to bring them in and let us help you find the cause. You don't need to have bought your glasses from us to book a consultation. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or book online at [/en/booking](/en/booking/).
 
 ---
 

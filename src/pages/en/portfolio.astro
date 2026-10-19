@@ -19,7 +19,7 @@ const schema = {
   "@id": canonicalUrl,
   "url": canonicalUrl,
   "name": "Eyewear Portfolio | Beyond Visual Optometry × BiYang Optometry Clinic",
-  "description": "Optometrist YoYo's eyewear fitting portfolio: ZEISS lenses, international handcrafted frames, and on-site fitting records. Beyond Visual Optometry, Xinzhuang & Banqiao.",
+  "description": "Beyond Visual Optometry's fitting portfolio: ZEISS lenses, international handcrafted frames, and on-site fitting records. Xinzhuang & Banqiao stores.",
   "inLanguage": "en",
   "isPartOf": { "@id": `${SITE}/#website` },
   "about": { "@id": `${SITE}/#organization` },
@@ -33,12 +33,7 @@ const schema = {
       "caption": item.data.caption,
       "creditText": "Beyond Visual Optometry × BiYang Optometry Clinic",
       // creator 需帶 @type，否則 Google 圖片授權驗證判「物件類型無效」（頁面上讀不到 #person 的型別）
-      "creator": {
-        "@type": "Person",
-        "@id": `${SITE}/en/author/yoyo/#person`,
-        "name": "Cheng Chia-Yu (YoYo)",
-        "url": `${SITE}/en/author/yoyo/`
-      },
+      "creator": { "@type": "Organization", "@id": `${SITE}/#organization`, "name": "Beyond Visual Optometry", "url": `${SITE}/en/` },
       "copyrightNotice": "© Beyond Visual Optometry × BiYang Optometry Clinic",
       "license": `${SITE}/en/about/#image-rights`,
       "acquireLicensePage": `${SITE}/en/about/#image-rights`
@@ -48,7 +43,7 @@ const schema = {
 ---
 <Layout
   title="Eyewear Portfolio | Frame Photography · Fitting Sessions | Beyond Visual Optometry, Xinzhuang & Banqiao"
-  description="Optometrist YoYo's eyewear portfolio: international handcrafted frames, ZEISS lenses, and first-hand records from fitting sessions. Step into the fitting aesthetic of Beyond Visual Optometry — book a try-on in Xinzhuang or Banqiao."
+  description="Beyond Visual Optometry's fitting portfolio: international handcrafted frames, ZEISS lenses, and first-hand records from fitting sessions. Step into the fitting aesthetic of Beyond Visual Optometry — book a try-on in Xinzhuang or Banqiao."
   lang="en"
   schema={schema}
 >
@@ -61,7 +56,7 @@ const schema = {
         Eyewear <span class="text-brand-gold">Portfolio</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        Every pair of glasses is a fitting tailored to a face, a prescription, and a life. This is the frames and the fitting sessions, seen through Optometrist YoYo's lens.
+        Every pair of glasses is a fitting tailored to a face, a prescription, and a life. These are the frames and fitting sessions from Beyond Visual Optometry's stores.
       </p>
     </div>
   </section>
@@ -138,7 +133,7 @@ const schema = {
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">See something you like? Come try it on</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Whether a frame suits you is most accurate once it's on your face. At both the Xinzhuang and Banqiao stores, Optometrist YoYo helps you choose based on your face shape, prescription, and needs.</p>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Whether a frame suits you is most accurate once it's on your face. At both the Xinzhuang and Banqiao stores, our licensed optometry staff help you choose based on your face shape, prescription, and needs.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book an In-Store Fitting →</a>
         <a href="/en/guide/frames/" class="inline-block border border-white/40 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-white/10 transition-colors font-sans" style="font-size:15px">See the Frame Buying Guide</a>

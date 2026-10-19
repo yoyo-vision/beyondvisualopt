@@ -116,7 +116,7 @@ Pure titanium resists corrosion and doesn't rust easily, so day-to-day care is t
 
 **Q: Where in Xinzhuang can I try on MINAMOTO?**
 
-Beyond Visual Optometry (Xinzhuang, Biyang Optometry) carries the MINAMOTO series for in-person try-on. Optometrist YoYo can help recommend the best frame shape and size based on your facial features and prescription (especially lens thickness considerations for high myopia).
+Beyond Visual Optometry (Xinzhuang, Biyang Optometry) carries the MINAMOTO series for in-person try-on. Our licensed optometry staff can help recommend the best frame shape and size based on your facial features and prescription (especially lens thickness considerations for high myopia).
 
 ---
 

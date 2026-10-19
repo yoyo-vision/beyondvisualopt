@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Why do my eyes feel more tired the longer I wear contact lenses?',
-    a: 'There are a few common reasons. Soft contact lenses with a high water content draw moisture from the ocular surface, which worsens dry eye in air-conditioned rooms and screen environments. Insufficient oxygen permeability leaves the cornea chronically under-oxygenated, so the lenses feel fine at first but uncomfortable by the afternoon. And wearing time beyond your limit (many people wear them for 14 hours) adds up. Ways to improve include confirming whether you are using a high-oxygen silicone hydrogel material, keeping daily wear within 10–12 hours, and using preservative-free artificial tears. If dryness persists or the whites of your eyes are repeatedly bloodshot, we recommend an ocular-surface assessment and, if needed, a referral to an ophthalmologist under Taiwan\'s Optometrists Act.',
+    a: 'There are three common reasons: the lens material\'s water content and oxygen permeability don\'t suit your viewing environment; blinking slows down when you stare at a screen in an air-conditioned room; and wearing time goes beyond your limit, with many people wearing lenses for more than ten hours. Follow your ophthalmologist\'s prescription and the product labeling for wearing time and replacement schedule. If dryness persists, the whites of your eyes keep turning red, or you have light sensitivity or pain, please see an ophthalmologist directly; tear and eye-surface checks are medical examinations our stores don\'t perform. If you\'d like your contact lens prescription and fit rechecked, our licensed optometry staff can do that in store; eye health itself remains the ophthalmologist\'s call.',
   },
 ];
 
@@ -179,7 +179,7 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { level: 'The 20-20-20 Rule', desc: 'Every 20 minutes of near work, look at something 20 feet (about 6 metres) away for 20 seconds. It gives the tense ciliary muscle a chance to switch and relax, breaking the whole stretch of "accommodative lock."', fit: 'Relax Accommodation' },
-          { level: 'Conscious Complete Blinks', desc: 'Many people only "half-blink" at a screen, so the tear film isn\'t fully renewed. Remind yourself to blink completely; pair it with preservative-free single-use artificial tears, topped up every 2–3 hours during the day.', fit: 'Fight Dry Eye' },
+          { level: 'Conscious Complete Blinks', desc: 'Many people only "half-blink" at a screen, so the tear film isn\'t fully renewed. Remind yourself to blink completely; if dryness doesn\'t go away, please see an ophthalmologist.', fit: 'Tear Film Renewal' },
           { level: 'Screen Distance and Height', desc: 'Ideally the eyes look down 10–15 degrees at a distance of 60–70 cm. Avoid a screen that is far brighter or darker than its surroundings, to reduce repeated pupil resizing and contrast stress.', fit: 'Environment Setup' },
         ].map(item => (
           <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
@@ -237,7 +237,7 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        Pair this with preservative-free artificial tears and an annual vision exam to keep your prescription current; if dryness persists or you have concerns about ocular-surface health, please see an ophthalmologist. Full breakdown: <a href="/en/blog/contact-lens-fatigue/" class="text-brand-gold underline">Wearing contact lenses every day, but your eyes only get more tired?</a>
+        An annual vision exam keeps your prescription current; if dryness persists or you have concerns about ocular-surface health, please see an ophthalmologist. Full breakdown: <a href="/en/blog/contact-lens-fatigue/" class="text-brand-gold underline">Wearing contact lenses every day, but your eyes only get more tired?</a>
       </p>
     </div>
   </section>
@@ -277,7 +277,7 @@ const schema = {
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Staring at screens all day, and your eyes can't last the afternoon?</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. Optometrist YoYo will first learn your screen hours and viewing-distance profile, do a preliminary accommodation and dry-eye assessment, and then discuss lens options — Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.) and Banqiao 02-2253-1246, appointments available at both stores.</p>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. Our licensed optometry staff will first learn your screen hours and viewing-distance profile, do a preliminary accommodation assessment, and then discuss lens options; if dry eye is a concern, we'll point you to an ophthalmologist — Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.) and Banqiao 02-2253-1246, appointments available at both stores.</p>
       <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Analysis →</a>
     </div>
   </section>

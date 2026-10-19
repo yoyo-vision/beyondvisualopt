@@ -1,8 +1,8 @@
 ---
-title: "Getting Glasses in Banqiao: A Local Guide From an Optometrist With 30 Years in the Neighborhood"
+title: "Getting Glasses in Banqiao: A Local Guide From an Eyewear Store With 30 Years in the Neighborhood"
 date: 2026-06-25
 tag: "Local Guide"
-excerpt: Banqiao has no shortage of places to get glasses — the hard part is finding one that's actually right for you. From the exam process to lens brands, here's what a 30-year local optometry practice wants you to know before you buy.
+excerpt: Banqiao has no shortage of places to get glasses — the hard part is finding one that's actually right for you. From the exam process to lens brands, here's what a local eyewear store with 30 years in Banqiao wants you to know before you buy.
 image: ""
 youtube: ""
 instagram: ""

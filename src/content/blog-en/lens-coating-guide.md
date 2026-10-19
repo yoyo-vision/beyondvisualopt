@@ -4,7 +4,7 @@ date: 2026-07-06
 tag: "Lenses"
 excerpt: "Lens coatings determine how clear, durable, and comfortable a pair of glasses actually is. Optometrist YoYo at Beyond Visual Optometry walks you through anti-reflective, blue-light, scratch-resistant, and smudge-resistant coatings — come compare them in person at our Xinzhuang or Banqiao store."
 seoTitle: "Lens Coatings Explained | Anti-Reflective, Blue-Light, Scratch & Smudge Resistance | Beyond Visual Optometry"
-seoDescription: "What lens coatings are out there? A full breakdown of anti-reflective, hard scratch-resistant, water/oil-repellent, anti-fog, blue-light, and UV coatings, with a comparison table. Optometrist YoYo at Beyond Visual Optometry in Xinzhuang and Banqiao explains how coating layers relate to clarity and lens lifespan."
+seoDescription: "What lens coatings are out there? A full breakdown of anti-reflective, hard scratch-resistant, water/oil-repellent, anti-fog, blue-light, and UV coatings, with a comparison table. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains how coating layers relate to clarity and lens lifespan."
 keywords: "lens coating,anti-reflective coating,blue-light coating,scratch-resistant coating,smudge-resistant coating,multi-layer coating,lens coating peeling,Xinzhuang glasses,Banqiao optometry,Beyond Visual Optometry"
 ---
 
@@ -137,7 +137,7 @@ The difference is in function and experience. A single-layer coating usually mea
 
 ## Want to See the Difference in Person?
 
-Coating quality is hard to appreciate from a spec sheet, but it's obvious side by side — under the same lighting, a good anti-reflective lens shows almost no glare, while a poor one reflects noticeably. Come in and let Optometrist YoYo show you the difference in person, with coating recommendations based on your actual visual habits.
+Coating quality is hard to appreciate from a spec sheet, but it's obvious side by side — under the same lighting, a good anti-reflective lens shows almost no glare, while a poor one reflects noticeably. Come in and let our licensed optometry staff show you the difference in person, with coating recommendations based on your actual visual habits.
 
 - **Xinzhuang store** (Beyond Visual Optometry × Biyang Optometry): +886-2-2206-6700
 - **Banqiao store** (Beyond Visual Optometry): +886-2-2253-1246

@@ -48,7 +48,7 @@ A complete refraction at Beyond Visual Optometry includes:
 - **AC/A ratio assessment:** analyzes the relationship between accommodation and convergence
 - **Worth 4-dot test / stereopsis testing:** confirms binocular fusion function
 
-If the phoria amount exceeds what your eye muscles can compensate for, Optometrist YoYo will assess whether prism compensation should be added to your prescription; if vision therapy or further medical treatment is warranted, we'll help refer you to an ophthalmologist.
+If the phoria amount exceeds what your eye muscles can compensate for, our licensed optometry staff will assess whether prism compensation should be added to your prescription; if vision therapy or further medical treatment is warranted, we'll help refer you to an ophthalmologist.
 
 ---
 
@@ -74,7 +74,7 @@ High-myopia lenses (-5.00D or higher) inherently have a prismatic effect. The bi
 
 ### The Fix
 
-Before fitting your glasses, Optometrist YoYo asks in detail:
+Before fitting your glasses, our licensed optometry staff ask in detail:
 - What distances do you use your eyes at each day, and for how many hours?
 - What's your main work environment (indoors / outdoors / air-conditioned)?
 - Do you drive? How long?
@@ -111,7 +111,7 @@ A quick, standard refraction typically skips these tests entirely, but they have
 
 ### The Fix
 
-Depending on age, visual habits, and work type, Optometrist YoYo offers different presbyopia compensation options:
+Depending on age, visual habits, and work type, our licensed optometry staff offer different presbyopia compensation options:
 
 - **Office reading glasses:** for people who mainly work at a fixed indoor distance and don't need them once they're out and about
 - **Progressive multifocal lenses:** for people who need one pair of glasses to handle distance, intermediate, and near vision
@@ -161,4 +161,4 @@ Both have a role. For fitting-related issues (prescription, lens design, binocul
 
 **Q: Where in Xinzhuang or Banqiao can I get a complete binocular vision assessment?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao) offers a complete binocular vision function assessment with Optometrist YoYo, including phoria measurement, accommodation testing, AC/A ratio analysis, and lens design recommendations tailored to your visual habits. No matter where your glasses were made, you're welcome to come in for a second opinion.
+Beyond Visual Optometry (Xinzhuang and Banqiao) offers a complete binocular vision function assessment by our licensed optometry staff, including eye alignment, accommodation testing, AC/A ratio analysis, and lens design recommendations tailored to your visual habits. No matter where your glasses were made, you're welcome to come in for a second opinion.

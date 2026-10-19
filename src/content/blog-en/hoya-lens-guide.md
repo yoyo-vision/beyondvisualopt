@@ -4,7 +4,7 @@ date: "2026-06-24"
 tag: "Lenses"
 excerpt: "HOYA is one of Japan's leading names in precision optics, with a lineup spanning single-vision lenses to personalized progressive multifocals that covers nearly every visual need. Optometrist YoYo at Beyond Visual Optometry walks you through the design logic behind each HOYA series and who it's best suited for."
 seoTitle: "HOYA Lenses Explained | Japanese Lens Brand Series Guide | Beyond Visual Optometry Xinzhuang & Banqiao"
-seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, iD progressive multifocals, Sync III digital-strain relief, and MiYOSMART defocus lens design. Optometrist YoYo at Beyond Visual Optometry in Xinzhuang and Banqiao explains the design logic and ideal candidates for each series."
+seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, iD progressive multifocals, Sync III digital-strain relief, and MiYOSMART defocus lens design. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains the design logic and ideal candidates for each series."
 keywords: "HOYA lenses,HOYA progressive lenses,HOYA iD,HOYA Sync III,HOYA MiYOSMART,Japanese lens brands,Xinzhuang HOYA,Banqiao HOYA lenses,Beyond Visual Optometry"
 ---
 
@@ -86,7 +86,7 @@ The answers to these questions determine which series is right for you — not w
 
 **Q: Where in Xinzhuang can I get HOYA lenses fitted?**
 
-Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City) offers the complete HOYA lens lineup, with fitting recommendations from Optometrist YoYo based on your visual habits. Call +886-2-2206-6700 to book a consultation.
+Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City) offers the complete HOYA lens lineup, with fitting recommendations from our licensed optometry staff based on your visual habits. Call +886-2-2206-6700 to book a consultation.
 
 **Q: Where in Banqiao can I get HOYA progressive multifocal lenses?**
 

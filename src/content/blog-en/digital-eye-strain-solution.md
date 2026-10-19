@@ -16,7 +16,7 @@ keywords: "digital eye strain,screen eye fatigue,computer eye strain,computer gl
 
 These symptoms have a name: **Digital Vision Syndrome (DVS)**, also called digital eye strain.
 
-It's more than just "tired eyes." There's a clear physiological mechanism behind it—and that mechanism can be effectively relieved through the right lens design and prescription parameters.
+It's more than just "tired eyes." There's a clear physiological mechanism behind it—and the parts related to your prescription and lens design can be measured in an eye exam and addressed when fitting your glasses.
 
 ---
 
@@ -96,7 +96,7 @@ Beyond the lenses themselves, the often-overlooked factor is your **fitting para
 - Vertex distance: especially sensitive for people with high myopia
 - Screen distance and height: the ideal screen position is 10–15 degrees below eye level, at a distance of 60–70 cm
 
-Correct frame adjustment plus a well-set-up work environment is sometimes more directly effective than changing lenses.
+Correct frame adjustment plus a well-set-up work environment is sometimes more direct than changing lenses.
 
 ---
 
@@ -128,17 +128,16 @@ Yes, you might. A Digital Lens isn't a reading lens—it's an accommodative aid.
 
 **Q: My eyes are dry every day—is it a prescription problem?**
 
-Not necessarily. Dry eye and refractive error can coexist or occur independently. They need to be assessed separately: corneal fluorescein staining, tear production tests, tear film break-up time, plus a prescription check, to find the root cause. Sometimes all you need is appropriate artificial tears and better blinking habits. If dryness or discomfort is persistent, it's worth seeing an eye doctor for further evaluation.
+Not necessarily. Dry eye and refractive error can coexist or occur independently. They need to be assessed separately: corneal fluorescein staining, tear production tests, and tear film break-up time are ophthalmology exams done by an eye doctor; what our stores can do is check your prescription. Put the two together to find the root cause. If dryness or discomfort is persistent, it's worth seeing an eye doctor for further evaluation.
 
-**Q: Is there any way to relieve eye fatigue while I'm working?**
+**Q: What can I do in the moment when my eyes get tired at work?**
 
-A few effective in-the-moment strategies:
+A few things you can do right away:
 - **The 20-20-20 rule**: every 20 minutes, look at something 20 feet (about 6 meters) away for 20 seconds
 - **Conscious blinking**: remind yourself to blink fully (many people "half-blink" while looking at a screen)
 - **Balance screen brightness with ambient light**: avoid having the screen much brighter or darker than its surroundings
-- **Artificial tears**: choose preservative-free single-use vials, applied once every 2–3 hours during the day
 
-These can ease symptoms but won't cure the underlying issue—if symptoms persist, you still need a full optometric evaluation, and possibly a referral to an ophthalmologist.
+These can make your eyes a little more comfortable, but if symptoms persist you still need a full eye exam; if dryness, redness, or pain persists, please see an ophthalmologist.
 
 **Q: Where in Xinzhuang or Banqiao can I get a digital eye strain evaluation?**
 

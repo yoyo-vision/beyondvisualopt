@@ -125,7 +125,7 @@ Face shape, proportion, face width, brow line — you can understand 70–80% of
 
 And if your prescription is high, or you're considering progressive lenses, your frame choice isn't just about looks — it's also about whether your lenses can perform at their best. That's a step best handled together with a licensed optometrist.
 
-Come try frames on in person at Beyond Visual Optometry — Optometrist YoYo will help you find a frame that's both good-looking and easy to wear, based on your face shape, visual needs, and lens requirements:
+Come try frames on in person at Beyond Visual Optometry — our licensed optometry staff will help you find a frame that's both good-looking and easy to wear, based on your face shape, visual needs, and lens requirements:
 
 - **Xinzhuang store (Biyang Optometry):** +886-2-2206-6700
 - **Banqiao store (Beyond Visual Optometry):** +886-2-2253-1246

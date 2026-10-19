@@ -143,7 +143,7 @@ Most people need 1–4 weeks to adapt to the visual logic of the progressive zon
 
 **Q: Can I get a refund on progressive lenses?**
 
-Beyond Visual Optometry actively follows up during the adaptation period. If the issue is confirmed to be a fitting-parameter problem, Optometrist YoYo (licensed optometrist) provides free re-evaluation and adjustment. If a lens replacement is needed, it's discussed case by case. Both the Xinzhuang and Banqiao stores handle follow-up visits.
+Beyond Visual Optometry actively follows up during the adaptation period. If the issue is confirmed to be a fitting-parameter problem, our licensed optometry staff recheck the prescription and fit and re-adjust the glasses; for glasses fitted with us, frame adjustments after pickup are included at no extra charge. If a lens replacement is needed, it's discussed case by case. Both the Xinzhuang and Banqiao stores handle follow-up visits.
 
 **Q: Will upgrading to expensive lenses (like Zeiss) stop the dizziness?**
 
@@ -151,7 +151,7 @@ Not necessarily. Premium lenses offer wider corridors and smaller aberration zon
 
 **Q: Where can I get progressive lens dizziness sorted out in Xinzhuang or Banqiao?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao, New Taipei City) offers a complete progressive-lens dizziness assessment with Optometrist YoYo: re-measuring PD and fitting height, verifying the prescription, adjusting the frame, and evaluating whether the lens design suits you. Even if your progressives were made elsewhere, you're welcome to come in for a second opinion. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
+Beyond Visual Optometry (Xinzhuang and Banqiao, New Taipei City) offers a complete progressive-lens dizziness assessment by our licensed optometry staff: re-measuring PD and fitting height, verifying the prescription, adjusting the frame, and evaluating whether the lens design suits you. Even if your progressives were made elsewhere, you're welcome to come in for a second opinion. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
 
 ---
 

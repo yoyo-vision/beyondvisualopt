@@ -84,8 +84,8 @@ If your current soft lenses are HEMA material (conventional hydrogel), consider 
 **2. Shorten your wearing time**
 Try to keep daily wear under 10–12 hours. Switch to glasses once you get home after your commute, giving your eyes time to "breathe" at home.
 
-**3. Use preservative-free artificial tears**
-While wearing lenses, you can use preservative-free artificial tears (such as hyaluronic acid formulas) to supplement the tear film and reduce friction. Note: ordinary eye drops that contain preservatives are not suitable for use while wearing lenses.
+**3. If dryness persists, take the lenses out and see an ophthalmologist**
+If your eyes keep feeling dry, red, or scratchy with contacts in, take the lenses out and let your eyes rest; if the dryness persists, please see an ophthalmologist. Whether to use eye drops, and which kind, is the doctor's call.
 
 **4. Get regular vision exams to confirm your prescription**
 Contact lens power differs from spectacle power (it requires a vertex distance correction), and your prescription can change over time. We recommend an annual exam to confirm your contact lens prescription is still appropriate.
@@ -111,7 +111,7 @@ Strongly not recommended. Sleeping in soft lenses substantially raises the risk 
 
 **Q: Where in Xinzhuang or Banqiao can I get my contact lens wear evaluated?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao locations) with Optometrist YoYo (licensed optometrist) offers a complete contact lens wear assessment, including corneal topography, tear film analysis, an evaluation of your current lens material and wearing time, and personalized lens recommendations. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
+At Beyond Visual Optometry (Xinzhuang and Banqiao locations), our licensed optometry staff carry out a contact lens prescription and wear assessment, including a review of your current lens material and wearing time, plus lens recommendations. Tear and eye-surface checks are done by ophthalmologists; our stores don't perform them. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
 
 ---
 

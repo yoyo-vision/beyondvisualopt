@@ -109,7 +109,7 @@ A: The right tool paired with the right technique won't damage the frame materia
 A: Yes. Bring them in and we'll assess how far we can adjust them and let you know. If the underlying issue turns out to be the prescription or fitting parameters, we'll tell you that directly too.
 
 **Q: Do both the Xinzhuang and Banqiao stores offer adjustments?**
-A: Yes, both locations offer frame adjustment service. For more complex adjustments, we recommend the Xinzhuang store (Biyang Optometry Practice), where Optometrist YoYo can check at the same time whether any fitting parameters need to be addressed together.
+A: Yes, both locations offer frame adjustment service. For more complex adjustments, we recommend the Xinzhuang store (Biyang Optometry Practice), where our licensed optometry staff can check at the same time whether any fitting parameters need to be addressed together.
 
 ---
 

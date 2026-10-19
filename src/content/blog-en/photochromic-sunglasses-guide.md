@@ -109,7 +109,7 @@ Yes. Myopia, hyperopia, and astigmatism can all be built into a prescription sun
 
 ## Choosing the Right Pair Makes All the Difference Outdoors
 
-None of the four options is universally "best"—only the one that fits your actual lifestyle. Rather than agonizing over it alone, let Optometrist YoYo first understand when you most often need sun protection—commuting by car, weekend outdoor activities, or moving between indoors and outdoors all day—and then help you choose the pair that's genuinely right for you.
+None of the four options is universally "best"—only the one that fits your actual lifestyle. Rather than agonizing over it alone, let our licensed optometry staff first understand when you most often need sun protection—commuting by car, weekend outdoor activities, or moving between indoors and outdoors all day—and then help you choose the pair that's genuinely right for you.
 
 **Book a complete visual assessment:**
 

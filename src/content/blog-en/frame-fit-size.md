@@ -137,7 +137,7 @@ There are a few things you can check in person: whether the outer edge of the fr
 
 Understanding the numbers helps you make an initial judgment, but matching them to your face and your prescription still requires an actual measurement.
 
-Bring in the glasses you're currently wearing, and Optometrist YoYo will measure your face width, pupillary distance, and fit in person to confirm whether your size and optical center are correct. No appointment necessary, and it doesn't matter where your glasses were made.
+Bring in the glasses you're currently wearing, and our licensed optometry staff will measure your face width, pupillary distance, and fit in person to confirm whether your size and optical center are correct. No appointment necessary, and it doesn't matter where your glasses were made.
 
 - **Xinzhuang store (Biyang Optometry):** +886-2-2206-6700
 - **Banqiao store:** +886-2-2253-1246
