@@ -1,54 +1,76 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../data/categories';
 
-// 指南 → 文章的聚落連結（與 blog/[slug].astro 的 PILLAR_MAP 對稱，形成雙向互連）
-const CLUSTER_SLUGS = [
-  'optometry-vs-ophthalmology',
-  'blurry-vision-see-doctor',
-  'eye-strain-see-doctor',
-  'child-vision-check-where',
-  'eye-exam-before-glasses',
-];
+// 本指南的主題聚落文章：直接讀分類表「驗光 → 眼科還是驗光所（triage）」小分類，順序＝分類頁閱讀順序
+// child-vision-check-where 屬兒童分類，已移出聚落，改由「孩子依年齡」段內文連結
+const CLUSTER_SLUGS = CATEGORIES.find(c => c.slug === 'eye-exam')!.subs.find(s => s.slug === 'triage')!.posts;
 const allPosts = await getCollection('blog');
 const clusterPosts = CLUSTER_SLUGS
   .map(slug => allPosts.find(p => p.slug === slug))
   .filter(Boolean);
 
-// 眼科 vs 驗光所 症狀分流指南：承接 GBP「眼科」搜尋流量（月千次級）的誠實分流頁
-// 合規基準：明確自稱驗光所非眼科；紅旗症狀一律「建議儘速至眼科就醫」；發現異常依法轉介。
+const canonicalUrl = 'https://beyondvisualopt.com/guide/eye-doctor-or-optometrist/';
+
+// 眼科 vs 驗光所 症狀分流指南：承接 GBP「眼科」搜尋流量（月千次級）的分流頁
+// 合規基準：明確自稱驗光所非眼科；紅旗症狀一律「建議儘速至眼科就醫」；發現異常依第十二條第三項轉介。
 const faqs = [
   {
     q: '能見度是眼科診所嗎？',
-    a: '不是。我們是合法立案的驗光所（比泱驗光所・能見度驗光所），由持照驗光人員執行驗光與配鏡，不是醫療診所、沒有醫師駐診。眼睛疾病的診斷與治療請掛眼科；驗光配鏡過程中如發現視力異常無法有效補正，我們也會依法協助轉介眼科醫師。',
+    a: '不是。我們是合法立案的驗光所（比泱驗光所・能見度驗光所），由持照驗光人員執行驗光與配鏡，不是醫療診所、沒有醫師駐診。眼睛疾病的診斷與治療請掛眼科；驗光配鏡過程中如發現視力無法矯正至正常，我們也會依法協助轉介眼科醫師。',
   },
   {
     q: '看不清楚，要先掛眼科還是先來驗光？',
-    a: '看狀況。如果是慢慢變得看不清楚、眼鏡度數好像不夠了，多半是屈光問題，可以先來驗光所做完整驗光；如果是突然看不清楚、單眼視力驟降、視野缺損，請直接掛眼科，這可能是需要醫療處置的狀況。不確定的話歡迎先透過 LINE 描述狀況，我們會建議你先去哪一邊。',
+    a: '要看是怎麼變模糊的。突然看不清楚、單眼視力驟降、視野缺損，建議儘速至眼科就醫，這可能是需要醫療處置的狀況。如果是慢慢變得看不清楚、眼鏡度數好像不夠了，多半是屈光問題，可以先來驗光所做完整驗光。自己分不出是哪一種，可以先透過 LINE 描述狀況；但突然發生的那一種，請先就醫，別在等訊息的時間裡耽擱。',
   },
   {
     q: '眼睛紅、痛、有分泌物，可以來驗光所處理嗎？',
-    a: '不行，這類症狀請直接掛眼科。紅腫、疼痛、分泌物、畏光等屬於眼睛疾病的範疇，需要眼科醫師診斷治療，驗光所依法不能也不應處理。等症狀治療好之後要配眼鏡，再來找我們。',
+    a: '不行。紅腫、疼痛、分泌物、畏光等屬於眼睛疾病的範疇，需要眼科醫師診斷治療，驗光所依法不能也不應處理，建議儘速至眼科就醫。等眼睛治療好、需要配眼鏡了，再來找我們。',
   },
   {
-    q: '小朋友第一次驗光配眼鏡，去眼科還是驗光所？',
-    a: '未滿 6 歲的幼童，驗光人員依法不得為其驗光，請由眼科醫師檢查；6～15 歲第一次驗光配鏡，須先經醫師確診為非假性近視，之後的驗光依法應於眼科醫師指導下進行，我們會在此前提下協同做視力評估與度數追蹤，若過程中發現異常，會建議轉由眼科醫師進一步檢查；超過 15 歲可以直接找驗光人員。完整的年齡分流，在〈小孩視力不好，先看眼科還是先配眼鏡？〉這篇。',
+    q: '驗光時發現問題，驗光所會怎麼轉介？',
+    a: '度數怎麼換，視力都補不到正常，或驗光過程中發現疑似異常，驗光人員會先停下配鏡，依《驗光人員法》第十二條第三項轉介眼科醫師，並依施行細則第六條第三項填具轉介單，把這次量到的度數與視力一併寫上，讓醫師手上多一份資料。驗光所與眼科醫師協同，各守各的專業：驗光人員不下診斷、不猜原因；醫師檢查完、確認可以配鏡，再回來把眼鏡配好。',
   },
 ];
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(f => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
-  }))
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "眼睛不舒服要掛眼科，還是去驗光所？依症狀分流一次看懂",
+      "dateModified": "2026-10-19",
+      "description": "眼睛不舒服要掛眼科還是去驗光所？突然模糊、紅痛怕光、閃光黑點、視野缺角請儘速就醫；慢慢看不清、看近吃力、用眼後痠累可先驗光；孩子依年齡有法定順序。新莊、板橋能見度視覺中心（驗光所，不是眼科）。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
 };
 ---
 <Layout
-  title="眼睛不舒服，掛眼科還是找驗光所？症狀分流完整指南｜新莊板橋"
-  description="能見度是驗光所，不是眼科——這頁誠實告訴你差別在哪：哪些症狀請直接掛眼科（紅痛、視力驟降、飛蚊暴增）、哪些狀況驗光所就能處理（度數變化、眼鏡不適、配鏡評估）。新莊、板橋能見度視覺中心。"
+  title="眼睛不舒服掛眼科還是驗光所？依症狀分流指南｜新莊 板橋"
+  description="眼睛不舒服要掛眼科還是去驗光所？突然模糊、紅痛怕光、閃光黑點、視野缺角請儘速就醫；慢慢看不清、看近吃力、用眼後痠累可先驗光；孩子依年齡有法定順序。新莊、板橋能見度視覺中心（驗光所，不是眼科）。"
   enPath="/en/guide/eye-doctor-or-optometrist/"
   schema={schema}
 >
@@ -58,23 +80,51 @@ const schema = {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">先說清楚：我們不是眼科</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        眼睛不舒服，<br />該掛眼科，還是找<span class="text-brand-gold">驗光所</span>？
+        眼睛不舒服要掛眼科，還是去驗光所？<br /><span class="text-brand-gold" style="font-size:0.6em">依症狀分流一次看懂</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
-        很多人搜「眼科」找到我們。能見度是合法立案的驗光所，不是眼科診所——這一頁把兩者的分工誠實講清楚：有些狀況你該直接去掛號，有些狀況其實不用掛號，來驗光所就能處理。
+        很多人搜「眼科」找到我們。能見度是合法立案的驗光所，不是眼科診所。走錯門，最怕的不是白跑一趟，是把該給醫師看的狀況當成度數問題，拖了下去。
       </p>
     </div>
   </section>
 
+  <!-- TL;DR 3秒重點（GEO：answer-first，不加標題） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>眼睛紅、痛、怕光，視力突然變差，閃光或黑點突然變多，視野缺了一角：請儘速至眼科就醫。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>慢慢看不清楚、看近吃力、眼鏡戴了不舒服、用眼後痠累：可以先到驗光所做完整驗光。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>孩子依年齡有法定順序：未滿 6 歲由眼科醫師檢查；6～15 歲第一次驗光配鏡，須先經醫師確診為非假性近視。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '30 秒分流', href: '#triage' },
+        { label: '依症狀看', href: '#symptoms' },
+        { label: '孩子依年齡', href: '#kids' },
+        { label: '驗光人員做到哪裡', href: '#roles' },
+        { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
   <!-- 分流表 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <section id="triage" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">30 秒分流：你的狀況該去哪？</h2>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">30 秒分流：你的症狀該去哪</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-white border-t-4 p-8" style="border-top-color:#b0413e">
-          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">請直接掛眼科</h3>
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">需要醫師診斷的症狀</h3>
           <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">這些屬於眼睛疾病範疇，需要醫師診斷治療，請儘速就醫</p>
           <ul class="space-y-3">
             {[
@@ -93,7 +143,7 @@ const schema = {
           </ul>
         </div>
         <div class="bg-white border-t-4 border-brand-gold p-8">
-          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">來驗光所就能處理</h3>
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">驗光所可以處理的狀況</h3>
           <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">屈光與配鏡問題不需要掛號，由持照驗光人員完整評估</p>
           <ul class="space-y-3">
             {[
@@ -103,7 +153,8 @@ const schema = {
               '長時間看螢幕眼睛痠，想做視覺評估',
               '已經配過眼鏡的 6～15 歲學童：度數追蹤與配鏡評估（依法於眼科醫師指導下進行）',
               '超過 15 歲：可直接驗光配鏡',
-              '一般隱形眼鏡配戴評估、鏡架調整維修',
+              '一般隱形眼鏡驗配（15 歲以下於眼科醫師指導下進行，未滿 6 歲不得為之）',
+              '鏡架調整維修',
             ].map(item => (
               <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">
                 <span class="text-brand-gold flex-shrink-0 mt-1" style="font-size:12px">●</span>{item}
@@ -113,21 +164,51 @@ const schema = {
         </div>
       </div>
       <p class="text-brand-ink-3 mt-8 text-center max-w-2xl mx-auto" style="font-size:14px;line-height:1.8">
-        拿不準的狀況，歡迎先透過 LINE 描述，我們幫你判斷先去哪一邊——<strong class="text-brand-ink">告訴你「不需要我們」，也是專業的一部分。</strong>
+        拿不準的狀況，可以先透過 LINE 描述症狀。<strong class="text-brand-ink">紅、痛或突然看不清楚的，不必等回覆，請儘速至眼科就醫。</strong>
       </p>
     </div>
   </section>
 
-  <!-- 分工說明 -->
-  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+  <!-- 依症狀看：聚落文章的入口 -->
+  <section id="symptoms" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">眼科和驗光所，是分工不是競爭</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">依症狀看：模糊、痠痛疲勞、配眼鏡前</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <h3 class="font-serif text-brand-navy" style="font-size:20px;font-weight:600">眼睛突然模糊</h3>
+        <p>幾小時、幾天之內變模糊的，請儘速至眼科就醫；同時有紅痛怕光、閃光或黑點突然變多、視野缺了一角，更不要等，換一副眼鏡處理不了這些，要先由醫師找出原因。幾個月、一兩年裡慢慢看不清楚，看遠要瞇眼、看書看手機得把手伸長，多半跟度數有關，可以先到驗光所做完整驗光。分不出是哪一種，可以拿<a href="/blog/blurry-vision-see-doctor/" class="text-brand-gold underline">眼睛突然模糊要馬上看眼科嗎？</a>裡的對照表逐項比。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">眼睛痠痛疲勞</h3>
+        <p>眼睛紅、腫、痛、有分泌物、怕光，請儘速就醫。痠累只在盯螢幕或看書一段時間後才出現、看遠看近切換吃力的，可以先驗光，度數、用眼距離、兩眼一起用的狀況，驗光人員都量得到。量完都正常，眼睛還是不舒服，就去看眼科醫師。我們把這三種狀況拆開寫成一篇：<a href="/blog/eye-strain-see-doctor/" class="text-brand-gold underline">眼睛痠痛疲勞要掛眼科嗎？</a>。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">配眼鏡前要不要先看眼科</h3>
+        <p>只是度數變了想換眼鏡，年紀又超過 15 歲，直接來驗光所就好，不用先掛號。下面幾種先看眼科再來配：近期剛治療過眼睛或動過眼睛手術、以前配眼鏡就始終矯正不上來、有糖尿病等慢性病卻還沒做過眼底檢查；孩子另有法定順序，見下一段。為什麼偏偏是這幾種，<a href="/blog/eye-exam-before-glasses/" class="text-brand-gold underline">配眼鏡前要先看眼科嗎？</a>逐項說了理由。</p>
       </div>
+    </div>
+  </section>
+
+  <!-- 孩子依年齡的法定順序：一段摘要，細節連 child-vision-check-where -->
+  <section id="kids" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">孩子的眼睛：依年齡有法定順序</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>孩子要先看眼科還是先驗光，答案不在家長方不方便，在孩子幾歲。《驗光人員法》第十二條與施行細則第六條，已經按年齡把順序定好。我們另外寫了一篇<a href="/blog/child-vision-check-where/" class="text-brand-gold underline">小孩視力不好，先看眼科還是先配眼鏡？</a>，每個年齡會碰到的狀況都放在裡面。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">未滿 6 歲：驗光人員依法不得驗光</h3>
+        <p>依《驗光人員法》第十二條，未滿 6 歲的孩子，驗光人員不得為其驗光。這個年紀的視力與屈光檢查，請由眼科醫師進行。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">6～15 歲：第一次須經醫師確診為非假性近視</h3>
+        <p>依《驗光人員法施行細則》第六條第二項，6 歲以上、15 歲以下的孩子第一次驗光及配鏡，須先經醫師確診為非假性近視；之後再驗光，15 歲以下仍於眼科醫師指導下進行。第一次到驗光所，請帶著眼科醫師的確診結果。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">超過 15 歲：可以直接找驗光人員</h3>
+        <p>法條的「15 歲以下」包含 15 歲，滿 16 歲才可以直接驗光配鏡。不分年齡，眼睛紅、痛、怕光或突然看不清楚，都先給眼科醫師檢查。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 眼科醫師和驗光人員各自做什麼（原「是分工不是競爭」） -->
+  <section id="roles" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">驗光人員做到哪裡為止</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
-        <p><strong>眼科醫師</strong>負責眼睛的「健康」：疾病診斷、治療、手術、醫療程序（如散瞳檢查）。<strong>驗光所</strong>負責眼睛的「視覺品質」：完整驗光、雙眼視覺評估、鏡片驗配與調整，由持照驗光人員依《驗光人員法》執行。</p>
-        <p>兩邊常常互相補位：眼科治療好眼疾後，配鏡的細活來驗光所做；我們在驗光過程中發現視力無法有效補正或疑似異常，也會依法把你轉介給眼科。你的眼睛同時需要這兩種專業，只是不同狀況找不同的門。</p>
-        <p>所以如果你是搜「眼科」找到這裡的——先對照上面的分流表。真的需要就醫，請別耽誤；如果其實是配鏡問題，那你來對地方了。</p>
+        <p><strong>眼科醫師</strong>負責眼睛的「健康」：疾病診斷、治療、用藥、手術，散瞳檢查也屬醫療行為。<strong>驗光人員</strong>負責眼睛的「視覺品質」：依《驗光人員法》第十二條執行驗光與配鏡，量度數、評估兩眼一起用的狀況、量配鏡參數、調整鏡架。</p>
+        <p>能見度新莊、板橋兩間門市，每次驗光都做雙眼視覺評估，一次驗光約 45–60 分鐘。門市沒有眼壓計和視野計，不量眼軸、不做乾眼檢查、不散瞳，這些請由眼科安排。</p>
+        <p>驗光過程中，鏡片一組一組換過去，視力始終到不了正常，驗光人員就停在這裡，不往配鏡走。依《驗光人員法》第十二條第三項，視力不能矯正至正常者，應轉介醫療機構診治。兩種執照、業務範圍與健保怎麼不同，是<a href="/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">眼科和驗光所差在哪？</a>這篇的主題。</p>
+        <p>搜「眼科」找到這裡的人，真的需要就醫，請別耽誤；其實是配鏡問題的，那你來對地方了。</p>
       </div>
       <div class="mt-10 text-center">
         <a href="/booking/"
@@ -139,16 +220,14 @@ const schema = {
   </section>
 
   <!-- FAQ -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">常見問題</h2>
-      </div>
-      <div class="space-y-6">
-        {faqs.map((faq, i) => (
-          <div class="border-t border-brand-ink/15 pt-6">
-            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">Q{i + 1}. {faq.q}</h3>
-            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">眼科還是驗光所常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
           </div>
         ))}
       </div>
@@ -158,10 +237,50 @@ const schema = {
     </div>
   </section>
 
-  <!-- 聚落文章 -->
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字沿用兒童指南作者框（已過法務），照片用現有門市實拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-examination.webp" alt="驗光人員進行完整驗光" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">完整驗光：度數與雙眼視覺評估</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON 綜合驗光儀 新莊比泱驗光所" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">綜合驗光儀：一格一格比對度數</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+          { t: '驗光人員法施行細則（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020194' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">年齡順序與轉介規定，照的是上列兩部法規的原文。症狀只是就醫的線索，原因與診斷由眼科醫師負責；症狀怎麼分、驗光時量哪些項目，則是新莊、板橋兩店驗光現場的做法。最後更新：2026 年 10 月 19 日。</p>
+    </div>
+  </section>
+
+  <!-- 聚落文章：讀分類表 eye-exam → triage -->
   <section class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">眼科還是驗光所主題文章</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
           <a href={`/blog/${post.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
@@ -171,6 +290,7 @@ const schema = {
           </a>
         ))}
       </div>
+      <a href="/topics/eye-exam/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看驗光全部文章 →</a>
     </div>
   </section>
 

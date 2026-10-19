@@ -110,7 +110,7 @@ export const CATEGORIES: Category[] = [
 export const GUIDE_TITLES: Record<string, string> = {
   '/guide/progressive-lens/': '老花眼鏡完整指南',
   '/guide/children-myopia/': '兒童近視追蹤完整指南',
-  '/guide/why-optometrist-matters/': '選好的鏡片，不如選好的驗光師',
+  '/guide/why-optometrist-matters/': '好的驗光長怎樣：完整驗光指南',
   '/guide/eye-doctor-or-optometrist/': '掛眼科還是找驗光所？症狀分流指南',
   '/guide/choose-optician/': '新北配眼鏡完整指南',
   '/guide/byo-frame-lenses/': '自帶鏡框配鏡片完整指南',

@@ -1,24 +1,21 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../data/categories';
 
-// 指南 → 文章的聚落連結（與 blog/[slug].astro 的 PILLAR_MAP 對稱，形成雙向互連）
-// 2026-08-07：good-lens-needs-good-fitting 已併入本頁 #individual 段並 301 導向，
-// 聚落位由 vertex-distance 遞補（同屬「參數精準度」主題，與本頁新段落直接呼應）
-const CLUSTER_SLUGS = [
-  'eye-exam-duration-difference',
-  'same-prescription-different-feel',
-  'vertex-distance',
-  'eye-exam-preparation-tips',
-];
+// 本指南的主題聚落文章：讀分類表「驗光」大分類，排除另有指南的「眼科還是驗光所」小分類，順序＝分類頁閱讀順序
+// （2026-10-19 改：原本 CLUSTER_SLUGS 寫死 4 篇；分類表新增文章會自動帶進來）
+const CLUSTER_SLUGS = CATEGORIES.find(c => c.slug === 'eye-exam')!.subs
+  .filter(s => s.slug !== 'triage')
+  .flatMap(s => s.posts);
 const allPosts = await getCollection('blog');
 const clusterPosts = CLUSTER_SLUGS
   .map(slug => allPosts.find(p => p.slug === slug))
   .filter(Boolean);
 
-// 內容戰役支柱頁：「選好的鏡片，不如選好的驗光師」
+// 內容戰役支柱頁：「好的驗光長怎樣」（口號「選好的鏡片，不如選好的驗光人員」降為眉標，2026-10-19 老闆定案）
 // 核心論述＝乘法定調：鏡片是硬體，驗光與驗配是讓硬體發揮的那一半。絕不貶低鏡片（本店為蔡司簽約經銷、HOYA 經銷）。
-// 合規基準：服務執行者一律「驗光人員」；「驗光師」僅作職業泛稱或 YoYo 個人（驗師字第 003309 號）。
+// 合規基準：服務執行者一律「驗光人員」；「驗光師」只用於 YoYo 個人（驗師字第 003309 號）或制度段的職稱說明。
 //          不宣稱近視控制/角膜塑形/散瞳療效；散瞳＝屬醫療行為請洽眼科；不比較貶抑同業、不點名。
 
 const canonicalUrl = 'https://beyondvisualopt.com/guide/why-optometrist-matters/';
@@ -26,16 +23,16 @@ const canonicalUrl = 'https://beyondvisualopt.com/guide/why-optometrist-matters/
 // 指南頁 FAQ（FAQPage schema；答案導向、語意豐富，供 AI 引擎精選摘要抓取）
 const faqs = [
   {
-    q: '驗光師和驗光生差在哪？',
-    a: '兩者都是《驗光人員法》規範、通過國家考試的醫事人員，都能合法執行一般驗光。差別在考試層級：驗光師通過的是專門職業及技術人員「高等考試」，驗光生通過的是「普通考試」，兩者在法定業務範圍上有部分不同。但以配一副日常眼鏡來說，兩者都能為你完整驗光。真正決定你戴得舒不舒服的，不是頭銜高低，而是這位驗光人員願不願意把該做的評估流程完整做完。',
+    q: '電腦驗光量出來的度數，可以直接拿去配眼鏡嗎？',
+    a: '最好不要。電腦驗光是一台機器先替你的眼睛估出來的數字，還不是要配進鏡片的度數。接下來要用綜合驗光儀讓你試戴、回饋、細部微調，再看兩眼一起用時協不協調、調節力夠不夠、眼位穩不穩。跳過有人陪你比對的這一段，度數可能偏深或偏淺；看得清楚，也不等於戴一整天都舒服。',
   },
   {
-    q: '為什麼驗光要這麼久？十分鐘不行嗎？',
-    a: '因為「看得清楚」和「看得舒服」是兩件事。十分鐘的快速驗光能確認你近視幾度，但一副戴一整天都舒服的眼鏡，還要評估兩眼協不協調、調節力夠不夠、眼位穩不穩，再加上配鏡時的瞳距、瞳高、頂點距離、鏡框傾斜角等參數量測。一場完整臨床驗光通常需要 45 到 60 分鐘，多出來的時間都花在「確認你不只看得到，還能久看不累」這件事上。',
+    q: '怎麼知道這次驗光有沒有做完整？',
+    a: '不用懂視光學，回想幾件事就夠：一開始有沒有問你平常怎麼用眼；電腦驗光之後，有沒有讓你戴上綜合驗光儀試戴、回饋、微調；有沒有看兩眼一起用時對不對得準、對焦跟不跟得上；配鏡時有沒有分開量左右眼的瞳距，配多焦點有沒有量瞳高；取件時有沒有讓你戴上確認、把鏡架調到坐穩。這幾件都做到，這次驗光大致是完整的。時間只能當參考，能見度一次完整驗光抓 45 到 60 分鐘，可是真正該看的，是這幾件事有沒有做，不是坐了多久。',
   },
   {
-    q: '度數一樣，為什麼換一家配就不舒服？',
-    a: '因為度數只是整份配方的一部分。同樣的 -4.00D，配到不同位置，戴起來可以完全不同：鏡片的光學中心有沒有對準你的瞳孔、鏡片離眼睛多遠（頂點距離）、鏡框在臉上的傾斜角度，任何一項偏掉都可能讓你頭暈、疲勞或看久不適。這就是為什麼「度數對了，不等於眼鏡對了」。想更完整了解，可以看我們整理的〈眼鏡戴了不舒服，通常是這三個原因〉。',
+    q: '驗光完，可以拿到驗光結果嗎？',
+    a: '可以，這是《驗光人員法》第十三條規定的。每次的驗光紀錄都保存在門市，需要時可以請我們提供一份由驗光人員簽名或蓋章的驗光結果報告。上面一般會有左右眼的近視或遠視度數、散光度數與軸度、瞳距，有老花時再加上加入度。要提醒一點：驗光結果記的是你眼睛需要的度數，一副眼鏡還有另一半參數，例如瞳高、頂點距離、鏡框前傾角，要等鏡框選定、實際戴在臉上才量得出來。拿著同一張驗光結果去配不同鏡框，這一半還是要重新量。',
   },
   {
     q: '高價鏡片是不是智商稅？',
@@ -59,8 +56,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "選好的鏡片，不如選好的驗光師：為什麼「驗光」決定一副眼鏡的成敗",
-      "description": "一副眼鏡的好壞是「鏡片 × 驗配」的乘積。這頁講清楚驗光為什麼決定成敗、一場完整驗光會做哪些事、為什麼蔡司這類個人化訂製鏡片更依賴精準參數（升級了卻沒感覺常是參數或配戴位置跑掉），以及怎麼判斷你遇到的驗光夠不夠完整。新莊、板橋能見度視覺中心。",
+      "headline": "好的驗光長怎樣？完整驗光該做哪些事，為什麼它決定一副眼鏡戴得舒不舒服",
+      "dateModified": "2026-10-19",
+      "description": "好的驗光長怎樣？一副眼鏡是「鏡片 × 驗配」的乘積。這頁整理完整驗光該做的事、判斷驗光完不完整的 8 項對照清單、蔡司這類個人化訂製鏡片為什麼更依賴瞳距、瞳高、頂點距離等參數，以及台灣驗光師、驗光生與驗光所的制度規定。新莊、板橋能見度視覺中心。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
       "articleSection": "完整指南",
@@ -85,8 +83,8 @@ const schema = {
 };
 ---
 <Layout
-  title="選好的鏡片，不如選好的驗光師｜驗光為什麼決定一副眼鏡的成敗｜新莊 板橋"
-  description="升級了個人化訂製鏡片，卻覺得跟以前差不多？多半是瞳距、瞳高、頂點距離這些參數或配戴位置跑掉了。一副眼鏡是「鏡片 × 驗配」的乘積，這頁講透完整驗光該做哪些事。"
+  title="好的驗光長怎樣？完整驗光該做哪些事｜新莊 板橋驗光"
+  description="好的驗光長怎樣？從問診、主觀微調、雙眼視覺評估到瞳距、瞳高、頂點距離量測，用 8 項對照清單判斷這次驗光做得完不完整。一副眼鏡是「鏡片 × 驗配」的乘積，新莊、板橋能見度視覺中心整理。"
   enPath="/en/guide/why-optometrist-matters/"
   ogType="article"
   schema={schema}
@@ -95,13 +93,12 @@ const schema = {
   <!-- Hero -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
-      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(28px,4.5vw,50px);font-weight:300">
-        選好的鏡片，不如選好的<span class="text-brand-gold">驗光師</span><br />
-        <span style="font-size:0.62em">——為什麼「驗光」決定一副眼鏡的成敗</span>
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">選好的鏡片，不如選好的驗光人員</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        好的驗光長怎樣？<br /><span class="text-brand-gold" style="font-size:0.6em">完整驗光該做哪些事，為什麼它決定一副眼鏡戴得舒不舒服</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
-        同樣一片蔡司或 HOYA 鏡片，交到不同的驗光流程手上，戴起來可以天差地遠。鏡片是硬體，驗光與驗配是讓硬體發揮的那一半。這一頁講清楚：驗光為什麼決定成敗、一場完整的驗光到底在做什麼，以及怎麼判斷你遇到的驗光夠不夠完整。
+        同樣一片蔡司或 HOYA 鏡片，交到不同的驗光流程手上，戴起來可以天差地遠。鏡片是硬體，驗光與驗配是讓硬體發揮的那一半。
       </p>
     </div>
   </section>
@@ -114,7 +111,7 @@ const schema = {
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>一副眼鏡的好壞是<strong>乘法不是加法</strong>：好鏡片 × 完整驗配 = 錢花在刀口上；好鏡片 × 不完整的驗配 = 硬體再好也發揮不出來。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>鏡片決定你「有機會」看到多好；驗光與驗配決定這個機會有沒有真正落到你的眼睛上。兩者缺一不可，我們從不勸你只挑貴的。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>一副眼鏡的成敗鏈有五段：<strong>問診 → 完整驗光 → 配鏡參數量測 → 鏡框調整 → 戴後追蹤</strong>，任何一段被跳過，成品就打折。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>「看得清楚」不等於「看得舒服」。電腦驗光值只是起點，後面還需要主觀微調、雙眼視覺評估與參數量測，才配得出久看不累的眼鏡。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>「看得清楚」不等於「看得舒服」。電腦驗光值是機器的初步估算，後面還需要主觀微調、雙眼視覺評估與參數量測，才配得出久看不累的眼鏡。</span></li>
       </ul>
     </div>
   </section>
@@ -125,12 +122,13 @@ const schema = {
       {[
         { label: '鏡片 × 驗配的乘法', href: '#multiply' },
         { label: '個人化鏡片與參數', href: '#individual' },
-        { label: '一副眼鏡的成敗鏈', href: '#chain' },
-        { label: '完整驗光綠旗清單', href: '#greenflags' },
-        { label: '值得留意的訊號', href: '#signals' },
-        { label: '台灣驗光制度', href: '#system' },
+        { label: '從驗光到配鏡 5 個環節', href: '#chain' },
+        { label: '8 項對照清單', href: '#greenflags' },
+        { label: '值得多問的訊號', href: '#signals' },
         { label: '新莊店 × 板橋店', href: '#stores' },
+        { label: '台灣驗光制度', href: '#system' },
         { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
@@ -140,7 +138,7 @@ const schema = {
   <!-- 鏡片 × 驗配的乘法 -->
   <section id="multiply" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">一副眼鏡是「鏡片 × 驗配」的乘積，不是加法</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡片和驗光是相乘：好鏡片要配上完整驗配才發揮得出來</h2>
       <div class="space-y-5 text-brand-ink-2 mb-10" style="font-size:16.5px;line-height:1.9">
         <p>先把話說在前頭：我們是蔡司（ZEISS）簽約認證經銷、HOYA 經銷，鏡片這個硬體有多重要，我們再清楚不過。高單價鏡片的非球面設計、多焦點的漸進通道、抗反射鍍膜，都是實打實的光學差異，不是行銷話術。</p>
         <p>但鏡片再好，也只是決定了你「有機會」看到多清楚、多舒服。這個機會有沒有真正落到你的眼睛上，取決於驗光與驗配這後半段——度數準不準、光學中心有沒有對準瞳孔、鏡片離眼睛多遠、鏡框在臉上怎麼坐。這後半段做得完整，好鏡片才發揮得出來；做得草率，再貴的鏡片也只是一片沒能發揮應有實力的玻璃。</p>
@@ -179,7 +177,7 @@ const schema = {
   <!-- 越個人化的鏡片，越依賴精準參數（2026-08-07 併入原 /blog/good-lens-needs-good-fitting/） -->
   <section id="individual" class="px-6 md:px-16 py-20" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">越是個人化的好鏡片，越依賴精準的參數</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">個人化訂製鏡片，為什麼更依賴驗光量出的參數</h2>
       <div class="space-y-5 text-brand-ink-2 mb-10" style="font-size:16.5px;line-height:1.9">
         <p>「我升級了蔡司的個人化訂製鏡片，可是戴起來好像跟以前差不多。」這句話我們在門市聽過不少次。多數情況下問題不在鏡片本身，而在這片好鏡片的驗配參數沒被抓準——而且，<strong>鏡片的設計越個人化，這件事就越關鍵。</strong></p>
         <p>一般非訂製鏡片的光學設計是建立在「平均值」上：平均臉型、平均鼻高、平均配戴位置。它的優點是寬容，你的臉不完全等於平均，戴起來也還過得去。</p>
@@ -215,7 +213,7 @@ const schema = {
         <p>看出關鍵了嗎？這套設計的威力，來自「它是照你的參數算的」。一旦參數量得不準，就等於拿別人的身形去訂做你的西裝——布料再高級，版型對不上，穿起來還是彆扭。<strong>設計越個人化，對參數精準度的要求就越高，這是它厲害的地方，也是它脆弱的地方。</strong></p>
       </div>
 
-      <h3 class="font-serif text-brand-navy mt-12 mb-4" style="font-size:21px;font-weight:600">一個很具體的例子：頂點距離差幾公釐</h3>
+      <h3 class="font-serif text-brand-navy mt-12 mb-4" style="font-size:21px;font-weight:600">頂點距離差幾公釐會怎樣</h3>
       <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
         <p>個人化鏡片會把頂點距離（鏡片後表面到角膜的距離）算進度數補正裡。但這個補正有個前提：<strong>配戴後鏡框實際落在你臉上的位置，要跟量測當下對得起來。</strong></p>
         <p>假設量測時鏡框服貼、頂點距離抓在標準值，但交件後鏡框往下滑、往前推了幾公釐（度數越高越明顯），你眼睛實際感受到的有效度數就跟著跑掉。鏡片裡那套為你精算的補正，是對著「原本的位置」算的；位置一變，補正就對不準了。結果是一片頂級鏡片，因為戴歪了，發揮不出它該有的清晰。</p>
@@ -228,12 +226,12 @@ const schema = {
   <!-- 一副眼鏡的成敗鏈 -->
   <section id="chain" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">一副眼鏡的成敗鏈：從你坐下到戴著走出門</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">從驗光到配鏡的 5 個環節：坐下到戴著走出門</h2>
       <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">從你坐上驗光椅到戴著新眼鏡走出店門，中間其實有一條環環相扣的鏈。這五段是通用的，不論你在哪一家配眼鏡都適用——只要有一環被跳過，最終成品就會打折。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           { n: '01', title: '問診：先了解你怎麼用眼', desc: '好的驗光不是一坐下就叫你看視力表，而是先問清楚你的用眼情境——工作型態、每天看螢幕幾小時、要不要開車、有沒有特定嗜好。同樣近視 -4.00D，一位長時間看螢幕的工程師和一位長時間開車的業務，適合的方案並不一樣。沒有這一步，度數配得再準也可能不符合你的生活。' },
-          { n: '02', title: '完整驗光：客觀＋主觀＋雙眼視覺', desc: '電腦驗光（客觀）給的是起點，接著要用綜合驗光儀讓你試戴、回饋、細部微調（主觀），再評估兩眼協不協調、調節力夠不夠、眼位穩不穩，超出驗光範圍的就轉介眼科。看得清楚只是及格線，看得舒服、久看不累才是這一段的目標。' },
+          { n: '02', title: '完整驗光：客觀＋主觀＋雙眼視覺', desc: '電腦驗光（客觀）給的是初步估算，接著要用綜合驗光儀讓你試戴、回饋、細部微調（主觀），再評估兩眼協不協調、調節力夠不夠、眼位穩不穩。看得清楚只是及格線，看得舒服、久看不累才是這一段的目標。' },
           { n: '03', title: '配鏡參數量測：把度數對準你的臉', desc: '度數對了，還要讓鏡片正確坐在你臉上。這一段要分別量左右眼各自的單側瞳距、配多焦點時的瞳高，以及頂點距離（鏡片到眼睛的距離）與鏡框傾斜角。這些參數任何一項偏掉，都會讓好鏡片發揮不出應有的效果。' },
           { n: '04', title: '鏡框選配與調整：讓鏡框穩定坐好', desc: '鏡框不只是外觀，它決定鏡片能不能維持在剛剛量好的位置。鼻墊、鏡腳、傾斜角要依你的臉調整，鏡框滑一點、歪一點，前面量得再精準也會跑掉。' },
           { n: '05', title: '戴後追蹤：不是做好就結束', desc: '取鏡當場要戴上確認遠中近視野、兩眼平衡與鏡架配適，之後也應提供回店調整。多焦點與高度近視尤其需要適應期回訪。「做好給你、有問題再說」不是完整流程的樣子。' },
@@ -254,7 +252,7 @@ const schema = {
   <!-- 完整驗光綠旗清單 -->
   <section id="greenflags" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">一場完整的驗光會做哪些事？這張綠旗清單帶著走</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">怎麼判斷這次驗光做得完不完整：8 項對照清單</h2>
       <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">你不需要懂視光學，也能判斷自己遇到的驗光夠不夠完整。這張清單你可以帶去任何一家店對照——出現得越多，代表流程越到位。它不是能見度專屬，而是完整驗配「本來就該有」的樣子。</p>
       <div class="bg-white border border-brand-ink/8 rounded-2xl p-8">
         <ul class="space-y-4">
@@ -284,13 +282,13 @@ const schema = {
   <!-- 值得留意的訊號（教育性，不點名同業） -->
   <section id="signals" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">幾個值得你留意的訊號</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">驗光時值得多問一句的 5 個訊號</h2>
       <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">以下不是要你評斷任何一家店，而是幫你理解「哪些環節如果被省略，可能影響最終成品」。遇到時多問一句，通常就能看出這次驗配夠不夠完整。</p>
       <div class="space-y-6">
         {[
-          { title: '只憑電腦驗光值就直接配', desc: '電腦驗光值是「起點」不是「答案」。它是一台機器對你眼睛的初步估算，後面還需要人來讓你試戴、回饋、微調，並評估雙眼視覺。如果整個過程只有機器、沒有主觀確認，配出來的度數可能偏深或偏淺。' },
+          { title: '只憑電腦驗光值就直接配', desc: '電腦驗光值是一台機器對你眼睛的初步估算，還不是要配進鏡片的度數。後面還需要人來讓你試戴、回饋、微調，並評估雙眼視覺。如果整個過程只有機器、沒有主觀確認，配出來的度數可能偏深或偏淺。' },
           { title: '全程沒問你平常怎麼用眼', desc: '一份沒有用眼情境的度數，就像沒問用途就開的藥。同樣的度數，長時間看螢幕的人和長時間開車的人，適合的鏡片方案與加入度可能不同。缺了問診，度數再準也不一定貼合你的生活。' },
-          { title: '十分鐘就結束', desc: '快速驗光能確認你近視、遠視、散光幾度，但一副戴一整天都舒服的眼鏡，還要花時間評估兩眼協調、調節力與參數量測。時間不是越久越好，但明顯過短，通常代表有環節被跳過。' },
+          { title: '沒做雙眼視覺評估', desc: '左眼、右眼各自驗到清楚，度數就定案，沒有看兩眼一起用的時候對不對得準、看近時對焦跟不跟得上。單眼各自清楚，兩眼一起看近、看久卻容易累，這一段常是原因之一。可以直接問一句：「這次有看兩眼一起用的狀況嗎？」' },
           { title: '配多焦點卻沒量瞳高', desc: '漸進多焦點鏡片的遠、中、近視線通道，是靠瞳高定位在鏡片上的。沒量瞳高就配多焦點，等於把通道放在猜測的位置，容易暈，也比較難找到看近的位置。' },
           { title: '取鏡沒讓你當場試戴確認', desc: '配鏡的最後一步應該在驗光人員面前戴上、確認視覺品質與鏡框配適。少了這一步，回家後出問題就很難判斷是度數、位置還是適應期的問題。' },
         ].map(item => (
@@ -301,23 +299,7 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        這些訊號背後對應的常見錯誤，我們整理成一篇第一手觀察：〈配眼鏡常見的 5 個驗光誤區〉<a href="/blog/common-optometry-mistakes/" class="text-brand-gold underline">閱讀全文</a>；如果你已經配了卻戴著不舒服，〈眼鏡戴了不舒服，通常是這三個原因〉<a href="/blog/glasses-uncomfortable-3-reasons/" class="text-brand-gold underline">可以先自我排查</a>。
-      </p>
-    </div>
-  </section>
-
-  <!-- 台灣驗光制度 30 秒科普 -->
-  <section id="system" class="px-6 md:px-16 py-20" style="background:#eee8da">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">驗光師、驗光生、驗光所——台灣驗光制度 30 秒看懂</h2>
-      <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
-        <p>很多人不知道，台灣的「驗光」在 2016 年《驗光人員法》上路後，已經是一門受國家規範的醫事專業，不再是誰都能做的商業服務。</p>
-        <p><strong>驗光師與驗光生，都是通過國家考試的醫事人員。</strong>驗光師通過的是專門職業及技術人員「高等考試」，驗光生通過的是「普通考試」，兩者在法定業務範圍上有部分差異，但都能合法為你執行一般驗光。門市裡實際為你服務的，我們統一稱「驗光人員」。</p>
-        <p><strong>「驗光所」是政府核可立案的醫事機構</strong>，必須由持照驗光人員執行驗光、可合法開立驗光報告。走進店裡，驗光所的開業執照與收費標準依法應揭示於明顯處；驗光人員的證書字號可在衛福部醫事人員查詢系統核對。</p>
-        <p class="text-brand-ink-3" style="font-size:15px">要提醒的是：驗光人員負責的是你眼睛的「視覺品質」，不做疾病診斷與醫療處置。像散瞳這類屬於醫療行為的項目，請洽眼科醫師；驗光過程中若發現視力異常無法有效補正，我們也會依法協助轉介眼科。至於孩子：未滿 6 歲，驗光人員依法不得驗光；6～15 歲第一次驗光配鏡，須先經醫師確診為非假性近視，之後的驗光依法應在眼科醫師指導下進行；超過 15 歲可以直接驗光。想更完整分辨「該掛眼科還是找驗光所」，可以看我們的分流指南。</p>
-      </div>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        延伸：<a href="/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">眼睛不舒服，該掛眼科還是找驗光所？症狀分流完整指南</a>
+        〈驗光要多久？10 分鐘和 1 小時差在哪〉拆開的是多出來的那段時間做了哪幾件事，<a href="/blog/eye-exam-duration-difference/" class="text-brand-gold underline">閱讀全文</a>。這些訊號背後對應的常見錯誤，我們整理成一篇第一手觀察：〈配眼鏡常見的 5 個驗光誤區〉<a href="/blog/common-optometry-mistakes/" class="text-brand-gold underline">閱讀全文</a>；如果你已經配了卻戴著不舒服，〈眼鏡戴了不舒服，通常是這三個原因〉<a href="/blog/glasses-uncomfortable-3-reasons/" class="text-brand-gold underline">可以先自我排查</a>。
       </p>
     </div>
   </section>
@@ -325,8 +307,8 @@ const schema = {
   <!-- 新莊店 × 板橋店 NAP -->
   <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">把「乘法」做完整的地方：新莊店 × 板橋店</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商，提供 45–60 分鐘完整臨床驗光、配鏡參數量測與配鏡後回店。我們不勸你只挑最貴的鏡片，只把該做完的驗配環節做完。看哪間離你近。</p>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">新莊店 × 板橋店：完整驗光約 45–60 分鐘</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商。完整臨床驗光約 45–60 分鐘，每次驗光都做雙眼視覺評估，加上配鏡參數量測，預約時段抓 60–90 分鐘；配鏡後可以回店調整。我們不勸你只挑最貴的鏡片，只把該做完的驗配環節做完。看哪間離你近。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="border-t border-white/10 pt-6">
           <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">新莊店</p>
@@ -356,10 +338,31 @@ const schema = {
     </div>
   </section>
 
+  <!-- 台灣驗光制度 30 秒科普 -->
+  <section id="system" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">驗光師、驗光生、驗光所：台灣驗光制度怎麼規定</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
+        <p>很多人不知道，台灣的「驗光」在 2016 年《驗光人員法》上路後，已經是一門受國家規範的醫事專業，不再是誰都能做的商業服務。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">驗光師與驗光生：都是國家考試的醫事人員</h3>
+        <p>驗光師通過的是專門職業及技術人員「高等考試」，驗光生通過的是「普通考試」，兩者在法定業務範圍上有部分差異，但都能合法為你執行一般驗光。門市裡實際為你服務的，我們統一稱「驗光人員」。替你驗光的人有沒有執照、是哪一種，你自己就查得到，打開<a href="/blog/optometrist-license-check/" class="text-brand-gold underline">驗光師和驗光生差在哪</a>照著步驟查就好。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">驗光所與眼鏡行：驗光人員可以在哪裡執業</h3>
+        <p>《驗光人員法》第九條列出驗光人員可以執業的地方：經核准登記的醫療機構、驗光所、眼鏡公司（商號），眼鏡行本來就在名單上。不過，依《驗光人員法施行細則》第四條，眼鏡公司要執行驗光業務，必須在店內設立驗光所。能見度兩間門市就是這樣的組合：新莊店是能見度視覺中心 × 比泱驗光所，板橋店是能見度眼鏡行 × 能見度驗光所。</p>
+        <p><strong>驗光所是核准登記的醫事機構</strong>，由持照驗光人員執行驗光。走進店裡，依第十九條，驗光所的開業執照與收費標準要揭示在明顯處。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">驗光人員的界線：兒童驗光的年齡規定，散瞳與診斷歸眼科</h3>
+        <p>依《驗光人員法》第十二條，未滿 6 歲兒童的驗光，驗光人員不得為之，這個年紀的屈光檢查請由眼科醫師進行。6 歲以上、15 歲以下的孩子，第一次驗光及配鏡須先經醫師確診為非假性近視（《驗光人員法施行細則》第六條第二項），之後的驗光，15 歲以下於眼科醫師指導下進行；超過 15 歲可以直接找驗光人員驗光。</p>
+        <p>驗光人員處理的是度數與視覺品質，不做疾病診斷。散瞳屬醫療行為，請洽眼科醫師。第十二條第三項另有規定：驗光時發現視力不能矯正至正常，驗光人員應轉介至醫療機構診治。</p>
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
+        延伸：<a href="/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">眼睛不舒服要掛眼科，還是去驗光所？依症狀分流一次看懂</a>
+      </p>
+    </div>
+  </section>
+
   <!-- 聚落文章 -->
   <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">好的驗光主題文章</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
           <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
@@ -369,13 +372,14 @@ const schema = {
           </a>
         ))}
       </div>
+      <a href="/topics/eye-exam/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看驗光全部文章 →</a>
     </div>
   </section>
 
   <!-- FAQ -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">好的驗光常見問題</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
@@ -384,6 +388,52 @@ const schema = {
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字沿用文章作者框（已過法務），照片用現有門市實拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-examination.webp" alt="驗光人員進行完整驗光" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">先問用眼情境，再做主客觀驗光</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON 綜合驗光儀 新莊比泱驗光所" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">綜合驗光儀：主觀微調與雙眼視覺評估</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-corneal-map.webp" alt="TOPCON CA-800 角膜地形圖暨像差儀 能見度視覺中心" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">TOPCON CA-800 角膜地形圖暨像差儀</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+          { t: '驗光人員法施行細則（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020194' },
+          { t: '專門職業及技術人員高等暨普通考試驗光人員考試規則（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=R0040078' },
+          { t: '衛生福利部醫事查詢系統：醫事人員查詢', u: 'https://ma.mohw.gov.tw/Accessibility/DOCSearch/MASearchDOC' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">涉及眼睛疾病、用藥與醫療處置，請由眼科醫師評估。5 個環節、8 項對照清單和配鏡參數，是新莊、板橋兩店驗光、驗配時每天在走的流程；制度段的條文、考試類別和執照怎麼查，上列 4 筆都對得到原文。最後更新：2026 年 10 月 19 日。</p>
     </div>
   </section>
 
