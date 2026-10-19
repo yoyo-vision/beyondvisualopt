@@ -9,6 +9,10 @@ keywords: "老花度數加深,老花多久換一次眼鏡,老花會越來越深�
 image: ""
 youtube: ""
 instagram: ""
+updated: 2026-10-19
+references:
+  - title: "American Optometric Association: Comprehensive Adult Eye and Vision Examination, 2nd Edition (2023)"
+    url: "https://www.aoa.org/AOA/Documents/Practice%20Management/Clinical%20Guidelines/EBO%20Guidelines/Comprehensive%20Adult%20Eye%20and%20Vision%20Examination,%20Second%20Edition.pdf"
 ---
 
 常有客人一坐下就先抱怨：「早知道就不要戴。戴了老花眼鏡以後，度數一副比一副深，現在拿掉根本看不到。」
@@ -43,7 +47,7 @@ instagram: ""
 
 ## 老花多久要重新驗光
 
-沒有不舒服的話，一到兩年做一次完整驗光；中段那幾年變化比較快，出現下面的訊號就提早回來。
+沒有不舒服的話，每年做一次完整驗光，這是美國驗光學會（AOA）2023 年成人指引建議的頻率，細節見[多久要重新驗光一次](/blog/eye-exam-how-often/)。中段那幾年變化比較快，出現下面的訊號就提早回來。
 
 ### 這些情況就該提早回來量
 

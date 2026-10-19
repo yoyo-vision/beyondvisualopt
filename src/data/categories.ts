@@ -44,7 +44,7 @@ export const CATEGORIES: Category[] = [
       { slug: 'what', name: '驗光在做什麼', posts: ['optometry-vs-dispensing', 'diopter-explained', 'binocular-vision', 'pupillary-distance-pd', 'vertex-distance'] },
       { slug: 'quality', name: '好的驗光長怎樣', guide: '/guide/why-optometrist-matters/', posts: ['eye-exam-duration-difference', 'same-prescription-different-feel', 'common-optometry-mistakes', 'eye-exam-preparation-tips'] },
       { slug: 'triage', name: '眼科還是驗光所', guide: '/guide/eye-doctor-or-optometrist/', posts: ['optometry-vs-ophthalmology', 'blurry-vision-see-doctor', 'eye-exam-before-glasses', 'eye-strain-see-doctor'] },
-      { slug: 'choosing', name: '選擇驗光所', posts: [] },
+      { slug: 'choosing', name: '選擇驗光所', posts: ['eye-exam-cost', 'xinzhuang-eye-exam', 'eye-exam-first-visit', 'eye-exam-how-often', 'optometrist-license-check'] },
     ],
   },
   {
