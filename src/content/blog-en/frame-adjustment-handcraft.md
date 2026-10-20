@@ -80,7 +80,7 @@ If any of these are off, we keep adjusting until they're not.
 
 ### Step Eight: A 2-Week Follow-Up After Pickup
 
-After you start wearing your new glasses, the nose pads and temples will shift slightly to match your wearing habits. Come back within 2 weeks so we can check everything is still in the right position — this follow-up adjustment is free of charge.
+After you start wearing your new glasses, the nose pads and temples will shift slightly to match your wearing habits. We follow up with you within 2 weeks of pickup; if the frame feels loose or slips, bring it back and we'll set it back in the right position. For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge.
 
 ---
 

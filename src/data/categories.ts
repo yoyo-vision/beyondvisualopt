@@ -52,8 +52,8 @@ export const CATEGORIES: Category[] = [
     subs: [
       { slug: 'local', name: '新莊・板橋在地', guide: '/guide/choose-optician/', posts: ['xinzhuang-glasses-guide', 'banqiao-glasses-guide'] },
       { slug: 'byo-frame', name: '自帶鏡框配鏡片', guide: '/guide/byo-frame-lenses/', posts: ['online-frame-lens-fitting', 'old-frame-relens', 'lens-only-service', 'vintage-frame-lens'] },
-      { slug: 'discomfort', name: '戴了不舒服', posts: ['glasses-dizzy', 'glasses-uncomfortable-3-reasons'] },
-      { slug: 'buying', name: '選購比較', posts: ['online-glasses-vs-store'] },
+      { slug: 'discomfort', name: '戴了不舒服', posts: ['glasses-dizzy', 'glasses-uncomfortable-3-reasons', 'new-glasses-follow-up', 'glasses-prescription-full-or-less'] },
+      { slug: 'buying', name: '選購、價格與流程', posts: ['glasses-cost', 'glasses-ready-time', 'glasses-fitting-process', 'online-glasses-vs-store'] },
     ],
   },
   {

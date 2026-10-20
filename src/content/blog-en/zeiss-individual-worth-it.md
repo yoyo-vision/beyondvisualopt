@@ -47,7 +47,7 @@ These values are only accurate once you've chosen a frame and are actually weari
 2. Choose the frame first, then measure vertex distance, pantoscopic tilt, face form angle, and fitting height while you wear it
 3. Measurements sent to the lens manufacturer for custom production
 4. Try-on at pickup, with on-the-spot frame adjustment
-5. A follow-up visit about 2 weeks after pickup
+5. We follow up with you within 2 weeks after pickup
 
 ---
 
