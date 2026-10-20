@@ -76,7 +76,7 @@ In these cases, putting the budget into a thorough eye exam and frame adjustment
 A: The difference comes mainly from the design tier. The actual amount depends on prescription, lens index, and coatings, so an accurate quote is only possible after the eye exam and once you've chosen a frame.
 
 ### Q: What if I can't get used to them?
-A: For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge. If you still aren't comfortable after a while, come back and our optometry staff will recheck your prescription and fit. If the lens itself is confirmed to be the problem, it's handled under the manufacturer's warranty.
+A: For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge. If you still aren't comfortable after a while, come back and our optometry staff will recheck your prescription and fit. If the lens itself is confirmed to be the problem, we'll discuss the options with you individually.
 
 ### Q: Do I need a frame from the same brand?
 A: No. Personalized lenses can be fitted into most frames, but pantoscopic tilt and face form angle can only be measured once the frame is chosen, so choose the frame first, then order the lenses.

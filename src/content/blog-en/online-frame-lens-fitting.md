@@ -44,8 +44,8 @@ Assembly is also a craft in itself. Rimless frames, semi-rimless frames, or anyt
 
 No. We put this in plain terms:
 
-> **Cost = lens price + a fixed fitting fee.**
-> The lens is priced by the brand and tier you choose (we're a contracted ZEISS dealer and a HOYA dealer), and the fitting fee is a flat amount. **There's no surcharge just because the frame wasn't bought in our store.**
+> **Cost = lens price + a fitting fee.**
+> The lens is priced by the brand and tier you choose (we're a contracted ZEISS dealer and a HOYA dealer), and the fitting fee depends on the frame type. **For the same frame type, there's no surcharge just because the frame wasn't bought in our store.**
 
 You can get a specific quote by visiting in person or messaging us on LINE — we'll explain it clearly before starting, so you're never hit with an unexpected number after the fact.
 
@@ -58,8 +58,10 @@ New frames, designer frames, worn old frames, secondhand or vintage frames — a
 Here's the practical reason: disassembling, drilling, and fitting a frame inherently puts some stress on it. New frames are usually fine, but frames that are aged, well-worn, or naturally more brittle carry a real risk of damage during the process. Our approach is:
 
 1. The optometrist evaluates the frame's condition first and determines whether it's suitable for fitting.
-2. If the risk is higher, **we'll tell you honestly** upfront, and we proceed only once you understand and agree.
+2. If there's a risk of damage, **we'll tell you upfront**, and we start only once you agree.
 3. If, after evaluation, it's genuinely not suitable, we'll recommend against it directly, so we don't risk damaging a frame you care about.
+
+If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if it's caused by an error on our part, we take responsibility.
 
 Bottom line: **we proceed only after evaluation and your agreement.** Saying this upfront is how we take responsibility for your frame — and for you.
 
@@ -77,7 +79,7 @@ A full process. The measurement standard for bring-your-own-frame and in-store-s
 
 **Q3: Will lens fitting cost more just because the frame was bought online?**
 
-No. Cost is lens price plus a fixed fitting fee, and the fitting fee doesn't change based on where the frame came from. You'll get a clear quote before we start production.
+No. Cost is lens price plus a fitting fee; the fitting fee depends on the frame type, and for the same frame type you won't pay more just because the frame wasn't bought here. You'll get a clear quote before we start production.
 
 **Q4: My frame looks a bit worn — can it still be fitted?**
 

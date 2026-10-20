@@ -9,10 +9,10 @@ const schema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "驗光要多久？一般眼鏡行和能見度有什麼不同？",
+          "name": "完整驗光要多久？會做哪些事？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "單純度數驗光約 10 分鐘。能見度的完整臨床驗光流程需要 45–60 分鐘，包含主觀屈光度測量、雙眼視覺協調評估、調節力與聚散力檢測，以及鏡片傾斜角與頂點距離量測。這些數據直接影響你戴鏡後的舒適度與清晰度。"
+            "text": "能見度的完整臨床驗光約 45–60 分鐘，預約時段留 60–90 分鐘。除了主觀驗光確認度數，兩店每次都做雙眼視覺評估，配鏡時也會量鏡片傾斜角與頂點距離。這些數據直接影響你戴鏡後的舒適度與清晰度。"
           }
         },
         {
@@ -76,8 +76,7 @@ const services = [
     duration: '約 45–60 分鐘',
     items: [
       '主觀 + 客觀屈光度精準測量',
-      '雙眼視覺協調評估（斜視 / 隱斜視檢查）',
-      '調節力與聚散力（AC/A）檢測',
+      '雙眼視覺評估',
       '頂點距離 & 鏡片傾斜角量測',
       '個人化生活視覺需求分析',
       '試戴舒適度確認後出單',
@@ -189,8 +188,8 @@ const services = [
 
 const faqs = [
   {
-    q: '驗光要多久？和一般眼鏡行有什麼不同？',
-    a: '能見度的完整臨床驗光需要 45–60 分鐘，包含雙眼視覺協調、調節力與聚散力評估，以及頂點距離量測。單純度數驗光約 10 分鐘，只測屈光度數，不包含上述進階評估。這些差異直接影響戴鏡後的舒適度與視覺品質。',
+    q: '完整驗光要多久？會做哪些事？',
+    a: '能見度的完整臨床驗光約 45–60 分鐘，預約時段留 60–90 分鐘。除了主觀驗光確認度數，兩店每次都做雙眼視覺評估，配鏡時也會量鏡片傾斜角與頂點距離。這些數據直接影響你戴鏡後的舒適度與清晰度。',
   },
   {
     q: '兒童近視追蹤從幾歲開始？驗光人員可以做什麼？',
@@ -302,32 +301,29 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 與一般眼鏡行的差異 -->
+  <!-- 完整驗光包含哪些事（只寫自家做法，不跟同業比較） -->
   <section class="bg-brand-light py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-navy text-center mb-10" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">單純驗度數 vs 完整視覺分析</h2>
+      <h2 class="font-serif text-brand-navy text-center mb-10" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">完整驗光包含哪些事</h2>
       <div class="overflow-x-auto">
         <table class="w-full text-sm border-collapse">
           <thead>
             <tr class="bg-brand-navy text-white">
-              <th class="px-4 py-3 text-left font-semibold rounded-tl-lg">評估項目</th>
-              <th class="px-4 py-3 text-center font-semibold">單純度數驗光</th>
-              <th class="px-4 py-3 text-center font-semibold text-brand-gold rounded-tr-lg">能見度完整流程</th>
+              <th class="px-4 py-3 text-left font-semibold rounded-tl-lg">項目</th>
+              <th class="px-4 py-3 text-left font-semibold text-brand-gold rounded-tr-lg">能見度怎麼做</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200 bg-white">
             {[
-              ['驗光時間', '約 10 分鐘', '45–60 分鐘'],
-              ['雙眼視覺協調評估', '不含', '含斜視 / 隱斜視'],
-              ['調節力 & 聚散力檢測', '不含', 'AC/A 比值分析'],
-              ['頂點距離量測', '不含', '精準補正計算'],
-              ['多焦點適應期追蹤', '不含', '2 週主動追蹤'],
-              ['高度近視鏡片設計', '一般規則', '個人化光學設計'],
-            ].map(([item, general, us]) => (
+              ['驗光時間', '驗光本身約 45–60 分鐘，預約時段抓 60–90 分鐘'],
+              ['雙眼視覺評估', '兩店每次驗光都做'],
+              ['單眼瞳距與配鏡高度', '瞳距左右分開量；配鏡高度戴著選定的鏡框量，換框就重量'],
+              ['頂點距離', '配鏡時量，把度數換算到鏡片實際的位置'],
+              ['多焦點取件', '請你看遠、中、近，低頭、轉頭、起身走幾步，確認再帶走'],
+            ].map(([item, us]) => (
               <tr class="hover:bg-gray-50">
                 <td class="px-4 py-3 font-medium text-gray-700">{item}</td>
-                <td class="px-4 py-3 text-center text-gray-400">{general}</td>
-                <td class="px-4 py-3 text-center text-brand-navy font-semibold">{us}</td>
+                <td class="px-4 py-3 text-brand-navy">{us}</td>
               </tr>
             ))}
           </tbody>

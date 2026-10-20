@@ -12,7 +12,7 @@ instagram: ""
 
 **Yes, but the frame's condition needs to be evaluated first.** What makes vintage and secondhand frames so appealing is exactly what makes them tricky: they have age on them. The appeal is in the discontinued acetate colors and patterns, the metalwork, the design lines you simply can't find made the same way anymore. The catch is that all those years have quietly aged the material, and disassembling and fitting a frame like that carries a real risk of damage.
 
-Our approach here is direct: **the optometrist evaluates the frame's condition and material first; if the risk is higher, we'll say so honestly, and proceed only once you understand and agree; if it's genuinely not suitable, we'll recommend against it.** This isn't meant to talk you out of it — it's so you know exactly what that frame can handle before you spend money on new lenses for it.
+Our approach here is direct: **the optometrist evaluates the frame's condition and material first; if there's a risk of damage, we'll tell you first, and start only once you agree; if it's genuinely not suitable, we'll recommend against it.** This isn't meant to talk you out of it — it's so you know exactly what that frame can handle before you spend money on new lenses for it.
 
 ## Aging Risk Comes Down to Material
 
@@ -50,11 +50,11 @@ If you're not confident judging it yourself, that's fine — **bring it in befor
 The process is the same as any bring-your-own-frame fitting, but we look more carefully at older frames:
 
 - **Frame evaluation**: checking material, structure, and wear to identify where the fitting risk lies.
-- **Honest risk disclosure**: we'll tell you upfront which parts carry damage risk and what marks the fitting process might leave, and proceed only once you agree to accept that risk.
+- **Risk disclosure before we start**: we'll tell you upfront which parts carry damage risk and what marks the fitting process might leave, and start only once you agree. If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if it's caused by an error on our part, we take responsibility.
 - **Full eye exam and measurements**: pupillary distance, fitting height, vertex distance, and frame fit are all measured individually, factoring the frame's specific shape into the lens design.
 - **Turning it down when it's not suitable**: if the evaluation shows the frame can't handle the fitting process, we'll recommend against it directly rather than risk it just to make the sale.
 
-Cost is still lens price plus a fixed fitting fee — no surcharge just because it's an outside vintage frame. The point of an old frame is never about saving money — it's about getting it fitted safely and accurately.
+Cost is still lens price plus a fitting fee that depends on the frame type, quoted before production — no surcharge just because it's an outside vintage frame. The point of an old frame is never about saving money — it's about getting it fitted safely and accurately.
 
 ## FAQ
 
@@ -72,7 +72,7 @@ Most needs can be met, but certain unusual frame shapes or curves may limit what
 
 **Q4: What happens if the frame actually cracks during fitting?**
 
-This is exactly why we insist on "evaluate first, disclose first, proceed only with agreement" — laying out the risk before we start work so you can decide with full information about the frame's condition. Proceeding only after evaluation and agreement is our consistent policy for older frames; if the evaluation shows the risk is too high, we'll decline rather than force it.
+Before we start, the optometry staff evaluate the frame; if there's a risk of damage, we tell you first and start only once you agree, and if the risk is too high we'll recommend against it. If the frame does break during fitting: if damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself, and if the lenses have already been made we charge for the lenses but not the fitting fee; if it's caused by an error on our part, we take responsibility.
 
 ---
 

@@ -20,7 +20,7 @@ That "awkward" feeling usually comes from one misunderstanding: assuming optical
 
 | What you might assume | What actually happens |
 |---|---|
-| You'll get charged extra because the frame's from elsewhere | Cost = lens price + a fixed fitting fee — no surcharge for outside frames |
+| You'll get charged extra because the frame's from elsewhere | Cost = lens price + a fitting fee that depends on the frame type — for the same frame type, no surcharge for outside frames |
 | The eye exam will be rushed since you're only getting lenses | The exam and measurements follow the exact same standard as a full pair — nothing skipped |
 | Bringing your own frame is a "small job" shops don't want | This is a dedicated service of ours — online orders, old frames, secondhand frames, all accepted |
 | Any frame can just have lenses dropped in | The optometrist evaluates the frame's condition first to confirm it can be safely fitted |
@@ -41,10 +41,10 @@ No old glasses, no prescription record? No problem at all. A full eye exam alway
 | Step | What happens |
 |---|---|
 | 1. Frame evaluation | The optometrist checks the frame's material, structure, and wear before confirming it's suitable for fitting |
-| 2. Risk disclosure | If there's any risk of damage during fitting, we'll say so upfront; we proceed only with your understanding and agreement, and we'll recommend against fitting a frame that's not up to it |
+| 2. Risk disclosure | If there's any risk of damage during fitting, we'll say so upfront; we start only with your agreement, and we'll recommend against fitting a frame that's not up to it. If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if it's caused by an error on our part, we take responsibility. |
 | 3. Full eye exam | A complete exam based on your visual needs, confirming your current prescription |
 | 4. Fitting measurements | Pupillary distance, fitting height, vertex distance, and frame fit are each measured individually — aligning the prescription to your eyes, not just fitting the lens into the frame |
-| 5. Lens selection and quote | Lens options explained based on your needs and budget (we're a contracted ZEISS dealer and a HOYA dealer); cost = lens price + fixed fitting fee, quoted clearly |
+| 5. Lens selection and quote | Lens options explained based on your needs and budget (we're a contracted ZEISS dealer and a HOYA dealer); cost = lens price + a fitting fee that depends on the frame type, quoted clearly |
 | 6. Production and follow-up adjustment | Try the finished glasses on in store to confirm fit; if the frame shifts afterward, come back anytime for an adjustment |
 
 See steps 3 and 4? **That's where the real work of a lens fitting happens.** For the same prescription, whether the pupillary distance is correct, whether the lens's optical center lands on your line of sight, and what the vertex distance is between the frame and your eyes — these make a real difference in clarity and comfort. Where you bought the frame has nothing to do with whether these measurements get done — none of them get skipped.
@@ -57,7 +57,7 @@ If you're holding a frame you love but feeling awkward about asking because "it'
 
 **Q1: Will it really not cost more if I only get lenses fitted?**
 
-No surcharge for bringing your own frame. The cost is "lens price + a fixed fitting fee" — the lens is priced by the brand and tier you choose, and the fitting fee is a flat amount. You can get a quote by visiting in person or messaging us on LINE before deciding.
+No surcharge for bringing your own frame. The cost is "lens price + a fitting fee" — the lens is priced by the brand and tier you choose, and the fitting fee depends on the frame type, and for the same frame type you won't pay more just because the frame wasn't bought here. You can get a quote by visiting in person or messaging us on LINE before deciding.
 
 **Q2: I don't have old glasses and don't know my prescription — can I still just get lenses fitted?**
 

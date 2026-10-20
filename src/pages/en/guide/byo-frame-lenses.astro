@@ -17,7 +17,7 @@ const clusterPosts = CLUSTER_SLUGS
 const canonicalUrl = 'https://beyondvisualopt.com/en/guide/byo-frame-lenses/';
 
 // 自帶鏡框配鏡片（英文版）：服務主承接頁（吃 bring-your-own-frame / lenses only 意圖）
-// 營運事實依老闆 2026-07-20 拍板：全類型框經評估後承作＋風險告知同意；鏡片＋固定加工費；兩店服務。
+// 營運事實依老闆 2026-07-20 拍板：全類型框經評估後承作＋風險告知同意；鏡片＋加工費（依框型不同，2026-10-19 更新）；破損處理採法務版；兩店服務。
 const faqs = [
   {
     q: 'Can I bring a frame I bought online and have lenses fitted?',
@@ -25,11 +25,11 @@ const faqs = [
   },
   {
     q: 'How is a bring-your-own-frame lens job priced?',
-    a: 'The cost is the lens price plus a fixed fitting fee. Lenses are priced according to the brand and tier you choose (we are a contracted ZEISS dealer and a HOYA dealer); the fitting fee is a fixed amount, and you can get a quote in store or over LINE. We do not add a surcharge simply because the frame wasn\'t bought here.',
+    a: 'The cost is the lens price plus a fitting fee. Lenses are priced according to the brand and tier you choose (we are a contracted ZEISS dealer and a HOYA dealer); the fitting fee depends on the frame type, since full-rim, semi-rimless and rimless frames involve different work. For the same frame type, we do not charge more just because the frame wasn\'t bought here. You get a clear quote before production, and you can ask in store or over LINE.',
   },
   {
     q: 'Is there any risk in re-lensing an old or older-generation frame?',
-    a: 'There is. Frame materials age and become brittle over time, and there is a risk of damage during removal and refitting. Our approach: the optometrist assesses the frame\'s condition first, tells you honestly when the risk is higher, and only proceeds once you understand and accept that risk. If the assessment says the frame isn\'t suitable, we will say so directly and advise against pushing it, rather than risk damaging your frame.',
+    a: 'There is. Frame materials age and become brittle over time, and there is a risk of damage during removal and refitting. Our approach: for frames with aged material or a fragile structure, our licensed optometry staff assess the frame before disassembly, tell you about any risk of damage first, and only start once you agree. If the assessment says the frame isn\'t suitable, we will advise against it. If damage is caused by the frame\'s own aged material or fragile structure, we can\'t compensate for the frame itself; if it\'s caused by an error on our part, we take responsibility.',
   },
   {
     q: 'If I only need lenses, do you still do the full exam?',
@@ -51,7 +51,7 @@ const schema = {
 ---
 <Layout
   title="Bring-Your-Own-Frame Lens Guide | Beyond Visual Optometry"
-  description="The frame you love doesn't have to come from us — frames bought online, designer frames, old frames and second-hand frames are all welcome for lenses. An optometrist assesses the frame's condition first and tells you the risks honestly, with transparent pricing: lens price plus a fixed fitting fee. Contracted ZEISS dealer and HOYA dealer. Xinzhuang & Banqiao, Beyond Visual Optometry."
+  description="The frame you love doesn't have to come from us — frames bought online, designer frames, old frames and second-hand frames are all welcome for lenses. Our licensed optometry staff assess the frame's condition first and explain the risks before any work starts; you get a quote before production: lens price plus a fitting fee that depends on the frame type. Contracted ZEISS dealer and HOYA dealer. Xinzhuang & Banqiao, Beyond Visual Optometry."
   lang="en"
   schema={schema}
 >
@@ -85,7 +85,7 @@ const schema = {
           { t: 'New frames bought online', d: 'Shopee, personal shoppers, overseas brands — bring in a new frame bought online and we can fit lenses to it. We still take the full set of measurements, so the lenses line up with your eyes rather than merely being slotted into the frame.' },
           { t: 'Designer and handmade frames', d: 'Designer and handmade frames such as Lindberg and ic! berlin are an adjustment and repair specialty of ours, and we handle plenty of rimless and screw-heavy constructions. We assess the structure before any disassembly, and treat every good frame with care.' },
           { t: 'New lenses in an old frame', d: 'Prescription changed, lenses scratched, but you can\'t bear to give up a frame you\'re used to? If the frame\'s condition allows, we can replace the lenses only — and straighten out a frame that has warped while we\'re at it.' },
-          { t: 'Second-hand and vintage frames', d: 'Vintage frames need the most care — how far the material has aged varies enormously. We assess honestly, take on what can be done, and don\'t take chances for the sake of it.' },
+          { t: 'Second-hand and vintage frames', d: 'Vintage frames need the most care — how far the material has aged varies enormously. We assess first, explain before we start, take on what can be done, and don\'t take chances for the sake of it.' },
         ].map(c => (
           <div class="bg-white border border-brand-ink/10 p-7">
             <h3 class="font-serif text-brand-ink mb-3" style="font-size:19px;font-weight:400">{c.t}</h3>
@@ -105,9 +105,9 @@ const schema = {
       <div class="space-y-6">
         {[
           { n: '01', t: 'Frame condition assessment', d: "An optometrist inspects the frame's material, structure and degree of ageing, and judges whether it is suitable for disassembly and edging." },
-          { n: '02', t: 'An honest account of the risks', d: 'There is a risk of damage during disassembly and edging, particularly for frames that are years old or whose material has grown brittle. Where the risk is higher we explain it clearly first, and only start production once you understand and agree to accept that risk. If the assessment says a frame isn\'t suitable, we will tell you straight that we advise against it.' },
+          { n: '02', t: 'Risks explained before we start', d: 'There is a risk of damage during disassembly and edging, particularly for frames that are years old or whose material has grown brittle. Where there is a risk of damage we tell you first, and only start once you agree. If the assessment says a frame isn\'t suitable, we will advise against it. If damage is caused by the frame\'s own aged material or fragile structure, we can\'t compensate for the frame itself; if it\'s caused by an error on our part, we take responsibility.' },
           { n: '03', t: 'Full vision exam and measurements', d: 'The same standard as a complete pair: the full exam, plus pupillary distance, fitting height, vertex distance and frame-fit measurements.' },
-          { n: '04', t: 'Choosing lenses · a transparent quote', d: 'As a contracted ZEISS dealer and a HOYA dealer, we walk through the options against your needs and budget. The cost is the lens price plus a fixed fitting fee — a clear quote with no surcharge.' },
+          { n: '04', t: 'Choosing lenses · a transparent quote', d: 'As a contracted ZEISS dealer and a HOYA dealer, we walk through the options against your needs and budget. The cost is the lens price plus a fitting fee that depends on the frame type; for the same frame type there is no extra charge because the frame came from elsewhere, and you get a clear quote before production.' },
           { n: '05', t: 'Production · collection · in-store adjustments', d: 'Once finished you try them on in store to confirm the fit, and you are welcome back any time afterwards if the frame shifts out of position.' },
         ].map(s => (
           <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
@@ -120,7 +120,7 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-3 mt-8 text-center" style="font-size:13px;line-height:1.8">
-        Whether a customer-supplied frame can be worked on is determined by the in-store assessment; the actual cost (lens price plus a fixed fitting fee) is quoted and explained before production, and production begins only after the risk of damage has been explained and consent obtained.
+        Whether a customer-supplied frame can be worked on is determined by the in-store assessment; the actual cost (lens price plus a fitting fee that depends on the frame type) is quoted and explained before production, and production begins only after the risk of damage has been explained and your consent obtained. If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if it's caused by an error on our part, we take responsibility.
       </p>
     </div>
   </section>

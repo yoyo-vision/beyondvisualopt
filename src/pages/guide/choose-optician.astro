@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: '配眼鏡要先看眼科嗎？',
-    a: '單純配鏡不需要先掛眼科。除非你同時有眼部不適症狀——突然視力模糊、眼前飛蚊閃光黑影、眼睛紅痛、疑似青光眼——這些屬於醫療範疇，要先看眼科醫師。若只是想配一副舒服的眼鏡或戴了會頭暈，可以直接找驗光所。依《驗光人員法》，驗光人員不做醫療診斷，若在評估過程中發現視力異常，會依法轉介眼科醫師。',
+    a: '單純配鏡不需要先掛眼科。除非你同時有眼部不適症狀——突然視力模糊、眼前飛蚊閃光黑影、眼睛紅痛、疑似青光眼——這些屬於醫療範疇，要先看眼科醫師。若只是想配一副舒服的眼鏡或戴了會頭暈，可以直接找驗光所。驗光人員不做醫療診斷；驗光時視力無法矯正至正常，依《驗光人員法》第十二條第三項轉介眼科醫師。',
   },
 ];
 
@@ -99,7 +99,7 @@ const schema = {
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>驗光所依《驗光人員法》設立、須由持照驗光人員執行驗光、可合法開立驗光報告；眼鏡行要驗光，須先在店內設立驗光所，一樣由持照驗光人員執行（施行細則第四條）。</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>先確認店裡有登記驗光所；有頭暈、眼睛疲勞、老花或多焦點需求，再多問一句：「驗光有包含雙眼視覺評估嗎？」</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>判斷好驗光所看五件事：驗光人員有無執照、流程是否 45–60 分鐘、有無量頂點距離與雙眼視覺、鏡片來源清楚、配鏡後回店調整收不收費。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>驗光所與眼科各管一段：眼睛有症狀（紅痛、飛蚊閃光、突發模糊）先看眼科；想配一副舒服的眼鏡、戴了會暈找驗光所。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>眼睛有症狀（紅痛、飛蚊閃光、突發模糊）先看眼科；想配一副舒服的眼鏡、戴了會暈，找驗光所。</span></li>
       </ul>
     </div>
   </section>
@@ -124,7 +124,7 @@ const schema = {
   <section id="difference" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
       <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">「驗光所」和「眼鏡行」，法律上就是兩回事</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">很多人以為都一樣，其實依<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">《驗光人員法》</a>，這兩者在台灣法規上的分工完全不同。差別不在裝潢，在誰能合法幫你驗光。</p>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">很多人以為都一樣，其實依<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">《驗光人員法》</a>，這兩者在法規上的設立條件不同。差別不在裝潢，在誰能合法幫你驗光。</p>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse" style="font-size:15px">
           <thead>
@@ -162,9 +162,9 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           { n: '01', title: '驗光人員有沒有執照？', desc: '持有執照的驗光人員（驗光師／驗光生）才能合法執行驗光。走進門市先看牆上：驗光所依法應將開業執照與收費標準揭示於明顯處；再到衛福部醫事人員查詢系統，核對驗光人員的證書字號。這是最基本、也最容易被忽略的一關。' },
-          { n: '02', title: '驗光流程有多長？', desc: '完整臨床驗光至少 45–60 分鐘。10–15 分鐘的「快速驗光」只能確認基本度數，無法評估雙眼視覺、調節力、隱斜視等影響視覺舒適度的關鍵指標。' },
-          { n: '03', title: '有沒有量頂點距離與雙眼視覺？', desc: '高度近視要靠頂點距離（Vertex Distance）補正才能確保有效度數正確；兩眼一起用時協調比較吃力，光靠度數配出來還是會頭暈。這兩項有沒有做，決定戴起來舒不舒服。' },
-          { n: '04', title: '設備與鏡片來源清楚嗎？', desc: '確認是否為蔡司（ZEISS）、HOYA、Essilor、Nikon 等原廠授權經銷商，而非仿冒品或水貨。多焦點與個人化訂製鏡片，設備與授權尤其重要。' },
+          { n: '02', title: '驗光流程有多長？', desc: '能見度的完整驗光約 45–60 分鐘，預約時段留 60–90 分鐘，兩店每次都做雙眼視覺評估。時間長短本身不是重點，選店時可以問一句：這段時間裡會做哪些事。' },
+          { n: '03', title: '有沒有量頂點距離與雙眼視覺？', desc: '高度近視要靠頂點距離（Vertex Distance）補正才能確保有效度數正確；兩眼一起用時協調比較吃力的人，只看度數配出來，容易累、容易暈。這兩項有沒有做，決定戴起來舒不舒服。' },
+          { n: '04', title: '設備與鏡片來源清楚嗎？', desc: '可以請店家說明鏡片來源，以及原廠保固怎麼走。多焦點與個人化訂製鏡片，這一題尤其值得多問。' },
           { n: '05', title: '配鏡後能不能回店調整？要不要收費？', desc: '選店前先把這兩件事問清楚。在能見度配的眼鏡，取件後的鏡架調整不另外收費。取鏡時要當場試戴、確認遠中近視野與鏡架配適，而不是「做好寄給你，有問題再回來」。' },
         ].map(item => (
           <div class="border border-brand-ink/8 rounded-2xl p-7">
@@ -181,10 +181,10 @@ const schema = {
   <section id="mistakes" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見配鏡地雷：為什麼配了眼鏡還是不舒服</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">「配了還是頭暈」的案例，大半不是眼睛特別難配，而是驗光流程省掉了某個關鍵步驟。這些是驗光現場最常見的地雷。</p>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">「配了還是頭暈」，有時要回頭看驗光流程裡少了哪一步。</p>
       <div class="space-y-6">
         {[
-          { title: '① 快速驗光，只問「幾號比較清楚」', desc: '十分鐘看視力表、選比較清楚的那個就結束——這種流程漏掉雙眼視覺、調節力、眼位穩定性的評估。度數看似對了，戴起來卻怪怪的、頭重、容易疲勞。' },
+          { title: '① 只問「幾號比較清楚」就結束', desc: '看視力表、選比較清楚的那個就結束，沒有評估兩眼一起用協不協調、看近的需求。度數看似對了，戴起來卻怪怪的、頭重、容易疲勞。' },
           { title: '② 沿用電腦驗光值，沒做主觀微調', desc: '電腦驗光機給的是「電腦度數」，最終還要用綜合驗光儀做主觀驗光，讓你試戴、回饋、細部調整。省掉這一步，等於拿機器的初步估算直接配鏡。' },
           { title: '③ 沒放鬆調節力就驗光，度數偏深', desc: '長時間盯螢幕的人睫狀肌容易緊繃，在這種狀態下驗出來的度數往往偏深。你以為近視 -4.00D，真正可能只有 -3.50D，配深了反而更累。' },
           { title: '④ 光學中心沒對準瞳孔、瞳距只除以二', desc: '應分別量左右眼各自到鼻樑中線的單側瞳距。有些人左右不對稱，若只用總瞳距除以二估算，會產生稜鏡效應，讓大腦額外費力融合影像，造成疲勞頭暈。' },
@@ -197,7 +197,7 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        完整的 5 個驗光誤區說明：<a href="/blog/common-optometry-mistakes/" class="text-brand-gold underline">配眼鏡常見的 5 個驗光誤區｜新莊板橋驗光人員的第一手觀察</a>
+        完整的 5 個驗光誤區說明：<a href="/blog/common-optometry-mistakes/" class="text-brand-gold underline">配眼鏡常見的 5 個驗光誤區：少做哪一步，戴起來就不對</a>
       </p>
     </div>
   </section>
@@ -205,8 +205,8 @@ const schema = {
   <!-- 何時該看眼科 -->
   <section id="ophthalmology" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">驗光所 vs 眼科診所：各管一段，不是競爭關係</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">眼科負責確認眼睛健不健康，驗光所負責把視覺調到最佳狀態。搞清楚分工，能幫你少走很多冤枉路。</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">有眼睛症狀，先給眼科看</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">眼睛健不健康、要不要治療，由眼科醫師判斷；度數、雙眼視覺和配鏡參數，是驗光所做的事。先分清楚，少跑一趟。</p>
       <div class="overflow-x-auto mb-10">
         <table class="w-full border-collapse" style="font-size:15px">
           <thead>
@@ -239,7 +239,7 @@ const schema = {
         法規紅線很清楚：驗光人員不做醫療診斷、不能開藥。若驗光時發現視力不能矯正至正常，會依《驗光人員法》第十二條第三項轉介就醫；發現疑似眼睛疾病的跡象，也會建議你先看眼科——這是保護你，不是把你推走。
       </blockquote>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        完整分工對照：<a href="/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">眼科 vs 驗光所，差在哪裡？什麼時候該去哪裡？</a>
+        延伸閱讀：<a href="/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">眼科和驗光所差在哪？眼科醫師與驗光人員各自能做什麼</a>
       </p>
     </div>
   </section>
@@ -248,7 +248,7 @@ const schema = {
   <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-5xl mx-auto">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">新莊店 × 板橋店：在地選擇</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">兩間門市都是持照驗光所、蔡司簽約認證經銷商，提供 45–60 分鐘完整臨床驗光，配鏡後回店調整不收費。看哪間離你近。</p>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">新莊、板橋各一間，蔡司簽約認證經銷，完整驗光約 45–60 分鐘、每次都做雙眼視覺評估；在能見度配的眼鏡，取件後的鏡架調整不另外收費。看哪間離你近。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="border-t border-white/10 pt-6">
           <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">新莊店</p>
@@ -258,7 +258,7 @@ const schema = {
             <p>捷運：新莊站步行約 8 分鐘</p>
             <p>電話：02-2206-6700</p>
             <p>主理驗光師：鄭家侑（YoYo）</p>
-            <p class="text-white/50">臨床驗光、進階視覺管理、兒童近視追蹤、蔡司 Individual² 個人化訂製</p>
+            <p class="text-white/50">臨床驗光、學童度數追蹤（6～15 歲第一次須經醫師確診為非假性近視）、蔡司 Individual² 個人化訂製</p>
           </div>
           <a href="/xinzhuang/" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">看新莊眼鏡行・驗光所詳細資訊 →</a>
         </div>
@@ -270,7 +270,7 @@ const schema = {
             <p>捷運：江子翠站步行約 5 分鐘</p>
             <p>電話：02-2253-1246</p>
             <p>在地：1992 年創立，超過 30 年</p>
-            <p class="text-white/50">老花多焦點專業配製、高度近視精密配鏡（頂點距離補正）、兒童近視追蹤</p>
+            <p class="text-white/50">老花多焦點配製、高度近視配鏡（量頂點距離）、學童度數追蹤（6～15 歲第一次須經醫師確診為非假性近視）</p>
           </div>
           <a href="/banqiao/" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">看板橋店詳細資訊 →</a>
         </div>

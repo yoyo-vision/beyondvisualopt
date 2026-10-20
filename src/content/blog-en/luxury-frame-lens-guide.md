@@ -70,7 +70,7 @@ Yes. Beyond Visual Optometry offers a bring-your-own-frame fitting service, with
 
 **Q: About how much does it cost to fit lenses into a luxury frame?**
 
-Lens cost depends on refractive index and features (single-vision lenses start around NT$2,000, with functional and multifocal lenses priced separately); fabrication cost for the frame itself is quoted on-site based on its specific construction. We recommend bringing the frame in so we can assess it and give you a complete, upfront quote for both the lenses and the fabrication — no surprise charges afterward.
+Lens cost depends on refractive index and features; fabrication cost for the frame itself is quoted on-site based on its specific construction. We recommend bringing the frame in so we can assess it and give you a complete, upfront quote for both the lenses and the fabrication — no surprise charges afterward.
 
 **Q: Can sunglasses frames be converted to prescription lenses?**
 

@@ -89,7 +89,7 @@ A: Beyond Visual Optometry is located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., 
 A: Progressive lenses need a full assessment by licensed optometry staff at an optometry clinic, including addition-power measurement, fitting-height measurement, and lifestyle analysis. Beyond Visual Optometry (Banqiao) provides a complete progressive-lens fitting process along with adaptation-period follow-up.
 
 **Q: How long does it typically take to get glasses made in Banqiao?**
-A: Standard single-vision lenses generally take 3–7 business days; ZEISS Individual² custom lenses take about 10–14 business days (manufactured at the ZEISS factory in Germany).
+A: It depends on whether the lens is in stock. Stock lenses take about 3–5 business days, and made-to-order lenses about 7–10 business days; once you've chosen your lenses, the store will tell you which applies and roughly when you can pick them up.
 
 ---
 

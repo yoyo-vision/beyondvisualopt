@@ -43,7 +43,7 @@ On the flip side, there are situations where sticking with the old frame actuall
 
 **Most common: the frame's already worn out and warped beyond fixing.** Plastic frames loosen and lose shape after years of wear; metal frames lose their spring after repeated adjustments. If the frame itself can't hold its shape anymore, even a brand-new lens will still sit crooked and slide around — that's a good lens wasted on a frame that can't support it.
 
-**Next, material aging and brittleness — this one needs real care.** Frames that are old, or made from a naturally more brittle material to begin with, carry real risk of damage during disassembly and lens fitting. Our approach is: **the optometrist evaluates the frame's condition first; if the risk is higher, we'll tell you honestly, and only proceed with your agreement; if it's genuinely not suitable, we'll say so and recommend against it.** Proceeding only after evaluation and agreement is how we avoid damaging a frame you care about.
+**Next, material aging and brittleness — this one needs real care.** Frames that are old, or made from a naturally more brittle material to begin with, carry real risk of damage during disassembly and lens fitting. Our approach is: **before disassembly, the optometry staff evaluate the frame's condition; if there's a risk of damage, we tell you first and start only with your agreement; if it's genuinely not suitable, we'll recommend against it.** If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if it's caused by an error on our part, we take responsibility.
 
 **Then there's simple sizing.** A frame that's too big will keep slipping; one that's too small will pinch your temples. That's a sizing problem, and no lens, however good, will fix it. Putting a new lens into a frame that doesn't fit versus switching to a frame that actually fits — the difference in comfort is night and day.
 
@@ -58,7 +58,7 @@ Whether you're leaning toward lens replacement or considering a new frame, the f
 - **Frame evaluation**: checking material, structure, and wear to judge whether it's suitable for disassembly and refitting.
 - **Risk disclosure**: any risk of damage gets flagged upfront, and we proceed only with your agreement; if it's not suitable, we'll recommend against it directly.
 - **Full eye exam and measurements**: whether you're replacing lenses or getting a new frame, pupillary distance, fitting height, vertex distance, and frame fit all get remeasured — the same standard as a full fitting.
-- **Lens selection and a transparent quote**: we're a contracted ZEISS dealer and a HOYA dealer; cost is lens price plus a fixed fitting fee, clearly explained before we start.
+- **Lens selection and a transparent quote**: we're a contracted ZEISS dealer and a HOYA dealer; cost is lens price plus a fitting fee that depends on the frame type, quoted clearly before we start.
 
 In short: **we'll save you money by replacing just the lenses whenever that makes sense, and we'll only recommend a new frame when it genuinely does — we won't push a new purchase by default.**
 
@@ -68,7 +68,7 @@ In short: **we'll save you money by replacing just the lenses whenever that make
 
 **Q1: How much cheaper is replacing just the lenses compared to a whole new pair?**
 
-Mainly you save the cost of the frame. If the frame's in good shape and you're used to wearing it, replacing just the lenses means paying lens price plus a fixed fitting fee — no need to buy a frame, and it's usually the better deal. But if the frame's worn out or doesn't fit, sticking with it anyway often ends up costing more in comfort — in that case, replacing the frame is actually the more economical choice. Bring it in and let an optometrist evaluate for the most accurate answer.
+Mainly you save the cost of the frame. If the frame's in good shape and you're used to wearing it, replacing just the lenses means paying lens price plus a fitting fee (which depends on the frame type and is quoted before production) — no need to buy a frame, and it's usually the better deal. But if the frame's worn out or doesn't fit, sticking with it anyway often ends up costing more in comfort — in that case, replacing the frame is actually the more economical choice. Bring it in and let an optometrist evaluate for the most accurate answer.
 
 **Q2: My frame's several years old — can the lenses still be replaced?**
 

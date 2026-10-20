@@ -42,11 +42,7 @@ There's usually a slight gap between where your eyes naturally point at rest (wi
 
 ### The Fix
 
-A complete refraction at Beyond Visual Optometry includes:
-- **Cover-uncover test:** detects visible strabismus
-- **Prism cover test:** measures the phoria amount
-- **AC/A ratio assessment:** analyzes the relationship between accommodation and convergence
-- **Worth 4-dot test / stereopsis testing:** confirms binocular fusion function
+Every eye exam at both Beyond Visual Optometry locations includes a binocular vision assessment, which looks at whether your two eyes stay aligned and comfortable when working together.
 
 If the phoria amount exceeds what your eye muscles can compensate for, our licensed optometry staff will assess whether prism compensation should be included in your refraction result; if vision therapy or further medical treatment is warranted, we'll help refer you to an ophthalmologist.
 
@@ -161,4 +157,4 @@ Both have a role. For fitting-related issues (prescription, lens design, binocul
 
 **Q: Where in Xinzhuang or Banqiao can I get a complete binocular vision assessment?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao) offers a complete binocular vision function assessment by our licensed optometry staff, including eye alignment, accommodation testing, AC/A ratio analysis, and lens design recommendations tailored to your visual habits. No matter where your glasses were made, you're welcome to come in for a second opinion.
+Beyond Visual Optometry (Xinzhuang and Banqiao) offers a complete binocular vision function assessment by our licensed optometry staff, as part of every eye exam, along with lens design recommendations tailored to your visual habits. No matter where your glasses were made, you're welcome to come in for a second opinion.
