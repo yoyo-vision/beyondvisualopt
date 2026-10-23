@@ -54,7 +54,7 @@ This step uses a heat gun paired with specialized pliers to soften the acetate, 
 
 The distance from the back surface of the lens to the corneal apex — the standard value is about 12mm.
 
-High myopia (600 degrees / -6.00D and above) is especially sensitive to vertex distance: a 2mm difference can shift the effective power by nearly 25 degrees. When you pick up your glasses, we confirm this measurement while you're actually wearing them, and fine-tune the nose pads or frame tilt as needed to correct it.
+High myopia (600 degrees / -6.00D and above) is especially sensitive to vertex distance: using Fc = F ÷ (1 − dF), a 2mm difference on a -6.00D lens shifts the effective power by about 0.07D (roughly 7 degrees), and the higher the prescription, the larger the shift from the same distance change. When you pick up your glasses, we confirm this measurement while you're actually wearing them, and fine-tune the nose pads or frame tilt as needed to correct it.
 
 ### Step Five: Temple Bend Point and Angle
 
@@ -96,8 +96,8 @@ Having the right tool for the job is what lets us apply precise force and adjust
 
 ## FAQ
 
-**Q: Is the adjustment free?**
-A: For glasses fitted at Beyond Visual Optometry, follow-up adjustment after pickup is included at no extra charge. If you'd like an adjustment on glasses fitted elsewhere, just ask — we'll help based on the situation.
+**Q: Is there a charge for the adjustment?**
+A: For glasses fitted at Beyond Visual Optometry, frame adjustments after pickup are included at no extra charge. Glasses fitted elsewhere are welcome for an assessment, and how we handle them is discussed case by case.
 
 **Q: My glasses have gone crooked after wearing them for a while — can I bring them back for an adjustment?**
 A: Yes. Frames shifting out of alignment from everyday wear, pressure, or the occasional bump is very common — it doesn't mean your glasses are broken. Bring them in and let us take a look; it can usually be fixed on the spot.
@@ -109,10 +109,10 @@ A: The right tool paired with the right technique won't damage the frame materia
 A: Yes. Bring them in and we'll assess how far we can adjust them and let you know. If the underlying issue turns out to be the prescription or fitting parameters, we'll tell you that directly too.
 
 **Q: Do both the Xinzhuang and Banqiao stores offer adjustments?**
-A: Yes, both locations offer frame adjustment service. For more complex adjustments, we recommend the Xinzhuang store (Biyang Optometry Practice), where our licensed optometry staff can check at the same time whether any fitting parameters need to be addressed together.
+A: Yes, both locations offer frame adjustment service, including more complex adjustments. Glasses fitted at Xinzhuang can be adjusted at Banqiao, and vice versa. If any fitting parameters need to be checked at the same time, the licensed optometry staff at either store can look at them together with you.
 
 ---
 
 The final step, from refraction to pickup, is the moment a pair of glasses actually becomes "your" glasses.
 
-If something feels off about the glasses you're wearing right now, feel free to bring them in and let us take a look — no appointment needed, and they don't need to have been fitted here. A lot of issues can be resolved in five minutes.
+If something feels off about the glasses you're wearing right now, bring them in and let us take a look — they don't need to have been fitted here. A lot of issues can be resolved in five minutes.
