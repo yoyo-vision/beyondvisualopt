@@ -59,10 +59,10 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'lenses', name: '鏡片', keyword: '蔡司鏡片', guide: '/guide/lens-brands/',
     subs: [
-      { slug: 'brands', name: '鏡片品牌', guide: '/guide/lens-brands/', posts: ['zeiss-vs-essilor', 'zeiss-hoya-nikon-lens-guide', 'hoya-lens-guide', 'essilor-lens-guide', 'banqiao-zeiss-lens-guide'] },
+      { slug: 'brands', name: '鏡片品牌', guide: '/guide/lens-brands/', posts: ['zeiss-lens-series-guide', 'zeiss-vs-essilor', 'zeiss-hoya-nikon-lens-guide', 'hoya-lens-guide', 'essilor-lens-guide', 'banqiao-zeiss-lens-guide'] },
       { slug: 'index', name: '折射率與厚薄', posts: ['lens-refractive-index', 'lens-index-160-vs-167-vs-174', 'same-index-different-feel', 'glass-vs-resin-lens'] },
       { slug: 'coating', name: '設計與鍍膜', posts: ['aspheric-vs-spherical-lens', 'lens-coating-guide', 'anti-reflective-coating-principle', 'blue-light-filter-what'] },
-      { slug: 'buying', name: '選購與價格', posts: [] },
+      { slug: 'buying', name: '選購與價格', posts: ['lens-name-decode', 'lens-replace-when', 'lens-warranty-genuine'] },
     ],
   },
   {
