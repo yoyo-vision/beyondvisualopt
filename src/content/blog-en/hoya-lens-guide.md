@@ -20,9 +20,9 @@ In the lens business, HOYA's core strength lies in its **vertically integrated m
 
 ### Single-Vision Lenses: The Nulux Series
 
-Nulux is HOYA's flagship single-vision lens series, using an **aspheric design** that, compared to traditional spherical lenses, effectively reduces peripheral aberration for a clearer field of view and a thinner, lighter lens.
+Nulux is HOYA's flagship single-vision lens series, using an **aspheric design** (per the manufacturer's public information).
 
-Nulux EP (Enhanced Performance) further optimizes the design around the eye's natural rotation, making image quality more stable as your gaze shifts off-center — an especially noticeable benefit for people with high myopia.
+Nulux EP (Enhanced Performance) further optimizes the design around the eye's natural rotation, making image quality more stable as your gaze shifts off-center.
 
 **Best for:** anyone needing simple myopia, hyperopia, or astigmatism correction who wants a thin, clear lens.
 
@@ -45,7 +45,7 @@ HOYA's iD series is its flagship progressive multifocal lens line, using a **dou
 The iD series comes in several versions:
 - **iD EaZi:** an entry-level progressive, suited to people trying progressive lenses for the first time
 - **iD Space:** optimized for indoor environments, suited to people who spend long hours in an office
-- **iD MySelf:** a fully personalized version, calculated based on the wearer's eye position, habitual head posture, and lifestyle
+- **iD MySelf:** a fully personalized version, calculated from the wearer's individual fitting parameters (per HOYA's published information)
 
 **Best for:** presbyopic wearers, older adults who need clear vision at distance, intermediate, and near ranges simultaneously, and anyone who wants to reduce how often they switch glasses.
 
@@ -76,7 +76,7 @@ The answers to these questions determine which series is right for you — not w
 
 **Q: Where in Xinzhuang can I get HOYA lenses fitted?**
 
-Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City) offers the complete HOYA lens lineup, with fitting recommendations from our licensed optometry staff based on your visual habits. Call +886-2-2206-6700 to book a consultation.
+Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City) is a HOYA dealer, with fitting recommendations from our licensed optometry staff based on your visual habits. Call +886-2-2206-6700 to book a consultation.
 
 **Q: Where in Banqiao can I get HOYA progressive multifocal lenses?**
 

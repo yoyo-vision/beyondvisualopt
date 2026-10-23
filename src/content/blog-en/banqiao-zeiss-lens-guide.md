@@ -7,13 +7,12 @@ excerpt: "Looking to get ZEISS lenses in Banqiao? How do you confirm a store is 
 
 ## Why Does It Matter Whether a Store Is a "Certified ZEISS Dealer"?
 
-ZEISS lens distribution in Taiwan is managed fairly tightly, and being a **certified dealer** means three things:
+Being a **certified ZEISS dealer** means two things:
 
-1. **The lenses are factory-authorized stock** — not gray-market imports or unbranded "ZEISS-equivalent" lenses
-2. **The store has the full custom-fitting capability** — personalized lenses like Individual² require specific measurement equipment and authorized parameter entry
-3. **The manufacturer's warranty is honored** — coating defects and similar issues can be handled through official channels
+1. **The lenses come from ZEISS** — each comes with the ZEISS warranty card
+2. **Orders go straight to ZEISS** — for personalized lenses, the fitting parameters measured in store are sent directly into the ZEISS order
 
-Beyond Visual Optometry (Banqiao) is a certified ZEISS dealer in Taiwan, founded in 1992 with over 30 years serving the Banqiao community.
+Beyond Visual Optometry (Banqiao) is a certified ZEISS dealer in Taiwan, founded in 1992 with over 30 years serving the Banqiao community. Our Xinzhuang store is also a certified dealer, and both stores can order ZEISS personalized lenses.
 
 ## Understanding ZEISS's Lens Tiers at a Glance
 
@@ -34,7 +33,7 @@ What separates the tiers is the **optical design and personalized parameters**. 
 The lens is identical — the difference is in **the fitting**:
 
 - Whether the objective and subjective refraction, plus a binocular vision assessment, are done in full
-- Whether the personal parameters Individual² needs (wearing distance, pantoscopic tilt, head-turning habits) are actually measured
+- Whether the parameters a personalized order needs (vertex distance, pantoscopic tilt, face-form angle, and fitting height) are actually measured with the chosen frame on
 - Fitting height and optical-center alignment — a 2mm difference is noticeable for high-prescription wearers
 
 ZEISS provides the optical ceiling; the fitting determines how much of it you actually get to use. Beyond Visual Optometry's full vision exam takes about 45–60 minutes and includes a binocular vision assessment every time at both stores, performed one-on-one by our licensed optometry staff; for glasses fitted with us, frame adjustments after pickup are included at no extra charge.
@@ -56,15 +55,15 @@ ZEISS provides the optical ceiling; the fitting determines how much of it you ac
 
 **Q: Where's the certified ZEISS dealer in Banqiao?**
 
-Beyond Visual Optometry is a certified ZEISS dealer in Taiwan, located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, about a 5-minute walk from Jiangzicui MRT Station, phone +886-2-2253-1246. We offer ZEISS lenses, including Individual² personalized custom lenses.
+Beyond Visual Optometry is a certified ZEISS dealer in Taiwan, located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, about a 5-minute walk from Jiangzicui MRT Station, phone +886-2-2253-1246. ZEISS personalized lenses can be ordered at the Banqiao store as well.
 
 **Q: What's the difference between ZEISS lenses and ordinary lenses?**
 
-The core difference is in the optical design and personalization: Individual², for example, factors your wearing posture and head-turning habits into the design. But that advantage is only fully realized when the refraction is precise and the frame is properly adjusted — fitting quality matters just as much as the lens brand.
+The core difference is in the optical design and personalization: a personalized ZEISS order, for example, includes your vertex distance, pantoscopic tilt, face-form angle, and fitting height, and the lens is calculated from those numbers. But that advantage is only fully realized when the refraction is precise and the frame is properly adjusted — fitting quality matters just as much as the lens brand.
 
 **Q: Is ZEISS always better than HOYA?**
 
-Not necessarily. HOYA's premium series is very competitive on value, and the difference between brands is often smaller than the difference between tiers. Beyond Visual Optometry carries both brands, and our optometrists will make an objective comparison based on your prescription and budget, without favoring either one.
+Not necessarily. HOYA's premium series is very competitive on value, and the difference between brands is often smaller than the difference between tiers. Beyond Visual Optometry carries both brands, and our licensed optometry staff will make an objective comparison based on your prescription and budget, without favoring either one.
 
 **Q: Do I need an appointment to get ZEISS lenses in Banqiao?**
 

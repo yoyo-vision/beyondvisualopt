@@ -22,12 +22,12 @@ This article isn't about declaring which one is best. Every brand has its own st
 
 Zeiss (Carl Zeiss) was founded in Germany in 1846, starting out with microscopes and precision optical instruments before expanding into camera lenses and eyeglass lenses. You may have seen "Zeiss certified" printed on the camera specs of Sony or Nokia phones—that's the same brand.
 
-In the eyeglass lens world, Zeiss is known for its **personalized customization technology**. Its flagship product, **Individual²**, isn't produced from a standard mold. Instead, each lens's optical design is calculated individually based on personal data such as your head-turning habits, eye movement patterns, pupillary distance, and how the frame sits on your face.
+In the eyeglass lens world, Zeiss is known for its **personalized customization technology**. Its flagship product, **Individual²**, isn't produced from a standard mold. Instead, each lens's optical design is calculated individually from your own fitting measurements: beyond the prescription and pupillary distance, the order includes vertex distance, pantoscopic tilt, face-form (wrap) angle, and fitting height, all measured with your chosen frame on.
 
 **Zeiss's main lens series (a brief overview):**
 
-- **Individual² personalized custom lenses**: The premium choice among progressive multifocal lenses, made to order after measuring individual parameters, offering a wider zone of clear vision than standard lenses
-- **DriveSafe lenses for night driving**: Designed to address glare and blurred vision during night driving, ideal for those who regularly drive after dark
+- **Individual² personalized custom lenses**: The premium choice among progressive multifocal lenses, made to order after measuring individual parameters
+- **DriveSafe lenses for night driving**: A lens design for driving, per the manufacturer's public information
 - **Digital Lens**: Adds near-intermediate support in the lower part of the lens, matching a usage pattern of long hours on phones and computers
 - **SmartLife series**: Modern lenses for everyday multi-scenario use, available in single-vision, progressive, and other versions
 
@@ -61,7 +61,7 @@ In the Taiwan market, Nikon is best known for its cameras and lenses, but its ey
 - **Presio series**: Progressive lenses with multiple tier options
 - **Light / Relaxsee single-vision series**: Everyday single-vision lenses emphasizing clarity and light weight
 
-In Taiwan, Nikon sits between HOYA and Zeiss in positioning. The brand enjoys high recognition, and consumers' trust in "Nikon optics" carries over from the impression of its camera lenses—while the actual lens quality and technology are genuinely solid.
+The brand enjoys high recognition, and consumers' trust in "Nikon optics" carries over from the impression of its camera lenses—while the actual lens quality and technology are genuinely solid.
 
 ---
 
@@ -71,7 +71,7 @@ Essilor comes from France and is one of the world's largest eyeglass lens manufa
 
 **Essilor's main lens series (a brief overview):**
 
-- **Varilux progressive lenses**: The original progressive lens series, ranging from Comfort to the X series across multiple tiers, and the best-selling progressive lens brand in the world
+- **Varilux progressive lenses**: The original progressive lens series, ranging from Comfort to the X series across multiple tiers
 - **Crizal coating series**: Essilor's signature anti-reflective coating, often paired with lenses from other brands
 - **Eyezen blue-light filter / near-support lenses**: A single-vision series designed for digital life
 
@@ -108,7 +108,7 @@ Most optical shops carry them, but the series and tiers they stock vary. Beyond 
 
 **Q: With the same Zeiss lens, does it make a difference which optical shop I go to?**
 
-The lens itself is the same; the difference lies in how precisely the optometrist takes the measurements and whether the personal parameters needed for the custom order are entered completely. Individual² personalized lenses require specific measurement data (head-turning angle, wearing distance, and so on). If these aren't measured, even a Zeiss-branded lens can't deliver its personalized effect.
+The lens itself is the same; the difference lies in how precisely the optometrist takes the measurements and whether the personal parameters needed for the custom order are entered completely. A personalized ZEISS order requires vertex distance, pantoscopic tilt, face-form angle, and fitting height, all measured with the chosen frame on. If these aren't measured accurately, the personalized design is calculated from the wrong numbers.
 
 **Q: Where in Xinzhuang can I get a Zeiss lens consultation?**
 

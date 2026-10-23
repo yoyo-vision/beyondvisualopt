@@ -45,7 +45,7 @@ A pair of progressives fitted from a 10-minute computerized refraction has a muc
 
 ## Thing Four: The Real Difference Between Lens Tiers Is "How Personalized"
 
-Take ZEISS as an example: progressive lens prices range from standard tiers to the Individual² custom tier, roughly NT$12,000–30,000 or more. The difference isn't "the pricier one is clearer" — it's **how many personal parameters go into the design.** Individual² factors in your wearing posture and head-turning habits as part of the optical calculation.
+Take ZEISS as an example: its progressive lenses range from standard tiers up to the Individual² custom tier. The difference isn't "the pricier one is clearer" — it's **how many personal parameters go into the design.** A personalized order factors your vertex distance, pantoscopic tilt, face-form angle, and fitting height into the optical calculation, and both our Xinzhuang and Banqiao stores can place it.
 
 If you have a strong prescription, significant astigmatism, or are particular about visual quality, the difference is noticeable; if your prescription is straightforward, you may not need the top tier at all. Beyond Visual Optometry is a certified ZEISS dealer and also a HOYA dealer, so we can compare the two brands objectively — see our [lens brand buying guide](/en/guide/) for more detail.
 
@@ -75,7 +75,7 @@ Beyond Visual Optometry is located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Ban
 
 **Q: How much do progressive lenses cost?**
 
-It varies widely by brand and level of personalization, with common price ranges around NT$12,000–30,000 or more (ZEISS Individual² custom lenses are the premium option). We recommend a full vision exam first to confirm your prescription combination and visual needs before choosing a tier — more expensive doesn't automatically mean more suitable for you.
+It varies widely by brand and level of personalization; we don’t list prices on the website, but the store will give you a quote by phone or LINE. We recommend a full vision exam first to confirm your prescription combination and visual needs before choosing a tier — more expensive doesn't automatically mean more suitable for you.
 
 **Q: Do I have to get progressive lenses for presbyopia?**
 

@@ -34,12 +34,12 @@ Factors that influence your ADD include:
 
 ## A Complete Comparison of 4 Presbyopia Solutions
 
-| Solution | Visual Range | Best For | Not Ideal For | Average Cost (TWD) |
-|------|---------|---------|-----------|----------------|
-| **Single-vision reading glasses** | Single near focus | Readers, phone users, occasional use | Those who frequently switch between near and far | 3,000–8,000 |
-| **Progressive lenses** | Continuous far + intermediate + near vision | Those who frequently switch distances or spend a lot of time outdoors | People prone to dizziness, high astigmatism, or working at a single fixed distance | 15,000–45,000+ |
-| **Office lenses (near-focused progressives)** | Intermediate + near distance | Office workers, computer users | Those needing sharp distance vision or doing outdoor activities | 10,000–25,000 |
-| **Multifocal contact lenses** | Far + near (no intermediate) | Those who don't want frame glasses, occasional use | People with dry eye or who demand high sharpness | Monthly disposables around 800–1,500/month |
+| Solution | Visual Range | Best For | Not Ideal For |
+|------|---------|---------|-----------|
+| **Single-vision reading glasses** | Single near focus | Readers, phone users, occasional use | Those who frequently switch between near and far |
+| **Progressive lenses** | Continuous far + intermediate + near vision | Those who frequently switch distances or spend a lot of time outdoors | People prone to dizziness, high astigmatism, or working at a single fixed distance |
+| **Office lenses (near-focused progressives)** | Intermediate + near distance | Office workers, computer users | Those needing sharp distance vision or doing outdoor activities |
+| **Multifocal contact lenses** | Far + near (no intermediate) | Those who don't want frame glasses, occasional use | People whose eyes dry out easily or who demand high sharpness |
 
 ---
 
@@ -78,7 +78,7 @@ The lens is designed with three visual zones from top to bottom: the upper part 
 
 **Best for:** People who need to frequently switch between far (driving, going out), intermediate (computer), and near (phone, documents) throughout the day.
 
-> **The Beyond Visual approach:** Before fitting progressive lenses, our licensed optometry staff measure your "primary working distance" and "head-turning habits." These two parameters determine the design direction of the progressive corridor and are the core basis for personalized ZEISS Individual² customization.
+> **The Beyond Visual approach:** Before fitting progressive lenses, our licensed optometry staff first confirm your "primary working distance," then measure vertex distance, pantoscopic tilt, face-form angle, and fitting height with your chosen frame on. For a ZEISS personalized order, these measurements go into the order as the basis for the lens design calculation.
 
 ---
 
@@ -89,7 +89,7 @@ Designed specifically for "working indoors at a fixed distance for long periods,
 **Pros:**
 - A wider and more comfortable intermediate-to-near field of view than full progressives
 - A much shorter adaptation period than full progressive lenses
-- Significantly reduced eye fatigue during long hours at the computer
+- The computer distance falls in the widest zone of the lens
 
 **Cons:**
 - Can't see clearly at distance (things start to blur beyond about 100cm)
@@ -110,7 +110,7 @@ Soft multifocal contact lenses (such as presbyopia contacts from Alcon or J&J) u
 
 **Cons:**
 - Less sharp than frame lenses (the brain's focus-splitting mechanism causes a slight image-overlap sensation)
-- Uncomfortable for people with dry eye
+- May be uncomfortable for people whose eyes dry out easily
 - Higher cost (an ongoing monthly expense)
 - Not suitable for precision visual tasks (such as jewelers or painters)
 
@@ -156,7 +156,7 @@ At Beyond Visual Optometry (Xinzhuang × Banqiao), our licensed optometry staff 
 
 **Q: Why are progressive lenses so expensive?**
 
-Progressive lenses are far more complex to design than single-vision lenses. High-end progressives (such as ZEISS Individual²) require 12+ personalized parameters (including wearing posture, head-turning habits, and pupil height), so each lens is essentially an optical component calculated specifically for you. Cheap progressives use standardized designs with narrower adaptation zones and greater peripheral distortion, which is the fundamental reason for the price gap.
+Progressive lenses are far more complex to design than single-vision lenses. High-end progressives (such as ZEISS Individual²) are ordered with personal parameters beyond the prescription and pupillary distance, including vertex distance, pantoscopic tilt, face-form angle, and fitting height, and each lens is calculated from those numbers. Cheap progressives use standardized designs with narrower adaptation zones and greater peripheral distortion, which is the fundamental reason for the price gap.
 
 ---
 
