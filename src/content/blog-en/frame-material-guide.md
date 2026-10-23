@@ -127,7 +127,7 @@ Weight, skin feel, and flexibility are things no photo or spec sheet can convey 
 
 Come try frames on at either Beyond Visual Optometry location — we'll help you narrow down the material that truly fits your face shape, prescription (especially lens thickness considerations for high prescriptions), and daily habits, and adjust the frame to fit perfectly when you pick up your glasses.
 
-- **Xinzhuang store (Biyang Optometry):** +886-2-2206-6700 — our licensed optometry staff can confirm your fitting parameters at the same time
+- **Xinzhuang store (Biyang Optometry):** +886-2-2206-6700
 - **Banqiao store:** +886-2-2253-1246
 
 Choosing the right material is the starting point of a great pair of glasses; adjusting it to fit is the finish line.

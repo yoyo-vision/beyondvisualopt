@@ -2,7 +2,7 @@
 title: Your Glasses Aren't Really Fitted Until They're Adjusted — 8 Key Steps in Hand Frame Adjustment
 date: 2026-06-24
 tag: "Frames"
-excerpt: Getting the prescription right doesn't mean your glasses are properly fitted. Half of whether a pair of glasses feels comfortable comes down to frame adjustment — a step most optical shops do far less thoroughly than you'd expect.
+excerpt: Getting the prescription right doesn't mean your glasses are properly fitted. Half of whether a pair of glasses feels comfortable comes down to frame adjustment, and how carefully that step is done.
 image: "/images/blog/eyeglass-frame-fitting-tools-beyondvisual.webp"
 youtube: ""
 instagram: ""
@@ -42,7 +42,7 @@ Get the nose pads wrong, and the lens's optical center drifts out of place. A hi
 
 The ideal tilt angle between the frame and your face is generally somewhere between 8 and 12 degrees.
 
-This angle affects visual quality when you're looking down (reading, using your phone), and it matters especially for progressive lenses. For a lot of people who get dizzy wearing progressives, the real problem isn't the prescription — it's the pantoscopic tilt, because the lens's addition zone no longer lines up with where you're actually looking when you glance down.
+This angle affects visual quality when you're looking down (reading, using your phone), and it matters especially for progressive lenses. Personalized progressive lenses also need the pantoscopic tilt measured and entered when the order is placed.
 
 ### Step Three: Face Form Angle Adjustment
 
@@ -88,7 +88,7 @@ After you start wearing your new glasses, the nose pads and temples will shift s
 
 > Pictured above are the tools Beyond Visual Optometry uses every day for adjustments: various optical pliers (nose pad pliers, temple pliers, flat-nose pliers, round-nose pliers), a precision screwdriver set, and tweezers. Each tool has its own specific purpose — no single pair of pliers handles every adjustment.
 
-A lot of optical shops "adjust" glasses by hand-bending them, or using one all-purpose pair of pliers. That might just about get by with a cheap frame, but with a pure titanium frame or a hand-crafted Japanese acetate frame, that approach easily leaves marks, causes stress deformation, or simply can't get the fit right.
+Pure titanium springs back strongly, and hand-crafted Japanese acetate is sensitive to uneven heat. Bending these by hand, or with one all-purpose pair of pliers, easily leaves marks, causes stress deformation, or simply can't get the fit right.
 
 Having the right tool for the job is what lets us apply precise force and adjust a frame to the angle your face needs, without damaging the material.
 
@@ -115,4 +115,4 @@ A: Yes, both locations offer frame adjustment service, including more complex ad
 
 The final step, from refraction to pickup, is the moment a pair of glasses actually becomes "your" glasses.
 
-If something feels off about the glasses you're wearing right now, bring them in and let us take a look — they don't need to have been fitted here. A lot of issues can be resolved in five minutes.
+If something feels off about the glasses you're wearing right now, bring them in and let us take a look — they don't need to have been fitted here.

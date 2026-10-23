@@ -78,7 +78,7 @@ In most cases, yes. Converting sunglasses to prescription lenses requires attent
 
 **Q: My Lindberg's temple arm is loose, or my ic! berlin's spring clip is deformed — can you fix it?**
 
-Yes. Adjusting and repairing screwless and spring-clip constructions is one of our specialties, and we welcome frames purchased elsewhere. Whether it can be fixed, how, and whether it needs to be sent out for repair will be explained to you in person after assessment.
+Yes. Adjusting and repairing screwless and spring-clip constructions is one of our specialties, and we welcome frames purchased elsewhere. Whether it can be fixed, and how, will be explained to you in person after assessment.
 
 ---
 

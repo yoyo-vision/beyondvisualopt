@@ -92,13 +92,13 @@ Titanium is widely used in medical implants and has high biocompatibility. If we
 People who can appreciate "the precision of a single joint" or "the texture of a surface finish" usually have the same first reaction when they put on MINAMOTO: "this build quality isn't what I expected."
 
 **People who don't want to replace their frame every year**
-A well-made pure titanium frame, properly cared for, will keep going for years (lens prescription aside). MINAMOTO's design is deliberately understated and doesn't chase trends, so it still looks right five years from now.
+A well-made pure titanium frame, properly cared for, will keep going for years (lens prescription aside). MINAMOTO's design is deliberately understated and doesn't chase trends, which suits people who want one frame to stay with them for a long time.
 
 ---
 
 ## MINAMOTO at Beyond Visual Optometry
 
-We carry the MINAMOTO series at our Xinzhuang store, so you can try it on for yourself.
+Our Xinzhuang store carries the MINAMOTO series, so you can try it on for yourself.
 
 The lightness of a titanium frame doesn't come across in photos, and neither does the feel of the washi paper case — both need to be experienced in person. If you care about frame materials, or you're looking for a Japanese-crafted frame you can wear for the long haul, we'd suggest coming in to try it on — it feels completely different from what you'd expect from pictures.
 
@@ -108,7 +108,7 @@ The lightness of a titanium frame doesn't come across in photos, and neither doe
 
 **Q: MINAMOTO and Lindberg are both pure titanium — what's the difference?**
 
-Both are high-end pure titanium frames, but with different design philosophies. Lindberg is built around "extreme lightness plus Scandinavian minimalism," with a nose-pad-free design and weights as low as 1.9 grams. MINAMOTO emphasizes "Sabae craftsmanship heritage plus Kurosawa-inspired cultural aesthetics," prioritizing structural presence and Japanese craftsmanship warmth alongside its light weight. Which one to choose comes down to whether you prefer Nordic design language or Japanese craft aesthetics.
+Both are high-end pure titanium frames, but with different design philosophies. Lindberg is built around "extreme lightness plus Scandinavian minimalism." MINAMOTO emphasizes "Sabae craftsmanship heritage plus Kurosawa-inspired cultural aesthetics," prioritizing structural presence and Japanese craftsmanship warmth alongside its light weight. Which one to choose comes down to whether you prefer Nordic design language or Japanese craft aesthetics. Beyond Visual Optometry is not a Lindberg dealer; for Lindberg frames we provide adjustment and repair.
 
 **Q: Do pure titanium frames need special care?**
 
@@ -116,7 +116,7 @@ Pure titanium resists corrosion and doesn't rust easily, so day-to-day care is t
 
 **Q: Where in Xinzhuang can I try on MINAMOTO?**
 
-Beyond Visual Optometry (Xinzhuang, Biyang Optometry) carries the MINAMOTO series for in-person try-on. Our licensed optometry staff can help recommend the best frame shape and size based on your facial features and prescription (especially lens thickness considerations for high myopia).
+Beyond Visual Optometry's Xinzhuang store (Biyang Optometry) carries the MINAMOTO series for in-person try-on. Our licensed optometry staff can help recommend the best frame shape and size based on your facial features and prescription (especially lens thickness considerations for high myopia).
 
 ---
 

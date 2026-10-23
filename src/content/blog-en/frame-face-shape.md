@@ -82,7 +82,7 @@ Ideally, your eyebrows sit right around the top edge of the frame — just barel
 
 ## Honestly, That Chart Is a Starting Point, Not a Rule
 
-Time for a confession: **roughly three in ten people who walk into our shop end up contradicting the table above.**
+Plenty of people who walk into our shop end up contradicting the table above.
 
 It isn't hard to see why. Face-shape categories capture the outline and nothing else. What actually decides whether a frame works on you also includes the height of your nose bridge, the distance between your eyes, where your cheekbones sit, your hairstyle — even how you dress and how your face moves when you talk. None of that fits inside the words "round" or "square."
 
