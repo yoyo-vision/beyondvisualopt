@@ -69,8 +69,8 @@ export const CATEGORIES: Category[] = [
     slug: 'frames', name: '鏡框', keyword: '鏡框推薦', guide: '/guide/frames/',
     subs: [
       { slug: 'choosing', name: '鏡框怎麼挑', guide: '/guide/frames/', posts: ['frame-face-shape', 'frame-fit-size', 'frame-material-guide'] },
-      { slug: 'styles', name: '框型專題', posts: ['rimless-glasses-guide', 'rimless-lens-drilling-fitting', 'luxury-frame-lens-guide'] },
-      { slug: 'craft', name: '品牌與工藝', posts: ['minamoto-eyewear-brand', 'frame-adjustment-handcraft'] },
+      { slug: 'styles', name: '框型專題', posts: ['rimless-glasses-guide', 'rimless-lens-drilling-fitting', 'luxury-frame-lens-guide', 'sports-glasses'] },
+      { slug: 'craft', name: '品牌、調整與維修', posts: ['sabae-eyewear', 'minamoto-eyewear-brand', 'frame-adjustment-handcraft', 'glasses-repair'] },
     ],
   },
   {
