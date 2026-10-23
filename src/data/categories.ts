@@ -114,7 +114,7 @@ export const GUIDE_TITLES: Record<string, string> = {
   '/guide/eye-doctor-or-optometrist/': '掛眼科還是找驗光所？症狀分流指南',
   '/guide/choose-optician/': '新北配眼鏡完整指南',
   '/guide/byo-frame-lenses/': '自帶鏡框配鏡片完整指南',
-  '/guide/lens-brands/': '鏡片品牌選購完整指南',
+  '/guide/lens-brands/': '鏡片選購完整指南',
   '/guide/frames/': '鏡框選購完整指南',
   '/guide/high-myopia/': '高度近視配鏡完整指南',
   '/guide/aniseikonia/': '不等像完整指南',
