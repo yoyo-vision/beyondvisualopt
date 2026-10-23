@@ -30,9 +30,8 @@ In the eyeglass lens world, Zeiss is known for its **personalized customization 
 - **DriveSafe lenses for night driving**: Designed to address glare and blurred vision during night driving, ideal for those who regularly drive after dark
 - **Digital Lens**: Adds near-intermediate support in the lower part of the lens, matching a usage pattern of long hours on phones and computers
 - **SmartLife series**: Modern lenses for everyday multi-scenario use, available in single-vision, progressive, and other versions
-- **MyoCare defocus-design lenses**: Spectacle-form defocus optical design for school-age children, using C.A.R.E.® technology (concentric ring-shaped defocus), with a MyoCare S version also available (indications follow the content approved in the MOHW license; suitability assessed by an optometrist)
 
-Beyond Visual Optometry is a contracted, certified Zeiss dealer in Taiwan. Both the Xinzhuang location (Beyond Visual Optometry) and the Banqiao location offer the full range of Zeiss lens series.
+Beyond Visual Optometry is a contracted, certified Zeiss dealer in Taiwan. Both the Xinzhuang location (Beyond Visual Optometry) and the Banqiao location offer ZEISS lenses, including Individual² personalized custom lenses and the Digital Lens series.
 
 ---
 
@@ -46,7 +45,6 @@ HOYA's lens factories are spread across the globe, and the HOYA lenses circulati
 
 - **iD progressive lens series**: HOYA's personalized multifocal lenses, supporting freeform design, positioned as HOYA's premium progressive option
 - **Sync III near-support lenses**: Adds slight near-zone power in the near zone, matching prolonged digital-device use
-- **MiYOSMART defocus-design lenses**: HOYA's spectacle-form defocus optical design, using DIMS technology (indications follow the content approved in the MOHW license; suitability assessed by an optometrist)
 - **NULUX series**: Everyday single-vision lenses with a complete range of index options, from 1.60 to 1.74
 
 HOYA's strength lies in a complete product lineup, mature technology, and a wide price range—there's a choice for everyone from entry-level to premium.
@@ -114,7 +112,7 @@ The lens itself is the same; the difference lies in how precisely the optometris
 
 **Q: Where in Xinzhuang can I get a Zeiss lens consultation?**
 
-Beyond Visual Optometry (No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City) is a contracted, certified Zeiss dealer in Taiwan. Our licensed optometry staff provide full Zeiss lens consultations and personalized measurement services. You can reach us at +886-2-2206-6700 or +886-2-2253-1246.
+Beyond Visual Optometry (No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City) is a contracted, certified Zeiss dealer in Taiwan. Our licensed optometry staff provide Zeiss lens consultations and personalized measurement services. You can reach us at +886-2-2206-6700 or +886-2-2253-1246.
 
 ---
 

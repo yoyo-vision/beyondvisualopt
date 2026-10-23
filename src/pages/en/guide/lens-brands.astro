@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Which brands can I get in Xinzhuang or Banqiao?',
-    a: "Beyond Visual Optometry is a ZEISS Taiwan authorized dealer. Both our Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, 02-2253-1246) offer the full ZEISS lens range; we're also a HOYA dealer, offering major series such as HOYA iD. For NIKON, Essilor, and other brands, our licensed optometry staff can also give an objective comparison and recommendation based on your viewing needs.",
+    a: "Beyond Visual Optometry is a ZEISS Taiwan authorized dealer. Both our Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, 02-2253-1246) offer ZEISS lenses, including Individual² personalized custom lenses and the Digital Lens series; we're also a HOYA dealer, offering major series such as HOYA iD. For NIKON, Essilor, and other brands, our licensed optometry staff can also give an objective comparison and recommendation based on your viewing needs.",
   },
 ];
 
@@ -148,10 +148,10 @@ const schema = {
           </thead>
           <tbody class="text-brand-ink-2">
             {[
-              ['ZEISS', 'German optics brand since 1846, known for personalized custom technology, with custom precision as its strength', 'Individual² custom, DriveSafe night driving, Digital Lens, MyoCare children\'s defocus-design lens (C.A.R.E. technology)', 'High prescriptions, high astigmatism, quality-sensitive professionals seeking personalized custom'],
-              ['HOYA', 'Japanese brand since 1941, one of the world\'s largest lens makers, vertically integrated with high consistency', 'iD progressive (dual-surface composite), Sync III near-addition single vision, Nulux single vision, MiYOSMART children\'s defocus (DIMS technology)', 'Those wanting a complete product line, flexible price range, and mature, stable technology'],
+              ['ZEISS', 'German optics brand since 1846, known for personalized custom technology, with custom precision as its strength', 'Individual² custom, DriveSafe night driving, Digital Lens', 'High prescriptions, high astigmatism, quality-sensitive professionals seeking personalized custom'],
+              ['HOYA', 'Japanese brand since 1941, one of the world\'s largest lens makers, vertically integrated with high consistency', 'iD progressive (dual-surface composite), Sync III near-addition single vision, Nulux single vision', 'Those wanting a complete product line, flexible price range, and mature, stable technology'],
               ['NIKON', 'Deep optical expertise; the lens business is run by Nikon-Essilor, a joint venture owned half by Nikon and half by Essilor (per the manufacturer\'s public information)', 'SeeMax Ultimate personalized progressive, Presio progressive, Light / Relaxsee single vision (per the manufacturer\'s public information)', 'Those who trust NIKON optics and want free-form progressive design'],
-              ['Essilor', 'French brand since 1849, the world\'s highest market share, inventor of the progressive multifocal lens in 1959', 'Varilux progressive (the original progressive lens), Eyezen near-addition single vision, Crizal coating, Stellest children\'s defocus (H.A.L.T. technology)', 'Those needing mature, widespread progressive tech, valuing coating quality, with a flexible budget'],
+              ['Essilor', 'French brand since 1849, the world\'s highest market share, inventor of the progressive multifocal lens in 1959', 'Varilux progressive (the original progressive lens), Eyezen near-addition single vision, Crizal coating', 'Those needing mature, widespread progressive tech, valuing coating quality, with a flexible budget'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
                 {row.map((cell, i) => (
@@ -162,9 +162,6 @@ const schema = {
           </tbody>
         </table>
       </div>
-      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        Note: Stellest is Essilor's children's defocus-design lens, using H.A.L.T. technology (1,021 tiny aspheric lenslets); ZEISS's children's defocus-design lens is MyoCare, using C.A.R.E. technology (concentric ring defocus) — the two are often confused, but they are different products from different brands.
-      </blockquote>
     </div>
   </section>
 

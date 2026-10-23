@@ -57,16 +57,6 @@ Crizal comes in several tiers by feature set, including Crizal Easy, Crizal Aliz
 
 ---
 
-### Defocus-Design Lenses for Children: Stellest
-
-Stellest is Essilor's recent defocus-design lens for children, using **H.A.L.T. technology** (Highly Aspherical Lenslet Target) — 1,021 micro-aspheric lenslets arranged across the lens surface to create a surrounding defocus zone.
-
-This is a functional lens that requires assessment and fitting by an optometrist, and is recommended alongside regular vision tracking rather than as a standalone solution.
-
-**Best for:** School-age children 6 and up who need regular vision assessments, with suitability discussed jointly between the optometrist and the parents.
-
----
-
 ## The Logic Behind Choosing Essilor Lenses
 
 Essilor's product line spans a wide range, with a substantial price gap between entry-level and premium personalized options. When choosing a lens, the key isn't brand recognition — it's **whether the lens design actually matches how you use your eyes in daily life:**

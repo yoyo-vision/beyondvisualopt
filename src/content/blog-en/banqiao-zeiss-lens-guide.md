@@ -56,7 +56,7 @@ ZEISS provides the optical ceiling; the fitting determines how much of it you ac
 
 **Q: Where's the certified ZEISS dealer in Banqiao?**
 
-Beyond Visual Optometry is a certified ZEISS dealer in Taiwan, located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, about a 5-minute walk from Jiangzicui MRT Station, phone +886-2-2253-1246. We carry the full ZEISS lineup, including Individual² personalized custom lenses.
+Beyond Visual Optometry is a certified ZEISS dealer in Taiwan, located at No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, about a 5-minute walk from Jiangzicui MRT Station, phone +886-2-2253-1246. We offer ZEISS lenses, including Individual² personalized custom lenses.
 
 **Q: What's the difference between ZEISS lenses and ordinary lenses?**
 

@@ -4,8 +4,8 @@ date: "2026-06-24"
 tag: "Lenses"
 excerpt: "HOYA is one of Japan's leading names in precision optics, with a lineup spanning single-vision lenses to personalized progressive multifocals that covers nearly every visual need. Optometrist YoYo at Beyond Visual Optometry walks you through the design logic behind each HOYA series and who it's best suited for."
 seoTitle: "HOYA Lenses Explained | Japanese Lens Brand Series Guide | Beyond Visual Optometry Xinzhuang & Banqiao"
-seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, iD progressive multifocals, Sync III near-addition design, and MiYOSMART defocus lens design. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains the design logic and ideal candidates for each series."
-keywords: "HOYA lenses,HOYA progressive lenses,HOYA iD,HOYA Sync III,HOYA MiYOSMART,Japanese lens brands,Xinzhuang HOYA,Banqiao HOYA lenses,Beyond Visual Optometry"
+seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, iD progressive multifocals, and Sync III near-addition design. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains the design logic and ideal candidates for each series."
+keywords: "HOYA lenses,HOYA progressive lenses,HOYA iD,HOYA Sync III,Japanese lens brands,Xinzhuang HOYA,Banqiao HOYA lenses,Beyond Visual Optometry"
 ---
 
 ## What Kind of Brand Is HOYA?
@@ -51,16 +51,6 @@ The iD series comes in several versions:
 
 ---
 
-### Defocus Lens Design: MiYOSMART
-
-MiYOSMART is a defocus lens design for children, developed by HOYA in partnership with The Hong Kong Polytechnic University, using **DIMS technology** (Defocus Incorporated Multiple Segments) — the lens surface carries multiple micro-defocus segments that shift the focal point of part of the incoming light, providing a different visual stimulus.
-
-This is a functional lens that needs to be assessed and fitted by a licensed optometrist, suited to school-age children with tracking needs, and recommended alongside regular vision assessments.
-
-**Best for:** school-age children 6 and older with a need for regular vision tracking, chosen jointly by parents and an optometrist.
-
----
-
 ### Coating Technology: Hi-Vision LongLife
 
 HOYA's coating lineup is represented by Hi-Vision, offering anti-reflective, scratch-resistant, water-repellent, and dust-repellent properties, with some higher-tier versions adding **blue-light filtering**.
@@ -95,10 +85,6 @@ Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., N
 **Q: How does HOYA Sync III differ from a regular lens?**
 
 Sync III builds a subtle near-support design into the lower part of the lens, designed for a work pattern of long-hours near-distance use. It looks identical to a regular single-vision lens and requires no adaptation to a progressive zone. Whether it suits you depends on your individual visual context and should be assessed through an eye exam.
-
-**Q: What age is MiYOSMART suitable for?**
-
-It's recommended for school-age children 6 and older who need regular vision assessments, with suitability determined by a licensed optometrist. We recommend a follow-up vision check every 3–6 months during wear.
 
 ---
 

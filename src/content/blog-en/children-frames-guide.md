@@ -14,7 +14,7 @@ A lot of parents bringing their kids in for glasses instinctively reach for what
 
 That thinking is understandable, but it's pointed in the wrong direction.
 
-A child's frame has to handle a completely different set of conditions than an adult's: running, jumping, getting knocked around, tossed wherever, all while their face is still growing. More importantly, if your child is wearing [defocus-design lenses](/en/guide/) for myopia tracking, choosing the wrong frame directly undermines the optical performance those lenses are designed to deliver.
+A child's frame has to handle a completely different set of conditions than an adult's: running, jumping, getting knocked around, tossed wherever, all while their face is still growing. More importantly, choose the wrong frame and the lens's optical center won't line up with your child's pupil, which directly undermines the optical performance the lenses are designed to deliver.
 
 When choosing a kids' frame, there are really only three things that matter: **safety, durability, and fit.**
 
@@ -63,7 +63,7 @@ Fit can always be adjusted later; buying the wrong overall size cannot.
 
 ---
 
-## 4. Fit: This Step Directly Affects How Well Defocus Lenses Perform
+## 4. Fit: The Optical Center Has to Line Up With the Pupil
 
 This is the step most often overlooked, yet it's the most technical one. Whether a frame fits isn't just about comfort — it directly affects the lens's optical performance.
 
@@ -71,15 +71,15 @@ This is the step most often overlooked, yet it's the most technical one. Whether
 
 A lens's **optical center** needs to line up with the child's pupil. If the frame is too large, the pupil ends up offset from the optical center, producing an unintended prismatic effect — the child may find things look slightly "off," get tired more easily, or even feel dizzy.
 
-For children wearing [defocus-design lenses](/en/guide/), this matters even more. This type of lens's optical design depends on specific zones of the lens landing precisely in front of the child's eye. If the frame is off and the optical center shifts, the lens's defocus zones no longer line up with the line of sight, and **the optical design simply can't do its job.**
+A child's prescription is still changing and needs [regular tracking](/en/guide/children-myopia/), so the lenses may need replacing every so often; only a frame of the right size lets the optical center line up correctly each time the lenses are changed.
 
-In other words: paying for defocus-design lenses and then pairing them with an ill-fitting frame means giving up half the optical design you paid for. The details of how frames and lenses should be matched are worth a parent's time to understand.
+That's why a child's frame can't be chosen casually. The details of how frames and lenses should be matched are worth a parent's time to understand.
 
 ---
 
 ## 5. Stability: Glasses That Slide Off Are the Same as Not Wearing Them
 
-Active kids end up with their glasses constantly sliding down — which isn't just annoying, it also pushes their line of sight toward the edge of the lens, making things blurry, and the child ends up peering over the top rim of the frame instead. This is especially bad for a child wearing defocus-design lenses.
+Active kids end up with their glasses constantly sliding down — which isn't just annoying, it also pushes their line of sight toward the edge of the lens, making things blurry, and the child ends up peering over the top rim of the frame instead. The child's line of sight no longer passes through the lens's optical center at all.
 
 Stability comes down to a few things:
 
@@ -97,7 +97,7 @@ Stability comes down to a few things:
 | Material safety | TR90, silicone, no sharp edges | Won't hurt the face or scratch skin on impact |
 | Durability | Spring hinges, full rim, one-piece molding | Holds up to rough handling, fewer repairs |
 | Room to grow | Adjustable nose pads, reshapeable temples | Grows with the child's face — no need to keep replacing |
-| Fit | Proper size, optical center aligned with pupil | Directly affects defocus lens performance |
+| Fit | Proper size, optical center aligned with pupil | A misaligned optical center can cause unsteady vision, eye strain, or even dizziness |
 | Wearing stability | Anti-slip design, sports strap, lightweight | Won't slide off, stays clear, doesn't interfere with vision |
 
 ---
@@ -110,7 +110,7 @@ For active children, TR90-type memory plastic is generally the safest choice: li
 
 **Q: Can I just buy kids' frames a size bigger so they last as they grow?**
 
-We don't recommend it. An oversized frame shifts the child's pupil away from the lens's optical center, which can cause visual instability, eye strain, or even dizziness — and for a child wearing defocus-design lenses, it undercuts the lens's optical design. The right approach is to choose a frame that fits now while leaving room to adjust — using adjustable nose pads and reshapeable temples to fine-tune the fit as your child grows, rather than relying on an oversized frame to "grow into."
+We don't recommend it. An oversized frame shifts the child's pupil away from the lens's optical center, which can cause visual instability, eye strain, or even dizziness. The right approach is to choose a frame that fits now while leaving room to adjust — using adjustable nose pads and reshapeable temples to fine-tune the fit as your child grows, rather than relying on an oversized frame to "grow into."
 
 **Q: My child's glasses keep sliding off — what should I do?**
 
