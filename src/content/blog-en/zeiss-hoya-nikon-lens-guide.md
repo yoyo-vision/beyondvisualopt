@@ -55,12 +55,12 @@ HOYA's strength lies in a complete product lineup, mature technology, and a wide
 
 ## Nikon | A camera brand's optical extension
 
-In the Taiwan market, Nikon is best known for its cameras and lenses, but its eyeglass lens division has an equally long history of optical expertise. Nikon eyeglass lenses are manufactured by Hoya Vision Care (under a Nikon brand license), sharing the same manufacturing craftsmanship as HOYA's lens series.
+In the Taiwan market, Nikon is best known for its cameras and lenses, but its eyeglass lens division has an equally long history of optical expertise. Nikon's eyeglass lens business is run by Nikon-Essilor, a joint venture owned half by Nikon and half by France's Essilor.
 
 **Nikon's main lens series (a brief overview):**
 
-- **SeeMax progressive lenses**: Nikon's personalized multifocal lenses, using freeform design
-- **Presio series**: Standard progressive lenses with multiple tier options
+- **SeeMax Ultimate progressive lenses**: Nikon's personalized multifocal lenses (per the manufacturer's public information)
+- **Presio series**: Progressive lenses with multiple tier options
 - **Light / Relaxsee single-vision series**: Everyday single-vision lenses emphasizing clarity and light weight
 
 In Taiwan, Nikon sits between HOYA and Zeiss in positioning. The brand enjoys high recognition, and consumers' trust in "Nikon optics" carries over from the impression of its camera lenses—while the actual lens quality and technology are genuinely solid.

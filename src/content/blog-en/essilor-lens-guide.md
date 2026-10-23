@@ -31,16 +31,16 @@ Varilux is Essilor's flagship progressive multifocal series and one of the names
 
 ---
 
-### Digital-Comfort Lenses: The Eyezen Series
+### Near-Addition Single Vision: The Eyezen Series
 
 Eyezen is Essilor's functional single-vision lens designed for the digital age, with two main features:
 
-1. **Slight accommodative support:** A small amount of added power is built into the lower portion of the lens, reducing the load on the ciliary muscle during close-range work
-2. **Selective blue light filtering:** Filters part of the high-energy, short-wavelength blue light, supporting visual comfort during long screen sessions
+1. **Near-addition design:** A small amount of plus power is added to the lower portion of the lens for close-range viewing (per the manufacturer's public information)
+2. **Blue light filtering:** Filters part of the short-wavelength blue light (per the manufacturer's public information)
 
 Eyezen isn't a presbyopia lens — it looks just like a standard single-vision lens — and suits people aged roughly 20–45 who spend a lot of time on digital devices but don't yet need progressives.
 
-**Best for:** Digital workers, students, and anyone who spends long hours on a phone or computer and notices their eyes get tired after work.
+**Best for:** Digital workers, students, and anyone who spends long hours on a phone or computer.
 
 ---
 
@@ -71,7 +71,7 @@ This is a functional lens that requires assessment and fitting by an optometrist
 
 Essilor's product line spans a wide range, with a substantial price gap between entry-level and premium personalized options. When choosing a lens, the key isn't brand recognition — it's **whether the lens design actually matches how you use your eyes in daily life:**
 
-- Is your main concern near-vision fatigue, or do you need both distance and near equally clear?
+- Do you mostly work up close for long hours, or do you need both distance and near equally clear?
 - Do you spend a lot of time outdoors, or mostly indoors looking at screens?
 - What are your priorities on lens thinness and coating durability?
 
@@ -83,11 +83,11 @@ The visual-quality difference between tiers within the same series is real, but 
 
 **Q: Where in Xinzhuang can I get a consultation on Essilor Varilux progressive lenses?**
 
-At Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), our licensed optometry staff can compare Essilor Varilux objectively against ZEISS and HOYA progressive options, based on your visual habits and presbyopia level. Book at +886-2-2206-6700.
+At Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), our licensed optometry staff can compare Essilor Varilux objectively against the ZEISS and HOYA progressive options we carry, based on your visual habits and presbyopia level. Book at +886-2-2206-6700.
 
-**Q: Where in Banqiao can I find Essilor lenses?**
+**Q: Where in Banqiao can I compare Essilor with other progressive lenses?**
 
-Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City) offers progressive lens consultations and brand comparisons. Call +886-2-2253-1246.
+Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City) offers progressive lens consultations and brand comparisons. We are a ZEISS and HOYA dealer; the Essilor product details in this article are compiled from the manufacturer's public information for comparison. Call +886-2-2253-1246.
 
 **Q: What's the difference between Varilux and a typical progressive lens?**
 
@@ -95,7 +95,7 @@ Varilux's core technology lies in wavefront aberration correction and personaliz
 
 **Q: What age is Eyezen suitable for?**
 
-There's no strict age limit for Eyezen — it's mainly suited to people who use digital devices heavily and feel eye fatigue after long stretches of close-range work. It's generally recommended for adults 18 and up; for minors, we recommend having an optometrist assess suitability first.
+There's no strict age limit for Eyezen — it's mainly suited to people who use digital devices heavily and do long stretches of close-range work. It's generally recommended for adults 18 and up; for minors, we recommend having an optometrist assess suitability first.
 
 ---
 

@@ -64,7 +64,7 @@ This is an optional feature, especially useful for anyone who wears a mask for l
 
 Blue-light coating filters out a portion of the shorter-wavelength **high-energy visible blue light**, much of which comes from phone, computer, and tablet screens. In practice, it **filters specific wavelength bands of blue light**; some users report a more comfortable viewing experience during long screen sessions, and the lens may carry a slight yellowish tint or reflective cast.
 
-To be clear: blue-light coating is a type of **light-filtering** design. It is not a medical device, and it cannot claim to prevent any eye disease or condition. Whether it's right for you depends on your actual screen habits, not on what an ad claims. For a fuller picture of screen use and visual fatigue, see our guide to digital eye strain.
+To be clear: blue-light coating is a type of **light-filtering** design. Prescription eyeglass lenses are regulated as medical devices in Taiwan, and the coating cannot claim to prevent or treat any eye disease. Whether it's right for you depends on your actual screen habits, not on what an ad claims. For a fuller picture of screen use and visual fatigue, see our guide to digital eye strain.
 
 **What it solves:** filtering part of the high-energy blue light and adjusting visual comfort during extended screen use.
 
@@ -123,7 +123,7 @@ The answers to these questions decide what coating you need — far more reliabl
 
 **Q: Is blue-light coating necessary?**
 
-It depends on your screen habits. Blue-light coating filters part of the high-energy short-wavelength blue light mainly emitted by screens, and some people who spend long hours looking at screens report it feels more comfortable. That said, it isn't a medical device and can't claim to prevent eye disease. If you spend more than 6 hours a day on a computer or phone, it's worth considering; if your screen time is limited, it may not be essential. We recommend discussing your actual situation with a licensed optometrist.
+It depends on your screen habits. Blue-light coating filters part of the short-wavelength blue light. Prescription eyeglass lenses are regulated as medical devices in Taiwan, and the coating can't claim to prevent or treat eye disease. If you spend long hours on a computer or phone each day, it's worth considering; if your screen time is limited, it may not be essential. We recommend discussing your actual situation with a licensed optometrist.
 
 **Q: Do lens coatings wear off?**
 

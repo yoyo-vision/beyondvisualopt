@@ -68,4 +68,4 @@ Usually not. A low prescription in 1.50 or 1.56 already isn't thick, so paying e
 
 Refractive index is probably the most fundamental — and most often glossed over — term in getting glasses. Understand it, and you won't be swayed by the numbers alone when choosing a lens. Come to Beyond Visual Optometry in Xinzhuang or Banqiao to feel the thickness difference between refractive indices for yourself, with an optometrist explaining exactly where the differences matter for your prescription. Our lens page also has the full rundown of refractive index specs and brand options.
 
-(Beyond Visual Optometry carries ZEISS, HOYA, and other lens brands — come compare the different refractive indices in person.)
+(Beyond Visual Optometry is a contracted, certified ZEISS dealer and a HOYA dealer — come compare the different refractive indices in person.)

@@ -4,7 +4,7 @@ date: "2026-06-24"
 tag: "Lenses"
 excerpt: "HOYA is one of Japan's leading names in precision optics, with a lineup spanning single-vision lenses to personalized progressive multifocals that covers nearly every visual need. Optometrist YoYo at Beyond Visual Optometry walks you through the design logic behind each HOYA series and who it's best suited for."
 seoTitle: "HOYA Lenses Explained | Japanese Lens Brand Series Guide | Beyond Visual Optometry Xinzhuang & Banqiao"
-seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, iD progressive multifocals, Sync III digital-strain relief, and MiYOSMART defocus lens design. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains the design logic and ideal candidates for each series."
+seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, iD progressive multifocals, Sync III near-addition design, and MiYOSMART defocus lens design. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains the design logic and ideal candidates for each series."
 keywords: "HOYA lenses,HOYA progressive lenses,HOYA iD,HOYA Sync III,HOYA MiYOSMART,Japanese lens brands,Xinzhuang HOYA,Banqiao HOYA lenses,Beyond Visual Optometry"
 ---
 
@@ -28,13 +28,13 @@ Nulux EP (Enhanced Performance) further optimizes the design around the eye's na
 
 ---
 
-### Digital-Strain Relief Lenses: Sync III
+### Near-Addition Single Vision: Sync III
 
 For people who spend long hours on their phone or computer, near-distance use dominates the visual routine. Sync III is HOYA's functional lens designed for this usage pattern, building a subtle **near-support design** into the lower part of the lens. It looks identical to a regular single-vision lens and needs no adaptation to a progressive zone; whether it suits you depends on your individual visual needs and should be assessed through an eye exam.
 
 This isn't a reading lens, and it isn't a progressive multifocal. It has virtually no effect on appearance, making it suited to people aged 20–40 who use screens more than 6 hours a day but don't yet need multifocal correction.
 
-**Best for:** office workers and students who spend long hours on digital devices and notice their eyes feel sore and tired after work.
+**Best for:** office workers and students who spend long hours on digital devices.
 
 ---
 

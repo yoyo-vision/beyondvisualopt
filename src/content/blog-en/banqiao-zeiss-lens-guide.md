@@ -1,8 +1,8 @@
 ---
-title: "Where to Get ZEISS Lenses in Banqiao: Certified Dealers, Lens Tiers, and Price Ranges Explained"
+title: "Where to Get ZEISS Lenses in Banqiao: Certified Dealers and Lens Tiers Explained"
 date: "2026-07-08"
 tag: "Lenses"
-excerpt: "Looking to get ZEISS lenses in Banqiao? How do you confirm a store is an officially certified dealer? What's the real difference between ZEISS's entry-level and Individual² tiers, and what's a reasonable price range? Beyond Visual Optometry — a 30-year practice by Jiangzicui Station — breaks it all down."
+excerpt: "Looking to get ZEISS lenses in Banqiao? How do you confirm a store is an officially certified dealer? What's the real difference between ZEISS's entry-level and Individual² tiers? Beyond Visual Optometry — a 30-year practice by Jiangzicui Station — breaks it all down."
 ---
 
 ## Why Does It Matter Whether a Store Is a "Certified ZEISS Dealer"?
@@ -20,32 +20,24 @@ Beyond Visual Optometry (Banqiao) is a certified ZEISS dealer in Taiwan, founded
 | Tier | Representative Series | Best For |
 |------|---------|--------|
 | Standard | ClearView, etc. | Straightforward prescriptions, budget-focused |
-| Digital comfort | Digital Lens | Office workers on screens 6+ hours a day |
+| Near-addition design | Digital Lens | Long stretches of close-range work (screens, phones) |
 | Driving-enhanced | DriveSafe | Frequent drivers concerned about night glare |
 | Progressive multifocal | Progressive series | Presbyopia, needing distance, intermediate, and near all clear |
 | Personalized custom | Individual² | High prescriptions, significant astigmatism, those particular about visual quality |
 
 **The key point: the difference between brands is often smaller than the difference between tiers within the same brand.** A premium, personalized HOYA lens can very plausibly outperform an entry-level ZEISS lens. Beyond Visual Optometry is also a HOYA dealer, so we can compare the two brands side by side objectively — see our [complete lens brand guide](/en/guide/) for more detail.
 
-## Price Range: What Counts as Reasonable?
-
-Common price points in the Banqiao market (in New Taiwan Dollars):
-
-- **Basic single-vision lenses:** about NT$2,000–6,000
-- **ZEISS digital comfort / functional single-vision lenses:** about NT$6,000–12,000
-- **ZEISS progressive lenses:** about NT$12,000–30,000 or more (depending on personalization level)
-
-The core driver of price is the **optical design and personalized parameters**, not the raw material cost. Do a full vision exam first, confirm what you actually need, and then choose a tier — that way you don't overspend. "We don't chase the most expensive option, only the one that actually fits you" has been Beyond Visual Optometry's principle for 30 years.
+What separates the tiers is the **optical design and personalized parameters**. Do a full vision exam first, confirm what you actually need, and then choose a tier. "We don't chase the most expensive option, only the one that actually fits you" has been Beyond Visual Optometry's principle for 30 years.
 
 ## Same ZEISS Lens, So Why Does the Result Differ From Store to Store?
 
 The lens is identical — the difference is in **the fitting**:
 
-- The precision of the objective and subjective refraction (a lot of Banqiao shops still do 10-minute quick refractions, which makes the prescription prone to drift)
+- Whether the objective and subjective refraction, plus a binocular vision assessment, are done in full
 - Whether the personal parameters Individual² needs (wearing distance, pantoscopic tilt, head-turning habits) are actually measured
 - Fitting height and optical-center alignment — a 2mm difference is noticeable for high-prescription wearers
 
-ZEISS provides the optical ceiling; the fitting determines how much of it you actually get to use. Beyond Visual Optometry's full vision exam takes about 45–60 minutes, performed one-on-one by our licensed optometry staff; for glasses fitted with us, frame adjustments after pickup are included at no extra charge.
+ZEISS provides the optical ceiling; the fitting determines how much of it you actually get to use. Beyond Visual Optometry's full vision exam takes about 45–60 minutes and includes a binocular vision assessment every time at both stores, performed one-on-one by our licensed optometry staff; for glasses fitted with us, frame adjustments after pickup are included at no extra charge.
 
 ---
 

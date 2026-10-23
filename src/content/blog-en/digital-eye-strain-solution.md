@@ -120,7 +120,7 @@ Color recognition and visual precision are core needs. A blue-light filter can s
 
 **Q: Can blue-light-filtering lenses solve digital eye strain?**
 
-They help somewhat, but they're not the main solution. The core of digital eye strain is **accommodative fatigue and dry eye**, not blue light itself. A blue-light coating can reduce short-wavelength light exposure and may improve sleep quality for some people, but it won't fix ciliary muscle tension.
+A blue-light coating filters part of the short-wavelength blue light; it can't claim to relieve eye strain or improve sleep. The core of digital eye strain is **accommodative fatigue and dry eye**, not blue light itself, and the coating doesn't address ciliary muscle tension.
 
 **Q: I'm only 30—do I really need a Digital Lens?**
 
