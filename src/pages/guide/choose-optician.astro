@@ -1,40 +1,41 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES, GUIDE_TITLES } from '../../data/categories';
 
-// 本指南的主題聚落文章（依閱讀順序排列）
-const CLUSTER_SLUGS = [
-  'xinzhuang-glasses-guide',
-  'banqiao-glasses-guide',
-  'optometry-vs-ophthalmology',
-  'common-optometry-mistakes',
-];
+// 本指南的主題聚落文章：讀分類表「配眼鏡」的 local＋discomfort＋buying，順序＝分類頁閱讀順序
+// byo-frame 小分類有自己的指南（/guide/byo-frame-lenses/），不展開文章，只放一張指南卡
+const GLASSES = CATEGORIES.find(c => c.slug === 'glasses')!;
+const CLUSTER_SLUGS = GLASSES.subs.filter(s => s.slug !== 'byo-frame').flatMap(s => s.posts);
 const allPosts = await getCollection('blog');
 const clusterPosts = CLUSTER_SLUGS
   .map(slug => allPosts.find(p => p.slug === slug))
   .filter(Boolean);
+const BYO_GUIDE = '/guide/byo-frame-lenses/';
 
 const canonicalUrl = 'https://beyondvisualopt.com/guide/choose-optician/';
 
 // 指南頁 FAQ（與聚落文章互補，不重複）
+// 2026-10-20 Q4 原「配眼鏡要先看眼科嗎？」讓給驗光分類；規劃書建議的「驗光要另外付費嗎？」與 xinzhuang-glasses-guide FAQ 撞題；
+// 一度改問「取件後鏡架調整要收費嗎」，又撞 /services/adjustment/ 與 frame-adjustment-handcraft 的 FAQ，國文編審改問卡片 04 的鏡片來源與保固（全站無同題）
 const faqs = [
   {
     q: '驗光所和眼鏡行有什麼不同？',
-    a: '差別在法規。台灣的「驗光所」依《驗光人員法》設立，必須由持照驗光人員執行驗光，能合法開立驗光報告、執行完整的雙眼視覺評估；眼鏡行要執行驗光，依《驗光人員法施行細則》第四條須在店內設立驗光所，同樣由登記執業的持照驗光人員執行；沒有設立驗光所的眼鏡行，依法不能執行驗光，也不能出具驗光結果報告。實務上的意義是：不管在哪裡配，先確認幫你驗光的人有沒有驗光人員證書；只要你有頭暈、眼睛疲勞、老花或多焦點需求，更要讓持照驗光人員做完整評估。',
+    a: '差別在設立方式，不在招牌。依《驗光人員法》第九條，驗光人員可以在驗光所、眼鏡公司（商號）等核准登記的地方執業；依《驗光人員法施行細則》第四條，眼鏡行要執行驗光，必須在店內設立驗光所，由持照驗光人員執行。不管走進哪一種店，確認兩件事就好：店裡有登記的驗光所，幫你驗光的人有驗光人員證書。證書字號怎麼查，〈驗光師和驗光生差在哪？怎麼確認幫你驗光的人有執照〉有一步一步的查法。',
   },
   {
     // 2026-07-27 關鍵字集中：本題原為「新莊哪裡配眼鏡比較好」，與新莊店頁 /xinzhuang/ 互搶精準詞，
     // 已改為跨區泛用問法，在地細節交由店頁承接（見本頁「新莊店 × 板橋店」區塊內鏈）
     q: '新北配眼鏡，怎麼挑一家可以信任的店？',
-    a: '不是看招牌大小，而是三件事：執行驗光的是不是持照驗光人員（執照可於衛福部醫事人員查詢系統核對）、驗光流程是否完整（含雙眼視覺評估通常需要 45–60 分鐘）、配鏡後能不能回店調整、要不要另外收費——眼鏡舒不舒服，往往是取件之後才決定的。能見度在新莊與板橋各有一間門市，兩店的地址、交通與服務內容整理在本頁下方「新莊店 × 板橋店」區塊，可直接點進各店詳細介紹。',
+    a: '我會看四件事：執行驗光的是不是持照驗光人員（執照可於衛福部醫事人員查詢系統核對）、驗光流程完不完整（能見度的完整驗光含雙眼視覺評估，約 45–60 分鐘）、配鏡參數是不是戴著你選的框量，還有配鏡後能不能回店調整、要不要另外收費。眼鏡戴得舒不舒服，很多時候要等取件、戴上幾天才知道。能見度在新莊、板橋各有一間門市，兩店的地址、交通和服務內容放在本頁下方「新莊店 × 板橋店」，從那裡也能點進各店頁面。',
   },
   {
     q: '板橋驗光所怎麼選？',
     a: '板橋從江子翠站到板橋車站一帶店家密集，價位與定位落差很大。挑選時看：幫你驗光的人是不是登記執業的持照驗光人員、老花與多焦點是否有完整加入度與瞳高量測、高度近視是否做頂點距離補正。能見度眼鏡行 × 能見度驗光所（板橋在地 1992 年創立至今）位於雙十路二段47巷28號、捷運江子翠站步行 5 分鐘，電話 02-2253-1246。',
   },
   {
-    q: '配眼鏡要先看眼科嗎？',
-    a: '單純配鏡不需要先掛眼科。除非你同時有眼部不適症狀——突然視力模糊、眼前飛蚊閃光黑影、眼睛紅痛、疑似青光眼——這些屬於醫療範疇，要先看眼科醫師。若只是想配一副舒服的眼鏡或戴了會頭暈，可以直接找驗光所。驗光人員不做醫療診斷；驗光時視力無法矯正至正常，依《驗光人員法》第十二條第三項轉介眼科醫師。',
+    q: '挑店時，可以直接問鏡片從哪裡進貨、原廠保固怎麼走嗎？',
+    a: '可以，也值得問。鏡片從哪裡進貨、原廠保固怎麼走，都可以直接問店家；配多焦點或個人化訂製鏡片，這題更要問清楚。以能見度來說，我們是蔡司 ZEISS 簽約認證經銷、HOYA 經銷。',
   },
 ];
 
@@ -46,8 +47,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "新北配眼鏡完整指南：驗光所 vs 眼鏡行怎麼選？新莊、板橋在地建議",
-      "description": "新北配眼鏡要選驗光所還是眼鏡行？法規差在哪、怎麼判斷一家好的驗光所、常見配鏡地雷、何時該看眼科——YoYo 驗光師一頁講透。新莊、板橋在地建議。",
+      "headline": "新北配眼鏡怎麼挑店？看執照、驗光、量測、售後四件事",
+      "dateModified": "2026-10-20",
+      "description": "新北配眼鏡怎麼挑店？先看店裡有沒有登記驗光所、驗光留多少時間、配鏡參數怎麼量、取件後能不能回來調，YoYo 驗光師一頁講清楚。新莊、板橋能見度視覺中心。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
       "articleSection": "完整指南",
@@ -72,8 +74,8 @@ const schema = {
 };
 ---
 <Layout
-  title="新北配眼鏡完整指南｜驗光所 vs 眼鏡行怎麼選｜新莊 板橋 在地建議"
-  description="新北配眼鏡選驗光所還是眼鏡行？從法規差異、怎麼判斷好的驗光所、常見配鏡地雷到何時該看眼科，YoYo 驗光師一頁講透。新莊、板橋能見度視覺中心在地建議。"
+  title="新北配眼鏡怎麼挑店｜新莊配眼鏡・板橋驗光所｜完整指南"
+  description="新北配眼鏡怎麼挑店？先看店裡有沒有登記驗光所、驗光留多少時間、配鏡參數怎麼量、取件後能不能回來調，YoYo 驗光師一頁講清楚。新莊、板橋能見度視覺中心。"
   enPath="/en/guide/choose-optician/"
   schema={schema}
 >
@@ -83,10 +85,10 @@ const schema = {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        新北配眼鏡：<br /><span class="text-brand-gold">驗光所 vs 眼鏡行怎麼選</span>
+        新北配眼鏡怎麼挑店？<br /><span class="text-brand-gold" style="font-size:0.6em">看執照、驗光、量測、售後四件事</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        新莊配眼鏡、板橋驗光所該怎麼挑？法規差在哪、怎麼判斷一家值得信任的驗光所、常見的配鏡地雷、什麼時候該去眼科——這一頁一次講清楚。由 YoYo 驗光師撰寫，依據臨床驗配實務。
+        新莊配眼鏡、板橋驗光所，該怎麼挑？店裡有沒有登記驗光所、驗光肯留多少時間、配鏡參數怎麼量、取件後能不能回來調，四件事照你走進一家店會碰到的先後排。這頁由 YoYo 驗光師執筆，寫的是新莊、板橋兩店平常驗配的做法。
       </p>
     </div>
   </section>
@@ -96,10 +98,10 @@ const schema = {
     <div class="max-w-4xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
       <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>驗光所依《驗光人員法》設立、須由持照驗光人員執行驗光、可合法開立驗光報告；眼鏡行要驗光，須先在店內設立驗光所，一樣由持照驗光人員執行（施行細則第四條）。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>先確認店裡有登記驗光所；有頭暈、眼睛疲勞、老花或多焦點需求，再多問一句：「驗光有包含雙眼視覺評估嗎？」</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>判斷好驗光所看五件事：驗光人員有無執照、流程是否 45–60 分鐘、有無量頂點距離與雙眼視覺、鏡片來源清楚、配鏡後回店調整收不收費。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>眼睛有症狀（紅痛、飛蚊閃光、突發模糊）先看眼科；想配一副舒服的眼鏡、戴了會暈，找驗光所。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>眼鏡行要驗光，須在店內設立驗光所，由持照驗光人員執行（《驗光人員法施行細則》第四條）。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>能見度的完整驗光約 45–60 分鐘，新莊、板橋兩店每次驗光都做雙眼視覺評估。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>配鏡參數要戴著你選好的那副框量：瞳距左眼、右眼各量一次，配鏡高度和頂點距離也在同一副框上量。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>在能見度配的眼鏡，取件後的鏡架調整不另外收費；取件後 2 週內門市會主動追蹤。</span></li>
       </ul>
     </div>
   </section>
@@ -108,149 +110,98 @@ const schema = {
   <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
       {[
-        { label: '驗光所 vs 眼鏡行', href: '#difference' },
-        { label: '怎麼判斷好驗光所', href: '#howtochoose' },
-        { label: '常見配鏡地雷', href: '#mistakes' },
-        { label: '何時該看眼科', href: '#ophthalmology' },
+        { label: '先看有沒有驗光所', href: '#difference' },
+        { label: '挑店先問這幾件事', href: '#howtochoose' },
+        { label: '戴起來不對', href: '#discomfort' },
+        { label: '自帶鏡框', href: '#byo' },
         { label: '新莊店 × 板橋店', href: '#stores' },
+        { label: '有症狀先看眼科', href: '#ophthalmology' },
         { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
     </div>
   </section>
 
-  <!-- 驗光所 vs 眼鏡行 -->
+  <!-- 眼鏡行還是驗光所（2026-10-20 比較表刪除，意圖讓給 optometrist-license-check，互搶 A） -->
   <section id="difference" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">「驗光所」和「眼鏡行」，法律上就是兩回事</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">很多人以為都一樣，其實依<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">《驗光人員法》</a>，這兩者在法規上的設立條件不同。差別不在裝潢，在誰能合法幫你驗光。</p>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse" style="font-size:15px">
-          <thead>
-            <tr class="bg-brand-navy text-white">
-              <th class="text-left px-5 py-4 font-semibold">比較項目</th>
-              <th class="text-left px-5 py-4 font-semibold">驗光所</th>
-              <th class="text-left px-5 py-4 font-semibold">一般眼鏡行</th>
-            </tr>
-          </thead>
-          <tbody class="text-brand-ink-2">
-            {[
-              ['執行驗光者', '持照驗光人員', '須在店內設立驗光所，由登記執業的持照驗光人員執行（施行細則第四條）'],
-            ].map(row => (
-              <tr class="border-b border-brand-ink/8">
-                {row.map((cell, i) => (
-                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">眼鏡行還是驗光所：先看店裡有沒有登記的驗光所</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">《驗光人員法》</a>第九條列出驗光人員可以執業的地方：經核准登記的醫療機構、驗光所、眼鏡公司（商號），眼鏡行本來就在名單上。不過，依《驗光人員法施行細則》第四條，眼鏡公司要執行驗光業務，必須在店內設立驗光所。能見度兩間門市就是這樣的組合：新莊店是能見度視覺中心 × 比泱驗光所，板橋店是能見度眼鏡行 × 能見度驗光所。</p>
+        <p>所以招牌上寫的是「眼鏡行」還是「驗光所」，挑店時可以先放一邊。要看的是店裡有沒有登記的驗光所，還有幫你驗光的那個人有沒有執照。兩種執照差在哪、證書字號去哪裡核對，<a href="/blog/optometrist-license-check/" class="text-brand-gold underline">驗光師和驗光生差在哪？怎麼確認幫你驗光的人有執照</a>整篇就在講這件事。</p>
       </div>
-      <p class="text-brand-ink-3 mt-6" style="font-size:16px;line-height:1.8">怎麼查一家店有沒有登記驗光所：<a href="/blog/optometrist-license-check/" class="text-brand-gold underline">驗光師和驗光生差在哪？怎麼確認幫你驗光的人有執照</a></p>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        白話結論：先看店裡有沒有登記驗光所、由誰幫你驗光。只要你有頭暈、眼睛疲勞、老花或多焦點需求，再多確認一件事：驗光有沒有包含雙眼視覺評估，而不是只量度數。
+        有頭暈、眼睛疲勞、老花或多焦點需求的人，再多確認一件事：驗光有沒有包含雙眼視覺評估，而不是只量度數。
       </blockquote>
     </div>
   </section>
 
-  <!-- 怎麼判斷好驗光所 -->
+  <!-- 挑店先確認 5 件事 -->
   <section id="howtochoose" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">怎麼判斷一家好的驗光所？看這 5 件事</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新北配眼鏡挑店，進門先問這幾件事</h2>
       <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">不論你在新莊配眼鏡還是在板橋驗光，走進店裡前，先用這幾個問題篩掉不合格的店家。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           { n: '01', title: '驗光人員有沒有執照？', desc: '持有執照的驗光人員（驗光師／驗光生）才能合法執行驗光。走進門市先看牆上：驗光所依法應將開業執照與收費標準揭示於明顯處；再到衛福部醫事人員查詢系統，核對驗光人員的證書字號。這是最基本、也最容易被忽略的一關。' },
-          { n: '02', title: '驗光流程有多長？', desc: '能見度的完整驗光約 45–60 分鐘，預約時段留 60–90 分鐘，兩店每次都做雙眼視覺評估。時間長短本身不是重點，選店時可以問一句：這段時間裡會做哪些事。' },
-          { n: '03', title: '有沒有量頂點距離與雙眼視覺？', desc: '高度近視要靠頂點距離（Vertex Distance）補正才能確保有效度數正確；兩眼一起用時協調比較吃力的人，只看度數配出來，容易累、容易暈。這兩項有沒有做，決定戴起來舒不舒服。' },
-          { n: '04', title: '設備與鏡片來源清楚嗎？', desc: '可以請店家說明鏡片來源，以及原廠保固怎麼走。多焦點與個人化訂製鏡片，這一題尤其值得多問。' },
-          { n: '05', title: '配鏡後能不能回店調整？要不要收費？', desc: '選店前先把這兩件事問清楚。在能見度配的眼鏡，取件後的鏡架調整不另外收費。取鏡時要當場試戴、確認遠中近視野與鏡架配適，而不是「做好寄給你，有問題再回來」。' },
+          { n: '02', title: '驗光留多少時間？', desc: '能見度的完整驗光約 45–60 分鐘，預約時段留 60–90 分鐘，兩店每次都做雙眼視覺評估。時間長短倒不是重點，選店時不妨問一句：這段時間裡，你們會做哪些事？', link: { href: '/blog/eye-exam-duration-difference/', text: '驗光要多久？10 分鐘和 1 小時差在哪' } },
+          { n: '03', title: '有沒有量頂點距離與雙眼視覺？', desc: '高度近視要量頂點距離（Vertex Distance），有效度數才補正得準。兩眼一起用本來就比較吃力的人，只照度數配，戴久了容易累、容易暈。單眼瞳距要左右分開量，配鏡高度要戴著你挑好的框量。這幾項做了沒，戴起來舒不舒服，差別常常就在這裡。' },
+          { n: '04', title: '鏡片來源與原廠保固問得到嗎？', desc: '鏡片從哪裡進貨、原廠保固怎麼走，都可以直接問店家。配多焦點或個人化訂製鏡片，這題更要問。能見度是蔡司 ZEISS 簽約認證經銷、HOYA 經銷。' },
+          { n: '05', title: '配鏡後能不能回店調整？要不要收費？', desc: '選店前先把這兩件事問清楚。在能見度配的眼鏡，取件後的鏡架調整不另外收費，取件後 2 週內門市會主動追蹤。拿到眼鏡那天，要當場試戴：遠、中、近都看過一輪，鏡架坐得穩不穩也確認過，才算交件。' },
         ].map(item => (
           <div class="border border-brand-ink/8 rounded-2xl p-7">
             <span class="font-sans text-brand-gold font-semibold tracking-widest mb-3 block" style="font-size:13px;letter-spacing:0.18em">{item.n}</span>
             <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
             <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{item.desc}</p>
+            {item.link && <a href={item.link.href} class="inline-block mt-3 text-brand-gold underline" style="font-size:14px">{item.link.text}</a>}
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 常見配鏡地雷 -->
-  <section id="mistakes" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 配完戴起來不對：聚落入口（2026-10-20 取代「常見配鏡地雷」5 條，誤區內容讓給 common-optometry-mistakes，互搶 D） -->
+  <section id="discomfort" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見配鏡地雷：為什麼配了眼鏡還是不舒服</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">「配了還是頭暈」，有時要回頭看驗光流程裡少了哪一步。</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">配完戴起來不對：頭暈、不舒服先查哪裡</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">眼鏡配好了，戴起來卻頭暈、看久了累，先別急著認定是自己不適應。原因可能在度數，也可能在量測位置、鏡架走位，或兩眼一起用的協調，得回店一項一項查。下面三篇照狀況分，對到哪一種，就從哪一篇讀起。</p>
       <div class="space-y-6">
         {[
-          { title: '① 只問「幾號比較清楚」就結束', desc: '看視力表、選比較清楚的那個就結束，沒有評估兩眼一起用協不協調、看近的需求。度數看似對了，戴起來卻怪怪的、頭重、容易疲勞。' },
-          { title: '② 沿用電腦驗光值，沒做主觀微調', desc: '電腦驗光機給的是「電腦度數」，最終還要用綜合驗光儀做主觀驗光，讓你試戴、回饋、細部調整。省掉這一步，等於拿機器的初步估算直接配鏡。' },
-          { title: '③ 沒放鬆調節力就驗光，度數偏深', desc: '長時間盯螢幕的人睫狀肌容易緊繃，在這種狀態下驗出來的度數往往偏深。你以為近視 -4.00D，真正可能只有 -3.50D，配深了反而更累。' },
-          { title: '④ 光學中心沒對準瞳孔、瞳距只除以二', desc: '應分別量左右眼各自到鼻樑中線的單側瞳距。有些人左右不對稱，若只用總瞳距除以二估算，會產生稜鏡效應，讓大腦額外費力融合影像，造成疲勞頭暈。' },
-          { title: '⑤ 驗完就走，沒有當場試戴確認', desc: '配鏡最後一步應在驗光人員面前試戴、確認視覺品質——尤其多焦點鏡片要確認遠中近視野、兩眼平衡、鏡架有沒有滑落。省掉了，回家出問題就很難判斷是度數、位置還是適應期。' },
+          { title: '新眼鏡頭暈', desc: '剛換眼鏡會暈，有時只是還在適應，有時是配鏡參數或鏡架位置跑掉了。幾天內該好轉、拖到什麼程度該回店，文章裡列了 5 個要查的原因。', href: '/blog/glasses-dizzy/', text: '新眼鏡戴了頭暈正常嗎？幾天會好、5 個要回店查的原因' },
+          { title: '度數沒錯還是不舒服', desc: '視力表看得清楚，戴久了還是累，遮一隻眼反而舒服？那可能要往度數以外找：兩眼一起用的協調，還有你平常看東西的距離。', href: '/blog/glasses-uncomfortable-3-reasons/', text: '配了眼鏡還是不舒服？度數之外的 3 個原因' },
+          { title: '驗光少做的那一步', desc: '驗光時漏掉哪一步，戴起來就會出狀況？最常見的五個誤區，這篇一個一個拆開來看。', href: '/blog/common-optometry-mistakes/', text: '配眼鏡常見的 5 個驗光誤區：少做哪一步，戴起來就不對' },
         ].map(item => (
           <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
             <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">{item.title}</h3>
-            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{item.desc}</p>
+            <p class="text-brand-ink-2 mb-3" style="font-size:16px;line-height:1.8">{item.desc}</p>
+            <a href={item.href} class="text-brand-gold underline" style="font-size:15px">{item.text}</a>
           </div>
         ))}
       </div>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        完整的 5 個驗光誤區說明：<a href="/blog/common-optometry-mistakes/" class="text-brand-gold underline">配眼鏡常見的 5 個驗光誤區：少做哪一步，戴起來就不對</a>
-      </p>
     </div>
   </section>
 
-  <!-- 何時該看眼科 -->
-  <section id="ophthalmology" class="px-6 md:px-16 py-20 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">有眼睛症狀，先給眼科看</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">眼睛健不健康、要不要治療，由眼科醫師判斷；度數、雙眼視覺和配鏡參數，是驗光所做的事。先分清楚，少跑一趟。</p>
-      <div class="overflow-x-auto mb-10">
-        <table class="w-full border-collapse" style="font-size:15px">
-          <thead>
-            <tr class="bg-brand-navy text-white">
-              <th class="text-left px-5 py-4 font-semibold">你的需求</th>
-              <th class="text-left px-5 py-4 font-semibold">建議去哪裡</th>
-            </tr>
-          </thead>
-          <tbody class="text-brand-ink-2">
-            {[
-              ['眼睛突然不對勁、有症狀（紅痛、飛蚊閃光、突發模糊）', '眼科'],
-              ['定期眼底、眼壓檢查（糖尿病、高血壓患者）', '眼科'],
-              ['孩子未滿 6 歲（驗光人員依法不得驗光）', '眼科'],
-              ['孩子 6～15 歲第一次驗光配鏡（須先經醫師確診為非假性近視，之後 15 歲以下於眼科醫師指導下驗光；超過 15 歲可直接驗光）', '先眼科，再驗光所'],
-              ['配一副舒服的眼鏡、想搞清楚每個參數', '驗光所'],
-              ['戴眼鏡頭暈、視覺不穩定', '驗光所'],
-              ['第一次配多焦點漸進鏡片', '驗光所'],
-              ['高度近視精密配鏡', '驗光所'],
-            ].map(row => (
-              <tr class="border-b border-brand-ink/8">
-                {row.map((cell, i) => (
-                  <td class={`px-5 py-4 align-top ${i === 1 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  <!-- 框不是在店裡買的（2026-10-20 新增，自帶框細節歸指南 byo） -->
+  <section id="byo" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">框不是在店裡買的：自帶鏡框與網購眼鏡</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>框是自己帶來的，一樣能配鏡片，前提是驗光人員看過框況，確定做得了。哪些框能做、量測怎麼走、收費怎麼算，都在<a href={BYO_GUIDE} class="text-brand-gold underline">{GUIDE_TITLES[BYO_GUIDE]}</a>裡。</p>
+        <p>如果你還在猶豫要不要整副在網路上買，先讀<a href="/blog/online-glasses-vs-store/" class="text-brand-gold underline">網購眼鏡和門市配鏡差在哪？量測參數與售後調整的實際差別</a>再決定也不遲。</p>
       </div>
-      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3" style="font-size:16px;line-height:1.8">
-        法規紅線很清楚：驗光人員不做醫療診斷、不能開藥。若驗光時發現視力不能矯正至正常，會依《驗光人員法》第十二條第三項轉介就醫；發現疑似眼睛疾病的跡象，也會建議你先看眼科——這是保護你，不是把你推走。
-      </blockquote>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        延伸閱讀：<a href="/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">眼科和驗光所差在哪？眼科醫師與驗光人員各自能做什麼</a>
-      </p>
     </div>
   </section>
 
   <!-- 新莊店 × 板橋店 -->
   <section id="stores" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">新莊店 × 板橋店：在地選擇</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">新莊、板橋各一間，蔡司簽約認證經銷，完整驗光約 45–60 分鐘、每次都做雙眼視覺評估；在能見度配的眼鏡，取件後的鏡架調整不另外收費。看哪間離你近。</p>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">新莊店 × 板橋店</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">新莊、板橋各一間，蔡司 ZEISS 簽約認證經銷、HOYA 經銷，完整驗光約 45–60 分鐘，每次都做雙眼視覺評估。庫存鏡片約 3–5 個工作天取件，訂製鏡片約 7–10 個工作天。住哪邊、在哪上班，挑順路的那間來就好。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="border-t border-white/10 pt-6">
+          <img src="/images/store-xinzhuang-exterior.webp" alt="能見度視覺中心比泱驗光所 新莊中正路419-1號 門市外觀" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover mb-5" style="aspect-ratio:4/3" />
           <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">新莊店</p>
           <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">能見度視覺中心 × 比泱驗光所</h3>
           <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
@@ -258,11 +209,13 @@ const schema = {
             <p>捷運：新莊站步行約 8 分鐘</p>
             <p>電話：02-2206-6700</p>
             <p>主理驗光師：鄭家侑（YoYo）</p>
+            <p>驗光師：<a href="/author/chien-yen-ting/" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">錢彥廷</a>（驗師字第 006760 號）</p>
             <p class="text-white/50">臨床驗光、學童度數追蹤（6～15 歲第一次須經醫師確診為非假性近視）、蔡司 Individual² 個人化訂製</p>
           </div>
           <a href="/xinzhuang/" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">看新莊眼鏡行・驗光所詳細資訊 →</a>
         </div>
         <div class="border-t border-white/10 pt-6">
+          <img src="/images/store-banqiao.webp" alt="能見度眼鏡行 能見度驗光所 板橋雙十路二段 門市外觀" width="720" height="584" loading="lazy" class="w-full rounded-xl object-cover mb-5" style="aspect-ratio:4/3" />
           <p class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:12px;letter-spacing:0.18em">板橋店</p>
           <h3 class="font-serif text-white mb-4" style="font-size:22px;font-weight:400">能見度眼鏡行 × 能見度驗光所</h3>
           <div class="text-white/70 space-y-2" style="font-size:15px;line-height:1.7">
@@ -270,6 +223,7 @@ const schema = {
             <p>捷運：江子翠站步行約 5 分鐘</p>
             <p>電話：02-2253-1246</p>
             <p>在地：1992 年創立，超過 30 年</p>
+            <p>驗光：由持照驗光人員執行</p>
             <p class="text-white/50">老花多焦點配製、高度近視配鏡（量頂點距離）、學童度數追蹤（6～15 歲第一次須經醫師確診為非假性近視）</p>
           </div>
           <a href="/banqiao/" class="inline-block mt-5 text-brand-gold font-sans hover:underline" style="font-size:15px">看板橋店詳細資訊 →</a>
@@ -278,10 +232,21 @@ const schema = {
     </div>
   </section>
 
-  <!-- 聚落文章 -->
+  <!-- 有眼睛症狀先看眼科（2026-10-20 分流表刪除，意圖讓給 /guide/eye-doctor-or-optometrist/，互搶 E） -->
+  <section id="ophthalmology" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-6" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">有眼睛症狀，先給眼科看</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>眼睛健不健康、要不要治療，是眼科醫師判斷的。驗光所管的，是度數、雙眼視覺和配鏡參數這一段。驗光時如果度數怎麼換，視力都補不到正常，驗光人員會依《驗光人員法》第十二條第三項轉介眼科醫師，配鏡等醫師看過再談。</p>
+        <p>帶孩子來的話，年齡會先決定能不能直接驗光：未滿 6 歲不得由驗光人員驗光，請先看眼科；6～15 歲第一次驗光配鏡，須先經醫師確診為非假性近視，之後 15 歲以下於眼科醫師指導下驗光。其他症狀該先掛號還是先驗光，到<a href="/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">眼睛不舒服要掛眼科，還是去驗光所？依症狀分流一次看懂</a>照著自己的狀況找。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聚落文章：讀分類表 glasses → local＋discomfort＋buying；byo-frame 放指南卡 -->
   <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：新北配眼鏡主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新北配眼鏡主題文章</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
           <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
@@ -290,14 +255,20 @@ const schema = {
             <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
           </a>
         ))}
+        <a href={BYO_GUIDE} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+          <span class="bg-brand-navy text-white text-xs font-semibold px-3 py-1 rounded-full">完整指南</span>
+          <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{GUIDE_TITLES[BYO_GUIDE]}</h3>
+          <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">網購框、想換鏡片的舊框、收藏多年的老框，自帶框相關的文章都從這份指南出發。</p>
+        </a>
       </div>
+      <a href="/topics/glasses/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看配眼鏡全部文章 →</a>
     </div>
   </section>
 
   <!-- FAQ -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新北配眼鏡常見問題</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
@@ -309,12 +280,49 @@ const schema = {
     </div>
   </section>
 
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字沿用指南作者框（已過法務），照片用現有門市實拍；門市外觀已放在門市段，這裡不重複 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/yoyo-adjusting-glasses.webp" alt="驗光人員為顧客調整鏡架 能見度視覺中心" width="900" height="1200" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">取件時當場試戴、調整鏡架</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+          { t: '驗光人員法施行細則（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020194' },
+          { t: '衛生福利部醫事查詢系統：醫事人員查詢', u: 'https://ma.mohw.gov.tw/Accessibility/DOCSearch/MASearchDOC' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">驗光人員在哪裡執業（第九條）、驗光所揭示執照與收費標準（第十九條）、轉介眼科（第十二條第三項）、眼鏡行設驗光所（施行細則第四條）與兒童驗光的年齡規定（第十二條、施行細則第六條），都對過上列法規原文。驗光要多久、配鏡參數怎麼量、取件後怎麼追蹤和調鏡架，寫的是我們新莊、板橋兩店平常怎麼做。涉及眼睛疾病與醫療處置，請由眼科醫師評估。最後更新：2026 年 10 月 20 日。</p>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">不確定該去哪裡配眼鏡？</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的視覺分析，驗光人員會先了解你的視覺狀況與生活型態，再談鏡片——新莊、板橋兩店皆可預約。</p>
-      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約完整視覺分析 →</a>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">這幾個問題，拿來問我們也一樣</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">店裡的驗光所登記、驗光要多久、配鏡參數戴著哪副框量、取件後鏡架怎麼調，這頁列的每一題，走進能見度都可以照著問。新莊、板橋兩店都能約。</p>
+      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
     </div>
   </section>
 

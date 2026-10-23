@@ -1,14 +1,11 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../../data/categories';
 
-// 指南 → 文章的聚落連結（英文版取 blog-en 集合；尚未翻譯的英文文章由 .filter(Boolean) 濾掉）
-const CLUSTER_SLUGS = [
-  'lens-only-service',
-  'online-frame-lens-fitting',
-  'old-frame-relens',
-  'vintage-frame-lens',
-];
+// 指南 → 文章的聚落連結：讀分類表「配眼鏡 → 自帶鏡框配鏡片（byo-frame）」，與中文版同序
+// 英文版取 blog-en 集合；尚未翻譯的英文文章由 .filter(Boolean) 濾掉
+const CLUSTER_SLUGS = CATEGORIES.find(c => c.slug === 'glasses')!.subs.find(s => s.slug === 'byo-frame')!.posts;
 const allPosts = await getCollection('blog-en');
 const clusterPosts = CLUSTER_SLUGS
   .map(slug => allPosts.find(p => p.slug === slug))
@@ -17,11 +14,13 @@ const clusterPosts = CLUSTER_SLUGS
 const canonicalUrl = 'https://beyondvisualopt.com/en/guide/byo-frame-lenses/';
 
 // 自帶鏡框配鏡片（英文版）：服務主承接頁（吃 bring-your-own-frame / lenses only 意圖）
-// 營運事實依老闆 2026-07-20 拍板：全類型框經評估後承作＋風險告知同意；鏡片＋加工費（依框型不同，2026-10-19 更新）；破損處理採法務版；兩店服務。
+// 營運事實依老闆 2026-07-20 拍板：全類型框經評估後承作＋風險告知同意；鏡片＋加工費（依框型不同，2026-10-19 更新）；
+// 破損處理採法務版（框本身老化不賠框、鏡片已做好收鏡片費不收加工費、作業疏失由我們負責，2026-10-20 補齊）；兩店服務。
+// 稱謂：服務主詞一律 licensed optometry staff（不用 an optometrist）。
 const faqs = [
   {
     q: 'Can I bring a frame I bought online and have lenses fitted?',
-    a: 'Yes. A new frame bought online, a designer frame, an old frame you have worn for years, a second-hand or vintage frame — all are welcome. An optometrist first inspects the frame\'s condition and material and confirms the work can be done before we proceed. That step is there to protect your frame, not to turn you away.',
+    a: 'Yes. A new frame bought online, a designer frame, an old frame you have worn for years, a second-hand or vintage frame — all are welcome. Our licensed optometry staff first inspect the frame\'s condition and material and confirms the work can be done before we proceed. That step is there to protect your frame, not to turn you away.',
   },
   {
     q: 'How is a bring-your-own-frame lens job priced?',
@@ -29,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Is there any risk in re-lensing an old or older-generation frame?',
-    a: 'There is. Frame materials age and become brittle over time, and there is a risk of damage during removal and refitting. Our approach: for frames with aged material or a fragile structure, our licensed optometry staff assess the frame before disassembly, tell you about any risk of damage first, and only start once you agree. If the assessment says the frame isn\'t suitable, we will advise against it. If damage is caused by the frame\'s own aged material or fragile structure, we can\'t compensate for the frame itself; if it\'s caused by an error on our part, we take responsibility.',
+    a: 'There is. Frame materials age and become brittle over time, and there is a risk of damage during removal and refitting. Our approach: for frames with aged material or a fragile structure, our licensed optometry staff assess the frame before disassembly, tell you about any risk of damage first, and only start once you agree. If the assessment says the frame isn\'t suitable, we will advise against it. If damage is caused by the frame\'s own aged material or fragile structure, we can\'t compensate for the frame itself; if the lenses have already been made, we charge for the lenses but not the fitting fee. If it\'s caused by an error on our part, we take responsibility.',
   },
   {
     q: 'If I only need lenses, do you still do the full exam?',
@@ -39,18 +38,41 @@ const faqs = [
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": `${canonicalUrl}#faq`,
-  "inLanguage": "en",
-  "mainEntity": faqs.map(f => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
-  }))
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "Can I bring my own frame and have lenses fitted? Which frames work, how it's priced, and how the process runs",
+      "dateModified": "2026-10-20",
+      "description": "Frames bought online, designer frames, old frames and second-hand frames are all welcome for lenses. Our licensed optometry staff assess the frame first; the cost is the lens price plus a fitting fee that depends on the frame type, quoted before production. Contracted ZEISS dealer and HOYA dealer. Xinzhuang & Banqiao, Beyond Visual Optometry.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guide",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "Cheng Chia-Yu (YoYo)",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "inLanguage": "en",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      })),
+    },
+  ],
 };
 ---
 <Layout
-  title="Bring-Your-Own-Frame Lens Guide | Beyond Visual Optometry"
+  title="Bring-Your-Own-Frame Lens Guide | Online, Designer & Old Frames | Xinzhuang & Banqiao"
   description="The frame you love doesn't have to come from us — frames bought online, designer frames, old frames and second-hand frames are all welcome for lenses. Our licensed optometry staff assess the frame's condition first and explain the risks before any work starts; you get a quote before production: lens price plus a fitting fee that depends on the frame type. Contracted ZEISS dealer and HOYA dealer. Xinzhuang & Banqiao, Beyond Visual Optometry."
   lang="en"
   schema={schema}
@@ -59,16 +81,16 @@ const schema = {
   <!-- Hero -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Bring your own frame · Lenses fitted properly</p>
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Bring the frame you love. Leave the lenses to us</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        Bring the frame you love.<br /><span class="text-brand-gold">Leave the lenses to us</span>
+        Can I bring my own frame and have lenses fitted? <br /><span class="text-brand-gold" style="font-size:0.6em">Which frames work, how it's priced, and how the process runs</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto mb-8" style="font-size:17px;line-height:1.85">
         A new frame bought online, a designer frame you collected, an old frame you're used to, a vintage bargain you dug up — a frame that didn't come from our store is just as welcome. Lenses only, with the same measurement and workmanship standard as a complete pair.
       </p>
       <a href="/en/booking/"
         class="font-sans inline-block bg-brand-gold text-brand-navy font-bold px-8 py-4 hover:bg-brand-gold/90 transition-colors"
-        style="font-size:15px;letter-spacing:0.08em">See available times</a>
+        style="font-size:15px;letter-spacing:0.08em">Book a Vision Consultation</a>
       <p class="text-white/50 mt-4" style="font-size:13px;letter-spacing:0.05em">A consultation is not a commitment to buy · No sales pressure · Reschedule any time</p>
     </div>
   </section>
@@ -78,13 +100,13 @@ const schema = {
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">Can I bring any frame at all?</h2>
-        <p class="text-brand-ink-3 mt-3" style="font-size:15px">All are welcome — we proceed once an optometrist has assessed the frame's condition</p>
+        <p class="text-brand-ink-3 mt-3" style="font-size:15px">All are welcome — we proceed once our licensed optometry staff have assessed the frame's condition</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           { t: 'New frames bought online', d: 'Shopee, personal shoppers, overseas brands — bring in a new frame bought online and we can fit lenses to it. We still take the full set of measurements, so the lenses line up with your eyes rather than merely being slotted into the frame.' },
-          { t: 'Designer and handmade frames', d: 'Designer and handmade frames such as Lindberg and ic! berlin are an adjustment and repair specialty of ours, and we handle plenty of rimless and screw-heavy constructions. We assess the structure before any disassembly, and treat every good frame with care.' },
-          { t: 'New lenses in an old frame', d: 'Prescription changed, lenses scratched, but you can\'t bear to give up a frame you\'re used to? If the frame\'s condition allows, we can replace the lenses only — and straighten out a frame that has warped while we\'re at it.' },
+          { t: 'Designer and handmade frames', d: 'Designer and handmade frames such as Lindberg and ic! berlin are an adjustment and repair specialty of ours, and we handle plenty of rimless and screw-heavy constructions. We assess the structure before any disassembly, and treat every good frame with care. Beyond Visual is not an authorized agent for these brands; what we offer is adjustment, repair and lens fitting.' },
+          { t: 'New lenses in an old frame', d: 'Your lens power changed, lenses scratched, but you can\'t bear to give up a frame you\'re used to? If the frame\'s condition allows, we can replace the lenses only — and straighten out a frame that has warped while we\'re at it.' },
           { t: 'Second-hand and vintage frames', d: 'Vintage frames need the most care — how far the material has aged varies enormously. We assess first, explain before we start, take on what can be done, and don\'t take chances for the sake of it.' },
         ].map(c => (
           <div class="bg-white border border-brand-ink/10 p-7">
@@ -104,11 +126,11 @@ const schema = {
       </div>
       <div class="space-y-6">
         {[
-          { n: '01', t: 'Frame condition assessment', d: "An optometrist inspects the frame's material, structure and degree of ageing, and judges whether it is suitable for disassembly and edging." },
-          { n: '02', t: 'Risks explained before we start', d: 'There is a risk of damage during disassembly and edging, particularly for frames that are years old or whose material has grown brittle. Where there is a risk of damage we tell you first, and only start once you agree. If the assessment says a frame isn\'t suitable, we will advise against it. If damage is caused by the frame\'s own aged material or fragile structure, we can\'t compensate for the frame itself; if it\'s caused by an error on our part, we take responsibility.' },
+          { n: '01', t: 'Frame condition assessment', d: "Our licensed optometry staff inspect the frame's material, structure and degree of ageing, and judges whether it is suitable for disassembly and edging." },
+          { n: '02', t: 'Risks explained before we start', d: 'There is a risk of damage during disassembly and edging, particularly for frames that are years old or whose material has grown brittle. Where there is a risk of damage we tell you first, and only start once you agree. If the assessment says a frame isn\'t suitable, we will advise against it. If damage is caused by the frame\'s own aged material or fragile structure, we can\'t compensate for the frame itself; if the lenses have already been made, we charge for the lenses but not the fitting fee. If it\'s caused by an error on our part, we take responsibility.' },
           { n: '03', t: 'Full vision exam and measurements', d: 'The same standard as a complete pair: the full exam, plus pupillary distance, fitting height, vertex distance and frame-fit measurements.' },
-          { n: '04', t: 'Choosing lenses · a transparent quote', d: 'As a contracted ZEISS dealer and a HOYA dealer, we walk through the options against your needs and budget. The cost is the lens price plus a fitting fee that depends on the frame type; for the same frame type there is no extra charge because the frame came from elsewhere, and you get a clear quote before production.' },
-          { n: '05', t: 'Production · collection · in-store adjustments', d: 'Once finished you try them on in store to confirm the fit, and you are welcome back any time afterwards if the frame shifts out of position.' },
+          { n: '04', t: 'Choosing lenses and your quote', d: 'As a contracted ZEISS dealer and a HOYA dealer, we walk through the options against your needs and budget. The cost is the lens price plus a fitting fee that depends on the frame type; for the same frame type there is no extra charge because the frame came from elsewhere, and you get a clear quote before production.' },
+          { n: '05', t: 'Production and collection', d: 'Stock lenses take about 3–5 working days and made-to-order lenses about 7–10 working days. At collection you try them on in store to confirm the fit. We follow up within 2 weeks of collection; for glasses made at Beyond Visual, frame adjustments after collection are not charged separately, and replacing lenses is discussed case by case.' },
         ].map(s => (
           <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
             <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">{s.n}</span>
@@ -120,7 +142,7 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-3 mt-8 text-center" style="font-size:13px;line-height:1.8">
-        Whether a customer-supplied frame can be worked on is determined by the in-store assessment; the actual cost (lens price plus a fitting fee that depends on the frame type) is quoted and explained before production, and production begins only after the risk of damage has been explained and your consent obtained. If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if it's caused by an error on our part, we take responsibility.
+        Whether a customer-supplied frame can be worked on is determined by the in-store assessment; the actual cost (lens price plus a fitting fee that depends on the frame type) is quoted and explained before production, and production begins only after the risk of damage has been explained and your consent obtained. If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if the lenses have already been made, we charge for the lenses but not the fitting fee. If it's caused by an error on our part, we take responsibility.
       </p>
     </div>
   </section>
@@ -142,19 +164,58 @@ const schema = {
       <div class="mt-12 text-center">
         <a href="/en/booking/"
           class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
-          style="font-size:15px;letter-spacing:0.08em">See available times</a>
+          style="font-size:15px;letter-spacing:0.08em">Book a Vision Consultation</a>
         <p class="text-brand-ink-3 mt-4" style="font-size:13px">Xinzhuang 02-2206-6700 | Banqiao 02-2253-1246</p>
       </div>
     </div>
   </section>
 
-  <!-- 聚落文章 -->
-  <section class="px-6 md:px-16 py-20 bg-white">
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字取自 /en/author/yoyo/，照片沿用中文版門市實拍 -->
+  <section id="author" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">About the author and sources</h2>
+      <div class="flex gap-5 items-start rounded-2xl border border-brand-ink/10 p-6 mb-8" style="background:#f7f3ec">
+        <img src="/images/yoyo-optometrist.webp" alt="Optometrist YoYo (Cheng Chia-Yu)" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">YoYo (Cheng Chia-Yu), Optometrist</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">Optometrist License No. 003309 | Graduate of Yuanpei University of Medical Technology | Lecturer, New Taipei City Optometrists Association</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">Lead optometrist at Beyond Visual Optometry × BiYang Optometry Clinic, specializing in clinical vision exams, binocular vision assessment, progressive lens fitting and children's myopia tracking.</p>
+          <a href="/en/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">Meet Optometrist YoYo →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-adjusting-glasses.webp" alt="Licensed optometry staff adjusting a frame, Beyond Visual Xinzhuang" width="900" height="1200" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">The frame is settled on your face before measuring</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON phoropter, BiYang Optometry Clinic Xinzhuang" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Phoropter: the full exam applies to your own frame too</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="Exam room, Beyond Visual Xinzhuang store" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Xinzhuang store exam room</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">Sources</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'Optometrists Act (Laws & Regulations Database of the ROC, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">Vision exams are carried out by licensed optometry staff, within the scope of practice set out in Article 12 of the Optometrists Act listed above. Beyond Visual is a contracted ZEISS dealer and a HOYA dealer. How the fitting fee is set, which measurements we take, collection times and how damage is handled reflect current practice at our Xinzhuang and Banqiao stores; whether a frame can be worked on is decided by the in-store assessment. Last updated: October 20, 2026.</p>
+    </div>
+  </section>
+
+  <!-- 聚落文章：讀分類表 glasses → byo-frame -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: related articles</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Bring-your-own-frame articles</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
-          <a href={`/en/blog/${post.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group">
             <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
             <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
             <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>

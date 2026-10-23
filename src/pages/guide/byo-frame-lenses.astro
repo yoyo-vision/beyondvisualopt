@@ -1,164 +1,350 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../data/categories';
 
-// 指南 → 文章的聚落連結（與 blog/[slug].astro 的 PILLAR_MAP 對稱，形成雙向互連）
-const CLUSTER_SLUGS = [
-  'lens-only-service',
-  'online-frame-lens-fitting',
-  'old-frame-relens',
-  'vintage-frame-lens',
-];
+// 本指南的主題聚落文章：直接讀分類表「配眼鏡 → 自帶鏡框配鏡片（byo-frame）」小分類，順序＝分類頁閱讀順序
+const CLUSTER_SLUGS = CATEGORIES.find(c => c.slug === 'glasses')!.subs.find(s => s.slug === 'byo-frame')!.posts;
 const allPosts = await getCollection('blog');
 const clusterPosts = CLUSTER_SLUGS
   .map(slug => allPosts.find(p => p.slug === slug))
   .filter(Boolean);
 
-// 自帶鏡框配鏡片：服務主承接頁（吃「自帶鏡框 配鏡片」「網購鏡框 配鏡」「只配鏡片」意圖）
+const canonicalUrl = 'https://beyondvisualopt.com/guide/byo-frame-lenses/';
+
+// 自帶鏡框配鏡片：服務主承接頁，也是全站「自帶框怎麼收費」（互搶 G）與「自帶框量測」（互搶 H）的正主
 // 營運事實依老闆 2026-07-20 拍板、2026-10-19 更新：全類型框經評估後承作＋動工前告知風險取得同意；
-// 費用＝鏡片＋加工費，加工費依框型不同（不可寫「固定」），同框型自帶框與店內框加工費相同；
-// 破損處理採法務版（框本身老化不賠框、作業疏失由我們負責）；兩店服務。
+// 費用＝鏡片＋加工費，加工費依框型不同（不可寫「固定」、不寫金額），同框型不因框非本店購買而加價；
+// 驗光含在配鏡裡、只驗光收驗光費；破損處理採法務版（框本身老化不賠框、鏡片已做好收鏡片費不收加工費、作業疏失由我們負責）。
+// FAQ 題目刻意避開聚落文章與 /services/adjustment/ 已有的問句（不跟自己搶摘要）。
 const faqs = [
   {
-    q: '網路上買的鏡框，可以拿來配鏡片嗎？',
-    a: '可以。網購新框、精品框、戴過的舊框、二手或古董框，都歡迎帶來。由驗光人員先檢視框況與材質，評估可以承作才進行——這一步是為了保護你的鏡框，不是門檻。',
+    q: '不是在能見度買的鏡框，可以帶來配鏡片嗎？',
+    a: '可以。網購新框、精品框、手工框、戴了幾年的舊框、二手或古董框，都能帶來。驗光人員會先看框的材質和結構，確認這支框能拆裝加工再進行。有破損風險的，會先跟你講明白，你同意了才做。風險高到不值得冒的，會直接建議別做。',
   },
   {
-    q: '自帶鏡框配鏡片怎麼收費？',
-    a: '費用是鏡片加上加工費。鏡片依你選擇的品牌與等級計價（蔡司 ZEISS 簽約認證經銷、HOYA 經銷）；加工費依框型不同，全框、半框、無框的工序不一樣。同一種框型，不會因為框不是在這裡買的就加價。製作前會先報價講清楚，來店或傳 LINE 都能先問。',
+    q: '自帶鏡框配鏡片怎麼收費？框是外面買的，會被加價嗎？',
+    a: '不會。費用是鏡片加上加工費。鏡片照你選的品牌與等級計價（蔡司 ZEISS 簽約認證經銷、HOYA 經銷）。加工費看框型，全框、半框、無框的工序不一樣，收費也不同。不過同一種框型，外面買的框跟店裡買的框，加工費一樣。配眼鏡時，驗光含在配鏡裡。製作前會先把報價講清楚。',
   },
   {
-    q: '舊框或年代比較久的框，換鏡片會有風險嗎？',
-    a: '會有。鏡框材質會隨時間老化變脆，拆裝過程有破損的可能。材質老化或結構脆弱的鏡框，拆裝前驗光人員會先評估，有破損風險的先告訴你，你同意後才動工；評估後不適合承作的，我們會建議別勉強。因框本身材質老化、結構脆弱造成的破損，我們無法賠償鏡框本身；若是我們作業疏失造成的，由我們負責。',
+    q: '自帶框配鏡片，驗光和量測會做得比較簡單嗎？',
+    a: '不會。完整驗光約 45–60 分鐘，每次都做雙眼視覺評估，跟你在店裡挑框時一模一樣。量測是請你戴上自己帶來的那支框，左右眼的瞳距各自量，配鏡高度和頂點距離也在這支框上量。配鏡高度是跟著框走的，上一副框量出來的數字，搬過來用會對不上。',
   },
   {
-    q: '只配鏡片，驗光也會做完整流程嗎？',
-    a: '會。自帶框與店內選框的標準完全相同：完整驗光流程與配鏡量測（瞳距、配鏡高度、頂點距離、鏡架配適）一項不少——鏡片準不準，量測占一大半，這正是「專門配鏡片」最重要的部分。',
+    q: '自帶的鏡框有點歪、鏡腳鬆了，要先修好再拿來配嗎？',
+    a: '不用先修，直接帶來。量配鏡參數之前，驗光人員本來就會先把框在你臉上調穩，鼻墊、鏡腳、左右高低都會看過，不然量出來的配鏡高度和頂點距離會跟著偏掉。如果是斷裂、焊點裂開這類結構損壞，會先評估能不能處理、適不適合配鏡片，再跟你討論。',
   },
 ];
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(f => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
-  }))
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "自帶鏡框可以配鏡片嗎？什麼框能配、怎麼收費、流程怎麼走",
+      "dateModified": "2026-10-20",
+      "description": "自帶鏡框可以配鏡片嗎？網購框、精品框、舊框、二手古董框都能帶來，驗光人員先評估框況。費用是鏡片加上加工費，加工費依框型不同、製作前報價。瞳距、配鏡高度戴著你帶來的框量。蔡司簽約認證經銷、HOYA 經銷，新莊、板橋能見度視覺中心。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
 };
 ---
 <Layout
   title="自帶鏡框配鏡片完整指南｜網購框・精品框・舊框換片｜新莊板橋配鏡片"
-  description="喜歡的鏡框不是在店裡買的也沒關係——網購框、精品框、舊框、二手框都歡迎帶來配鏡片。驗光人員先評估框況、動工前先說清楚風險，鏡片＋加工費製作前報價。蔡司簽約認證經銷、HOYA 經銷，新莊、板橋能見度視覺中心。"
+  description="自帶鏡框可以配鏡片嗎？網購框、精品框、舊框、二手古董框都能帶來，驗光人員先評估框況。費用是鏡片加上加工費，加工費依框型不同、製作前報價。瞳距、配鏡高度戴著你帶來的框量。蔡司簽約認證經銷、HOYA 經銷，新莊、板橋能見度視覺中心。"
   enPath="/en/guide/byo-frame-lenses/"
   schema={schema}
 >
 
-  <!-- Hero -->
+  <!-- Hero：原 H1「喜歡的鏡框帶過來，鏡片交給我們」降為眉標 -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">自帶鏡框・專業配鏡片</p>
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">喜歡的鏡框帶過來，鏡片交給我們</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        喜歡的鏡框帶過來，<br /><span class="text-brand-gold">鏡片交給我們</span>
+        自帶鏡框可以配鏡片嗎？<br /><span class="text-brand-gold" style="font-size:0.6em">什麼框能配、怎麼收費、流程怎麼走</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto mb-8" style="font-size:17px;line-height:1.85">
-        網購的新框、收藏的精品框、戴習慣的舊框、挖到寶的二手古董框——不是在我們店裡買的框，一樣歡迎。專門配鏡片，量測與工藝跟配整副眼鏡同一套標準。
+        網購的新框、收藏的精品框、戴習慣的舊框、在二手市集挖到的古董框，就算不是在我們店裡買的，一樣可以帶來配鏡片。驗光和量測照平常的做法走，加工費也照框型算，跟框是在哪裡買的沒有關係。
       </p>
       <a href="/booking/"
         class="font-sans inline-block bg-brand-gold text-brand-navy font-bold px-8 py-4 hover:bg-brand-gold/90 transition-colors"
-        style="font-size:15px;letter-spacing:0.08em">查看可約時段</a>
+        style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
       <p class="text-white/50 mt-4" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
     </div>
   </section>
 
-  <!-- 收什麼框 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- TL;DR 3秒重點（GEO：answer-first，不加標題） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>網購新框、精品框、舊框、二手古董框都可以帶來。動工前，驗光人員會先檢查材質和結構，確認經得起拆裝加工才做。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>費用是鏡片加上加工費。加工費依框型不同，全框、半框、無框的工序不一樣。框不是在這裡買的，同一種框型也不會多收，製作前會先報價。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>量測不會因為框是自己帶的就少做：單眼瞳距左右分開量，配鏡高度戴著你帶來的那支框量，頂點距離也量。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>庫存鏡片約 3–5 個工作天可以取件，訂製鏡片約 7–10 個工作天。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '能配哪些框', href: '#frames' },
+        { label: '怎麼收費', href: '#cost' },
+        { label: '配鏡流程', href: '#process' },
+        { label: '門市與預約', href: '#stores' },
+        { label: '會勸你別拆的框', href: '#risk' },
+        { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 能配哪些框：五種框各連一篇（互搶 J：各管一型） -->
+  <section id="frames" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">什麼框都可以帶來嗎？</h2>
-        <p class="text-brand-ink-3 mt-3" style="font-size:15px">都歡迎帶來——由驗光人員評估框況後承作</p>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">自帶鏡框能配哪些框</h2>
+        <p class="text-brand-ink-3 mt-3" style="font-size:15px">五種框都收，每一種另有專文</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
-          { t: '網購新框', d: '蝦皮、代購、海外品牌⋯⋯線上買的新框帶來就能配。我們照樣做完整量測，把鏡片對準你的眼睛，而不是只塞進框裡。' },
-          { t: '精品框・手工框', d: 'Lindberg、ic! berlin 等精品與手工鏡架是我們的調整與維修專長，無框、螺絲繁複的結構也處理得多。拆裝前會先評估結構，謹慎對待每一支好框。' },
-          { t: '舊框換新鏡片', d: '度數變了、鏡片刮花了，但框戴習慣捨不得換？框況允許就能只換鏡片，順便幫你把變形的鏡架調整回來。' },
-          { t: '二手框・古董框', d: 'Vintage 框最需要小心對待——材質老化程度差異大，動工前先評估、先講清楚，可以做才做，不勉強冒險。' },
+          { t: '網購新框', d: '蝦皮、代購、海外品牌官網買的新框，帶來就能配。還沒下單的話，鏡面寬、鼻樑寬、框的高度先對過一輪，買回來才不會卡在配不了。', href: '/blog/online-frame-lens-fitting/', link: '網購鏡框下單前要看什麼' },
+          { t: '精品框、手工框', d: 'Lindberg、ic! berlin、Götti、Cartier、Chrome Hearts、Linda Farrow 這類鏡架，鎖點和卡扣的結構各不相同，拆之前要先摸清楚它是怎麼組起來的。能見度並非這些品牌的代理門市，我們做的是高端鏡架的調整、維修，以及自帶鏡框配鏡片。', href: '/blog/luxury-frame-lens-guide/', link: '精品鏡框配鏡與維修' },
+          { t: '無框、半框', d: '無框得在鏡片上打孔鎖螺絲，半框靠鏡片邊緣的一道溝和細線吊住，工序都跟全框不一樣，加工費自然也不同。孔打在哪裡，光學中心就跟著定在哪裡，所以下鑽之前，瞳距和配鏡高度要先量好。', href: '/blog/rimless-lens-drilling-fitting/', link: '無框鏡片怎麼鑽孔、定位' },
+          { t: '舊框換新鏡片', d: '度數變了、鏡片刮花，框卻還戴得順，那就只換鏡片。要是框已經疲乏走樣，或尺寸本來就跟臉不合，我們反而會建議連框一起換。', href: '/blog/old-frame-relens/', link: '只換片還是連框換，怎麼判斷' },
+          { t: '二手框、古董框', d: '板料放久了會變脆，金屬框會疲乏。同一個年代的兩支框，保存得好不好，狀況可以差很多，所以這類框在框況那一關看得最久，可以做才做。', href: '/blog/vintage-frame-lens/', link: '二手框、古董框的材質風險' },
         ].map(c => (
           <div class="bg-white border border-brand-ink/10 p-7">
             <h3 class="font-serif text-brand-ink mb-3" style="font-size:19px;font-weight:400">{c.t}</h3>
-            <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">{c.d}</p>
+            <p class="text-brand-ink-3 mb-4" style="font-size:14.5px;line-height:1.8">{c.d}</p>
+            <a href={c.href} class="font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">{c.link} →</a>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 流程與風險告知 -->
-  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+  <!-- 怎麼收費：全站自帶框收費正主（互搶 G），不寫金額、不寫「固定」 -->
+  <section id="cost" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">自帶鏡框配鏡片怎麼收費</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>自帶框配鏡片的費用，拆開來只有兩筆：鏡片，加上加工費。那驗光呢？有配眼鏡，驗光就含在配鏡裡。只驗光、不配鏡片，收驗光費。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">鏡片：依品牌、系列與度數計價</h3>
+        <p>鏡片的價錢跟著你選的品牌與等級走。能見度是蔡司 ZEISS 簽約認證經銷、HOYA 經銷。同一個品牌裡，度數深要不要升高折射率、要不要做多焦點、鍍膜選哪一種，價錢都會拉開。驗光人員會照你的度數和平常怎麼用眼，挑幾個選項說給你聽，排的順序從適合你的那一片開始，不從最貴的那一片開始。兩個品牌底下各有哪些系列，<a href="/guide/lens-brands/" class="text-brand-gold underline">鏡片品牌選購完整指南</a>一個一個列了。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">加工費：看框型，不看框在哪裡買</h3>
+        <p>加工費依框型不同。全框是把鏡片磨成鏡圈的形狀嵌進去。半框要在鏡片邊緣開槽，再用細線吊住。無框則得在鏡片上鑽孔，再鎖螺絲固定。花的工夫不同，加工費就跟著不同。</p>
+        <p>同一種框型，不會因為框不是在這裡買的就加價。</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">製作前先報價，電話或 LINE 可以先問</h3>
+        <p>報價在選定鏡片之後、下單之前給：鏡片是哪個品牌哪個系列、加工費多少，分開列清楚，你點頭了才訂片。想先抓個範圍，可以先打電話或傳 <a href="https://lin.ee/SoWj9Ft" target="_blank" rel="noopener noreferrer" class="text-brand-gold underline">LINE</a> 問門市。不過框況和度數，要到現場看過才算數，最後以現場報價為準。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 流程：03 為全站自帶框量測正主（互搶 H） -->
+  <section id="process" class="px-6 md:px-16 py-20" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">自帶框配鏡片的流程</h2>
+        <p class="text-brand-ink-3 mt-3" style="font-size:15px">預約時段請留 60–90 分鐘，前四步當天走完，第五步等鏡片做好再來</p>
       </div>
       <div class="space-y-6">
-        {[
-          { n: '01', t: '框況評估', d: '驗光人員先檢視鏡框的材質、結構與老化程度，判斷適不適合拆裝加工。' },
-          { n: '02', t: '動工前先說清楚風險', d: '鏡框在拆裝與加工過程中有破損的可能，尤其是使用多年或材質脆化的框。有破損風險的先告訴你，你同意後才動工；評估後不適合的，我們會建議別做。因框本身材質老化、結構脆弱造成的破損，我們無法賠償鏡框本身；若是我們作業疏失造成的，由我們負責。' },
-          { n: '03', t: '完整驗光與量測', d: '與配整副眼鏡相同標準：完整驗光流程，加上瞳距、配鏡高度、頂點距離與鏡架配適量測。' },
-          { n: '04', t: '選鏡片・透明報價', d: '蔡司 ZEISS 簽約認證經銷、HOYA 經銷，依你的需求與預算說明選項。費用是鏡片加上加工費，加工費依框型不同；同一種框型，不會因為框不是在這裡買的就加價，製作前報價講清楚。' },
-          { n: '05', t: '製作・取件・回店調整', d: '完成後現場試戴確認，之後鏡架跑位都歡迎回店調整。' },
-        ].map(s => (
-          <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
-            <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">{s.n}</span>
-            <div>
-              <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">{s.t}</h3>
-              <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">{s.d}</p>
+        <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
+          <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">01</span>
+          <div>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">框況評估</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">驗光人員先看鏡框的材質、結構和老化程度：板料有沒有泛白細紋、鉸鏈螺絲轉不轉得動、金屬焊點牢不牢，判斷這支框禁不禁得起拆裝加工。</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
+          <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">02</span>
+          <div>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">動工前先說清楚風險</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">看出有破損風險，動工前會先告訴你是哪個部位、可能出什麼狀況，你同意後才動工。萬一真的破了怎麼處理，寫在下面<a href="#risk" class="text-brand-gold underline">評估後，會勸你別拆的框</a>那一段。</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
+          <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">03</span>
+          <div>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">完整驗光與量測</h3>
+            <div class="space-y-4 text-brand-ink-3" style="font-size:15px;line-height:1.8">
+              <p>自帶框跟在店裡選框，走的是同一套。完整驗光約 45–60 分鐘，每次都做雙眼視覺評估，看兩隻眼睛一起用的時候配合得好不好。度數確定之後，請你戴上帶來的那支框；量之前，先把這支框在你臉上的位置調穩，框坐歪了，量出來的數字也會跟著歪。接著量這三項：</p>
+              <h4 class="font-serif text-brand-navy pt-2" style="font-size:16.5px;font-weight:600">單眼瞳距：左眼、右眼各量各的</h4>
+              <p>鼻樑到左眼、到右眼的距離不一定一樣。只量一個總數再對半分，兩邊不一樣寬的人，就會有一邊鏡片的光學中心對不到瞳孔。為什麼差一點點也會不舒服，<a href="/blog/pupillary-distance-pd/" class="text-brand-gold underline">瞳距（PD）是什麼</a>那篇講了原理。</p>
+              <h4 class="font-serif text-brand-navy pt-2" style="font-size:16.5px;font-weight:600">配鏡高度：戴著你帶來的那支框量</h4>
+              <p>配鏡高度量的是瞳孔落在鏡片上下哪個位置。鏡圈深淺、鼻墊高低，每支框都不一樣，所以要戴著這一支量。換一支框，這個數字就得重來。做多焦點的人，看遠、看中、看近三個區落在哪裡，就看這個數字。</p>
+              <h4 class="font-serif text-brand-navy pt-2" style="font-size:16.5px;font-weight:600">頂點距離：鏡片離眼睛多遠</h4>
+              <p>同一片鏡片，離眼睛近一點或遠一點，眼睛實際拿到的度數就不同，度數越深差越多。框調穩之後量這段距離，度數深的人，訂片時會把它算進去。換算的道理在<a href="/blog/vertex-distance/" class="text-brand-gold underline">頂點距離是什麼</a>。</p>
+              <p>驗完光到取件，中間還有哪幾關，可以順著<a href="/blog/glasses-fitting-process/" class="text-brand-gold underline">驗完光之後，配一副眼鏡還要經過哪幾關</a>一關一關看下去。</p>
             </div>
           </div>
-        ))}
+        </div>
+        <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
+          <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">04</span>
+          <div>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">選鏡片與報價</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">驗光人員依你的度數和用途說明鏡片選項，鏡片和加工費分開報價，你決定了才下單。費用怎麼組成，往上翻回<a href="#cost" class="text-brand-gold underline">自帶鏡框配鏡片怎麼收費</a>就有。</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
+          <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">05</span>
+          <div>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">製作與取件</h3>
+            <div class="space-y-4 text-brand-ink-3" style="font-size:15px;line-height:1.8">
+              <p>庫存鏡片約 3–5 個工作天，訂製鏡片約 7–10 個工作天，取件日在報價時一起約好。哪些情況會等比較久，<a href="/blog/glasses-ready-time/" class="text-brand-gold underline">配眼鏡要等幾天</a>有列出來。</p>
+              <p>取件那天留點時間試戴。單光的話看遠、看近，鏡架貼不貼合也一起確認。多焦點要看遠、中、近，低頭、轉頭，再起身走幾步。</p>
+              <p>取件後 2 週內，門市會主動追蹤你戴起來的狀況。在能見度配的眼鏡，取件後的鏡架調整不另外收費；若需要換鏡片，個別討論。</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="text-brand-ink-3 mt-8 text-center" style="font-size:13px;line-height:1.8">
-        自帶鏡框之加工承作以現場評估為準；實際費用（鏡片＋依框型而定的加工費）於製作前報價說明，破損風險亦經說明並取得你的同意後，始進行製作。因框本身材質老化、結構脆弱造成的破損，我們無法賠償鏡框本身；若是我們作業疏失造成的，由我們負責。
-      </p>
+    </div>
+  </section>
+
+  <!-- 門市資訊與預約（新增） -->
+  <section id="stores" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新莊、板橋門市資訊與預約</h2>
+      <p class="text-brand-ink-2 mb-10" style="font-size:17px;line-height:1.85">自帶框配鏡片，新莊店、板橋店都能做。來店要帶的東西，<a href="/blog/lens-only-service/" class="text-brand-gold underline">只配鏡片、鏡框自己帶可以嗎？</a>裡有交代。</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border border-brand-ink/10" style="background:#f7f3ec">
+          <img src="/images/store-xinzhuang-exterior.webp" alt="能見度視覺中心 比泱驗光所 新莊中正路 門市外觀" width="1200" height="900" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">新莊店：能見度視覺中心（比泱驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市新莊區中正路 419-1 號，捷運新莊站<br />電話 02-2206-6700<br />YoYo 驗光師主理</p>
+          </div>
+        </div>
+        <div class="border border-brand-ink/10" style="background:#f7f3ec">
+          <img src="/images/store-banqiao.webp" alt="能見度眼鏡行 能見度驗光所 板橋雙十路二段 門市外觀" width="720" height="584" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">板橋店：能見度眼鏡行（能見度驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市板橋區雙十路二段 47 巷 28 號，捷運江子翠站<br />電話 02-2253-1246</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/booking/"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
+        <p class="text-brand-ink-3 mt-4" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 哪些框建議別動＋破損條款（法務版，意思不可少；全頁只放這一處） -->
+  <section id="risk" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">評估後，會勸你別拆的框</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>框況評估那一關，會讓驗光人員停下來的，大致是這三種：</p>
+        <ul class="space-y-3 pl-1">
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span>板料框對著光看，邊角已經發白，有髮絲一樣的細紋。這種板料沒剩多少彈性，加熱調整、把鏡片壓進鏡圈的那一下最容易裂。</span></li>
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span>螺絲鏽在孔裡轉不動。硬拆，螺絲可能斷在裡面，鉸鏈也跟著毀掉。</span></li>
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span>金屬框的鏡圈已經沒有回彈，焊點看得到裂痕，拆開之後可能合不回去。</span></li>
+        </ul>
+        <p>碰到這幾種，我們多半會建議框照原樣留著，鏡片改配在另一支框上。</p>
+        <div class="bg-white border-l-2 border-brand-gold p-6">
+          <p class="text-brand-navy font-bold mb-2" style="font-size:15px">破損怎麼處理</p>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">材質老化或結構脆弱的鏡框，拆裝前驗光人員會先評估，有破損風險的先告訴你，你同意後才動工。因框本身材質老化、結構脆弱造成的破損，我們無法賠償鏡框本身，鏡片如果已經做好，收鏡片費，加工費不收；若是我們作業疏失造成的，由我們負責。</p>
+        </div>
+        <p>框從哪裡來，跟做不做得了沒有關係，要看的是它現在禁不禁得起拆裝。拿不定主意，就先把框帶來給驗光人員看一眼。</p>
+      </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">自帶框配鏡片・常見問題</h2>
-      </div>
-      <div class="space-y-6">
-        {faqs.map((faq, i) => (
-          <div class="border-t border-brand-ink/15 pt-6">
-            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">Q{i + 1}. {faq.q}</h3>
-            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+  <section id="faq" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">自帶鏡框配鏡片常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
           </div>
         ))}
-      </div>
-      <div class="mt-12 text-center">
-        <a href="/booking/"
-          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
-          style="font-size:15px;letter-spacing:0.08em">查看可約時段</a>
-        <p class="text-brand-ink-3 mt-4" style="font-size:13px">新莊店 02-2206-6700｜板橋店 02-2253-1246</p>
       </div>
     </div>
   </section>
 
-  <!-- 聚落文章 -->
-  <section class="px-6 md:px-16 py-20 bg-white">
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字沿用兒童、眼科分流指南作者框（已過法務），照片用現有門市實拍 -->
+  <section id="author" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start rounded-2xl border border-brand-ink/10 p-6 mb-8" style="background:#f7f3ec">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-adjusting-glasses.webp" alt="驗光人員調整鏡架 能見度視覺中心 新莊" width="900" height="1200" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">量配鏡參數前，先把框調穩</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON 綜合驗光儀 新莊比泱驗光所" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">綜合驗光儀：自帶框一樣做完整驗光</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">驗光由持照驗光人員執行，業務範圍依上列《驗光人員法》第十二條。能見度是蔡司 ZEISS 簽約認證經銷、HOYA 經銷。至於加工費怎麼算、量測做哪幾項、取件要幾天、破損怎麼處理，都是新莊、板橋兩店目前實際在用的規則。框能不能做，以現場評估為準。最後更新：2026 年 10 月 20 日。</p>
+    </div>
+  </section>
+
+  <!-- 聚落文章：讀分類表 glasses → byo-frame -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">自帶鏡框配鏡片主題文章</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group">
             <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
             <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
             <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
           </a>
         ))}
       </div>
+      <a href="/topics/glasses/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看配眼鏡全部文章 →</a>
     </div>
   </section>
 
