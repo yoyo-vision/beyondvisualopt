@@ -37,3 +37,13 @@
 /blog/good-lens-needs-good-fitting/      /guide/why-optometrist-matters/        301
 /en/blog/good-lens-needs-good-fitting    /en/guide/why-optometrist-matters/     301
 /en/blog/good-lens-needs-good-fitting/   /en/guide/why-optometrist-matters/     301
+
+# 2026-10-17：指南總覽頁併入「視覺知識」單一入口／鏡框定位工具不放官網
+#   ⚠️ 這兩條當初只加進 astro.config.mjs，忘了同步這裡（2026-10-24 從 GSC 抓到）。
+#      後果：/guide/ 與 /tools/frame-fitting/ 回的是 200 + meta refresh + noindex 的中繼頁，
+#      不是 301——Google 報「遭到 noindex 標記排除」，而且 /guide/ 累積的權重不會轉給 /blog/。
+#   📌 日後再改 astro.config.mjs 的 redirects，一定要同步補到這個檔案，否則一樣會變 noindex 頁。
+/guide                                   /blog/                                 301
+/guide/                                  /blog/                                 301
+/tools/frame-fitting                     /services/                             301
+/tools/frame-fitting/                    /services/                             301
