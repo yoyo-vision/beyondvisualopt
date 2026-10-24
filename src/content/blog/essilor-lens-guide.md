@@ -3,8 +3,8 @@ title: "依視路鏡片怎麼分？Varilux、Eyezen、Crizal 各是什麼"
 date: "2026-06-24"
 tag: "鏡片知識"
 excerpt: "依視路的鏡片分三條主線：Varilux 是漸進多焦點，Eyezen 是在鏡片下方加入少量正度數的單光，Crizal 是依視路自家的鍍膜系列。各系列的分級與設計重點依原廠公開資料整理；能見度不是依視路經銷、不代訂，經銷的是蔡司 ZEISS 與 HOYA，可以幫你把兩邊的設計攤開比較。"
-seoTitle: "依視路鏡片怎麼選？Varilux、Eyezen、Crizal 差在哪｜新莊板橋"
-seoDescription: "依視路 Essilor 三條主力系列：Varilux 漸進多焦點的 Comfort、Physio、X series、Xclusive 分級，Eyezen 近用加成設計單光，Crizal 鍍膜。產品資訊依原廠公開資料整理。能見度視覺中心不經銷依視路、不代訂，是蔡司 ZEISS 簽約認證經銷、HOYA 經銷，新莊、板橋可做比較諮詢。"
+seoTitle: "Varilux 分四級，依視路還有 Eyezen、Crizal｜新莊板橋能見度"
+seoDescription: "Varilux、Eyezen、Crizal 都是依視路的鏡片。能見度不經銷依視路、也不代訂，經銷的是蔡司 ZEISS 與 HOYA。Varilux 是漸進多焦點，分 Comfort、Physio、X series、Xclusive 四級；Eyezen 是下方帶少量正度數的單光，Crizal 是鍍膜。資料依原廠公開資訊整理，蔡司、HOYA 的同級設計可以攤開比較。"
 keywords: "依視路鏡片,Essilor鏡片,Varilux漸進鏡片,Varilux分級,Eyezen,Crizal鍍膜,法國鏡片,依視路比較,新莊驗光,板橋驗光所,能見度視覺中心"
 ---
 

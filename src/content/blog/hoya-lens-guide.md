@@ -3,8 +3,8 @@ title: "HOYA 鏡片有哪些系列？單焦、多焦點、室內型與駕車型�
 date: "2026-06-24"
 tag: "鏡片知識"
 excerpt: "金鑽、銀鑽、博銳視、Nulux、Sync III，HOYA 的系列名一長串，其實照用途分成四類：單焦、多焦點、室內與閱讀、駕車。每一類底下再依設計等級往上排。能見度是 HOYA 經銷，新莊、板橋兩店都能配；系列怎麼分、各自屬於哪一種設計，由驗光人員說明。"
-seoTitle: "HOYA 鏡片系列怎麼分？單焦、多焦點、室內型｜新莊板橋 HOYA 經銷"
-seoDescription: "HOYA 鏡片系列依用途分四類：單焦 Nulux／Hilux、多焦點 MyStyle V+／Lifestyle 4X／iD、室內與閱讀 WorkStyle／SupeReader、駕車 EnRoute，另有近用加成設計的 Sync III。能見度視覺中心是 HOYA 經銷，新莊、板橋兩店由驗光人員說明各系列的設計差別。"
+seoTitle: "HOYA 鏡片的金鑽、銀鑽、博銳視是哪一級｜新莊板橋能見度"
+seoDescription: "金鑽、銀鑽、博銳視是店頭常聽到的中文品名。HOYA 的系列先照用途分四類（單焦、多焦點、室內閱讀、駕車），每一類底下再分設計等級。對照的是 Nulux、MyStyle 這些原廠系列名。能見度是 HOYA 經銷，新莊、板橋的驗光人員會說明各系列差別。"
 keywords: "HOYA鏡片,HOYA鏡片系列,HOYA漸進鏡片,HOYA多焦點,MyStyle V+,Lifestyle 4X,HOYA iD,Nulux,Sync III,新莊HOYA,板橋HOYA鏡片,能見度視覺中心"
 ---
 
