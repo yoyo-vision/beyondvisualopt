@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Who might be suitable for considering RGP?',
-    a: 'Situations in which an RGP assessment is commonly suggested include: high astigmatism (generally around 2.00D / 200 degrees or above, though this still depends on individual assessment), a less regular corneal shape, wanting stable and clear visual quality, or dryness and discomfort after wearing soft lenses. But "might be suitable" is not the same as "definitely suitable" — the final answer depends on corneal topography, tear film status, prescription, and daily routine, assessed in person by optometry personnel and confirmed through a trial fitting. Nothing decided without measurement counts.',
+    a: 'Situations in which an RGP assessment is commonly suggested include: high astigmatism (generally around 2.00D / 200 degrees or above, though this still depends on individual assessment), a less regular corneal shape, wanting stable and clear visual quality, or dryness and discomfort after wearing soft lenses. But "might be suitable" is not the same as "definitely suitable" — the final answer depends on corneal and lens-fit assessment (the Xinzhuang store uses a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store evaluates lens fit with a slit lamp), tear film status, prescription, and daily routine, assessed in person by optometry personnel and confirmed through a trial fitting. Nothing decided without measurement counts.',
   },
   {
     q: 'Does RGP need an adaptation period? Will it feel like something is in my eye at first?',
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: 'What steps does the RGP fitting process involve?',
-    a: 'A complete RGP fitting usually includes: corneal topography measurement (to understand corneal curvature and shape), refractive and visual quality assessment, planning the lens parameters from the corneal data, an in-person trial fitting and fit confirmation, wearing and cleaning education, and ongoing regular follow-up checks. RGP is a highly individualized fitting in which parameters are fine-tuned into place step by step — not a ready-made lens you put on and walk out with — so it needs a generous allowance of assessment and trial-fitting time.',
+    a: 'A complete RGP fitting usually includes: corneal and lens-fit assessment (at the Xinzhuang store, a TOPCON CA-800 corneal topographer and aberrometer maps corneal curvature and shape; at the Banqiao store, lens fit is evaluated with a slit lamp), refractive and visual quality assessment, planning the lens parameters from the corneal data, an in-person trial fitting and fit confirmation, wearing and cleaning education, and ongoing regular follow-up checks. RGP is a highly individualized fitting in which parameters are fine-tuned into place step by step — not a ready-made lens you put on and walk out with — so it needs a generous allowance of assessment and trial-fitting time.',
   },
   {
     q: 'Is wearing RGP safe? What should I watch out for?',
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: 'Where in Xinzhuang or Banqiao can I get an RGP fitting?',
-    a: 'Beyond Visual Optometry’s Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (02-2253-1246) both provide ordinary rigid gas permeable (RGP) contact lens fitting, including corneal topography measurement, individualized parameter ordering, in-person trial fitting, and regular follow-up checks. This is standard daily-wear RGP fitting, not orthokeratology (Ortho-K). We suggest booking ahead so there is ample time for assessment and trial fitting.',
+    a: 'Beyond Visual Optometry’s Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (02-2253-1246) both provide ordinary rigid gas permeable (RGP) contact lens fitting, including corneal and lens-fit assessment, individualized parameter ordering, in-person trial fitting, and regular follow-up checks. The Xinzhuang store has a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store evaluates lens fit with a slit lamp. This is standard daily-wear RGP fitting, not orthokeratology (Ortho-K). We suggest booking ahead so there is ample time for assessment and trial fitting.',
   },
 ];
 
@@ -112,7 +112,7 @@ const schema = {
       <ul class="space-y-2.5">
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP means a rigid gas permeable contact lens — it holds its shape and has high oxygen permeability, so for people with high astigmatism or a less regular cornea the visual quality is usually more stable and clear.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP is not orthokeratology (Ortho-K): RGP is worn during the day to correct your current vision; Ortho-K is worn at night and reshapes the cornea, a different category of medical procedure. What Beyond Visual provides is daily-wear RGP, not orthokeratology.</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Groups commonly suggested for assessment: high astigmatism (around 2.00D / 200 degrees or above, still subject to individual assessment), an irregular corneal shape, and those who find soft lenses dry and uncomfortable. Whether it suits you must be confirmed by corneal topography measurement and an in-person trial fitting.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Groups commonly suggested for assessment: high astigmatism (around 2.00D / 200 degrees or above, still subject to individual assessment), an irregular corneal shape, and those who find soft lenses dry and uncomfortable. Whether it suits you must be confirmed by corneal and lens-fit assessment and an in-person trial fitting.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Contact lenses are a medical device: under Article 12 of Taiwan’s Optometrists Act, fitting for those aged fifteen and under must be under the guidance of an ophthalmologist, and no fitting is provided for children under six; any corneal abnormality found during fitting is always referred to an ophthalmologist.</span></li>
       </ul>
     </div>
@@ -213,7 +213,7 @@ const schema = {
       <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">RGP is not a ready-made lens you put on and walk out with — it is fine-tuned into place step by step from your corneal data. The full process covers the following steps.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
         {[
-          ['Corneal topography measurement', 'Understanding corneal curvature and shape as the basis for the lens fitting curve'],
+          ['Corneal and lens-fit assessment', 'At the Xinzhuang store, a TOPCON CA-800 corneal topographer maps corneal curvature and shape; at the Banqiao store, lens fit is evaluated with a slit lamp. This forms the basis for the lens parameters'],
           ['Refractive and visual quality assessment', 'Confirming the prescription (especially astigmatism) and your visual quality needs after correction'],
           ['Lens parameter planning', 'Planning individualized parameters such as lens curvature and size from the corneal data'],
           ['Trial fitting and fit confirmation', 'Actually wearing the lens to confirm its position on the cornea, its movement, and how it feels'],

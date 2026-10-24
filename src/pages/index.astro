@@ -52,7 +52,7 @@ const processPhases = [
     en: 'Understand',
     steps: [
       { num: '01', name: '線上預約', desc: '透過官網、LINE OA 或 Google 行事曆選擇門市與時段，到店不必久候。' },
-      { num: '02', name: '到店問診', desc: '驗光人員詳細了解你的視覺困擾、日常用眼習慣、工作環境與舊鏡處方——這比視力表更早決定一副眼鏡好不好戴。' },
+      { num: '02', name: '到店問診', desc: '驗光人員詳細了解你的視覺困擾、日常用眼習慣、工作環境與舊眼鏡的度數——這比視力表更早決定一副眼鏡好不好戴。' },
     ],
   },
   {
@@ -60,7 +60,7 @@ const processPhases = [
     title: '精準檢測',
     en: 'Measure',
     steps: [
-      { num: '03', name: '全套儀器檢測', desc: '角膜地形圖、調節力測量搭配主客觀驗光，把度數、散光、軸度反覆比對到最清楚為止。' },
+      { num: '03', name: '全套儀器檢測', desc: '調節力測量搭配主客觀驗光，把度數、散光、軸度反覆比對到最清楚為止；新莊店另有 TOPCON CA-800 角膜地形圖暨像差儀。' },
       { num: '04', name: '雙眼視覺評估', desc: '評估兩眼協調、立體視與聚散能力，找出傳統驗光容易忽略、卻是長時間閱讀會不會累的根源。' },
       { num: '05', name: '生活視覺分析', desc: '依你的工作距離、螢幕時數與戶外習慣，決定配鏡參數該落在哪裡——鏡片是為你的生活做的，不是為視力表。' },
     ],
@@ -124,7 +124,7 @@ const processPhases = [
         {[
           { t: '國考持證驗光師主理', s: '鄭家侑（YoYo）／驗師字第 003309 號' },
           { t: '蔡司 Zeiss 簽約經銷門市', s: '原廠簽約經銷，經銷憑證可查' },
-          { t: '專業檢測儀器', s: 'TOPCON CA-800 角膜地形圖暨像差儀・綜合驗光儀' },
+          { t: '專業檢測儀器', s: '綜合驗光儀・TOPCON CA-800 角膜地形圖暨像差儀（新莊店）' },
           { t: '深耕在地 30 年', s: '板橋總店 1992 年創立，在地服務逾 30 年' },
           // 靜態值僅為 JS 取不到資料時的 fallback，實查日 2026-07-28（新莊 5.0／226）；正常情況由 /api/google-reviews 即時覆寫
           { t: 'Google 5.0・226 則評價', s: '新莊店真實顧客評分', id: 'trust-google-rating' },
@@ -279,13 +279,13 @@ const processPhases = [
       <div class="max-w-2xl mb-12">
         <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Equipment</span>
         <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(28px,4vw,44px);font-weight:300;line-height:1.2">驗光室裡，<br />誰在量、用什麼量</h2>
-        <p class="text-brand-ink-2" style="font-size:17px;line-height:1.85">每一副眼鏡的背後，是一套完整的臨床評估流程——從角膜地形圖到雙眼視覺協調，我們用數據確認每一個參數。</p>
+        <p class="text-brand-ink-2" style="font-size:17px;line-height:1.85">每一副眼鏡的背後，是一套完整的臨床評估流程——從主客觀驗光到雙眼視覺協調，我們用數據確認每一個參數。</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           { img: '/images/yoyo-examination.webp', alt: 'YoYo 驗光師為顧客進行完整儀器檢測 能見度視覺中心 新莊驗光', t: '驗光人員一對一操作、當面解說', d: '每位顧客都由持照驗光人員全程一對一驗光（新莊店由主理驗光師 YoYo 帶領），儀器數據當場說明，不是印出來讓你自己看。' },
-          { img: '/images/instrument-corneal-map.webp', alt: 'TOPCON CA-800 角膜地形圖暨高階像差儀', t: 'TOPCON CA-800 角膜地形圖暨像差儀', d: '精密量測角膜弧度，RGP 驗配與高度散光評估的基礎數據。' },
-          { img: '/images/instrument-phoropter.webp', alt: 'TOPCON 綜合驗光儀', t: '綜合驗光儀', d: '主客觀驗光雙重確認，確立每位顧客的精準處方。' },
+          { img: '/images/instrument-corneal-map.webp', alt: 'TOPCON CA-800 角膜地形圖暨高階像差儀 能見度視覺中心新莊店', t: 'TOPCON CA-800 角膜地形圖暨像差儀（新莊店）', d: '精密量測角膜弧度，RGP 驗配與高度散光評估的基礎數據。' },
+          { img: '/images/instrument-phoropter.webp', alt: 'TOPCON 綜合驗光儀', t: '綜合驗光儀', d: '主客觀驗光雙重確認，確認每位顧客的度數。' },
         ].map(e => (
           <div>
             <img src={e.img} alt={e.alt} width="400" height="260" loading="lazy" class="w-full h-56 object-cover mb-5" />
