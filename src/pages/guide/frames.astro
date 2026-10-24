@@ -1,39 +1,45 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES, GUIDE_TITLES } from '../../data/categories';
 
-// 本指南的主題聚落文章（依閱讀順序排列）
-const CLUSTER_SLUGS = [
-  'frame-face-shape',
-  'frame-material-guide',
-  'frame-fit-size',
-  'frame-adjustment-handcraft',
-  'minamoto-eyewear-brand',
-];
+// 2026-10-23 改版（規劃書 5-1）：範圍擴大到無框、精品框、運動框與經銷品牌，網址不變
+// 聚落：直接讀分類表「鏡框」3 個小分類（13 篇），依小分類分組呈現，順序＝分類頁閱讀順序
+const FRAMES = CATEGORIES.find(c => c.slug === 'frames')!;
 const allPosts = await getCollection('blog');
-const clusterPosts = CLUSTER_SLUGS
-  .map(slug => allPosts.find(p => p.slug === slug))
-  .filter(Boolean);
+const clusterGroups = FRAMES.subs.map(s => ({
+  name: s.name,
+  posts: s.posts.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean),
+}));
+// 分類外的延伸卡：兒童鏡框留在兒童分類、舊框換片留在配眼鏡分類（findCategory 一篇只能屬一個小分類）
+const EXTRA_SLUGS = ['children-frames-guide', 'old-frame-relens'];
+const extraPosts = EXTRA_SLUGS.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean);
+const BYO_GUIDE = '/guide/byo-frame-lenses/';
 
 const canonicalUrl = 'https://beyondvisualopt.com/guide/frames/';
 
-// 指南頁 FAQ（與聚落文章互補，不重複）
+// 指南頁 FAQ：全站 FAQPage grep 過，不跟鏡框 13 篇聚落文、/services/adjustment/、/frames/ 撞題
+// 原「先看好看還是合適」升為起段；原「網購框」歸 byo 指南（互搶 F）；原「高度近視或多焦點選框」併入「鏡框裝不裝得下你的鏡片」段；
+// 規劃書擬的「小孩鏡框跟大人差在哪」撞 children-frames-guide 主意圖、「鏡框壞了可以修嗎」撞 glasses-repair H1，兩題都換
+// more：畫面上附在答案後的延伸連結，不進 schema
 const faqs = [
   {
-    q: '選鏡框應該先看好看還是先看合適？',
-    a: '兩個都要，但順序很重要：先篩「合適」，再從合適的裡面挑「好看」。合適指的是鏡框寬度對齊臉寬、鼻樑與鼻托貼合、鏡框高度足以容納你的鏡片需求（漸進多焦點尤其需要足夠高度）。一副再好看的框，若尺寸不對，戴起來會滑、會夾、光學中心對不準，最後就是收在抽屜裡。實務上，我們會先依你的臉型與鏡片需求圈出幾副合適的，你再從中挑喜歡的樣式。',
-  },
-  {
-    q: '在網路上買鏡框，再拿到眼鏡行裝鏡片可以嗎？',
-    a: '技術上可以，但有幾個風險要先知道：網路鏡框看不到實際尺寸與配戴感，常見買到太大太小；材質與鉸鍊品質參差，日後歪了不一定能調；而且高度數或漸進鏡片對鏡框的尺寸、弧度、鏡框高度有要求，選錯框會直接影響鏡片效果。我們也接受顧客自帶鏡框驗配，但會先檢查該框是否適合你的度數與鏡片設計，避免裝好才發現不合用。',
-  },
-  {
     q: '一副好的鏡框可以用多久？',
-    a: '看材質與保養，通常 2–5 年以上不成問題。純鈦、優質板材（醋酸纖維）耐用度高，鉸鍊與鏡腿是消耗重點。真正該換的時機通常不是框壞了，而是度數變化較大、或鏡框變形無法再調整回正確配戴位置。定期回門市調整（校正鼻托、鏡腿張力、水平度），能明顯延長一副框的使用壽命與配戴舒適度。',
+    a: '沒有固定的年限，看材質、戴法和平常怎麼收。比年限更準的是框自己發出的訊號：鉸鏈的螺絲鎖了又鬆，螺絲孔已經咬不住；金屬框表面的鍍層開始剝落，或板材框發白、摸起來變脆；框變形之後，怎麼調都回不到原本的位置。出現這幾種，就該考慮換框。度數變了，框倒不見得要跟著退休。',
+    more: { href: '/blog/old-frame-relens/', t: '舊眼鏡換鏡片划算嗎？哪些情況只換片、哪些該連框換' },
   },
   {
-    q: '高度近視或戴漸進多焦點，選鏡框要注意什麼？',
-    a: '高度近視（度數深）建議選較小、鏡框邊到邊距離短的框，能有效降低鏡片邊緣厚度與重量；框心距（鏡框光學中心）要盡量貼近你的瞳距，避免稜鏡效應。漸進多焦點則相反，需要「足夠的鏡框高度」把遠、中、近三段完整容納進去，太扁的框會把近用區截掉、讓你找不到看近的清晰位置。這些都是選框時就要一起考量的，不是配完鏡片才發現。新莊、板橋門市可由驗光人員依你的度數與鏡片設計協助選框。',
+    q: '鏡框顏色怎麼挑？跟膚色、髮色有關係嗎？',
+    a: '有關係，不過沒有標準答案。膚色偏暖、帶點黃調的人，玳瑁、琥珀、金色這類暖色框通常比較順眼；膚色偏冷、帶粉調的，黑、灰、銀、透明或藍色系比較好搭。髮色和眉色也要算進去：頭髮眉毛都深的人，戴深色粗框，對比強、存在感也強；髮色淺的人，淺色或半透明的框比較不搶。度數深的人可以多想一步，粗一點的深色板材框，能把鏡片側邊的厚度遮掉一部分。挑到最後，拿到窗邊，在自然光底下照一次鏡子。',
+  },
+  {
+    q: '鼻樑比較低，挑鏡框要注意什麼？',
+    a: '先看這副框靠什麼撐在鼻子上。金屬框大多有可調的鼻托，托葉的高低、左右間距都能調，鼻樑低的人比較好處理。板材框多半是框身直接做出鼻墊，鼻樑一低，框就往下坐，鏡片下緣貼到臉頰，一笑眼鏡就被頂上去。這種情況，可以挑鼻墊做得比較高的款式，或鼻樑處另外裝了金屬鼻托的板材框。睫毛也要留意：框坐得太低、鏡片離眼睛太近，眨眼時睫毛會刷到鏡片。試戴時笑一下、眨幾下眼睛，這兩件事一做就知道。',
+  },
+  {
+    q: '想配兩副眼鏡輪流戴，鏡框可以挑不一樣的嗎？',
+    a: '可以，只是每一支框都要分開量。同一份度數裝進兩支不同的框，鏡片離眼睛多遠、往前傾幾度、配鏡高度落在哪，都會跟著框改變，所以兩支框要各自戴上去量，鏡片照各自的數字做。兩副如果都要配多焦點，兩支框的上下高度都得夠。量好之後，兩副戴起來仍可能有一點不同；差到其中一副戴不住，就帶回來檢查。',
+    more: { href: '/blog/same-prescription-different-feel/', t: '度數一樣，為什麼兩副眼鏡戴起來差這麼多？' },
   },
 ];
 
@@ -45,8 +51,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "鏡框選購完整指南：臉型、材質、尺寸配適與鏡片需求",
-      "description": "怎麼依臉型選鏡框？板材、金屬、鈦有什麼差？鏡框尺寸怎麼看合不合適？YoYo 驗光師從美學到光學，一頁講透選鏡框的每個關鍵。新莊、板橋能見度視覺中心。",
+      "headline": "鏡框怎麼挑才戴得久？尺寸、臉型、材質，和你的度數一起看",
+      "dateModified": "2026-10-23",
+      "description": "鏡框怎麼挑才戴得久？先看尺寸合不合臉，再看臉型與材質，也要確認框裝得下你的鏡片。YoYo 驗光師整理 52□18-140 怎麼看、臉型配框對照表、板材純鈦 TR90 的差別、無框與精品框，以及能見度經銷的 12 個鏡框品牌。新莊、板橋兩店。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
       "articleSection": "完整指南",
@@ -71,59 +78,96 @@ const schema = {
 };
 ---
 <Layout
-  title="鏡框選購完整指南｜臉型・材質・尺寸配適｜新莊板橋配眼鏡"
-  description="怎麼依臉型選眼鏡框？板材、金屬、鈦、TR90 差在哪？鏡框尺寸怎麼看合不合適？YoYo 驗光師從美學到光學一頁講透選框關鍵。新莊、板橋能見度視覺中心。"
+  title="鏡框推薦怎麼挑｜尺寸・臉型・材質・無框與精品框｜新莊板橋 能見度視覺中心"
+  description="鏡框怎麼挑才戴得久？先看尺寸合不合臉，再看臉型、材質，和你的度數、多焦點需求一起想。YoYo 驗光師整理 52□18-140 怎麼看、臉型配框對照表、板材純鈦 TR90 差在哪，以及能見度經銷的 12 個鏡框品牌。新莊、板橋能見度視覺中心。"
   enPath="/en/guide/frames/"
   schema={schema}
 >
 
-  <!-- Hero -->
+  <!-- Hero：H1 帶副標（避開鏡片指南「先看…再看…最後才…」的殼） -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        鏡框選購<br /><span class="text-brand-gold">完整指南</span>
+        鏡框怎麼挑才戴得久？<br /><span class="text-brand-gold" style="font-size:0.6em">尺寸、臉型、材質，和你的度數一起看</span>
       </h1>
-      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        臉型、材質、尺寸配適——選鏡框不只是好不好看，更關係到鏡片能不能發揮效果。由 YoYo 驗光師從美學到光學一次講清楚。
+      <p class="text-white/70 max-w-2xl mx-auto mb-8" style="font-size:17px;line-height:1.85">
+        一副框戴不戴得久，要看它合不合臉、襯不襯你的臉型、用什麼材質、裝不裝得下你的鏡片。無框、精品框、運動框，還有兩店經銷的鏡框品牌，YoYo 驗光師也一併整理在這裡。
       </p>
+      <a href="/booking/"
+        class="font-sans inline-block bg-brand-gold text-brand-navy font-bold px-8 py-4 hover:bg-brand-gold/90 transition-colors"
+        style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
+      <p class="text-white/50 mt-4" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
     </div>
   </section>
 
-  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <!-- TL;DR 3秒重點（GEO：answer-first，不加標題） -->
   <section class="px-6 md:px-16 py-10" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
       <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>選框順序：先篩「合適」（寬度對齊臉寬、鼻托貼合、高度足以容納鏡片需求），再從合適的裡面挑「好看」。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>臉型配框用「互補」通常比「相似」好看：圓臉用帶角度的框收斂輪廓、方臉用圓潤的框柔化線條。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>材質決定重量、可調整性與過敏風險：板材有設計感、純鈦輕又低過敏、金屬俐落親民、TR90 耐衝擊有彈性。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>鏡框是鏡片的載體：高度近視要選小框、漸進多焦點鏡框要夠高、個人化訂製鏡片要先確認鏡框弧度與前傾角。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>先把尺寸不合臉的框拿掉，好看的那副，從剩下的裡面挑。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>臉型配框看線條的對比：圓臉找有角度的框，方臉找圓潤的框。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>重量、皮膚碰到的金屬成分、日後好不好調，都看材質。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>度數深的人框挑小一點；要配多焦點，框的上下得夠高。</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 快速導覽 -->
+  <!-- 快速導覽（含起 #fit-first、轉 #years 錨點） -->
   <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
       {[
-        { label: '臉型怎麼配框', href: '#shape' },
-        { label: '材質比較', href: '#material' },
-        { label: '尺寸與配適', href: '#fit' },
-        { label: '鏡框要配合鏡片', href: '#lens' },
-        { label: '延伸閱讀', href: '#cluster' },
+        { label: '先合臉再挑樣式', href: '#fit-first' },
+        { label: '尺寸', href: '#size' },
+        { label: '臉型', href: '#shape' },
+        { label: '材質', href: '#material' },
+        { label: '框和鏡片', href: '#lens' },
+        { label: '無框・精品框・運動框', href: '#styles' },
+        { label: '經銷品牌', href: '#brands' },
+        { label: '門市與預約', href: '#stores' },
+        { label: '往後幾年', href: '#years' },
         { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
+        { label: '主題文章', href: '#cluster' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
     </div>
   </section>
 
-  <!-- 臉型 -->
+  <!-- 起：鏡框先合臉，再談好不好看（原 FAQ Q1 論點升上來） -->
+  <section id="fit-first" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡框先合臉，再談好不好看</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>站到鏡框牆前，多數人的第一個動作，是伸手拿眼睛先看上的那一副。戴上、側過臉再看一眼，喜歡就握在手上不放。這樣挑很自然，只是常常挑到一副照鏡子時很好看，戴到下午就開始壓鼻樑的框。</p>
+        <p>在門市，喜好排到最後。尺寸不合的先拿掉，鼻樑撐不住的拿掉，裝不下你這次鏡片的也拿掉，剩下那一排，再照你的喜好挑。留下來的通常還有好幾副，好看這件事沒有被犧牲，挑的範圍先縮小了而已。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 1：尺寸（互搶 I：數字正主是 frame-fit-size，這裡只留三個判準＋連結） -->
+  <section id="size" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡框尺寸：52□18-140 與合臉的 3 個判準</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>鏡腳內側那串數字，例如 <strong>52□18-140</strong>，是照 ISO 8624 方框法標的，單位是毫米：52 是單邊鏡片寬，18 是兩片鏡片之間的鼻樑寬，140 是鏡腳長。數字只能先篩一輪，合不合，還是得戴上臉看三個地方：</p>
+        <ul class="space-y-3 pl-1">
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span><strong>寬度：</strong>框的外緣大約跟臉頰兩側齊平，從正面看，不會凸出太陽穴外面。</span></li>
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span><strong>鼻樑：</strong>板材框的鼻樑寬，要剛好卡在你的鼻樑上；金屬框有鼻托可以微調，但撐住的位置要對。</span></li>
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span><strong>鏡腳：</strong>在耳朵後方那道凹處往下彎，眼鏡是勾住的，不是靠兩側夾住。</span></li>
+        </ul>
+        <p><a href="/blog/frame-fit-size/" class="text-brand-gold underline">鏡框尺寸怎麼看？</a>把判斷拆成五條：寬度分成臉寬和太陽穴兩條，另外多一條鏡框高度。眼鏡老是往下滑的人，先讀它講「會滑、會夾」的那一段。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 2：臉型（互搶 A：表格與 frame-face-shape 1-1 同一版，#22 已對齊） -->
   <section id="shape" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">臉型怎麼配鏡框：對比原則</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">核心一句話：<strong>鏡框的線條，跟臉型「互補」通常比「相似」好看。</strong>圓潤的臉用帶點角度的框收斂輪廓，方正的臉用圓潤的框柔化線條。</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">臉型怎麼配鏡框</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">臉型配框，看的是線條的對比。圓潤的臉找帶角度的框，把輪廓收一點；方正的臉找圓一點的框，把下顎線條放軟。</p>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse" style="font-size:15px">
           <thead>
@@ -151,22 +195,22 @@ const schema = {
         </table>
       </div>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        完整臉型挑選原則：<a href="/blog/frame-face-shape/" class="text-brand-gold underline">臉型怎麼挑眼鏡框？圓臉、方臉、長臉、鵝蛋臉的配框原則</a>
+        這張表跟<a href="/blog/frame-face-shape/" class="text-brand-gold underline">臉型怎麼挑眼鏡框？</a>用的是同一版。線條、大小、寬度、上緣四個配框原則，點進去一條一條對。
       </p>
     </div>
   </section>
 
-  <!-- 材質 -->
+  <!-- 承 3：材質（刪「高端首選」「價格親民」#28；過敏句帶皮膚科提醒；材料學正主是 frame-material-guide） -->
   <section id="material" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">材質怎麼選：重量、耐用、過敏的取捨</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">材質決定了重量、可調整性與過敏風險——長時間配戴的人，這比外觀更影響體驗。</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡框材質：板材、金屬、純鈦、TR90</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">同樣的框型，換一種材質，戴在臉上就是另一回事。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
-          { name: '醋酸纖維板材', desc: '色彩與紋理豐富、質感佳、可微調弧度，是設計款主流。重量中等，厚框有存在感。', tag: '設計感' },
-          { name: '純鈦 / β 鈦', desc: '極輕、耐腐蝕、低過敏，適合長時間配戴與高度數（重鏡片）。價格較高，是高端首選。', tag: '輕・低過敏' },
-          { name: '金屬（不鏽鋼/蒙耐爾）', desc: '細緻俐落、價格親民，可塑性好易調整。部分含鎳，敏感膚質要留意。', tag: '俐落' },
-          { name: 'TR90 塑鋼', desc: '輕、有彈性、耐衝擊，適合運動與兒童。可調整性較低，質感偏休閒。', tag: '耐用・彈性' },
+          { name: '醋酸纖維板材', desc: '顏色和紋路的選擇多，加熱後可以調弧度。框身有厚度，戴在臉上存在感明顯，重量通常比細金屬框重一些。', tag: '色彩・紋理' },
+          { name: '純鈦／β 鈦', desc: '鈦的密度低、耐腐蝕。純鈦不含鎳，過敏風險較低；β 鈦是加了其他金屬的鈦合金，彈性比純鈦好。戴了皮膚還是有反應、而且一直沒退，請給皮膚科醫師看。', tag: '輕・不含鎳' },
+          { name: '不鏽鋼／蒙耐爾', desc: '能做得很細，線條俐落，也好調整。蒙耐爾是鎳銅合金，不鏽鋼也常含鎳，皮膚容易對金屬起反應的人，挑之前先問清楚成分。', tag: '細框・好調' },
+          { name: 'TR90', desc: '輕、有彈性，受力會彎，不容易摔斷，運動框和兒童框常用。加熱也很難重新塑形，鏡腳鬆了不太調得回來。', tag: '彈性' },
         ].map(item => (
           <div class="bg-brand-paper rounded-2xl p-7 border border-brand-ink/5">
             <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3 block" style="font-size:11px;letter-spacing:0.16em">{item.tag}</span>
@@ -176,59 +220,117 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        材質完整比較表：<a href="/blog/frame-material-guide/" class="text-brand-gold underline">眼鏡框材質怎麼選？板材、金屬、鈦、TR90 完整比較</a>
+        想把六種材質的重量、過敏、能不能調一次對齊，讀<a href="/blog/frame-material-guide/" class="text-brand-gold underline">眼鏡框材質怎麼選？</a>，TR90 的限制也在那篇。
       </p>
     </div>
   </section>
 
-  <!-- 尺寸配適 -->
-  <section id="fit" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">尺寸與配適：戴起來會滑、會夾都是尺寸問題</h2>
-      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
-        <p>鏡腿內側常見一組數字，例如 <strong>52□18-140</strong>：鏡片寬 52mm、鼻樑寬 18mm、鏡腿長 140mm。看懂它，網購或換框才不會踩雷。</p>
-        <p><strong>合適的三個判準：</strong>鏡框總寬對齊臉寬、不超出太陽穴；鼻樑或鼻托穩定貼合、不壓不滑；鏡腿長度到耳後自然彎折、不夾不鬆。</p>
-        <p>而且鏡框配適不只是舒適問題——鏡框歪斜或尺寸不對，會讓鏡片的光學中心偏離你的瞳孔，直接影響清晰度，這在漸進多焦點與高度數上特別明顯。</p>
-      </div>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        看懂尺寸標示與配適原則：<a href="/blog/frame-fit-size/" class="text-brand-gold underline">眼鏡戴起來會滑、會夾？鏡框尺寸與配戴合適度完整解析</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- 鏡框配合鏡片（深藍重點） -->
+  <!-- 承 4：鏡框裝不裝得下你的鏡片（原深藍「選框的隱形關鍵」；刪「眼鏡行不一定會告訴你」#13；卡片升 H3；框心距用詞修正 #21；互搶 B 厚薄數字歸 high-myopia-lens-brand-choice） -->
   <section id="lens" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">選框的隱形關鍵：鏡框要為鏡片服務</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">這是眼鏡行不一定會告訴你、但驗光人員一定會先想的事——鏡框不只是配件，它是鏡片的載體。</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
-        {[
-          ['高度近視要選小框', '鏡框邊到邊越短，鏡片邊緣越薄、越輕；框心距貼近瞳距可減少稜鏡效應', '/guide/high-myopia/'],
-          ['漸進多焦點要夠高', '鏡框高度不足會截掉近用區，讓你找不到看近的清晰位置', '/guide/progressive-lens/'],
-          ['框弧度影響訂製鏡片', '個人化訂製鏡片會把鏡框前傾角、弧度納入計算，選框就要一起確認', '/guide/lens-brands/'],
-          ['配適精度影響光學中心', '鏡框戴正、鼻托腳架調準，鏡片的光學中心才落在瞳孔正確位置', '/blog/frame-adjustment-handcraft/'],
-        ].map(([title, desc, href]) => (
-          <a href={href} class="border-t border-white/10 pt-5 block group">
-            <p class="font-sans text-brand-gold font-semibold mb-2 group-hover:underline" style="font-size:15px">{title} →</p>
-            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
-          </a>
-        ))}
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">鏡框裝不裝得下你的鏡片</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">鏡片要裝進框裡才能用。挑框時，驗光人員會先看你的度數、這次要配哪一種鏡片，再回頭篩框。</p>
+      <div class="space-y-8">
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">度數深：框小一點，鏡片側邊薄一點</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">近視鏡片的厚度堆在邊緣。框一寬，鏡片就得從更外面裁，側面看到的那條邊跟著變厚，整副也更重。框寬、瞳距和折射率怎麼一起決定邊緣厚度，<a href="/blog/high-myopia-lens-brand-choice/" class="text-brand-gold underline">高度近視要選蔡司還是 HOYA？</a>用實際度數算過一次；整套配鏡的考量在<a href="/guide/high-myopia/" class="text-brand-gold underline">高度近視配鏡完整指南</a>。</p>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">多焦點：框的上下要夠高</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">多焦點鏡片把看遠、看中、看近由上往下排在同一片上。框太扁，下方看近的那一段會被裁掉，看手機時只好把下巴抬高去找。配多焦點之前要知道的事，從<a href="/guide/progressive-lens/" class="text-brand-gold underline">老花眼鏡完整指南</a>開始。</p>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">個人化鏡片：參數跟著框走</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">個人化訂製鏡片會把頂點距離、前傾角、面彎角、配鏡高度算進設計。量的是你戴著那支框的樣子，框一換，就得重新量過。鏡片這一側從設計等級到品牌怎麼排先後，<a href="/guide/lens-brands/" class="text-brand-gold underline">鏡片怎麼選？</a>有完整的順序。</p>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">框戴正，鏡片中心才對得上瞳孔</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">兩片鏡片的光學中心，要分別對準左右眼的瞳孔。拿 52□18 來說，52 加 18，就是兩個鏡圈中心隔多遠，這叫框心距；它跟你的瞳距差得多，鏡片的光學中心只能偏著裁進鏡圈，近視的人鏡片外側會因此再厚一些。框戴歪了、鼻托塌了，中心也會跑開；鼻托到腳架的調法，照<a href="/blog/frame-adjustment-handcraft/" class="text-brand-gold underline">鏡架調整在調什麼？</a>的八個步驟。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 聚落文章 -->
-  <section id="cluster" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 承 5：無框、半框、精品框與運動框（新增聚落入口；精品框非代理聲明放在下一節經銷品牌段，本段不點品牌名） -->
+  <section id="styles" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：鏡框主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">無框、半框、精品框與運動框</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">這幾種框，鏡片怎麼固定、能用哪些材質、壞了怎麼處理，都跟一般全框不同，所以各自獨立成一篇。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {clusterPosts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
-            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
-          </a>
+        {[
+          { t: '無框、半框適不適合你', d: '無框是在鏡片上鑽孔，用螺絲鎖住鏡腳和鼻樑；半框用一條尼龍線吊住鏡片下緣。戴起來輕、看起來乾淨，可是度數一深，鏡片側邊沒有框可以擋。', href: '/blog/rimless-glasses-guide/', link: '無框、半框眼鏡適合我嗎？' },
+          { t: '無邊框的鏡片怎麼裝', d: '鑽孔之前，配戴位置、鏡片材質、前傾角都要先定。鏡片材質裡，玻璃不適合鑽孔，1.74 做無框要先評估。', href: '/blog/rimless-lens-drilling-fitting/', link: '無邊框眼鏡的鏡片怎麼裝上去？' },
+          { t: '精品框配鏡與維修', d: '自己收藏的精品框想裝度數鏡片，或是結構鬆了想修，動工前要先看懂它的結構和框況。', href: '/blog/luxury-frame-lens-guide/', link: '精品框可以配度數鏡片嗎？' },
+          { t: '運動時戴的框', d: '打球、跑步、騎車，框得穩穩待在臉上。包覆弧度大的框想裝度數鏡片，要先評估；門市有運動框，綁帶也有。', href: '/blog/sports-glasses/', link: '運動眼鏡怎麼配？' },
+        ].map(c => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{c.t}</h3>
+            <p class="text-brand-ink-3 mb-4" style="font-size:15px;line-height:1.75">{c.d}</p>
+            <a href={c.href} class="font-sans text-brand-gold hover:text-brand-navy transition-colors mt-auto" style="font-size:14px">{c.link} →</a>
+          </div>
         ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">框是自己帶來的，加工費怎麼算、哪些框評估後會勸你別拆，另有<a href={BYO_GUIDE} class="text-brand-gold underline">{GUIDE_TITLES[BYO_GUIDE]}</a>。</p>
+    </div>
+  </section>
+
+  <!-- 承 6：經銷品牌（新增；12 牌老闆 10-23 確認；MINAMOTO 只在新莊；產地只寫已確認的三個；精品框非代理） -->
+  <section id="brands" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">能見度經銷的鏡框品牌</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>我們經銷的鏡框共 12 個品牌：Ray-Ban、OLIVER PEOPLES、EMPORIO ARMANI、BVLGARI、agnès b.、MINAMOTO 源、MASAKI MATSUSHIMA、Maji、Orient、STEEPER、Polaris、Sanjiaoti。MINAMOTO 源只在新莊店，其他 11 個新莊、板橋兩店都有。兒童鏡框，門市也找得到。</p>
+        <p>MINAMOTO 源在日本鯖江製作，Polaris 是台灣品牌，Sanjiaoti 來自深圳。鯖江為什麼會變成眼鏡產地，去<a href="/blog/sabae-eyewear/" class="text-brand-gold underline">鯖江眼鏡是什麼？</a>看當地的來歷。想先認識 MINAMOTO 的純鈦和無螺絲鉸鏈，讀<a href="/blog/minamoto-eyewear-brand/" class="text-brand-gold underline">MINAMOTO 源是什麼品牌？</a>。</p>
+        <p>Lindberg、ic! berlin、Götti、Cartier、Chrome Hearts、Linda Farrow 是另一種情況：能見度不是這些品牌的代理門市，接的是這類鏡架的調整、維修，和自帶框配鏡片。每個品牌的介紹與依需求選框的對照表，放在<a href="/frames/" class="text-brand-gold underline">鏡框品牌</a>頁。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 門市資訊與預約（放在轉之前；兩店互調；鎖死片語：取件後 2 週內主動追蹤、取件後鏡架調整不另外收費、零件個別討論） -->
+  <section id="stores" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新莊、板橋兩店：試戴、調整與預約</h2>
+      <div class="space-y-4 text-brand-ink-2 mb-10" style="font-size:17px;line-height:1.85">
+        <p>兩店互相接手：在新莊配的眼鏡，板橋店一樣調；板橋配的，新莊也調。</p>
+        <p>取件後 2 週內，門市會主動追蹤，問問你這幾天戴下來，鼻樑和耳後有沒有哪裡壓著。在能見度配的眼鏡，取件後的鏡架調整不另外收費；要換零件，像鼻墊、螺絲，費用個別討論。鏡架多久該回來調、壞了還修不修得回來，分別在<a href="/services/adjustment/" class="text-brand-gold underline">眼鏡調整與維修</a>跟<a href="/blog/glasses-repair/" class="text-brand-gold underline">眼鏡壞了能修嗎？</a>。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-xinzhuang-exterior.webp" alt="能見度視覺中心 比泱驗光所 新莊中正路 門市外觀 鏡框試戴" width="1200" height="900" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">新莊店：能見度視覺中心（比泱驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市新莊區中正路 419-1 號，捷運新莊站<br />電話 02-2206-6700<br />YoYo 驗光師主理；驗光師 <a href="/author/chien-yen-ting/" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">錢彥廷</a><br />MINAMOTO 源的實品在這間</p>
+          </div>
+        </div>
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-banqiao.webp" alt="能見度眼鏡行 能見度驗光所 板橋雙十路二段 門市外觀" width="720" height="584" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">板橋店：能見度眼鏡行（能見度驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市板橋區雙十路二段 47 巷 28 號，捷運江子翠站<br />電話 02-2253-1246<br />驗光由持照驗光人員執行</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/booking/"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 轉：挑框看的是今天的臉，戴的卻是往後幾年（2026-10-23 換角度：避開「走位」〔glasses-fitting-process、handcraft 步驟八〕、
+       「調得動」〔material〕、「鏡框先決定鏡片能做到哪」〔鏡片指南〕、「獎項評不到」〔minamoto〕、「動起來才知道」〔sports〕） -->
+  <section id="years" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">挑框看的是今天的臉，戴的卻是往後幾年</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>試戴那天，鏡子裡是今天的你：度數是剛驗好的度數，每天的行程也是現在這一套。前面那些判準，量的都是這一天。可是框不會只陪你這一天。框沒壞、戴著也還合臉，下次度數變了，很多人會留下它，只換鏡片。一支框留得越久，當初挑它的那些條件，越有可能已經不一樣了。</p>
+        <p>所以挑框的時候，多想兩件今天還看不到的事：</p>
+        <ul class="space-y-3 pl-1">
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span><strong>度數接下來會怎麼走？</strong>近視還在加深的人，下一副鏡片會更厚，今天剛好裝得下的大框，到時候側邊那圈厚度就藏不住。四十歲前後、看近開始吃力的人，這支框很可能撐到你需要多焦點的那天，框太淺，就只能連框一起換。看近開始模糊是不是老花，<a href="/blog/presbyopia-signs-40/" class="text-brand-gold underline">40 歲看近模糊是老花嗎？</a>整理了五個早期徵兆。</span></li>
+          <li class="flex items-start gap-3"><span class="text-brand-gold mt-1 shrink-0" style="font-size:12px">●</span><span><strong>生活會不會換個樣子？</strong>開始跑步、改騎車通勤、週末固定打球，或者換了一份整天低頭看文件的工作。框跟著動的時候穩不穩、低頭一整天壓不壓鼻樑、鼻托能不能調，到那時候就不是小事。運動框要留意的地方，可以先翻<a href="/blog/sports-glasses/" class="text-brand-gold underline">運動眼鏡怎麼配？</a>。</span></li>
+        </ul>
+        <p>這兩題，今天都不必有標準答案。把你猜得到的變化告訴驗光人員；兩副一樣合臉、一樣喜歡的框擺在面前，就帶走留了餘裕的那一副。</p>
       </div>
     </div>
   </section>
@@ -236,24 +338,108 @@ const schema = {
   <!-- FAQ -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡框怎麼挑常見問題</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
             <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
             <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+            {f.more && <a href={f.more.href} class="inline-block mt-3 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">延伸：{f.more.t} →</a>}
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 關於作者與資料來源（E-E-A-T）：作者框照抄已審指南版本；照片用現有門市實拍；鏡框牆、MINAMOTO 實品照尚缺，建議補拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-adjusting-glasses.webp" alt="驗光人員調整鏡框鼻托與鏡腳 能見度視覺中心 新莊" width="900" height="1200" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">鼻托和鏡腳調到位，框才坐得正</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/blog/eyeglass-frame-fitting-tools-beyondvisual.webp" alt="鏡架調整工具 鼻托鉗 腳架鉗 熱風槍 新莊板橋能見度" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">門市每天用的調整工具：鼻托鉗、腳架鉗、熱風槍</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室，度數在這裡驗</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'ISO 8624:2020 Ophthalmic optics — Spectacle frames — Measuring system and vocabulary（鏡框尺寸方框法）', u: 'https://www.iso.org/standard/75385.html' },
+          { t: '福井縣眼鏡協會 JAPAN GLASSES FACTORY：産地 福井・鯖江のこと', u: 'https://www.japanglasses.jp/contents/about.html' },
+          { t: 'Monel（蒙耐爾：鎳銅合金的成分）', u: 'https://en.wikipedia.org/wiki/Monel' },
+          { t: '能見度：頂點距離是什麼？高度數配眼鏡為什麼要算它（頂點距離換算）', u: '/blog/vertex-distance/' },
+          { t: '能見度：鏡框品牌（經銷名單與精品鏡架非代理說明）', u: '/frames/' },
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target={r.u.startsWith('http') ? '_blank' : undefined} rel={r.u.startsWith('http') ? 'noopener noreferrer' : undefined} class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">52□18-140 的標法依 ISO 8624，鯖江的產地背景引自福井縣眼鏡協會。蒙耐爾含鎳，是合金本身的成分。經銷哪 12 個品牌、MINAMOTO 源放在哪一間、兩店能做哪些調整與維修，由能見度門市確認後寫進本頁；框能不能做，以現場評估為準。最後更新：2026 年 10 月 23 日。</p>
+    </div>
+  </section>
+
+  <!-- 聚落文章：讀分類表 frames 全部小分類（13 篇），依小分類分組（分組名用 <p>，不佔標題層級）；另加分類外延伸卡 -->
+  <section id="cluster" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡框怎麼挑主題文章</h2>
+      {clusterGroups.map(g => (
+        <div class="mb-12">
+          <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">{g.name}</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {g.posts.map(post => (
+              <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+                <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+                <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+      <div>
+        <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">兒童鏡框、舊框換片與自帶框</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {extraPosts.map(post => (
+            <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+              <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+              <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+              <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+            </a>
+          ))}
+          <a href={BYO_GUIDE} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+            <span class="bg-brand-gold text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">完整指南</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{GUIDE_TITLES[BYO_GUIDE]}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">網購的框、舊框、精品框帶來配鏡片：加工費怎麼算、動工前先看什麼。</p>
+          </a>
+        </div>
+      </div>
+      <a href="/topics/frames/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看鏡框全部文章 →</a>
+    </div>
+  </section>
+
+  <!-- CTA（按鈕改「預約視覺諮詢」#30；刪「不是把最貴的推給你」#32） -->
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">選框，歡迎來門市試戴</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">鏡框合不合適，戴上去最準。新莊、板橋兩店都有驗光人員依你的臉型、度數與鏡片需求協助挑選——不是把最貴的推給你，是找到最適合你的那一副。</p>
-      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約到店選配 →</a>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">伸手拿框之前，先量合不合臉</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">尺寸、鼻樑和這次要配的鏡片先對過一輪，鏡框牆前剩下的那一排，再照你的喜好慢慢試。新莊、板橋兩店都接預約；想試戴 MINAMOTO 源，請約新莊店。</p>
+      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
     </div>
   </section>
 
@@ -263,8 +449,8 @@ const schema = {
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">延伸閱讀｜其他完整指南</span>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
+          { href: '/guide/lens-brands/', t: '鏡片選購完整指南' },
           { href: '/guide/high-myopia/', t: '高度近視配鏡完整指南' },
-          { href: '/guide/optical-basics/', t: '視光小百科' },
           { href: '/guide/choose-optician/', t: '新北配眼鏡完整指南' },
         ].map(g => (
           <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>

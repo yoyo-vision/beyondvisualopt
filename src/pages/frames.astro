@@ -1,254 +1,199 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// 2026-10-23 改版（規劃書 6-1）：H1 帶在地＋鏡框品牌；鏡框品牌放前面、鏡片品牌縮成一段放後面；
+// 刪「不可取代」「正貨」「精通」「視野穩定…著稱」「高性價比」「確保…完整發揮」；選框表刪「-6.00D 配 1.74」與「≥ 28mm」；
+// FAQ 收斂：「自帶精品框可以配嗎」「Lindberg 壞了可以修嗎」與 luxury-frame-lens-guide FAQ 同題、「鏡架多久調一次」與 /services/adjustment/ 同題，三題刪除改導連結；
+// 經銷事實（老闆 10-23）：12 牌經銷，MINAMOTO 源只在新莊店，其他 11 牌兩店都有；產地只寫已確認的 MINAMOTO（鯖江製）、Polaris（台灣）、Sanjiaoti（深圳）
+
+// 經銷鏡框品牌（分三組；不標未確認的產地）
+const brandGroups = [
+  {
+    title: '國際品牌',
+    stores: '新莊・板橋',
+    names: ['Ray-Ban', 'OLIVER PEOPLES', 'EMPORIO ARMANI', 'BVLGARI', 'agnès b.'],
+    desc: 'Ray-Ban 的經典款、OLIVER PEOPLES 的復古線條、EMPORIO ARMANI 與 BVLGARI 的俐落精緻，到 agnès b. 的法式簡約。五個品牌兩店都擺著。',
+  },
+  {
+    title: 'MINAMOTO 源',
+    stores: '新莊店',
+    names: ['MINAMOTO 源'],
+    desc: '日本鯖江製作的純鈦鏡框，鉸鏈不用螺絲。MINAMOTO 源只在新莊店，要摸實品得跑一趟新莊。',
+    links: [
+      { href: '/blog/minamoto-eyewear-brand/', t: 'MINAMOTO 源是什麼品牌？' },
+      { href: '/blog/sabae-eyewear/', t: '鯖江眼鏡是什麼？' },
+    ],
+  },
+  {
+    title: '更多經銷品牌',
+    stores: '新莊・板橋',
+    names: ['MASAKI MATSUSHIMA', 'Polaris', 'Maji', 'Orient', 'STEEPER', 'Sanjiaoti'],
+    desc: 'MASAKI MATSUSHIMA 帶著日本設計師的時尚語彙；Polaris 是台灣品牌，Sanjiaoti 是深圳品牌。這六個品牌兩店都有，輕量、商務、日常的款式都找得到。',
+  },
+];
+
+// 依需求挑鏡框（刪「-6.00D 就配 1.74」#8、「≥ 28mm」#23；過敏列帶皮膚科提醒）
+const selectionGuide = [
+  { need: '度數深（高度近視）', recommendation: '寬度合臉的前提下，框選小一點', reason: '近視鏡片邊緣厚，框越寬，留在框裡的鏡片邊越厚' },
+  { need: '鼻樑、耳朵容易被壓', recommendation: '純鈦或輕量鏡框，搭可調鼻托', reason: '框輕，落在鼻樑和耳朵上的重量就少；鼻托能依鼻型調' },
+  { need: '想要辨識度高的造型', recommendation: 'OLIVER PEOPLES、EMPORIO ARMANI 等設計師款', reason: '款式和線條的選擇多' },
+  { need: '配漸進多焦點', recommendation: '上下夠深的鏡框', reason: '看近的那一段在鏡片最下方，框太淺就被裁掉' },
+  { need: '戴金屬框皮膚會有反應', recommendation: '純鈦或醋酸纖維板材', reason: '純鈦不含鎳，過敏風險較低；皮膚反應持續，請給皮膚科醫師看' },
+  { need: '打球、跑步時戴', recommendation: '運動框、可調鼻托，需要時加運動綁帶', reason: '跑跳時框不能晃；弧度包得深的框，裝度數鏡片之前先評估' },
+];
+
+// FAQ：畫面與 schema 共用同一個陣列（#31）；原「蔡司鏡片一定要配蔡司鏡架嗎」撞 zeiss-individual-worth-it FAQ，國文編審 10-23 換成精品鏡架買不買得到；全站 FAQPage grep 過，不跟鏡框 13 篇、/guide/frames/、/services/adjustment/ 撞題
+const faqs = [
+  {
+    q: '高度近視適合選哪種鏡框？',
+    a: '寬度要先合臉，在這個前提下，挑小一點、鏡圈不要太寬的框。近視鏡片越往外越厚，鏡圈開得大，那一圈厚邊就整個留在框裡，重量也跟著上來。兩個鏡圈中心的距離（框心距）要是跟瞳距對不上，外側還會再多厚一點。框寬和折射率在實際度數下怎麼搭，〈高度近視要選蔡司還是 HOYA？〉那篇把厚度推算過一遍；到門市，度數和臉寬我們會擺在一起挑。',
+  },
+  {
+    q: '新莊店和板橋店的鏡框品牌一樣嗎？',
+    a: '12 個經銷品牌裡，有 11 個是新莊、板橋兩店都擺的。MINAMOTO 源只在新莊店。想看某個品牌的特定款式，出門前先打電話問那間店。',
+  },
+  {
+    q: 'Lindberg、Cartier 這類精品鏡架，在能見度買得到嗎？',
+    a: '買不到。Lindberg、ic! berlin、Götti、Cartier、Chrome Hearts、Linda Farrow 都不在經銷名單上，能見度不是這些品牌的代理門市。這類鏡架帶來，我們接調整、維修，也可以配上度數鏡片；能不能做，要看過框況才知道。',
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "高度近視適合選哪種鏡框？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "高度近視（-6.00D 以上）建議選擇「小鏡框」，因為鏡片研磨範圍越小，邊緣厚度越薄、重量越輕。鏡框越大，相同度數下鏡片邊緣厚度會增加 1–3mm，重量可能多出 5–10 克。驗光人員會根據你的度數和臉部結構，給出最適合的框型建議。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Lindberg、ic! berlin 這類無螺絲鏡架壞了可以修嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "可以。無螺絲、純鈦與彈片扣合結構的維修需要專門技術與工具，能見度精通 Lindberg、ic! berlin、Götti 等高端鏡架的精密調整與維修，Cartier、Chrome Hearts、Linda Farrow 等精品鏡架的調整與鏡片安裝也有豐富經驗。即使不是在本店購買的鏡架，也歡迎帶來評估。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "自己買的精品鏡框（Cartier、Chrome Hearts）可以帶來配鏡片嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "可以。精品鏡架的鏡片安裝對框型結構與拆裝手法的要求比一般鏡框高，能見度有豐富的精品框配鏡經驗，會先評估框況，再依你的度數與框型建議合適的鏡片與加工方式。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "蔡司鏡片一定要配蔡司鏡架嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "不一定。蔡司鏡片可以搭配任何品牌的鏡架，關鍵是鏡架的尺寸、前傾角（Pantoscopic Tilt）和頂點距離是否符合蔡司鏡片的設計參數。能見度為蔡司 ZEISS 簽約認證經銷，所有鏡架調整均依照蔡司建議標準進行，確保鏡片光學性能完整發揮。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "鏡架多久需要調整一次？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "建議每 3–6 個月回店做一次微調，尤其是鼻托下滑、腳架外擴、或鏡架歪斜時。鏡架走位會改變光學中心對準位置，影響視覺清晰度。在能見度配的眼鏡，取件後的鏡架調整不另外收費；其他品牌或非本店配的鏡架，歡迎帶來評估，我們會視鏡架狀況協助調整。"
-          }
-        }
-      ]
-    }
-  ]
+      "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+    },
+  ],
 };
-
-const brands = [
-  {
-    name: 'ZEISS 蔡司',
-    origin: '德國',
-    type: '光學鏡片',
-    badge: '蔡司 ZEISS 簽約認證經銷',
-    badgeColor: 'bg-brand-navy text-white',
-    highlight: true,
-    desc: '德國精密光學品牌。Individual² 個人化訂製鏡片依你的頂點距離、前傾角、面彎角與配鏡高度計算，選好鏡框、戴著量測後下單。能見度為蔡司 ZEISS 簽約認證經銷，新莊、板橋兩店都可以訂個人化鏡片。',
-    tags: ['Individual² 個人化訂製', 'Digital Lens', 'DuraVision 抗反射', '超薄系列'],
-  },
-  {
-    name: 'HOYA',
-    origin: '日本',
-    type: '光學鏡片',
-    badge: 'HOYA 經銷商',
-    badgeColor: 'bg-brand-navy text-white',
-    highlight: true,
-    desc: '日本光學大廠，鏡片以視野穩定與完整的度數範圍著稱，iD 系列漸進鏡片提供豐富的個人化選項。能見度為 HOYA 經銷商，可依你的用眼需求與預算，在蔡司與 HOYA 之間做客觀比較與選配。',
-    tags: ['iD 漸進系列', '日本光學', '完整度數範圍', '高性價比'],
-  },
-  {
-    name: '國際時尚精品鏡框',
-    origin: '義大利・美國・法國',
-    type: '經銷鏡框品牌',
-    badge: '門市經銷',
-    badgeColor: 'bg-brand-light text-brand-navy',
-    highlight: false,
-    desc: '從 Ray-Ban 的經典款到 OLIVER PEOPLES 的復古文青路線、EMPORIO ARMANI 與 BVLGARI 的精品質感、agnès b. 的法式簡約——門市提供正貨經銷鏡框，並以驗光數據協助你在風格與光學需求之間取得平衡。',
-    tags: ['Ray-Ban', 'OLIVER PEOPLES', 'EMPORIO ARMANI', 'BVLGARI', 'agnès b.'],
-  },
-  {
-    name: '工藝與機能鏡框',
-    origin: '多品牌・工藝與機能系列',
-    type: '經銷鏡框品牌',
-    badge: '門市經銷',
-    badgeColor: 'bg-brand-light text-brand-navy',
-    highlight: false,
-    desc: 'MINAMOTO 源出自日本鯖江產地的細膩工藝，MASAKI MATSUSHIMA 帶著日本設計師的時尚語彙，Polaris 則是台灣自有的薄鋼工藝品牌——搭配 Maji、Orient、STEEPER、Sanjiaoti，涵蓋輕量、耐用、商務與日常的各種配戴需求。',
-    tags: ['MINAMOTO 源（鯖江）', 'MASAKI MATSUSHIMA', 'Polaris 台灣薄鋼', 'Maji・Orient・STEEPER'],
-  },
-  {
-    name: '高端鏡架維修調整・自帶鏡框配鏡',
-    origin: 'Lindberg・ic! berlin・Cartier・Chrome Hearts 等',
-    type: '專業維修服務',
-    badge: '維修專長',
-    badgeColor: 'bg-brand-light text-brand-navy',
-    highlight: false,
-    desc: 'Lindberg 的無螺絲純鈦結構、ic! berlin 的彈片扣合、Götti 的精密鈦工藝，到 Cartier、Chrome Hearts、Linda Farrow 等精品鏡架——本店雖非上述品牌代理門市，但長期為顧客做這類高端鏡架的精密調整、維修與鏡片安裝。自己收藏的精品框想配度數鏡片，歡迎帶來評估。',
-    tags: ['無螺絲結構維修', '精品框鏡片安裝', '純鈦鏡架調整', '非代理・專精維修'],
-  },
-  {
-    name: '精密鏡架調整服務',
-    origin: '全品牌通用',
-    type: '專業調整',
-    badge: '配鏡含調整',
-    badgeColor: 'bg-green-100 text-green-800',
-    highlight: false,
-    desc: '不論任何品牌鏡架，能見度提供鼻托高度、腳架角度、鏡面傾斜角（Pantoscopic Tilt）的專業精密調整，確保光學中心精準對準瞳孔。鏡架走位是影響配鏡品質最容易被忽略的關鍵因素。',
-    tags: ['鼻托高度調整', '傾斜角校正', '腳架張力調整', '全品牌適用'],
-  },
-];
-
-const selectionGuide = [
-  {
-    need: '高度近視（-6.00D 以上）',
-    recommendation: '選小鏡框 + 折射率 1.74 鏡片',
-    reason: '鏡框越小、邊緣磨削面積越小，鏡片越薄越輕',
-  },
-  {
-    need: '對鼻樑 / 耳朵壓迫敏感',
-    recommendation: '超輕量鈦金屬或輕量日系鏡框',
-    reason: '鏡架越輕，長時間配戴的壓迫感越低',
-  },
-  {
-    need: '想要獨特風格 / 時尚感',
-    recommendation: 'OLIVER PEOPLES、EMPORIO ARMANI 等設計師款',
-    reason: '風格辨識度高、款式選擇多',
-  },
-  {
-    need: '多焦點漸進鏡片配戴者',
-    recommendation: '中等框深（≥ 28mm）鏡框',
-    reason: '漸進鏡片需要足夠的垂直高度放置視覺分區',
-  },
-  {
-    need: '對金屬過敏 / 敏感膚質',
-    recommendation: '純鈦或醋酸纖維板料鏡框',
-    reason: '純鈦不含鎳，醋酸纖維為植物基材',
-  },
-];
-
-const faqs = [
-  {
-    q: '高度近視適合選哪種鏡框？',
-    a: '高度近視（-6.00D 以上）建議選擇「小鏡框」——鏡片研磨範圍越小，邊緣厚度越薄、重量越輕。鏡框越大，相同度數下邊緣厚度可能多出 1–3mm，重量增加 5–10 克。驗光人員會根據你的度數與臉部結構，給出最適合的框型建議。',
-  },
-  {
-    q: 'Lindberg、ic! berlin 這類無螺絲鏡架壞了可以修嗎？',
-    a: '可以。無螺絲、純鈦與彈片扣合結構的維修需要專門技術與工具，能見度精通 Lindberg、ic! berlin、Götti 等高端鏡架的精密調整與維修，Cartier、Chrome Hearts、Linda Farrow 等精品鏡架的調整與鏡片安裝也有豐富經驗。即使不是在本店購買的鏡架，也歡迎帶來評估。',
-  },
-  {
-    q: '自己買的精品鏡框（Cartier、Chrome Hearts）可以帶來配鏡片嗎？',
-    a: '可以。精品鏡架的鏡片安裝對框型結構與拆裝手法的要求比一般鏡框高，能見度有豐富的精品框配鏡經驗，會先評估框況，再依你的度數與框型建議合適的鏡片與加工方式。',
-  },
-  {
-    q: '蔡司鏡片一定要配蔡司鏡架嗎？',
-    a: '不一定。蔡司鏡片可搭配任何品牌鏡架，關鍵是鏡架尺寸、前傾角與頂點距離是否符合蔡司鏡片設計參數。能見度為蔡司 ZEISS 簽約認證經銷，所有鏡架調整均依照蔡司建議標準進行，確保光學性能完整發揮。',
-  },
-  {
-    q: '鏡架多久需要調整一次？',
-    a: '建議每 3–6 個月回店微調一次，尤其是鼻托下滑、腳架外擴或鏡架歪斜時。鏡架走位會改變光學中心對準位置，直接影響視覺清晰度。在能見度配的眼鏡，取件後的鏡架調整不另外收費；其他品牌或非本店配的鏡架，歡迎帶來評估，我們會視鏡架狀況協助調整。',
-  },
-];
 ---
 <Layout
   title="鏡框品牌｜Ray-Ban・OLIVER PEOPLES・BVLGARI・MINAMOTO 源｜能見度視覺中心｜新莊板橋"
-  description="Ray-Ban、OLIVER PEOPLES、BVLGARI、agnès b.、MINAMOTO 源等鏡框品牌經銷，並精通 Lindberg、ic! berlin、Cartier 等高端鏡架維修調整。能見度視覺中心新莊、板橋門市。"
+  description="Ray-Ban、OLIVER PEOPLES、BVLGARI、agnès b.、MINAMOTO 源等 12 個鏡框品牌經銷；Lindberg、Cartier 等精品鏡架提供調整維修與自帶框配鏡（非代理）。能見度視覺中心新莊、板橋門市。"
   enPath="/en/frames/"
   schema={schema}
 >
-  <!-- Hero -->
-  <section class="bg-brand-navy text-white py-20 px-4 text-center">
-    <h1 class="text-4xl font-bold mb-4">鏡框品牌</h1>
-    <p class="text-gray-300 text-lg max-w-2xl mx-auto">我們只選擇真正值得推薦的品牌——每一個都有其不可取代的配戴優勢，不是為了陳列而陳列。</p>
-    <p class="text-brand-gold text-sm mt-4 tracking-wider">蔡司 Zeiss 簽約認證經銷・HOYA 經銷｜能見度視覺中心 新莊 × 板橋</p>
-  </section>
-
-  <!-- 品牌卡片 -->
-  <section class="max-w-6xl mx-auto px-4 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {brands.map(brand => (
-        <div class={`rounded-2xl p-7 hover:shadow-lg transition-shadow flex flex-col ${brand.highlight ? 'border-2 border-brand-gold bg-brand-light' : 'border border-gray-200'}`}>
-          <div class="flex justify-between items-start mb-3">
-            <div>
-              <h2 class="text-xl font-bold text-brand-navy">{brand.name}</h2>
-              <p class="text-gray-400 text-xs mt-0.5">{brand.origin}｜{brand.type}</p>
-            </div>
-            <span class={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap ${brand.badgeColor}`}>{brand.badge}</span>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed flex-1">{brand.desc}</p>
-          <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-2">
-            {brand.tags.map(tag => (
-              <span class="text-xs bg-white border border-gray-200 text-gray-500 px-2 py-1 rounded-full">{tag}</span>
-            ))}
-          </div>
-        </div>
-      ))}
+  <!-- Hero：H1 帶在地＋鏡框品牌（刪「不可取代」#7） -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-20 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="font-serif text-white leading-tight mb-6" style="font-size:clamp(28px,4.5vw,46px);font-weight:300">新莊、板橋可以試戴哪些鏡框品牌？</h1>
+      <p class="text-white/70 mx-auto" style="font-size:17px;line-height:1.85">能見度經銷 12 個鏡框品牌，11 個兩店都有，MINAMOTO 源在新莊店。挑框時，尺寸和度數先過一輪，合適的幾副挑出來，風格再由你決定。</p>
+      <p class="text-brand-gold mt-5" style="font-size:14px;letter-spacing:0.08em">蔡司 ZEISS 簽約認證經銷・HOYA 經銷｜能見度視覺中心 新莊 × 板橋</p>
     </div>
   </section>
 
-  <!-- 選框指引 -->
-  <section class="bg-brand-light py-16 px-4">
+  <!-- 經銷鏡框品牌（原兩張鏡框卡合成一節；刪「正貨」#7；產地依老闆 10-23 #3） -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">能見度經銷的鏡框品牌</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">除了下面這些經銷品牌，門市也擺了兒童鏡框、運動框，還有運動綁帶。</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {brandGroups.map(g => (
+          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+            <span class="font-sans text-brand-gold font-semibold tracking-widest mb-3" style="font-size:12px;letter-spacing:0.16em">{g.stores}</span>
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{g.title}</h3>
+            <p class="text-brand-ink-3 mb-4 flex-1" style="font-size:15px;line-height:1.75">{g.desc}</p>
+            {g.links && (
+              <div class="mb-4 space-y-1">
+                {g.links.map(l => <a href={l.href} class="block font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">{l.t} →</a>)}
+              </div>
+            )}
+            <div class="pt-4 border-t border-brand-ink/8 flex flex-wrap gap-2">
+              {g.names.map(n => (
+                <span class="text-xs bg-brand-paper border border-brand-ink/10 text-brand-ink-2 px-2 py-1 rounded-full">{n}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">兒童鏡框怎麼挑，見<a href="/blog/children-frames-guide/" class="text-brand-gold underline">兒童鏡架怎麼選？</a>；運動時戴的框，鼻托和綁帶怎麼挑，看<a href="/blog/sports-glasses/" class="text-brand-gold underline">運動眼鏡怎麼配？</a>。</p>
+    </div>
+  </section>
+
+  <!-- 精品鏡架（非代理；刪「精通」#4；互搶 D：配鏡與維修細節歸 luxury-frame-lens-guide） -->
+  <section class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy text-center mb-3">如何選擇最適合你的鏡框？</h2>
-      <p class="text-gray-500 text-sm text-center mb-10">從需求出發，不從品牌出發</p>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">精品鏡架調整、維修與自帶框配鏡（非代理）</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>Lindberg、ic! berlin、Götti、Cartier、Chrome Hearts、Linda Farrow 不在我們的經銷名單裡。能見度不是這些品牌的代理門市，接的是這類鏡架的調整、維修，以及你自己帶框來配鏡片。</p>
+        <p>無螺絲結構、彈片扣合，還有精品框各自的鎖點，動起工具來跟一般框是兩套做法。家裡收著的精品框能不能裝度數鏡片、壞了能不能修、動工前先看哪些框況，都在<a href="/blog/luxury-frame-lens-guide/" class="text-brand-gold underline">精品框配鏡與維修</a>裡。自帶框的加工費跟著框型走，動工前先報價；框是哪裡買的，不會讓同一種框型多收一筆。破損風險怎麼處理，<a href="/guide/byo-frame-lenses/" class="text-brand-gold underline">自帶鏡框配鏡片完整指南</a>也講到了。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 鏡架調整（原「精密鏡架調整服務」卡縮一段；互搶 C：頻率與收費正主是 /services/adjustment/） -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡架調整與維修</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>鼻托塌了、前傾角跑掉、腳架鬆了，眼鏡不管在哪裡配的，都可以拿來讓我們看看。在能見度配的眼鏡，取件後的鏡架調整不另外收費；零件與非本店配的眼鏡，費用個別討論。新莊、板橋任一間配的眼鏡，另一間也能調。</p>
+        <p>什麼時候該回來調，<a href="/services/adjustment/" class="text-brand-gold underline">眼鏡調整與維修</a>列了五個訊號。鼻墊掉了、鏡腳斷了，先翻<a href="/blog/glasses-repair/" class="text-brand-gold underline">眼鏡壞了能修嗎？</a>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 搭配的鏡片品牌（原兩張鏡片卡縮成一段；刪「視野穩定…著稱」「高性價比」#5） -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">搭配的鏡片品牌：蔡司 ZEISS、HOYA</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>鏡片部分，能見度是蔡司 ZEISS 簽約認證經銷、HOYA 經銷，新莊、板橋兩店都能訂，個人化訂製鏡片也是。個人化訂製要用到頂點距離、前傾角、面彎角和配鏡高度，量的時候，你挑的那支框要戴在臉上。</p>
+        <p>中文品名與折射率規格，以<a href="/lenses/" class="text-brand-gold underline">鏡片系列品名一覽</a>為準。設計等級、折射率、鍍膜和品牌哪個先定，去讀<a href="/guide/lens-brands/" class="text-brand-gold underline">鏡片怎麼選？</a>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 依需求挑鏡框 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">依需求挑鏡框</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">從你的需求開始挑，品牌放後面。</p>
       <div class="overflow-x-auto">
-        <table class="w-full text-sm border-collapse">
+        <table class="w-full border-collapse" style="font-size:15px">
           <thead>
             <tr class="bg-brand-navy text-white">
-              <th class="px-4 py-3 text-left font-semibold rounded-tl-lg">你的需求</th>
-              <th class="px-4 py-3 text-left font-semibold">建議方向</th>
-              <th class="px-4 py-3 text-left font-semibold rounded-tr-lg">原因</th>
+              <th class="text-left px-5 py-4 font-semibold">你的需求</th>
+              <th class="text-left px-5 py-4 font-semibold">建議方向</th>
+              <th class="text-left px-5 py-4 font-semibold">原因</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-200 bg-white">
+          <tbody class="text-brand-ink-2 bg-white">
             {selectionGuide.map(row => (
-              <tr class="hover:bg-gray-50">
-                <td class="px-4 py-3 font-medium text-brand-navy">{row.need}</td>
-                <td class="px-4 py-3 text-gray-700">{row.recommendation}</td>
-                <td class="px-4 py-3 text-gray-500 text-xs">{row.reason}</td>
+              <tr class="border-b border-brand-ink/8">
+                <td class="px-5 py-4 align-top font-semibold text-brand-navy">{row.need}</td>
+                <td class="px-5 py-4 align-top">{row.recommendation}</td>
+                <td class="px-5 py-4 align-top text-brand-ink-3">{row.reason}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">表格只抓得到方向。尺寸、臉型、材質一步一步怎麼挑，接著讀<a href="/guide/frames/" class="text-brand-gold underline">鏡框怎麼挑才戴得久？</a>。</p>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="max-w-3xl mx-auto px-4 py-20">
-    <h2 class="text-2xl font-bold text-brand-navy text-center mb-10">鏡框常見問題 FAQ</h2>
-    <div class="space-y-6">
-      {faqs.map((faq, i) => (
-        <div class="border border-gray-200 rounded-xl p-6">
-          <p class="font-bold text-brand-navy mb-2">Q{i + 1}. {faq.q}</p>
-          <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-        </div>
-      ))}
+  <!-- FAQ（H3＋「Q：」；schema 由同一陣列產生 #31） -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡框品牌常見問題</h2>
+      <div class="space-y-8">
+        {faqs.map(f => (
+          <div class="border-b border-brand-ink/8 pb-8">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
+            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-brand-navy py-16 px-4 text-center text-white">
-    <h2 class="text-2xl font-bold mb-4">不確定哪款鏡架最適合你？</h2>
-    <p class="text-gray-300 mb-8 max-w-xl mx-auto">驗光人員會根據你的度數、臉部結構、配戴習慣與鏡片厚度需求，給你精準的搭配建議——不是靠感覺，是靠數據。</p>
-    <a href="/booking/" class="bg-brand-gold text-white font-bold px-8 py-4 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
-      預約鏡架試戴諮詢 →
-    </a>
+  <!-- CTA（按鈕改「預約視覺諮詢」#30） -->
+  <section class="px-6 py-20 text-center" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">看中的品牌，到門市戴上臉再決定</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">驗光人員看過度數、量過臉寬，會拿幾副給你戴戴看。新莊、板橋兩店都接預約。</p>
+      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
+    </div>
   </section>
 </Layout>

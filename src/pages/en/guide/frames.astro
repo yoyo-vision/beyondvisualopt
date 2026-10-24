@@ -1,39 +1,48 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../../data/categories';
 
-// 本指南的主題聚落文章（依閱讀順序排列）——英文版取 blog-en 集合
-const CLUSTER_SLUGS = [
-  'frame-face-shape',
-  'frame-material-guide',
-  'frame-fit-size',
-  'frame-adjustment-handcraft',
-  'minamoto-eyewear-brand',
-];
+// 2026-10-23 同步中文版改版（規劃書 5-1）：H1／title／schema／FAQ／E-E-A-T／聚落讀取＋事實衝突句；內文全文重譯另排
+// 聚落：讀分類表「鏡框」3 個小分類，與中文版同序；英文版取 blog-en 集合，尚未翻譯的文章由 .filter(Boolean) 濾掉，空組不顯示
+const SUB_NAMES_EN: Record<string, string> = {
+  choosing: 'Choosing a frame',
+  styles: 'Rimless, luxury & sports frames',
+  craft: 'Brands, adjustment & repair',
+};
+const FRAMES = CATEGORIES.find(c => c.slug === 'frames')!;
 const allPosts = await getCollection('blog-en');
-const clusterPosts = CLUSTER_SLUGS
-  .map(slug => allPosts.find(p => p.slug === slug))
-  .filter(Boolean);
+const clusterGroups = FRAMES.subs
+  .map(s => ({
+    name: SUB_NAMES_EN[s.slug] ?? s.slug,
+    posts: s.posts.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean),
+  }))
+  .filter(g => g.posts.length > 0);
+// 分類外延伸卡（與中文版同；英文版只列 blog-en 已有的篇）＋自帶框指南
+const EXTRA_SLUGS = ['children-frames-guide', 'old-frame-relens'];
+const extraPosts = EXTRA_SLUGS.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean);
 
 const canonicalUrl = 'https://beyondvisualopt.com/en/guide/frames/';
 
-// 指南頁 FAQ（與聚落文章互補，不重複）
+// 指南頁 FAQ：與中文版同四題（原四題撞聚落文、byo 指南或含無出處年限，已換）；more 只上畫面、不進 schema
 const faqs = [
   {
-    q: 'When choosing a frame, should I go for looks first or fit first?',
-    a: 'Both, but the order matters: filter for "fit" first, then pick the "good-looking" ones from within the ones that fit. Fit means the frame width aligns with your face width, the bridge and nose pads sit snugly, and the frame height is tall enough for your lens needs (progressives in particular need enough height). However good-looking a frame is, if the size is wrong it will slip, pinch and misalign the optical centre, and end up in a drawer. In practice we first pick out a few frames that suit your face shape and lens needs, and then you choose the style you like from those.',
-  },
-  {
-    q: 'Can I buy a frame online and take it to an optical shop for lenses?',
-    a: 'Technically yes, but there are a few risks to know first: online frames don\'t let you check the real size or feel, and it\'s common to end up with one too big or too small; material and hinge quality vary, and a frame that warps later may not be adjustable; and high-power or progressive lenses have requirements on the frame\'s size, curve and height, so the wrong frame directly affects lens performance. We do accept customer-supplied frames for fitting, but we first check whether the frame suits your prescription and lens design, to avoid finding out it doesn\'t work only after the lenses are in.',
-  },
-  {
     q: 'How long does a good frame last?',
-    a: 'It depends on material and care, but 2–5 years or more is usually no problem. Pure titanium and quality acetate are highly durable; the hinges and temples are the main wear points. The real time to replace often isn\'t that the frame broke, but that the prescription changed significantly, or the frame has deformed and can no longer be adjusted back to the correct wearing position. Regular adjustments at the store (nose pads, temple tension, level alignment) noticeably extend a frame\'s lifespan and wearing comfort.',
+    a: 'There is no fixed number of years; it depends on the material, how you wear it and how you store it. The frame\'s own signals tell you more than a date: the hinge screw keeps working loose and the thread no longer holds; the plating on a metal frame starts to peel, or an acetate frame turns cloudy and feels brittle; or the frame has bent and no longer returns to its original position however it is adjusted. Any of these means it is time to think about a new frame. A change in prescription, on the other hand, does not necessarily retire the frame.',
+    more: { href: '/en/blog/old-frame-relens/', t: 'Is it worth replacing just the lenses in your old glasses?' },
   },
   {
-    q: 'For high myopia or a progressive lens, what should I watch for when choosing a frame?',
-    a: 'For high myopia (a strong prescription) we suggest a smaller frame with a short edge-to-edge width, which effectively reduces the lens edge thickness and weight; the frame centre distance (the frame\'s optical centre) should sit as close to your PD as possible to avoid a prism effect. Progressives are the opposite: they need "enough frame height" to hold the full far, intermediate and near zones — a frame that\'s too flat cuts off the near zone and leaves you unable to find the clear reading position. These should all be considered when choosing the frame, not discovered after the lenses are made. At the Xinzhuang and Banqiao stores, our licensed optometry staff can help you choose a frame based on your prescription and lens design.',
+    q: 'How do I choose a frame colour? Do skin tone and hair colour matter?',
+    a: 'They matter, though there is no single right answer. Warm, slightly yellow skin tones usually sit well with tortoiseshell, amber and gold; cool, pinkish skin tones are easier to pair with black, grey, silver, clear or blue. Hair and eyebrow colour count too: with dark hair and brows, a thick dark frame gives strong contrast and a strong presence, while lighter hair suits light or translucent frames that do not take over the face. With a strong prescription, a thicker dark acetate frame can also hide part of the lens edge. When you have narrowed it down, take the frames to a window and check them once in daylight.',
+  },
+  {
+    q: 'I have a low nose bridge. What should I look for in a frame?',
+    a: 'Start with what holds the frame on your nose. Most metal frames have adjustable nose pads whose height and spacing can be set, which makes a low bridge easier to fit. Most acetate frames have the nose pads moulded into the front; with a low bridge the frame sits lower, the bottom of the lens rests on your cheeks, and a smile pushes the glasses up. In that case look for acetate frames with higher moulded pads, or ones fitted with metal nose pads at the bridge. Watch your eyelashes as well: if the frame sits too low and the lens is too close to the eye, your lashes brush the lens when you blink. Smile and blink a few times during the try-on and you will know.',
+  },
+  {
+    q: 'If I want two pairs of glasses to alternate, can the frames be different?',
+    a: 'Yes, but each frame has to be measured separately. The same prescription in two different frames sits at a different distance from your eyes, at a different forward tilt and at a different fitting height, so each frame is measured on your face and its lenses are made to its own numbers. If both pairs are progressives, both frames need enough height. Even when measured correctly, the two pairs may still feel slightly different; if one of them is hard to wear, bring it back for a check.',
+    more: { href: '/en/blog/same-prescription-different-feel/', t: 'Same prescription, so why do two pairs of glasses feel so different?' },
   },
 ];
 
@@ -45,8 +54,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "Choosing Eyeglass Frames: A Complete Guide to Face Shape, Material, Sizing and Lens Needs",
-      "description": "How do you choose a frame for your face shape? What\'s the difference between acetate, metal and titanium? How do you tell whether a frame size fits? From aesthetics to optics, Optometrist YoYo explains every key point in one page. Beyond Visual Optometry, Xinzhuang and Banqiao.",
+      "headline": "How do you choose a frame that lasts? Size, face shape and material, considered together with your prescription",
+      "dateModified": "2026-10-23",
+      "description": "How do you choose a frame that lasts? Check the size against your face first, then face shape and material, and make sure the frame can hold your lenses. Optometrist YoYo explains what 52□18-140 means, a face-shape table, acetate vs titanium vs TR90, rimless and luxury frames, and the 12 frame brands Beyond Visual carries. Xinzhuang and Banqiao.",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "en",
       "articleSection": "Complete Guide",
@@ -71,8 +81,8 @@ const schema = {
 };
 ---
 <Layout
-  title="Eyeglass Frames Guide | Beyond Visual Optometry"
-  description="How do you choose an eyeglass frame for your face shape? What sets acetate, metal, titanium and TR90 apart? How do you tell whether a frame fits? From aesthetics to optics, Optometrist YoYo explains the keys in one page. Beyond Visual Optometry, Xinzhuang and Banqiao."
+  title="How to Choose Eyeglass Frames | Size · Face Shape · Material · Rimless & Luxury | Beyond Visual Optometry, Xinzhuang & Banqiao"
+  description="How do you choose a frame that lasts? Check the size against your face first, then face shape and material, together with your prescription and any progressive-lens needs. Optometrist YoYo explains 52□18-140, a face-shape table, acetate vs titanium vs TR90, and the 12 frame brands Beyond Visual carries. Xinzhuang and Banqiao."
   lang="en"
   schema={schema}
 >
@@ -82,7 +92,7 @@ const schema = {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        Choosing Eyeglass Frames<br /><span class="text-brand-gold">Complete Guide</span>
+        How do you choose a frame that lasts?<br /><span class="text-brand-gold" style="font-size:0.6em">Size, face shape and material, considered together with your prescription</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
         Face shape, material, sizing and fit — choosing a frame is about more than looks; it also decides whether your lenses can perform. Optometrist YoYo explains it from aesthetics to optics, all in one place.
@@ -97,7 +107,7 @@ const schema = {
       <ul class="space-y-2.5">
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The order of choosing: filter for "fit" first (width aligned to your face, nose pads snug, height enough for your lens needs), then pick the "good-looking" ones from among those that fit.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Matching a frame to a face usually works better by "contrast" than by "similarity": a round face suits an angular frame to sharpen the outline, a square face suits a rounder frame to soften the lines.</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Material decides weight, adjustability and allergy risk: acetate has design appeal, pure titanium is light and low-allergy, metal is sleek and affordable, TR90 is impact-resistant and flexible.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Weight, the metals that touch your skin, and how easily the frame can be adjusted later all come down to material.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>A frame is a carrier for the lens: high myopia needs a small frame, progressives need enough frame height, and personalized custom lenses need the frame curve and pantoscopic tilt confirmed first.</span></li>
       </ul>
     </div>
@@ -111,8 +121,9 @@ const schema = {
         { label: 'Material Comparison', href: '#material' },
         { label: 'Sizing and Fit', href: '#fit' },
         { label: 'Frame Must Serve the Lens', href: '#lens' },
-        { label: 'Read More', href: '#cluster' },
+        { label: 'Articles', href: '#cluster' },
         { label: 'FAQ', href: '#faq' },
+        { label: 'Author & Sources', href: '#author' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
@@ -135,10 +146,10 @@ const schema = {
           </thead>
           <tbody class="text-brand-ink-2">
             {[
-              ['Round', 'Square, Wellington, angular frames — draw out the outline', 'Small round frames (reinforce roundness)'],
-              ['Square', 'Round, oval, thin metal frames — soften the jawline', 'Heavy square frames (reinforce angles)'],
-              ['Long', 'Taller frames, decorated temples — visually shorten the face', 'Overly flat narrow frames'],
-              ['Heart (wide forehead, pointed chin)', 'Frames wider at the bottom, rimless/thin frames — balance top and bottom', 'Thick frames heavy along the top edge'],
+              ['Round', 'Square, aviator and geometric frames — straight lines to firm up the outline', 'Large round frames, round rimless (reinforce roundness)'],
+              ['Square', 'Round, oval and cat-eye frames — soften the jawline', 'Hard-edged thick square frames (amplify angles)'],
+              ['Long', 'Thicker frames with more depth, darker frames — widen the face visually', 'Narrow, slim frames (lengthen the face)'],
+              ['Heart (wide forehead, pointed chin)', 'Frames rounder at the bottom, thin frames, rimless, cat-eye — balance a wide top and narrow base', 'Top-heavy thick frames, aviators (make the forehead look wider)'],
               ['Oval', 'Most frame shapes suit; choose by facial proportion', 'Frames too large or too small that throw off balance'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
@@ -164,8 +175,8 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           { name: 'Acetate', desc: 'Rich colour and texture, fine feel, adjustable curve — the mainstream for design pieces. Medium weight, with presence in thicker frames.', tag: 'Design Appeal' },
-          { name: 'Pure Titanium / β-Titanium', desc: 'Extremely light, corrosion-resistant, low-allergy — suited to long wear and strong prescriptions (heavy lenses). Higher price, the top choice for the high end.', tag: 'Light · Low-Allergy' },
-          { name: 'Metal (stainless steel / Monel)', desc: 'Fine and sleek, affordable, malleable and easy to adjust. Some contain nickel, so sensitive skin should take note.', tag: 'Sleek' },
+          { name: 'Pure Titanium / β-Titanium', desc: 'Titanium is low-density and corrosion-resistant. Pure titanium contains no nickel, so the allergy risk is lower; beta titanium is an alloy with more spring than pure titanium. If your skin still reacts and it does not settle, see a dermatologist.', tag: 'Light · Nickel-Free' },
+          { name: 'Metal (stainless steel / Monel)', desc: 'Can be made very thin and is easy to adjust. Monel is a nickel-copper alloy and stainless steel often contains nickel, so if your skin reacts to metal, ask about the composition first.', tag: 'Sleek' },
           { name: 'TR90 Plastic-Steel', desc: 'Light, flexible, impact-resistant — good for sport and children. Less adjustable, with a more casual feel.', tag: 'Durable · Flexible' },
         ].map(item => (
           <div class="bg-brand-paper rounded-2xl p-7 border border-brand-ink/5">
@@ -200,10 +211,10 @@ const schema = {
   <section id="lens" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">The hidden key to choosing a frame: the frame serves the lens</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">This is something an optical shop won't necessarily tell you, but an optometrist always thinks of first — the frame isn't just an accessory, it's the carrier for the lens.</p>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">Lenses only work once they are in a frame. When you choose a frame, our licensed optometry staff look at your prescription and the lens you need first, then narrow down the frames.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
         {[
-          ['High myopia needs a small frame', 'The shorter the frame is edge-to-edge, the thinner and lighter the lens edge; a frame centre distance close to your PD reduces the prism effect', '/en/guide/high-myopia/'],
+          ['High myopia needs a small frame', 'The narrower the frame, the thinner and lighter the lens edge; when the distance between the two rim centres (lens width plus bridge) is far from your PD, the lens has to be cut off-centre and the outer edge gets thicker', '/en/guide/high-myopia/'],
           ['Progressives need enough height', 'Insufficient frame height cuts off the near zone, leaving you unable to find the clear reading position', '/en/guide/progressive-lens/'],
           ['Frame curve affects custom lenses', 'Personalized custom lenses factor in the frame\'s pantoscopic tilt and curve, so these must be confirmed when choosing the frame', '/en/guide/lens-brands/'],
           ['Fit precision affects the optical centre', 'Only with the frame sitting straight and the nose pads and temples adjusted does the lens\'s optical centre land in the correct position over the pupils', '/en/blog/frame-adjustment-handcraft/'],
@@ -217,33 +228,99 @@ const schema = {
     </div>
   </section>
 
-  <!-- 聚落文章 -->
-  <section id="cluster" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on frames</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {clusterPosts.map(post => (
-          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
-            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Frequently Asked Questions</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Choosing frames: FAQ</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
             <h3 class="font-serif text-brand-navy mb-3" style="font-size:18px;font-weight:600">Q: {f.q}</h3>
             <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
+            {f.more && <a href={f.more.href} class="inline-block mt-3 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:14px">Further reading: {f.more.t} →</a>}
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字沿用 /en/guide/lens-brands/ 已審版本，照片用現有門市實拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">About the author and sources</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="Optometrist YoYo (Cheng Chia-Yu)" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">YoYo (Cheng Chia-Yu), Optometrist</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">Optometrist License No. 003309 | Graduate of Yuanpei University of Medical Technology | Lecturer, New Taipei City Optometrists Association</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">Lead optometrist at Beyond Visual Optometry × BiYang Optometry Clinic, specializing in clinical vision exams, binocular vision assessment, progressive lens fitting and children's myopia tracking.</p>
+          <a href="/en/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">Meet Optometrist YoYo →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-adjusting-glasses.webp" alt="Licensed optometry staff adjusting nose pads and temples, Beyond Visual Xinzhuang" width="900" height="1200" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">With the nose pads and temples set, the frame sits straight</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/blog/eyeglass-frame-fitting-tools-beyondvisual.webp" alt="Frame adjustment tools: nose-pad pliers, temple pliers, heat gun, Beyond Visual" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">The adjustment tools we use every day</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="Exam room, Beyond Visual Xinzhuang store" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Xinzhuang exam room: the prescription comes before the frame</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">Sources</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'ISO 8624:2020 Ophthalmic optics — Spectacle frames — Measuring system and vocabulary (boxed system for frame sizes)', u: 'https://www.iso.org/standard/75385.html' },
+          { t: 'Fukui Optical Industry Association, JAPAN GLASSES FACTORY: about Fukui and Sabae (in Japanese)', u: 'https://www.japanglasses.jp/contents/about.html' },
+          { t: 'Monel (composition of the nickel-copper alloy)', u: 'https://en.wikipedia.org/wiki/Monel' },
+          { t: 'Beyond Visual: frame brands (dealer list and non-dealer note on luxury frames)', u: '/en/frames/' },
+          { t: 'Optometrists Act (Laws & Regulations Database of the ROC, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target={r.u.startsWith('http') ? '_blank' : undefined} rel={r.u.startsWith('http') ? 'noopener noreferrer' : undefined} class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">The 52□18-140 marking follows ISO 8624, and the background on Sabae comes from the Fukui Optical Industry Association. Monel contains nickel as part of the alloy itself. Which 12 frame brands we carry, which store has MINAMOTO, and which adjustments and repairs both stores handle were confirmed by our stores before being written here; whether a particular frame can be worked on is decided by an in-store assessment. Last updated: October 23, 2026.</p>
+    </div>
+  </section>
+
+  <!-- 聚落文章：讀分類表 frames 全部小分類（blog-en 有的篇才列），依小分類分組；分組名用 <p>，不佔標題層級 -->
+  <section id="cluster" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Articles on choosing frames</h2>
+      {clusterGroups.map(g => (
+        <div class="mb-12">
+          <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">{g.name}</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {g.posts.map(post => (
+              <a href={`/en/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+                <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+                <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+      <div>
+        <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">Kids' frames, re-lensing old frames and bringing your own frame</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {extraPosts.map(post => (
+            <a href={`/en/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+              <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+              <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+              <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+            </a>
+          ))}
+          <a href="/en/guide/byo-frame-lenses/" class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+            <span class="bg-brand-gold text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">Complete Guide</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">The Complete Guide to Bring-Your-Own-Frame Lenses</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">Online-bought, old or luxury frames: how the fitting fee works and what we check before starting.</p>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -251,9 +328,9 @@ const schema = {
   <!-- CTA -->
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Choosing a frame? Come and try them on in store</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Whether a frame fits is most accurate once it's on your face. At both the Xinzhuang and Banqiao stores, our licensed optometry staff help you choose based on your face shape, prescription and lens needs — not pushing the most expensive one on you, but finding the pair most suited to you.</p>
-      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book an In-Store Fitting →</a>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Have your eyes checked before you choose a frame</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Our licensed optometry staff check your prescription first, ask how you use your eyes day to day, then try frames on with you one by one. Both our Xinzhuang and Banqiao stores take bookings; MINAMOTO is available to try at the Xinzhuang store.</p>
+      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Consultation →</a>
     </div>
   </section>
 

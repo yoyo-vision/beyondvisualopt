@@ -1,7 +1,9 @@
 ---
 // 服務項目｜眼鏡調整與維修（2026-10-17 老闆指定：調整是能見度的核心優勢，要在服務項目獨立一頁）
-// 事實來源（皆已過審）：/blog/frame-adjustment-handcraft/（8 步驟、取件後調整不另收費、非本店視狀況協助）、
-// /frames/（高端鏡架維修專長、非代理、建議 3–6 個月回店微調）。本頁不新增上述以外的服務承諾。
+// 事實來源：/blog/frame-adjustment-handcraft/（8 步驟）；老闆 2026-10-23 確認：建議每 3–6 個月回店微調、取件後 2 週內主動追蹤、
+// 兩店可互相調整對方配的眼鏡、兩店都能做無框鑽孔裝片／半框換線／換鼻墊／鎖螺絲／金屬框焊接（焊接先評估）；
+// 收費口徑：只寫「在能見度配的眼鏡，取件後的鏡架調整不另外收費」，零件與非本店配的眼鏡一律「個別討論」。
+// 2026-10-23（規劃書 6-2）：與 /blog/glasses-repair/ 互連；FAQ 加「Q：」前綴；title 店名改「新莊板橋驗光所」
 import Layout from '../../layouts/Layout.astro';
 
 const STEPS = [
@@ -26,7 +28,7 @@ const SIGNS = [
 const FAQS = [
   { q: '眼鏡多久要回來調整一次？', a: '建議每 3～6 個月回店微調一次。眼鏡天天戴，鼻托和腳架會慢慢走位，鏡片中心也跟著偏。新眼鏡則是取件後 2 週內門市會主動追蹤，問你戴起來的狀況。' },
   { q: '在能見度配的眼鏡，調整要另外收費嗎？', a: '不用。在能見度配的眼鏡，取件後的鏡架調整不另外收費。' },
-  { q: '不是在能見度買的眼鏡，可以拿來調整嗎？', a: '可以帶來，我們會先看鏡架的材質與狀況，再告訴你能不能調、怎麼調。Lindberg、ic! berlin 這類無螺絲結構或精品鏡架也歡迎帶來評估；能見度並非這些品牌的代理門市，提供的是調整與維修服務。' },
+  { q: '不是在能見度買的眼鏡，可以拿來調整嗎？', a: '可以帶來，我們會先看鏡架的材質與狀況，再告訴你能不能調、怎麼調，費用個別討論。Lindberg、ic! berlin 這類無螺絲結構或精品鏡架也歡迎帶來評估；能見度並非這些品牌的代理門市，提供的是調整與維修服務。' },
 ];
 
 const schema = {
@@ -48,8 +50,8 @@ const schema = {
 };
 ---
 <Layout
-  title="眼鏡調整與維修｜手工調整 8 步驟・高端鏡架維修｜能見度眼鏡行 新莊板橋"
-  description="眼鏡戴起來滑、壓、歪，常常不是度數的問題，是鏡架沒調好。能見度用 8 個步驟手工調整鼻托、前傾角、面彎、頂點距離，也接 Lindberg、ic! berlin 等高端鏡架的調整與維修。新莊、板橋門市。"
+  title="眼鏡調整與維修｜手工調整 8 步驟・高端鏡架維修｜新莊板橋驗光所"
+  description="眼鏡戴起來滑、壓、歪，常常不是度數的問題，是鏡架沒調好。能見度用 8 個步驟手工調整鼻托、前傾角、面彎、頂點距離，也接 Lindberg、ic! berlin 等高端鏡架的調整與維修（非品牌代理）。新莊、板橋兩店可互相調整對方配的眼鏡。"
   schema={schema}
 >
   <section class="bg-brand-navy text-white pt-10 pb-16 px-6">
@@ -84,7 +86,7 @@ const schema = {
           </div>
         ))}
       </div>
-      <p class="mt-6 text-brand-ink-3" style="font-size:14px">每個步驟的細節，寫在<a href="/blog/frame-adjustment-handcraft/" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold">手工鏡架調整的 8 個關鍵步驟</a>。</p>
+      <p class="mt-6 text-brand-ink-3" style="font-size:14px">每一步實際怎麼動手，看<a href="/blog/frame-adjustment-handcraft/" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold">鏡架調整在調什麼？</a>。</p>
     </div>
   </section>
 
@@ -99,7 +101,30 @@ const schema = {
     </div>
   </section>
 
+  <!-- 2026-10-23 新增（規劃書 6-2）：小維修項目依老闆 10-23 確認；完整損壞類型與判斷歸 /blog/glasses-repair/（互連） -->
   <section class="px-6 py-16" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-navy mb-6" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">調整之外的小維修</h2>
+      <p class="text-brand-ink-2 mb-6" style="font-size:16px;line-height:1.85">下面這幾種，新莊、板橋兩店都做：</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+        {[
+          ['鎖螺絲', '鉸鏈、鼻托臂的螺絲鬆了或掉了'],
+          ['換鼻墊', '金屬框的鼻墊發黃、變硬或脫落'],
+          ['半框換線', '吊住鏡片下緣的尼龍線鬆了、斷了'],
+          ['無框鑽孔裝片', '無框換鏡片，新片重新鑽孔裝上'],
+          ['金屬框焊接', '斷在哪裡、什麼金屬，先評估再決定'],
+        ].map(([t, d]) => (
+          <div class="bg-white rounded-xl border border-brand-ink/8 px-5 py-4">
+            <p class="font-serif text-brand-navy font-semibold mb-1" style="font-size:16px">{t}</p>
+            <p class="text-brand-ink-3" style="font-size:14px;line-height:1.7">{d}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">在能見度配的眼鏡，取件後的鏡架調整不另外收費；鼻墊、螺絲這類零件，以及不是在能見度配的眼鏡，費用個別討論。板材框、TR90 斷了接不接得回去，無框、精品框壞了先看什麼，<a href="/blog/glasses-repair/" class="text-brand-navy underline underline-offset-2 hover:text-brand-gold">眼鏡壞了能修嗎？</a>一種一種講。</p>
+    </div>
+  </section>
+
+  <section class="px-6 py-16" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-serif text-brand-navy mb-6" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">出現這些情況，就該回來調一下</h2>
       <ul class="space-y-3 mb-6">
@@ -107,17 +132,17 @@ const schema = {
           <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px"><span class="text-brand-gold mt-0.5">✦</span>{s}</li>
         ))}
       </ul>
-      <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">平常建議每 3～6 個月回店微調一次。如果調整後還是看不清楚、眼睛不舒服，可能不是鏡架的問題，我們會建議重新驗光，或請你先給眼科醫師檢查。</p>
+      <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">眼鏡在新莊配、人在板橋附近，直接去板橋店調就好；反過來也一樣。如果調整後還是看不清楚、眼睛不舒服，可能不是鏡架的問題，我們會建議重新驗光，或請你先給眼科醫師檢查。</p>
     </div>
   </section>
 
-  <section class="px-6 py-16" style="background:#f7f3ec">
+  <section class="px-6 py-16" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-serif text-brand-navy mb-8" style="font-size:clamp(24px,3.5vw,34px);font-weight:400">眼鏡調整常見問題</h2>
       <div class="space-y-6">
         {FAQS.map(f => (
           <div>
-            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:600">{f.q}</h3>
+            <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:600">Q：{f.q}</h3>
             <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">{f.a}</p>
           </div>
         ))}
@@ -128,6 +153,6 @@ const schema = {
   <section class="bg-brand-navy text-white px-6 py-16 text-center">
     <h2 class="font-serif mb-4" style="font-size:clamp(22px,3vw,30px);font-weight:300">眼鏡戴起來不對勁，帶來給我們看看</h2>
     <p class="text-white/70 mb-8" style="font-size:15px">新莊店 02-2206-6700｜板橋店 02-2253-1246</p>
-    <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-7 py-3 rounded-full hover:bg-brand-gold/90 transition-colors font-sans">查看可約時段 →</a>
+    <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-7 py-3 rounded-full hover:bg-brand-gold/90 transition-colors font-sans">預約視覺諮詢 →</a>
   </section>
 </Layout>

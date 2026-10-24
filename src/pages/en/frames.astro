@@ -1,57 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Which frame type suits high myopia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For high myopia (-6.00D and above), a small frame is recommended, because the smaller the grinding area, the thinner the edge and the lighter the lens. With a larger frame, the same prescription can add 1–3mm of edge thickness and 5–10 grams of weight. Our licensed optometry staff recommend the best frame shape based on your prescription and facial structure."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can screwless frames like Lindberg or ic! berlin be repaired if they break?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Repairing screwless, pure-titanium, and spring-clip structures requires specialized skills and tools. Beyond Visual is experienced in the precision adjustment and repair of high-end frames such as Lindberg, ic! berlin, and Götti, as well as the adjustment and lens fitting of luxury frames like Cartier, Chrome Hearts, and Linda Farrow. Even if a frame wasn't purchased here, you're welcome to bring it in for assessment."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I bring my own luxury frame (Cartier, Chrome Hearts) to have lenses fitted?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Lens fitting for luxury frames demands more of the frame structure and the assembly technique than ordinary frames. Beyond Visual has extensive experience fitting lenses into luxury frames — we assess the frame condition first, then recommend suitable lenses and processing methods based on your prescription and frame shape."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do ZEISS lenses have to go with a ZEISS frame?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. ZEISS lenses can pair with any brand of frame — what matters is whether the frame's size, pantoscopic tilt, and vertex distance match the design parameters of the ZEISS lens. Beyond Visual is an authorized ZEISS dealer, and all frame adjustments follow ZEISS recommended standards to ensure the lens's optical performance is fully realized."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How often does a frame need adjusting?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We suggest a fine adjustment every 3–6 months, especially when the nose pads slip, the temples splay out, or the frame sits crooked. A frame out of position changes the alignment of the optical center and affects visual clarity. For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge; frames from other brands or other stores are welcome for an assessment, and we'll help adjust them depending on their condition."
-          }
-        }
-      ]
-    }
-  ]
-};
-
 const brands = [
   {
     name: 'ZEISS',
@@ -70,28 +19,28 @@ const brands = [
     badge: 'HOYA Dealer',
     badgeColor: 'bg-brand-navy text-white',
     highlight: true,
-    desc: 'A major Japanese optical manufacturer, known for stable fields of view and a complete prescription range. The iD progressive series offers rich personalization options. Beyond Visual is a HOYA dealer, so we can make an objective comparison between ZEISS and HOYA to match your viewing needs and budget.',
-    tags: ['iD progressive series', 'Japanese optics', 'Full prescription range', 'Great value'],
+    desc: 'Japanese optical manufacturer. Beyond Visual is a HOYA dealer, and both our Xinzhuang and Banqiao stores can order HOYA lenses, so ZEISS and HOYA can be compared side by side for your viewing needs.',
+    tags: ['iD progressive series', 'Japanese optics'],
   },
   {
     name: 'International Fashion & Luxury Frames',
-    origin: 'Italy · USA · France',
+    origin: 'Both stores',
     type: 'Dealer Frame Brands',
     badge: 'In-Store Dealer',
     badgeColor: 'bg-brand-light text-brand-navy',
     highlight: false,
-    desc: 'From the classics of Ray-Ban to the vintage, literary style of OLIVER PEOPLES, the premium feel of EMPORIO ARMANI and BVLGARI, and the French minimalism of agnès b. — our stores carry genuine dealer frames, and use your exam data to help you balance style with optical needs.',
+    desc: 'From the classics of Ray-Ban to the vintage, literary style of OLIVER PEOPLES, the premium feel of EMPORIO ARMANI and BVLGARI, and the French minimalism of agnès b. — both of our stores carry these as a dealer, and we use your exam data to help you balance style with optical needs.',
     tags: ['Ray-Ban', 'OLIVER PEOPLES', 'EMPORIO ARMANI', 'BVLGARI', 'agnès b.'],
   },
   {
     name: 'Craft & Functional Frames',
-    origin: 'Multiple brands · Craft & functional series',
+    origin: 'MINAMOTO: Xinzhuang store only · others at both stores',
     type: 'Dealer Frame Brands',
     badge: 'In-Store Dealer',
     badgeColor: 'bg-brand-light text-brand-navy',
     highlight: false,
-    desc: 'MINAMOTO brings the refined craftsmanship of Japan\'s Sabae region, MASAKI MATSUSHIMA carries the fashion vocabulary of a Japanese designer, and Polaris is a Taiwanese thin-steel craft brand — together with Maji, Orient, STEEPER, and Sanjiaoti, covering lightweight, durable, business, and everyday wearing needs.',
-    tags: ['MINAMOTO (Sabae)', 'MASAKI MATSUSHIMA', 'Polaris Taiwan thin-steel', 'Maji · Orient · STEEPER'],
+    desc: 'MINAMOTO brings the refined craftsmanship of Japan\'s Sabae region, MASAKI MATSUSHIMA carries the fashion vocabulary of a Japanese designer, and Polaris is a Taiwanese brand — together with Maji, Orient, STEEPER, and Sanjiaoti (a Shenzhen brand), covering lightweight, business, and everyday styles. MINAMOTO is available at our Xinzhuang store only; the other brands are at both stores.',
+    tags: ['MINAMOTO (Sabae)', 'MASAKI MATSUSHIMA', 'Polaris (Taiwan)', 'Maji · Orient · STEEPER'],
   },
   {
     name: 'High-End Frame Repair & Own-Frame Lens Fitting',
@@ -107,24 +56,24 @@ const brands = [
     name: 'Precision Frame Adjustment Service',
     origin: 'All brands',
     type: 'Professional Adjustment',
-    badge: 'Included with Fitting',
+    badge: 'Both stores',
     badgeColor: 'bg-green-100 text-green-800',
     highlight: false,
-    desc: 'Whatever the brand, Beyond Visual provides professional precision adjustment of nose-pad height, temple angle, and pantoscopic tilt, ensuring the optical center is precisely aligned with your pupils. A frame out of position is the most easily overlooked factor affecting fitting quality.',
+    desc: 'Whatever the brand, our licensed optometry staff adjust nose-pad height, temple angle, and pantoscopic tilt so the optical centres sit in front of your pupils. For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge; parts, and glasses fitted elsewhere, are discussed case by case. Each store can adjust glasses fitted at the other.',
     tags: ['Nose-pad height', 'Tilt correction', 'Temple tension', 'All brands'],
   },
 ];
 
 const selectionGuide = [
   {
-    need: 'High myopia (-6.00D and above)',
-    recommendation: 'Small frame + refractive index 1.74 lens',
-    reason: 'Smaller frame, smaller grinding area — thinner and lighter lenses',
+    need: 'Strong prescription (high myopia)',
+    recommendation: 'A smaller frame, as long as the width suits your face',
+    reason: 'Myopic lenses are thick at the edge; the wider the frame, the thicker the edge left in it',
   },
   {
     need: 'Sensitive to nose-bridge / ear pressure',
-    recommendation: 'Ultra-light titanium or lightweight Japanese frame',
-    reason: 'The lighter the frame, the less pressure over long wear',
+    recommendation: 'Titanium or other lightweight frames with adjustable nose pads',
+    reason: 'A lighter frame puts less weight on the nose and ears; the pads can be set to your nose',
   },
   {
     need: 'Want a distinctive style / fashion sense',
@@ -133,49 +82,52 @@ const selectionGuide = [
   },
   {
     need: 'Progressive multifocal lens wearer',
-    recommendation: 'Frame with medium depth (≥ 28mm)',
-    reason: 'Progressive lenses need enough vertical height for the visual zones',
+    recommendation: 'A frame with enough depth',
+    reason: 'Far, intermediate and near are stacked top to bottom; a shallow frame cuts off the near zone',
   },
   {
     need: 'Metal allergy / sensitive skin',
     recommendation: 'Pure titanium or acetate frame',
-    reason: 'Pure titanium is nickel-free; acetate is plant-based',
+    reason: 'Pure titanium contains no nickel, so the allergy risk is lower; if a skin reaction persists, see a dermatologist',
   },
 ];
 
+// 2026-10-23 同步中文版（規劃書 6-1）：FAQ 收斂成三題；schema 由同一陣列產生；事實衝突句已改，全文重譯另排
 const faqs = [
   {
     q: 'Which frame type suits high myopia?',
-    a: 'For high myopia (-6.00D and above), a small frame is recommended — the smaller the grinding area, the thinner the edge and the lighter the lens. With a larger frame, the same prescription can add 1–3mm of edge thickness and 5–10 grams of weight. Our licensed optometry staff recommend the best frame shape based on your prescription and facial structure.',
+    a: 'Get the width right for your face first; within that, choose a smaller frame without oversized rims. A myopic lens is thin in the middle and thick at the edge, so the larger the frame, the thicker and heavier the lens edge that ends up in it. If the distance between the two rim centres (lens width plus bridge) is far from your PD, the lens has to be cut off-centre and the outer edge gets thicker still. Our high myopia guide works through real prescriptions; in store, our licensed optometry staff choose with you based on your prescription and face width.',
   },
   {
-    q: 'Can screwless frames like Lindberg or ic! berlin be repaired if they break?',
-    a: 'Yes. Repairing screwless, pure-titanium, and spring-clip structures requires specialized skills and tools. Beyond Visual is experienced in the precision adjustment and repair of high-end frames such as Lindberg, ic! berlin, and Götti, and also in the adjustment and lens fitting of luxury frames like Cartier, Chrome Hearts, and Linda Farrow. Even if a frame wasn\'t purchased here, you\'re welcome to bring it in for assessment.',
+    q: 'Do the Xinzhuang and Banqiao stores carry the same frame brands?',
+    a: 'Of the 12 frame brands Beyond Visual carries as a dealer, 11 are at both the Xinzhuang and Banqiao stores. MINAMOTO is at the Xinzhuang store only, so please visit Xinzhuang to try it on. If you want to see a specific model from a brand, call that store before you go.',
   },
   {
-    q: 'Can I bring my own luxury frame (Cartier, Chrome Hearts) to have lenses fitted?',
-    a: 'Yes. Lens fitting for luxury frames demands more of the frame structure and assembly technique than ordinary frames. Beyond Visual has extensive experience with luxury-frame fitting — we assess the frame condition first, then recommend suitable lenses and processing methods based on your prescription and frame shape.',
-  },
-  {
-    q: 'Do ZEISS lenses have to go with a ZEISS frame?',
-    a: 'No. ZEISS lenses can pair with any brand of frame — what matters is whether the frame size, pantoscopic tilt, and vertex distance match the ZEISS lens design parameters. Beyond Visual is an authorized ZEISS dealer, and all frame adjustments follow ZEISS recommended standards to ensure full optical performance.',
-  },
-  {
-    q: 'How often does a frame need adjusting?',
-    a: 'We suggest a fine adjustment every 3–6 months, especially when the nose pads slip, the temples splay out, or the frame sits crooked. A frame out of position changes the alignment of the optical center and directly affects visual clarity. For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge; frames from other brands or other stores are welcome for an assessment, and we\'ll help adjust them depending on their condition.',
+    q: 'Can I buy designer frames like Lindberg or Cartier at Beyond Visual?',
+    a: 'No. Lindberg, ic! berlin, Götti, Cartier, Chrome Hearts and Linda Farrow are not on our dealer list, and Beyond Visual is not an authorized agent for these brands. If you bring one of these frames in, we handle adjustment and repair, and we can fit prescription lenses; whether it can be done depends on the frame\'s condition once we have looked at it.',
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+    },
+  ],
+};
 ---
 <Layout
   title="Frame Brands | Ray-Ban · OLIVER PEOPLES · BVLGARI · MINAMOTO | Beyond Visual Optometry | Xinzhuang & Banqiao"
-  description="Dealer for frame brands including Ray-Ban, OLIVER PEOPLES, BVLGARI, agnès b., and MINAMOTO, with expert repair and adjustment for high-end frames like Lindberg, ic! berlin, and Cartier. Beyond Visual Optometry, Xinzhuang & Banqiao."
+  description="Dealer for 12 frame brands including Ray-Ban, OLIVER PEOPLES, BVLGARI, agnès b., and MINAMOTO; adjustment, repair and own-frame lens fitting for luxury frames such as Lindberg and Cartier (not an authorized dealer for these). Beyond Visual Optometry, Xinzhuang & Banqiao."
   lang="en"
   schema={schema}
 >
   <!-- Hero -->
   <section class="bg-brand-navy text-white py-20 px-4 text-center">
-    <h1 class="text-4xl font-bold mb-4">Frame Brands</h1>
-    <p class="text-gray-300 text-lg max-w-2xl mx-auto">We only choose brands genuinely worth recommending — each with an irreplaceable wearing advantage, not stocked just for display.</p>
+    <h1 class="text-4xl font-bold mb-4">Which frame brands can you try on in Xinzhuang and Banqiao?</h1>
+    <p class="text-gray-300 text-lg max-w-2xl mx-auto">Beyond Visual carries 12 frame brands as a dealer: 11 at both stores, with MINAMOTO at the Xinzhuang store. Our licensed optometry staff check the size and your prescription first, then help you choose a style from the frames that fit.</p>
     <p class="text-brand-gold text-sm mt-4 tracking-wider">Authorized ZEISS Dealer · HOYA Dealer | Beyond Visual Optometry — Xinzhuang × Banqiao</p>
   </section>
 
@@ -234,9 +186,9 @@ const faqs = [
   <section class="max-w-3xl mx-auto px-4 py-20">
     <h2 class="text-2xl font-bold text-brand-navy text-center mb-10">Frame FAQ</h2>
     <div class="space-y-6">
-      {faqs.map((faq, i) => (
+      {faqs.map(faq => (
         <div class="border border-gray-200 rounded-xl p-6">
-          <p class="font-bold text-brand-navy mb-2">Q{i + 1}. {faq.q}</p>
+          <h3 class="font-bold text-brand-navy mb-2">Q: {faq.q}</h3>
           <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
         </div>
       ))}
@@ -246,9 +198,9 @@ const faqs = [
   <!-- CTA -->
   <section class="bg-brand-navy py-16 px-4 text-center text-white">
     <h2 class="text-2xl font-bold mb-4">Not sure which frame suits you best?</h2>
-    <p class="text-gray-300 mb-8 max-w-xl mx-auto">Our licensed optometry staff give you the most precise pairing advice based on your prescription, facial structure, wearing habits, and lens-thickness needs — not by guesswork, but by data.</p>
+    <p class="text-gray-300 mb-8 max-w-xl mx-auto">Our licensed optometry staff look at your prescription, face width and day-to-day eye use, and try frames on with you one by one.</p>
     <a href="/en/booking/" class="bg-brand-gold text-white font-bold px-8 py-4 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
-      Book a Frame Try-On Consultation →
+      Book a Vision Consultation →
     </a>
   </section>
 </Layout>
