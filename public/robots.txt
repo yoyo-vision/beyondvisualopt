@@ -13,4 +13,15 @@ Disallow: /api/
 Allow: /api/google-reviews
 Allow: /api/place-photo
 
+# Cloudflare 的信箱防爬蟲改寫（Scrape Shield → Email Address Obfuscation）：
+# 頁尾那個 visibility.opticians@gmail.com 會被 Cloudflare 自動改寫成
+#   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="...">
+# 真人點了由 JS 還原成信箱，但 Googlebot 看到的是一個 href，照爬 → 回 404。
+# 全站 239 頁都有頁尾，所以 GSC 會一直報這筆「找不到網頁」（2026-10-24 老闆從 GSC 抓到）。
+# ⚠️ 只擋 /cdn-cgi/l/，不要寫成 Disallow: /cdn-cgi/ ——
+#    /cdn-cgi/scripts/.../email-decode.min.js（負責把信箱解回來）和
+#    /cdn-cgi/challenge-platform/...（機器人偵測）都在同一層，整段擋掉會誤傷。
+# robots.txt 採最長匹配優先，這條（12 字元）會蓋過上面的 Allow: /。
+Disallow: /cdn-cgi/l/
+
 Sitemap: https://beyondvisualopt.com/sitemap-index.xml
