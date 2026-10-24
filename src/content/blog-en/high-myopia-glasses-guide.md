@@ -1,6 +1,7 @@
 ---
 title: "High Myopia Glasses Guide: How to Choose Lenses When You're Over -6.00D"
 date: "2026-06-24"
+updated: "2026-10-24"
 tag: "Optometry"
 excerpt: "Getting glasses for high myopia isn't just about picking 1.74 lenses. Vertex distance, optical centration, and lens design all determine how comfortable your glasses feel. Optometrist YoYo breaks down the most common pitfalls and the parameters that actually matter."
 image: ""
@@ -64,9 +65,9 @@ Many people assume high myopia automatically means picking the highest refractiv
 
 | Index | Pros | Cons | Best for |
 |--------|------|------|---------|
-| 1.60 | Lower cost, less aberration | Thicker | Under -4.00D |
-| 1.67 | Best balance of thinness and aberration | — | -4.00D to -8.00D |
-| 1.74 | The highest index among the brands we carry | Highest price, diminishing returns | -8.00D and above |
+| 1.60 | Lower cost | Edges get thick at high powers | Under -4.00D |
+| 1.67 | Noticeably thinner than 1.60 | Still thick in a large frame | -4.00D to -6.00D, after the frame is chosen |
+| 1.74 | The highest index among the brands we carry | Highest price, diminishing returns | -6.00D and above, once the frame is already small |
 
 The **Abbe number** measures how much a lens disperses light into colors — the higher the value, the less dispersion. One thing often stated backwards: **the Abbe number does not necessarily drop as the index goes up.** Based on manufacturers' published specifications for today's mainstream high-index materials, 1.67 and 1.74 are quite close (roughly 31–33, depending on the material). So "1.74 will definitely show more color fringing than 1.67" does not hold.
 
@@ -79,10 +80,10 @@ The bottom line: **choose your refractive index based on your prescription, fram
 If you have high myopia, keep these practical points in mind when picking a frame:
 
 **Go smaller**
-The larger the frame, the thicker and heavier the lens edges become, and the more peripheral aberration you'll see. For high myopia, frames with lens widths under 50mm keep edge aberrations lower and lenses visibly thinner.
+The larger the frame, the thicker and heavier the lens edges become, and the more peripheral aberration you'll see. As an example, at -10.00D with a 64mm PD, a 54□20 frame leaves the lens edge roughly 60% thicker than a 48□18 frame, by the lens-thickness formula.
 
 **Match your PD to the frame's geometric centers**
-The distance between the frame's optical centers should be close to your actual pupillary distance. If your PD is 62mm but you choose a large frame with 70mm between centers, the decentration is substantial — and with a high prescription, that usually means discomfort.
+The frame PD (the distance between the geometric centers of the two lens openings, roughly lens width plus bridge width) should be close to your actual pupillary distance. If your PD is 62mm but you choose a large frame with 70mm between centers, the decentration is substantial — and with a high prescription, that usually means discomfort.
 
 **Temple fit and stability**
 If a frame slides down your nose, the vertex distance keeps changing, and high myopia wearers will feel a distinct visual instability. Silicone anti-slip nose pads or flexible temples are worth prioritizing.
@@ -93,23 +94,23 @@ If a frame slides down your nose, the vertex distance keeps changing, and high m
 
 **Q: My new glasses are fitted, but distance vision still looks slightly hazy?**
 
-Possible causes: insufficient vertex distance compensation (the lens sits farther from your eye than during the exam), or an incorrect frame fitting position. First check that the frame sits snugly, then return to your optometrist to verify the vertex distance.
+Possible causes: insufficient vertex distance compensation (the lens sits farther from your eye than during the exam), or an incorrect frame fitting position. First check that the frame sits snugly, then return so the optometry staff can verify the vertex distance.
 
 **Q: Why does near work feel harder with my new glasses?**
 
-People with high myopia naturally have higher accommodative demand than those with low prescriptions. If near work is a struggle, you may need an evaluation for a near addition, or consider separate pairs for distance and near.
+This is often stated backwards: a myope wearing spectacles actually needs less focusing effort up close than when wearing contact lenses, and the gap grows with the prescription. So harder near work with new glasses usually has another cause: the previous pair was under-corrected and this one is fully corrected, or the new frame sits closer to the eye so the lens acts stronger. Past around 40, presbyopia also comes into play, and you may need an evaluation for a near addition, or separate pairs for distance and near.
 
 **Q: My old glasses from another shop were fine — why do these new ones make me dizzy?**
 
-Common causes of dizziness include: optical center misalignment, a change in vertex distance, astigmatism axis error, or a different pantoscopic tilt compared to your previous frame. Return for a follow-up so your optometrist can check each factor one by one.
+Common causes of dizziness include: optical center misalignment, a change in vertex distance, astigmatism axis error, or a different pantoscopic tilt compared to your previous frame. Return for a follow-up so the optometry staff can check each factor one by one.
 
 **Q: Can people with high myopia wear contact lenses?**
 
-Yes — contact lenses come in different materials, including soft and rigid (RGP) options. For high myopia combined with high astigmatism, which material suits you depends on your corneal condition and prescription, and needs to be confirmed by an optometrist. We recommend booking a separate contact lens evaluation and trial fitting.
+Yes — contact lenses come in different materials, including soft and rigid (RGP) options. For high myopia combined with high astigmatism, which material suits you depends on your corneal condition and prescription, and needs to be confirmed by our licensed optometry staff after an evaluation and trial fitting. Both our Xinzhuang and Banqiao stores fit RGP lenses. Under Article 12 of Taiwan's Optometrists Act, contact lens fitting for anyone aged 15 or under must be done under an ophthalmologist's guidance, and children under 6 are not fitted.
 
 **Q: Where can I get a precision fitting for high myopia in Xinzhuang or Banqiao (New Taipei)?**
 
-At Beyond Visual Optometry in Xinzhuang, our licensed optometry staff provide complete high myopia fitting evaluations, including vertex distance compensation calculations, precise optical center positioning, frame suitability assessment, and post-fitting follow-up. Our Banqiao branch also offers consultations and fittings. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
+Both of our stores, Xinzhuang (No. 419-1, Zhongzheng Rd.) and Banqiao (No. 28, Ln. 47, Sec. 2, Shuangshi Rd.), measure the same things for high myopia: vertex distance for the frame you choose, monocular PD for each eye, fitting height with the chosen frame on, and the power of your current glasses. Both follow up within two weeks after pickup. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
 
 ---
 

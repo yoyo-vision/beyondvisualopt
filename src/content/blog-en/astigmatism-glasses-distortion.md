@@ -1,20 +1,21 @@
 ---
 title: Why Do Astigmatism Glasses Make Things Look Distorted? A Complete Guide by Optometrist YoYo
 date: 2026-06-25
+updated: 2026-10-24
 tag: "Optometry"
-excerpt: New astigmatism glasses making the floor look tilted or walking feel strange? It's not you—it's the optical nature of cylindrical lenses. Optometrist YoYo explains why it happens and how to fix it.
+excerpt: New astigmatism glasses making the floor look tilted or walking feel strange? In most cases it's optical adaptation to cylindrical lenses, and it fades within days. Optometrist YoYo explains why it happens, and what to check if it hasn't eased after a week.
 image: ""
 youtube: ""
 instagram: ""
 ---
 
-## The bottom line: distortion with astigmatism glasses is a normal optical effect
+## The bottom line: in most cases, distortion with astigmatism glasses is normal optical adaptation
 
 When people first get astigmatism glasses, many share the same experience:
 
 "The floor looks uneven." "The ground seems to shift when I walk." "Straight lines look bent." "Objects look slightly warped."
 
-This does not mean there's something wrong with your eyes, and it does not mean your glasses were made incorrectly. It's an unavoidable result of the optical properties of astigmatism lenses (cylindrical lenses). **Once you understand why, there's no reason to panic.**
+In most cases this is optical adaptation: astigmatism lenses (cylindrical lenses) magnify differently in different directions, and your brain needs a few days to recalibrate. Less often, the axis is off or the frame sits crooked, and that won't fade on its own. The difference shows over time.
 
 ---
 
@@ -30,7 +31,7 @@ When light passes through this asymmetric curved surface, **the magnification di
 
 Since childhood, your brain has been used to visual input "without astigmatism correction." Suddenly putting on properly corrected astigmatism lenses means your brain has to rebuild its spatial map.
 
-This process usually takes **3–10 days**. Once your brain adapts, the distortion disappears, and your vision actually becomes clearer and more comfortable than before.
+Most people notice it easing within a few days, and by about a week it's hard to notice. Oblique axes, higher powers, and first-time astigmatism correction take a little longer.
 
 ---
 
@@ -38,7 +39,7 @@ This process usually takes **3–10 days**. Once your brain adapts, the distorti
 
 | Situation | Reason |
 |-----------|--------|
-| High astigmatism (over -1.50 D) | Larger refractive difference in the cylindrical lens means more obvious geometric distortion |
+| High astigmatism | Larger refractive difference in the cylindrical lens means more obvious geometric distortion |
 | Oblique astigmatism (30°–60° / 120°–150°) | The axis isn't horizontal or vertical, making recalibration harder for the brain |
 | First-time astigmatism correction / long-uncorrected | The brain has never received correctly corrected astigmatism input |
 | Large change in astigmatism power | The direction of geometric distortion differs between old and new lenses, so adaptation takes longer |
@@ -48,12 +49,12 @@ This process usually takes **3–10 days**. Once your brain adapts, the distorti
 
 ## When is it NOT "normal adaptation" but a fitting problem?
 
-Normal symptoms of adapting to astigmatism: **gradual improvement every day**, nearly gone within 1–2 weeks.
+Normal adaptation to astigmatism: **it eases a little every day**, and is largely gone within about a week.
 
 The following situations warrant a follow-up re-evaluation:
 
-- After more than **2 weeks**, the distortion hasn't improved or has even gotten worse
-- You experience **headaches, nausea, or eye ache** (not just a strange sense of space)
+- After a full **week**, the distortion hasn't improved or has even gotten worse
+- You experience **headaches, nausea, or eye ache** (not just a strange sense of space). If it persists after rest, or comes with a sudden drop in vision, please see an ophthalmologist first
 - **Covering one eye** feels comfortable, but using both eyes together is very uncomfortable
 - There's an **obvious deviation in the astigmatism axis** (an error of 15° or more during refraction has a major impact)
 - Distortion only started after the frame was adjusted (**a crooked frame** causing axis misalignment)
@@ -62,7 +63,7 @@ The following situations warrant a follow-up re-evaluation:
 
 ---
 
-## Astigmatism fitting advice in Xinzhuang
+## Astigmatism fitting advice in Xinzhuang and Banqiao
 
 The steps most likely to go wrong when fitting astigmatism lenses:
 
@@ -70,27 +71,27 @@ The steps most likely to go wrong when fitting astigmatism lenses:
 2. **Simply reusing an old prescription:** Astigmatism power and axis change with age, so they must be reconfirmed at every fitting.
 3. **Poor frame choice:** Large frames and high-curve frames make peripheral distortion more obvious for high astigmatism.
 
-At Beyond Visual Optometry (Xinzhuang), the refraction process includes complete subjective confirmation of the astigmatism axis and a binocular vision assessment, and for glasses fitted with us, frame adjustments after pickup are included at no extra charge.
+At both our Xinzhuang and Banqiao stores, the refraction process includes subjective confirmation of the astigmatism axis and a binocular vision assessment, and for glasses fitted with us, frame adjustments after pickup are included at no extra charge.
 
 ---
 
 ## FAQ
 
-**Q: Does astigmatism always need to be corrected?**
+**Q: How long does it take to adapt to astigmatism glasses?**
 
-Mild astigmatism (under -0.75 D) can be monitored if there are no visual symptoms. If it's over -1.00 D and accompanied by visual fatigue, dizziness, or blurred distance vision, correction is recommended.
+Most people feel the distortion easing within a few days, and by about a week it's hard to notice. Oblique axes, higher powers, a first pair, or a large change in power can take a little longer. If it still feels the same as day one after a full week, or is getting worse, have the axis and frame position rechecked rather than toughing it out.
 
 **Q: Are contact lenses or glasses better for astigmatism?**
 
-For high astigmatism (over -2.00 D), frame glasses are recommended, because toric astigmatism contact lenses tend to rotate off-axis on the eye. For low-to-moderate astigmatism, either option works.
+High astigmatism doesn't rule out contact lenses. Soft toric lenses rely on staying oriented on the eye to keep the axis aligned; rigid gas permeable (RGP) lenses keep their own shape, so with high astigmatism or an irregular corneal surface, the correction stays on axis more reliably, at the cost of an adaptation period. Which suits you depends on your cornea, tear film and prescription, confirmed by a trial fitting; both our stores fit RGP lenses. Under Article 12 of Taiwan's Optometrists Act, contact lens fitting for anyone aged 15 or under must be done under an ophthalmologist's guidance, and children under 6 are not fitted.
 
 **Q: Does astigmatism keep getting worse?**
 
-In adults, astigmatism is usually stable and does not keep increasing the way myopia does. Still, a recheck every 1–2 years is recommended.
+In adults, astigmatism is usually stable and does not keep increasing the way myopia does, though the axis tends to shift slowly with age. The American Optometric Association's 2023 adult guideline recommends an eye and vision exam every year. If astigmatism rises noticeably within a year or two, please see an ophthalmologist to have the cornea checked.
 
 ---
 
-You're welcome to book a complete astigmatism assessment with our licensed optometry staff at Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), phone +886-2-2206-6700. [Book an appointment](/en/booking/).
+You're welcome to book a complete astigmatism assessment with our licensed optometry staff in Xinzhuang (No. 419-1, Zhongzheng Rd., +886-2-2206-6700) or Banqiao (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., +886-2-2253-1246). [Book an appointment](/en/booking/).
 
 ---
 
@@ -98,4 +99,4 @@ That line at the top — "why does the floor look tilted?" — usually makes peo
 
 Telling the two cases apart is not difficult: **normal adaptation gets a little easier every day, while a fitting problem feels much the same on day seven as it did on day one.** The first belongs to time. The second belongs to measurement.
 
-If it's still tilting in week two, stop toughing it out. Bring the glasses in and we'll recheck the axis and the optical center. Xinzhuang: +886-2-2206-6700.
+If it's still tilting after a full week, stop toughing it out. Bring the glasses in and we'll recheck the axis and the optical center. Xinzhuang: +886-2-2206-6700, Banqiao: +886-2-2253-1246.
