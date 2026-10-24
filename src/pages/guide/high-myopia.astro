@@ -138,9 +138,9 @@ const schema = {
           </thead>
           <tbody class="text-brand-ink-2 bg-white">
             {[
-              ['-6.00D', '-6.00D', '-5.75D', '25 度'],
-              ['-10.00D', '-10.00D', '-9.50D', '50 度'],
-              ['-14.00D', '-14.00D', '-13.25D', '75 度'],
+              ['-6.00D', '-6.00D', '約 -5.86D', '約 14 度'],
+              ['-10.00D', '-10.00D', '約 -9.62D', '約 38 度'],
+              ['-14.00D', '-14.00D', '約 -13.26D', '約 74 度'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
                 {row.map((cell, i) => (
@@ -151,8 +151,9 @@ const schema = {
           </tbody>
         </table>
       </div>
+      <p class="text-brand-ink-3 mt-4" style="font-size:14px;line-height:1.7">換算公式是 Fc＝F ÷（1 − dF），F 是驗光度數，d 是鏡片往眼睛移近的距離（公尺）。以 -6.00D 為例：-6.00 ÷〔1 − 0.004 ×（-6.00）〕＝ -6.00 ÷ 1.024 ≒ -5.86D，差約 0.14D，也就是約 14 度。同樣移近 4mm，到 -14.00D 會差到約 74 度。</p>
       <div class="space-y-5 text-brand-ink-2 mt-8" style="font-size:17px;line-height:1.85">
-        <p>同一張處方，配戴位置不同，實際矯正效果就不同。這就是為什麼「度數明明沒錯，配好卻看遠有點霧」的情況，在高度近視特別常見——<strong>高度近視的處方，必須依實際鏡架配戴位置做頂點距離補正計算</strong>。</p>
+        <p>同一組度數，配戴位置不同，實際矯正效果就不同。這就是為什麼「度數明明沒錯，配好卻看遠有點霧」的情況，在高度近視特別常見——<strong>高度近視的度數，必須依實際鏡架配戴位置做頂點距離補正計算</strong>。</p>
         <p>另一個放大效應是<strong>稜鏡效應</strong>：視線偏離鏡片光學中心時產生的視覺偏移，強度等於度數乘以偏心量。同樣 3mm 的光學中心偏移，-2.00D 只產生 0.6△、多數人無感；-8.00D 產生 2.4△，足以干擾雙眼融像、造成頭暈。所以高度近視配鏡必須精準量測單眼瞳距與瞳孔高度，讓光學中心對準你的視覺軸。</p>
       </div>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
@@ -180,7 +181,7 @@ const schema = {
             {[
               ['1.60', '成本低、像差較小、色散控制佳', '度數高時邊緣明顯較厚', '-4.00D 以下'],
               ['1.67', '薄度與光學品質的最佳平衡點', '極高度數仍嫌厚', '-4.00D 至 -8.00D'],
-              ['1.74', '目前量產鏡片中最薄', '價格最高、邊際效益遞減', '-8.00D 以上'],
+              ['1.74', '本店經銷品牌中折射率最高的選項', '價格最高、邊際效益遞減', '-8.00D 以上'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
                 {row.map((cell, i) => (
@@ -253,7 +254,7 @@ const schema = {
         </table>
       </div>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        一個常被忽略的細節：高度近視（400 度以上）的隱形眼鏡度數需要經過頂點距離換算，通常比框架眼鏡淺——直接拿眼鏡處方買隱形眼鏡，度數可能過矯，建議經專業驗配確認。
+        一個常被忽略的細節：高度近視（400 度以上）的隱形眼鏡度數需要經過頂點距離換算，通常比框架眼鏡淺——直接拿框架眼鏡的度數買隱形眼鏡，度數可能過矯，建議經專業驗配確認。
       </blockquote>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
         深入比較：<a href="/blog/contact-lens-vs-glasses/" class="text-brand-gold underline">隱形眼鏡 vs 眼鏡，哪個比較好？</a>

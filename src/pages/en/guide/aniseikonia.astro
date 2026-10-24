@@ -28,11 +28,11 @@ const faqs = [
   },
   {
     q: 'What determines the magnification of a pair of glasses? Can it be adjusted?',
-    a: "The magnification of a pair of glasses is mainly affected by four factors: lens power, lens base curve, lens center thickness, and vertex distance (the distance from lens to eye). That means with the same prescription, different lens designs paired with different frames can redistribute the left-right image-size difference and bring it as close together as possible. What optometry personnel can do is this: while keeping the prescription correct, use lens design parameters and frame choice to bring the image-size difference between the two eyes into a range your brain can fuse more comfortably.",
+    a: "The magnification of a pair of glasses is mainly affected by four factors: lens power, lens base curve, lens center thickness, and vertex distance (the distance from lens to eye). When the two eyes have very different prescriptions, lens design parameters such as base curve and thickness affect the image size seen by each eye. Whether anything special is needed is something our optometry personnel assess first.",
   },
   {
     q: 'Why does vertex distance matter so much for people with a large prescription gap?',
-    a: 'Vertex distance is the distance from the back surface of the lens to the cornea. The higher the prescription, the more noticeable the change in effective power and image magnification for every 1mm of vertex-distance difference (at high powers, each 1mm causes roughly a 0.25D difference in effective power). For someone with a large gap between the two eyes, a poorly adjusted frame, lenses sitting too far from the eyes, or asymmetry between the two sides will all amplify the image-size difference. So precise measurement and frame adjustment are not a bonus for people with aniseikonia — they are a requirement.',
+    a: 'Vertex distance is the distance from the back surface of the lens to the cornea. The higher the prescription, the more noticeable the change in effective power and image magnification for every 1mm of vertex-distance difference (using the formula Fc = F ÷ (1 − dF), a -6.00D lens shifts by about 0.04D in effective power for every 1mm; the higher the power, the bigger the shift, about 0.10D at -10.00D). For someone with a large gap between the two eyes, a poorly adjusted frame, lenses sitting too far from the eyes, or asymmetry between the two sides will all amplify the image-size difference. So precise measurement and frame adjustment are not a bonus for people with aniseikonia — they are a requirement.',
   },
   {
     q: 'Are contact lenses less likely to cause aniseikonia?',
@@ -61,7 +61,7 @@ const schema = {
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
       "headline": "The Complete Guide to Aniseikonia: Why Unequal Image Sizes Between Your Eyes Cause Dizziness, and How Fitting Handles It",
-      "description": "A large gap between your two prescriptions, dizzy after long reading, text that jumps, weaker depth perception? From the difference between aniseikonia and anisometropia, and how spectacle magnification is affected by base curve, center thickness, and vertex distance, to how Beyond Visual uses lens design and frame pairing to reduce the image-size difference — all on one page. Serving Xinzhuang and Banqiao.",
+      "description": "A large gap between your two prescriptions, dizzy after long reading, text that jumps, weaker depth perception? From the difference between aniseikonia and anisometropia, and how spectacle magnification is affected by base curve, center thickness, and vertex distance, to what should be assessed first when fitting glasses for a large gap between the two eyes — all on one page. Serving Xinzhuang and Banqiao.",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "en",
       "articleSection": "Complete Guides",
@@ -180,7 +180,7 @@ const schema = {
           ['① Lens power', 'Power is the lead actor in magnification. The larger the difference in power, the more noticeable the gap in magnification between the two eyes usually is — this is the most common starting point for aniseikonia.'],
           ['② Lens base curve', 'The curvature of the front surface of the lens. At the same power, a different base curve changes magnification — one of the levers optometry personnel can use to redistribute image size between the two eyes.'],
           ['③ Lens center thickness', 'How thick or thin the center of the lens is. Thickness affects magnification, and it is linked to refractive index and frame size — choosing the right index and a slightly smaller frame helps too.'],
-          ['④ Vertex distance', 'The distance from lens to eye. The higher the prescription, the more sensitive it is: at high powers each 1mm of difference causes roughly a 0.25D change in effective power, and if the two eyes are asymmetric the image difference is amplified.'],
+          ['④ Vertex distance', 'The distance from lens to eye. The higher the prescription, the more sensitive it is: using the formula Fc = F ÷ (1 − dF), a -6.00D lens shifts by about 0.04D in effective power for every 1mm, and the higher the power the bigger the shift (about 0.10D at -10.00D). If the two eyes are asymmetric, the image difference is amplified.'],
         ].map(([title, desc]) => (
           <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
             <p class="font-serif text-brand-navy mb-2" style="font-size:18px;font-weight:600">{title}</p>
@@ -203,7 +203,7 @@ const schema = {
         {[
           ['Full binocular vision assessment', 'Not just measuring each eye’s prescription, but assessing how the two eyes work together — fusion, stereopsis, and binocular balance — to find out whether the discomfort comes from a difference in image size'],
           ['Lifestyle vision analysis', 'At what distances and in what situations do you mainly use your eyes? How reading, driving, and screen time are weighted affects the lens-design trade-offs and the acceptable range of image difference'],
-          ['Lens design parameter planning', 'While keeping the prescription correct, pairing base curve, center thickness, and refractive index to bring the magnification difference between the two eyes as close together as possible'],
+          ['Lens design parameter assessment', 'When the two eyes have very different prescriptions, lens design parameters such as base curve and thickness affect the image size seen by each eye. Whether anything special is needed is something our optometry personnel assess first'],
           ['Precise vertex distance measurement', 'A large prescription gap is especially sensitive to vertex distance; precise measurement and symmetry between the two eyes are prerequisites for comfort'],
           ['Frame choice and adjustment', 'Frame size and the position of the temples and nose pads all affect the lens-to-eye distance and symmetry — a frame is not only about how it looks'],
           ['Contact lens option assessment', 'For some people, contact lenses bring the vertex distance close to zero, so the image-size difference is usually smaller; whether they are suitable requires an in-person assessment, as they are a medical device fitted in accordance with regulations'],

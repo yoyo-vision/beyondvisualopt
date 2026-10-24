@@ -44,7 +44,7 @@ const schema = {
           "name": "高度近視配眼鏡有哪些特別注意事項？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "高度近視（-6.00D 以上）鏡片較厚，需要特別考量：鏡框尺寸（越小越薄）、鏡片折射率選擇（建議 1.74 以上）、頂點距離精準測量（每 1mm 誤差約影響 0.25D 實際度數），以及鏡片光學中心對準。能見度針對高度近視提供完整的鏡片設計諮詢。"
+            "text": "高度近視（-6.00D 以上）鏡片較厚，需要特別考量：鏡框尺寸（越小越薄）、鏡片折射率選擇（建議 1.74 以上）、頂點距離精準測量（-6.00D 的鏡片每差 1mm，有效度數約差 0.04D，度數越高差越多），以及鏡片光學中心對準。能見度針對高度近視提供完整的鏡片設計諮詢。"
           }
         }
       ]
@@ -133,7 +133,7 @@ const services = [
   },
   {
     icon: '🏔️',
-    title: '高度近視專科配鏡',
+    title: '高度近視配鏡',
     subtitle: '-6.00D 以上的精密工程',
     duration: '驗光 + 諮詢約 60 分鐘',
     items: [
@@ -145,7 +145,7 @@ const services = [
       '鏡架前傾角與鼻托高度精調',
     ],
     tag: '高近視族群',
-    note: '每 1mm 頂點距離誤差 ≈ 0.25D 實際度數差異',
+    note: '-6.00D 的鏡片，頂點距離每差 1mm，有效度數約差 0.04D；度數越高差越多',
     href: '/guide/aniseikonia/',
     linkText: '兩眼度數差很多？先看不等像這篇',
   },
@@ -173,7 +173,7 @@ const services = [
     subtitle: '搞懂你的眼睛，再做決定',
     duration: '約 20–30 分鐘',
     items: [
-      '現有眼鏡處方解讀',
+      '現有眼鏡度數解讀',
       '不同鏡片方案比較說明',
       '舊鏡架回收 / 換片評估',
       '兒童近視追蹤方式說明與轉介眼科時機',
@@ -204,7 +204,7 @@ const faqs = [
   },
   {
     q: '高度近視配眼鏡有哪些注意事項？',
-    a: '高度近視（-6.00D 以上）需特別注意：鏡框尺寸選擇（越小鏡片越薄）、折射率選擇（建議 1.74）、頂點距離精準測量（每 1mm 誤差約影響 0.25D 實際度數）。能見度針對高度近視族群提供完整的鏡片設計諮詢與精密調整。',
+    a: '高度近視（-6.00D 以上）需特別注意：鏡框尺寸選擇（越小鏡片越薄）、折射率選擇（建議 1.74）、頂點距離精準測量（-6.00D 的鏡片每差 1mm，有效度數約差 0.04D，度數越高差越多）。能見度針對高度近視族群提供完整的鏡片設計諮詢與精密調整。',
   },
 ];
 ---
@@ -281,7 +281,7 @@ const faqs = [
               <img src="/images/instrument-corneal-map.webp" alt="TOPCON CA-800 角膜地形圖暨高階像差儀" width="400" height="240" class="w-full h-44 object-cover" loading="lazy" />
             </picture>
             <div class="pt-4">
-              <h3 class="font-serif text-brand-ink mb-1" style="font-size:16px;font-weight:400">TOPCON CA-800 角膜地形圖暨像差儀</h3>
+              <h3 class="font-serif text-brand-ink mb-1" style="font-size:16px;font-weight:400">TOPCON CA-800 角膜地形圖暨像差儀（新莊店）</h3>
               <p class="text-brand-ink-3" style="font-size:14px;line-height:1.6">精密量測角膜弧度，RGP 驗配與高度散光評估的基礎數據。</p>
             </div>
           </div>
@@ -292,7 +292,7 @@ const faqs = [
             </picture>
             <div class="pt-4">
               <h3 class="font-serif text-brand-ink mb-1" style="font-size:16px;font-weight:400">綜合驗光儀</h3>
-              <p class="text-brand-ink-3" style="font-size:14px;line-height:1.6">主客觀驗光雙重確認，確立每位顧客的精準處方。</p>
+              <p class="text-brand-ink-3" style="font-size:14px;line-height:1.6">主客觀驗光雙重確認，確認每位顧客的度數。</p>
             </div>
           </div>
         </div>

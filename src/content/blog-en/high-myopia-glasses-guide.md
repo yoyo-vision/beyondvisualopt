@@ -32,9 +32,11 @@ The closer a lens sits to your eye, the stronger its effective correction; the f
 
 | Measured Rx | Vertex distance 12mm | Vertex distance 8mm | Difference |
 |---------|-------------|------------|------|
-| -6.00D | -6.00D | -5.75D | 0.25D |
-| -10.00D | -10.00D | -9.50D | 0.50D |
-| -14.00D | -14.00D | -13.25D | 0.75D |
+| -6.00D | -6.00D | approx. -5.86D | approx. 0.14D |
+| -10.00D | -10.00D | approx. -9.62D | approx. 0.38D |
+| -14.00D | -14.00D | approx. -13.26D | approx. 0.74D |
+
+Formula: Fc = F ÷ (1 − dF), where F is the measured power and d is how far the lens moves toward the eye, in meters. For -6.00D: -6.00 ÷ [1 − 0.004 × (-6.00)] = -6.00 ÷ 1.024 ≈ -5.86D, a difference of about 0.14D. Moving the same 4mm at -14.00D changes it by about 0.74D.
 
 The same prescription delivers a different correction depending on where the lens sits. **A high myopia prescription must be recalculated for the actual wearing position of your chosen frame.**
 
@@ -64,9 +66,9 @@ Many people assume high myopia automatically means picking the highest refractiv
 |--------|------|------|---------|
 | 1.60 | Lower cost, less aberration | Thicker | Under -4.00D |
 | 1.67 | Best balance of thinness and aberration | — | -4.00D to -8.00D |
-| 1.74 | Thinnest | Lower Abbe number (more chromatic dispersion), higher price | -8.00D and above |
+| 1.74 | The highest index among the brands we carry | Highest price, diminishing returns | -8.00D and above |
 
-The **Abbe number** measures how much a lens disperses light into colors — the higher the value, the less dispersion and the clearer the image. The Abbe number of 1.74 lenses (around 33) is slightly lower than 1.67 (around 32) in practical terms, meaning theoretically more dispersion, though modern coatings have greatly reduced the real-world impact.
+The **Abbe number** measures how much a lens disperses light into colors — the higher the value, the less dispersion. One thing often stated backwards: **the Abbe number does not necessarily drop as the index goes up.** Based on manufacturers' published specifications for today's mainstream high-index materials, 1.67 and 1.74 are quite close (roughly 31–33, depending on the material). So "1.74 will definitely show more color fringing than 1.67" does not hold.
 
 The bottom line: **choose your refractive index based on your prescription, frame size, face shape, and visual needs — higher isn't automatically better.**
 
@@ -108,5 +110,7 @@ Yes — contact lenses come in different materials, including soft and rigid (RG
 **Q: Where can I get a precision fitting for high myopia in Xinzhuang or Banqiao (New Taipei)?**
 
 At Beyond Visual Optometry in Xinzhuang, our licensed optometry staff provide complete high myopia fitting evaluations, including vertex distance compensation calculations, precise optical center positioning, frame suitability assessment, and post-fitting follow-up. Our Banqiao branch also offers consultations and fittings. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
+
+---
 
 Fitting glasses for high myopia should never be "pick a 1.74 lens and go home." Every detail deserves careful attention — because your eyes depend on that pair of glasses for 16 hours a day.

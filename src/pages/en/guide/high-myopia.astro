@@ -138,9 +138,9 @@ const schema = {
           </thead>
           <tbody class="text-brand-ink-2 bg-white">
             {[
-              ['-6.00D', '-6.00D', '-5.75D', '0.25D'],
-              ['-10.00D', '-10.00D', '-9.50D', '0.50D'],
-              ['-14.00D', '-14.00D', '-13.25D', '0.75D'],
+              ['-6.00D', '-6.00D', 'approx. -5.86D', 'approx. 0.14D'],
+              ['-10.00D', '-10.00D', 'approx. -9.62D', 'approx. 0.38D'],
+              ['-14.00D', '-14.00D', 'approx. -13.26D', 'approx. 0.74D'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
                 {row.map((cell, i) => (
@@ -151,6 +151,7 @@ const schema = {
           </tbody>
         </table>
       </div>
+      <p class="text-brand-ink-3 mt-4" style="font-size:14px;line-height:1.7">Formula: Fc = F ÷ (1 − dF), where F is the measured power and d is how far the lens moves toward the eye, in meters. For -6.00D: -6.00 ÷ [1 − 0.004 × (-6.00)] = -6.00 ÷ 1.024 ≈ -5.86D, a difference of about 0.14D. Moving the same 4mm at -14.00D changes it by about 0.74D.</p>
       <div class="space-y-5 text-brand-ink-2 mt-8" style="font-size:17px;line-height:1.85">
         <p>The same prescription gives different actual correction at different wearing positions. This is why "the prescription is clearly right, but distance vision is a bit foggy once fitted" is especially common in high myopia — <strong>a high-myopia prescription must have vertex-distance compensation calculated for the actual frame wearing position</strong>.</p>
         <p>Another amplification effect is the <strong>prism effect</strong>: the visual shift produced when the line of sight strays from the lens's optical center, with a magnitude equal to the power times the decentration. The same 3mm optical-center offset produces only 0.6Δ at -2.00D — imperceptible to most — but 2.4Δ at -8.00D, enough to disrupt binocular fusion and cause dizziness. So high-myopia fitting must precisely measure monocular PD and pupil height to align the optical center with your visual axis.</p>
@@ -180,7 +181,7 @@ const schema = {
             {[
               ['1.60', 'Low cost, less aberration, good dispersion control', 'Noticeably thicker edges at high prescriptions', 'Below -4.00D'],
               ['1.67', 'The best balance of thinness and optical quality', 'Still thick at very high prescriptions', '-4.00D to -8.00D'],
-              ['1.74', 'The thinnest among mass-produced lenses today', 'Lower Abbe number (more dispersion), higher price', 'Above -8.00D'],
+              ['1.74', 'The highest index among the brands we carry', 'Highest price, diminishing returns', 'Above -8.00D'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
                 {row.map((cell, i) => (
