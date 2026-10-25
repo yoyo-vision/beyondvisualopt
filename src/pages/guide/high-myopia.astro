@@ -32,11 +32,11 @@ const faqs = [
   },
   {
     q: '近視幾度算高度近視？',
-    a: '一般以近視 600 度（-6.00D）以上算高度近視，國際近視研究學會（IMI）2019 年發表的定義，就是用 -6.00D 當分界。到了這個度數，頂點距離、單眼瞳距、配鏡高度只要差一點，戴起來就有感；眼睛健康方面，依國健署與中華民國眼科醫學會公開衛教資料，高度近視日後發生視網膜病變的風險也比較高，請定期給眼科醫師檢查。',
+    a: '一般以近視 600 度（-6.00D）以上算高度近視，國際近視研究學會（IMI）2019 年發表的定義，就是用 -6.00D 當分界。到了這個度數，頂點距離、單眼瞳距、配鏡高度只要差一點，戴起來就有感；眼睛健康方面，依國健署公開衛教資料與美國眼科醫學會 EyeWiki，高度近視日後發生視網膜病變的風險也比較高，請定期給眼科醫師檢查。',
   },
   {
     q: '高度近視多久要給眼科檢查一次？',
-    a: '國健署「護眼 123」建議每年檢查視力 1 到 2 次；高度近視的人，眼底要不要一併檢查、多久檢查一次，由眼科醫師依你的眼睛狀況決定。飛蚊或閃光突然變多，不必等到下次回診，請當天就醫。度數和雙眼視覺是驗光的範圍，眼科這一趟省不掉。',
+    a: '高度近視的人多久檢查一次、要不要做眼底檢查，都由眼科醫師依你的眼睛狀況決定。飛蚊或閃光突然變多，不必等到下次回診，請當天就醫。度數和雙眼視覺是驗光的範圍，眼科這一趟省不掉。',
   },
   {
     q: '新莊、板橋哪裡可以配高度近視眼鏡？',
@@ -275,7 +275,7 @@ const schema = {
       <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">600 度是一個數字，也是一顆被拉長的眼球</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
         <p>頂點距離換算、單眼瞳距、把框挑小，這一頁前面做的事，全都在顧光線穿過鏡片以後落在哪裡，對付的是度數這個數字。可是度數會這麼深，通常是眼球前後拉長了，視網膜也就被撐得比較薄。鏡片動的是光，眼球還是那顆眼球。</p>
-        <p>依國健署與中華民國眼科醫學會公開衛教資料，高度近視的人，日後發生視網膜剝離、黃斑部病變、青光眼的風險比一般人高。這幾種病剛開始常常沒什麼感覺，請定期給眼科醫師檢查。</p>
+        <p>依國健署公開衛教資料與美國眼科醫學會 EyeWiki，高度近視的人，日後發生視網膜剝離、黃斑部病變、青光眼的風險比一般人高。這幾種病剛開始常常沒什麼感覺，請定期給眼科醫師檢查。</p>
         <p>有幾種變化不要等：飛蚊或閃光突然變多，請當天就醫；視野突然缺了一角、突然看不清楚，也請儘速到眼科。其他症狀該先去哪裡，<a href="/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">掛眼科還是找驗光所？症狀分流指南</a>裡有一張 30 秒的分流。驗光時如果鏡片怎麼加減，矯正視力都推不上去，驗光人員會依《驗光人員法》第十二條第三項，請你轉給眼科醫師檢查。</p>
         <p>還在念高中、度數又深的話，<a href="/blog/high-school-vision-stability/" class="text-brand-gold underline">高中生視力：十五歲之後，沒有人再提醒你去看眼科</a>講的就是接下來這幾年。</p>
       </div>
@@ -332,8 +332,8 @@ const schema = {
       <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
         {[
           { t: 'Flitcroft DI, et al. IMI – Defining and Classifying Myopia. Investigative Ophthalmology & Visual Science. 2019（高度近視以 -6.00D 為界的定義）', u: 'https://doi.org/10.1167/iovs.18-25957' },
-          { t: '衛生福利部國民健康署：視力保健（高度近視與眼睛疾病的衛教）', u: 'https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45' },
-          { t: '中華民國眼科醫學會（高度近視與眼底檢查的公開衛教）', u: 'https://www.oph.org.tw/' },
+          { t: '衛生福利部國民健康署：「近視是疾病 打敗惡視力」宣導海報，2018（高度近視易產生白內障、青光眼、黃斑部病變，甚至視網膜剝離）', u: 'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=864&pid=10140' },
+          { t: 'American Academy of Ophthalmology EyeWiki：Pathologic Myopia (Myopic Degeneration)（眼軸拉長使視網膜、脈絡膜、鞏膜變薄）；Retinal Detachment（高度近視為裂孔性視網膜剝離風險因子）；Primary Open-Angle Glaucoma（近視為風險因子）', u: 'https://eyewiki.org/Pathologic_Myopia_(Myopic_Degeneration)' },
           { t: 'Jalie M. The Principles of Ophthalmic Lenses. 5th ed. Association of British Dispensing Opticians（頂點距離換算 Fc＝F÷(1−dF)、Prentice 稜鏡公式、鏡片厚度與折射率）', u: '' },
           { t: '能見度：頂點距離是什麼？（換算表與隱形眼鏡度數換算）', u: '/blog/vertex-distance/' },
           { t: '能見度：1.60、1.67、1.74 怎麼選？（折射率度數區間）', u: '/blog/lens-index-160-vs-167-vs-174/' },
@@ -344,7 +344,7 @@ const schema = {
             : r.t}</li>
         ))}
       </ol>
-      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">頂點距離、稜鏡、厚薄這幾組數字，用的都是上列的光學公式；高度近視的定義出自國際近視研究學會；眼睛疾病的風險依國健署與中華民國眼科醫學會公開衛教資料，每年檢查視力 1 到 2 次出自國健署「護眼 123」，眼底檢查多久一次以眼科醫師的判斷為準。兩店量哪些項目、取件幾個工作天、CA-800 和裂隙燈各在哪一間，是能見度門市逐項核對過的。涉及眼睛疾病的診斷與治療，請由眼科醫師評估。最後更新：2026 年 10 月 24 日。</p>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">頂點距離、稜鏡、厚薄這幾組數字，用的都是上列的光學公式；高度近視的定義出自國際近視研究學會；眼睛疾病的風險依國健署公開衛教資料與美國眼科醫學會 EyeWiki；多久檢查一次，以眼科醫師的判斷為準。兩店量哪些項目、取件幾個工作天、CA-800 和裂隙燈各在哪一間，是能見度門市逐項核對過的。涉及眼睛疾病的診斷與治療，請由眼科醫師評估。最後更新：2026 年 10 月 25 日。</p>
     </div>
   </section>
 

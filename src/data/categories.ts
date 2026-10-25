@@ -76,9 +76,9 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'high-myopia', name: '高度近視', keyword: '高度近視眼鏡', guide: '/guide/high-myopia/',
     subs: [
-      { slug: 'fitting', name: '高度近視配鏡', guide: '/guide/high-myopia/', posts: ['high-myopia-glasses-guide', 'high-myopia-lens-brand-choice'] },
+      { slug: 'fitting', name: '高度近視配鏡', guide: '/guide/high-myopia/', posts: ['high-myopia-glasses-guide', 'high-myopia-lens-brand-choice', 'high-myopia-eye-check'] },
       { slug: 'astigmatism', name: '散光與變形', posts: ['astigmatism-glasses-distortion', 'myopia-vs-astigmatism'] },
-      { slug: 'anisometropia', name: '兩眼度數差很多', guide: '/guide/aniseikonia/', posts: [] },
+      { slug: 'anisometropia', name: '兩眼度數差很多', guide: '/guide/aniseikonia/', posts: ['anisometropia-glasses', 'cataract-one-eye-glasses'] },
     ],
   },
   {

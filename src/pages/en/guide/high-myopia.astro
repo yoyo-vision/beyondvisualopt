@@ -36,11 +36,11 @@ const faqs = [
   },
   {
     q: 'How strong does myopia have to be to count as high myopia?',
-    a: "High myopia is generally defined as -6.00D or stronger; the International Myopia Institute (IMI) used -6.00D as the cut-off in its 2019 definitions. At this level, small errors in vertex distance, monocular PD and fitting height are all magnified by the power. As for eye health, according to public health-education materials from Taiwan's Health Promotion Administration and the Ophthalmological Society of Taiwan, high myopia carries a higher later risk of retinal disease, so please have regular check-ups with an ophthalmologist.",
+    a: "High myopia is generally defined as -6.00D or stronger; the International Myopia Institute (IMI) used -6.00D as the cut-off in its 2019 definitions. At this level, small errors in vertex distance, monocular PD and fitting height are all magnified by the power. As for eye health, according to public health-education materials from Taiwan's Health Promotion Administration and the American Academy of Ophthalmology's EyeWiki, high myopia carries a higher later risk of retinal disease, so please have regular check-ups with an ophthalmologist.",
   },
   {
     q: 'How often should someone with high myopia see an ophthalmologist?',
-    a: "Taiwan's Health Promotion Administration's \"Eye Care 1-2-3\" guidance recommends a vision check once or twice a year; for high myopia, whether the fundus should be examined as well, and how often, is decided by your ophthalmologist based on your eyes. If floaters or flashes suddenly increase, don't wait for the next appointment — see a doctor the same day. A vision exam measures your prescription and binocular vision; it cannot replace an ophthalmologist's examination.",
+    a: "For high myopia, how often to be examined, and whether the fundus should be examined as well, is decided by your ophthalmologist based on your eyes. If floaters or flashes suddenly increase, don't wait for the next appointment — see a doctor the same day. A vision exam measures your prescription and binocular vision; it cannot replace an ophthalmologist's examination.",
   },
   {
     q: 'Where in Xinzhuang or Banqiao can I get high-myopia glasses?',
@@ -302,7 +302,7 @@ const schema = {
       <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">-6.00D is a number. It is also an eyeball that has been stretched.</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
         <p>Vertex-distance conversion, monocular PD, choosing a smaller frame: everything earlier on this page is about where light lands after it passes through the lens. It deals with the power, which is a number. But a power this strong usually means the eyeball has grown longer from front to back, and the retina has been stretched thinner along with it. A lens moves the light; the eye is still the same eye.</p>
-        <p>According to public health-education materials from Taiwan's Health Promotion Administration and the Ophthalmological Society of Taiwan, people with high myopia carry a higher later risk of retinal detachment, macular degeneration and glaucoma than other people. These conditions often bring no obvious symptoms at first, so please have regular check-ups with an ophthalmologist.</p>
+        <p>According to public health-education materials from Taiwan's Health Promotion Administration and the American Academy of Ophthalmology's EyeWiki, people with high myopia carry a higher later risk of retinal detachment, macular degeneration and glaucoma than other people. These conditions often bring no obvious symptoms at first, so please have regular check-ups with an ophthalmologist.</p>
         <p>Some changes should not wait. If floaters or flashes suddenly increase, see a doctor the same day; if part of your field of vision suddenly goes missing, or your vision suddenly blurs, please see an ophthalmologist as soon as possible. For where to go first with other symptoms, <a href="/en/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">Eye Doctor or Optometrist? A Symptom Triage Guide</a> has a 30-second triage. If, during the exam, corrected vision will not come up however the lenses are changed, licensed optometry staff will refer you to an ophthalmologist under Article 12, Paragraph 3 of Taiwan's Optometrists Act.</p>
       </div>
     </div>
@@ -358,8 +358,8 @@ const schema = {
       <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
         {[
           { t: 'Flitcroft DI, et al. IMI – Defining and Classifying Myopia. Investigative Ophthalmology & Visual Science. 2019 (high myopia defined at -6.00D)', u: 'https://doi.org/10.1167/iovs.18-25957' },
-          { t: 'Health Promotion Administration, Ministry of Health and Welfare: vision health (in Chinese)', u: 'https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45' },
-          { t: 'The Ophthalmological Society of Taiwan (public health education on high myopia, in Chinese)', u: 'https://www.oph.org.tw/' },
+          { t: 'Health Promotion Administration, Ministry of Health and Welfare: "Myopia is a disease" public-education poster, 2018 (high myopia and cataract, glaucoma, macular degeneration and retinal detachment; in Chinese)', u: 'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=864&pid=10140' },
+          { t: 'American Academy of Ophthalmology EyeWiki: Pathologic Myopia (Myopic Degeneration); Retinal Detachment; Primary Open-Angle Glaucoma', u: 'https://eyewiki.org/Pathologic_Myopia_(Myopic_Degeneration)' },
           { t: 'Jalie M. The Principles of Ophthalmic Lenses. 5th ed. Association of British Dispensing Opticians (vertex-distance conversion Fc = F ÷ (1 − dF), Prentice\'s rule, lens thickness and index)', u: '' },
           { t: 'Beyond Visual: What Is Vertex Distance? (conversion table)', u: '/en/blog/vertex-distance/' },
           { t: 'Optometrists Act (Laws & Regulations Database of the ROC, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
@@ -369,7 +369,7 @@ const schema = {
             : r.t}</li>
         ))}
       </ol>
-      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">The vertex-distance, prism and thickness figures were calculated with the optical formulas above; the definition of high myopia comes from the International Myopia Institute; the eye-disease risks follow public health-education materials from Taiwan's Health Promotion Administration and the Ophthalmological Society of Taiwan, the once-or-twice-a-year vision check comes from the HPA's "Eye Care 1-2-3" guidance, and how often the fundus is examined is for the ophthalmologist to decide. What both stores measure, pickup times, and which store has the CA-800 or the slit lamp were confirmed by our stores before being written here. Diagnosis and treatment of eye disease should be assessed by an ophthalmologist. Last updated: October 24, 2026.</p>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">The vertex-distance, prism and thickness figures were calculated with the optical formulas above; the definition of high myopia comes from the International Myopia Institute; the eye-disease risks follow public health-education materials from Taiwan's Health Promotion Administration and the American Academy of Ophthalmology's EyeWiki, and how often the eyes are examined is for the ophthalmologist to decide. What both stores measure, pickup times, and which store has the CA-800 or the slit lamp were confirmed by our stores before being written here. Diagnosis and treatment of eye disease should be assessed by an ophthalmologist. Last updated: October 25, 2026.</p>
     </div>
   </section>
 
