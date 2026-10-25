@@ -85,7 +85,7 @@ At high powers (myopia of -4.00 D or more), the vertex distance has to be conver
 
 **Q: If I already have a glasses prescription, do I still need a separate contact lens fitting?**
 
-Strictly speaking, yes. Confirming the astigmatism power and axis, plus checking your vision after a trial fitting, all require additional assessment. Buying contacts straight from your glasses prescription can leave you with a prescription that's slightly off.
+Strictly speaking, yes. Contact lens power has to be measured separately, and if you have astigmatism the cylinder power and axis need confirming again. Most regular soft lenses are trial-fitted first to check your vision; we don't keep trial lenses for soft toric or multifocal contacts, so our optometry staff assess those before deciding. Buying contacts straight from your glasses prescription can leave you with a prescription that's slightly off.
 
 **Q: My eyes feel dry when I wear contacts — what can I do?**
 

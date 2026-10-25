@@ -102,7 +102,7 @@ Designed specifically for "working indoors at a fixed distance for long periods,
 
 ## Solution 4: Multifocal Contact Lenses
 
-Soft multifocal contact lenses (such as presbyopia contacts from Alcon or J&J) use a concentric-ring or progressive design, allowing the cornea to receive light from both near and far at once, with the brain choosing which focal distance to prioritize.
+Soft multifocal contact lenses use a concentric-ring or progressive design, allowing the cornea to receive light from both near and far at once, with the brain choosing which focal distance to prioritize. Both our stores can fit multifocal contact lenses, but we don't keep trial lenses for this type, so our optometry staff need to assess whether they suit you first.
 
 **Pros:**
 - Completely invisible that you're wearing presbyopia correction

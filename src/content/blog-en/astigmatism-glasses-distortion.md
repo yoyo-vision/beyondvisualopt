@@ -83,7 +83,7 @@ Most people feel the distortion easing within a few days, and by about a week it
 
 **Q: Are contact lenses or glasses better for astigmatism?**
 
-High astigmatism doesn't rule out contact lenses. Soft toric lenses rely on staying oriented on the eye to keep the axis aligned; rigid gas permeable (RGP) lenses keep their own shape, so with high astigmatism or an irregular corneal surface, the correction stays on axis more reliably, at the cost of an adaptation period. Which suits you depends on your cornea, tear film and prescription, confirmed by a trial fitting; both our stores fit RGP lenses. Under Article 12 of Taiwan's Optometrists Act, contact lens fitting for anyone aged 15 or under must be done under an ophthalmologist's guidance, and children under 6 are not fitted.
+High astigmatism doesn't rule out contact lenses. Soft toric lenses rely on staying oriented on the eye to keep the axis aligned; rigid gas permeable (RGP) lenses keep their own shape, so with high astigmatism the correction stays on axis more reliably, at the cost of an adaptation period. Which suits you depends on your prescription and how the lens sits, assessed by our optometry staff; RGP can be trial-fitted in store, and both our stores fit it; we have no trial lenses for soft toric. Under Article 12 of Taiwan's Optometrists Act, contact lens fitting for anyone aged 15 or under must be done under an ophthalmologist's guidance, and children under 6 are not fitted; we currently do not fit contact lenses for children aged 15 or under, so please see an ophthalmologist first.
 
 **Q: Does astigmatism keep getting worse?**
 

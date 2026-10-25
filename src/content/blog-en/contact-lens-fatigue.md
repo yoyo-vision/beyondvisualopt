@@ -74,12 +74,12 @@ Contact lenses come in more than one material — soft dailies, soft monthlies, 
 
 ---
 
-## Suggestions for Improving Your Contact Lens Wear
+## Five Things to Do First When Your Contacts Feel Uncomfortable
 
 Start by adjusting these areas:
 
 **1. Confirm your lens material**
-If your current soft lenses are HEMA material (conventional hydrogel), consider upgrading to silicone hydrogel. Oxygen transmissibility improves substantially, and the dry feeling usually eases too.
+Soft lenses aren't all made of the same material, and water content and oxygen permeability differ from one to the next. Which one suits you depends on how many hours a day you wear them, where you spend those hours and whether your eyes feel dry by the afternoon; our optometry staff work through that with you at the fitting. Please don't switch to a different lens on your own just to see what happens.
 
 **2. Shorten your wearing time**
 Try to keep daily wear under 10–12 hours. Switch to glasses once you get home after your commute, giving your eyes time to "breathe" at home.

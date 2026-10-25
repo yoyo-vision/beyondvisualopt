@@ -20,7 +20,7 @@ const canonicalUrl = 'https://beyondvisualopt.com/en/guide/rgp-contact-lens/';
 const faqs = [
   {
     q: 'What is an RGP contact lens, and how does it differ from an ordinary soft lens?',
-    a: 'RGP stands for Rigid Gas Permeable — a rigid, oxygen-permeable contact lens. It is harder and smaller in diameter than a soft lens, covering only the central corneal area, and the material has high oxygen permeability. The biggest difference from soft lenses is this: an RGP lens holds its shape, and a layer of tear film forms between the lens and the cornea when worn, so for people with high astigmatism or an irregularly shaped cornea the visual quality is usually more stable and clear. Soft lenses, on the other hand, win on early comfort and quick adaptation. Neither is absolutely better; who each suits depends on corneal condition, refractive status, and lifestyle, and requires an in-person assessment by optometry personnel.',
+    a: 'RGP stands for Rigid Gas Permeable — a rigid, oxygen-permeable contact lens. It is harder and smaller in diameter than a soft lens, covering only the central corneal area, and the material has high oxygen permeability. The biggest difference from soft lenses is this: an RGP lens holds its shape, and a layer of tear film forms between the lens and the cornea when worn, so for people with high astigmatism the visual quality is usually more stable and clear. Soft lenses, on the other hand, win on early comfort and quick adaptation. Neither is absolutely better; who each suits depends on corneal condition, refractive status, and lifestyle, and requires an in-person assessment by optometry personnel.',
   },
   {
     q: 'Is RGP the same thing as orthokeratology (Ortho-K)?',
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Who might be suitable for considering RGP?',
-    a: 'Situations in which an RGP assessment is commonly suggested include: high astigmatism (generally around 2.00D / 200 degrees or above, though this still depends on individual assessment), a less regular corneal shape, wanting stable and clear visual quality, or dryness and discomfort after wearing soft lenses. But "might be suitable" is not the same as "definitely suitable" — the final answer depends on corneal and lens-fit assessment (the Xinzhuang store uses a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store evaluates lens fit with a slit lamp), tear film status, prescription, and daily routine, assessed in person by optometry personnel and confirmed through a trial fitting. Nothing decided without measurement counts.',
+    a: 'Situations in which an RGP assessment is commonly suggested include: high astigmatism (generally around 2.00D / 200 degrees or above, though this still depends on individual assessment), soft toric lenses that keep drifting off axis, wanting stable and clear visual quality, or dryness and discomfort after wearing soft lenses. But "might be suitable" is not the same as "definitely suitable" — the final answer depends on corneal and lens-fit assessment (the Xinzhuang store uses a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store evaluates lens fit with a slit lamp), tear film status, prescription, and daily routine, assessed in person by optometry personnel and confirmed through a trial fitting. Nothing decided without measurement counts. Lenses needed for a diseased or post-surgical cornea (for example keratoconus or after a corneal graft), on the other hand, are medical-purpose lenses: please have them assessed by an ophthalmologist, as they fall outside the ordinary contact lens fitting we do in store.',
   },
   {
     q: 'Does RGP need an adaptation period? Will it feel like something is in my eye at first?',
@@ -110,9 +110,9 @@ const schema = {
     <div class="max-w-4xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
       <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP means a rigid gas permeable contact lens — it holds its shape and has high oxygen permeability, so for people with high astigmatism or a less regular cornea the visual quality is usually more stable and clear.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP means a rigid gas permeable contact lens — it holds its shape and has high oxygen permeability, so for people with high astigmatism the visual quality is usually more stable and clear.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP is not orthokeratology (Ortho-K): RGP is worn during the day to correct your current vision; Ortho-K is worn at night and reshapes the cornea, a different category of medical procedure. What Beyond Visual provides is daily-wear RGP, not orthokeratology.</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Groups commonly suggested for assessment: high astigmatism (around 2.00D / 200 degrees or above, still subject to individual assessment), an irregular corneal shape, and those who find soft lenses dry and uncomfortable. Whether it suits you must be confirmed by corneal and lens-fit assessment and an in-person trial fitting.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Groups commonly suggested for assessment: high astigmatism (around 2.00D / 200 degrees or above, still subject to individual assessment), soft toric lenses that do not stay on axis, and those who find soft lenses dry and uncomfortable. Whether it suits you must be confirmed by corneal and lens-fit assessment and an in-person trial fitting.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Contact lenses are a medical device: under Article 12 of Taiwan’s Optometrists Act, fitting for those aged fifteen and under must be under the guidance of an ophthalmologist, and no fitting is provided for children under six; any corneal abnormality found during fitting is always referred to an ophthalmologist.</span></li>
       </ul>
     </div>
@@ -140,7 +140,7 @@ const schema = {
       <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">RGP: a rigid, oxygen-permeable lens that holds its ground</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
         <p>RGP is short for <strong>Rigid Gas Permeable</strong> — a rigid, oxygen-permeable contact lens. Compared with the soft lenses everyone knows, it is harder and smaller in diameter, covering only the central corneal area, and the material has good oxygen permeability.</p>
-        <p>Its most important property is that it <strong>holds its shape</strong>. A soft lens drapes onto the cornea and follows every irregular contour; an RGP lens keeps its own shape, and a layer of tear film forms between lens and cornea when worn. For people with high astigmatism, or a less regular corneal shape, that tear layer plus the lens's own stable optical surface can often deliver more stable, clearer visual quality.</p>
+        <p>Its most important property is that it <strong>holds its shape</strong>. A soft lens drapes onto the cornea and follows every irregular contour; an RGP lens keeps its own shape, and a layer of tear film forms between lens and cornea when worn. For people with high astigmatism, that tear layer plus the lens's own stable optical surface can often deliver more stable, clearer visual quality.</p>
         <p>Of course, a rigid material also means a more noticeable foreign-body sensation early on and a longer adaptation period. It is not "the more premium contact lens" — it is "one option that may be more appropriate in certain situations." Whether it is your cup of tea only becomes clear after an assessment.</p>
       </div>
     </div>
@@ -190,7 +190,7 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         {[
           ['High astigmatism', 'Generally around 2.00D (200 degrees) of astigmatism or above, where visual quality still isn’t stable enough after soft lens or spectacle correction (still subject to individual assessment)'],
-          ['A less regular corneal shape', 'People whose corneal curvature or shape is more unusual, and who need a shape-stable lens to provide a stable optical surface'],
+          ['Soft toric lenses that do not stay on axis', 'Astigmatism correction is directional. If your soft toric lens rotates after a blink and the image floats, a shape-stable rigid lens is worth assessing'],
           ['Wanting stable, clear visual quality', 'Those with high demands on visual stability, willing to invest in a longer adaptation period in exchange for visual quality'],
           ['Dryness and discomfort in soft lenses', 'People who get dry and tired easily during long hours in soft lenses and want to assess other options'],
         ].map(([title, desc]) => (
@@ -289,7 +289,7 @@ const schema = {
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">High astigmatism, or soft lenses you can't keep in? Come in for an assessment</h2>
       <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis and RGP fit assessment, and our optometry personnel will discuss with you whether it suits your corneal condition and the way you use your eyes. This is daily-wear RGP fitting, not orthokeratology. Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.), Banqiao 02-2253-1246.</p>
-      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book an RGP Fit Assessment →</a>
+      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Consultation →</a>
     </div>
   </section>
 
