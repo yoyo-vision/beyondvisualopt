@@ -1,38 +1,46 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES, GUIDE_TITLES } from '../../data/categories';
 
-// 本指南的主題聚落文章（依閱讀順序排列）
-const CLUSTER_SLUGS = [
-  'high-myopia-glasses-guide',
-  'glasses-uncomfortable-3-reasons',
-  'astigmatism-glasses-distortion',
-  'contact-lens-vs-glasses',
-];
+// 2026-10-24 改版（高度近視規劃書 5-1）：指南改做入口，細節讓給聚落文（互搶 A/B/C/D/H/L）；補散光、兩眼度數差很多兩個入口；眼底衛教升為轉；網址不變
+// 聚落：直接讀分類表「高度近視」3 個小分類，依小分類分組，順序＝分類頁閱讀順序
+// 小分類有自己的指南（兩眼度數差很多 → /guide/aniseikonia/）就出指南卡，兩份指南從聚落互連
+const SELF = '/guide/high-myopia/';
+const HM = CATEGORIES.find(c => c.slug === 'high-myopia')!;
 const allPosts = await getCollection('blog');
-const clusterPosts = CLUSTER_SLUGS
-  .map(slug => allPosts.find(p => p.slug === slug))
-  .filter(Boolean);
+const clusterGroups = HM.subs.map(s => ({
+  name: s.name,
+  posts: s.posts.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean),
+  guide: s.guide && s.guide !== SELF ? s.guide : null,
+}));
+// 分類外延伸卡（#36）：頂點距離、折射率、頭暈、不舒服、隱形眼鏡各有正主，不搬進本分類
+const EXTRA_SLUGS = ['vertex-distance', 'lens-index-160-vs-167-vs-174', 'glasses-dizzy', 'glasses-uncomfortable-3-reasons', 'contact-lens-vs-glasses'];
+const extraPosts = EXTRA_SLUGS.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean);
+const ANISO_GUIDE = '/guide/aniseikonia/';
+const RGP_GUIDE = '/guide/rgp-contact-lens/';
 
 const canonicalUrl = 'https://beyondvisualopt.com/guide/high-myopia/';
 
-// 指南頁 FAQ（與聚落文章互補，不重複）
+// 指南頁 FAQ：全站 FAQPage grep 過，不跟聚落文、/services/ 撞題
+// 原 Q2「為什麼邊緣特別厚」歸 brand-choice（互搶 D）；規劃書擬的「高度近視可以做無框或半框嗎」撞 rimless-glasses-guide FAQ「高度近視適合無框眼鏡嗎？」，改「幾度算高度近視」
+// 原 Q3「1.74 值得加價嗎」撞 lens-index-160 FAQ（互搶 C），改眼科檢查頻率（7-3 動筆時 FAQ Q1 要換題，避開本題）
 const faqs = [
   {
     q: '近視 1000 度可以配薄鏡片嗎？',
-    a: '可以，而且是 1.74 高折射率鏡片發揮最大價值的度數區間。但「薄」不是只靠折射率：鏡框尺寸（50mm 以下的小框可明顯減少邊緣厚度）、瞳距與框心距的匹配程度，對成品厚度的影響常常比折射率升級一級更大。1000 度的正確做法是先選對框、量準單眼瞳距，再決定折射率——順序反了，選最貴的鏡片也救不回大框的邊緣厚度。',
+    a: '可以。近視鏡片中間薄、厚度堆在外圈，1000 度要讓外圈薄下來，框挑小一點、框心距貼近你的單眼瞳距、折射率用到 1.74，三件一起做。本店經銷品牌的樹脂鏡片，折射率最高到 1.74。',
   },
   {
-    q: '高度近視鏡片為什麼邊緣特別厚？',
-    a: '近視鏡片是凹透鏡，中心最薄、越往邊緣越厚，度數越高這個落差越大。鏡框越大，鏡片被切割到的位置離光學中心越遠，留下來的就是最厚的邊緣區域。所以同樣 -8.00D，裝進 48mm 小框和 56mm 大框，邊緣厚度可以差很多。減薄的三個手段依效果排序：選小框、讓框心距貼近瞳距、提高折射率。',
+    q: '近視幾度算高度近視？',
+    a: '一般以近視 600 度（-6.00D）以上算高度近視，國際近視研究學會（IMI）2019 年發表的定義，就是用 -6.00D 當分界。到了這個度數，頂點距離、單眼瞳距、配鏡高度只要差一點，戴起來就有感；眼睛健康方面，依國健署與中華民國眼科醫學會公開衛教資料，高度近視日後發生視網膜病變的風險也比較高，請定期給眼科醫師檢查。',
   },
   {
-    q: '1.74 鏡片值得加價嗎？',
-    a: '看度數。-8.00D 以上，1.74 與 1.67 的厚度差異肉眼可見、重量差異戴得出來，加價有感；-4.00D 至 -8.00D 之間，1.67 通常是薄度、阿貝數（色散控制）與價格的最佳平衡點；-4.00D 以下配 1.74 幾乎看不出差異，錢花在鍍膜品質或驗配精度上更實在。順帶澄清一個常被講反的說法：1.74 的阿貝數（色散控制）並沒有比 1.67 差，概略來說 1.67 約 31–32、1.74 約 33，兩者相當接近，所以「1.74 色散一定比較明顯」並不成立。但「折射率越高越好」仍是迷思——要依度數、框型與視覺需求綜合判斷。',
+    q: '高度近視多久要給眼科檢查一次？',
+    a: '國健署「護眼 123」建議每年檢查視力 1 到 2 次；高度近視的人，眼底要不要一併檢查、多久檢查一次，由眼科醫師依你的眼睛狀況決定。飛蚊或閃光突然變多，不必等到下次回診，請當天就醫。度數和雙眼視覺是驗光的範圍，眼科這一趟省不掉。',
   },
   {
     q: '新莊、板橋哪裡可以配高度近視眼鏡？',
-    a: '能見度視覺中心新莊店（比泱驗光所，新北市新莊區中正路419-1號，02-2206-6700）提供高度近視完整配鏡評估：頂點距離補正計算、單眼瞳距與瞳孔高度量測、鏡架適配評估與配戴追蹤。板橋店（能見度眼鏡行 × 能見度驗光所，02-2253-1246）亦提供諮詢與配鏡服務。在其他地方配鏡後不舒服，也可以帶著眼鏡來做第二意見評估。',
+    a: '能見度兩間店都可以：新莊店是能見度視覺中心（比泱驗光所），新北市新莊區中正路 419-1 號，02-2206-6700，捷運新莊站；板橋店是能見度眼鏡行（能見度驗光所），新北市板橋區雙十路二段 47 巷 28 號，02-2253-1246，捷運江子翠站。量測照同一套（頂點距離、單眼瞳距、配鏡高度），驗光一定包含雙眼視覺評估，RGP 硬式隱形眼鏡兩邊也都能驗配。別家配的眼鏡戴得不舒服，一樣可以拿來給驗光人員看。',
   },
 ];
 
@@ -44,8 +52,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "高度近視配鏡完整指南：頂點距離、折射率選擇、鏡框原則與矯正方案比較",
-      "description": "600 度以上配眼鏡為什麼特別容易頭暈？從頂點距離補正的光學原理、1.60/1.67/1.74 折射率取捨、鏡框選擇原則，到框架、隱形眼鏡與 RGP 的比較，YoYo 驗光師一頁講透高度近視配鏡。",
+      "headline": "高度近視配眼鏡要多顧哪幾件事？量測、厚薄、散光、隱形眼鏡和眼底檢查",
+      "dateModified": "2026-10-24",
+      "description": "高度近視配眼鏡要多顧哪幾件事？600 度以上，頂點距離、單眼瞳距、配鏡高度的小誤差會被度數放大；鏡片厚薄先看鏡框和瞳距，再看折射率；散光高、兩眼度數差很多各有要注意的地方；框架、軟式隱形眼鏡、RGP 怎麼選；眼底檢查屬眼科，請定期給眼科醫師檢查。YoYo 驗光師整理，新莊、板橋兩店。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
       "articleSection": "完整指南",
@@ -70,233 +79,205 @@ const schema = {
 };
 ---
 <Layout
-  title="高度近視配鏡完整指南｜600度以上鏡片怎麼選・頂點距離補正｜新莊板橋精密驗光"
-  description="600 度以上配眼鏡為什麼容易頭暈？1.74 值得加價嗎？從頂點距離補正原理、折射率比較、鏡框選擇到 RGP 方案取捨，YoYo 驗光師一頁講透高度近視配鏡。新莊、板橋能見度視覺中心。"
+  title="高度近視配眼鏡｜600度以上要量什麼・鏡片厚薄・隱形眼鏡・眼底檢查｜新莊板橋 能見度視覺中心"
+  description="高度近視配眼鏡要多顧哪幾件事？600 度以上，頂點距離、單眼瞳距、配鏡高度的小誤差會被放大；鏡片厚薄先看鏡框和瞳距再看折射率；散光、兩眼度數差很多、隱形眼鏡與 RGP 怎麼選，以及為什麼要定期給眼科醫師檢查。新莊、板橋能見度視覺中心。"
   enPath="/en/guide/high-myopia/"
   schema={schema}
 >
 
-  <!-- Hero -->
+  <!-- Hero：H1 帶副標；四個名詞對應下面的量測、厚薄、隱形眼鏡、眼底四段（#32 刪「一頁講透」「不是產品型錄」） -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        高度近視配鏡<br /><span class="text-brand-gold">完整指南</span>
+        高度近視配眼鏡要多顧哪幾件事？<br /><span class="text-brand-gold" style="font-size:0.6em">量測、厚薄、散光、隱形眼鏡和眼底檢查</span>
       </h1>
-      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        頂點距離、折射率、鏡框選擇、矯正方案取捨——600 度以上配眼鏡最容易踩的坑，這一頁一次講清楚。由 YoYo 驗光師撰寫，依據臨床驗配實務，不是產品型錄。
+      <p class="text-white/70 max-w-2xl mx-auto mb-8" style="font-size:17px;line-height:1.85">
+        600 度以上的人配眼鏡，要多顧的就那幾件，只是每一件都比較容不下誤差。YoYo 驗光師寫給度數深、正要配新眼鏡的人。
       </p>
+      <a href="/booking/"
+        class="font-sans inline-block bg-brand-gold text-brand-navy font-bold px-8 py-4 hover:bg-brand-gold/90 transition-colors"
+        style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
+      <p class="text-white/50 mt-4" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
     </div>
   </section>
 
-  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <!-- TL;DR 3秒重點（GEO：answer-first，不加標題；#22 度數區間不放這裡，交給 lens-index-160） -->
   <section class="px-6 md:px-16 py-10" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
       <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>600 度以上配鏡的關鍵是光學誤差放大效應：頂點距離、單眼瞳距、瞳孔高度的微小誤差，會被放大成看遠發霧、頭暈與扭曲。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>折射率不是越高越好：1.60 適合 -4.00D 以下、1.67 是 -4~-8D 的平衡點、1.74 適合 -8.00D 以上，還要看鏡框大小與臉型。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>鏡框對厚度的影響常常比折射率更大：選小框、讓框心距貼近瞳距，減薄效果往往比升級一級折射率更有感。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>框架、軟式隱形眼鏡、RGP 各有適用場景；高度近視的隱眼度數需經頂點距離換算，通常比框架眼鏡淺。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>600 度以上，頂點距離、單眼瞳距、配鏡高度的小誤差，會被度數放大。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>鏡片厚薄先看鏡框和瞳距，再看折射率。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>散光高，多一個軸向要對；兩眼度數差很多，左右看到的大小會不同。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>眼底檢查屬於眼科，請定期給眼科醫師檢查。</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 快速導覽 -->
+  <!-- 快速導覽（含起 #why、轉 #retina 錨點） -->
   <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
       {[
-        { label: '為什麼高度數不一樣', href: '#vertex' },
-        { label: '折射率怎麼選', href: '#index' },
-        { label: '鏡框選擇原則', href: '#frame' },
-        { label: '三種矯正方案', href: '#options' },
-        { label: '精密驗配重點', href: '#fitting' },
+        { label: '為什麼不一樣', href: '#why' },
+        { label: '要多量的幾項', href: '#measure' },
+        { label: '鏡片厚薄', href: '#thickness' },
+        { label: '散光高', href: '#astigmatism' },
+        { label: '兩眼度數差很多', href: '#anisometropia' },
+        { label: '框架・隱形眼鏡・RGP', href: '#options' },
+        { label: '門市與預約', href: '#stores' },
+        { label: '數字背後的眼球', href: '#retina' },
         { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
+        { label: '主題文章', href: '#cluster' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
     </div>
   </section>
 
-  <!-- 為什麼高度數配鏡不一樣：頂點距離 -->
-  <section id="vertex" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 起：600 度以上為什麼不一樣（#1 頂點距離表已在第 1 步修正；互搶 B：換算表正主是 vertex-distance，這裡只留一個例子＋連結） -->
+  <section id="why" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">600 度以上配鏡，為什麼跟一般配鏡不一樣？</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">600 度以上配眼鏡，為什麼跟一般人不一樣</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
-        <p>核心原因是<strong>高度數的光學誤差放大效應</strong>。同樣的參數誤差，在 -2.00D 幾乎感覺不到，在 -8.00D 可能變成明顯的視覺扭曲、頭暈或配戴不適。其中影響最大、卻最常被省略的參數，是<strong>頂點距離（Vertex Distance）</strong>——鏡片後表面到角膜頂點的距離。</p>
-        <p>驗光時，綜合驗光儀的頂點距離約 12–13mm；但你實際配戴的鏡架，會因鼻托高度與臉型不同，落在 8mm 到 16mm 之間。鏡片離眼睛越近，實際矯正效果越強；越遠，效果越弱——度數越高，這個差異越顯著：</p>
-      </div>
-      <div class="overflow-x-auto mt-8">
-        <table class="w-full border-collapse" style="font-size:15px">
-          <thead>
-            <tr class="bg-brand-navy text-white">
-              <th class="text-left px-5 py-4 font-semibold">驗光度數</th>
-              <th class="text-left px-5 py-4 font-semibold">頂點距離 12mm</th>
-              <th class="text-left px-5 py-4 font-semibold">頂點距離 8mm 的實效</th>
-              <th class="text-left px-5 py-4 font-semibold">差異</th>
-            </tr>
-          </thead>
-          <tbody class="text-brand-ink-2 bg-white">
-            {[
-              ['-6.00D', '-6.00D', '約 -5.86D', '約 14 度'],
-              ['-10.00D', '-10.00D', '約 -9.62D', '約 38 度'],
-              ['-14.00D', '-14.00D', '約 -13.26D', '約 74 度'],
-            ].map(row => (
-              <tr class="border-b border-brand-ink/8">
-                {row.map((cell, i) => (
-                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="text-brand-ink-3 mt-4" style="font-size:14px;line-height:1.7">換算公式是 Fc＝F ÷（1 − dF），F 是驗光度數，d 是鏡片往眼睛移近的距離（公尺）。以 -6.00D 為例：-6.00 ÷〔1 − 0.004 ×（-6.00）〕＝ -6.00 ÷ 1.024 ≒ -5.86D，差約 0.14D，也就是約 14 度。同樣移近 4mm，到 -14.00D 會差到約 74 度。</p>
-      <div class="space-y-5 text-brand-ink-2 mt-8" style="font-size:17px;line-height:1.85">
-        <p>同一組度數，配戴位置不同，實際矯正效果就不同。這就是為什麼「度數明明沒錯，配好卻看遠有點霧」的情況，在高度近視特別常見——<strong>高度近視的度數，必須依實際鏡架配戴位置做頂點距離補正計算</strong>。</p>
-        <p>另一個放大效應是<strong>稜鏡效應</strong>：視線偏離鏡片光學中心時產生的視覺偏移，強度等於度數乘以偏心量。同樣 3mm 的光學中心偏移，-2.00D 只產生 0.6△、多數人無感；-8.00D 產生 2.4△，足以干擾雙眼融像、造成頭暈。所以高度近視配鏡必須精準量測單眼瞳距與瞳孔高度，讓光學中心對準你的視覺軸。</p>
-      </div>
-      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        重要提醒：高度近視除了配鏡精度，也伴隨較高的視網膜病變風險。這部分屬於眼科醫療範疇，建議每年定期至眼科檢查眼底——配鏡與眼底檢查是兩件事，缺一不可。
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- 折射率選擇 -->
-  <section id="index" class="px-6 md:px-16 py-20 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡片折射率怎麼選：1.60、1.67、1.74 的真實取捨</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">很多人以為高度近視就是直上 1.74，但折射率不是越高越好——薄度、重量與光學品質之間有取捨。</p>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse" style="font-size:15px">
-          <thead>
-            <tr class="bg-brand-navy text-white">
-              <th class="text-left px-5 py-4 font-semibold">折射率</th>
-              <th class="text-left px-5 py-4 font-semibold">優點</th>
-              <th class="text-left px-5 py-4 font-semibold">限制</th>
-              <th class="text-left px-5 py-4 font-semibold">適合度數區間</th>
-            </tr>
-          </thead>
-          <tbody class="text-brand-ink-2">
-            {[
-              ['1.60', '成本低、像差較小、色散控制佳', '度數高時邊緣明顯較厚', '-4.00D 以下'],
-              ['1.67', '薄度與光學品質的最佳平衡點', '極高度數仍嫌厚', '-4.00D 至 -8.00D'],
-              ['1.74', '本店經銷品牌中折射率最高的選項', '價格最高、邊際效益遞減', '-8.00D 以上'],
-            ].map(row => (
-              <tr class="border-b border-brand-ink/8">
-                {row.map((cell, i) => (
-                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div class="space-y-5 text-brand-ink-2 mt-8" style="font-size:17px;line-height:1.85">
-        <p><strong>阿貝數（Abbe Number）</strong>是衡量鏡片色散的指標：數值越高，色散越少、視覺越純淨。這裡有個常被講反的地方：阿貝數並不是折射率越高就一定越低——概略來說 1.67 大約在 31–32，1.74 大約在 33，1.74 反而略高一點點，兩者其實相當接近。所以「1.74 的色散一定比較明顯」並不成立。真正該權衡的是：你的度數需不需要那個薄度，以及你選的鏡框能不能發揮它。</p>
-        <p>對每天戴著眼鏡工作超過 12 小時的 -9.00D 上班族來說，1.74 減下來的重量是鼻樑上一整天的差別；但對 -5.00D 的人來說，同樣的預算放在小一號的鏡框加 1.67，成品往往更薄、更輕、光學品質也更好。<strong>折射率要依度數、鏡框大小、臉型與視覺需求綜合判斷，不是價目表上的等級競賽。</strong></p>
+        <p>200 度和 800 度的人走進驗光室，要做的檢查大致一樣，差別在數字禁不禁得起一點偏差。量的時候差個一兩毫米，200 度的人大概沒感覺；到了 600 度以上，同樣的偏差就可能變成看遠有點霧、戴久了頭暈，或是走路時覺得地板斜了一點。</p>
+        <p>最常見的是<strong>頂點距離</strong>，也就是鏡片後表面到角膜的距離。驗光時，鏡片離眼睛大約 12mm；真正戴上鏡框，會因為鼻托高低和臉型，落在不一樣的位置。套進 Fc＝F ÷（1 − dF） 算一下：-6.00D 的鏡片從 12mm 移到 8mm，有效度數約差 0.14D，也就是約 14 度；同樣移近 4mm，換成 -14.00D，就差到約 74 度。想查自己的度數會差多少，去翻<a href="/blog/vertex-distance/" class="text-brand-gold underline">頂點距離是什麼？</a>的換算表，隱形眼鏡的度數換算也在同一篇。</p>
+        <p>另一個會被度數放大的，是<strong>稜鏡效應</strong>。視線沒有穿過鏡片的光學中心，影像就會被偏開一點，偏多少，看偏心量（公分）跟度數相乘的結果。同樣偏 3mm，-2.00D 是 0.6△，幾乎沒人察覺；-8.00D 是 2.4△，兩眼就得多出點力，才疊得起同一張影像。</p>
       </div>
     </div>
   </section>
 
-  <!-- 鏡框選擇原則 -->
-  <section id="frame" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡框選擇原則：對厚度的影響常常比折射率更大</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">高度近視選框不是純美感問題——框選錯了，最貴的鏡片也救不回來。</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          { level: '框要小、要對稱', desc: '近視鏡片越往邊緣越厚，框越大，切割後留下的邊緣區域越厚、越重、像差越明顯。建議鏡框尺寸 50mm 以下，左右對稱的框型也能讓兩眼鏡片厚度一致，外觀更平衡。', fit: '尺寸' },
-          { level: '框心距貼近瞳距', desc: '瞳距 62mm 卻選了框心距 70mm 的大框，光學中心必須大幅移心，偏心量一大，高度數的稜鏡效應與邊緣厚度同時惡化。選框時就要把瞳距納入考量，不是配鏡時才補救。', fit: '光學' },
-          { level: '板材粗框、穩定貼合', desc: '較粗的板材框緣能修飾鏡片邊緣厚度，視覺上更薄。同時鏡架要服貼不下滑——鏡架一滑，頂點距離就變，高度近視會直接感覺到視覺不穩定。矽膠防滑鼻托或彈性鏡腳是必要考量。', fit: '配戴' },
-        ].map(item => (
-          <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
-            <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
-            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.level}</h3>
-            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        配了眼鏡還是不舒服？有時問題不在度數，而在鏡框與鏡片設計：<a href="/blog/glasses-uncomfortable-3-reasons/" class="text-brand-gold underline">配了眼鏡還是不舒服？度數之外的 3 個原因</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- 三種矯正方案比較 -->
-  <section id="options" class="px-6 md:px-16 py-20 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">框架、軟式隱形眼鏡、RGP：高度近視的三種選擇</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">沒有絕對的好壞，只有適不適合你的眼睛狀況與生活型態。</p>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse" style="font-size:15px">
-          <thead>
-            <tr class="bg-brand-navy text-white">
-              <th class="text-left px-5 py-4 font-semibold">方案</th>
-              <th class="text-left px-5 py-4 font-semibold">高度近視的優勢</th>
-              <th class="text-left px-5 py-4 font-semibold">限制</th>
-              <th class="text-left px-5 py-4 font-semibold">適合對象</th>
-            </tr>
-          </thead>
-          <tbody class="text-brand-ink-2">
-            {[
-              ['框架眼鏡', '散光矯正穩定、無角膜健康風險、配戴時間不受限', '高度數有邊緣像差與重量問題，視野受框架限制', '長時間螢幕工作、乾眼傾向、每日主力配戴'],
-              ['軟式隱形眼鏡', '視野廣、無框架遮蔽，頂點距離趨近於零（度數通常比框架淺）', '高度散光時定位不穩、加重乾眼，建議每日不超過 8–12 小時', '運動、特殊場合，與框架交替使用'],
-              ['RGP 硬式隱形眼鏡', '透氧材質、需個人化訂製', '需 1–3 個月適應期，須專業驗配與定期追蹤', '是否適合需經驗光人員評估角膜與散光狀況後確認'],
-            ].map(row => (
-              <tr class="border-b border-brand-ink/8">
-                {row.map((cell, i) => (
-                  <td class={`px-5 py-4 align-top ${i === 0 ? 'font-semibold text-brand-navy whitespace-nowrap' : ''}`}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        一個常被忽略的細節：高度近視（400 度以上）的隱形眼鏡度數需要經過頂點距離換算，通常比框架眼鏡淺——直接拿框架眼鏡的度數買隱形眼鏡，度數可能過矯，建議經專業驗配確認。
-      </blockquote>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        深入比較：<a href="/blog/contact-lens-vs-glasses/" class="text-brand-gold underline">隱形眼鏡 vs 眼鏡，哪個比較好？</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- 精密驗配流程重點 -->
-  <section id="fitting" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+  <!-- 承 1：要多量的幾項（原深藍「這些量測不能省」縮成一段連 1-1，互搶 A；刪「快速驗光」#6、「定期回店…不是售後客套」#7） -->
+  <section id="measure" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">高度近視驗配，這些量測不能省</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">高度數把每一毫米的誤差都放大好幾倍——快速驗光省掉的每一步，都會變成你臉上的頭暈與扭曲。</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
-        {[
-          ['頂點距離量測與補正計算', '依你實際選定的鏡架配戴位置換算實效度數，-6.00D 以上必做，不是照抄驗光儀上的數字'],
-          ['單眼瞳距（MPD-L / MPD-R）', '左右眼分開量，不是總瞳距除以二——高度數下 1–2mm 的偏心就足以產生可感知的稜鏡效應'],
-          ['瞳孔高度（Fitting Height）', '確保光學中心的垂直位置對準視覺軸，垂直方向的偏心比水平更容易被忽略'],
-          ['散光軸向主觀確認（JCC）', '電腦驗光的軸向只是初始值。軸向偏差會留下殘餘散光：依斜交柱鏡計算，偏差 10° 大約有三分之一的散光沒矯正到。高度數合併散光時必須主觀確認'],
-          ['鏡架適配與框心距評估', '選框階段就比對瞳距與框心距、確認鏡框水平與服貼度——框選錯，後面全部白做'],
-          ['取鏡後配戴追蹤', '鏡架配戴一段時間後會走位，頂點距離與水平度一變，高度近視立刻有感。定期回店調整是流程的一部分，不是售後客套'],
-        ].map(([title, desc]) => (
-          <div class="border-t border-white/10 pt-5">
-            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
-            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
-          </div>
-        ))}
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">高度近視要多量的幾項</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>所以到了 600 度以上，量測要多顧<strong>四項</strong>。頂點距離要跟著你挑的那支框重算；瞳距分成左右兩個數字量，不拿總瞳距除以二；配鏡高度只能在你戴上那支框之後量，框一換就重來。第四項最常被忘掉：現在戴的舊眼鏡也帶來，鏡片驗度儀會把舊鏡片的度數跟光學中心位置讀一遍，新舊兩副才對得起來。</p>
+        <p>每一項怎麼量、量歪一點會怎樣，<a href="/blog/high-myopia-glasses-guide/" class="text-brand-gold underline">高度近視配眼鏡要量哪幾項？</a>拿 -8.00D 的鏡片當例子，每一項都有數字。住中和、還在猶豫要不要乾脆跑去台北配的，那篇講門市的地方也順便交代了。</p>
       </div>
     </div>
   </section>
 
-  <!-- 聚落文章 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 承 2：鏡片厚薄（原「折射率怎麼選」「鏡框選擇原則」兩個 H2 合併；刪折射率表、阿貝數段，度數區間對齊 lens-index-160 #22 互搶 C；
+       刪 50mm 規則句、框心距用詞修正 #27；刪「最佳平衡點」「價格最高」#26；刪「框選錯了，最貴的鏡片也救不回來」#34） -->
+  <section id="thickness" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">深入閱讀：高度近視主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">鏡片厚薄：先看鏡框和瞳距，再看折射率</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">近視鏡片的厚度都堆在外圈，度數越高，堆得越多。下面三張卡，削得掉最多的排在最前面。</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+          <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">尺寸</span>
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">鏡框大小與偏心量</h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">框越寬，鏡片得從離光學中心越遠的地方裁，留下來的正是最厚的那一圈。框心距指的是左右鏡框中心點的距離，它跟你的瞳距相差越多，光學中心偏得越遠，鏡片外側也越厚。48 跟 54 的框各裝同一個度數會各厚多少，去看<a href="/blog/high-myopia-lens-brand-choice/" class="text-brand-gold underline">高度近視要選蔡司還是 HOYA？</a>裡的公式和表。</p>
+        </div>
+        <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+          <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">折射率</span>
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">1.60、1.67、1.74 怎麼選</h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">每往上升一級折射率，邊緣多出來的那段厚度，大約削掉一成。400 度以下多半停在 1.60；400 到 600 度先看框，再決定要不要換 1.67；600 度以上要用 1.74，框得先選小。店裡的樹脂鏡片，最高就到 1.74。三級各薄多少、阿貝數差在哪，見<a href="/blog/lens-index-160-vs-167-vs-174/" class="text-brand-gold underline">1.60、1.67、1.74 怎麼選？</a>。</p>
+        </div>
+        <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
+          <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">配戴</span>
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">板材框緣與鼻托</h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.75">粗一點的板材框緣，能把鏡片側邊的厚度遮掉一部分；鏡片邊緣也可以做倒角、拋光或霧面。框還得坐得穩，一路往鼻頭滑，鏡片離眼睛的距離就一路在變，度數高的人馬上有感。鼻樑低、框容易滑的，挑有可調鼻托的款式，或請驗光人員把鼻托跟鏡腳調好。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 3：散光高（新增聚落入口，接住「散光與變形」2 篇的回連；JCC 卡縮成一句連 astig，互搶 L） -->
+  <section id="astigmatism" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">散光高的人：軸向和變形感</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">度數深的人，驗光單上 CYL 那一欄常常也不是空的。散光鏡片橫的、直的度數不同，多出一個角度要對，剛戴上也比較容易覺得東西歪掉。</p>
+      <div class="space-y-8">
+        <div class="border-t border-brand-ink/10 pt-6">
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">散光眼鏡為什麼會變形</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">橫的、直的放大得不一樣，剛戴上時地板像往一邊傾、門框有點彎，多數是大腦還沒跟上這副鏡片。軸向也得量準。電腦驗光給的軸向是初始值，驗光人員會再用交叉圓柱鏡（JCC）請你比一比，主觀確認。偏 10 度，散光就有大約三分之一沒矯正到。<a href="/blog/astigmatism-glasses-distortion/" class="text-brand-gold underline">散光眼鏡戴起來地板斜、直線彎，是正常的嗎？</a>裡有這個數字的算式，也講了適應期多長還算正常。</p>
+        </div>
+        <div class="border-t border-brand-ink/10 pt-6">
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">近視和散光差在哪</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">近視的光，焦點停在視網膜前方；散光的光，根本聚不成一個點。兩件事可以同時出現在一隻眼睛上，所以驗光單才分成 SPH 一欄、CYL 和 AXIS 兩欄。常被問的兩題，散光是不是近視太深變的、會不會跟著越來越深，<a href="/blog/myopia-vs-astigmatism/" class="text-brand-gold underline">近視和散光差在哪？</a>都回答了。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 4：兩眼度數差很多（新增，兩份指南互連；白內障單眼一句帶過，第 4 步另寫專文） -->
+  <section id="anisometropia" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兩眼度數差很多</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>左右眼度數差得多，兩片鏡片就一厚一薄，透過它們看出去的東西也不一樣大；一低頭看書，兩片鏡片下緣把影像偏開的量也對不上。遇到這種度數，左右影像大小差了多少，驗光人員會先把它量出來，再決定要不要在度數正確的前提下，指定兩片鏡片的基弧與中心厚度。一眼剛做完白內障手術、另一眼還沒做的人，碰到的也是同一件事；手術怎麼排、術後多久能配眼鏡，都聽眼科醫師的。</p>
+        <p>放大率跟哪幾件事有關、戴起來會有哪些感覺、小孩為什麼要先看眼科，另外有一份<a href={ANISO_GUIDE} class="text-brand-gold underline">{GUIDE_TITLES[ANISO_GUIDE]}</a>專門處理。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 5：框架、軟式隱形眼鏡、RGP（原表縮成 H3 ×3；補 §12 #21；刪「無角膜健康風險」「8–12 小時」「1–3 個月」#28；RGP 店別依 9e14b27） -->
+  <section id="options" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">框架、軟式隱形眼鏡、RGP 怎麼選</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">三種各有要讓步的地方。挑哪一種，先看眼睛本身的條件，再看你一天裡眼睛都花在哪。</p>
+      <div class="space-y-8">
+        <div class="border-t border-brand-ink/10 pt-6">
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">框架眼鏡</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">戴脫方便，散光度數也比較穩。度數高的人要接受幾件事：鏡片邊緣比較厚、整副比較重，鏡框外圍的視野有限，看出去的東西也會比實際小一點。</p>
+        </div>
+        <div class="border-t border-brand-ink/10 pt-6">
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">軟式隱形眼鏡</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">貼在角膜上，沒有鏡框擋住視野。高度近視的隱形眼鏡度數要經過頂點距離換算，通常比眼鏡淺，直接拿眼鏡度數去買，容易配得過深。散光高的人，軟式鏡片在眼睛上可能轉動，軸向跟著跑掉。能戴多久、會不會乾，得等驗光人員查過角膜、看過淚液，才給得出建議。依驗光人員法第十二條，十五歲以下者的隱形眼鏡驗配須在眼科醫師指導下為之，未滿六歲者不予驗配。框架和隱形眼鏡怎麼取捨，見<a href="/blog/contact-lens-vs-glasses/" class="text-brand-gold underline">隱形眼鏡 vs 眼鏡，哪個比較好？</a>。</p>
+        </div>
+        <div class="border-t border-brand-ink/10 pt-6">
+          <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">RGP 硬式隱形眼鏡</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.85">RGP 是依角膜形狀訂製的硬式鏡片，散光高的人可以多一個選項，剛開始戴需要一段適應期。兩店都驗配 RGP：新莊店以 TOPCON CA-800 角膜地形圖暨像差儀了解角膜形狀，板橋店以裂隙燈評估鏡片配適。適不適合、要怎麼開始，先看<a href={RGP_GUIDE} class="text-brand-gold underline">{GUIDE_TITLES[RGP_GUIDE]}</a>。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 門市資訊與預約（放在轉之前；兩店對等 #5；鎖死片語：取件後 2 週內主動追蹤、取件後鏡架調整不另外收費；CA-800 只新莊、裂隙燈只板橋） -->
+  <section id="stores" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新莊店 × 板橋店：高度近視配鏡</h2>
+      <div class="space-y-4 text-brand-ink-2 mb-10" style="font-size:17px;line-height:1.85">
+        <p>新莊跟板橋量的是同一套：頂點距離、單眼瞳距、配鏡高度，外加每次都有的雙眼視覺評估。鏡片是蔡司 ZEISS 簽約認證經銷、HOYA 經銷；度數深的鏡片邊緣要倒角、拋光或做霧面，兩店都能處理。</p>
+        <p>完整驗光約 45–60 分鐘；框挑好以後還有幾項要量，所以預約請排 60–90 分鐘。庫存鏡片大約 3–5 個工作天能拿，訂製的約 7–10 個工作天。取件後 2 週內，門市會主動追蹤，確認這副戴下來順不順；在能見度配的眼鏡，取件後的鏡架調整不另外收費。</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {clusterPosts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
-            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
-          </a>
-        ))}
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-xinzhuang-exterior.webp" alt="能見度視覺中心 比泱驗光所 新莊中正路 高度近視配眼鏡" width="1200" height="900" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">新莊店：能見度視覺中心（比泱驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市新莊區中正路 419-1 號，捷運新莊站<br />電話 02-2206-6700<br />YoYo 驗光師主理；驗光師 <a href="/author/chien-yen-ting/" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">錢彥廷</a>（驗師字第 006760 號）<br />TOPCON CA-800 角膜地形圖暨像差儀在這間，每位驗光的顧客都會照</p>
+          </div>
+        </div>
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-banqiao.webp" alt="能見度眼鏡行 能見度驗光所 板橋雙十路二段 高度近視配眼鏡" width="720" height="584" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">板橋店：能見度眼鏡行（能見度驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市板橋區雙十路二段 47 巷 28 號，捷運江子翠站<br />電話 02-2253-1246<br />驗光由持照驗光人員執行<br />RGP 配適在這間以裂隙燈評估</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/booking/"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 轉：600 度是數字也是拉長的眼球（10-24 國文編審：原「配鏡管焦點、視網膜歸眼科」是分工句，同 5 個轉介型；「清楚≠眼底沒事」撞 eye-exam-before-glasses 的轉，已刪；原 blockquote 升上來；主詞是眼科；出處依國健署與中華民國眼科醫學會；
+       刪「配鏡與眼底檢查是兩件事」撞句；突發症狀連 eye-doctor-or-optometrist 不重寫紅旗表；學生連 high-school；7-3 上線後補連結） -->
+  <section id="retina" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">600 度是一個數字，也是一顆被拉長的眼球</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>頂點距離換算、單眼瞳距、把框挑小，這一頁前面做的事，全都在顧光線穿過鏡片以後落在哪裡，對付的是度數這個數字。可是度數會這麼深，通常是眼球前後拉長了，視網膜也就被撐得比較薄。鏡片動的是光，眼球還是那顆眼球。</p>
+        <p>依國健署與中華民國眼科醫學會公開衛教資料，高度近視的人，日後發生視網膜剝離、黃斑部病變、青光眼的風險比一般人高。這幾種病剛開始常常沒什麼感覺，請定期給眼科醫師檢查。</p>
+        <p>有幾種變化不要等：飛蚊或閃光突然變多，請當天就醫；視野突然缺了一角、突然看不清楚，也請儘速到眼科。其他症狀該先去哪裡，<a href="/guide/eye-doctor-or-optometrist/" class="text-brand-gold underline">掛眼科還是找驗光所？症狀分流指南</a>裡有一張 30 秒的分流。驗光時如果鏡片怎麼加減，矯正視力都推不上去，驗光人員會依《驗光人員法》第十二條第三項，請你轉給眼科醫師檢查。</p>
+        <p>還在念高中、度數又深的話，<a href="/blog/high-school-vision-stability/" class="text-brand-gold underline">高中生視力：十五歲之後，沒有人再提醒你去看眼科</a>講的就是接下來這幾年。</p>
       </div>
     </div>
   </section>
@@ -304,7 +285,7 @@ const schema = {
   <!-- FAQ -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">高度近視配鏡常見問題</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
@@ -316,24 +297,118 @@ const schema = {
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="px-6 py-20" style="background:#1a2f4e">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">高度近視配鏡，不該只是「選個 1.74 然後回家」</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的視覺分析，驗光人員會從頂點距離、單眼瞳距到鏡框適配逐項確認——新莊店 02-2206-6700、板橋店 02-2253-1246，兩店皆可預約。</p>
-      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺分析 →</a>
+  <!-- 關於作者與資料來源（E-E-A-T）：作者框照抄已審指南版本；照片用現有門市實拍；CA-800 標新莊店；量頂點距離的實拍尚缺，建議補拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-examination.webp" alt="驗光人員為高度近視顧客驗光 能見度視覺中心 新莊" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">度數先驗準，後面的換算才有依據</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON 綜合驗光儀 新莊比泱驗光所" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">綜合驗光儀：度數與雙眼視覺評估</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-corneal-map.webp" alt="TOPCON CA-800 角膜地形圖暨像差儀 能見度視覺中心新莊店" width="600" height="400" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店的 TOPCON CA-800 角膜地形圖暨像差儀</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'Flitcroft DI, et al. IMI – Defining and Classifying Myopia. Investigative Ophthalmology & Visual Science. 2019（高度近視以 -6.00D 為界的定義）', u: 'https://doi.org/10.1167/iovs.18-25957' },
+          { t: '衛生福利部國民健康署：視力保健（高度近視與眼睛疾病的衛教）', u: 'https://www.hpa.gov.tw/Pages/List.aspx?nodeid=45' },
+          { t: '中華民國眼科醫學會（高度近視與眼底檢查的公開衛教）', u: 'https://www.oph.org.tw/' },
+          { t: 'Jalie M. The Principles of Ophthalmic Lenses. 5th ed. Association of British Dispensing Opticians（頂點距離換算 Fc＝F÷(1−dF)、Prentice 稜鏡公式、鏡片厚度與折射率）', u: '' },
+          { t: '能見度：頂點距離是什麼？（換算表與隱形眼鏡度數換算）', u: '/blog/vertex-distance/' },
+          { t: '能見度：1.60、1.67、1.74 怎麼選？（折射率度數區間）', u: '/blog/lens-index-160-vs-167-vs-174/' },
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2">{r.u
+            ? <a href={r.u} target={r.u.startsWith('http') ? '_blank' : undefined} rel={r.u.startsWith('http') ? 'noopener noreferrer' : undefined} class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a>
+            : r.t}</li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">頂點距離、稜鏡、厚薄這幾組數字，用的都是上列的光學公式；高度近視的定義出自國際近視研究學會；眼睛疾病的風險依國健署與中華民國眼科醫學會公開衛教資料，每年檢查視力 1 到 2 次出自國健署「護眼 123」，眼底檢查多久一次以眼科醫師的判斷為準。兩店量哪些項目、取件幾個工作天、CA-800 和裂隙燈各在哪一間，是能見度門市逐項核對過的。涉及眼睛疾病的診斷與治療，請由眼科醫師評估。最後更新：2026 年 10 月 24 日。</p>
     </div>
   </section>
 
-  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽） -->
+  <!-- 聚落文章：讀分類表 high-myopia 全部小分類，依小分類分組（分組名用 <p>，不佔標題層級）；小分類有自己的指南就出指南卡；另加分類外延伸卡 -->
+  <section id="cluster" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">高度近視主題文章</h2>
+      {clusterGroups.map(g => (
+        <div class="mb-12">
+          <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">{g.name}</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {g.guide && (
+              <a href={g.guide} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+                <span class="bg-brand-gold text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">完整指南</span>
+                <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{GUIDE_TITLES[g.guide]}</h3>
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">左右眼度數差好幾百度，新眼鏡反而戴得更暈：影像大小對不上、低頭看書的稜鏡差，還有小孩為什麼先看眼科。</p>
+              </a>
+            )}
+            {g.posts.map(post => (
+              <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+                <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+                <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+      <div>
+        <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">頂點距離、折射率、頭暈與隱形眼鏡</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {extraPosts.map(post => (
+            <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+              <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+              <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+              <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+      <a href="/topics/high-myopia/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看高度近視全部文章 →</a>
+    </div>
+  </section>
+
+  <!-- CTA（按鈕改「預約視覺諮詢」#33；刪「不該只是選個 1.74 然後回家」#34） -->
+  <section class="px-6 py-20" style="background:#1a2f4e">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">差一兩毫米就可能有感，量的時候別趕</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">框跟鏡片同一天挑，量測才能照著那支框來，預約請留 60–90 分鐘。新莊、板橋都能約；舊的那副別留在家裡。</p>
+      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
+    </div>
+  </section>
+
+  <!-- 延伸閱讀：指南聚落互連（法務 🟢 純導覽；規劃書 5-1 加不等像、RGP 兩份） -->
   <section class="px-6 md:px-16 py-14 border-t border-brand-ink/10" style="background:#eee8da">
     <div class="max-w-5xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">延伸閱讀｜其他完整指南</span>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
+          { href: ANISO_GUIDE, t: GUIDE_TITLES[ANISO_GUIDE] },
+          { href: RGP_GUIDE, t: GUIDE_TITLES[RGP_GUIDE] },
           { href: '/guide/lens-brands/', t: '鏡片選購完整指南' },
-          { href: '/guide/optical-basics/', t: '視光小百科' },
           { href: '/guide/frames/', t: '鏡框選購完整指南' },
+          { href: '/guide/optical-basics/', t: '視光小百科' },
         ].map(g => (
           <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
         ))}

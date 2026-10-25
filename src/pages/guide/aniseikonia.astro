@@ -1,54 +1,44 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES, GUIDE_TITLES } from '../../data/categories';
 
-// 本指南的主題聚落文章（依閱讀順序排列）
-const CLUSTER_SLUGS = [
-  'binocular-vision',
-  'high-myopia-glasses-guide',
-  'glasses-dizzy',
-  'progressive-lens-dizzy',
-];
+// 2026-10-24 改版（高度近視規劃書 5-2）：H1 換顧客說法；補低頭看書（稜鏡差）、小孩（§12、弱視斜視歸眼科）兩段；FAQ 8 題收成 5 題；網址不變
+// 鏡片參數、量兩眼影像大小差、處理低頭看近的稜鏡差：老闆 10-24 確認門市做得到；寫法照法務 10-24 建議句（結果只寫「拉近」「比較好融合」）
+// 聚落：讀分類表 high-myopia 的「兩眼度數差很多」小分類（7-1、7-2 上線後自動出現）；回連高度近視指南；分類外延伸卡（#36）
+const SELF = '/guide/aniseikonia/';
+const HM_GUIDE = '/guide/high-myopia/';
+const HM = CATEGORIES.find(c => c.slug === 'high-myopia')!;
+const ANISO = HM.subs.find(s => s.guide === SELF)!;
 const allPosts = await getCollection('blog');
-const clusterPosts = CLUSTER_SLUGS
-  .map(slug => allPosts.find(p => p.slug === slug))
-  .filter(Boolean);
+const clusterPosts = ANISO.posts.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean);
+const EXTRA_SLUGS = ['binocular-vision', 'glasses-dizzy', 'high-myopia-lens-brand-choice'];
+const extraPosts = EXTRA_SLUGS.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean);
 
 const canonicalUrl = 'https://beyondvisualopt.com/guide/aniseikonia/';
 
-// 指南頁 FAQ（自動化為 FAQPage schema）
+// 指南頁 FAQ：全站 FAQPage grep 過，不跟聚落文、/services/ 撞題
+// 刪原 Q2（不等像和不等視）、Q3（放大率跟什麼有關）、Q7（怎麼知道是不是不等像）：論點已升 H2；原 Q3 的法務建議句移到「放大率」H2 開頭
 const faqs = [
   {
     q: '兩眼度數差很多，為什麼看久了會頭暈、字會跳？',
-    a: '當兩眼度數差距較大（醫學上稱不等視，anisometropia），即使兩眼各自都矯正清楚，透過眼鏡看到的左右影像大小也可能不一樣——這就是不等像（aniseikonia）。大腦要同時融合兩張大小不同的影像會很吃力，時間一長就容易出現頭暈、眼睛疲勞、閱讀時字會跳或跳行、立體感（深度知覺）變差。這不是你的錯覺，而是眼鏡放大率差異造成的真實光學現象。',
+    a: '兩眼度數差很多，就算每一眼都各自矯正清楚了，左右眼透過鏡片看到的東西還是可能大小不一；低頭看書時，兩片鏡片下半部把影像偏開的量也不一樣。大腦得一直把兩張大小、位置都有點落差的影像合起來，撐久了，就容易頭暈、眼睛累、字會跳或跳行。這是眼鏡放大率和稜鏡效應造成的光學現象。不過度數、散光軸向、瞳距沒配好，也會出現差不多的感覺，哪一個才是原因，要實際量才分得出來。',
   },
   {
-    q: '不等像和不等視是同一件事嗎？',
-    a: '不完全一樣。不等視（anisometropia）指的是兩眼度數不同；不等像（aniseikonia）指的是兩眼看到的影像大小不同。兩者常一起出現——度數差越大，透過眼鏡產生的影像大小差異通常也越明顯——但不等像也可能來自單眼白內障術後、單眼植入人工水晶體等情況。驗光人員會透過完整驗光與生活視覺分析，判斷你的不適是否與影像大小差異有關。',
-  },
-  {
-    q: '眼鏡的影像放大率跟什麼有關？可以調整嗎？',
-    a: '一副眼鏡的放大率主要受四個因素影響：鏡片度數、鏡片基弧、鏡片中心厚度，以及頂點距離（鏡片到眼睛的距離）。兩眼度數差很多時，鏡片的基弧、厚度等設計參數會影響兩眼影像大小，是否需要特別處理，驗光人員會先評估。',
-  },
-  {
-    q: '為什麼頂點距離對高度數差的人特別重要？',
-    a: '頂點距離是鏡片後表面到眼睛角膜的距離。度數越高，頂點距離每差 1mm，實際到眼睛的有效度數與影像放大率變化就越明顯（依換算公式 Fc＝F ÷（1 − dF），-6.00D 的鏡片每差 1mm，有效度數約差 0.04D；度數越高差越多，-10.00D 約差 0.10D）。對兩眼度數差很大的人來說，鏡框沒調好、鏡片離眼睛太遠或兩眼不對稱，都會讓影像大小差異被放大。所以精準測量與鏡框調整，對不等像族群不是加分項，是必要條件。',
+    q: '為什麼頂點距離對兩眼度數差很多的人特別重要？',
+    a: '頂點距離是鏡片後表面到角膜的距離。它一動，有效度數和影像放大率都會動：拿 Fc＝F ÷（1 − dF） 算，-6.00D 的鏡片每差 1mm，有效度數約差 0.04D，-10.00D 就約差 0.10D。兩眼度數差很多的人，兩邊鏡片只要離眼睛不一樣遠，或是鏡框戴歪了，左右的差距會再大一截，所以頂點距離要量，兩邊鏡架也要調到對稱。',
   },
   {
     q: '隱形眼鏡會不會比較不容易有不等像？',
-    a: '對部分兩眼度數差很大的人來說，隱形眼鏡因為直接貼在角膜上、頂點距離趨近於零，左右眼的影像大小差異通常會比框架眼鏡小。但隱形眼鏡是否適合，要看角膜條件、淚液狀況、生活作息與配戴意願，屬醫療器材，需由驗光人員現場評估；依驗光人員法第十二條，十五歲以下者的隱形眼鏡驗配須在眼科醫師指導下為之，未滿六歲者不予驗配。框架與隱形眼鏡各有取捨，沒有一體適用的答案。',
+    a: '要看兩眼的度數差是從哪裡來的。依 Knapp 定律，理論上，度數差主要來自角膜或水晶體的人，戴隱形眼鏡時兩眼影像大小比較接近；度數差主要來自眼球長短的人，戴框架眼鏡反而可能比較接近。低頭看近也不一樣：隱形眼鏡跟著眼球一起轉，兩片鏡片下半部稜鏡不同的問題，在它身上不會出現。適不適合戴，驗光人員要看過角膜、淚液，也問過你的作息才能判斷；依驗光人員法第十二條，十五歲以下者的隱形眼鏡驗配須在眼科醫師指導下為之，未滿六歲者不予驗配。',
   },
   {
     q: '不等像可以「治好」嗎？',
-    a: '要先分清楚：如果影像大小差異來自眼鏡度數配置，那是光學問題，可以透過鏡片設計與配鏡調整來「減少差異、改善舒適度」；如果懷疑背後有單眼白內障、視網膜或其他眼睛病理性因素，那屬於醫療範疇，驗光人員會協助轉介眼科醫師診斷。我們能做的是把配鏡端的光學條件盡量做對，讓你的雙眼看得比較舒服，而不是宣稱治療任何疾病。',
+    a: '先分兩種情況。影像大小差來自眼鏡度數和鏡片條件，那是光學問題，配鏡時能做的，是把兩眼的差距拉近，讓兩眼比較好融合，談不上治好。如果懷疑背後有眼睛的疾病，例如白內障、視網膜的問題，診斷和治療屬於眼科，請先給眼科醫師檢查。',
   },
   {
-    q: '我怎麼知道自己的頭暈是不是不等像造成的？',
-    a: '如果你符合以下幾點，值得做一次完整的雙眼視覺與生活視覺分析：兩眼度數差距明顯、換了新眼鏡反而更暈、看書容易跳行或抓不到距離、下樓梯或倒車時深度感變差、長時間用眼後太陽穴脹痛。這些不一定都是不等像，也可能是度數、散光軸向、瞳距或雙眼協調的問題——正因為原因多，才需要一次把雙眼一起量、一起評估，而不是只換度數。',
-  },
-  {
-    q: '新莊、板橋哪裡可以做不等像相關的評估？',
-    a: '能見度視覺中心新莊店（比泱驗光所，新北市新莊區中正路419-1號，02-2206-6700）與板橋店（02-2253-1246）都提供完整的雙眼視覺評估與生活視覺分析，針對兩眼度數差大、久讀頭暈、立體感不佳的族群，由驗光人員一起評估度數、影像放大率與鏡框搭配。若評估發現需要醫療診斷（如單眼白內障、視網膜問題），會協助轉介眼科醫師。',
+    q: '新莊、板橋哪裡可以做兩眼度數差很多的配鏡評估？',
+    a: '能見度兩間店都可以：新莊店是能見度視覺中心（比泱驗光所），新北市新莊區中正路 419-1 號，02-2206-6700；板橋店是能見度眼鏡行（能見度驗光所），新北市板橋區雙十路二段 47 巷 28 號，02-2253-1246。兩邊的做法相同：雙眼視覺評估每次驗光都做，頂點距離、單眼瞳距、配鏡高度也都量；有需要的話，會再量兩眼看到的影像差多大。如果是小孩兩眼度數差很多，請先帶去給眼科醫師檢查。',
   },
 ];
 
@@ -60,8 +50,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "不等像（Aniseikonia）完整指南：兩眼影像不一樣大為什麼會頭暈，以及配鏡怎麼處理",
-      "description": "兩眼度數差很多、看久頭暈、字會跳、立體感變差？從不等像與不等視的差別、眼鏡放大率如何受基弧/中心厚度/頂點距離影響，到兩眼度數差很多時配鏡要先評估哪些事，一頁講清楚。新莊、板橋服務。",
+      "headline": "兩眼度數差很多，換了眼鏡為什麼更暈？不等視和不等像",
+      "dateModified": "2026-10-24",
+      "description": "兩眼度數差很多，換了眼鏡反而更暈、看書字會跳？不等視是兩眼度數差，不等像是兩眼影像大小差。眼鏡放大率跟度數、基弧、中心厚度、頂點距離有關；低頭看書時兩片鏡片的稜鏡也不一樣；小孩兩眼度數差很多，先給眼科醫師看。YoYo 驗光師整理，新莊、板橋兩店。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
       "articleSection": "完整指南",
@@ -86,159 +77,232 @@ const schema = {
 };
 ---
 <Layout
-  title="兩眼度數差太多？換眼鏡更暈、字會跳的原因｜不等像指南"
-  description="兩眼度數差很多、換眼鏡反而更暈、看書字會跳、立體感變差？不等像完整指南從原理、症狀自我檢核到配鏡怎麼減少影像大小差異，一頁講透。能見度視覺中心 新莊、板橋。"
+  title="兩眼度數差很多？換眼鏡更暈、低頭看書字會跳｜不等視與不等像指南｜新莊板橋"
+  description="兩眼度數差很多，換了眼鏡反而更暈、低頭看書字會跳？不等視是度數差，不等像是影像大小差。YoYo 驗光師整理眼鏡放大率跟哪 4 件事有關、低頭看近的稜鏡差、小孩為什麼先看眼科，以及配鏡時會一起看的 5 件事。新莊、板橋能見度視覺中心。"
   enPath="/en/guide/aniseikonia/"
   schema={schema}
 >
 
-  <!-- Hero -->
+  <!-- Hero：H1 顧客說法在前、術語在後，帶副標（#32 刪「一頁講透」） -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        兩眼影像不一樣大<br /><span class="text-brand-gold">不等像完整指南</span>
+        兩眼度數差很多，換了眼鏡為什麼更暈？<br /><span class="text-brand-gold" style="font-size:0.6em">不等視和不等像</span>
       </h1>
-      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        兩眼度數差很多、換了新眼鏡反而更暈、看書字會跳、下樓梯抓不到距離——很多人以為是度數沒配好，其實可能是左右眼「影像大小不一樣」。這一頁把不等像的原理、症狀與配鏡怎麼處理一次講清楚。由 YoYo 驗光師撰寫，依臨床驗配實務。
+      <p class="text-white/70 max-w-2xl mx-auto mb-8" style="font-size:17px;line-height:1.85">
+        左右眼度數差了好幾百度，每一眼單獨驗都清楚，兩眼一起戴卻暈、看書字會跳。這種時候，度數不一定配錯了。
       </p>
+      <a href="/booking/"
+        class="font-sans inline-block bg-brand-gold text-brand-navy font-bold px-8 py-4 hover:bg-brand-gold/90 transition-colors"
+        style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
+      <p class="text-white/50 mt-4" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
     </div>
   </section>
 
-  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <!-- TL;DR 3秒重點（GEO：answer-first，不加標題；刪「不是加分項，是必要條件」#34、「協助轉介」#34） -->
   <section class="px-6 md:px-16 py-10" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
       <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>不等像（aniseikonia）＝兩眼看到的影像大小不一樣；常伴隨兩眼度數差大（不等視）。大腦融合兩張不同大小的影像很吃力，久了就頭暈、疲勞、字會跳、立體感變差。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>眼鏡的影像放大率受四件事影響：度數、基弧、中心厚度、頂點距離。這代表影像大小差異是可以透過鏡片設計與鏡框搭配「盡量拉近」的。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>度數越高，頂點距離與鏡框調整越關鍵——沒對準，影像差異會被放大。精準量測與鏡框調整，對這族群不是加分是必要。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>配鏡端能做的是減少影像大小差異、改善舒適度；若懷疑單眼白內障、視網膜等病理因素，屬醫療範疇，驗光人員會協助轉介眼科醫師。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>左右眼度數差很多，叫不等視；左右看到的東西不一樣大，叫不等像。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>影像大小受度數、基弧、中心厚度、頂點距離影響。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>低頭看書時，兩片鏡片的稜鏡也不一樣。</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>小孩兩眼度數差很多，先給眼科醫師看。</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 快速導覽 -->
+  <!-- 快速導覽（含起 #question、轉 #limit 錨點） -->
   <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
       {[
-        { label: '不等像是什麼', href: '#what' },
-        { label: '症狀自我檢核', href: '#symptoms' },
-        { label: '為什麼會發生', href: '#why' },
-        { label: '配鏡怎麼處理', href: '#how' },
+        { label: '是不是很難配', href: '#question' },
+        { label: '不等視和不等像', href: '#what' },
+        { label: '常見的感覺', href: '#symptoms' },
+        { label: '放大率', href: '#magnification' },
+        { label: '低頭看書', href: '#reading' },
+        { label: '小孩', href: '#children' },
+        { label: '配鏡時看的事', href: '#fitting' },
+        { label: '門市與預約', href: '#stores' },
+        { label: '拉得近，拉不到一樣', href: '#limit' },
         { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
+        { label: '主題文章', href: '#cluster' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
     </div>
   </section>
 
-  <!-- 不等像是什麼 -->
-  <section id="what" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 起：顧客問句開場（新增） -->
+  <section id="question" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">不等像：兩隻眼睛看到的世界，大小不一樣</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">「兩眼度數差很多，是不是很難配？」</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
-        <p>正常情況下，兩隻眼睛看同一個東西，送進大腦的兩張影像大小相近，大腦很輕鬆就能把它們融合成一張、並從細微差異裡算出立體感。<strong>不等像（aniseikonia）指的是兩眼看到的影像大小明顯不一樣</strong>——大腦被迫去融合一大一小兩張圖，這件事非常耗神。</p>
-        <p>你可以想像用兩台放大倍率不同的投影機，投同一部電影到同一面牆上：畫面重疊卻對不齊，看久了眼睛和腦袋都會累。這就是不等像族群每天在經歷的事，只是他們往往說不出哪裡怪，只覺得「這副眼鏡就是不對勁」。</p>
-        <p><strong>最常見的成因，是兩眼度數差距大（不等視，anisometropia）。</strong>當一眼 -1.00D、另一眼 -4.00D，即使兩眼都各自矯正到清楚，透過眼鏡產生的影像放大率卻不同，大小差異就出現了。此外，單眼白內障術後、單眼植入人工水晶體等情況，也可能造成不等像——這類要先由眼科醫師處理病理端。</p>
+        <p>會這樣問的，通常是拿著一張左右眼差很多的驗光單來，或者帶著一副戴了就暈、最後收進抽屜的眼鏡。有人一眼 100 度、一眼 400 度，也有人一眼開過白內障，兩眼的度數一下子拉開。</p>
+        <p>把每一眼的度數驗出來，並不難；麻煩在兩眼一起戴上去之後。兩片度數差很多的鏡片，會讓左右眼看到的影像一大一小；視線往下看書時，兩片鏡片又會把影像往不同的方向偏一點。大腦得把這兩張對不太齊的影像疊成一張，看久了就累。</p>
       </div>
     </div>
   </section>
 
-  <!-- 症狀自我檢核 -->
-  <section id="symptoms" class="px-6 md:px-16 py-20 bg-white">
+  <!-- 承 1：不等視和不等像（原「不等像：兩隻眼睛…」＋原 FAQ Q2 論點升上來；白內障單眼一句，第 4 步另寫專文） -->
+  <section id="what" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">這些症狀，可能是不等像在作怪</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">以下狀況不一定都是不等像，也可能來自度數、散光軸向、瞳距或雙眼協調問題——但若你同時符合多項，很值得做一次完整的雙眼視覺評估，把原因找出來。</p>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">不等視和不等像：一個是度數差，一個是影像大小差</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>兩眼度數不一樣，叫<strong>不等視</strong>（anisometropia）；兩眼看到的影像大小不一樣，叫<strong>不等像</strong>（aniseikonia）。兩件事常常綁在一起。一眼 -1.00D、一眼 -4.00D 的人，兩眼都各自矯正清楚了，透過眼鏡看出去的東西，還是一邊大、一邊小。</p>
+        <p>不過兩者不是同一件事。度數差很多的人，不一定每個都覺得影像不一樣大；影像大小差，也可能來自度數以外的原因。門市裡常碰到的一種，是白內障手術只開了一眼：術後那一眼的度數跟另一眼突然差很多，兩眼看到的大小也跟著不同。手術和術後多久可以配眼鏡，請依眼科醫師的建議。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 2：常見的 5 種感覺（原 6 卡收成 H3 ×5；「兩眼度數差距明顯」併入；補就醫提醒 #12；刪「立體感變差」卡名） -->
+  <section id="symptoms" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兩眼度數差很多，常見的 5 種感覺</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">驗光單上兩眼的球面度或散光差很多，又同時有下面幾種感覺，就值得把兩眼一起量一次。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         {[
-          ['久讀就頭暈、太陽穴脹痛', '長時間閱讀或看螢幕後，眉心或太陽穴悶脹、想閉眼休息'],
-          ['閱讀時字會跳、容易跳行', '看書、看文件時字像在晃，讀著讀著就跳到下一行'],
-          ['立體感、深度知覺變差', '下樓梯踩空、倒車抓不準距離、伸手拿東西會偏'],
-          ['換新眼鏡反而更不舒服', '度數明明配對了，戴上新眼鏡卻更暈、更累'],
-          ['兩眼度數差距明顯', '驗光單上兩眼球面度或散光差很多'],
-          ['看久了想閉一隻眼', '不自覺瞇眼或閉單眼，因為兩眼一起看太累'],
+          ['看久了頭暈、太陽穴脹', '看書、看螢幕一段時間後，眉心或太陽穴悶悶脹脹，想閉眼休息。'],
+          ['看書時字會跳、容易跳行', '字像在晃，讀著讀著就跑到下一行。'],
+          ['下樓梯、倒車抓不準距離', '樓梯最後一階差點踩空，倒車時跟後面的距離老是估錯，伸手拿東西也會偏一點。'],
+          ['換了新眼鏡反而更不舒服', '新的度數比舊的準，戴上卻比舊眼鏡更暈、更累。'],
+          ['看久了想閉一隻眼', '不自覺瞇起一眼，或乾脆閉上一隻眼，因為兩眼一起看太累。'],
         ].map(([title, desc]) => (
-          <div class="border border-brand-ink/8 rounded-2xl p-6" style="background:#f7f3ec">
-            <p class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">{title}</p>
+          <div class="border border-brand-ink/8 rounded-2xl p-6 bg-white">
+            <h3 class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">{title}</h3>
             <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{desc}</p>
           </div>
         ))}
       </div>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">這些感覺不一定都來自兩眼度數差，度數、散光軸向、瞳距、雙眼協調都可能造成類似的不舒服。要是症狀是突然冒出來的、東西看成兩個，或者有這些狀況的是小孩，請先讓眼科醫師檢查。</p>
     </div>
   </section>
 
-  <!-- 為什麼會發生 -->
-  <section id="why" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 承 3：放大率 4 件事（原「藏在四個你看不到的細節裡」；開頭用法務 10-24 建議句〔原 FAQ Q3〕；④ 0.25D 已在第 1 步修；補 Knapp 一句） -->
+  <section id="magnification" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">眼鏡的「放大率」，藏在四個你看不到的細節裡</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">眼鏡放大率跟哪 4 件事有關</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
-        <p>很多人以為配眼鏡就是「量出度數、把數字填進去」。但對兩眼度數差大的人來說，真正決定舒不舒服的，是<strong>兩眼影像放大率的差異</strong>——而放大率並不是只由度數決定，還受這四件事影響：</p>
+        <p>一副眼鏡的放大率主要受四個因素影響：鏡片度數、鏡片基弧、鏡片中心厚度，以及頂點距離。兩眼度數差很多時，驗光人員會先量出兩眼影像大小差多少，再決定要不要在度數正確的前提下，指定鏡片的基弧與中心厚度，把兩眼放大率的差距拉近到比較好融合的範圍。能拉近多少，要看度數差與鏡框條件，量過才知道。</p>
       </div>
       <div class="mt-8 space-y-4">
         {[
-          ['① 鏡片度數', '度數是放大率的主角。度數差越大，兩眼放大率的落差通常越明顯，這是不等像最常見的起點。'],
-          ['② 鏡片基弧（Base Curve）', '鏡片正面的彎度。同樣度數，不同基弧會改變放大率——這是驗光人員可以用來「重新分配」兩眼影像大小的槓桿之一。'],
-          ['③ 鏡片中心厚度', '鏡片中央的厚薄。厚度影響放大率，也和折射率、鏡框大小連動——選對折射率與小一點的鏡框，能一起幫忙。'],
-          ['④ 頂點距離（Vertex Distance）', '鏡片到眼睛的距離。度數越高越敏感：依換算公式 Fc＝F ÷（1 − dF），-6.00D 的鏡片每差 1mm，有效度數約差 0.04D；度數越高差越多，-10.00D 約差 0.10D。兩眼若不對稱，影像差異會被放大。'],
+          ['① 度數', '度數是放大率的主角。近視鏡片會把影像縮小、遠視鏡片會把影像放大，度數越高縮放得越多；兩眼度數差得越多，兩邊的大小落差通常越明顯。放大率裡跟度數有關的那一項，叫度數因子，可以寫成 1 ÷（1 − hF），h 是鏡片後表面到眼睛入射瞳孔的距離，F 是度數。'],
+          ['② 基弧', '基弧是鏡片前表面的彎度。同樣的度數，前表面彎一點或平一點，放大率就跟著變，這一項叫形狀因子。'],
+          ['③ 中心厚度', '鏡片中間越厚，形狀因子帶來的放大越多。中心厚度也跟折射率、鏡框大小連在一起，三件事要一起算。'],
+          ['④ 頂點距離', '鏡片離眼睛的距離，也是度數因子裡的那個 h。距離一變，有效度數和放大率都會跟著變，照 Fc＝F ÷（1 − dF） 算，-6.00D 的鏡片每差 1mm，有效度數約差 0.04D，度數越高差越多。兩邊鏡架如果一高一低、一前一後，兩眼的落差會再被拉開。'],
         ].map(([title, desc]) => (
-          <div class="bg-white border border-brand-ink/8 rounded-2xl p-7">
-            <p class="font-serif text-brand-navy mb-2" style="font-size:18px;font-weight:600">{title}</p>
+          <div class="bg-brand-paper border border-brand-ink/8 rounded-2xl p-7">
+            <h3 class="font-serif text-brand-navy mb-2" style="font-size:18px;font-weight:600">{title}</h3>
             <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{desc}</p>
           </div>
         ))}
       </div>
-      <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        關鍵觀念：影像大小的差異，物理上無法百分之百消除，但可以透過鏡片設計參數與鏡框選擇「盡量拉近」，讓大腦比較能舒服融合。所以兩眼度數差大的人，不該只在乎「度數對不對」，更要在乎「這副眼鏡的設計有沒有替雙眼一起想」。
-      </blockquote>
+      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">還有一個變數：度數差是從哪裡來的。依 Knapp 定律，理論上，度數差主要來自眼球長短（眼軸型）的人，戴框架眼鏡時兩眼影像大小的差反而比較小；度數差主要來自角膜或水晶體（屈光型）的人，戴隱形眼鏡比較接近。實際的眼睛不一定剛好落在理論上，所以還是要量。</p>
     </div>
   </section>
 
-  <!-- 能見度怎麼處理 -->
-  <section id="how" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+  <!-- 承 4：低頭看書的稜鏡差（新增；開頭用法務 10-24 建議句；不寫處理方式名稱、不寫「稜鏡處方」） -->
+  <section id="reading" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">面對兩眼度數差大，能見度怎麼配這副眼鏡</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">不等像族群的配鏡，重點從來不是「配得快」，而是「把雙眼當一組系統一起算」。我們的處理方式包含以下環節。</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
-        {[
-          ['完整雙眼視覺評估', '不只量單眼度數，還評估兩眼如何一起工作——融像、立體視與雙眼平衡，找出不適是不是來自影像大小差異'],
-          ['生活視覺分析', '你主要在什麼距離、什麼情境用眼？閱讀、開車、看螢幕的比重，會影響鏡片設計取捨與可接受的影像差異範圍'],
-          ['鏡片設計參數評估', '兩眼度數差很多時，鏡片的基弧、厚度等設計參數會影響兩眼影像大小，是否需要特別處理，驗光人員會先評估'],
-          ['頂點距離精準測量', '高度數差對頂點距離特別敏感，精準測量與兩眼對稱是舒適的前提'],
-          ['鏡框選擇與調整', '鏡框大小、鏡腳與鼻托位置都會影響鏡片到眼睛的距離與對稱性——鏡框不是只看好不好看'],
-          ['隱形眼鏡選項評估', '對部分族群，隱形眼鏡因頂點距離趨近於零，影像大小差異通常較小；是否適合需現場評估，屬醫療器材、依法規配適'],
-          ['必要時轉介眼科醫師', '若懷疑單眼白內障、視網膜或其他病理性因素，會建議你先給眼科醫師檢查'],
-          ['配後回店調整', '雙眼融合需要適應，取鏡後主動追蹤配戴感受，必要時微調——配好了才算完成'],
-        ].map(([title, desc]) => (
-          <div class="border-t border-white/10 pt-5">
-            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
-            <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
-          </div>
-        ))}
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">低頭看書更暈：兩片鏡片下半部的稜鏡不一樣</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>兩眼度數差很多時，低頭看近會因為視線離開光學中心而產生不一樣的稜鏡效應，一眼多一眼少。這在配鏡上有處理方式，需不需要，要量過才知道。</p>
+        <p>稜鏡效應的大小，等於視線離開光學中心的距離（公分）乘以度數，這是 Prentice 公式。看遠時，視線多半穿過光學中心附近，兩眼偏得差不多；看書、看手機要低頭，視線往下移到鏡片下半部，兩片鏡片的度數不同，偏的量就不同。拿兩眼差 3.00D 來算，視線往下 10mm（1 公分），兩眼之間就多出約 3△ 的上下稜鏡差。左右方向的偏差，兩眼還能轉一轉去補；上下方向能補的範圍小得多。有些人看遠還好、一低頭看書就暈，原因之一就在這裡。</p>
       </div>
     </div>
   </section>
 
-  <!-- 聚落文章 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 承 5：小孩（新增；弱視、斜視的診斷與治療歸眼科；§12；連兒童指南） -->
+  <section id="children" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">小孩兩眼度數差很多，先給眼科醫師看</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>孩子兩眼度數差很多，常常自己說不出來。好的那一眼一直在看，度數深的那一眼看不清楚，他也不覺得哪裡怪，日常生活照樣過。兩眼度數差很多跟弱視、斜視都有關係，這兩件事的診斷和治療屬於眼科，請先帶孩子給眼科醫師檢查。</p>
+        <p>配眼鏡這一段也有規定：依《驗光人員法》第十二條，未滿六歲不得由驗光人員驗光；十五歲以下的驗光，應在眼科醫師指導下進行，隱形眼鏡也一樣。眼科醫師交代的戴法、回診時間，配鏡時帶來告訴驗光人員。孩子各年齡的視力怎麼顧，從<a href="/guide/children-myopia/" class="text-brand-gold underline">{GUIDE_TITLES['/guide/children-myopia/']}</a>開始讀。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 6：配鏡時會一起看的 5 件事（原深藍 8 卡收成 H3 ×5；「生活視覺分析」「轉介眼科」併入；不列雙眼視覺檢查項目 #10；
+       鏡片設計參數規劃卡用法務 10-24 建議句 #4；隱形眼鏡 Knapp 修正 #13、§12 保留；刪「配好了才算完成」#34） -->
+  <section id="fitting" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">兩眼度數差很多，配鏡時會一起看的 5 件事</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">每一眼的度數驗完，還要把兩眼當成一組一起看。</p>
+      <div class="space-y-8">
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">雙眼視覺評估</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">兩眼搭不搭得起來，每次驗光都會評估。也會問你平常看遠、看近、看螢幕各佔多少，鏡片怎麼取捨跟著調整。試過幾組度數，矯正視力仍差一截的，驗光人員會依《驗光人員法》第十二條第三項，請你轉給眼科醫師檢查。</p>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">頂點距離與兩邊鏡架對稱</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">兩邊鏡片各離眼睛多遠，要分開量；鼻托、鏡腳也得調到左右一樣，免得一邊貼近、一邊離遠。</p>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">鏡片設計參數規劃</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">先量兩眼影像大小差多少；需要時在度數正確的前提下指定基弧、中心厚度與折射率，把兩眼放大率的差距拉近。能拉近多少，依度數差與鏡框條件而定。兩片鏡片厚度會不一樣，正面看不看得出來，<a href="/blog/high-myopia-lens-brand-choice/" class="text-brand-gold underline">高度近視要選蔡司還是 HOYA？</a>有算過。</p>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">隱形眼鏡這個選項</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">隱形眼鏡跟著眼睛轉，低頭看書時不會有兩片鏡片下半部稜鏡不一樣的問題；影像大小比框架接近還是比較差，要看度數差從哪裡來（見上面的 Knapp 定律）。能不能戴，要驗光人員當場檢查過再決定；依驗光人員法第十二條，十五歲以下者的隱形眼鏡驗配須在眼科醫師指導下為之，未滿六歲者不予驗配。</p>
+        </div>
+        <div class="border-t border-white/10 pt-6">
+          <h3 class="font-serif text-brand-gold mb-3" style="font-size:19px;font-weight:600">取件後 2 週內主動追蹤</h3>
+          <p class="text-white/70" style="font-size:15px;line-height:1.8">取件後 2 週內，門市會主動追蹤，聽你講這幾天戴下來的感覺；在能見度配的眼鏡，取件後的鏡架調整不另外收費。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 門市資訊與預約（放在轉之前；兩店對等；兩店都做雙眼視覺評估） -->
+  <section id="stores" class="px-6 md:px-16 py-20" style="background:#eee8da">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新莊店 × 板橋店：兩眼度數差很多的配鏡評估</h2>
+      <div class="space-y-4 text-brand-ink-2 mb-10" style="font-size:17px;line-height:1.85">
+        <p>頂點距離、單眼瞳距、配鏡高度兩店都量，雙眼視覺也是每次驗光必看的一項。完整驗光約 45–60 分鐘，整段預約抓 60–90 分鐘。約的時候順口提一句「兩眼度數差很多」；舊眼鏡、眼科給的檢查資料，也一起帶來。</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {clusterPosts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
-            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
-          </a>
-        ))}
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-xinzhuang-exterior.webp" alt="能見度視覺中心 比泱驗光所 新莊中正路 兩眼度數差很多配眼鏡" width="1200" height="900" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">新莊店：能見度視覺中心（比泱驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市新莊區中正路 419-1 號，捷運新莊站<br />電話 02-2206-6700<br />YoYo 驗光師主理；驗光師 <a href="/author/chien-yen-ting/" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">錢彥廷</a>（驗師字第 006760 號）</p>
+          </div>
+        </div>
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-banqiao.webp" alt="能見度眼鏡行 能見度驗光所 板橋雙十路二段 兩眼度數差很多配眼鏡" width="720" height="584" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">板橋店：能見度眼鏡行（能見度驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市板橋區雙十路二段 47 巷 28 號，捷運江子翠站<br />電話 02-2253-1246<br />驗光由持照驗光人員執行</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/booking/"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- 轉：原 blockquote「關鍵觀念」升上來；度數分配的取捨留給 7-1 的轉，這裡不寫；結果只寫「拉近」「比較好融合」 -->
+  <section id="limit" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">影像大小拉得近，拉不到一模一樣</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>前面講的基弧、中心厚度、鏡片離眼睛的距離，每一項都能讓兩眼的影像大小再靠近一些，只是靠近有個限度。基弧和中心厚度不能無限調，調多了，鏡片會變厚、變重，看出去的清晰度也得顧；鏡框大小、臉型、鼻樑高低，也限制了鏡片能離眼睛多近。兩眼度數差得越多，最後剩下的差距通常也越大。</p>
+        <p>所以這副眼鏡要做到的，是讓兩眼的影像差到大腦比較好融合的範圍，不是一模一樣。門市追蹤的時候，看書、下樓梯、盯螢幕各是什麼感覺，照實講就好。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ（8 題收成 5 題） -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兩眼度數差很多常見問題</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
@@ -250,12 +314,96 @@ const schema = {
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 關於作者與資料來源（E-E-A-T）：作者框照抄已審指南版本；照片用現有門市實拍；兩眼影像大小量測的實拍尚缺，建議補拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-examination.webp" alt="驗光人員為兩眼度數差很多的顧客驗光 能見度視覺中心 新莊" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">每一眼的度數先各自驗準</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON 綜合驗光儀 新莊比泱驗光所" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">綜合驗光儀：度數與雙眼視覺評估</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'Rabbetts RB. Bennett & Rabbetts\' Clinical Visual Optics. 4th ed. Butterworth-Heinemann; 2007（眼鏡放大率＝形狀因子 × 度數因子、Knapp 定律、不等像）', u: '' },
+          { t: 'Jalie M. The Principles of Ophthalmic Lenses. 5th ed. Association of British Dispensing Opticians（頂點距離換算 Fc＝F÷(1−dF)、Prentice 稜鏡公式）', u: '' },
+          { t: 'American Academy of Ophthalmology EyeWiki: Aniseikonia（不等像的定義與成因）', u: 'https://eyewiki.org/Aniseikonia' },
+          { t: '能見度：頂點距離是什麼？（換算表）', u: '/blog/vertex-distance/' },
+          { t: '驗光人員法（全國法規資料庫，第十二條：十五歲以下驗光與隱形眼鏡驗配、轉介）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2">{r.u
+            ? <a href={r.u} target={r.u.startsWith('http') ? '_blank' : undefined} rel={r.u.startsWith('http') ? 'noopener noreferrer' : undefined} class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a>
+            : r.t}</li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">放大率、頂點距離、稜鏡這三組數字，照的是上列光學公式；眼軸型和屈光型怎麼分，依 Knapp 定律，講的是理論上的情況。門市能不能指定基弧與中心厚度、量不量兩眼影像大小差、兩店的雙眼視覺評估是不是每次都做，這幾件事都問過能見度門市才寫上來；實際能拉近多少，以現場量測為準。弱視、斜視與其他眼睛疾病的診斷和治療，請由眼科醫師評估。最後更新：2026 年 10 月 24 日。</p>
+    </div>
+  </section>
+
+  <!-- 聚落文章：本小分類（兩眼度數差很多）文章自動列出；回連高度近視指南；分類外延伸卡（分組名用 <p>，不佔標題層級） -->
+  <section id="cluster" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">兩眼度數差很多主題文章</h2>
+      {clusterPosts.length > 0 && (
+        <div class="mb-12">
+          <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">{ANISO.name}</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {clusterPosts.map(post => (
+              <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+                <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+                <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+      <div>
+        <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">高度近視、雙眼視覺與頭暈</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href={HM_GUIDE} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+            <span class="bg-brand-gold text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">完整指南</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{GUIDE_TITLES[HM_GUIDE]}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">度數到 600 以上要多量什麼、厚薄由什麼決定，一路到 RGP 和眼底檢查。</p>
+          </a>
+          {extraPosts.map(post => (
+            <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+              <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+              <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+              <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+      <a href="/topics/high-myopia/#anisometropia" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看高度近視全部文章 →</a>
+    </div>
+  </section>
+
+  <!-- CTA（按鈕改「預約視覺諮詢」#33；刪「找出真正原因」「別再只換度數了」#11） -->
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">兩眼一直不對盤，別再只換度數了</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的雙眼視覺與生活視覺分析，讓驗光人員把兩隻眼睛當一組系統一起評估，找出你久讀頭暈、立體感不佳的真正原因。新莊店 02-2206-6700（新莊區中正路419-1號）、板橋店 02-2253-1246。</p>
-      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約雙眼視覺評估 →</a>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">難的是兩眼一起戴，那就兩眼一起量</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">度數、兩眼看到的大小、鏡架坐的位置，都排在同一天，時段請留 60–90 分鐘，新莊或板橋都行。要配的是孩子，就先讓眼科醫師看過。</p>
+      <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
     </div>
   </section>
 
@@ -265,9 +413,9 @@ const schema = {
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">延伸閱讀｜其他完整指南</span>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { href: '/guide/high-myopia/', t: '高度近視配鏡完整指南' },
+          { href: HM_GUIDE, t: GUIDE_TITLES[HM_GUIDE] },
+          { href: '/guide/children-myopia/', t: GUIDE_TITLES['/guide/children-myopia/'] },
           { href: '/guide/progressive-lens/', t: '老花眼鏡完整指南' },
-          { href: '/guide/choose-optician/', t: '新北配眼鏡完整指南' },
         ].map(g => (
           <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
         ))}

@@ -117,7 +117,7 @@ export const GUIDE_TITLES: Record<string, string> = {
   '/guide/lens-brands/': '鏡片選購完整指南',
   '/guide/frames/': '鏡框選購完整指南',
   '/guide/high-myopia/': '高度近視配鏡完整指南',
-  '/guide/aniseikonia/': '不等像完整指南',
+  '/guide/aniseikonia/': '兩眼度數差很多：不等像完整指南',
   '/guide/rgp-contact-lens/': 'RGP 硬式隱形眼鏡完整指南',
   '/guide/digital-eye-strain/': '螢幕族視覺疲勞完整指南',
   '/guide/optical-basics/': '視光小百科',
