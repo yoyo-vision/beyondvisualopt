@@ -1,5 +1,5 @@
 ---
-title: "Unstable Vision While Driving? Night Glare? The Right Lenses Make Driving Safer | ZEISS Night Driving Glare Lenses in Banqiao & Xinzhuang"
+title: "Oncoming Headlights Glaring at Night? Checking Your Lenses, Your Prescription, and Your Eyes, One by One"
 date: "2025-06-10"
 tag: "Lenses"
 excerpt: "Ghosting during the day, blinding headlights at night? It may not be a prescription problem—Optometrist YoYo breaks down the real causes of visual discomfort for drivers, and how the ZEISS DriveSafe range is designed around the demands of night driving."
@@ -28,7 +28,7 @@ While driving, your eyes need to switch quickly between the following distances:
 - **Mid distance**: speedometer, navigation screen (60–80cm)
 - **Rearview mirror**: vehicles behind (image perception at roughly 3–5m)
 
-Ordinary single-vision lenses are designed for "static sharpness" and are not optimized for this kind of **rapid dynamic switching**. The eyes must actively refocus over and over, so eye fatigue and headaches after a long drive are the natural result.
+Switching between these distances means your eyes refocus over and over. Sore eyes or headaches after a long drive can involve your prescription, how long you drive without a break, and rest. A different lens design alone will not solve them; if they persist or get worse, see an eye doctor first.
 
 ### Demand 2: Adapting to Rapid Changes in Light
 
@@ -44,7 +44,7 @@ At high speed, your visual system needs to continuously sense peripheral movemen
 
 ## The Optics of Night Glare
 
-Many people assume night glare is a problem of "aging eyes," but in most cases it is a **lens coating problem**.
+Night glare has more than one source. Reflections off the lens surface are one; an inaccurate astigmatism correction, or a film of oil and scratches on the lens, are others. Changes in the eye itself (such as clouding of the crystalline lens) also scatter light, and that is for an eye doctor to assess. This section covers the lens surface.
 
 As light passes through a lens, it reflects off the front and back surfaces. Lenses without an anti-reflective coating (AR coating) lose about 8% of light to reflections across the two surfaces combined (per standard surface-reflection optics for lenses with a refractive index around 1.5, roughly 4% per surface). This reflected light forms a "halo" on your retina—the ring of light you see around oncoming headlights.
 
@@ -54,7 +54,7 @@ As light passes through a lens, it reflects off the front and back surfaces. Len
 
 ## The ZEISS DriveSafe Range: Designed for Drivers
 
-ZEISS DriveSafe is currently the most complete single-vision lens range on the market designed for driving demands, with optimization in three main areas:
+Among the brands we carry, ZEISS DriveSafe is a lens range designed for driving. According to ZEISS's published information, its design focuses on three areas:
 
 ### 1. Night Glare Suppression
 Using a special DriveSafe coating, it optimizes short-wavelength blue light around 450nm (the band that interferes most with contrast), making night-driving images clearer in contrast while reducing the sensation of glare.
@@ -73,7 +73,6 @@ DriveSafe also has a progressive version, adding a slight mid-distance support z
 |---------|---------|------------|
 | Blinding headlights and halos at night | Lens surface reflections (no AR coating) | High-quality anti-reflective coating (ZEISS DuraVision) |
 | Slow visual response at tunnel entrances/exits | Pupil adaptation delay + insufficient coating | High light-transmission coating |
-| Sore eyes and headaches on long drives | Constant ciliary muscle accommodation | Relaxed design (mid-distance support) |
 | Unstable vision in rain/fog | Insufficient contrast | High-contrast coating design |
 | Lowering your head too much to see navigation | Ordinary single-vision has no mid-distance design | DriveSafe progressive version |
 | A sense of peripheral vision wobble | Lens peripheral aberration | High-index, low-aberration design |
@@ -116,7 +115,7 @@ So we ask first: how many nights a week do you actually drive, and on what kind 
 
 **Q: What's the difference between an ordinary anti-reflective coating and the ZEISS DriveSafe coating?**
 
-An ordinary anti-reflective coating is designed to "reduce reflected light loss" and raise overall light transmission. The ZEISS DriveSafe coating additionally optimizes the 450nm short-wavelength blue light band—the band that interferes most with the human eye's contrast perception and is also a main cause of night glare. The design goals are different, and the difference is noticeable in a night-driving environment.
+An ordinary anti-reflective coating is designed to "reduce reflected light loss" and raise overall light transmission. The ZEISS DriveSafe coating additionally optimizes the 450nm short-wavelength blue light band—the band that interferes most with the human eye's contrast perception and is also a main cause of night glare. The design goals are different.
 
 **Q: I have astigmatism, and driving with ordinary glasses still feels blurry. Is it a matter of astigmatism power?**
 

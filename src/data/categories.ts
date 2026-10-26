@@ -96,7 +96,7 @@ export const CATEGORIES: Category[] = [
     subs: [
       { slug: 'principles', name: '鏡片原理', posts: ['polarized-lens-principle', 'photochromic-lens-principle'] },
       { slug: 'choosing', name: '怎麼選', posts: ['polarized-vs-photochromic-vs-sunglasses', 'photochromic-sunglasses-guide'] },
-      { slug: 'driving', name: '開車用', posts: ['driving-lens-night-glare'] },
+      { slug: 'driving', name: '開車與夜間', posts: ['driving-lens-night-glare'] },
     ],
   },
   {

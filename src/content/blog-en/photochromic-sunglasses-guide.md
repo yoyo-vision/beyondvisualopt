@@ -95,7 +95,7 @@ When choosing a prescription sun solution, always confirm the lenses carry full 
 
 **Q: Do photochromic lenses darken inside a car?**
 
-Yes, but usually more slowly and not as deeply. That's because photochromic lenses are triggered by ultraviolet (UV) light, and car windshields block most UV, so there's far less UV available to trigger the color change inside the car. If your main need is sun protection while driving, ordinary photochromic lenses usually aren't enough on their own—we'd recommend going with polarized sunglasses instead, or choosing a photochromic lens specifically designed for use behind a windshield.
+Yes, but usually more slowly and not as deeply. That's because photochromic lenses are triggered by ultraviolet (UV) light, and car windshields block most UV, so there's far less UV available to trigger the color change inside the car. If your main need is sun protection while driving, ordinary photochromic lenses usually aren't enough on their own—we'd recommend going with polarized sunglasses instead.
 
 **Q: Which is better, photochromic lenses or polarized sunglasses?**
 

@@ -61,20 +61,16 @@ That's the clearest proof of how polarization works: the first lens restricts li
 
 ## Common Misconceptions / FAQ
 
-### Q: What's the difference between polarized lenses and ordinary sunglasses?
-
+**Q: What's the difference between polarized lenses and ordinary sunglasses?**
 Ordinary sunglasses **uniformly dim the overall light**, regardless of which direction it's vibrating in. Polarized lenses specifically **filter out the horizontally polarized portion of glare**. So at the exact same overall darkness, looking through polarized lenses at water or a wet road produces much less harsh glare than ordinary sunglasses. This is a difference in mechanism, not in how dark the lens looks.
 
-### Q: Why do LCD screens or car dashboards look black or show rainbow patterns through polarized lenses?
-
+**Q: Why do LCD screens or car dashboards look black or show rainbow patterns through polarized lenses?**
 Because **many LCD screens emit light that's already polarized**. If the screen's polarization direction happens to be perpendicular to your lens's pass-through direction, the light gets blocked, and the screen looks dim or even completely black; tilt your head and the angle changes, and you might even see colorful patches appear. This isn't a defect in the lens—it's a normal optical effect from "two layers of polarization meeting."
 
-### Q: How can I check if a pair of glasses is genuinely polarized?
-
+**Q: How can I check if a pair of glasses is genuinely polarized?**
 Two direct methods. First, cross two polarized lenses and rotate them—when perpendicular, they'll go black. Second, look at an LCD screen through the lens while tilting your head—if the brightness changes with the angle, it's polarized. If a lens is simply dark-colored and shows none of these effects no matter how you rotate it, it's most likely just an ordinary tinted lens.
 
-### Q: Can polarized lenses filter out "all" glare?
-
+**Q: Can polarized lenses filter out "all" glare?**
 No. Polarization is only effective against **glare that's already polarized** (mainly the kind reflected off smooth, horizontal surfaces), and it also depends on the angle of incidence. Light scattered off rough, irregular surfaces doesn't have a fixed vibration direction to begin with, so the polarizing film has no effect on it. So polarization filters out "glare under specific conditions"—it doesn't block out every bright light in the world.
 
 ---

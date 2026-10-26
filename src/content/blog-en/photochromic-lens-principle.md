@@ -59,20 +59,16 @@ So with the same pair of photochromic lenses, **in winter they'll get darker out
 
 ## Common Misconceptions / FAQ
 
-### Q: Why don't photochromic lenses darken much inside a car?
-
+**Q: Why don't photochromic lenses darken much inside a car?**
 Because what activates the photochromic molecules is **UV light**, not visible-light brightness. Most car windshields block out UV, so with that "trigger" missing inside the car, photochromic lenses naturally don't darken much. This also confirms that the color-change reaction is fundamentally about "sensing UV," not "sensing brightness."
 
-### Q: Why are photochromic lenses lighter in summer than in winter?
-
+**Q: Why are photochromic lenses lighter in summer than in winter?**
 Because temperature affects the "fading" step. **Higher heat speeds up the molecules reverting back to their clear structure**, so outdoors in summer, UV is pushing the color darker while heat is pulling it lighter at the same time—with those two forces working against each other, the color ends up lighter. In winter's cooler temperatures, fading is slower, so the lenses appear darker and stay that way longer.
 
-### Q: Do photochromic lenses lose their color-changing ability over time?
-
+**Q: Do photochromic lenses lose their color-changing ability over time?**
 It's possible. This is especially true for organic dyes—after years of repeated "ring-opening and ring-closing," combined with the effects of UV and oxygen, the molecules gradually "fatigue," and the range of the color change may end up less pronounced than when the lenses were new. This is a natural aging effect of the chemical material and is a normal part of long-term use.
 
-### Q: Do photochromic lenses darken faster than they clear up?
-
+**Q: Do photochromic lenses darken faster than they clear up?**
 Generally, **yes—darkening happens faster than clearing back up.** Step outside into UV light and the lenses will visibly darken within seconds; go back indoors and, without UV, the molecules have to "close back up" on their own, which usually takes a few minutes—and the colder it is, the slower that fade tends to be.
 
 ---
