@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Who might be suitable for considering RGP?',
-    a: 'Situations in which an RGP assessment is commonly suggested include: high astigmatism (generally around 2.00D / 200 degrees or above, though this still depends on individual assessment), soft toric lenses that keep drifting off axis, wanting stable and clear visual quality, or dryness and discomfort after wearing soft lenses. But "might be suitable" is not the same as "definitely suitable" — the final answer depends on corneal and lens-fit assessment (the Xinzhuang store uses a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store evaluates lens fit with a slit lamp), tear film status, prescription, and daily routine, assessed in person by optometry personnel and confirmed through a trial fitting. Nothing decided without measurement counts. Lenses needed for a diseased or post-surgical cornea (for example keratoconus or after a corneal graft), on the other hand, are medical-purpose lenses: please have them assessed by an ophthalmologist, as they fall outside the ordinary contact lens fitting we do in store.',
+    a: 'Situations in which an RGP assessment is commonly suggested include: high astigmatism (generally around 2.00D / 200 degrees or above, though this still depends on individual assessment), soft toric lenses that keep drifting off axis, wanting stable and clear visual quality, or dryness and discomfort after wearing soft lenses. But "might be suitable" is not the same as "definitely suitable" — the final answer depends on corneal and lens-fit assessment (the Xinzhuang store uses a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store has a slit lamp), tear film status, prescription, and daily routine, assessed in person by optometry personnel and confirmed through a trial fitting. Nothing decided without measurement counts. Lenses needed for a diseased or post-surgical cornea (for example keratoconus or after a corneal graft), on the other hand, are medical-purpose lenses: please have them assessed by an ophthalmologist, as they fall outside the ordinary contact lens fitting we do in store.',
   },
   {
     q: 'Does RGP need an adaptation period? Will it feel like something is in my eye at first?',
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: 'What steps does the RGP fitting process involve?',
-    a: 'A complete RGP fitting usually includes: corneal and lens-fit assessment (at the Xinzhuang store, a TOPCON CA-800 corneal topographer and aberrometer maps corneal curvature and shape; at the Banqiao store, lens fit is evaluated with a slit lamp), refractive and visual quality assessment, planning the lens parameters from the corneal data, an in-person trial fitting and fit confirmation, wearing and cleaning education, and ongoing regular follow-up checks. RGP is a highly individualized fitting in which parameters are fine-tuned into place step by step — not a ready-made lens you put on and walk out with — so it needs a generous allowance of assessment and trial-fitting time.',
+    a: 'A complete RGP fitting usually includes: corneal and lens-fit assessment (at the Xinzhuang store, a TOPCON CA-800 corneal topographer and aberrometer maps corneal curvature and shape; the Banqiao store has a slit lamp), refractive and visual quality assessment, planning the lens parameters from the corneal data, an in-person trial fitting and fit confirmation, wearing and cleaning education, and ongoing regular follow-up checks. RGP is a highly individualized fitting in which parameters are fine-tuned into place step by step — not a ready-made lens you put on and walk out with — so it needs a generous allowance of assessment and trial-fitting time.',
   },
   {
     q: 'Is wearing RGP safe? What should I watch out for?',
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: 'Where in Xinzhuang or Banqiao can I get an RGP fitting?',
-    a: 'Beyond Visual Optometry’s Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (02-2253-1246) both provide ordinary rigid gas permeable (RGP) contact lens fitting, including corneal and lens-fit assessment, individualized parameter ordering, in-person trial fitting, and regular follow-up checks. The Xinzhuang store has a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store evaluates lens fit with a slit lamp. This is standard daily-wear RGP fitting, not orthokeratology (Ortho-K). We suggest booking ahead so there is ample time for assessment and trial fitting.',
+    a: 'Beyond Visual Optometry’s Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700) and Banqiao store (02-2253-1246) both provide ordinary rigid gas permeable (RGP) contact lens fitting, including corneal and lens-fit assessment, individualized parameter ordering, in-person trial fitting, and regular follow-up checks. The Xinzhuang store has a TOPCON CA-800 corneal topographer and aberrometer; the Banqiao store has a slit lamp. This is standard daily-wear RGP fitting, not orthokeratology (Ortho-K). We suggest booking ahead so there is ample time for assessment and trial fitting.',
   },
 ];
 
@@ -213,7 +213,7 @@ const schema = {
       <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">RGP is not a ready-made lens you put on and walk out with — it is fine-tuned into place step by step from your corneal data. The full process covers the following steps.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
         {[
-          ['Corneal and lens-fit assessment', 'At the Xinzhuang store, a TOPCON CA-800 corneal topographer maps corneal curvature and shape; at the Banqiao store, lens fit is evaluated with a slit lamp. This forms the basis for the lens parameters'],
+          ['Corneal and lens-fit assessment', 'At the Xinzhuang store, a TOPCON CA-800 corneal topographer maps corneal curvature and shape; the Banqiao store has a slit lamp. This forms the basis for the lens parameters'],
           ['Refractive and visual quality assessment', 'Confirming the prescription (especially astigmatism) and your visual quality needs after correction'],
           ['Lens parameter planning', 'Planning individualized parameters such as lens curvature and size from the corneal data'],
           ['Trial fitting and fit confirmation', 'Actually wearing the lens to confirm its position on the cornea, its movement, and how it feels'],
@@ -239,7 +239,7 @@ const schema = {
       </div>
       <div class="mt-6 space-y-4">
         {[
-          ['Age limits (Article 12 of the Optometrists Act)', 'Contact lens refraction for those aged fifteen and under (inclusive) shall be carried out under the guidance of an ophthalmologist; no fitting is provided for children under six years of age.'],
+          ['Age limits (Article 12 of the Optometrists Act)', 'Contact lens refraction for those aged fifteen and under (inclusive) shall be carried out under the guidance of an ophthalmologist; no fitting is provided for children under six years of age. We do not currently fit contact lenses for children aged fifteen and under; please have an ophthalmologist assess your child first.'],
           ['Abnormalities are always referred to ophthalmology', 'If abnormal corneal or refractive data is found during the fitting process (for example, a suspicion of keratoconus), the case is always referred to an ophthalmologist for diagnosis, not handled on the optometry side.'],
           ['Wearing hygiene and follow-up checks', 'Correct cleaning, not exceeding the wearing schedule, and returning for follow-up checks as arranged are the keys to reducing the risk of infection and complications — a well-fitted lens still needs to be well cared for.'],
           ['Stop wearing and seek care if uncomfortable', 'If redness, pain, light sensitivity, or blurred vision occurs while wearing the lenses, stop wearing them immediately and seek medical care — do not push through it.'],

@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: '隱形眼鏡越戴越累是為什麼？',
-    a: '常見原因有三個：鏡片材質的含水量、透氧度跟你的用眼環境不搭；冷氣房裡盯著螢幕，眨眼次數變少；配戴時間超過負荷，不少人一戴就是十幾個小時。配戴時數與更換週期，請依眼科醫師處方與產品標示。乾澀持續、眼白反覆充血、怕光或疼痛，請直接至眼科就醫；眼睛表面與淚液的檢查屬眼科，門市不做。想重新確認隱形眼鏡的度數與配戴狀況，可以到門市由驗光人員驗光，眼睛健康的部分仍由眼科醫師判斷。',
+    a: '常見原因有三個：鏡片材質的含水量、透氧度跟你的用眼環境不搭；冷氣房裡盯著螢幕，眨眼次數變少；配戴時間超過負荷，不少人一戴就是十幾個小時。配戴時數與更換週期，依驗光人員的交代與產品仿單。乾澀持續、眼白反覆充血、怕光或疼痛，請直接至眼科就醫；眼睛表面與淚液的檢查屬眼科，門市不做。想重新確認隱形眼鏡的度數與配戴狀況，可以到門市由驗光人員驗光，眼睛健康的部分仍由眼科醫師判斷。',
   },
 ];
 
@@ -219,26 +219,14 @@ const schema = {
     </div>
   </section>
 
-  <!-- 隱形眼鏡族的疲勞 -->
+  <!-- 隱形眼鏡族的疲勞（2026-10-26 隱形眼鏡規劃書互搶 F：三卡縮成一段，正主讓給 contact-lens-fatigue；時數不寫數字、不用「處方」） -->
   <section id="contacts" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">隱形眼鏡族：為什麼「越戴越累」？</h2>
-      <div class="space-y-6">
-        {[
-          { title: '① 含水材質加重乾眼', desc: '軟式隱眼會從眼表淚液吸水維持自身含水。在冷氣房、長時間螢幕、眨眼減少的環境下，形成「眼睛越乾→鏡片吸水越多→眼表更乾」的惡性循環。', action: '驗配時一起看材質，也看你一天戴幾小時' },
-          { title: '② 透氧不足、角膜缺氧', desc: '透氧率低的鏡片讓角膜長期輕度缺氧，特徵是配戴初期還好、戴到下午開始不舒服、眼白容易充血。', action: '透氧夠不夠，讓驗光人員評估，別自己換款' },
-          { title: '③ 配戴時間超過負荷', desc: '很多人早上 7 點戴、晚上 11 點才取下，長達 14 小時，對淚膜與角膜都是顯著負擔，螢幕族更明顯。', action: '配戴時數依眼科醫師處方與產品標示' },
-        ].map(item => (
-          <div class="border border-brand-ink/8 rounded-2xl p-7">
-            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
-            <p class="text-brand-ink-2 mb-3" style="font-size:16px;line-height:1.8">{item.desc}</p>
-            <p class="font-sans text-brand-gold" style="font-size:14px">→ {item.action}</p>
-          </div>
-        ))}
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>盯著螢幕，眨眼次數會掉下來；冷氣房裡，淚液又蒸發得快。戴軟式隱形眼鏡的人最先有感，到了下午，眼睛又乾又累。鏡片本身會吸淚液，戴的時間一長，角膜分到的氧也不夠，這兩樣常常一起來；鏡片表面積了沉積、度數跟現在看螢幕的距離對不上，也會湊上一腳。哪一個是你的主因、可以先從哪裡調，<a href="/blog/contact-lens-fatigue/" class="text-brand-gold underline">戴隱形眼鏡一到下午就乾、就累</a>一個一個拆開講。</p>
+        <p>每天戴幾小時，以驗光人員的交代和產品仿單為準。還在猶豫日拋或月拋的，可以讀<a href="/blog/daily-vs-monthly-contacts/" class="text-brand-gold underline">日拋、雙週拋、月拋怎麼選</a>；想過平常乾脆改戴眼鏡的，<a href="/blog/contact-lens-vs-glasses/" class="text-brand-gold underline">隱形眼鏡和眼鏡哪個好？</a>把兩邊的差別攤開來比。乾澀一直不好、眼白反覆發紅，請給眼科醫師檢查；出現紅、痛、畏光或視力突然下降，停戴並儘速至眼科就醫。</p>
       </div>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        每年定期驗光確認度數；眼表健康與持續乾澀，請由眼科醫師檢查。完整解析：<a href="/blog/contact-lens-fatigue/" class="text-brand-gold underline">每天戴隱形眼鏡，眼睛卻越來越累？</a>
-      </p>
     </div>
   </section>
 

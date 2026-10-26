@@ -1,55 +1,51 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES, GUIDE_TITLES } from '../../data/categories';
 
-// 本指南的主題聚落文章（依閱讀順序排列）
-const CLUSTER_SLUGS = [
-  'rgp-daily-wear-care',
-  'contact-lens-vs-glasses',
-  'contact-lens-fatigue',
-  'myopia-vs-astigmatism',
-  'high-myopia-glasses-guide',
-];
+// 2026-10-26 改版（隱形眼鏡規劃書 5-1）：指南改做入口，補軟式聚落入口、驗配 6 步驟（老闆 10-25 Q4）、就醫段、門市段、轉、E-E-A-T；網址不變
+// 聚落：直接讀分類表「隱形眼鏡」全部小分類，依小分類分組，順序＝分類頁閱讀順序
+// 門市事實（10-25 老闆＋法務第 2 步）：CA-800 只新莊、每位都照；板橋只寫「有裂隙燈」（不寫用裂隙燈評估配適）；15 歲以下不驗配；淚液與眼表檢查屬眼科
+const CL = CATEGORIES.find(c => c.slug === 'contact-lenses')!;
 const allPosts = await getCollection('blog');
-const clusterPosts = CLUSTER_SLUGS
-  .map(slug => allPosts.find(p => p.slug === slug))
-  .filter(Boolean);
+const clusterGroups = CL.subs.map(s => ({
+  name: s.name,
+  posts: s.posts.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean),
+}));
+// 分類外延伸卡（規劃書 #21）：度數換算、散光變形、兩眼度數差、高中生戴隱眼各有正主，不搬進本分類
+const EXTRA_SLUGS = ['vertex-distance', 'astigmatism-glasses-distortion', 'anisometropia-glasses', 'high-school-vision-stability'];
+const extraPosts = EXTRA_SLUGS.map(slug => allPosts.find(p => p.slug === slug)).filter(Boolean);
+const TRIAGE_GUIDE = '/guide/eye-doctor-or-optometrist/';
 
 const canonicalUrl = 'https://beyondvisualopt.com/guide/rgp-contact-lens/';
 
-// 指南頁 FAQ（自動化為 FAQPage schema）
+// 指南頁 FAQ：6 題，不跟本分類 5 篇文章的 FAQ 撞題（文章已有：散光片換 RGP、高度散光一定要戴、撐不過換回軟式、自來水、掉了、進沙子、霧霧的）
+// 刪原「是什麼」「誰適合」「流程」三題：論點已升 H2；原「安全嗎」拆進就醫段與新 Q4、Q5
+// Q5 保留法務第 1 步的免責句（角膜疾病或手術後的隱形眼鏡屬醫療用途，請眼科醫師評估）
 const faqs = [
   {
-    q: 'RGP 硬式隱形眼鏡是什麼？和一般軟式隱形眼鏡差在哪？',
-    a: 'RGP（Rigid Gas Permeable）是硬式透氧隱形眼鏡。它比軟式鏡片硬、直徑小，只覆蓋角膜中央區域，材質透氧性高。和軟式最大的差別在於：RGP 形狀穩定，配戴時它與角膜之間會形成一層淚液，對高度散光的人，視覺品質通常比較穩定清晰；軟式則勝在初期舒適、適應快。兩者沒有絕對好壞，適合誰要看角膜條件、屈光狀況與生活型態，需由驗光人員現場評估。',
-  },
-  {
     q: 'RGP 是不是就是角膜塑形片（OK 鏡）？',
-    a: '不是，這是最常被搞混的一點。本頁談的 RGP 是「日戴型」一般硬式隱形眼鏡——白天配戴、用來矯正當下的視力，晚上取下。角膜塑形片（俗稱 OK 鏡）是「夜戴型」、透過壓迫改變角膜形狀，屬於另一類醫療處置。能見度視覺中心提供的是一般 RGP 日戴驗配，不提供角膜塑形。兩者的目的、配戴方式與適用族群都不同，別把它們當成同一件事。',
-  },
-  {
-    q: '哪些人可能適合考慮 RGP？',
-    a: '常見會被建議評估 RGP 的情況包括：高度散光（一般約 200 度以上，實際仍依個別評估）、軟式散光片戴了軸向容易跑掉、追求穩定清晰視覺品質、或軟式鏡片配戴後乾澀不適的人。但「可能適合」不等於「一定適合」——最終要看角膜與鏡片配適的評估（新莊店有 TOPCON CA-800 角膜地形圖暨像差儀，板橋店以裂隙燈評估鏡片配適）、淚液狀況、度數與生活作息，由驗光人員現場評估，並經過試戴確認，沒有量測就先斷定的都不算數。至於角膜本身有疾病或動過手術（例如圓錐角膜、角膜移植後）所需的隱形眼鏡，屬醫療用途，請由眼科醫師評估，不在門市一般隱形眼鏡驗配範圍。',
+    a: '不是同一種，兩個也最常被搞混。這頁講的 RGP 是日戴型的一般硬式隱形眼鏡，白天戴著矯正當下的視力，晚上拿下來。角膜塑形片（俗稱 OK 鏡）是晚上睡覺時戴，靠壓迫改變角膜的形狀，屬於另一類醫療處置，適用的人也不一樣。能見度只做日戴型 RGP 的驗配，角膜塑形不提供。',
   },
   {
     q: 'RGP 需要適應期嗎？剛戴會不會有異物感？',
-    a: '會。RGP 因為是硬式材質，初期配戴通常會有明顯異物感，需要循序漸進地拉長配戴時間讓眼睛適應，這段適應期比軟式鏡片長。也因此，RGP 特別需要完整的衛教與定期複查——包括正確的配戴、取下、清潔流程，以及回店確認鏡片配適與配戴舒適度。願不願意配合這段適應與照護流程，也是評估適不適合的一環。',
-  },
-  {
-    q: 'RGP 驗配流程大概包含哪些步驟？',
-    a: '完整的 RGP 驗配通常包含：角膜與鏡片配適評估（新莊店以 TOPCON CA-800 角膜地形圖暨像差儀了解角膜曲率與形狀，板橋店以裂隙燈評估鏡片配適）、屈光與視覺品質評估、依角膜數據規劃鏡片參數、現場試戴與配適確認、配戴清潔衛教，以及後續的定期複查追蹤。RGP 是高度個人化的驗配，參數要一次次微調到位，不是拿現成鏡片直接戴走，所以會需要比較充裕的評估與試戴時間。',
-  },
-  {
-    q: '戴 RGP 安全嗎？有什麼要注意的？',
-    a: '隱形眼鏡屬醫療器材，任何隱形眼鏡都需要正確的配戴衛生與定期追蹤來降低風險。依驗光人員法第十二條，十五歲以下者的隱形眼鏡驗配須在眼科醫師指導下為之，未滿六歲者不予驗配。此外，驗配過程中若發現角膜或屈光數據異常（例如懷疑圓錐角膜等狀況），一律轉介眼科醫師診斷，不會在驗光端逕自處理——把該給醫師看的交給醫師，是我們的原則。',
+    a: '會。硬式鏡片的邊緣比軟式明顯，剛開始那幾天，每次眨眼都感覺得到它。時數不能一口氣拉滿，進度由驗光人員排，一天加一點；每天戴幾小時，就照取片時拿到的 RGP 配戴照護指南（操作版）走。取片後大概第 1 週、第 1 個月、第 3 個月要回店看配適，鏡片不服貼，就在那時候微調參數。',
   },
   {
     q: 'RGP 和框架眼鏡、軟式隱形眼鏡，我到底該選哪個？',
-    a: '沒有標準答案，取決於你的角膜條件、度數（尤其散光）、用眼情境與生活習慣。有人白天工作戴 RGP 追求穩定視覺、下班換框架眼鏡休息；有人散光不高、用軟式或框架就很舒服。與其問「哪個最好」，不如做一次完整評估，把你的實際需求攤開來一起討論——這正是我們生活視覺分析的用意：先搞懂你怎麼用眼睛，再挑真正適合的方案。',
+    a: '先看散光。散光偏高、軟式散光片一眨眼就轉開、畫面跟著飄，這種人 RGP 值得拿試戴片試一次；散光不高、只是出門不想掛著框，軟式通常就夠用。再來是一天戴多久：每天戴超過十小時、作息又抓不定的人，平常以眼鏡為主比較穩，真要戴就走日拋。最後怎麼配，要驗光人員看過你的角膜、問過你怎麼用眼才定。硬式和軟式、日拋和月拋、隱形眼鏡和眼鏡，能見度官網各有一篇專文逐項比較。',
+  },
+  {
+    q: '驗光生可以幫我配 RGP 嗎？',
+    a: '可以。《驗光人員法》第十二條在驗光師（第一項）和驗光生（第二項）的業務範圍裡，都列了「為一般隱形眼鏡配鏡所為之驗光」和「一般隱形眼鏡之配鏡」，年齡限制也一樣。兩種執照的條文還有別的差異，例如驗光那一款寫法不同、低視力者輔助器具的教導使用只列在驗光師，但都不影響一般隱形眼鏡這一項。日戴型 RGP 屬一般隱形眼鏡，由持照驗光人員驗配。要確認幫你驗光的是不是持照的人，到衛福部醫事查詢系統輸入姓名就行。',
+  },
+  {
+    q: '角膜有疾病或動過手術，可以配 RGP 嗎？',
+    a: '角膜本身有疾病或動過手術（例如圓錐角膜、角膜移植後）所需的隱形眼鏡，屬醫療用途，請由眼科醫師評估，不在門市一般隱形眼鏡驗配範圍。驗配時如果發現角膜或屈光數據異常，驗光人員一樣會依《驗光人員法》請你先去給眼科醫師診斷，驗光端不接手處理。',
   },
   {
     q: '新莊、板橋哪裡可以做 RGP 驗配？',
-    a: '能見度視覺中心新莊店（比泱驗光所，新北市新莊區中正路419-1號，02-2206-6700）與板橋店（02-2253-1246）都提供一般硬式隱形眼鏡（RGP）驗配服務，包含角膜與鏡片配適評估、個人化參數訂製、現場試戴與定期複查；新莊店有 TOPCON CA-800 角膜地形圖暨像差儀，板橋店以裂隙燈評估鏡片配適。本項為日戴型 RGP 驗配，非角膜塑形（OK 鏡）。建議先預約，保留充裕的評估與試戴時間。',
+    a: '能見度兩間店都驗配日戴型 RGP：新莊店是能見度視覺中心（比泱驗光所），新北市新莊區中正路 419-1 號，02-2206-6700，捷運新莊站；板橋店是能見度眼鏡行（能見度驗光所），新北市板橋區雙十路二段 47 巷 28 號，02-2253-1246，捷運江子翠站。走哪一間，流程都一樣：試戴片現場試，參數當天定、當天下訂；鏡片到了回店學戴取和清潔；取片後約 1 週、1 個月、3 個月各回來看一次，之後每半年一次。兩店不同的是儀器：新莊店有 TOPCON CA-800 角膜地形圖暨像差儀，每個人的角膜都會照；板橋店有裂隙燈。本項為日戴型 RGP 驗配，非角膜塑形（OK 鏡）。',
   },
 ];
 
@@ -61,8 +57,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "RGP 硬式隱形眼鏡完整指南：它是什麼、誰可能適合、驗配流程與安全須知",
-      "description": "RGP 硬式透氧隱形眼鏡是什麼？和軟式、和角膜塑形（OK 鏡）差在哪？誰可能適合、驗配流程包含哪些步驟、有哪些安全與法規須知——一頁講清楚。能見度視覺中心新莊、板橋提供日戴型 RGP 驗配。",
+      "headline": "高度散光、軟式戴不住，可以試 RGP 嗎？硬式隱形眼鏡誰適合、怎麼驗配",
+      "dateModified": "2026-10-26",
+      "description": "RGP 硬式透氧隱形眼鏡是什麼？和軟式、和角膜塑形（OK 鏡）差在哪、誰可能適合、驗配 6 個步驟（驗光、看角膜、試戴片試戴、當天訂片、到片教戴取、約 1 週／1 個月／3 個月回診）、什麼情況停戴就醫。能見度視覺中心新莊、板橋兩店都驗配日戴型 RGP。YoYo 驗光師整理。",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "zh-TW",
       "articleSection": "完整指南",
@@ -87,34 +84,38 @@ const schema = {
 };
 ---
 <Layout
-  title="RGP 是什麼？硬式隱形眼鏡誰適合、怎麼驗配｜新莊板橋"
-  description="RGP 硬式透氧隱形眼鏡是什麼？和軟式、和角膜塑形（OK 鏡）差在哪、誰可能適合、驗配流程與安全須知一頁看懂。能見度視覺中心 新莊、板橋提供日戴型 RGP 驗配。"
+  title="RGP 硬式隱形眼鏡誰適合？和軟式差在哪・怎麼驗配｜新莊板橋 能見度視覺中心"
+  description="RGP 硬式透氧隱形眼鏡是什麼？和軟式、和角膜塑形（OK 鏡）差在哪、誰可能適合、驗配 6 個步驟與回診時間、什麼情況停戴就醫。能見度視覺中心新莊、板橋兩店都驗配日戴型 RGP，現場用試戴片試戴。"
   enPath="/en/guide/rgp-contact-lens/"
   schema={schema}
 >
 
-  <!-- Hero -->
+  <!-- Hero：H1 改問句（避開高度近視指南「要多顧哪幾件事」）；「完整指南」留眉標；刪「一次講清楚」#18 -->
   <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">完整指南</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        高度散光、軟式戴不住？<br /><span class="text-brand-gold">RGP 硬式隱形眼鏡完整指南</span>
+        高度散光、軟式戴不住，可以試 RGP 嗎？<br /><span class="text-brand-gold" style="font-size:0.6em">硬式隱形眼鏡誰適合、怎麼驗配</span>
       </h1>
-      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        RGP 是什麼、和軟式差在哪、和大家常搞混的角膜塑形（OK 鏡）又是兩回事——這一頁把 RGP 硬式透氧隱形眼鏡的原理、適合族群、驗配流程與安全須知一次講清楚。由 YoYo 驗光師撰寫，依臨床驗配實務。
+      <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
+        軟式散光片眨個眼，畫面就跟著飄；戴久了，總會有人建議你試試硬的。硬的那種叫 RGP，跟晚上戴的角膜塑形（OK 鏡）是兩回事。下面的驗配步驟和回診時間，是新莊、板橋兩店現在實際的做法，寫這頁的是 YoYo 驗光師。
       </p>
     </div>
   </section>
 
-  <!-- TL;DR 3秒重點（GEO：answer-first） -->
+  <!-- 3 秒重點（GEO：answer-first） -->
   <section class="px-6 md:px-16 py-10" style="background:#eee8da">
     <div class="max-w-4xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">3 秒重點</span>
       <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP＝硬式透氧隱形眼鏡，形狀穩定、透氧性高，對高度散光的人，視覺品質通常比較穩定清晰。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>RGP 不是角膜塑形（OK 鏡）：RGP 是白天戴、矯正當下視力；OK 鏡是晚上戴、改變角膜形狀，屬另一類醫療處置。能見度提供的是日戴型 RGP，不提供角膜塑形。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>常被建議評估的族群：高度散光（約 200 度以上，仍依個別評估）、軟式散光片軸向不穩、軟式戴了乾澀不適者。適不適合，需經角膜與鏡片配適評估及現場試戴確認。</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>隱形眼鏡屬醫療器材：依驗光人員法第十二條，十五歲以下須在眼科醫師指導下驗配、未滿六歲不予驗配；驗配發現角膜異常一律轉介眼科醫師。</span></li>
+        {[
+          'RGP 是硬式透氧隱形眼鏡，形狀穩定，散光高的人看得比較穩，代價是一段適應期。',
+          'RGP 不是角膜塑形（OK 鏡）：RGP 白天戴、矯正當下視力；OK 鏡晚上戴、改變角膜形狀，屬另一類醫療處置。能見度提供日戴型 RGP，不提供角膜塑形。',
+          '驗光師、驗光生都可以驗配一般隱形眼鏡；依驗光人員法第十二條，十五歲以下者應於眼科醫師指導下為之、未滿六歲不得為之。十五歲以下的孩子，能見度目前不驗配隱形眼鏡。',
+          '戴著出現紅、痛、畏光、視力突然下降，停戴並儘速至眼科就醫。',
+        ].map(t => (
+          <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>{t}</span></li>
+        ))}
       </ul>
     </div>
   </section>
@@ -126,32 +127,38 @@ const schema = {
         { label: 'RGP 是什麼', href: '#what' },
         { label: '和軟式、OK 鏡的差別', href: '#compare' },
         { label: '誰可能適合', href: '#who' },
-        { label: '驗配流程', href: '#fitting' },
-        { label: '安全與法規', href: '#safety' },
+        { label: '還在比較軟式與眼鏡', href: '#soft' },
+        { label: '驗配 6 個步驟', href: '#fitting' },
+        { label: '戴上之後', href: '#after' },
+        { label: '停戴就醫', href: '#safety' },
+        { label: '門市與預約', href: '#stores' },
+        { label: '換硬式就不乾？', href: '#dry' },
         { label: '常見問題', href: '#faq' },
+        { label: '作者與資料來源', href: '#author' },
+        { label: '主題文章', href: '#cluster' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
       ))}
     </div>
   </section>
 
-  <!-- RGP 是什麼 -->
+  <!-- 起承 1：RGP 是什麼（刪「那杯茶」#18） -->
   <section id="what" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">RGP：一片會「站得穩」的硬式透氧鏡片</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">RGP：一片會站穩的硬式透氧鏡片</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
-        <p>RGP 是 <strong>Rigid Gas Permeable</strong> 的縮寫，中文叫硬式透氧隱形眼鏡。和大家熟悉的軟式鏡片比起來，它比較硬、直徑比較小，只覆蓋角膜中央區域，材質有良好的透氧性。</p>
-        <p>它最關鍵的特性是<strong>形狀穩定</strong>。軟式鏡片會服貼在角膜上、跟著角膜的不規則起伏走；RGP 則維持自己的形狀，配戴時鏡片與角膜之間會形成一層淚液。對散光度數高的人來說，這層淚液加上鏡片本身穩定的光學面，往往能提供比較穩定、清晰的視覺品質。</p>
-        <p>當然，硬式材質也代表初期配戴的異物感比較明顯、需要的適應期比較長。它不是「比較高級的隱形眼鏡」，而是「在特定狀況下，可能比較合適的一種選擇」——是不是你的那杯茶，得評估過才知道。</p>
+        <p>RGP 是 <strong>Rigid Gas Permeable</strong> 的縮寫，中文叫硬式透氧隱形眼鏡。和大家熟悉的軟式鏡片比起來，它比較硬、直徑比較小，只覆蓋角膜中央區域，材質本身透氧。</p>
+        <p>它最關鍵的特性是<strong>形狀穩定</strong>。軟式鏡片會服貼在角膜上、跟著角膜的起伏走；RGP 則維持自己的形狀，配戴時鏡片與角膜之間會形成一層淚液。對散光度數高的人來說，這層淚液加上鏡片本身穩定的光學面，看出去往往比較穩、也比較清楚。</p>
+        <p>也因為是硬的，剛戴的異物感比較明顯，要適應比較久。適合它的是某幾種眼睛，是不是你的，要評估過、試戴過才知道。</p>
       </div>
     </div>
   </section>
 
-  <!-- 和軟式、OK 鏡的差別 -->
+  <!-- 承 2：三者差別（② 免責句必須保留） -->
   <section id="compare" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">別搞混：RGP、軟式、角膜塑形是三件不同的事</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">很多人一聽到「硬式隱形眼鏡」就以為是角膜塑形片（OK 鏡），其實差很多。先把三者的定位分清楚，再談適不適合。</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">RGP、軟式、角膜塑形是三件不同的事</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">一聽到「硬式隱形眼鏡」，不少人想到的是晚上戴的角膜塑形片（OK 鏡）。這兩種差很遠，軟式也一起擺進來比：</p>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse" style="font-size:15px">
           <thead>
@@ -164,8 +171,8 @@ const schema = {
           </thead>
           <tbody class="text-brand-ink-2">
             {[
-              ['RGP 硬式隱形眼鏡（日戴）', '白天配戴、晚上取下', '矯正當下視力，形狀穩定、視覺品質穩定', '✅ 提供日戴型 RGP 驗配'],
-              ['軟式隱形眼鏡', '白天配戴、晚上取下（日拋/月拋等）', '矯正當下視力，初期舒適、適應快', '✅ 提供驗配'],
+              ['RGP 硬式隱形眼鏡（日戴）', '白天配戴、晚上取下', '矯正當下視力，形狀穩定、視覺品質穩定', '✅ 兩店都驗配日戴型 RGP'],
+              ['軟式隱形眼鏡', '白天配戴、晚上取下（日拋／雙週拋／月拋）', '矯正當下視力，初期舒適、適應快', '✅ 兩店都驗配'],
               ['角膜塑形片（OK 鏡）', '夜間睡覺配戴', '透過壓迫改變角膜形狀，屬醫療處置', '❌ 不提供'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
@@ -178,107 +185,152 @@ const schema = {
         </table>
       </div>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        重點記住一句話：本頁的 RGP 是「白天戴、矯正當下視力」的日戴型硬式鏡片，和「晚上戴、改變角膜形狀」的角膜塑形（OK 鏡）是兩回事。能見度視覺中心提供的是一般 RGP 日戴驗配，不提供角膜塑形。
+        本頁的 RGP 是「白天戴、矯正當下視力」的日戴型硬式鏡片，和「晚上戴、改變角膜形狀」的角膜塑形（OK 鏡）是兩回事。能見度視覺中心提供的是一般 RGP 日戴驗配，不提供角膜塑形。
       </blockquote>
     </div>
   </section>
 
-  <!-- 誰可能適合 -->
+  <!-- 承 3：誰可能適合（4 卡改 H3；「軟式散光片軸向不穩」照法務第 1 步；乾的那一卡不接效果，由轉段接住 #12；刪「也是一部分」「不是缺點…用心」#18） -->
   <section id="who" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">誰可能適合考慮 RGP？</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">以下是臨床上常被建議「評估看看」的族群。但請記得：可能適合不等於一定適合，最終都要經過現場量測與試戴確認。</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">誰可能適合考慮 RGP</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">下面這四種情況，最常被建議來評估看看。可能適合不等於適合，驗光、看角膜、用試戴片試過一輪，才算數。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {[
-          ['高度散光族群', '一般約 200 度以上散光，軟式或框架矯正後視覺品質仍不夠穩定者（實際仍依個別評估）'],
-          ['軟式散光片軸向不穩', '散光矯正有方向性。軟式散光片眨眼後容易轉動、畫面跟著浮動的人，可以評估形狀穩定的硬式鏡片'],
-          ['追求穩定清晰視覺品質', '對視覺穩定度要求高、願意投入較長適應期換取視覺品質的族群'],
-          ['軟式戴了乾澀不適', '長時間配戴軟式鏡片容易乾澀疲勞、想找其他選項評估的人'],
-        ].map(([title, desc]) => (
-          <div class="bg-white border border-brand-ink/8 rounded-2xl p-6">
-            <p class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">{title}</p>
-            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">{desc}</p>
-          </div>
-        ))}
+        <div class="bg-white border border-brand-ink/8 rounded-2xl p-6">
+          <h3 class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">高度散光，軟式或眼鏡矯正後還是不夠穩</h3>
+          <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">散光大約 200 度以上，實際門檻仍依個別評估。兩種鏡片擺在一起比，看<a href="/blog/rgp-vs-soft-contacts/" class="text-brand-gold underline">RGP 硬式和軟式隱形眼鏡差在哪？</a></p>
+        </div>
+        <div class="bg-white border border-brand-ink/8 rounded-2xl p-6">
+          <h3 class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">軟式散光片軸向不穩</h3>
+          <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">散光矯正有方向性。軟式散光片眨眼後容易轉動、畫面跟著浮動的人，可以評估形狀穩定的硬式鏡片。</p>
+        </div>
+        <div class="bg-white border border-brand-ink/8 rounded-2xl p-6">
+          <h3 class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">軟式戴了容易乾、容易累</h3>
+          <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">想換個選項，可以來評估。軟式本身為什麼會乾、會累，先看<a href="/blog/contact-lens-fatigue/" class="text-brand-gold underline">戴隱形眼鏡一到下午就乾、就累</a>。</p>
+        </div>
+        <div class="bg-white border border-brand-ink/8 rounded-2xl p-6">
+          <h3 class="font-serif text-brand-navy mb-2" style="font-size:17px;font-weight:600">願意花一段時間適應</h3>
+          <p class="text-brand-ink-2" style="font-size:15px;line-height:1.75">前幾週要照進度一點一點拉長配戴時數，回診也得照時間回來。很在意看得穩不穩、也肯花這幾週的人，比較撐得過去。</p>
+        </div>
       </div>
-      <p class="text-brand-ink-3 mt-8" style="font-size:15px;line-height:1.8">
-        RGP 的適應期比軟式長、需要較完整的衛教與複查。願不願意配合這段照護流程，也是評估適不適合的一部分——這不是缺點，而是硬式鏡片本來就需要的用心。
-      </p>
     </div>
   </section>
 
-  <!-- 驗配流程 -->
+  <!-- 承 4：軟式聚落入口（接住「怎麼選」「戴上之後」兩個小分類的軟式文章） -->
+  <section id="soft" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">還在比較軟式、日拋月拋和眼鏡</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">多數人不是一開始就考慮 RGP。軟式的日拋、雙週拋、月拋，兩店一樣驗配：先驗光、試戴，戴上和拿下練到你自己來得了，才讓你帶走。散光軟式跟多焦點隱形眼鏡不一樣，門市沒有這兩種的試戴片，怎麼配，得等驗光人員評估完才定。</p>
+      <div class="space-y-8">
+        <div class="border-l-2 border-brand-gold pl-5">
+          <h3 class="font-serif text-brand-navy mb-2" style="font-size:19px;font-weight:600">日拋、雙週拋、月拋</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">拋棄週期從開封那天算，不是從戴過幾次算，一週戴幾天決定哪一種划得來。→ <a href="/blog/daily-vs-monthly-contacts/" class="text-brand-gold underline">日拋、雙週拋、月拋怎麼選</a></p>
+        </div>
+        <div class="border-l-2 border-brand-gold pl-5">
+          <h3 class="font-serif text-brand-navy mb-2" style="font-size:19px;font-weight:600">隱形眼鏡和眼鏡</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">近視的人戴隱形眼鏡，看出去的東西比戴眼鏡大一些、視野也寬一些，看近卻要多出一點力，四十歲以後會比戴眼鏡的人先覺得吃力。→ <a href="/blog/contact-lens-vs-glasses/" class="text-brand-gold underline">隱形眼鏡和眼鏡哪個好？</a></p>
+        </div>
+        <div class="border-l-2 border-brand-gold pl-5">
+          <h3 class="font-serif text-brand-navy mb-2" style="font-size:19px;font-weight:600">戴了乾、戴了累</h3>
+          <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">原因常見的有五個：鏡片吸水、戴太久、表面卡了沉積、度數沒跟上，還有兩眼度數差太多。→ <a href="/blog/contact-lens-fatigue/" class="text-brand-gold underline">戴隱形眼鏡一到下午就乾、就累</a>；每天的操作看<a href="/care/soft/" class="text-brand-gold underline">軟式隱形眼鏡照護指南</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 5：驗配 6 個步驟（老闆 10-25 Q4；深藍 6 卡改 H3；板橋只寫「有裂隙燈」） -->
   <section id="fitting" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">RGP 驗配，是一段高度個人化的過程</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">RGP 不是拿現成鏡片直接戴走，而是依你的角膜數據一次次微調到位。完整流程包含以下環節。</p>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">RGP 驗配的 6 個步驟</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">RGP 沒有現成的可以直接戴走，鏡片參數是在你眼睛上試出來的。兩間店照同一套流程。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
         {[
-          ['角膜與鏡片配適評估', '新莊店以 TOPCON CA-800 角膜地形圖暨像差儀了解角膜曲率與形狀，板橋店以裂隙燈評估鏡片配適，作為鏡片參數的依據'],
-          ['屈光與視覺品質評估', '確認度數（尤其散光）與矯正後的視覺品質需求'],
-          ['鏡片參數規劃', '依角膜數據規劃鏡片曲率、大小等個人化參數'],
-          ['現場試戴與配適確認', '實際戴上確認鏡片在角膜上的定位、活動度與配戴感受'],
-          ['配戴、清潔衛教', '教你正確的配戴、取下與清潔流程，適應期循序漸進拉長配戴時間'],
-          ['定期複查追蹤', '回店確認鏡片配適狀況與配戴舒適度，必要時微調參數'],
+          ['1. 驗光：先把度數和散光驗準', '完整驗光要 45–60 分鐘。第一次配 RGP 還要看角膜、試戴，從進門到試完，大概 60–90 分鐘。'],
+          ['2. 看角膜的形狀', '這一步在新莊店是用 TOPCON CA-800 角膜地形圖暨像差儀，每位顧客都拍；板橋店有裂隙燈。淚液分泌得夠不夠、角膜本身健不健康，要到眼科才查得到，門市不做這兩項。'],
+          ['3. 試戴片現場試戴', '試戴片直接戴上去，看鏡片停在角膜的哪個位置、眨眼時怎麼跑、你戴著的感覺；這片不對，就換下一片。'],
+          ['4. 當天定參數、訂片', '試到合適的那片，參數當天就定下來，直接訂片。'],
+          ['5. 到片：學戴上、拿下和清潔', '鏡片到了，回店由驗光人員教你戴上、拿下和每天的清潔，配戴時數從短的開始排。'],
+          ['6. 回診：約 1 週、1 個月、3 個月，之後每半年', '回來讓驗光人員看鏡片戴在角膜上服不服貼，需要就微調參數；鏡片也會拿下來，檢查有沒有刮痕、變形。'],
         ].map(([title, desc]) => (
           <div class="border-t border-white/10 pt-5">
-            <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
+            <h3 class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</h3>
             <p class="text-white/60" style="font-size:14px;line-height:1.7">{desc}</p>
           </div>
         ))}
       </div>
-      <p class="text-white/50 mt-8" style="font-size:14px;line-height:1.7">因為需要充分的量測與試戴時間，建議先預約，別排在趕時間的時段。</p>
     </div>
   </section>
 
-  <!-- 安全與法規 -->
+  <!-- 承 6：戴上之後（時數數字讓給照護頁，互搶 B） -->
+  <section id="after" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">戴上之後：適應期和每天照護</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>前幾天那種卡卡的感覺，是鏡片邊緣造成的：眼瞼每眨一次，就從它上面掃過一次。這很正常。時數怎麼往上加，驗光人員會排好進度；第一天戴幾小時、哪一天可以戴滿，<a href="/care/rgp/" class="text-brand-gold underline">RGP 配戴照護指南（操作版）</a>逐條列了，取片時也會把這頁傳給你。</p>
+        <p>清潔四步通常不會忘，容易漏的是另外三件：保養液用一天就換、去蛋白照仿單的週期做、鏡盒天天倒空晾乾。這三件為什麼省不得，<a href="/blog/rgp-daily-wear-care/" class="text-brand-gold underline">RGP 硬式隱形眼鏡怎麼洗？</a>講了原因。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 承 7：就醫段（原「安全與法規」改寫；統一就醫句＋連分流指南；§12 驗光師、驗光生；15 歲以下不驗配；異常轉介主詞是眼科醫師） -->
   <section id="safety" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">安全與法規：該給醫師看的，就交給醫師</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">這些情況，停戴並儘速至眼科就醫</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
-        <p>隱形眼鏡屬醫療器材，任何隱形眼鏡都需要正確的配戴衛生與定期追蹤來降低風險。這幾點請務必記得：</p>
-      </div>
-      <div class="mt-6 space-y-4">
-        {[
-          ['年齡限制（驗光人員法第 12 條）', '十五歲以下者（含 15 歲）之隱形眼鏡驗光，應於眼科醫師指導下為之；未滿六歲兒童不予驗配。'],
-          ['異常一律轉介眼科', '驗配過程中若發現角膜或屈光數據異常（例如懷疑圓錐角膜等狀況），一律轉介眼科醫師診斷，不在驗光端逕自處理。'],
-          ['配戴衛生與複查', '正確清潔、不逾時配戴、依約回店複查，是降低感染與併發風險的關鍵——鏡片配得好，也要照顧得好。'],
-          ['不舒服就停戴就醫', '配戴期間若出現紅、痛、畏光、視力模糊等狀況，應立即停戴並就醫，不要硬撐。'],
-        ].map(([title, desc]) => (
-          <div class="border-l-2 border-brand-gold pl-5">
-            <p class="font-serif text-brand-navy mb-1" style="font-size:17px;font-weight:600">{title}</p>
-            <p class="text-brand-ink-2" style="font-size:16px;line-height:1.8">{desc}</p>
-          </div>
-        ))}
+        <p>隱形眼鏡屬醫療器材。戴著的時候，只要眼睛紅、痛、畏光，分泌物變多、眼淚流不停，或視力突然下降，鏡片先拿下來別再戴回去，停戴並儘速至眼科就醫。鏡片、鏡盒、保養液也一起帶上。症狀要多急著看醫師，<a href={TRIAGE_GUIDE} class="text-brand-gold underline">{GUIDE_TITLES[TRIAGE_GUIDE]}</a>裡有一張分流表可以對。</p>
+        <p>驗配過程中若發現角膜或屈光數據異常（例如懷疑圓錐角膜），驗光人員會請你轉給眼科醫師診斷，不在驗光端處理。角膜本身有疾病或動過手術所需的隱形眼鏡，屬醫療用途，請由眼科醫師評估。</p>
+        <p>依《驗光人員法》第十二條，驗光師和驗光生都可以做一般隱形眼鏡的驗光與配鏡（兩種執照的分別，看<a href="/blog/optometrist-license-check/" class="text-brand-gold underline">驗光師和驗光生差在哪？</a>）；十五歲以下者（含 15 歲）的隱形眼鏡驗光應於眼科醫師指導下為之，未滿六歲不得為之。能見度目前不為十五歲以下的孩子驗配隱形眼鏡，請家長先帶去給眼科醫師評估；各個年紀怎麼安排，可以對照<a href="/guide/children-myopia/" class="text-brand-gold underline">兒童近視追蹤完整指南</a>。</p>
       </div>
     </div>
   </section>
 
-  <!-- 聚落文章 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <!-- 門市資訊與預約（放在轉之前；兩店對等；CA-800 只新莊、板橋只寫「有裂隙燈」） -->
+  <section id="stores" class="px-6 md:px-16 py-20" style="background:#eee8da">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">延伸閱讀：相關主題文章</h2>
-      <!-- 已配戴顧客的操作工具頁（老闆 2026-08-08：配鏡後 LINE 直接傳給顧客用） -->
-      <a href="/care/rgp/" class="flex items-center gap-3 bg-brand-navy text-white rounded-2xl px-7 py-5 mb-8 hover:opacity-95 transition-opacity group">
-        <span style="font-size:22px">📋</span>
-        <span style="font-size:15.5px">已經在戴 RGP？<strong class="text-brand-gold" style="font-weight:600">配戴照護指南（操作版）</strong>——配戴步驟、清潔四步、停戴警訊，一頁對照 →</span>
-      </a>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">新莊店 × 板橋店：RGP 與軟式隱形眼鏡驗配</h2>
+      <div class="space-y-4 text-brand-ink-2 mb-10" style="font-size:17px;line-height:1.85">
+        <p>兩間店都驗配日戴型 RGP 和軟式隱形眼鏡，RGP 就照上面那 6 步走。來的時候，把平常戴的隱形眼鏡、印著度數的外盒和眼鏡一起帶著；當天要驗光，鏡片記得提早拿下來。</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {clusterPosts.map(post => (
-          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
-            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
-          </a>
-        ))}
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-xinzhuang-exterior.webp" alt="能見度視覺中心 比泱驗光所 新莊中正路 RGP 硬式隱形眼鏡驗配" width="1200" height="900" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">新莊店：能見度視覺中心（比泱驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市新莊區中正路 419-1 號，捷運新莊站<br />電話 02-2206-6700<br />YoYo 驗光師主理；驗光師 <a href="/author/chien-yen-ting/" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">錢彥廷</a>（驗師字第 006760 號）<br />店內有 TOPCON CA-800 角膜地形圖暨像差儀，每位顧客都會照</p>
+          </div>
+        </div>
+        <div class="border border-brand-ink/10 bg-white">
+          <img src="/images/store-banqiao.webp" alt="能見度眼鏡行 能見度驗光所 板橋雙十路二段 RGP 硬式隱形眼鏡驗配" width="720" height="584" loading="lazy" class="w-full object-cover" style="aspect-ratio:4/3" />
+          <div class="p-6">
+            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">板橋店：能見度眼鏡行（能見度驗光所）</h3>
+            <p class="text-brand-ink-2" style="font-size:15px;line-height:1.85">新北市板橋區雙十路二段 47 巷 28 號，捷運江子翠站<br />電話 02-2253-1246<br />驗光由持照驗光人員執行<br />店內有裂隙燈</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/booking/"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">預約視覺諮詢</a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- 轉：軟式戴了會乾，換成硬式，乾的原因多半還在（國文編審 10-26：H2 改直述句，分類內否定對舉已有 daily-vs-monthly 一個；接住「誰適合」乾的那一卡 #12，避免材質效能宣稱；不撞已用轉與第 2 步 5 篇的轉） -->
+  <section id="dry" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">軟式戴了會乾，換成硬式，乾的原因多半還在</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>「軟式戴久了眼睛好乾，聽說硬的比較好，我可以換嗎？」可以評估。只是這一頁前面講的 RGP 好處，大多落在散光和看得穩不穩上，乾是另一回事。</p>
+        <p>乾的原因，可能出在淚液本身，那要給眼科醫師檢查；也可能出在戴的時數、冷氣房、盯螢幕時眨眼變少。這幾樣換了鏡片材質還是在。RGP 不像軟式那樣含水，「鏡片跟眼睛搶淚液」這一項是少了；可是它直徑小、邊緣明顯，眨眼眨不完全的人，鏡片表面照樣會乾。再加上適應期那幾週的異物感，戴起來不見得比較輕鬆。</p>
+        <p>換材質之前，先把乾的原因找出來：時數能不能再少一點、回家能不能改戴眼鏡、淚液該不該先給眼科醫師看。這些都做過，散光又剛好偏高，RGP 才是值得試的那一個。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ（8 題收成 6 題） -->
   <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">常見問題</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">RGP 硬式隱形眼鏡常見問題</h2>
       <div class="space-y-8">
         {faqs.map(f => (
           <div class="border-b border-brand-ink/8 pb-8">
@@ -290,11 +342,98 @@ const schema = {
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 關於作者與資料來源（E-E-A-T）：作者框照抄已審指南版本；照片用現有門市實拍；RGP 試戴片組與板橋裂隙燈實拍尚缺，建議補拍 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="鄭家侑 YoYo 驗光師" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">鄭家侑（YoYo）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-examination.webp" alt="驗光人員為隱形眼鏡顧客驗光 能見度視覺中心 新莊" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">度數和散光先驗準，後面的試戴才有依據</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-corneal-map.webp" alt="TOPCON CA-800 角膜地形圖暨像差儀 能見度視覺中心新莊店" width="600" height="400" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店的 TOPCON CA-800 角膜地形圖暨像差儀</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="能見度視覺中心新莊店 驗光室" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">新莊店驗光室</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: '驗光人員法（全國法規資料庫）第十二條：驗光師、驗光生業務範圍，十五歲以下與未滿六歲之規定', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+          { t: '驗光人員法施行細則（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020194' },
+          { t: '衛福部食品藥物管理署 食藥闢謠專區：有人說隱形眼鏡可以戴著睡覺，這是真的嗎？（配戴時出現不適、刺痛或畏光應立即取下；眼睛紅腫疼痛應儘速就醫）', u: 'https://www.fda.gov.tw/tc/newsContent.aspx?cid=5049&id=21285' },
+          { t: '衛福部食品藥物管理署 食藥闢謠專區：隱形眼鏡只要泡在免搓洗藥水裡，就可以達到消毒效果？（清潔保養以核定的產品說明書為準）', u: 'https://www.fda.gov.tw/TC/newsContent.aspx?id=28285' },
+          { t: 'American Academy of Ophthalmology EyeWiki: Contact Lens Complications（戴著過夜、超時配戴、衛生不佳是角膜感染的主要風險因子；出現感染須立即停戴）', u: 'https://eyewiki.org/Contact_Lens_Complications' },
+          { t: '能見度：驗光師和驗光生差在哪？（第十二條原文對照）', u: '/blog/optometrist-license-check/' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target={r.u.startsWith('http') ? '_blank' : undefined} rel={r.u.startsWith('http') ? 'noopener noreferrer' : undefined} class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">年齡與業務範圍依《驗光人員法》與施行細則；隱形眼鏡的停戴時機、清潔保養與感染風險，依衛福部食品藥物管理署公開的衛教資料，以及美國眼科醫學會的 EyeWiki。驗配 RGP 的六個步驟、回診的時間點，以及哪一間有 CA-800、哪一間有裂隙燈，都由兩店門市一項一項對過。涉及眼睛疾病的診斷與治療，請由眼科醫師評估。最後更新：2026 年 10 月 26 日。</p>
+    </div>
+  </section>
+
+  <!-- 聚落文章：讀分類表 contact-lenses 全部小分類，依小分類分組（分組名用 <p>，不佔標題層級）；照護頁兩張入口卡；另加分類外延伸卡 -->
+  <section id="cluster" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">隱形眼鏡主題文章</h2>
+      <!-- 已配戴顧客的操作工具頁（老闆 2026-08-08：配鏡後 LINE 直接傳給顧客用） -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <a href="/care/rgp/" class="flex items-center gap-3 bg-brand-navy text-white rounded-2xl px-7 py-5 hover:opacity-95 transition-opacity">
+          <span style="font-size:15.5px">已經在戴 RGP？<strong class="text-brand-gold" style="font-weight:600">RGP 配戴照護指南（操作版）</strong>：配戴步驟、清潔四步、停戴警訊 →</span>
+        </a>
+        <a href="/care/soft/" class="flex items-center gap-3 bg-brand-navy text-white rounded-2xl px-7 py-5 hover:opacity-95 transition-opacity">
+          <span style="font-size:15.5px">戴軟式？<strong class="text-brand-gold" style="font-weight:600">軟式隱形眼鏡照護指南（操作版）</strong>：正反面、清潔、拋棄週期 →</span>
+        </a>
+      </div>
+      {clusterGroups.map(g => (
+        <div class="mb-12">
+          <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">{g.name}</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {g.posts.map(post => (
+              <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">
+                <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+                <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+                <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+      <div>
+        <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-5" style="font-size:12px;letter-spacing:0.18em">度數換算、散光、兩眼度數差與高中生</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {extraPosts.map(post => (
+            <a href={`/blog/${post!.slug}/`} class="rounded-2xl p-7 border border-brand-gold/40 hover:border-brand-gold transition-colors group" style="background:#eee8da">
+              <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+              <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+              <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+      <a href="/topics/contact-lenses/" class="inline-block mt-8 font-sans text-brand-gold hover:text-brand-navy transition-colors" style="font-size:15px">依主題看隱形眼鏡全部文章 →</a>
+    </div>
+  </section>
+
+  <!-- CTA（按鈕「預約視覺諮詢」#19；電話已在門市段，CTA 不重複） -->
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">高度散光、軟式戴不住？先來評估看看</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">預約一次完整的視覺分析與 RGP 配適評估，讓驗光人員依你的角膜條件與用眼需求，一起討論適不適合。本項為日戴型 RGP 驗配，非角膜塑形。新莊店 02-2206-6700（新莊區中正路419-1號）、板橋店 02-2253-1246。</p>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">眨一下眼畫面就飄的，先排一次試戴</h2>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">第一次來會驗光、看角膜，再拿試戴片在眼睛上試，時間給它 60–90 分鐘。本項為日戴型 RGP 驗配，非角膜塑形。新莊、板橋都能約。</p>
       <a href="/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">預約視覺諮詢 →</a>
     </div>
   </section>
@@ -305,9 +444,11 @@ const schema = {
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-6" style="font-size:12px;letter-spacing:0.18em">延伸閱讀｜其他完整指南</span>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { href: '/guide/high-myopia/', t: '高度近視配鏡完整指南' },
-          { href: '/guide/optical-basics/', t: '視光小百科' },
-          { href: '/guide/choose-optician/', t: '新北配眼鏡完整指南' },
+          { href: '/guide/high-myopia/', t: GUIDE_TITLES['/guide/high-myopia/'] },
+          { href: TRIAGE_GUIDE, t: GUIDE_TITLES[TRIAGE_GUIDE] },
+          { href: '/guide/children-myopia/', t: GUIDE_TITLES['/guide/children-myopia/'] },
+          { href: '/guide/optical-basics/', t: GUIDE_TITLES['/guide/optical-basics/'] },
+          { href: '/guide/choose-optician/', t: GUIDE_TITLES['/guide/choose-optician/'] },
         ].map(g => (
           <a href={g.href} class="block bg-brand-paper border border-brand-ink/10 px-5 py-4 hover:border-brand-gold transition-colors font-serif text-brand-navy" style="font-size:16px;font-weight:400">{g.t} →</a>
         ))}
