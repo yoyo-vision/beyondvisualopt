@@ -84,7 +84,9 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'contact-lenses', name: '隱形眼鏡', keyword: '硬式隱形眼鏡', guide: '/guide/rgp-contact-lens/',
     subs: [
-      { slug: 'choosing', name: '怎麼選', guide: '/guide/rgp-contact-lens/', posts: ['rgp-vs-soft-contacts', 'daily-vs-monthly-contacts', 'contact-lens-vs-glasses'] },
+      { slug: 'choosing', name: '怎麼選', guide: '/guide/rgp-contact-lens/', posts: ['rgp-vs-soft-contacts', 'daily-vs-monthly-contacts', 'contact-lens-vs-glasses', 'first-contact-lens-fitting'] },
+      // 2026-10-26：新增「散光與老花」（規劃書 7-2、7-3；老闆 Q3：散光軟式、多焦點兩店都有，但沒有試戴片）
+      { slug: 'special', name: '散光與老花', posts: ['contact-lens-presbyopia', 'toric-soft-contact-lens'] },
       // 2026-10-26：原「配戴與照護」「戴了不舒服」各只有 1 篇，合併成「戴上之後」（照護＋不舒服，對象是已經在戴的人）
       { slug: 'care', name: '戴上之後', posts: ['rgp-daily-wear-care', 'contact-lens-fatigue'] },
     ],
