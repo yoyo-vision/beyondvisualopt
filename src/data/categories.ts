@@ -85,8 +85,8 @@ export const CATEGORIES: Category[] = [
     slug: 'contact-lenses', name: '隱形眼鏡', keyword: '硬式隱形眼鏡', guide: '/guide/rgp-contact-lens/',
     subs: [
       { slug: 'choosing', name: '怎麼選', guide: '/guide/rgp-contact-lens/', posts: ['rgp-vs-soft-contacts', 'daily-vs-monthly-contacts', 'contact-lens-vs-glasses'] },
-      { slug: 'care', name: '配戴與照護', posts: ['rgp-daily-wear-care'] },
-      { slug: 'discomfort', name: '戴了不舒服', posts: ['contact-lens-fatigue'] },
+      // 2026-10-26：原「配戴與照護」「戴了不舒服」各只有 1 篇，合併成「戴上之後」（照護＋不舒服，對象是已經在戴的人）
+      { slug: 'care', name: '戴上之後', posts: ['rgp-daily-wear-care', 'contact-lens-fatigue'] },
     ],
   },
   {
