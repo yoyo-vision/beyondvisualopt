@@ -31,7 +31,7 @@ Lenses that look fine by day can scatter light under point light sources at nigh
 
 ### Astigmatism that isn't corrected accurately: unnoticed by day, obvious at night
 
-Astigmatism has an axis as well as a power. An axis a few degrees off is hard to notice in good daylight, but at night your pupils dilate, light passes through a larger area of the lens, and headlights tend to stretch in one direction. The answer here is a new eye exam and realigning your current pair, not adding another pair of lenses.
+Astigmatism has an axis as well as a power. An axis a few degrees off is hard to notice in good daylight, but at night your pupils dilate and your depth of focus gets shallower. The few degrees of error that daylight was hiding start to show, and headlights tend to stretch in one direction. The answer here is a new eye exam and realigning your current pair, not adding another pair of lenses.
 
 ### Changes in the eye itself
 
@@ -107,7 +107,7 @@ It may be. Astigmatism isn't only about power; an axis error can also cause dire
 
 **Q: Can progressive lenses be used for driving?**
 
-Yes, with conditions. The distance zone of a progressive lens is at the top, and your normal driving line of sight usually isn't a problem; at night your pupils dilate and your gaze more easily sweeps into the aberration zones at the sides, which can create a slight halo. Driving-oriented progressive designs lay out the field of view along the path your gaze takes while driving; whether one suits you depends on your prescription and driving habits.
+Yes, with conditions. The distance zone of a progressive lens sits at the top, so your normal line of sight on the road is usually fine. When you glance at a side mirror or toward your blind spot, though, your gaze moves out through the aberration zones at the sides of the lens, and lights seen through that part of the lens may look slightly distorted or haloed. Driving-oriented progressive designs lay out the field of view along the path your gaze takes while driving; whether one suits you depends on your prescription and driving habits.
 
 **Q: Can I wear yellow lenses for night driving?**
 

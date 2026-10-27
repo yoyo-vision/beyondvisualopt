@@ -20,7 +20,7 @@ const canonicalUrl = 'https://beyondvisualopt.com/en/guide/digital-eye-strain/';
 const faqs = [
   {
     q: 'Do blue-light lenses really work?',
-    a: 'It depends on what you expect them to solve. The core of digital eye strain is sustained ciliary muscle tension plus dry eye caused by reduced blinking — blue light itself is not the main cause. So the benefit of a blue-light coating for the kind of fatigue where your eyes feel strained in the afternoon and struggle to refocus at distance is still open to debate in research, and it should not be overstated as eye protection or disease prevention. It can cut some short-wavelength light, and some people report it helps their sleep quality. What actually makes a difference for long hours on screens is usually a digital lens with a near-vision boost, together with correct fitting parameters and good visual habits — not a coating alone.',
+    a: 'It depends on what you expect them to solve. The core of digital eye strain is sustained ciliary muscle tension plus dry eye caused by reduced blinking — blue light itself is not the main cause. So the benefit of a blue-light coating for the kind of fatigue where your eyes feel strained in the afternoon and struggle to refocus at distance is still open to debate in research, and it should not be overstated as eye protection or disease prevention. What it does is filter part of the short-wavelength blue light. We won\'t promise it helps you sleep. What actually makes a difference for long hours on screens is usually a digital lens with a near-vision boost, together with correct fitting parameters and good visual habits — not a coating alone.',
   },
   {
     q: 'What should I do about headaches and eye pain from looking at screens?',
@@ -96,7 +96,7 @@ const schema = {
       <ul class="space-y-2.5">
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Digital eye strain is visual overload with a real mechanism: the ciliary muscle stays tense, blink rate drops sharply while focused on a screen so the tear film becomes unstable and the eyes turn dry, and the near-focus demand exceeds the comfort zone.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Blue light is not the main cause; the real benefit of a blue-light coating for digital eye strain is still debated in research and should not be overstated as eye protection or disease prevention.</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Do the free things first: the 20-20-20 rule, conscious complete blinks, and a screen 10–15 degrees below eye level at 60–70 cm — often more effective than changing lenses.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Before changing lenses, adjust your habits: the 20-20-20 rule, conscious complete blinks, and a screen 10–15 degrees below eye level at 60–70 cm.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>If you still can't get through the afternoon, address it at the lens level: digital lenses or office (intermediate-near) lenses as your needs require; dizziness the moment you put glasses on is usually a fitting-parameter problem.</span></li>
       </ul>
     </div>
@@ -174,8 +174,8 @@ const schema = {
   <!-- 用眼習慣 -->
   <section id="habits" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Start with what's free: visual habits and your work environment</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Before changing lenses, these adjustments are often more effective than you'd think — especially for people in air-conditioning all day switching between multiple screens.</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Start with your habits and your workspace</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">If you spend the day in an air-conditioned office, switching between several screens, these three are worth trying first.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { level: 'The 20-20-20 Rule', desc: 'Every 20 minutes of near work, look at something 20 feet (about 6 metres) away for 20 seconds. It gives the tense ciliary muscle a chance to switch and relax, breaking the whole stretch of "accommodative lock."', fit: 'Relax Accommodation' },
@@ -204,7 +204,7 @@ const schema = {
         {[
           ['ZEISS Digital-type lenses', 'Add a slight positive boost (about +0.50 to +1.25 D) in the lower part of a single-vision myopia lens, so you don\'t need to call on your full accommodation up close — effectively giving the ciliary muscle "partial support." Distance stays clear, suitable for people with myopia and those aged 35–50 whose accommodation is starting to decline. It is not reading glasses, nor a progressive lens.'],
           ['Office (intermediate-near) lenses', 'Maximise clear vision at intermediate-near distances, sacrificing some distance (not suitable for driving) in exchange for a wider computer-and-document field, smaller peripheral aberration and less dizziness. Suited to presbyopes and workers switching between computer, meetings and phone at multiple distances.'],
-          ['Blue-light / anti-glare coatings', 'A blue-light coating can cut some short-wavelength light, and some people report it helps their sleep; but it does not solve ciliary muscle tension, and its real benefit for digital eye strain is still debated in research — a bonus, not the main act. An anti-glare (anti-reflective) coating reduces surface reflections, making images cleaner and less harsh at night or in bright light.'],
+          ['Blue-light / anti-reflective coatings', 'A blue-light coating filters part of the short-wavelength light, but it does not address ciliary muscle tension, and its real benefit for digital eye strain is still debated in research — a bonus, not the main act. An anti-reflective coating deals with something else: reflections on the lens surface.'],
           ['Frame fit and wearing parameters', 'Pantoscopic tilt and vertex distance affect how the optical centre aligns when you look at a screen — high myopes are especially sensitive. Sometimes the right frame adjustment plus a good work-environment setup is more directly effective than changing lenses. A frame that shifts out of place after collection can also turn "it was fine" into "it started making me dizzy a few months later."'],
         ].map(([title, desc]) => (
           <div class="border-t border-white/10 pt-5">
@@ -277,8 +277,8 @@ const schema = {
   <section class="px-6 py-20" style="background:#1a2f4e">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,34px);font-weight:300">Staring at screens all day, and your eyes can't last the afternoon?</h2>
-      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Book a full vision analysis. Our licensed optometry staff will first learn your screen hours and viewing-distance profile, do a preliminary accommodation assessment, and then discuss lens options; if dry eye is a concern, we'll point you to an ophthalmologist — Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.) and Banqiao 02-2253-1246, appointments available at both stores.</p>
-      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Analysis →</a>
+      <p class="text-white/60 mb-8" style="font-size:16px;line-height:1.8">Our licensed optometry staff will first learn your screen hours and viewing-distance profile, check your prescription at the distance you actually sit from the screen, see how well your two eyes team up, and then discuss lens options; if dry eye is a concern, we'll point you to an ophthalmologist — Xinzhuang 02-2206-6700 (No. 419-1, Zhongzheng Rd., Xinzhuang Dist.) and Banqiao 02-2253-1246, appointments available at both stores.</p>
+      <a href="/en/booking/" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3.5 rounded-full hover:bg-brand-gold/90 transition-colors font-sans" style="font-size:15px">Book a Vision Consultation →</a>
     </div>
   </section>
 

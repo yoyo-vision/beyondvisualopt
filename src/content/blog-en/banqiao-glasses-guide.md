@@ -62,7 +62,7 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 
 ### What we offer
 
-- Full clinical vision exams (binocular vision assessment, accommodation testing)
+- Full clinical vision exams (binocular vision assessment, near-vision measurement for presbyopia)
 - Certified ZEISS partner dealer
 - HOYA lens dealer
 - Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, and MINAMOTO

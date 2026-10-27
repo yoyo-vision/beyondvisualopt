@@ -70,7 +70,7 @@ The design logic of the ZEISS Digital Lens is to add a **slight positive power b
 
 The effect is like giving the ciliary muscle "partial support"—it's still working, but no longer over-exerting.
 
-For people who spend long hours in front of a screen, this design can significantly extend comfortable usage time, especially for the 35–50 age group whose accommodative ability is beginning its natural decline.
+If you spend long hours in front of a screen, this design is worth asking about, especially between 35 and 50, when focusing ability starts its natural decline.
 
 > The ZEISS Digital Lens is not a reading lens, nor a progressive lens. It's an enhanced version of a single-vision lens—distance vision stays sharp, with added comfort for near work.
 
@@ -82,11 +82,11 @@ Traditional progressive multifocal lenses are designed for the "far–intermedia
 
 Office lenses maximize the clear field of view at intermediate and near distances, sacrificing some distance vision (they're not suitable for driving) in exchange for a wider computer and reading field, with less peripheral aberration and a lower tendency to cause dizziness.
 
-### Option 3: HOYA Near-Support Lens Series
+### Option 3: Near-Boost Lens Options
 
 **Best for:** Younger people with myopia who do extended near work but don't need multifocals
 
-HOYA's Workstyle / Sync III series uses a similar concept, offering different levels of near-vision boost (+0.60 / +1.00 / +1.25D). The optometrist selects the appropriate boost based on your accommodative facility test results.
+Near-boost lenses usually come in several boost levels; our optometry staff choose one based on your eye exam and your working distance.
 
 ### Option 4: Frame Adjustment + Viewing Distance Optimization
 
@@ -141,8 +141,6 @@ These can make your eyes a little more comfortable, but if symptoms persist you 
 
 **Q: Where in Xinzhuang or Banqiao can I get a digital eye strain evaluation?**
 
-Beyond Visual Optometry's Xinzhuang location offers a complete digital fatigue evaluation, including accommodative facility testing, binocular vision function assessment, an initial check of tear film and wearing comfort (if dry eye is suspected, we refer you to an ophthalmologist), and lens recommendations tailored to your work environment. Our Banqiao location provides basic consultation and dispensing services.
-
-You don't need to wait until symptoms get severe. A preventive visual evaluation usually saves more time and money than waiting until things become uncomfortable to deal with.
+You can book at either store, Xinzhuang or Banqiao. Our optometry staff measure your prescription at your screen distance, check how well your two eyes work together, then talk through lenses based on your work setup. We don't do tear-film or ocular-surface exams; those belong with an ophthalmologist, and if dry eye is a concern we'll suggest seeing one first.
 
 To book an evaluation, visit [/en/booking](/en/booking/) or call our Xinzhuang store at +886-2-2206-6700 or our Banqiao store at +886-2-2253-1246.
