@@ -216,10 +216,15 @@ const pageSchema = {
         </div>
 
         <!-- 封面圖（首屏 LCP 元素：eager + 高優先，並帶尺寸避免版面位移 CLS） -->
-        {post.data.image && (
+        {/* 2026-10-27 老闆指示：每篇文章都要有封面。沒有實拍封面的，用 OG 文字卡（1200×630）完整顯示不裁切 */}
+        {post.data.image ? (
           <img src={post.data.image} alt={`${post.data.title}｜能見度視覺中心 YoYo 驗光師`}
             width="800" height="256" loading="eager" fetchpriority="high"
             class="w-full h-64 object-cover rounded-2xl mb-10" />
+        ) : (
+          <img src={`/images/blog/og/${post.slug}.png`} alt={`${post.data.title}｜能見度視覺中心 YoYo 驗光師`}
+            width="1200" height="630" loading="eager" fetchpriority="high"
+            class="w-full h-auto rounded-2xl mb-10" />
         )}
 
         <!-- YouTube（延遲載入，避免第三方 iframe 拖累 Core Web Vitals） -->
