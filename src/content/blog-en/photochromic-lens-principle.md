@@ -1,80 +1,104 @@
 ---
-title: Why Do Photochromic Lenses Change Color? The Chemistry Behind Photochromic Molecules
+title: "Photochromic Lenses Barely Darken in the Car and Are Lighter in Summer: UV Darkens Them, and Heat Makes Them Fade Faster"
 date: 2026-07-15
+updated: 2026-10-26
 tag: "Lenses"
-excerpt: Photochromic lenses darken outdoors and fade back to clear indoors, thanks to molecules that change structure when they hit UV light. Beyond Visual Optometry (Xinzhuang and Banqiao) breaks down this reversible chemical reaction in plain language.
+excerpt: "Photochromic lenses work through molecules that change shape when UV light hits them and darken, then fold back to clear on their own once the UV is gone. That's why they barely darken in a car, are lighter in summer than in winter, and take a while to clear when you come indoors. Both our Xinzhuang and Banqiao stores make prescription photochromic lenses, including progressives."
 image: ""
 youtube: ""
 instagram: ""
 ---
 
-## How Do Photochromic Lenses Actually Change Color?
+## "Why won't my photochromic lenses darken in the car?"
 
-The most interesting thing about photochromic lenses is that they **darken when you walk into sunlight and gradually fade back to clear when you go back indoors**—and they can keep doing this back-and-forth cycle for years. There's no electronics and no light sensor involved. It's simply a **chemical compound that changes its molecular structure in response to light**, generally referred to as **photochromic** molecules.
+People often take their glasses off, hold them up to the sun outside the shop door, watch the lenses turn grey soon after, and say: "See, they do change. But when I'm driving, they just won't."
 
-The principle can be summed up in one sentence:
-
-> **These molecules absorb ultraviolet (UV) light and change their structure, which causes them to start absorbing visible light and appear darker. Once they're away from UV, they revert to their original structure and become clear again.**
-
-The whole process is **reversible**, and that's the biggest difference between "photochromic" and "tinted": a tinted lens has a fixed color, while a photochromic lens switches back and forth depending on how much UV is in the environment.
+The lenses aren't broken. Why they don't darken in the car and why they change color at all are actually the same story.
 
 ---
 
-## Two Materials, Two Different Color-Change Reactions
+## Photochromic molecules: UV light makes them change shape
 
-Photochromic lenses have historically used two main types of materials, and the underlying chemistry differs between them:
+There's no electronics in a photochromic lens and no light sensor, only a **chemical that changes its molecular structure in response to light**, collectively called **photochromic** molecules.
 
-| Type | Photochromic substance | How the color change works (in plain terms) |
+> **When these molecules absorb ultraviolet (UV) light, they change structure and start absorbing visible light, so the lens looks darker; once the UV is gone, they return to their original structure and become clear again.**
+
+The whole process is **reversible**, and that's the biggest difference between photochromic and tinted lenses: a tinted lens has a fixed color, while a photochromic lens switches back and forth with the amount of UV around it.
+
+---
+
+## Glass and plastic photochromic lenses change color in different ways
+
+| Type | Color-Changing Substance | How It Works (Plain Language) |
 |------|---------|-----------------|
-| **Traditional glass photochromic lenses** | Silver halide microcrystals (e.g. silver chloride, silver bromide) | UV light reduces silver ions into tiny **metallic silver particles**, which absorb visible light and darken the lens; once away from UV, they revert back to clear |
-| **Modern resin (plastic) photochromic lenses** | Organic photochromic dyes (e.g. naphthopyrans, spirooxazines) | UV light triggers a **"ring-opening" isomerization** in the molecule; the change in structure shifts the light spectrum it absorbs, which darkens the color; removing the UV or applying heat causes **ring-closing**, restoring clarity |
+| **Traditional glass photochromic lenses** | Silver halide microcrystals (e.g., silver chloride, silver bromide) | UV light reduces silver ions into tiny **metallic silver particles** that absorb visible light and darken the lens; once the UV is gone, they revert to clear |
+| **Modern plastic (resin) photochromic lenses** | Organic photochromic dyes (e.g., naphthopyrans, spirooxazines) | UV light causes the molecules to undergo a **"ring-opening" isomerization**; the structural change shifts the light they absorb, so the lens darkens; when UV is removed or heat is applied, they **close the ring** again and recover |
 
-Today's plastic (resin) lenses almost all use the **organic dye** approach. Put simply, the molecule switches between two shapes—"ring-closed" and "ring-opened": **clear when ring-closed, colored when ring-opened.** UV light supplies the energy that "opens" the molecule; once there's no more UV in the environment, the molecule "closes" itself back up, and the color fades along with it.
-
----
-
-## Why Do Photochromic Lenses Barely Darken Inside a Car?
-
-This is probably the best everyday example of the fact that "the color change is driven by UV, not by brightness."
-
-**What darkens a photochromic lens is ultraviolet (UV) light, not visible-light brightness.** Most car windshields are designed to block UV. With UV kept out of the car, the photochromic lens loses its "trigger," so it typically only darkens slightly—or barely at all—even if you're squinting from the glare inside the car.
-
-Once you understand this, a lot of photochromic lenses' "quirks" start to make sense: what they're sensing is **the amount of UV in the environment**, not how bright things feel to your eyes.
+Today's plastic lenses almost all use **organic dyes**. The molecules switch between two shapes: **closed ring is clear, open ring is colored**. UV light supplies the energy to open the molecules; once the UV is gone, they close up on their own and the color fades. In glass photochromic lenses the color depth varies with lens thickness, which is more noticeable for stronger prescriptions.
 
 ---
 
-## Why Are Lenses Lighter in Summer Than in Winter? What About the Speed of the Color Change?
+## Why photochromic lenses barely darken inside a car
 
-Besides UV, **temperature** plays a big role too, because the "fading back to clear" step is temperature-sensitive:
+**What darkens the lens is UV light, not the brightness of visible light.** Most car windshields are designed to block UV, so even if the sun inside the car is making you squint, the lenses are missing their trigger and often only darken slightly, or barely at all.
 
-| Factor | Effect | Reason |
-|---------|------|------|
-| **UV intensity** | Stronger UV → darker color | More molecules get "opened" |
-| **Ambient temperature** | Higher temperature → lighter overall color, faster fading | Heat speeds up the molecules "closing back up" |
-| **Age of the lens** | Color-change range may shrink over time | Organic dyes gradually "fatigue" after repeated reactions over the long term |
+Once that clicks, a lot of their quirks make sense: they respond to **the amount of UV in the environment**, not to how bright things look to you. On an overcast day outdoors, UV is still there, so they still darken; sitting in a car in full sun, they hardly react.
 
-So with the same pair of photochromic lenses, **in winter they'll get darker outdoors and fade back more slowly; in summer they'll stay lighter and fade faster.** That's because summer's high heat is constantly pushing the molecules to "close back up," fighting against UV's pull to "open" them.
+---
+
+## Why photochromic lenses are lighter in summer than in winter
+
+### The stronger the UV, the darker they get
+
+The more molecules the UV opens, the darker the lens. On the same day, midday outdoors is darker than late afternoon; under the same sun, an open space is darker than a covered arcade.
+
+### The higher the temperature, the faster they fade and the lighter they stay
+
+The "closing back up" step depends on heat: **the higher the temperature, the faster the molecules return to their clear structure**. Outdoors in summer, UV keeps opening the molecules while the heat keeps pulling them back, so the lens ends up lighter; in cold winter weather, fading is slow, so the lens looks darker and stays dark longer.
+
+### With years of use, the color change may become smaller
+
+Organic dyes go through countless open-and-close cycles over the years, and with UV and oxygen also at work, they gradually tire, so the lens may not darken as much as when it was new. That's normal material aging.
+
+---
+
+## Our Xinzhuang and Banqiao stores, and booking
+
+Both our Xinzhuang and Banqiao stores make prescription photochromic lenses. ZEISS and HOYA, the lens brands we carry, both have photochromic ranges (ZEISS PhotoFusion X is listed on our [lens range page](/en/lenses/)), available for myopia, hyperopia and astigmatism, and progressive lenses can be made photochromic too. There are also photochromic lenses on the market designed to darken inside a car; Beyond Visual does not currently offer these. If sun protection while driving is what you need, a separate pair of prescription polarized sunglasses is the more practical choice.
+
+Photochromic lenses are corrective lenses, so an eye exam comes first; the exam itself takes about 45 to 60 minutes.
+
+- Beyond Visual Optometry (BiYang Optometry Clinic), Xinzhuang store: No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, near MRT Xinzhuang Station, +886-2-2206-6700, led by Optometrist YoYo
+- Beyond Visual Optical (Beyond Visual Optometry Clinic), Banqiao store: No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, near MRT Jiangzicui Station, +886-2-2253-1246
+
+[Book a vision consultation](/en/booking/), and bring the glasses you currently wear.
+
+---
+
+## Quick to darken, slow to clear: think about the moments you walk indoors or drive into a tunnel
+
+When people choose photochromic lenses, they almost always ask whether they get dark enough. What actually affects daily life is the other end: how quickly they come back.
+
+Darkening is driven by UV pushing the molecules open, so it starts the moment the light hits. Clearing depends on the molecules closing up on their own, with nothing helping them along, so you have to wait. That's why the lenses turn grey quickly when you step outside, but when you walk indoors, ride into a tunnel or drive down into a car park, they stay darker than your surroundings for a while, and the colder the weather, the longer that while.
+
+That doesn't matter in an office, but it does on a dim stairwell, at a tunnel entrance or at the ramp into a basement car park. If you go in and out like this many times a day, run through those places before you order: if you can live with that dim spell, photochromic lenses are very convenient; if you can't, split indoor and outdoor wear into two pairs.
 
 ---
 
 ## Common Misconceptions / FAQ
 
-**Q: Why don't photochromic lenses darken much inside a car?**
-Because what activates the photochromic molecules is **UV light**, not visible-light brightness. Most car windshields block out UV, so with that "trigger" missing inside the car, photochromic lenses naturally don't darken much. This also confirms that the color-change reaction is fundamentally about "sensing UV," not "sensing brightness."
-
-**Q: Why are photochromic lenses lighter in summer than in winter?**
-Because temperature affects the "fading" step. **Higher heat speeds up the molecules reverting back to their clear structure**, so outdoors in summer, UV is pushing the color darker while heat is pulling it lighter at the same time—with those two forces working against each other, the color ends up lighter. In winter's cooler temperatures, fading is slower, so the lenses appear darker and stay that way longer.
-
 **Q: Do photochromic lenses lose their color-changing ability over time?**
-It's possible. This is especially true for organic dyes—after years of repeated "ring-opening and ring-closing," combined with the effects of UV and oxygen, the molecules gradually "fatigue," and the range of the color change may end up less pronounced than when the lenses were new. This is a natural aging effect of the chemical material and is a normal part of long-term use.
 
-**Q: Do photochromic lenses darken faster than they clear up?**
-Generally, **yes—darkening happens faster than clearing back up.** Step outside into UV light and the lenses will visibly darken within seconds; go back indoors and, without UV, the molecules have to "close back up" on their own, which usually takes a few minutes—and the colder it is, the slower that fade tends to be.
+They can. Organic dyes go through countless open-and-close cycles over the years, and with UV and oxygen also at work, they gradually tire, so the lens may not darken as much as when it was new. This is natural material aging under normal use. If your lenses seem noticeably lighter or don't clear fully, bring them in and let our optometry staff take a look.
+
+**Q: Can I wear photochromic lenses for night driving?**
+
+Without UV, photochromic lenses return to clear, so you can wear them at night. Watch out for the period after driving from bright light into a tunnel or underground car park at dusk, when the lenses haven't finished clearing and your view is darker. On which tints are suitable for night driving, the sunglasses buying guide from Taiwan's Bureau of Standards, Metrology and Inspection (BSMI) sets a labeling rule: sunglasses with a luminous transmittance between 8% and 75% must be labeled "not suitable for twilight or night driving."
+
+**Q: Can photochromic lenses be made for myopia, astigmatism and progressives?**
+
+Yes. Single-vision lenses for myopia, hyperopia and astigmatism can be photochromic, and so can progressives. If your prescription is stronger, frame size and lens thickness need to be considered together; for photochromic progressives, the fitting height is still measured with you wearing the frame you've chosen.
 
 ---
 
-## In Short
-
-Photochromic lenses change color because the **photochromic molecules inside them change structure when they hit UV light, and revert once the UV is gone.** It's a reversible chemical reaction, and how dark the lens gets is governed by two variables: **UV intensity** and **temperature**. Once you understand the mechanism, it's no longer surprising why these lenses barely darken in a car, or why they're lighter in summer than in winter.
-
-If you'd like to compare the design differences across various lens types, take a look at the lens guide put together by Beyond Visual Optometry (Xinzhuang and Banqiao locations).
+Photochromic lenses change color because the molecules inside change shape when UV hits them and change back when it's gone. How dark they get is driven by UV and temperature, not by how bright things seem to you; before choosing, thinking through where you go in and out each day is more useful than asking how dark they can get.

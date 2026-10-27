@@ -1,130 +1,118 @@
 ---
 title: "Oncoming Headlights Glaring at Night? Checking Your Lenses, Your Prescription, and Your Eyes, One by One"
 date: "2025-06-10"
+updated: 2026-10-26
 tag: "Lenses"
-excerpt: "Ghosting during the day, blinding headlights at night? It may not be a prescription problem—Optometrist YoYo breaks down the real causes of visual discomfort for drivers, and how the ZEISS DriveSafe range is designed around the demands of night driving."
+excerpt: "When oncoming headlights at night leave you unable to see, the halo may come from reflections off the lens surface, a film of oil and scratches on the lens, astigmatism that isn't corrected accurately, or changes in the eye itself. This article works from the lens to the eye: what anti-reflective coatings and driving lenses are designed to do, when new lenses won't help, and the windshield, which is the most overlooked of all."
+image: ""
+youtube: ""
+instagram: ""
 ---
 
-## Do You Feel Any of These When Driving?
+## "When an oncoming car flashes past, I can't see anything ahead for two or three seconds"
 
-- When looking into the distance, you see a faint shadow and your vision feels unsteady
-- An oncoming headlight flashes and you feel uncomfortable—sometimes even losing clarity for a moment
-- You already wear glasses, but driving still doesn't feel visually solid
+Driving at night on a stretch without street lights, oncoming headlights sweep toward you trailing a ring of light, the lane markings ahead blur, and they only come back once the car has passed. Daytime driving is fine, and the glasses aren't old.
 
-If you have these symptoms, **the problem may not be an insufficient prescription. It may be that your lenses were never designed for "dynamic visual demands."**
-
-Static sharpness and dynamic comfort are two different things. The visual demands of driving are completely different from sitting at home watching TV.
-
----
-
-## The 3 Special Visual Demands of Driving
-
-When most people get glasses, the focus is "whether distance or near vision is clear in a static setting." But driving is a **highly dynamic visual task**, with three demands that ordinary lens designs don't specifically address:
-
-### Demand 1: Rapidly Switching Focus Across Multiple Distances
-
-While driving, your eyes need to switch quickly between the following distances:
-- **Far distance**: road conditions ahead (30m and beyond)
-- **Mid distance**: speedometer, navigation screen (60–80cm)
-- **Rearview mirror**: vehicles behind (image perception at roughly 3–5m)
-
-Switching between these distances means your eyes refocus over and over. Sore eyes or headaches after a long drive can involve your prescription, how long you drive without a break, and rest. A different lens design alone will not solve them; if they persist or get worse, see an eye doctor first.
-
-### Demand 2: Adapting to Rapid Changes in Light
-
-Tunnel entrances, oncoming headlights at night, backlight at dawn—while driving, light intensity can jump from extremely dark to extremely bright (or the reverse) within 0.5 seconds.
-
-The pupil has to constrict and dilate quickly to adapt to the light. But if the lens lacks an optimized **anti-reflective coating**, strong incoming light produces multiple reflections on the front and back surfaces of the lens, stacking up into a sensation of glare. This is the optical reason behind "an oncoming headlight flashes and it's uncomfortable."
-
-### Demand 3: A Sense of Stability in Peripheral Vision
-
-At high speed, your visual system needs to continuously sense peripheral movement (a car pulling alongside, a pedestrian at the roadside), which requires the lens periphery to be as distortion-free and aberration-free as possible. Ordinary lenses usually have more noticeable aberrations at the edge of the frame, which makes vision feel "unstable" in a fast, dynamic environment.
+Where that ring of light comes from has more than one answer. The lenses, the prescription, the eyes, and even the windshield in front of your eyes can all be the source.
 
 ---
 
-## The Optics of Night Glare
+## Four common sources of the halo at night
 
-Night glare has more than one source. Reflections off the lens surface are one; an inaccurate astigmatism correction, or a film of oil and scratches on the lens, are others. Changes in the eye itself (such as clouding of the crystalline lens) also scatter light, and that is for an eye doctor to assess. This section covers the lens surface.
+### Reflections off the lens surface: without an anti-reflective coating, about 8% across both surfaces
 
-As light passes through a lens, it reflects off the front and back surfaces. Lenses without an anti-reflective coating (AR coating) lose about 8% of light to reflections across the two surfaces combined (per standard surface-reflection optics for lenses with a refractive index around 1.5, roughly 4% per surface). This reflected light forms a "halo" on your retina—the ring of light you see around oncoming headlights.
+As light passes through a lens, part of it reflects off the front and back surfaces. A plastic lens with a refractive index of about 1.5 reflects roughly 4% at each surface, so without an anti-reflective (AR) coating, about 8% is reflected across both. Some of that reflected light bounces back and forth inside the lens and overlays the image you see, adding a ring or a ghost image around oncoming headlights.
 
-**A high-quality anti-reflective coating** is designed to keep surface reflections to a minimum so that the light you perceive while driving at night is purer and less harsh (ZEISS's DuraVision Platinum white paper, for example, lists residual reflectance of roughly 0.5% per lens surface, with luminous transmittance raised to over 98%).
+An anti-reflective coating uses thin-film interference to cancel these reflections; with less surface reflection, the lights you see at night look cleaner.
 
----
+### A film of oil and fine scratches on the lens
 
-## The ZEISS DriveSafe Range: Designed for Drivers
+Lenses that look fine by day can scatter light under point light sources at night, where oil, fine scratches and areas of deteriorating coating all spread the headlights out. Hold your glasses up to a light at an angle, and the answer is often right there on the lens.
 
-Among the brands we carry, ZEISS DriveSafe is a lens range designed for driving. According to ZEISS's published information, its design focuses on three areas:
+### Astigmatism that isn't corrected accurately: unnoticed by day, obvious at night
 
-### 1. Night Glare Suppression
-Using a special DriveSafe coating, it optimizes short-wavelength blue light around 450nm (the band that interferes most with contrast), making night-driving images clearer in contrast while reducing the sensation of glare.
+Astigmatism has an axis as well as a power. An axis a few degrees off is hard to notice in good daylight, but at night your pupils dilate, light passes through a larger area of the lens, and headlights tend to stretch in one direction. The answer here is a new eye exam and realigning your current pair, not adding another pair of lenses.
 
-### 2. Dynamic Vision Optimization
-The design is adjusted for optical stability when the eyes "move rapidly across the field of view," making refocusing smoother and less blurry when your gaze shifts quickly (distance → dashboard).
+### Changes in the eye itself
 
-### 3. Relaxed Mid-Distance Design (DriveSafe Progressive Version)
-DriveSafe also has a progressive version, adding a slight mid-distance support zone below the traditional distance zone, so you don't have to lower your head too much to see the navigation screen—better matching your head posture while driving.
+If lights spread out far more than they used to, or your night vision gets noticeably worse in a short time, the cause may be a change in the eye itself, such as the crystalline lens starting to cloud. That's for an ophthalmologist to assess, so please see one as soon as possible. If an eye exam finds that your vision can't be corrected to normal, Article 12, Paragraph 3 of Taiwan's Optometrists Act also requires our optometry staff to refer you to a medical institution.
 
 ---
 
-## Lens Selection Reference Table for Drivers
+## Three things your eyes do while driving
 
-| Driving Complaint | Root Cause | Recommended Lens Feature |
-|---------|---------|------------|
-| Blinding headlights and halos at night | Lens surface reflections (no AR coating) | High-quality anti-reflective coating (ZEISS DuraVision) |
-| Slow visual response at tunnel entrances/exits | Pupil adaptation delay + insufficient coating | High light-transmission coating |
-| Unstable vision in rain/fog | Insufficient contrast | High-contrast coating design |
-| Lowering your head too much to see navigation | Ordinary single-vision has no mid-distance design | DriveSafe progressive version |
-| A sense of peripheral vision wobble | Lens peripheral aberration | High-index, low-aberration design |
+### Switching between far, middle and near
 
----
+Your gaze is constantly moving while driving: the road ahead is far away, the dashboard and navigation screen are about arm's length, and the mirrors are at another distance again. Moving between these distances means your eyes refocus over and over. Sore eyes or headaches after a long drive can involve your prescription, how long you drive without a break, and rest; a different lens design alone won't solve them. If they persist or get worse, see an eye doctor first.
 
-## Real Case: Thom Browne × ZEISS DriveSafe
+### Sudden changes between light and dark
 
-A Banqiao customer who drives frequently came to our store and described her frustration:
+Tunnel entrances and exits, oncoming headlights and low dawn sun often take you from dark to bright, and back again, in a very short time. Your pupils have to keep up, and that's when reflections off the lens surface are most noticeable.
 
-> "When I look into the distance there seems to be a shadow, and my vision isn't steady—especially when an oncoming headlight flashes, I feel really uncomfortable and tense."
+### Peripheral vision
 
-After a complete visual behavior assessment, we found that in dynamic visual situations (particularly night driving), she was prone to visual discomfort caused by rapid changes in visual contrast.
-
-**The lens solution:**
-- **ZEISS DriveSafe driving lenses**: optimized for dynamic vision and night glare
-- **Thom Browne frame**: a wrap design that hugs the face shape, reducing side light interference
-- **Precise adjustment of vertex distance and pantoscopic tilt**: ensuring maximum distance clarity
-
-**Feedback after wearing:**
-
-> "Overall it feels much more stable. It makes a real difference when I'm driving, and oncoming lights don't distract me nearly as much."
+Driving means watching both sides constantly: the car alongside, a pedestrian at a junction, a scooter darting out. Aberrations usually increase toward the edge of a lens, and people with stronger prescriptions notice it more. Peripheral aberrations are handled by lens design, such as aspheric and personalized designs; a higher refractive index only makes the lens thinner, and its Abbe number is usually lower, so color fringing can actually become more noticeable.
 
 ---
 
-## But Driving Lenses Aren't a Cure-All — When Not to Rush Into Them
+## What driving coatings and driving lenses are designed to do
 
-After all that design detail, here's the other side: **driving lenses solve optical and visual-condition problems, not every problem you have seeing at night.**
+Driving lenses are a category of lenses whose design takes the visual demands of driving into account. There are two common directions: a coating designed to reduce glare from oncoming headlights at night, and a field-of-view layout based on how your gaze moves between the road, mirrors and dashboard while driving. Progressive versions keep an area below the distance zone for reading the dashboard, so you don't have to lower your head too far.
 
-In a few situations they won't give you the difference you're hoping for:
+Among the brands we carry, ZEISS DriveSafe and HOYA EnRoute are lenses of this kind; product names are listed on our [lens range page](/en/lenses/). According to ZEISS's published information, the DriveSafe coating is designed to reduce glare from oncoming headlights at night; ZEISS's white paper for its DuraVision Platinum anti-reflective coating lists residual reflectance of about 0.5% per surface and luminous transmittance above 98%. These are manufacturer specifications; whether they suit your prescription and driving habits can only be known after measuring.
 
-- **The problem isn't the lens.** Night vision that has genuinely deteriorated, or lights that scatter unusually badly, can involve the eye itself. That's an ophthalmologist's territory. Rule out the medical side first, then talk lenses — not the other way round.
-- **Your current prescription was never accurate.** A cylinder axis that's off by a few degrees hides well in daylight and shows up the moment your pupils dilate at night. That calls for remeasuring, not for buying an extra pair.
-- **You barely drive after dark.** A dedicated tool earns its keep through use. If night driving is occasional, putting the money into getting your main pair measured and fitted properly usually feels better day to day.
-- **Windshields, headlights and fatigue.** Hazed glass, ageing headlamps and driving tired all degrade what you see, and no lens compensates for those.
+---
 
-So we ask first: how many nights a week do you actually drive, and on what kind of roads? Sometimes the answer is that you don't need a new pair at all — realigning the axis and optical center of the one you own is enough. Saying that out loud costs us a sale, and it's also why people come back to us.
+## When driving at night is hard, new lenses won't help in these four cases
+
+- **The problem is in the eye.** If your night vision is getting worse or lights spread out unusually, see an ophthalmologist first. Talking about lenses before medical causes are ruled out is the wrong order.
+- **Your current pair was never fitted accurately.** If the astigmatism axis, optical center or frame position is off, the answer is to remeasure and readjust, not an extra pair of driving lenses.
+- **You barely drive after dark.** A dedicated lens earns its value through use. If night driving is occasional, getting your main pair's prescription and fit right usually makes a bigger everyday difference.
+- **Headlights, wipers and sleep.** Yellowed, ageing headlights, worn wiper blades leaving streaks, and driving tired all make it harder to see at night, and lenses can't reach any of them.
+
+---
+
+## Our Xinzhuang and Banqiao stores, and booking
+
+Both our Xinzhuang and Banqiao stores offer consultation and fitting for driving lenses, including ZEISS DriveSafe and HOYA EnRoute, in single-vision and progressive versions. Beyond Visual is an authorized ZEISS dealer and a HOYA dealer.
+
+Bring the glasses you drive in now. Our optometry staff will first check your prescription and astigmatism axis, then measure the optical center and look at whether the frame has shifted, and only then discuss whether new lenses make sense; the exam itself takes about 45 to 60 minutes. When you book, think about how many nights a week you drive, what roads you usually take, and what kind of light bothers you most.
+
+- Beyond Visual Optometry (BiYang Optometry Clinic), Xinzhuang store: No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, near MRT Xinzhuang Station, +886-2-2206-6700, led by Optometrist YoYo
+- Beyond Visual Optical (Beyond Visual Optometry Clinic), Banqiao store: No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, near MRT Jiangzicui Station, +886-2-2253-1246
+
+[Book a vision consultation](/en/booking/).
+
+---
+
+## Your lenses' reflections are handled, but the haze on the inside of the windshield is still there
+
+After all this about lenses, one more piece of glass tends to be forgotten. Light from oncoming headlights passes through the windshield before it reaches your eyes; your lenses come after it.
+
+A thin film of oil and haze slowly builds up on the inside of the windshield, from the air in the car, the air conditioning and fingerprints, and it's almost invisible by day. At night, oncoming headlights hit that film and spread across the whole windshield, as if a bright mist were in front of you. However good the coating on your lenses, it can't reach the glass in front of your eyes. Worn wiper blades leaving streaks on the outside have the same effect.
+
+So if driving at night feels glaring, clean the inside of the windshield and replace the wiper blades first, then see how much of the halo is left. What remains is the part your lenses, prescription and eyes have to answer for.
+
+---
 
 ## FAQ
 
-**Q: What's the difference between an ordinary anti-reflective coating and the ZEISS DriveSafe coating?**
+**Q: What's the difference between an ordinary anti-reflective coating and a driving coating?**
 
-An ordinary anti-reflective coating is designed to "reduce reflected light loss" and raise overall light transmission. The ZEISS DriveSafe coating additionally optimizes the 450nm short-wavelength blue light band—the band that interferes most with the human eye's contrast perception and is also a main cause of night glare. The design goals are different.
+An ordinary anti-reflective coating is designed to reduce reflections off the lens surface and increase overall light transmission. According to manufacturers' published information, a driving coating builds on this with a design aimed at reducing glare from oncoming headlights at night. Their design goals are different; which suits you depends on how often and on what roads you drive at night.
 
 **Q: I have astigmatism, and driving with ordinary glasses still feels blurry. Is it a matter of astigmatism power?**
 
-Astigmatism isn't only about power; axis error also causes dynamic visual instability. When your eyes rotate quickly while driving, an astigmatism axis deviation produces a directional blur as your gaze moves, which is more noticeable than looking at something while stationary. We recommend a follow-up visit to reconfirm the precision of your astigmatism axis.
+It may be. Astigmatism isn't only about power; an axis error can also cause directional blur as your gaze moves, and since your eyes are always moving while driving, that blur is more noticeable than when looking at something while still. Bring that pair back in and let our optometry staff recheck the power and axis.
 
-**Q: Can progressive multifocal lenses be used for driving?**
+**Q: Can progressive lenses be used for driving?**
 
-Yes, but with conditions. The distance zone of a progressive lens is in the upper part of the lens, and the normal driving line of sight usually isn't a problem. But at night the pupil dilates, and your vision may more easily sweep into the aberration zone of the progressive corridor, creating a slight halo. The ZEISS DriveSafe progressive version was specifically optimized for this issue.
+Yes, with conditions. The distance zone of a progressive lens is at the top, and your normal driving line of sight usually isn't a problem; at night your pupils dilate and your gaze more easily sweeps into the aberration zones at the sides, which can create a slight halo. Driving-oriented progressive designs lay out the field of view along the path your gaze takes while driving; whether one suits you depends on your prescription and driving habits.
 
-**Q: Where in Xinzhuang or Banqiao can I get lenses made specifically for driving?**
+**Q: Can I wear yellow lenses for night driving?**
 
-Beyond Visual Optometry is an authorized ZEISS dealer, and both the Xinzhuang store (Biyang Optometry) and the Banqiao store offer ZEISS DriveSafe range consultation and fitting. Our licensed optometry staff will first perform a complete visual assessment to identify the root of your problem before recommending a suitable lens solution. To book, call the Xinzhuang store at +886-2-2206-6700 or the Banqiao store at +886-2-2253-1246, or [book online](/en/booking/).
+We don't recommend it. Any tinted lens takes away some light, and night is exactly when light is short. A 2019 simulated night-driving study (Hwang et al., 22 participants) found that yellow lenses did not help participants spot pedestrians sooner, nor did they reduce the effect of headlight glare; the sunglasses buying guide from Taiwan's Bureau of Standards, Metrology and Inspection also requires sunglasses with a luminous transmittance between 8% and 75% to be labeled "not suitable for twilight or night driving."
+
+---
+
+When you can't see well at night, your lenses are the last layer before light enters your eyes, not the only one. Work through them from the windshield to the lenses, the prescription and the eye; once every layer has been checked, what's left is the thing that really needs fixing.
