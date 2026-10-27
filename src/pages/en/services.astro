@@ -81,6 +81,18 @@ import Layout from '../../layouts/Layout.astro';
             'Follow-up care',
           ],
         },
+        {
+          icon: '🕶️',
+          title: 'Prescription Sunglasses (Polarized · Photochromic · Tinted)',
+          duration: 'Eye exam itself: 45–60 min',
+          items: [
+            'Polarized, photochromic and tinted lenses made to your prescription, from ZEISS and HOYA',
+            'Available for myopia, hyperopia, astigmatism and progressives',
+            'Ready-made non-prescription sunglasses from brands such as Ray-Ban, to buy as they are or fit with prescription lenses',
+            'Clip-ons (including polarized) and magnetic sun lenses',
+            'Driving lenses: ZEISS DriveSafe and HOYA EnRoute, single vision and progressive',
+          ],
+        },
       ].map(service => (
         <div class="bg-white border border-brand-ink/10 p-8">
           <div class="flex items-start gap-4 mb-6">
@@ -112,6 +124,7 @@ import Layout from '../../layouts/Layout.astro';
           { q: 'Do I need an appointment?', a: 'Yes, we recommend booking in advance for a complete clinical vision exam. Walk-ins may be accommodated for simple adjustments or inquiries.' },
           { q: 'How long does a full vision exam take?', a: 'A complete clinical exam takes 45–60 minutes for first-time visitors. We do not rush — every parameter is carefully assessed to ensure your glasses are truly comfortable.' },
           { q: 'Can you help if my current glasses make me dizzy?', a: 'Yes. Dizziness from glasses is often caused by prescription errors, axis deviation, or incorrect frame adjustment. We provide a full binocular vision assessment to identify the root cause.' },
+          { q: 'Can I get polarized or photochromic sunglasses with my prescription?', a: 'Yes. Both our Xinzhuang and Banqiao stores make prescription polarized, photochromic and tinted lenses from ZEISS and HOYA, for myopia, hyperopia, astigmatism and progressives; an eye exam comes first. Both stores also stock ready-made non-prescription sunglasses from brands such as Ray-Ban, which you can buy as they are or fit with prescription lenses, plus clip-ons (including polarized) and magnetic sun lenses. We do not currently offer lenses that combine polarized and photochromic in one, or photochromic lenses designed to darken inside a car.' },
           { q: 'Do you speak English?', a: 'Basic English communication is available. We can assist foreign customers with prescription reading, lens selection, and basic consultations.' },
         ].map(faq => (
           <div class="border-b border-brand-ink/10 pb-6">
