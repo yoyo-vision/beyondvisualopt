@@ -102,7 +102,7 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'daily-vision', name: '用眼情境', keyword: '電腦眼鏡', guide: '/guide/digital-eye-strain/',
     subs: [
-      { slug: 'screen', name: '螢幕族', guide: '/guide/digital-eye-strain/', posts: ['digital-eye-strain-solution'] },
+      { slug: 'screen', name: '螢幕族', guide: '/guide/digital-eye-strain/', posts: ['digital-eye-strain-solution', 'computer-glasses', 'progressive-lens-computer-neck'] },
       { slug: 'work', name: '職業用眼', posts: ['professional-driver-vision-standard', 'delivery-rider-vision', 'night-shift-commuter-vision'] },
     ],
   },
