@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-// 本指南的主題聚落文章（依閱讀順序排列）——英文版取 blog-en 集合
+// 本指南的主題聚落文章（依閱讀順序排列）——英文版取 blog-en 集合；職業用眼 3 篇沒有英文版
 const CLUSTER_SLUGS = [
   'digital-eye-strain-solution',
   'glasses-dizzy',
@@ -16,23 +16,23 @@ const clusterPosts = CLUSTER_SLUGS
 
 const canonicalUrl = 'https://beyondvisualopt.com/en/guide/digital-eye-strain/';
 
-// 指南頁 FAQ（與聚落文章互補，不重複）
+// 指南頁 FAQ（照中文版 2026-10-28 定稿翻譯）
 const faqs = [
   {
-    q: 'Do blue-light lenses really work?',
-    a: 'It depends on what you expect them to solve. The core of digital eye strain is sustained ciliary muscle tension plus dry eye caused by reduced blinking — blue light itself is not the main cause. So the benefit of a blue-light coating for the kind of fatigue where your eyes feel strained in the afternoon and struggle to refocus at distance is still open to debate in research, and it should not be overstated as eye protection or disease prevention. What it does is filter part of the short-wavelength blue light. We won\'t promise it helps you sleep. What actually makes a difference for long hours on screens is usually a digital lens with a near-vision boost, together with correct fitting parameters and good visual habits — not a coating alone.',
+    q: 'My eyes get tired from screens. Will blue-light lenses help?',
+    a: 'It depends on what you want them to fix. A blue-light coating deals with light: it blocks part of the short-wavelength blue light. Screen fatigue, though, comes from the eye itself: the ciliary muscle holds one distance all day and your blink rate drops, and a coating can\'t touch either. So how much it helps with the "eyes feel strained in the afternoon and slow to refocus at distance" kind of fatigue is still open to debate in research. We don\'t describe it as protecting your eyes or preventing disease, and we won\'t promise it helps you sleep. If you\'re at a screen all day, check that your prescription is accurate and how far away your screen sits before choosing a coating; if you really need more, then look at digital single-vision or office lenses.',
   },
   {
     q: 'What should I do about headaches and eye pain from looking at screens?',
-    a: 'First, separate two situations. If the discomfort only appears after several hours of use and eases after rest, it is usually accommodative fatigue and dry eye — try the 20-20-20 rule, consciously complete blinks, and set the screen 10–15 degrees below eye level at a distance of 60–70 cm. If the dizziness comes on the moment you put your glasses on, happens even when you are still, or is paired with a clear headache or unsteadiness, it is usually a fitting-parameter problem (prescription, cylinder axis, PD, vertex distance) and needs a re-measurement. If symptoms persist or worsen, under Taiwan\'s Optometrists Act we will recommend a referral to an ophthalmologist — optometrists do not make medical diagnoses.',
+    a: 'First, separate two situations. If the discomfort only appears after several hours of use and goes away with a short rest, it is usually accommodative fatigue and dry eye: try the 20-20-20 rule, consciously complete blinks, and set the screen 10–15 degrees below eye level at a distance of 60–70 cm. If the dizziness comes on the moment you put your glasses on, happens even when you are still, or is paired with a clear headache or unsteadiness, it is usually a fitting-parameter problem (prescription, cylinder axis, PD, vertex distance) and needs a re-measurement in store. If symptoms persist or worsen, under Taiwan\'s Optometrists Act we will recommend a referral to an ophthalmologist; optometry staff do not make medical diagnoses.',
   },
   {
     q: 'What glasses should engineers and office workers on screens all day wear?',
-    a: 'There is no single answer; it depends on your age and how your viewing distances are distributed. For people with myopia who spend long hours at a computer, ZEISS Digital-type lenses add a slight near-vision boost in the lower part of the lens so the ciliary muscle does not have to work at full effort. For those who already have presbyopia and need to switch between the computer and documents, office (intermediate-near) lenses give a wider mid-near field and less peripheral aberration, making them less prone to dizziness than traditional distance-oriented progressives. For designers and others sensitive to colour accuracy, a blue-light filter slightly affects colour rendering and needs to be weighed case by case. We suggest a full vision exam and viewing-distance analysis before deciding.',
+    a: 'Two things come first: whether presbyopia has started, and how far away your eyes spend most of the day. Without presbyopia, the first step is an accurate prescription, then deciding whether digital single-vision lenses make sense. If presbyopia has started and you move between screen and documents all day, office (intermediate-near) lenses are worth a look, though their distance zone is narrow and they are not for driving. Which type, whether to add anything and how much are all decided after your eye exam and a measurement of your usual working distances.',
   },
   {
     q: 'Why do my eyes feel more tired the longer I wear contact lenses?',
-    a: 'There are three common reasons: the lens material\'s water content and oxygen permeability don\'t suit your viewing environment; blinking slows down when you stare at a screen in an air-conditioned room; and wearing time goes beyond your limit, with many people wearing lenses for more than ten hours. Follow your ophthalmologist\'s prescription and the product labeling for wearing time and replacement schedule. If dryness persists, the whites of your eyes keep turning red, or you have light sensitivity or pain, please see an ophthalmologist directly; tear and eye-surface checks are medical examinations our stores don\'t perform. If you\'d like your contact lens prescription and fit rechecked, our licensed optometry staff can do that in store; eye health itself remains the ophthalmologist\'s call.',
+    a: 'The screen-related causes are usually these: the lens material\'s water content and oxygen permeability don\'t suit your environment; blinking slows down when you stare at a screen in an air-conditioned room; and wearing time goes beyond what your eyes can handle, with many people wearing lenses for more than ten hours. For wearing time and replacement schedule, follow what our optometry staff advise and the product labeling. If dryness persists, the whites of your eyes keep turning red, or you have light sensitivity or pain, please see an ophthalmologist directly; tear and eye-surface checks belong with an ophthalmologist and our stores don\'t perform them. If you\'d like your contact lens power and fit rechecked, our optometry staff can do that in store; eye health itself remains the ophthalmologist\'s call.',
   },
 ];
 
@@ -44,8 +44,9 @@ const schema = {
       "@id": canonicalUrl,
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
       "url": canonicalUrl,
-      "headline": "Digital Eye Strain: A Complete Guide to Causes, Self-Checks and Solutions",
-      "description": "Staring at screens 10 hours a day and getting sore, blurry eyes by mid-afternoon? From accommodative fatigue, dry eye and blue light to the 20-20-20 habit, blue-light and office lenses — Optometrist YoYo explains digital eye strain in one page. Fittings in Xinzhuang and Banqiao.",
+      "headline": "Tired Eyes from Screens All Day: Where to Start? Habits, Symptoms and Choosing Computer Glasses",
+      "description": "Screens all day, and by afternoon your eyes are dry, strained and slow to focus at distance? Starting from the ciliary muscle, blinking and screen distance, then the 20-20-20 habit, a symptom chart, and how to choose between the two kinds of computer glasses: digital single-vision and office (intermediate-near) lenses. Written by Optometrist YoYo, Beyond Visual Optometry, Xinzhuang and Banqiao.",
+      "dateModified": "2026-10-28",
       "image": "https://beyondvisualopt.com/og-image.jpg",
       "inLanguage": "en",
       "articleSection": "Complete Guide",
@@ -70,8 +71,8 @@ const schema = {
 };
 ---
 <Layout
-  title="Digital Eye Strain Guide | Beyond Visual Optometry"
-  description="Staring at screens over 10 hours a day and getting sore, blurry eyes by mid-afternoon? From accommodative fatigue, dry eye and blue light to the 20-20-20 rule, blue-light and office lenses — Optometrist YoYo explains digital eye strain in one page. Beyond Visual Optometry, Xinzhuang and Banqiao."
+  title="Tired Eyes from Screens | Habits, Symptoms, Computer Glasses | Beyond Visual Optometry"
+  description="Screens all day, and by afternoon your eyes are dry, strained and slow to focus at distance? The ciliary muscle, blinking and screen distance, the 20-20-20 habit, a symptom chart, and how to choose digital single-vision or office lenses. Written by Optometrist YoYo, Beyond Visual Optometry, Xinzhuang and Banqiao."
   lang="en"
   schema={schema}
 >
@@ -81,10 +82,10 @@ const schema = {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">Complete Guide</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        Digital Eye Strain<br /><span class="text-brand-gold">Complete Guide</span>
+        Tired Eyes from Screens All Day: Where Do You Start?<br /><span class="text-brand-gold" style="font-size:0.6em">Habits, symptoms, and choosing computer glasses</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        Staring at screens for more than 10 hours a day and finding your eyes sore and blurry the moment 3 p.m. hits? This page lays out the causes of digital eye strain, self-checks, visual habits and lens options in one place. Written by Optometrist YoYo, based on clinical fitting practice — not a product catalogue.
+        Hours at a screen every day, and by early afternoon your eyes are dry, strained and slow to focus at distance? Don't rush to change your glasses. First understand what your eyes are doing at the screen and change what you can today; if that isn't enough, then it's time to look at lenses. Persistent pain, repeated severe dryness or a clear drop in vision should go to an ophthalmologist first. Written by Optometrist YoYo.
       </p>
     </div>
   </section>
@@ -94,10 +95,10 @@ const schema = {
     <div class="max-w-4xl mx-auto">
       <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
       <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Digital eye strain is visual overload with a real mechanism: the ciliary muscle stays tense, blink rate drops sharply while focused on a screen so the tear film becomes unstable and the eyes turn dry, and the near-focus demand exceeds the comfort zone.</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Blue light is not the main cause; the real benefit of a blue-light coating for digital eye strain is still debated in research and should not be overstated as eye protection or disease prevention.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Screen fatigue rarely has a single cause: the ciliary muscle stays parked at near focus all day; concentration cuts your blink rate, so the tear film becomes unstable; and distance itself has a cost, since a screen 60 cm away asks the eye for about 1.67 D of extra focusing.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Blue light is not the main cause. A blue-light coating blocks part of the short-wavelength blue light, and how much it helps with digital eye strain is still debated in research; we don't describe it as protecting your eyes or preventing disease.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Before changing lenses, adjust your habits: the 20-20-20 rule, conscious complete blinks, and a screen 10–15 degrees below eye level at 60–70 cm.</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>If you still can't get through the afternoon, address it at the lens level: digital lenses or office (intermediate-near) lenses as your needs require; dizziness the moment you put glasses on is usually a fitting-parameter problem.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>If better habits aren't enough, look at lenses: before about 40, check that your prescription is accurate and whether digital single-vision lenses make sense; once presbyopia arrives, look at office (intermediate-near) lenses. Dizziness the moment you put glasses on points to the fitting parameters.</span></li>
       </ul>
     </div>
   </section>
@@ -106,11 +107,12 @@ const schema = {
   <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
       {[
-        { label: 'What Digital Eye Strain Is', href: '#why' },
-        { label: 'Symptom Self-Check', href: '#checklist' },
+        { label: 'Why Screens Tire Your Eyes', href: '#why' },
+        { label: 'Symptom Chart', href: '#checklist' },
         { label: 'Visual Habits', href: '#habits' },
-        { label: 'Lens Options', href: '#lenses' },
+        { label: 'Choosing Computer Glasses', href: '#lenses' },
         { label: 'Fatigue for Contact Lens Wearers', href: '#contacts' },
+        { label: 'Related Articles', href: '#cluster' },
         { label: 'FAQ', href: '#faq' },
       ].map(item => (
         <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
@@ -118,43 +120,43 @@ const schema = {
     </div>
   </section>
 
-  <!-- 數位疲勞是什麼 -->
+  <!-- 為什麼會累 -->
   <section id="why" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Digital eye strain isn't just "tired eyes" — it's visual overload with a mechanism</h2>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Why do screens tire your eyes? Three things your eyes are busy with</h2>
       <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
-        <p>"My eyes feel really dry and my head aches after work." "When I look up from the computer, distance seems out of focus." "The moment 3 p.m. arrives, I start to lose clarity." These symptoms have a name: <strong>Digital Vision Syndrome (DVS)</strong>, also known as digital eye fatigue. For engineers, doctors, sales staff, accountants and designers who stare at screens ten or more hours a day, this isn't just being "tired" — it's three clear visual mechanisms acting at once.</p>
-        <p><strong>① Sustained ciliary muscle tension:</strong> While you look at a screen, the ciliary muscle holds the same level of tension — neither fully relaxed (for distance) nor switching — which is called "accommodative lock." After 4–6 hours, focusing accuracy drops and vision starts to blur, fluctuate and struggle to lock on. That is the daily mid-afternoon "loss of clarity."</p>
-        <p><strong>② Reduced blinking and worsening dry eye:</strong> Normal blinking is about 15–20 times a minute; fixed on a screen it drops to around 5–7. The tear film is renewed by blinking, so with fewer blinks the tear break-up time shortens and the cornea is exposed longer, bringing dryness, burning and a gritty feeling.</p>
-        <p><strong>③ Near-focus demand beyond the comfort zone:</strong> Say you have -3.00 D of myopia and wear glasses — distance is relaxed, but viewing a screen at 60 cm still calls for about +1.67 D of extra accommodation. If you also have uncorrected presbyopia, insufficient accommodation or a slight latent phoria, this demand builds up day after day into daily eye overload. As for blue light, it is a much-discussed factor, but research still debates its role in digital eye strain — the core is really the accommodation and dry-eye issues above.</p>
+        <p>"My eyes are dry and my head aches after work." "When I look up from the computer, distance won't come into focus." "Once 3 p.m. hits, things start to blur." The American Academy of Ophthalmology calls this kind of problem Computer Vision Syndrome, also known as digital eye strain. Three things usually sit behind it, and they rarely show up alone.</p>
+        <p><strong>① The ciliary muscle is pinned at near:</strong> The ciliary muscle tightens for near and only lets go for distance. Sitting at a desk, the distance between your eyes and the screen barely changes all day, so the muscle holds the same effort from morning to afternoon without ever really letting go. Over time both tightening and releasing get sluggish: the line you're reading looks as if it's behind a thin haze, and when you turn to the window it takes a second or two to sharpen.</p>
+        <p><strong>② Concentrate, and you forget to blink:</strong> Eyes on the screen and mind on the work, your blink rate drops. The tear film on the surface of the eye is spread and topped up by each blink; when blinks are too far apart, it dries out in patches before the next one, and dryness, burning and a gritty feeling follow.</p>
+        <p><strong>③ Distance itself takes effort:</strong> With your glasses on and your eyes on the view outside, the ciliary muscle hardly has to work; turn back to a screen 60 cm away and it has to supply about 1.67 D more. That figure depends only on distance, not on how strong your prescription is. Three groups carry this load with particular difficulty: people whose presbyopia has started, people with some of their prescription still under-corrected, and people whose eyes already need extra effort to stay aligned (a phoria).</p>
       </div>
       <p class="text-brand-ink-2 mt-6" style="font-size:16px;line-height:1.8">
-        Full breakdown of the causes: <a href="/en/blog/digital-eye-strain-solution/" class="text-brand-gold underline">Why are screen workers' eyes so tired? A complete digital eye strain solution</a>
+        When things blur in the afternoon, many people's first thought is that their prescription has gone up again. <a href="/en/blog/digital-eye-strain-solution/" class="text-brand-gold underline">Screens look blurry by mid-afternoon: is your prescription getting stronger, or are your eyes just tired?</a> starts from that thought.
       </p>
     </div>
   </section>
 
-  <!-- 症狀自我檢查 -->
+  <!-- 症狀對照 -->
   <section id="checklist" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Which type of fatigue is yours? A symptom self-check</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">These symptoms often overlap, and rarely have a single cause — which is exactly why "just buy some blue-light glasses" usually doesn't solve the problem.</p>
+      <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Dry eyes, headaches, blurry distance: what's behind them? A symptom chart</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">Symptoms often show up several at a time, and there may be more than one cause. This chart only points you in a direction; it is not a diagnosis.</p>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse" style="font-size:15px">
           <thead>
             <tr class="bg-brand-navy text-white">
               <th class="text-left px-5 py-4 font-semibold">Your symptom</th>
-              <th class="text-left px-5 py-4 font-semibold">Possible visual issue</th>
+              <th class="text-left px-5 py-4 font-semibold">More likely cause</th>
             </tr>
           </thead>
           <tbody class="text-brand-ink-2">
             {[
-              ['Distance blurs, recovers after rest', 'Accommodative spasm (pseudo-myopia-like symptoms)'],
-              ['Dry, burning, gritty eyes', 'Dry eye + insufficient blinking'],
-              ['Headache (temples or brow)', 'Latent exophoria, accommodative imbalance'],
-              ['Double vision, text jumping', 'Binocular coordination problem (convergence insufficiency)'],
-              ['Clear up close, blurry when looking away', 'Accommodative over-fatigue'],
-              ['Vision drops in the afternoon', 'Accumulated accommodative fatigue, worsening dry eye'],
+              ['Distance blurs, recovers after rest', 'The ciliary muscle is still set for near and hasn\'t switched back'],
+              ['Dry, burning, gritty eyes', 'Not blinking enough, plus dry eye'],
+              ['Headache (temples or brow)', 'A phoria, or too much near-focusing load'],
+              ['Double vision, jumping text', 'At near, the two eyes don\'t land on the same point'],
+              ['Clear up close, blurry at distance afterwards', 'Too long at near; accommodation is worn out'],
+              ['Vision drops in the afternoon', 'Accommodation tired from a whole day, with dry eye getting worse too'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
                 {row.map((cell, i) => (
@@ -166,7 +168,7 @@ const schema = {
         </table>
       </div>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        Important boundary: optometrists carry out visual-function assessment and corrective fitting, not medical diagnosis. If you have persistent eye pain, repeated severe dryness or a marked drop in vision, under Taiwan's Optometrists Act we will recommend and help arrange a referral to an ophthalmologist — ruling out eye disease first, before talking about glasses.
+        An important boundary: optometry staff assess visual function and correct vision with glasses; they do not make medical diagnoses. If you have persistent eye pain, repeated severe dryness or a clear drop in vision, under Taiwan's Optometrists Act we will recommend and help arrange a referral to an ophthalmologist, so eye disease is ruled out before we talk about glasses.
       </blockquote>
     </div>
   </section>
@@ -175,12 +177,12 @@ const schema = {
   <section id="habits" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
       <h2 class="font-serif text-brand-ink mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Start with your habits and your workspace</h2>
-      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">If you spend the day in an air-conditioned office, switching between several screens, these three are worth trying first.</p>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.8">You can do these as soon as you sit back down this afternoon. If you spend all day in an air-conditioned office switching between several screens, try them first.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { level: 'The 20-20-20 Rule', desc: 'Every 20 minutes of near work, look at something 20 feet (about 6 metres) away for 20 seconds. It gives the tense ciliary muscle a chance to switch and relax, breaking the whole stretch of "accommodative lock."', fit: 'Relax Accommodation' },
-          { level: 'Conscious Complete Blinks', desc: 'Many people only "half-blink" at a screen, so the tear film isn\'t fully renewed. Remind yourself to blink completely; if dryness doesn\'t go away, please see an ophthalmologist.', fit: 'Tear Film Renewal' },
-          { level: 'Screen Distance and Height', desc: 'Ideally the eyes look down 10–15 degrees at a distance of 60–70 cm. Avoid a screen that is far brighter or darker than its surroundings, to reduce repeated pupil resizing and contrast stress.', fit: 'Environment Setup' },
+          { level: 'The 20-20-20 rule', desc: 'Every 20 minutes, look at something 20 feet (about 6 metres) away for 20 seconds. A sign outside the window or the end of a corridor will do; it lets a ciliary muscle that has been parked at near take a breath.', fit: 'Relax focus' },
+          { level: 'Conscious, complete blinks', desc: 'Many people only half-blink at a screen, with the lid never fully closing, so the tear film isn\'t spread properly. Make each blink a complete one; if dryness doesn\'t go away, please have an ophthalmologist check it.', fit: 'Tear film' },
+          { level: 'Screen distance and height', desc: 'Put the screen 10–15 degrees below your line of sight and 60–70 cm from your eyes. Keep its brightness close to the room\'s; don\'t let it glow like a lightbox in a dark room.', fit: 'Workspace' },
         ].map(item => (
           <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
             <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
@@ -190,22 +192,22 @@ const schema = {
         ))}
       </div>
       <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        These habits ease the strain but can't fully fix it — if symptoms persist, or you find you "get dizzy the moment you put your glasses on," that is usually a fitting-parameter problem. Read this: <a href="/en/blog/glasses-dizzy/" class="text-brand-gold underline">Why do glasses make you dizzy? 5 common causes</a>
+        One situation needs to be looked at separately: if you feel dizzy the moment you put your glasses on, the problem is usually in the fitting parameters. <a href="/en/blog/glasses-dizzy/" class="text-brand-gold underline">Dizzy in new glasses?</a> works through the causes, from prescription and cylinder axis to a frame that has shifted.
       </p>
     </div>
   </section>
 
-  <!-- 鏡片方案（深藍區段） -->
+  <!-- 電腦眼鏡怎麼選（深藍區段） -->
   <section id="lenses" class="px-6 md:px-16 py-20" style="background:#1a2f4e">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">Lens options: pick the right tool for the need — not one fix for everyone</h2>
-      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">If you still can't get through the afternoon after adjusting your habits, it's time to address the lenses themselves. These are all directions screen workers actually use.</p>
+      <h2 class="font-serif text-white mb-4" style="font-size:clamp(24px,3.5vw,36px);font-weight:300">Choosing computer glasses: age first, then how your desk is set up</h2>
+      <p class="text-white/60 mb-10" style="font-size:16px;line-height:1.8">What people call "computer glasses" usually means one of the first two below; the other two are the coatings and frame fit that tend to come up in the same conversation. Age only gives the general direction; which one you actually need depends on your eye exam.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
         {[
-          ['ZEISS Digital-type lenses', 'Add a slight positive boost (about +0.50 to +1.25 D) in the lower part of a single-vision myopia lens, so you don\'t need to call on your full accommodation up close — effectively giving the ciliary muscle "partial support." Distance stays clear, suitable for people with myopia and those aged 35–50 whose accommodation is starting to decline. It is not reading glasses, nor a progressive lens.'],
-          ['Office (intermediate-near) lenses', 'Maximise clear vision at intermediate-near distances, sacrificing some distance (not suitable for driving) in exchange for a wider computer-and-document field, smaller peripheral aberration and less dizziness. Suited to presbyopes and workers switching between computer, meetings and phone at multiple distances.'],
-          ['Blue-light / anti-reflective coatings', 'A blue-light coating filters part of the short-wavelength light, but it does not address ciliary muscle tension, and its real benefit for digital eye strain is still debated in research — a bonus, not the main act. An anti-reflective coating deals with something else: reflections on the lens surface.'],
-          ['Frame fit and wearing parameters', 'Pantoscopic tilt and vertex distance affect how the optical centre aligns when you look at a screen — high myopes are especially sensitive. Sometimes the right frame adjustment plus a good work-environment setup is more directly effective than changing lenses. A frame that shifts out of place after collection can also turn "it was fine" into "it started making me dizzy a few months later."'],
+          ['Digital single-vision lenses', 'The whole lens is still single vision, with a little extra near power at the lower edge. When you look at a screen or phone, the lens takes over part of the ciliary muscle\'s effort; look up into the distance and it works like an ordinary single-vision lens. Don\'t confuse it with reading glasses or progressives; how much to add and whether it suits you depend on your exam results and working distances. Among the brands we carry, ZEISS Digital EnergizeMe is this type of design.'],
+          ['Office (intermediate-near) lenses', 'The design centres on intermediate and near: the screen, the papers on your desk, everything within arm\'s reach. Compared with a regular progressive, the field of view is divided differently and the distance zone is narrow, so they are not for driving. They suit people who already have presbyopia and spend the whole day moving between computer, paperwork and meetings. Among the brands we carry, ZEISS Officelens is this type of design.'],
+          ['Blue-light / anti-reflective coatings', 'A blue-light coating blocks some short-wavelength blue light, but it can\'t touch a tense ciliary muscle; how much it helps with digital eye strain is not settled in research, so if you add it, treat it as a supporting extra. If your work depends on colour accuracy, think one step further: the filter shifts colours slightly. An anti-reflective coating deals with reflections on the lens surface, which is a separate matter from blue light.'],
+          ['Frame fit and wearing parameters', 'Where your line of sight passes through the lens when you look at a screen depends on pantoscopic tilt and vertex distance; people with high myopia notice even small differences. Frames loosen and bend over time, and "great when I picked them up, dizzy a few months later" is often a frame that has shifted. Bring them back to the store to have them set back in place first.'],
         ].map(([title, desc]) => (
           <div class="border-t border-white/10 pt-5">
             <p class="font-sans text-brand-gold font-semibold mb-2" style="font-size:15px">{title}</p>
@@ -214,44 +216,32 @@ const schema = {
         ))}
       </div>
       <p class="text-white/70 mt-10" style="font-size:15px;line-height:1.8">
-        A special note for designers and others sensitive to colour accuracy: a blue-light filter slightly affects colour rendering and needs to be balanced case by case between colour accuracy and comfort — not the same solution for everyone.
+        If you already have presbyopia, office lenses aren't your only option. <a href="/en/blog/presbyopia-vs-progressive/" class="text-brand-gold underline">Do you need progressives for presbyopia?</a> compares four presbyopia solutions side by side, including field of view and how easy each is to adapt to.
       </p>
     </div>
   </section>
 
-  <!-- 隱形眼鏡族的疲勞 -->
+  <!-- 隱形眼鏡族的疲勞（照中文版：縮成一段，正主讓給 contact-lens-fatigue；時數不寫數字） -->
   <section id="contacts" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Contact lens wearers: why do they "feel more tired the longer you wear them"?</h2>
-      <div class="space-y-6">
-        {[
-          { title: '① High water content worsens dry eye', desc: 'Soft contact lenses draw tear fluid from the ocular surface to maintain their own water content. In air-conditioning, long screen time and reduced blinking, this creates a vicious cycle: the drier your eyes get, the more water the lens absorbs, the drier the surface becomes.', action: 'At your fitting, we look at the material and how many hours a day you wear them' },
-          { title: '② Insufficient oxygen, corneal hypoxia', desc: 'Lenses with low oxygen permeability leave the cornea mildly under-oxygenated over the long term — the tell-tale sign is being fine early on, uncomfortable by the afternoon, with the whites of the eyes easily bloodshot.', action: 'Let our optometry staff check whether the oxygen permeability is enough; don\'t switch lenses on your own' },
-          { title: '③ Wearing time beyond your limit', desc: 'Many people put lenses in at 7 a.m. and don\'t take them out until 11 p.m. — as long as 14 hours, a significant load on both tear film and cornea, and more pronounced for screen workers.', action: 'Keep daily wear within 10–12 hours' },
-        ].map(item => (
-          <div class="border border-brand-ink/8 rounded-2xl p-7">
-            <h3 class="font-serif text-brand-navy mb-3" style="font-size:19px;font-weight:600">{item.title}</h3>
-            <p class="text-brand-ink-2 mb-3" style="font-size:16px;line-height:1.8">{item.desc}</p>
-            <p class="font-sans text-brand-gold" style="font-size:14px">→ {item.action}</p>
-          </div>
-        ))}
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Contact lens wearers: why do your eyes get more tired the longer you wear them?</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>Staring at a screen lowers your blink rate, and air-conditioning makes tears evaporate faster. Soft contact lens wearers feel this first: by the afternoon their eyes are dry and tired. The lens itself absorbs tear fluid, and over long wearing hours the cornea may not get enough oxygen, and these two often come together; deposits on the lens surface, or a lens power that doesn't match the distance you now view your screen at, can add to it. Which one is your main cause and where to start adjusting is broken down in <a href="/en/blog/contact-lens-fatigue/" class="text-brand-gold underline">contact lens fatigue</a>.</p>
+        <p>How many hours a day to wear them should follow what our optometry staff advise and the product labeling. If dryness doesn't improve or the whites of your eyes keep turning red, please have an ophthalmologist check them; if you have redness, pain, light sensitivity or a sudden drop in vision, stop wearing the lenses and see an ophthalmologist as soon as possible.</p>
       </div>
-      <p class="text-brand-ink-2 mt-8" style="font-size:16px;line-height:1.8">
-        An annual vision exam keeps your prescription current; if dryness persists or you have concerns about ocular-surface health, please see an ophthalmologist. Full breakdown: <a href="/en/blog/contact-lens-fatigue/" class="text-brand-gold underline">Wearing contact lenses every day, but your eyes only get more tired?</a>
-      </p>
     </div>
   </section>
 
   <!-- 聚落文章 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <section id="cluster" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: articles on screen-worker vision</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Related articles on screen and everyday vision</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
-          <a href={`/en/blog/${post.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
-            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post.data.tag}</span>
-            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post.data.title}</h3>
-            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post.data.excerpt}</p>
+          <a href={`/en/blog/${post!.slug}/`} class="bg-white rounded-2xl p-7 border border-brand-ink/5 hover:border-brand-gold transition-colors group">
+            <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{post!.data.tag}</span>
+            <h3 class="font-serif text-brand-navy mt-4 mb-3 group-hover:text-brand-gold transition-colors" style="font-size:18px;font-weight:600;line-height:1.5">{post!.data.title}</h3>
+            <p class="text-brand-ink-3 line-clamp-2" style="font-size:14px;line-height:1.7">{post!.data.excerpt}</p>
           </a>
         ))}
       </div>
@@ -270,6 +260,46 @@ const schema = {
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- 關於作者與資料來源（E-E-A-T）：照中文版 -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">About the author and sources</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="Optometrist YoYo (Cheng Chia-Yu)" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">YoYo (Cheng Chia-Yu), Optometrist</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">Optometrist License No. 003309 | Graduate of Yuanpei University of Medical Technology | Lecturer, New Taipei City Optometrists Association</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">Lead optometrist at Beyond Visual Optometry in Xinzhuang, specializing in clinical vision exams, binocular vision assessment, progressive lens fitting and children's myopia tracking.</p>
+          <a href="/en/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">Meet Optometrist YoYo →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON phoropter at Beyond Visual Optometry, Xinzhuang" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Phoropter: prescription and how well the two eyes work together</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/yoyo-adjusting-glasses.webp" alt="Optometry staff adjusting a frame for a customer at Beyond Visual Optometry" width="900" height="1200" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Pantoscopic tilt and vertex distance can be readjusted in store after pickup</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">Sources</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'American Academy of Ophthalmology EyeWiki: Computer Vision Syndrome (Digital Eye Strain) (accommodation and vergence, blinking, uncorrected presbyopia, the 20-20-20 rule)', u: 'https://eyewiki.org/Computer_Vision_Syndrome_(Digital_Eye_Strain)' },
+          { t: 'American Academy of Ophthalmology: Computers, Digital Devices and Eye Strain (fewer blinks at screens, looking away into the distance, screen about an arm\'s length away and slightly below eye level)', u: 'https://www.aao.org/eye-health/tips-prevention/computer-usage' },
+          { t: 'Beyond Visual Optometry: Screens look blurry by mid-afternoon: is your prescription getting stronger, or are your eyes just tired?', u: '/en/blog/digital-eye-strain-solution/' },
+          { t: 'Optometrists Act, Taiwan (Laws & Regulations Database, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2">{r.u
+            ? <a href={r.u} target={r.u.startsWith('http') ? '_blank' : undefined} rel={r.u.startsWith('http') ? 'noopener noreferrer' : undefined} class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a>
+            : r.t}</li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">Blinking, the 20-20-20 rule and screen placement follow EyeWiki and the American Academy of Ophthalmology's public education materials; the extra 1.67 D at 60 cm is a distance calculation (1 ÷ 0.6 m). What each store measures and which lenses it can fit have been checked item by item with our stores. Dry eye, ocular-surface and tear-film tests and diagnosis should be done by an ophthalmologist. Last updated: 28 October 2026.</p>
     </div>
   </section>
 
