@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"anisometropia-glasses.md": {
+	id: "anisometropia-glasses.md";
+  slug: "anisometropia-glasses";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "anti-reflective-coating-principle.md": {
 	id: "anti-reflective-coating-principle.md";
   slug: "anti-reflective-coating-principle";
@@ -204,6 +211,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"cataract-one-eye-glasses.md": {
+	id: "cataract-one-eye-glasses.md";
+  slug: "cataract-one-eye-glasses";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "child-vision-check-where.md": {
 	id: "child-vision-check-where.md";
   slug: "child-vision-check-where";
@@ -232,9 +246,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"computer-glasses.md": {
+	id: "computer-glasses.md";
+  slug: "computer-glasses";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "contact-lens-fatigue.md": {
 	id: "contact-lens-fatigue.md";
   slug: "contact-lens-fatigue";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"contact-lens-presbyopia.md": {
+	id: "contact-lens-presbyopia.md";
+  slug: "contact-lens-presbyopia";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -302,9 +330,30 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"eye-exam-cost.md": {
+	id: "eye-exam-cost.md";
+  slug: "eye-exam-cost";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "eye-exam-duration-difference.md": {
 	id: "eye-exam-duration-difference.md";
   slug: "eye-exam-duration-difference";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"eye-exam-first-visit.md": {
+	id: "eye-exam-first-visit.md";
+  slug: "eye-exam-first-visit";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"eye-exam-how-often.md": {
+	id: "eye-exam-how-often.md";
+  slug: "eye-exam-how-often";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -319,6 +368,13 @@ declare module 'astro:content' {
 "eye-strain-see-doctor.md": {
 	id: "eye-strain-see-doctor.md";
   slug: "eye-strain-see-doctor";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"first-contact-lens-fitting.md": {
+	id: "first-contact-lens-fitting.md";
+  slug: "first-contact-lens-fitting";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -358,6 +414,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"glasses-cost.md": {
+	id: "glasses-cost.md";
+  slug: "glasses-cost";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "glasses-dizzy.md": {
 	id: "glasses-dizzy.md";
   slug: "glasses-dizzy";
@@ -365,9 +428,44 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"glasses-fitting-process.md": {
+	id: "glasses-fitting-process.md";
+  slug: "glasses-fitting-process";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"glasses-prescription-full-or-less.md": {
+	id: "glasses-prescription-full-or-less.md";
+  slug: "glasses-prescription-full-or-less";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"glasses-ready-time.md": {
+	id: "glasses-ready-time.md";
+  slug: "glasses-ready-time";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"glasses-repair.md": {
+	id: "glasses-repair.md";
+  slug: "glasses-repair";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "glasses-uncomfortable-3-reasons.md": {
 	id: "glasses-uncomfortable-3-reasons.md";
   slug: "glasses-uncomfortable-3-reasons";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"high-myopia-eye-check.md": {
+	id: "high-myopia-eye-check.md";
+  slug: "high-myopia-eye-check";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -421,6 +519,41 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"kids-glasses-cost.md": {
+	id: "kids-glasses-cost.md";
+  slug: "kids-glasses-cost";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"kids-glasses-process.md": {
+	id: "kids-glasses-process.md";
+  slug: "kids-glasses-process";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"kids-glasses-recommend.md": {
+	id: "kids-glasses-recommend.md";
+  slug: "kids-glasses-recommend";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"kids-glasses-wear-all-day.md": {
+	id: "kids-glasses-wear-all-day.md";
+  slug: "kids-glasses-wear-all-day";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"kids-vision-check-frequency.md": {
+	id: "kids-vision-check-frequency.md";
+  slug: "kids-vision-check-frequency";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "lens-addition-add.md": {
 	id: "lens-addition-add.md";
   slug: "lens-addition-add";
@@ -442,6 +575,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"lens-name-decode.md": {
+	id: "lens-name-decode.md";
+  slug: "lens-name-decode";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "lens-only-service.md": {
 	id: "lens-only-service.md";
   slug: "lens-only-service";
@@ -452,6 +592,20 @@ declare module 'astro:content' {
 "lens-refractive-index.md": {
 	id: "lens-refractive-index.md";
   slug: "lens-refractive-index";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"lens-replace-when.md": {
+	id: "lens-replace-when.md";
+  slug: "lens-replace-when";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"lens-warranty-genuine.md": {
+	id: "lens-warranty-genuine.md";
+  slug: "lens-warranty-genuine";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -491,6 +645,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"new-glasses-follow-up.md": {
+	id: "new-glasses-follow-up.md";
+  slug: "new-glasses-follow-up";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"night-driving-yellow-lens.md": {
+	id: "night-driving-yellow-lens.md";
+  slug: "night-driving-yellow-lens";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "night-shift-commuter-vision.md": {
 	id: "night-shift-commuter-vision.md";
   slug: "night-shift-commuter-vision";
@@ -515,6 +683,13 @@ declare module 'astro:content' {
 "online-glasses-vs-store.md": {
 	id: "online-glasses-vs-store.md";
   slug: "online-glasses-vs-store";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"optometrist-license-check.md": {
+	id: "optometrist-license-check.md";
+  slug: "optometrist-license-check";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -561,9 +736,37 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"presbyopia-glasses-cost.md": {
+	id: "presbyopia-glasses-cost.md";
+  slug: "presbyopia-glasses-cost";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"presbyopia-glasses-recommend.md": {
+	id: "presbyopia-glasses-recommend.md";
+  slug: "presbyopia-glasses-recommend";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "presbyopia-lens-guide.md": {
 	id: "presbyopia-lens-guide.md";
   slug: "presbyopia-lens-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"presbyopia-progression.md": {
+	id: "presbyopia-progression.md";
+  slug: "presbyopia-progression";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"presbyopia-signs-40.md": {
+	id: "presbyopia-signs-40.md";
+  slug: "presbyopia-signs-40";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -578,6 +781,13 @@ declare module 'astro:content' {
 "preschool-vision-reserve.md": {
 	id: "preschool-vision-reserve.md";
   slug: "preschool-vision-reserve";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"prescription-sunglasses.md": {
+	id: "prescription-sunglasses.md";
+  slug: "prescription-sunglasses";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -606,6 +816,13 @@ declare module 'astro:content' {
 "progressive-lens-adaptation.md": {
 	id: "progressive-lens-adaptation.md";
   slug: "progressive-lens-adaptation";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"progressive-lens-computer-neck.md": {
+	id: "progressive-lens-computer-neck.md";
+  slug: "progressive-lens-computer-neck";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -652,6 +869,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"sabae-eyewear.md": {
+	id: "sabae-eyewear.md";
+  slug: "sabae-eyewear";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "same-index-different-feel.md": {
 	id: "same-index-different-feel.md";
   slug: "same-index-different-feel";
@@ -662,6 +886,27 @@ declare module 'astro:content' {
 "same-prescription-different-feel.md": {
 	id: "same-prescription-different-feel.md";
   slug: "same-prescription-different-feel";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"sports-glasses.md": {
+	id: "sports-glasses.md";
+  slug: "sports-glasses";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"sunglasses-uv-filter-category.md": {
+	id: "sunglasses-uv-filter-category.md";
+  slug: "sunglasses-uv-filter-category";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"toric-soft-contact-lens.md": {
+	id: "toric-soft-contact-lens.md";
+  slug: "toric-soft-contact-lens";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -687,6 +932,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"xinzhuang-eye-exam.md": {
+	id: "xinzhuang-eye-exam.md";
+  slug: "xinzhuang-eye-exam";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "xinzhuang-glasses-guide.md": {
 	id: "xinzhuang-glasses-guide.md";
   slug: "xinzhuang-glasses-guide";
@@ -704,6 +956,13 @@ declare module 'astro:content' {
 "zeiss-individual-worth-it.md": {
 	id: "zeiss-individual-worth-it.md";
   slug: "zeiss-individual-worth-it";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"zeiss-lens-series-guide.md": {
+	id: "zeiss-lens-series-guide.md";
+  slug: "zeiss-lens-series-guide";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

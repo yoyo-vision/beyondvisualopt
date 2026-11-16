@@ -28,6 +28,31 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">選擇你方便的時段</h2>
         <p class="text-brand-ink-3" style="font-size:15px">即時查看可約時段，2 分鐘完成預約</p>
       </div>
+
+      <!-- 預約前五問：顧客按下預約前最常在心裡問的五件事。
+           答案全部來自站內既有且已過審的文字，這裡只是把它們搬到他猶豫的那一秒。
+           ⚠️ 費用那欄沿用法務核可寫法：「配鏡的」限定語與「驗光人員」主詞都不可省——
+              省掉限定語，「費用算在鏡片與鏡架上」會被讀成驗光不另收費（＝暗示驗光免費）。
+           ⚠️ 五個答句一律正面收尾，不掛否定補充。否定句的額度留給 hero 與 FAQ，
+              這個版位是顧客猶豫那一秒看到的第一組字，連著否定讀起來像在辯解。
+           ⚠️ 問句是導航標籤，刻意維持 4–5 字；答句才負責差異化，別把兩者反過來改。 -->
+      <div class="max-w-3xl mx-auto mb-8 bg-white border border-brand-ink/10 px-5 py-5 md:px-7 md:py-6">
+        <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-4 text-center" style="font-size:11.5px;letter-spacing:0.2em">按下預約前，先回答你五件事</p>
+        <dl class="grid grid-cols-1 md:grid-cols-5 gap-x-5 gap-y-4">
+          {[
+            ['要花多久？', '45–60 分鐘，一次只排一位，整段時間都是你的'],
+            ['要帶什麼？', '現在戴著的眼鏡就好，舊驗光單有的話也帶上'],
+            ['費用算在哪？', '配鏡的費用算在鏡片與鏡架上。驗光人員評估後會說明各選項的價格區間，你再決定'],
+            ['只想問問題？', '可以。不少人來第一趟，就只是想把狀況弄清楚'],
+            ['臨時有事？', '確認信裡附改期與取消的連結，自己點，隨時都行'],
+          ].map(([q, a]) => (
+            <div class="md:border-l md:border-brand-ink/10 md:pl-4 first:md:border-l-0 first:md:pl-0">
+              <dt class="text-brand-navy font-bold mb-1" style="font-size:14px">{q}</dt>
+              <dd class="text-brand-ink-3" style="font-size:13px;line-height:1.65">{a}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
       <div class="border border-brand-ink/10 bg-white shadow-sm text-center overflow-hidden">
         <!-- 內嵌預約系統：iframe 內自帶捲動；高度給足讓月曆與時段一眼可見 -->
         <iframe
