@@ -55,8 +55,8 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 **Founded:** 1992 (over 30 years in the Banqiao community)
 
 **Opening hours:**
-- Daily, 10:00–22:00
-- Closed the 2nd and 4th Sunday of each month
+- Monday – Saturday, 10:00–21:30
+- Closed Sunday
 
 **Google reviews:** See our Banqiao Google Business Profile for the current rating and customer comments
 

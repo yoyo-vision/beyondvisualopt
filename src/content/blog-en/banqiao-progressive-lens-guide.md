@@ -63,7 +63,7 @@ Beyond Visual Optometry's answer: no. For glasses fitted with us, adaptation-per
 
 - 📍 No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City (about a 5-minute walk from Jiangzicui MRT Station)
 - 📞 +886-2-2253-1246
-- 🕐 Daily, 10:00–22:00 (closed the 2nd and 4th Sunday of each month)
+- 🕐 Monday – Saturday, 10:00–21:30 (closed Sunday)
 
 ---
 
