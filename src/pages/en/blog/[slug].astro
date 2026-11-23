@@ -99,7 +99,7 @@ function extractFaq(body: string) {
   if (nextBreak !== -1) section = section.slice(0, nextBreak);
 
   const faqs: { q: string; a: string }[] = [];
-  const qRegex = /\*\*Q[:：]\s*([\s\S]+?)\*\*\s*\n+([\s\S]*?)(?=\n\s*\*\*Q[:：]|$)/g;
+  const qRegex = /\*\*Q\d*[.:：]\s*([\s\S]+?)\*\*\s*\n+([\s\S]*?)(?=\n\s*\*\*Q\d*[.:：]|$)/g; // Q 後可帶題號（Q1: 或 Q1.）
   let m;
   while ((m = qRegex.exec(section))) {
     const answer = m[2].trim()

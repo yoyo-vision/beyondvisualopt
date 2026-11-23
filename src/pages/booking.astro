@@ -65,7 +65,8 @@ import Layout from '../layouts/Layout.astro';
           <a href="https://vision-platform-five.vercel.app/booking" target="_blank" rel="noreferrer" class="underline underline-offset-2">用全螢幕開啟預約頁 ↗</a>
         </p>
         <!-- 線上表單只收台灣手機（vision-platform isValidTwMobile），海外旅客改導來台旅客頁的 IG 私訊 -->
-        <p class="text-brand-ink-3 pb-4" style="font-size:13px">人在香港、新加坡，沒有台灣手機？可以改用 IG 私訊預約，<a href="/guide/visiting-taiwan-glasses/" class="underline underline-offset-2">來台旅客配鏡須知 →</a></p>
+        {/* 2026-11-23 site-audit：/guide/visiting-taiwan-glasses/ 尚未上線（等 WhatsApp 註冊），連結在正式站是 404，先註解；旅客頁上線時把下一行取消註解
+        <p class="text-brand-ink-3 pb-4" style="font-size:13px">人在香港、新加坡，沒有台灣手機？可以改用 IG 私訊預約，<a href="/guide/visiting-taiwan-glasses/" class="underline underline-offset-2">來台旅客配鏡須知 →</a></p> */}
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto px-4 pt-8">
         {[
