@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 // ⚠️ 2026-07-27 關鍵字集中：本頁為「新莊眼鏡行／新莊眼鏡行推薦」唯一主力頁，
 //    首頁、選配指南、新莊配鏡文章均已弱化精準詞並內鏈導向此頁，勿再於他頁強打同一字
 const faqs = [
+  { q: '在新莊驗光要多久、會量哪些項目？', a: '完整驗光大約 45–60 分鐘；加上挑框與量測，新莊店的預約時段留 60–90 分鐘。驗光人員會先問這副眼鏡主要用在哪個距離，再用自動驗光機抓一個起點，接著在綜合驗光儀上換鏡片、問你哪一片比較清楚，把度數一格一格定下來，然後看兩眼合起來用順不順、撐不撐得久。框挑定了，還要戴著它量三個數字：單眼瞳距左右分開量，配鏡高度要戴著這支框量，鏡片離眼睛多遠（頂點距離）也要算進去。每個數字代表什麼，量完會逐項跟你說明；如果有哪一項需要進一步檢查，我們會先建議你去眼科。' },
   { q: '在新莊要怎麼挑眼鏡行或驗光所？', a: '先確認三件事。第一，執行驗光的是不是持照驗光人員——依《驗光人員法》，驗光所須由持照驗光人員執行驗光，執照可於衛福部醫事人員查詢系統核對。第二，驗光做了哪些事：能見度新莊店的完整驗光約 45–60 分鐘，每次都做雙眼視覺評估；不管去哪一家，都可以請對方說明這段時間會量哪些項目。第三，配鏡後能不能回店調整、要不要另外收費——不舒服的眼鏡多半是靠後續調整才救得回來。' },
   { q: '新莊的眼鏡行和驗光所差在哪裡？', a: '差在法規依據。「驗光所」依《驗光人員法》設立登記，須由持照驗光人員執行驗光；一般「眼鏡行」屬商業登記，要驗光，依《驗光人員法施行細則》第四條須在店內設立驗光所。能見度視覺中心在新莊的門市為比泱驗光所（新北府莊衛驗光字第 5Y31060655 號），驗光由持照驗光人員執行。' },
   { q: '新莊比泱驗光所在哪裡？', a: '位於新北市新莊區中正路419-1號，捷運新莊站步行約 8 分鐘，輔大站步行約 12 分鐘。門口有機車停車格，附近有停車場。' },
@@ -27,8 +28,8 @@ const schema = {
 };
 ---
 <Layout
-  title="新莊眼鏡行推薦｜一個驗光留 60–90 分鐘的驗光所｜能見度"
-  description="新莊配眼鏡想找不趕時間的驗光所？能見度視覺中心 × 比泱驗光所一個預約時段保留 60–90 分鐘，由持照驗光人員一對一完成完整臨床驗光：雙眼視覺評估、頂點距離補正、蔡司鏡片與多焦點驗配、高度近視精密配鏡。新北市新莊區中正路 419-1 號，捷運新莊站步行 8 分鐘。"
+  title="新莊驗光所｜一次完整驗光 45–60 分鐘｜能見度視覺中心"
+  description="能見度視覺中心 × 比泱驗光所，一個預約時段保留 60–90 分鐘：先問清楚這副用在哪，再做人工主觀驗光與雙眼視覺評估，最後戴上你選的鏡框量單眼瞳距、配鏡高度與頂點距離。新北市新莊區中正路 419-1 號，捷運新莊站步行 8 分鐘。"
   keywords="新莊驗光,新莊驗光所,新莊眼鏡行,新莊配眼鏡,新莊眼鏡行推薦,新莊蔡司鏡片,新莊多焦點鏡片,新莊兒童近視,比泱驗光所,能見度視覺中心,YoYo驗光師"
   schema={schema}
   enPath="/en/xinzhuang/"
@@ -47,6 +48,48 @@ const schema = {
         <a href="/booking/" class="font-sans font-bold px-8 py-4 transition-colors text-brand-navy" style="background:#c9a96e;font-size:15px">立即預約</a>
         <a href="tel:0222066700" class="font-sans font-semibold px-8 py-4 border border-white/40 text-white hover:bg-white/10 transition-colors" style="font-size:15px">📞 02-2206-6700</a>
       </div>
+    </div>
+  </section>
+
+  <!-- 一次完整驗光在做什麼（2026-11-23 新增：本頁主攻「新莊驗光」的核心內容） -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">完整驗光</span>
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(22px,3vw,38px);font-weight:300">在新莊驗一次光，這 60–90 分鐘在做什麼</h2>
+      <p class="text-brand-ink-3 mb-10" style="font-size:16px;line-height:1.9">
+        有客人坐下來就問：「不就是看一下視力表嗎？」度數本身量起來不慢，慢的是確認這組度數放進你的生活裡撐不撐得住。所以完整驗光排 45–60 分鐘；挑框、戴著框量、試戴、鏡架調整和逐項說明再加上去，整段預約抓 60–90 分鐘。
+      </p>
+      <div class="space-y-8">
+        <div class="border-l-2 border-brand-gold pl-6">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">先問清楚這副要用在哪<span class="text-brand-ink-3 font-sans ml-2 whitespace-nowrap" style="font-size:13px">約 10 分鐘</span></h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.85">還沒開始量之前先聊。一天花多久看螢幕、開不開車、晚上騎不騎車、現在這副哪裡不舒服。同樣 300 度的近視，整天盯兩個螢幕的人和每天跑外務的人，鏡片要走的方向不一樣。這段沒問清楚，後面量得再準，那組度數也只能同時應付所有距離，每一種都停在勉強。</p>
+        </div>
+        <div class="border-l-2 border-brand-gold pl-6">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">自動驗光機給的是範圍，不是答案<span class="text-brand-ink-3 font-sans ml-2 whitespace-nowrap" style="font-size:13px">約 5 分鐘</span></h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.85">機器很快，半分鐘就出一組數字。但它量到的是眼睛當下的光學反應，給出來的是一個起點，告訴你範圍大概落在哪裡。真正的度數落在這個範圍的哪一格，要靠後面一格一格試出來。所以我們不會拿機器的數字直接開單。</p>
+        </div>
+        <div class="border-l-2 border-brand-gold pl-6">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">人工主觀驗光，一片一片換給你比<span class="text-brand-ink-3 font-sans ml-2 whitespace-nowrap" style="font-size:13px">約 20–30 分鐘</span></h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.85">在綜合驗光儀上換鏡片，問你哪一片比較清楚。散光的軸要轉到哪一度、度數加到哪一格就開始過頭，都在這一段定下來。這段最花時間，也最不該趕。趕出來的度數，往往要戴上一陣子才發現不對。</p>
+        </div>
+        <div class="border-l-2 border-brand-gold pl-6">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">兩眼合起來用，撐不撐得住<span class="text-brand-ink-3 font-sans ml-2 whitespace-nowrap" style="font-size:13px">約 10–15 分鐘</span></h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.85">這一段換成兩眼一起看。眼睛要把兩張影像疊成一張，看久了撐不撐得住、看近的時候會不會往外飄，是另一組測試。有人度數明明是對的，看到下午就撐不住，這一段量完才看得出為什麼。</p>
+        </div>
+        <div class="border-l-2 border-brand-gold pl-6">
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">戴上你挑的那支鏡框，才能量的三個數字<span class="text-brand-ink-3 font-sans ml-2 whitespace-nowrap" style="font-size:13px">約 10 分鐘</span></h3>
+          <p class="text-brand-ink-3" style="font-size:15px;line-height:1.85">瞳距要左右分開量，鏡片光學中心的高度得戴著你選的那支框量，鏡片離眼睛多遠（頂點距離）也要量。換一支框，這三個數字就得重量一次。光學中心偏開幾毫米，看出去就不太穩；前面量出來的那組度數，是靠這三個數字才真的對到你眼睛上。</p>
+        </div>
+      </div>
+      <p class="text-brand-ink-3 mt-10" style="font-size:15px;line-height:1.9">
+        每一關各停多久、哪一種人會停得比較久，<a href="/blog/eye-exam-duration-difference/" class="text-brand-gold underline">驗光要多久？10 分鐘和 1 小時差在哪</a>拆得更細。
+      </p>
+      <p class="text-brand-ink-3 mt-6" style="font-size:15px;line-height:1.9">
+        上面五段裡，有三段的答案是你給的。儀器量得到眼睛當下的反應，量不到你覺得哪一片比較舒服，也量不到你今天已經盯了兩小時手機、眼睛還沒完全鬆下來；所以這一個多小時能不能量準，有一部分要靠你把感覺講出來。如果有哪一項結果需要進一步檢查，我們會先建議你去眼科，配鏡等那邊有結果再談。
+      </p>
+      <p class="text-brand-ink-3 mt-6" style="font-size:15px;line-height:1.9">
+        至於最前面那位客人的問題：視力表那一行字，一分鐘就看完了。坐在辦公桌前第八個小時，眼睛還撐不撐得住，視力表上沒有這一行。
+      </p>
     </div>
   </section>
 
