@@ -7,36 +7,51 @@ import Layout from '../layouts/Layout.astro';
   enPath="/en/booking/"
 >
   <!-- Hero（緊湊版：社會證明＋風險反轉直接進場，預約元件就在下一屏）-->
-  <section class="bg-brand-navy text-white pt-16 pb-12 px-6 text-center">
-    <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-4" style="font-size:13px;letter-spacing:0.2em">新莊 × 板橋｜持照驗光人員</p>
-    <h1 class="font-serif text-white mb-4" style="font-size:clamp(30px,5vw,54px);font-weight:300">查看可約時段</h1>
-    <p class="text-white/70 max-w-xl mx-auto mb-6" style="font-size:17px;line-height:1.85">
+  <section class="bg-brand-navy text-white pt-8 pb-6 md:pt-16 md:pb-12 px-6 text-center">
+    <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-2 md:mb-4" style="font-size:13px;letter-spacing:0.2em">新莊 × 板橋｜持照驗光人員</p>
+    <h1 class="font-serif text-white mb-3 md:mb-4" style="font-size:clamp(30px,5vw,54px);font-weight:300">線上預約</h1>
+    <p class="hidden md:block text-white/70 max-w-xl mx-auto mb-6" style="font-size:17px;line-height:1.85">
       不是快速配鏡出貨。我們會保留一段完整屬於你的時間，由驗光人員真正了解你的視覺狀況——想先了解流程與門市資訊，往下捲都有。
     </p>
     <!-- 評分數字由頁尾 script 從 /api/google-reviews 即時覆寫；內文靜態值僅為 fallback，實查日 2026-07-28（新莊 5.0／226）-->
     <p class="text-white/90 mb-2" style="font-size:14.5px">
-      <span class="text-brand-gold">★</span> <span id="booking-google-rating">Google 5.0・226 則評價</span> <span class="text-white/40">｜新莊店真實顧客評分</span>
+      <span class="text-brand-gold">★</span> <span id="booking-google-rating">Google 5.0・226 則評價</span> <span class="text-white/70">｜新莊店真實顧客評分</span>
     </p>
-    <p class="text-white/50" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
+    <p class="text-white/80" style="font-size:14px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
   </section>
 
   <!-- 線上預約（時段先行：進頁第一件事就是看到可約時段）-->
-  <section id="book" class="px-6 md:px-16 py-14" style="background:#eee8da">
+  <section id="book" class="px-4 md:px-16 pt-5 pb-14 md:py-14" style="background:#eee8da;scroll-margin-top:68px">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-8">
-        <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">線上預約</span>
-        <h2 class="font-serif text-brand-ink mb-3" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">選擇你方便的時段</h2>
+      <div class="text-center mb-4 md:mb-8">
+        <span class="hidden md:block font-sans text-brand-ink-3 tracking-widest uppercase mb-4" style="font-size:12px;letter-spacing:0.22em">線上預約</span>
+        <h2 class="font-serif text-brand-ink mb-1 md:mb-3" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">選擇你方便的時段</h2>
         <p class="text-brand-ink-3" style="font-size:15px">即時查看可約時段，2 分鐘完成預約</p>
       </div>
 
-      <!-- 預約前五問：顧客按下預約前最常在心裡問的五件事。
+      <div class="border border-brand-ink/10 bg-white shadow-sm text-center overflow-hidden">
+        <!-- 內嵌預約系統：iframe 內自帶捲動；高度給足讓月曆與時段一眼可見 -->
+        <iframe
+          src="https://vision-platform-five.vercel.app/booking?service=exam&embed=1"
+          title="能見度視覺中心線上預約"
+          style="width:100%;height:min(920px,88vh);border:0;display:block"
+        ></iframe>
+        <p class="text-brand-ink-3 py-4 border-t border-brand-ink/10" style="font-size:13px">
+          預約成立後可隨時自助取消或改期・
+          <a href="https://vision-platform-five.vercel.app/booking" target="_blank" rel="noreferrer" class="underline underline-offset-2">用全螢幕開啟預約頁 ↗</a>
+        </p>
+        <!-- 線上表單只收台灣手機（vision-platform isValidTwMobile），海外旅客改導來台旅客頁的 IG 私訊 -->
+        {/* 2026-11-23 site-audit：/guide/visiting-taiwan-glasses/ 尚未上線（等 WhatsApp 註冊），連結在正式站是 404，先註解；旅客頁上線時把下一行取消註解
+        <p class="text-brand-ink-3 pb-4" style="font-size:13px">人在香港、新加坡，沒有台灣手機？可以改用 IG 私訊預約，<a href="/guide/visiting-taiwan-glasses/" class="underline underline-offset-2">來台旅客配鏡須知 →</a></p> */}
+      </div>
+      <!-- 預約前五問（2026-11-24 阿甘改版：從表單上方搬到表單下方，讓表單進第一屏；法務條件：此段與 FAQ 收費題不可刪、不可預設收合）：顧客按下預約前最常在心裡問的五件事。
            答案全部來自站內既有且已過審的文字，這裡只是把它們搬到他猶豫的那一秒。
            ⚠️ 費用那欄沿用法務核可寫法：「配鏡的」限定語與「驗光人員」主詞都不可省——
               省掉限定語，「費用算在鏡片與鏡架上」會被讀成驗光不另收費（＝暗示驗光免費）。
            ⚠️ 五個答句一律正面收尾，不掛否定補充。否定句的額度留給 hero 與 FAQ，
               這個版位是顧客猶豫那一秒看到的第一組字，連著否定讀起來像在辯解。
            ⚠️ 問句是導航標籤，刻意維持 4–5 字；答句才負責差異化，別把兩者反過來改。 -->
-      <div class="max-w-3xl mx-auto mb-8 bg-white border border-brand-ink/10 px-5 py-5 md:px-7 md:py-6">
+      <div class="max-w-3xl mx-auto mt-8 bg-white border border-brand-ink/10 px-5 py-5 md:px-7 md:py-6">
         <p class="font-sans text-brand-ink-3 tracking-widest uppercase mb-4 text-center" style="font-size:11.5px;letter-spacing:0.2em">按下預約前，先回答你五件事</p>
         <dl class="grid grid-cols-1 md:grid-cols-5 gap-x-5 gap-y-4">
           {[
@@ -52,21 +67,6 @@ import Layout from '../layouts/Layout.astro';
             </div>
           ))}
         </dl>
-      </div>
-      <div class="border border-brand-ink/10 bg-white shadow-sm text-center overflow-hidden">
-        <!-- 內嵌預約系統：iframe 內自帶捲動；高度給足讓月曆與時段一眼可見 -->
-        <iframe
-          src="https://vision-platform-five.vercel.app/booking?service=exam&embed=1"
-          title="能見度視覺中心線上預約"
-          style="width:100%;height:min(920px,88vh);border:0;display:block"
-        ></iframe>
-        <p class="text-brand-ink-3 py-4 border-t border-brand-ink/10" style="font-size:13px">
-          預約成立後可隨時自助取消或改期・
-          <a href="https://vision-platform-five.vercel.app/booking" target="_blank" rel="noreferrer" class="underline underline-offset-2">用全螢幕開啟預約頁 ↗</a>
-        </p>
-        <!-- 線上表單只收台灣手機（vision-platform isValidTwMobile），海外旅客改導來台旅客頁的 IG 私訊 -->
-        {/* 2026-11-23 site-audit：/guide/visiting-taiwan-glasses/ 尚未上線（等 WhatsApp 註冊），連結在正式站是 404，先註解；旅客頁上線時把下一行取消註解
-        <p class="text-brand-ink-3 pb-4" style="font-size:13px">人在香港、新加坡，沒有台灣手機？可以改用 IG 私訊預約，<a href="/guide/visiting-taiwan-glasses/" class="underline underline-offset-2">來台旅客配鏡須知 →</a></p> */}
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto px-4 pt-8">
         {[
