@@ -120,7 +120,7 @@ It's not a hard rule, but they usually come as a pair. Anti-reflective coating d
 
 **Q: What's the difference between multi-layer and single-layer coatings?**
 
-The difference is how many functions are stacked together. A single layer usually covers only basic anti-reflective or hard coating; multi-layer coatings stack anti-reflective, hard coating, water- and oil-repellent, and sometimes blue-light filtering, with each layer doing one job. More layers isn't automatically better. What matters is whether each layer is one you'll actually use; a function you don't need is just one more layer you're paying for.
+The difference is how thoroughly reflections are cancelled. A single layer cancels reflections cleanly for only one band of color, so other colors still reflect; a multi-layer coating stacks several films of different thicknesses, each handling one band of wavelengths, so reflections across the whole visible range are pushed down. Hard coating and water- and oil-repellent layers are separate functional layers on top. More layers isn't automatically better. What matters is whether each layer is one you'll actually use; a function you don't need is just one more layer you're paying for.
 
 ---
 

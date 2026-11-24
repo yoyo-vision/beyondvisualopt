@@ -59,7 +59,7 @@ Driving means watching both sides constantly: the car alongside, a pedestrian at
 
 Driving lenses are a category of lenses whose design takes the visual demands of driving into account. There are two common directions: a coating designed to reduce glare from oncoming headlights at night, and a field-of-view layout based on how your gaze moves between the road, mirrors and dashboard while driving. Progressive versions keep an area below the distance zone for reading the dashboard, so you don't have to lower your head too far.
 
-Among the brands we carry, ZEISS DriveSafe and HOYA EnRoute are lenses of this kind; product names are listed on our [lens range page](/en/lenses/). According to ZEISS's published information, the DriveSafe coating is designed to reduce glare from oncoming headlights at night; ZEISS's white paper for its DuraVision Platinum anti-reflective coating lists residual reflectance of about 0.5% per surface and luminous transmittance above 98%. These are manufacturer specifications; whether they suit your prescription and driving habits can only be known after measuring.
+Among the brands we carry, ZEISS DriveSafe and HOYA EnRoute are lenses of this kind; product names are listed on our [lens range page](/en/lenses/). According to ZEISS's published information, the DriveSafe coating is designed to reduce glare from oncoming headlights at night. That is the manufacturer's design description; whether they suit your prescription and driving habits can only be known after measuring.
 
 ---
 

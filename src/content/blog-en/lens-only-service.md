@@ -57,7 +57,7 @@ If you're holding a frame you love but feeling awkward about asking because "it'
 
 **Q1: Will it really not cost more if I only get lenses fitted?**
 
-No surcharge for bringing your own frame. The cost is "lens price + a fitting fee" — the lens is priced by the brand and tier you choose, and the fitting fee depends on the frame type, and for the same frame type you won't pay more just because the frame wasn't bought here. You can get a quote by visiting in person or messaging us on LINE before deciding.
+No surcharge for bringing your own frame. The cost is "lens price + a fitting fee" — the lens is priced by the brand and tier you choose, and the fitting fee depends on the frame type, and for the same frame type you won't pay more just because the frame wasn't bought here. You're welcome to call or message us on LINE with questions; we'll give you an exact quote once we've seen the frame in store.
 
 **Q2: I don't have old glasses and don't know my prescription — can I still just get lenses fitted?**
 

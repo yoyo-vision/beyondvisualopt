@@ -2,7 +2,7 @@
 title: "Glass vs. Resin Lenses: What's the Real Difference, and Is Glass Still Worth Choosing? | Beyond Visual Optometry"
 date: 2026-07-27
 tag: "Lenses"
-excerpt: "Glass lenses resist scratches and deliver cleaner optics, yet they've nearly disappeared from Taiwan's optical shops. Resin is lighter, safer, and easier to coat or tint — which is why it's now over 90% of what gets fitted. This guide breaks down weight, thickness, Abbe number, scratch resistance, and impact safety, and explains who still genuinely benefits from glass. At Beyond Visual Optometry in Xinzhuang and Banqiao, our optometry staff review your prescription, frame, and daily visual habits before explaining which material actually fits you."
+excerpt: "Glass lenses resist scratches and deliver cleaner optics, yet they've nearly disappeared from Taiwan's optical shops. Resin is lighter, safer, and easier to coat or tint — which is why it now makes up almost all of what gets fitted. This guide breaks down weight, thickness, Abbe number, scratch resistance, and impact safety, and explains who still genuinely benefits from glass. At Beyond Visual Optometry in Xinzhuang and Banqiao, our optometry staff review your prescription, frame, and daily visual habits before explaining which material actually fits you."
 image: ""
 youtube: ""
 instagram: ""
@@ -14,7 +14,7 @@ This conversation comes up a few times a year at the shop. An older customer set
 
 Pick it up and give it a heft check, and the answer is right there in your hand: that pair is unbelievably heavy. Those are **glass lenses**.
 
-Today, more than 90% of what we fit in the shop is **resin lenses**. What happened in between can't be waved away with "the old stuff was just better made." Glass still wins in some places today, and it's lost so badly in others that it's nearly left the market. This article lays the two materials side by side and, at the end, helps you figure out: **given your prescription, your frame, and what you actually look at every day, which side you should be on.**
+Today, almost all of what we fit in the shop is **resin lenses**. What happened in between can't be waved away with "the old stuff was just better made." Glass still wins in some places today, and it's lost so badly in others that it's nearly left the market. This article lays the two materials side by side and, at the end, helps you figure out: **given your prescription, your frame, and what you actually look at every day, which side you should be on.**
 
 ---
 
@@ -43,7 +43,7 @@ Translated to everyday terms: **for the same prescription in the same frame, a g
 Who feels this most?
 
 - **People with high myopia**: the lenses are already thick and heavy, and doubling that weight — your nose bridge will tell you the honest answer by the end of the day. (Related: [Complete Guide to High Myopia Glasses](/en/guide/high-myopia/))
-- **Progressive lens wearers**: extra weight drags the frame down, and once the frame slips, the lens's optical center stops lining up with your pupil. For progressives, that means the whole distance/intermediate/near zone layout shifts upward — you tilt your head back further to see the screen and drop your gaze further to see the ground. **Progressives are the design that can least afford a slipping frame.**
+- **Progressive lens wearers**: extra weight drags the frame down, and once the frame slips, the lens's optical center stops lining up with your pupil. For progressives, that means the distance, intermediate and near zones move down with it, so you end up lifting your chin to find the intermediate and near zones. **Progressives are the design that can least afford a slipping frame.**
 - **People with presbyopia**: a pair of glasses worn from morning to night puts cumulative load on your nose and ears. Lighter isn't a luxury here — it's the difference between making it through the whole day comfortably or not.
 
 ### 2. Refractive Index and Thickness: Glass Can Get Thinner Than Resin Can
@@ -93,7 +93,7 @@ So that customer's claim — "twenty years and not a scratch" — is true. That'
 
 Here's the one that matters most.
 
-Glass is hard, but hard and tough are two different things. When glass takes an impact, it shatters — with sharp edges. Resin, on impact, deforms, cracks, or breaks apart in a comparatively gentler way. Materials like polycarbonate (PC) and Trivex go a step further in impact resistance, which is why sports lenses, kids' lenses, and workplace eye-protection needs are almost universally made from these materials.
+Glass is hard, but hard and tough are two different things. When glass takes an impact, it shatters — with sharp edges. Resin, on impact, deforms, cracks, or breaks apart in a comparatively gentler way. Materials like polycarbonate (PC) and Trivex go a step further in impact resistance, which is why sports lenses and workplace eye protection often use these materials.
 
 To be clear, no lens can promise it won't break in every accident — that's not a claim we'll make. But the difference in how these materials fail under impact is objectively real, and international standards for lens impact resistance are exactly what pushed glass out of the mainstream.
 
@@ -134,13 +134,13 @@ And progressives are really the final answer. Today's high-end progressive desig
 | **Tinting / photochromic** | Limited; high prescriptions prone to uneven color | High flexibility, gradients possible |
 | **Rimless frames** | Essentially not applicable | Mainstream and well-supported |
 | **Progressive lenses** | Almost nonexistent on the market | Mainstream |
-| **Availability in Taiwan shops** | Extremely low, usually special order | Over 90% |
+| **Availability in Taiwan shops** | Extremely low, usually special order | The mainstream |
 
 > Figures in this table are general guidelines — actual results vary by manufacturer formula and lens design. The combination that's actually right for you can only be determined by optometry staff who have reviewed your prescription, your frame, and your daily visual habits.
 
 ---
 
-## Why Over 90% of What's Fitted in Taiwan Is Resin
+## Why Almost Everything Fitted Today Is Resin
 
 It's not that optical shops don't want to sell glass — the entire supply chain moved toward resin:
 
@@ -181,7 +181,7 @@ Yes, but the share is extremely small, and in Taiwan it's usually a special-orde
 
 **Q: Do resin lenses scratch easily?**
 
-The raw resin material is indeed softer than glass, but every resin lens today ships with a hard coating, and scratch resistance is far better than older products — under normal use, it should last the full lifespan of a pair of glasses. What actually scratches lenses is usually cleaning habits: wiping dry, using your shirt, or setting them face-down on a table are the three most damaging things you can do. The right way is to rinse off surface dust with water first, then wipe with a clean, dedicated lens cloth. If your environment is unusually dusty, you can discuss coating options with our optometry staff when getting fitted.
+The raw resin material is indeed softer than glass, but every resin lens today ships with a hard coating, and scratch resistance is far better than in older products. What actually scratches lenses is usually cleaning habits: wiping dry, using your shirt, or setting them face-down on a table are the three most damaging things you can do. The right way is to rinse off surface dust with water first, then wipe with a clean, dedicated lens cloth. If your environment is unusually dusty, you can discuss coating options with our optometry staff when getting fitted.
 
 **Q: Are glass lenses actually clearer?**
 
@@ -212,4 +212,4 @@ Come by either Beyond Visual Optometry location — our optometry staff will rev
 
 Full specs by refractive index and material are also on our [lens page](https://beyondvisualopt.com/en/lenses/).
 
-(Beyond Visual Optometry carries ZEISS and HOYA lenses; every glass and resin spec is available to compare in person at either store.)
+(Beyond Visual Optometry carries ZEISS and HOYA lenses; sample lenses are available to compare in person at either store.)

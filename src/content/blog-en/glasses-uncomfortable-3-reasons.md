@@ -33,7 +33,7 @@ You can't see this drift from the outside. The eyes look perfectly straight, so 
 
 At both Beyond Visual Optometry stores, Xinzhuang and Banqiao, every eye exam includes a binocular vision assessment. It looks at whether your two eyes line up when used together, and whether they can keep that up comfortably.
 
-If the results show your eyes need extra effort to stay aligned, our licensed optometry staff assess whether prism should be included in your refraction result so that using both eyes together takes less effort. Whether you need vision therapy or any other treatment is for an ophthalmologist to decide.
+If the results show your eyes need extra effort to stay aligned, the next question is whether to include prism in your refraction result so that using both eyes together takes less effort. That depends on what the measurements show. Whether you need vision therapy or any other treatment is for an ophthalmologist to decide.
 
 ---
 
@@ -130,7 +130,7 @@ It does, and it's common. The eye chart tests how clearly you see at a distance 
 
 **Q: What does it mean if covering one eye feels more comfortable?**
 
-It may mean your two eyes have to put in extra effort to line up when used together, or it may simply be that the power or optical center for one eye is off. Both can be checked when you come back to the store: our licensed optometry staff will do a binocular vision assessment and measure the optical centers of your lenses. Once they've found which it is, they assess whether prism should be included in your refraction result. Vision therapy or any other treatment is for an ophthalmologist to decide.
+It may mean your two eyes have to put in extra effort to line up when used together, or it may simply be that the power or optical center for one eye is off. Both can be checked when you come back to the store, with a binocular vision assessment and a measurement of your lenses' optical centers. Once it's clear which it is, whether to include prism in your refraction result depends on what the measurements show. Vision therapy or any other treatment is for an ophthalmologist to decide.
 
 **Q: If my new glasses are still uncomfortable, should I go straight to an ophthalmologist or back to the optometry store?**
 

@@ -43,7 +43,7 @@ Check the child's age first. By law, optometry staff may not perform refraction 
 Fitting high-myopia lenses requires calculating a vertex-distance compensation to make sure the effective power is correct — a step that's almost always skipped in a quick, rushed exam.
 
 ### Office workers who spend long hours on screens
-People staring at a screen more than 8 hours a day have a noticeably higher rate of latent phoria, accommodative fatigue, and binocular vision issues. What's needed is a full binocular vision assessment, not just a basic prescription check.
+Hours at a screen can tire your eyes for reasons beyond the prescription — sometimes the two eyes have to work harder to stay aligned. A prescription check alone may not catch that — which is exactly what a binocular vision assessment looks at.
 
 ---
 

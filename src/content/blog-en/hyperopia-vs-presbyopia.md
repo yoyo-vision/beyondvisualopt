@@ -75,7 +75,7 @@ Yes. Hyperopia is a state of your eye's refractive structure, while presbyopia i
 
 **Q2: The prescription is all "+" power — how do I tell hyperopia from presbyopia?**
 
-You can't tell from the sign alone. It takes a complete assessment by licensed optometry staff — including distance refractive power, near addition power (ADD), and accommodation and binocular vision function — to determine whether it's structural hyperopia, age-related presbyopia, or both.
+You can't tell from the sign alone. It takes a complete assessment by licensed optometry staff — including distance refractive power, near addition power (ADD), and a binocular vision assessment — to determine whether it's structural hyperopia, age-related presbyopia, or both.
 
 **Q3: Is presbyopia a disease? Does it go away?**
 

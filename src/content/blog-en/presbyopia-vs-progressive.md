@@ -83,7 +83,7 @@ The lens is designed with three visual zones from top to bottom: the upper part 
 
 ## Solution 3: Office Lenses (Near-Focused Progressives)
 
-Designed specifically for "working indoors at a fixed distance for long periods," with a visual range covering roughly 40cm to 200cm, from your desktop to the far side of the office.
+Designed specifically for "working indoors at a fixed distance for long periods," with a visual range covering roughly 40cm to 1–2 meters depending on the design: from your desktop to someone across a meeting table.
 
 **Pros:**
 - A wider and more comfortable intermediate-to-near field of view than full progressives
@@ -91,7 +91,7 @@ Designed specifically for "working indoors at a fixed distance for long periods,
 - The computer distance falls in the widest zone of the lens
 
 **Cons:**
-- Can't see clearly at distance (things start to blur beyond about 100cm)
+- Can't see clearly at distance (beyond 1–2 meters, depending on the design, things start to blur)
 - You need a second pair for going out or driving
 
 **Best for:** Office workers, designers, accountants, and lawyers who face a computer screen for 8+ hours a day and only occasionally go out after work.
@@ -112,7 +112,7 @@ At Beyond Visual Optometry (Xinzhuang × Banqiao), **we don't recommend progress
 Not everyone can adapt to progressives within 4 weeks. Forcing adaptation only increases discomfort and can even cause dizziness or nausea. Failing to adapt isn't necessarily "your problem"; it's often the wrong lens design choice.
 
 **2. Your primary working distance determines the best solution**
-If you spend 90% of your time working at a screen 60cm away, office lenses are far more practical than full progressives. Solving 90% of your needs with a pair of office lenses delivers more real-world benefit than solving 70% of your needs with a pair of full progressives.
+If you spend most of your time working at a screen 60cm away, office lenses keep the widest zone for screen distance and will suit you better than full progressives.
 
 **3. High myopia combined with presbyopia makes the design more complex**
 The lenses for highly myopic people are already thick, and adding a presbyopia addition power calls for even more precise optical design to avoid amplifying vertex-distance correction errors. You should always have this evaluated by licensed optometry staff with extensive progressive-lens experience.
@@ -130,15 +130,15 @@ Not necessarily. Depending on your lifestyle needs, you can choose single-vision
 
 **Q: Can presbyopia be corrected with laser surgery?**
 
-Yes, but with limitations. Presbyopia laser procedures (such as PresbyLASIK) use a monovision design (one eye focused primarily for distance, the other primarily for near), and the brain has to re-integrate the images. Not everyone adapts well. It's best to consult an ophthalmologist first to evaluate your corneal condition and lifestyle needs.
+Surgery for presbyopia falls under ophthalmic medical care, and there is more than one approach. Whether any of them suits you depends on your corneal condition and lifestyle needs, so please see an ophthalmologist directly for an assessment.
 
 **Q: Does presbyopia keep getting worse?**
 
-Yes. It typically increases by about 0.50–1.00D every 3–5 years starting around age 40, then stabilizes after 60. That's why many people who get progressive lenses in their 40s need to have their addition power re-evaluated a few years later. Regular vision exams are the key to maintaining visual quality.
+For a while, but not indefinitely. For most people the addition power increases gradually from their 40s and levels off around 60. That's why many people who get progressive lenses in their 40s need to have their addition power re-evaluated a few years later. Regular vision exams are the key to maintaining visual quality.
 
 **Q: Where can I get a presbyopia lens consultation in Xinzhuang or Banqiao?**
 
-At Beyond Visual Optometry (Xinzhuang × Banqiao), our licensed optometry staff provide a complete presbyopia vision assessment, including subjective refraction, accommodation measurement, precise addition-power setting, and lifestyle vision analysis. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao) to book. Or [book online here](/en/booking/).
+At Beyond Visual Optometry (Xinzhuang × Banqiao), our licensed optometry staff provide a complete presbyopia vision assessment, including subjective refraction, near-vision testing at your working distance, precise addition-power setting, and lifestyle vision analysis. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao) to book. Or [book online here](/en/booking/).
 
 **Q: Why are progressive lenses so expensive?**
 

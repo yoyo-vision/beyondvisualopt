@@ -67,7 +67,7 @@ Many people assume high myopia automatically means picking the highest refractiv
 |--------|------|------|---------|
 | 1.60 | Lower cost | Edges get thick at high powers | Under -4.00D |
 | 1.67 | Noticeably thinner than 1.60 | Still thick in a large frame | -4.00D to -6.00D, after the frame is chosen |
-| 1.74 | The highest index among the brands we carry | Highest price, diminishing returns | -6.00D and above, once the frame is already small |
+| 1.74 | The highest resin index among the brands we carry | Highest price, diminishing returns | -6.00D and above, once the frame is already small |
 
 The **Abbe number** measures how much a lens disperses light into colors — the higher the value, the less dispersion. One thing often stated backwards: **the Abbe number does not necessarily drop as the index goes up.** Based on manufacturers' published specifications for today's mainstream high-index materials, 1.67 and 1.74 are quite close (roughly 31–33, depending on the material). So "1.74 will definitely show more color fringing than 1.67" does not hold.
 

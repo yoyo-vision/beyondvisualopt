@@ -36,7 +36,7 @@ That's why, looking through polarized lenses at water or a road after rain, the 
 
 ### Brewster's angle: at one angle, reflected light is almost entirely horizontal
 
-How strongly the reflection leans horizontal depends on the angle. Near a particular angle of incidence (known in physics as **Brewster's angle**), reflected light is almost completely horizontally polarized, and the film blocks it most cleanly; the further you get from that angle, the more light of other orientations is mixed in, and the smaller the share that can be filtered. That's also why the same polarized lenses often work more visibly on water in the distance than on a puddle at your feet.
+How strongly the reflection leans horizontal depends on the angle. Near a particular angle of incidence (known in physics as **Brewster's angle**), reflected light is almost completely horizontally polarized, and the film blocks it most cleanly; the further you get from that angle, the more light of other orientations is mixed in, and the smaller the share that can be filtered. That's also why the same polarized lenses often work more visibly on water a few steps ahead than on a puddle right at your feet.
 
 ---
 
@@ -51,7 +51,7 @@ How strongly the reflection leans horizontal depends on the angle. Near a partic
 
 ### How a polarizing film is made: a film stretched in one direction
 
-An iodine-containing polymer film (PVA) is **stretched in a single direction**, so the long-chain molecules inside line up in parallel, forming countless molecular "fence slats" all pointing the same way. Vibration parallel to the slats is absorbed, and vibration perpendicular to them is let through. That's where the film's ability to pick a direction comes from.
+An iodine-containing polymer film (PVA) is **stretched in a single direction**, so the long-chain molecules inside line up in parallel, forming countless parallel molecular chains. Light vibrating parallel to the chains is absorbed, and light vibrating perpendicular to them passes through. That's where the film's ability to pick a direction comes from.
 
 ---
 
@@ -79,9 +79,9 @@ Whether you should choose polarized, photochromic or ordinary tinted lenses depe
 
 ---
 
-## A lightly tinted polarized lens blocks water glare just as well
+## A lightly tinted polarized lens can still block water glare
 
-By now you can let go of the idea that polarized lenses have to be dark to work. The glare-blocking ability lives in the polarizing film, not in how deeply the lens is tinted. The film removes horizontally vibrating light regardless of whether the lens body is grey or brown, light or dark; so a lightly tinted polarized lens still blocks that white sheen on water, while a very dark tinted lens just darkens the glare and the background together, without reducing the glare's share at all.
+By now you can let go of the idea that polarized lenses have to be dark to work. The glare-blocking ability lives in the polarizing film, not in how deeply the lens is tinted. The film removes horizontally vibrating light regardless of whether the lens body is grey or brown, light or dark; so a lightly tinted polarized lens still blocks that white sheen on water (for the exact polarizing efficiency, go by each manufacturer's published specifications), while a very dark tinted lens just darkens the glare and the background together, without reducing the glare's share at all.
 
 The flip side is worth remembering too: a lightly tinted polarized lens is still a tinted lens. The sunglasses buying guide from Taiwan's Bureau of Standards, Metrology and Inspection (BSMI) requires sunglasses with a luminous transmittance between 8% and 75% to carry the warning "not suitable for twilight or night driving." A light tint doesn't mean you can drive at night in them; check the label when you buy.
 

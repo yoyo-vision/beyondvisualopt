@@ -69,7 +69,7 @@ This is the step most often overlooked, yet it's the most technical one. Whether
 
 **What happens if the frame is too big?**
 
-A lens's **optical center** needs to line up with the child's pupil. If the frame is too large, the pupil ends up offset from the optical center, producing an unintended prismatic effect — the child may find things look slightly "off," get tired more easily, or even feel dizzy.
+A lens's **optical center** needs to line up with the child's pupil. With an oversized frame, the lens has to be decentered a long way to reach the pupil, so it ends up larger and thicker, and the glasses slide more easily — once they slide, the optical center moves off the pupil, producing an unintended prismatic effect; the child may find things look slightly "off," get tired more easily, or even feel dizzy.
 
 A child's prescription is still changing and needs [regular tracking](/en/guide/children-myopia/), so the lenses may need replacing every so often; only a frame of the right size lets the optical center line up correctly each time the lenses are changed.
 
@@ -110,7 +110,7 @@ For active children, TR90-type memory plastic is generally the safest choice: li
 
 **Q: Can I just buy kids' frames a size bigger so they last as they grow?**
 
-We don't recommend it. An oversized frame shifts the child's pupil away from the lens's optical center, which can cause visual instability, eye strain, or even dizziness. The right approach is to choose a frame that fits now while leaving room to adjust — using adjustable nose pads and reshapeable temples to fine-tune the fit as your child grows, rather than relying on an oversized frame to "grow into."
+We don't recommend it. In an oversized frame the lenses must be decentered a long way, which makes them larger and thicker, and the glasses slip more easily; once the optical centers drift off the pupils, the result can be visual instability, eye strain, or even dizziness. The right approach is to choose a frame that fits now while leaving room to adjust — using adjustable nose pads and reshapeable temples to fine-tune the fit as your child grows, rather than relying on an oversized frame to "grow into."
 
 **Q: My child's glasses keep sliding off — what should I do?**
 

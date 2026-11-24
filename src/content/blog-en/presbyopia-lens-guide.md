@@ -53,13 +53,13 @@ The eye exam measures your eyes. This stage measures where the glasses sit on yo
 
 ### Pupillary Distance
 
-When you look at something up close, your eyes turn inward, so your pupillary distance is a little smaller than when you look into the distance. Near pupillary distance has to be measured separately. Faces are rarely perfectly symmetrical, so for multifocals each eye is also measured on its own.
+When you look at something up close, your eyes turn inward, so your pupillary distance is a little smaller than when you look into the distance. Near pupillary distance has to be measured separately. Faces are rarely perfectly symmetrical, so the pupillary distance is measured for each eye separately.
 
 ### Fitting Height
 
 #### Why It Matters So Much for Multifocals
 
-The near zone of a multifocal lens is only a small area in the lower part of the lens, and the fitting height decides where it lands. Set it too high, and you have to drop your head low to read. Set it too low, and when your eyes glance down they land in the transition zone, where everything looks hazy. If the two sides are at different heights, the images from your two eyes don't line up, and that's how the dizziness starts. If the frame is too shallow, part of the near zone can even get cut off.
+The near zone of a multifocal lens is only a small area in the lower part of the lens, and the fitting height decides where it lands. Set it too high, and when you look straight ahead your line of sight lands where the power starts to change, so you have to drop your chin to see into the distance. Set it too low, and you have to lower your gaze a long way, or hold the book up, to read. If the two sides are at different heights, the images from your two eyes don't line up, and that's how the dizziness starts. If the frame is too shallow, part of the near zone can even get cut off.
 
 ### Vertex Distance and Pantoscopic Tilt
 
@@ -95,7 +95,7 @@ They're fine in a pinch, like reading a menu. Ready-made reading glasses have th
 
 **Q: How often should I get new presbyopia glasses?**
 
-When close-up work starts to feel hard again in the pair you have now, that's your signal to get a new eye exam. Even if you don't notice anything, we recommend a complete eye exam every one to two years. How the prescription tends to change at each stage is covered in [does presbyopia keep getting stronger?](/blog/presbyopia-progression/) (in Chinese).
+When close-up work starts to feel hard again in the pair you have now, that's your signal to get a new eye exam. Even if you don't notice anything, we recommend a complete eye exam every year. How the prescription tends to change at each stage is covered in [does presbyopia keep getting stronger?](/blog/presbyopia-progression/) (in Chinese).
 
 ## What Takes Time Isn't Making the Lenses
 

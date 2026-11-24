@@ -36,7 +36,7 @@ The **□** symbol in the middle (sometimes a small square, sometimes shortened 
 
 Some frames print an extra number, such as lens height, or add the brand and color code alongside. But as long as you remember the order "lens width – bridge width – temple length," you've got the key information.
 
-> Quick tip: lens width plus bridge width roughly equals how far the frame spans on either side of the centerline of your nose — this is closely tied to your pupillary distance (PD). The bigger the numbers, the wider the frame.
+> Quick tip: lens width plus bridge width roughly equals the distance between the centers of the two lenses (the frame PD). The further this is from your own PD, the more the lenses have to be decentered. The bigger the numbers, the wider the frame.
 
 ---
 

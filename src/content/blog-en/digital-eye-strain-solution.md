@@ -32,7 +32,7 @@ When you stare at a screen you blink noticeably less, and often incompletely, wi
 
 ### A Screen at 60 cm Asks for an Extra 1.67 D
 
-Take someone with -3.00 D of myopia. Wearing their glasses and looking into the distance, the eye is relaxed. Turn to a screen 60 cm away and the ciliary muscle has to supply roughly 1.67 D of extra focusing. That figure comes from the distance alone, not from your prescription; it is the same for anyone sitting there.
+Take someone with -3.00 D of myopia. Wearing their glasses and looking into the distance, the eye is relaxed. Turn to a screen 60 cm away and the ciliary muscle has to supply roughly 1.67 D of extra focusing. That figure is set mainly by the distance; your prescription changes it only slightly, so it is roughly the same for anyone sitting there.
 
 If part of your prescription is under-corrected, presbyopia is starting, or your eyes already need extra effort to stay aligned (a phoria), carrying that same 1.67 D is harder. You can keep up in the morning; by the afternoon you can't.
 

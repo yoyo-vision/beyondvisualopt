@@ -38,8 +38,8 @@ const schema = {
 };
 ---
 <Layout
-  title={`${cat.name}主題文章｜驗光人員整理｜能見度視覺中心 新莊板橋`}
-  description={`${cat.name}相關文章總覽：${subs.map(s => s.name).join('、')}。能見度視覺中心驗光人員撰寫，新莊・板橋。`}
+  title={`${cat.name}主題文章｜YoYo 驗光師撰寫審閱｜能見度視覺中心 新莊板橋`}
+  description={`${cat.name}相關文章總覽：${subs.map(s => s.name).join('、')}。YoYo 驗光師撰寫或審閱，新莊・板橋。`}
   schema={schema}
 >
   <section class="bg-brand-navy text-white pt-10 pb-14 px-6">
@@ -48,7 +48,7 @@ const schema = {
         <a href="/" class="hover:text-white">首頁</a> › <a href="/blog/" class="hover:text-white">配鏡知識</a> › <span class="text-white/90">{cat.name}</span>
       </nav>
       <h1 class="font-serif text-white mb-4" style="font-size:clamp(30px,5vw,46px);font-weight:300">{cat.name}</h1>
-      <p class="text-white/70" style="font-size:16px">{subs.length} 個主題・{total} 篇文章｜由能見度視覺中心驗光人員撰寫</p>
+      <p class="text-white/70" style="font-size:16px">{subs.length} 個主題・{total} 篇文章｜由 YoYo 驗光師撰寫或審閱</p>
     </div>
   </section>
 

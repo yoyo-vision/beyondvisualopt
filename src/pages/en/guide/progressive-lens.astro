@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'Can I get by with just one pair — progressive or office lenses?',
-    a: 'It depends on your lifestyle. People who drive daily or are often outdoors suit progressive multifocals (covering far, intermediate, and near). People who spend 8+ hours a day in an office, with most viewing distances within 6 meters, get a wider, more comfortable intermediate-near field from office lenses. Many heavy screen users end up using both: progressives for commuting, office lenses for work.',
+    a: 'It depends on your lifestyle. People who drive daily or are often outdoors suit progressive multifocals (covering far, intermediate, and near). People who spend 8+ hours a day in an office, with most viewing distances within a room, get a wider, more comfortable intermediate-near field from office lenses. Many heavy screen users end up using both: progressives for commuting, office lenses for work.',
   },
   {
     q: 'My progressives from another shop make me dizzy — can you assess them?',
@@ -151,7 +151,7 @@ const schema = {
             {[
               ['Single-vision reading glasses', 'Only need help when reading', 'Cheap, wide field, zero adaptation', 'Must take them off to see far — constant on and off'],
               ['Progressive multifocals', 'Need far/intermediate/near, no swapping', 'One pair covers every distance, no visible dividing line', 'Adaptation period; aberration zones take getting used to'],
-              ['Office lenses', 'Long hours at a desk and screen', 'Much wider intermediate-near field than progressives', "Can't drive in them; blurry beyond 6 meters"],
+              ['Office lenses', 'Long hours at a desk and screen', 'Much wider intermediate-near field than progressives', "Can't drive in them; distance beyond the room is blurred"],
               ['Multifocal contact lenses', "Don't want to wear frames", 'Freedom for sports and appearance', 'More visual-quality compromise; needs an adaptation assessment'],
             ].map(row => (
               <tr class="border-b border-brand-ink/8">
@@ -178,7 +178,7 @@ const schema = {
         {[
           { level: 'Standard Design', desc: 'A fixed corridor and aberration distribution, designed around an average face shape and average fitting parameters. An entry choice for limited budgets, simple prescriptions, and first-timers.', fit: 'Entry' },
           { level: 'Digitally Optimized Design', desc: 'Aberration distribution optimized to your prescription power, with a wider corridor and less peripheral distortion. The sweet spot for most moderate users — a balance of price and experience.', fit: 'Mainstream' },
-          { level: 'Personalized Custom', desc: "Such as ZEISS Individual²: it factors in your frame's pantoscopic tilt, vertex distance, and lens curvature to tailor the optical design to your face and frame. The difference is most noticeable for high prescriptions, heavy visual demands, and those sensitive to visual quality.", fit: 'Custom' },
+          { level: 'Personalized Custom', desc: "Beyond your prescription, it factors in vertex distance, pantoscopic tilt, face-form angle and fitting height, measured with your chosen frame on. Among the brands we carry, ZEISS Individual² belongs to this tier.", fit: 'Custom' },
         ].map(item => (
           <div class="bg-white rounded-2xl p-7 border border-brand-ink/5 flex flex-col">
             <span class="font-sans text-brand-gold font-semibold tracking-widest uppercase mb-3" style="font-size:11px;letter-spacing:0.18em">{item.fit}</span>
@@ -225,7 +225,7 @@ const schema = {
         {[
           ['Full subjective & objective exam (45–60 min)', "Confirms accommodation is fully relaxed — early presbyopia most easily 'pretends it isn't there' and throws off the prescription"],
           ['Monocular PD (MPD-L / MPD-R)', "Each eye measured separately, not total PD divided by two — a progressive's visual zones are centered on this"],
-          ['Fitting Height', "Determines the vertical position of the fitting cross; skip measuring it and you're guessing — a 2–3mm error is the norm"],
+          ['Fitting Height', "Determines the vertical position of the fitting cross; skip measuring it and the position is only a guess"],
           ['Vertex distance and pantoscopic tilt', 'Essential parameters for personalized custom lenses; they directly affect effective power and corridor position'],
           ['Confirming near working distance', 'Whether you habitually read at 40cm or 33cm determines the design basis for the add power'],
           ['Post-dispensing frame adjustment', "Nose pads, temple tension, level alignment — 'fine at pickup, dizzy a few months later' usually traces back here"],

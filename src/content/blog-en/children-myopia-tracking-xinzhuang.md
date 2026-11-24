@@ -33,7 +33,7 @@ On the first visit, our optometry staff set up baseline data for your child's pr
 
 ### Visual Acuity and Binocular Vision
 
-At every return visit, our optometry staff check which line your child can read with their glasses on, that is, their corrected visual acuity, and carry out a binocular vision assessment: whether both eyes can aim at the same point together, focus together, and work well as a pair at near. Both of our stores do this at every visit, and the results go into the same record as the prescription.
+At every return visit, our optometry staff check which line your child can read with their glasses on, that is, their corrected visual acuity, and carry out a binocular vision assessment, checking how well the two eyes work together, including at near. Both of our stores do this at every visit, and the results go into the same record as the prescription.
 
 Myopia is mostly a matter of the eye's front-to-back length, the axial length, growing too long, so that light comes to a focus in front of the retina, and once it has lengthened it doesn't shrink back. Axial length is an examination performed by ophthalmologists; our stores do not measure it. If your child's axial length needs to be tracked, please have an ophthalmologist arrange it.
 

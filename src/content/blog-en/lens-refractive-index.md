@@ -62,7 +62,7 @@ Usually not. A low prescription in 1.50 or 1.56 already isn't thick, so paying e
 
 **Q: How much difference is there really between 1.67 and 1.74?**
 
-1.74 is currently the highest refractive index commonly available, slightly thinner and lighter than 1.67, mainly aimed at minimizing bulk for high prescriptions. The two have similar Abbe numbers, so the difference comes down to that last bit of thickness. Whether it's worth it depends on how much thinness matters to you and your budget.
+1.74 is currently the highest index commonly available in resin, slightly thinner and lighter than 1.67, mainly aimed at minimizing bulk for high prescriptions. The two have similar Abbe numbers, so the difference comes down to that last bit of thickness. Whether it's worth it depends on how much thinness matters to you and your budget.
 
 ---
 

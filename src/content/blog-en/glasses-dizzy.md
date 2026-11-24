@@ -51,7 +51,7 @@ Some dizziness should be checked from the very first day: missing your footing a
 
 When the prescription is too strong, called **over-correction**, the ciliary muscle that focuses your eye has to stay tensed to compensate. Under-correction is the reverse: your eyes spend all day working hard to see clearly. Either one can bring on eye fatigue, headaches, and dizziness.
 
-When a prescription is off, it usually goes wrong in a few places. The most common is ordering lenses straight from the autorefractor reading. The machine gives a starting point; it still takes subjective refraction, comparing step by step, to find out whether you see comfortably. Next is skipping the check that both eyes are balanced. Once each eye is set, the load on the two sides should be about equal, and without that step one eye often ends up working much harder. For people over 40 there's one more: the eye's ability to focus up close starts to decline, and if that range isn't assessed, the distance prescription tends to be set stronger than you actually need.
+When a prescription is off, it usually goes wrong in a few places. The most common is ordering lenses straight from the autorefractor reading. The machine gives a starting point; it still takes subjective refraction, comparing step by step, to find out whether you see comfortably. Next is skipping the check that both eyes are balanced. Once each eye is set, the load on the two sides should be about equal, and without that step one eye often ends up working much harder. For people over 40 there's one more: the eye's ability to focus up close starts to decline, and if that range isn't assessed, you may see sharply at distance yet struggle with near work all day.
 
 A complete eye exam at either of our two stores takes about 45–60 minutes, and every one includes a binocular vision assessment. If your new glasses make you dizzy, bring them in for a fresh exam. With the old and new prescriptions side by side, it becomes clear where things went off.
 
@@ -85,7 +85,7 @@ A large difference in prescription between the two eyes, known as anisometropia,
 
 Stronger lenses have a stronger prismatic effect to begin with. The bigger the difference between your eyes, the less the two lenses' prismatic effects match, and the harder your brain has to work to merge the images from your left and right eyes. Common experiences are headaches after long use, a feeling that your two eyes aren't coordinated, and an image that occasionally looks doubled when you look into the distance.
 
-If this applies to you, mention the difference between your eyes up front when you come back. Our licensed optometry staff assess whether to include prism compensation in your refraction result or adjust how the power is split between the two eyes, so your brain has less work to do merging the images. When the two eyes see images of different sizes, that's a separate issue, covered in our [complete guide to aniseikonia](/en/guide/aniseikonia/).
+If this applies to you, mention the difference between your eyes up front when you come back. Whether to include prism compensation in your refraction result, or adjust how the power is split between the two eyes, depends on what the measurements show; the aim is to give your brain less work to do merging the images. When the two eyes see images of different sizes, that's a separate issue, covered in our [complete guide to aniseikonia](/en/guide/aniseikonia/).
 
 ---
 

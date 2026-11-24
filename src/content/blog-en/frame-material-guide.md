@@ -36,7 +36,7 @@ Each has situations where it shines. There's no absolute "best" — only "the be
 
 Acetate is the mainstream material for mid-to-high-end plastic frames today, made from cellulose derived from cotton or wood pulp — a plant-based material.
 
-- **Strengths:** the strongest expressive range of colors and patterns (transparent, tortoiseshell, gradient finishes all rely on it), a warm, substantial feel, skin-friendly, and **almost no metal content, so allergy risk is extremely low.**
+- **Strengths:** the strongest expressive range of colors and patterns (transparent, tortoiseshell, gradient finishes all rely on it), a warm, substantial feel, skin-friendly, and **almost no metal content, so allergy risk is low.**
 - **Things to watch for:** it has some inherent weight, so large or thick frames can be felt on the nose after long wear; prolonged sun or heat exposure can cause slight warping or fading.
 - **Adjustability:** acetate can be heated and softened with a heat gun to reshape it — this is exactly what makes hand adjustment so effective at improving comfort, letting the nose pads, face-form curve, and temple arms all be fine-tuned to your face.
 
@@ -54,7 +54,7 @@ Metal frames are known for being sleek, thin, and clean-lined — the go-to choi
 
 Titanium is the top-tier material for high-end frames, and the one we most often recommend for long wear times and high prescriptions.
 
-- **Pure titanium:** lightweight, high strength, **corrosion- and sweat-resistant, and highly biocompatible** — titanium is a mainstream material for medical implants, meaning it's very friendly to body tissue and carries an extremely low risk of allergic reaction.
+- **Pure titanium:** lightweight, high strength, **corrosion- and sweat-resistant, and highly biocompatible** — titanium is a mainstream material for medical implants, meaning it's very friendly to body tissue and carries a low risk of allergic reaction.
 - **Beta titanium:** a titanium alloy that keeps titanium's light weight and low allergy risk while offering better flexibility and shapeability — often used in temple arms or anywhere that needs spring-back.
 - **Why it's especially good for high prescriptions:** high-myopia lenses are already heavy on their own, and a heavy frame on top of that means the whole thing presses uncomfortably on your nose all day. Pure titanium's light weight noticeably reduces that burden, and its sweat resistance and corrosion resistance make it especially friendly for people who sweat easily.
 
@@ -81,11 +81,11 @@ Composite frames mix different materials — usually a "metal front + acetate te
 
 | Material | Weight | Durability | Allergy Risk | Shapeability / Adjustability | Price Range | Best For |
 |------|------|--------|----------|------------------|--------|----------|
-| **Cellulose Acetate** | Medium-heavy | Medium (sensitive to heat and sun) | Very low (almost no metal) | High (heat-shapeable) | Mid–high | Rich color and texture, metal-allergy sufferers |
+| **Cellulose Acetate** | Medium-heavy | Medium (sensitive to heat and sun) | Low (almost no metal) | High (heat-shapeable) | Mid–high | Rich color and texture, metal-allergy sufferers |
 | **Stainless Steel** | Light | High | Medium (often contains nickel) | Medium | Low–mid | Thin-frame fans, entry-level budgets |
 | **Monel** | Light–medium | Medium-high | Medium–high (contains nickel) | High (easy to shape) | Mid | Classic metal-frame fans |
-| **Pure Titanium** | Very light | Very high (sweat- and corrosion-resistant) | Very low (highly biocompatible) | Medium-high (needs specialized tools) | High | Long wear time, high prescriptions, metal-allergy sufferers |
-| **Beta Titanium** | Very light | High | Very low | High (elastic, easy to shape) | Mid–high | Need for spring-back, lightweight priority |
+| **Pure Titanium** | Very light | Very high (sweat- and corrosion-resistant) | Low (highly biocompatible) | Medium-high (needs specialized tools) | High | Long wear time, high prescriptions, metal-allergy sufferers |
+| **Beta Titanium** | Very light | High | Low | High (elastic, easy to shape) | Mid–high | Need for spring-back, lightweight priority |
 | **TR90** | Lightest | High (impact- and drop-resistant) | Low (metal-free) | Low–medium (springs back) | Low–mid | Kids, sports, minimal-weight needs |
 | **Composite** | Depends on combination | Medium-high | Depends on the metal component | Depends on the part | Mid–high | Wanting both light weight and texture |
 
@@ -113,7 +113,7 @@ It depends on how you use your glasses. If you wear them more than 8 hours a day
 
 **Q: Do acetate frames cause allergic reactions?**
 
-Cellulose acetate is a plant-based cellulose material with almost no metal content, making it one of the lowest-allergy-risk materials available — usually a safe choice for people prone to common nickel allergies. A small number of people may have a mild reaction to specific surface coatings or their own individual skin sensitivity, but acetate's skin-friendliness is clearly better than nickel-containing metal frames. If you've ever felt itchy wearing a metal frame, acetate or pure titanium are both worth considering first. (Note: this is general material information — if you have a severe or persistent skin reaction, please consult a dermatologist.)
+Cellulose acetate is a plant-based cellulose material with almost no metal content, so if you're prone to the common nickel allergy, it carries less allergy risk than metal frames that contain nickel. A small number of people may have a mild reaction to specific surface coatings or their own individual skin sensitivity, but acetate's skin-friendliness is clearly better than nickel-containing metal frames. If you've ever felt itchy wearing a metal frame, acetate or pure titanium are both worth considering first. (Note: this is general material information — if you have a severe or persistent skin reaction, please consult a dermatologist.)
 
 **Q: Which frame material is the lightest?**
 

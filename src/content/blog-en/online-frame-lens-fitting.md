@@ -47,7 +47,7 @@ No. We put this in plain terms:
 > **Cost = lens price + a fitting fee.**
 > The lens is priced by the brand and tier you choose (we're a contracted ZEISS dealer and a HOYA dealer), and the fitting fee depends on the frame type. **For the same frame type, there's no surcharge just because the frame wasn't bought in our store.**
 
-You can get a specific quote by visiting in person or messaging us on LINE — we'll explain it clearly before starting, so you're never hit with an unexpected number after the fact.
+We'll give you a clear quote before we start, so you're never hit with an unexpected number after the fact. If you have questions first, you're welcome to call or message the store on LINE.
 
 ---
 

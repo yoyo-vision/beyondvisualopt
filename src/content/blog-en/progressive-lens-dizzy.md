@@ -96,7 +96,7 @@ Different brands and product lines vary enormously in three design parameters:
 | **Near zone width** | Wider = larger usable clear field for close work | Near-oriented design vs. distance-oriented design |
 | **Aberration distribution** | Hard design = wider clear zones for distance and near, with a shorter, narrower corridor and aberrations concentrated at the sides; soft design = wider corridor and smoother transition, with narrower distance and near zones | Depends on whether you tend to turn your head or move your eyes |
 
-**A real-world example:** If your work is mostly close-range (phone, books, documents) but you were fitted with a hard-design progressive optimized for outdoor distance vision, your ciliary muscles have to over-accommodate constantly to find a clear near zone in the lower field — leading quickly to headaches and eye strain.
+**A real-world example:** If your work is mostly close-range (phone, books, documents) but you were fitted with a hard-design progressive optimized for outdoor distance vision, the near zone is too narrow and in the wrong place for you, so you keep hunting for the right angle to see clearly — leading quickly to headaches and eye strain.
 
 **Another common scenario:** The frame is too small, the progressive corridor gets truncated, and the near zone isn't fully preserved within the frame — so you can never find a stable near focus.
 
@@ -111,7 +111,7 @@ Different brands and product lines vary enormously in three design parameters:
 | Clear at distance, blurry or effortful up close | Addition too low / near zone design mismatch |
 | Floor seems tilted while walking | Misaligned optical centers / prismatic effect |
 | Field of view "swims" when moving your eyes | Aberration zones too large (lens quality issue) |
-| Headaches after extended wear | Prescription error / ciliary muscle over-accommodation |
+| Headaches after extended wear | Prescription error / near zone too narrow or mispositioned |
 | Fine at first, dizzy after a few months | Frame out of alignment, shifted optical centers |
 | Slightly blurry at both far and near | Overall prescription error — needs a full re-exam |
 

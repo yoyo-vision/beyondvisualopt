@@ -22,8 +22,7 @@ import Layout from '../../layouts/Layout.astro';
           items: [
             'Subjective & objective refraction',
             'Binocular vision assessment',
-            'Vertex distance measurement',
-            'Accommodation & convergence testing',
+            'Vertex distance & pantoscopic tilt measurement',
             'Prescription report provided',
           ],
         },
@@ -122,11 +121,11 @@ import Layout from '../../layouts/Layout.astro';
       <h2 class="font-serif text-brand-ink mb-10 text-center" style="font-size:28px;font-weight:300">Frequently Asked Questions</h2>
       <div class="space-y-6">
         {[
-          { q: 'Do I need an appointment?', a: 'Yes, we recommend booking in advance for a complete clinical vision exam. Walk-ins may be accommodated for simple adjustments or inquiries.' },
+          { q: 'Do I need an appointment?', a: 'Yes, we recommend booking in advance for a complete clinical vision exam. For adjustments or questions, please call or message us on LINE first.' },
           { q: 'How long does a full vision exam take?', a: 'A complete clinical exam takes 45–60 minutes for first-time visitors. We do not rush — every parameter is carefully assessed to ensure your glasses are truly comfortable.' },
           { q: 'Can you help if my current glasses make me dizzy?', a: 'Bring them in. We check the prescription, cylinder axis, optical centres and frame fit one by one; if the cause appears to be medical, we refer you to an ophthalmologist.' },
           { q: 'Can I get polarized or photochromic sunglasses with my prescription?', a: 'Yes. Both our Xinzhuang and Banqiao stores make prescription polarized, photochromic and tinted lenses from ZEISS and HOYA, for myopia, hyperopia, astigmatism and progressives; an eye exam comes first. Both stores also stock ready-made non-prescription sunglasses from brands such as Ray-Ban, which you can buy as they are or fit with prescription lenses, plus clip-ons (including polarized) and magnetic sun lenses. We do not currently offer lenses that combine polarized and photochromic in one, or photochromic lenses designed to darken inside a car.' },
-          { q: 'Do you speak English?', a: 'Basic English communication is available. We can assist foreign customers with prescription reading, lens selection, and basic consultations.' },
+          { q: 'Do you speak English?', a: 'At our Xinzhuang store, we can give simple explanations in English about your prescription and lens choices; a full consultation is mostly in Mandarin.' },
         ].map(faq => (
           <div class="border-b border-brand-ink/10 pb-6">
             <h3 class="font-sans font-semibold text-brand-ink mb-2" style="font-size:15px">{faq.q}</h3>

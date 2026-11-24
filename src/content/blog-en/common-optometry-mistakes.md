@@ -14,7 +14,7 @@ That's how a lot of people picture a vision exam. Sit down, read the chart, choo
 
 That kind of process isn't completely useless—but it leaves far too much out.
 
-After years in optometry, Optometrist YoYo has seen countless "I got new glasses and they still don't feel right" cases—and more than half of them come down to a key step being skipped during the exam. Not on purpose, but because most people have no idea that step is even supposed to exist.
+After years in optometry, Optometrist YoYo has seen countless "I got new glasses and they still don't feel right" cases—and many of them come down to a key step being skipped during the exam. Not on purpose, but because most people have no idea that step is even supposed to exist.
 
 Here are the 5 most common vision exam mistakes.
 
@@ -99,7 +99,7 @@ If your glasses have always felt "somehow just a bit off" in the past, it's very
 
 **Q: Where in Xinzhuang can I get a complete binocular vision assessment?**
 
-At Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), our licensed optometry staff offer a complete binocular vision assessment, covering accommodation, vergence, and eye-alignment stability. Call +886-2-2206-6700 to book.
+At Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), a binocular vision assessment is part of every exam. Call +886-2-2206-6700 to book.
 
 **Q: My glasses from Banqiao keep making me dizzy—what should I do?**
 

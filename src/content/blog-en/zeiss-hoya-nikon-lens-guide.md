@@ -39,7 +39,7 @@ Beyond Visual Optometry is a contracted, certified Zeiss dealer in Taiwan. Both 
 
 HOYA is a Japanese brand founded in 1941. It began with optical glass manufacturing and is now one of the world's largest eyeglass lens manufacturers, with enormous production volume and consistent quality.
 
-HOYA's lens factories are spread across the globe, and the HOYA lenses circulating in the Taiwan market are mostly produced in Japan or at Asian facilities. The brand has deep expertise in progressive multifocal lenses and near-support lenses.
+HOYA's lens factories are spread across the globe. The brand has deep expertise in progressive multifocal lenses and near-support lenses.
 
 **HOYA's main lens series (a brief overview):**
 
@@ -59,9 +59,9 @@ We don't carry or order Nikon lenses. If you bring in a Nikon lens or quote, we 
 
 ---
 
-## Essilor | The French brand that invented the progressive lens
+## Essilor | The French brand behind the first commercial progressive lens
 
-Essilor comes from France and is one of the world's largest eyeglass lens manufacturing groups, as well as the inventor of the progressive multifocal lens back in 1959. Essilor has since merged with Italy's Luxottica (whose frame brands include Ray-Ban and Oakley) to form the "EssilorLuxottica" group.
+Essilor comes from France and is one of the world's largest eyeglass lens manufacturing groups, and in 1959 it launched Varilux, the first commercially available progressive lens. Essilor has since merged with Italy's Luxottica (whose frame brands include Ray-Ban and Oakley) to form the "EssilorLuxottica" group.
 
 We don't carry or order Essilor lenses either. Our article [Essilor lenses explained](/en/blog/essilor-lens-guide/) walks through how each series is divided.
 

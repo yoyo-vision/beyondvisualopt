@@ -9,7 +9,7 @@ excerpt: "Born in Sabae, Japan's legendary eyewear town — Japanese pure titani
 
 In the eyewear industry, "Made in Sabae" is shorthand for quality.
 
-Sabae City, in Japan's Fukui Prefecture, is the birthplace of Japanese eyewear production, and the place where titanium frame fabrication matured into a craft. The skills here have been passed down through generations of artisans, and much of the work — cutting, welding, surface finishing — is still checked by hand and by experience.
+Sabae City, in Japan's Fukui Prefecture, is Japan's largest eyewear-producing region, and the place where titanium frame fabrication matured into a craft. The skills here have been passed down through generations of artisans, and much of the work — cutting, welding, surface finishing — is still checked by hand and by experience.
 
 **MINAMOTO** was born here.
 
@@ -52,7 +52,7 @@ The benefits:
 
 Every MINAMOTO frame comes with a case made from **traditional Fukui washi paper craftsmanship.**
 
-Echizen washi paper, from Fukui Prefecture, has a history of more than 1,500 years and is recognized as an important part of Japan's intangible cultural heritage. The grain of the paper on every case varies slightly, making each one a genuinely handmade object.
+That is how the brand describes it; Fukui Prefecture is home to Echizen washi. The grain of the paper on every case varies slightly, making each one a genuinely handmade object.
 
 This detail isn't just for show. It reflects MINAMOTO's overall approach to craftsmanship, from the product itself to its packaging: **every detail deserves to be taken seriously.**
 

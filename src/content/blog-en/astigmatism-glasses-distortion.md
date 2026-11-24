@@ -56,7 +56,7 @@ The following situations warrant a follow-up re-evaluation:
 - After a full **week**, the distortion hasn't improved or has even gotten worse
 - You experience **headaches, nausea, or eye ache** (not just a strange sense of space). If it persists after rest, or comes with a sudden drop in vision, please see an ophthalmologist first
 - **Covering one eye** feels comfortable, but using both eyes together is very uncomfortable
-- There's an **obvious deviation in the astigmatism axis** (an error of 15° or more during refraction has a major impact)
+- There's an **obvious deviation in the astigmatism axis** (even a 10° error leaves about a third of the cylinder uncorrected)
 - Distortion only started after the frame was adjusted (**a crooked frame** causing axis misalignment)
 
 > **Important reminder:** An axis that is off leaves "residual astigmatism" behind. A 10° error leaves roughly one third of the original cylinder uncorrected; at 30°, the residual equals the original cylinder power outright, so the correction is effectively cancelled out. The frame must be adjusted level—never worn crooked. (The residual works out to roughly 2 × cylinder power × the sine of the axis error.)

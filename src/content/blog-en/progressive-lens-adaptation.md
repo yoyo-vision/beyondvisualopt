@@ -53,7 +53,7 @@ The areas to either side of the corridor (the left and right peripheral regions)
 
 ## The most common problem: fitting height measured incorrectly
 
-Progressive lenses have a critical parameter called the **fitting height (also known as segment height)**—the distance from the lens's optical center to the bottom rim of the frame. This value determines where the "near zone" lands.
+Progressive lenses have a critical parameter called the **fitting height (also known as segment height)**—the vertical distance from your pupil center (the lens's fitting cross) to the lowest point of the frame's lens opening. This value determines where the "near zone" lands.
 
 If the fitting height is measured wrong:
 
@@ -80,13 +80,13 @@ It was measured accurately at the fitting, but the nose pads or temples weren't 
 The add power is the difference in power between distance and near. An ADD of +1.00 D means that when looking at near objects, an extra +1.00 D of assistance is added over the distance prescription.
 
 ADD too high:
-- Near vision is indeed clear, but the corridor is shorter and the peripheral aberrations are more severe
+- Near vision is only clear at a closer-than-usual distance, and peripheral distortion increases
 - Harder to adapt
 
 ADD too low:
 - Near vision is still hazy; you assume the lens is no good when in fact the power is insufficient
 
-**The add power should be assessed based on your actual presbyopia, not simply increased with age.** Some people are 55 with reasonably good accommodation and only need ADD +1.25 D; others are 50 with markedly reduced accommodation and may need ADD +2.00 D.
+**The add power should be assessed based on your actual presbyopia, not simply increased with age.** Some people are 55 but, because they habitually read at a longer distance, ADD +1.25 D is enough; others are 50 with markedly reduced accommodation and may need ADD +2.00 D.
 
 ---
 
@@ -95,9 +95,9 @@ ADD too low:
 | Symptom | Recommendation |
 |------|------|
 | Slight peripheral distortion; needing to watch your step | Normal—keep adapting for 2–4 weeks |
-| Needing to tuck your chin down to see near objects clearly | Normal—get used to using your lower field for near work |
+| Needing to lower your eyes (not your chin) to read | Normal—get used to using the lower part of the lens for near work |
 | Dizziness without headache, easing after 1 week | Normal—keep monitoring |
-| Two weeks in, dizziness hasn't improved | Come back to check the fitting height and frame position |
+| Two weeks in, dizziness isn't easing day by day | Come back to check the fitting height and frame position |
 | No matter how you look, you can't find a clear near zone | Come back—may be a height or ADD issue |
 | A vertical image difference between the eyes | Come back promptly—the left/right fitting heights may be uneven |
 | Headache, nausea, unable to work normally | Come back immediately and stop wearing the lenses |
