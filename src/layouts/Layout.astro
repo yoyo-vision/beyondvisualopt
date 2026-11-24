@@ -25,8 +25,13 @@ const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `$
 const canonicalURL = new URL(canonicalPath, Astro.site);
 const isEn = lang === 'en';
 // 語言切換連結同樣保持帶斜線，避免多繞一次轉址
+// 2026-11-24：英文頁對應的中文網址若已 301 轉走（中文 /guide/ → /blog/，2026-10-17 起），
+// 語言切換直接連轉址目的地；hreflang 則不宣告中文版（沒有真正的對應頁，宣告了也只是指向轉址）
+const ZH_REDIRECTED: Record<string, string> = { '/guide/': '/blog/' };
+const zhPath = Astro.url.pathname.replace(/^\/en/, '') || '/';
+const zhCounterpartMissing = isEn && zhPath in ZH_REDIRECTED;
 const langSwitchHref = isEn
-  ? (Astro.url.pathname.replace(/^\/en/, '') || '/')
+  ? (ZH_REDIRECTED[zhPath] ?? zhPath)
   : (enPath ?? '/en/');
 
 // ── BreadcrumbList：由路徑自動產生麵包屑結構化資料 ──
@@ -124,7 +129,9 @@ const isBookingPage = Astro.url.pathname.startsWith('/booking') || Astro.url.pat
   <!-- GA4 統一由下方 idle 延遲版載入（避免重複載入拖累 Core Web Vitals 與重複計數） -->
 
   <!-- hreflang：告知 Google 中英文版本對應關係 -->
-  {isEn ? (<>
+  {zhCounterpartMissing ? (
+    <link rel="alternate" hreflang="en" href={`https://beyondvisualopt.com${canonicalPath}`} />
+  ) : isEn ? (<>
     <link rel="alternate" hreflang="en" href={`https://beyondvisualopt.com${canonicalPath}`} />
     <link rel="alternate" hreflang="zh-TW" href={`https://beyondvisualopt.com${langSwitchHref}`} />
     <link rel="alternate" hreflang="x-default" href={`https://beyondvisualopt.com${langSwitchHref}`} />
