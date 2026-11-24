@@ -5,7 +5,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "能見度視覺中心",
-  "description": "新北市新莊、板橋在地深耕超過 30 年的專業眼鏡與驗光機構，新莊店由 YoYo 驗光師主理，提供臨床等級驗光、蔡司鏡片、多焦點配鏡、兒童近視追蹤服務。",
+  "description": "板橋能見度眼鏡 1992 年創立、在地 30 多年，2023 年在新莊開設比泱驗光所；新莊店由 YoYo 驗光師主理，提供完整驗光、蔡司鏡片、多焦點配鏡、兒童近視追蹤服務。",
   "url": "https://beyondvisualopt.com/about/",
   "telephone": ["02-2206-6700", "02-2253-1246"],
   "address": [
@@ -13,6 +13,13 @@ const schema = {
       "@type": "PostalAddress",
       "streetAddress": "中正路419-1號",
       "addressLocality": "新莊區",
+      "addressRegion": "新北市",
+      "addressCountry": "TW"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "雙十路二段47巷28號",
+      "addressLocality": "板橋區",
       "addressRegion": "新北市",
       "addressCountry": "TW"
     }
@@ -29,8 +36,8 @@ const schema = {
 };
 ---
 <Layout
-  title="關於我們｜能見度視覺中心品牌故事｜新莊 × 板橋 30 年在地驗光"
-  description="從 1992 年板橋創立到新莊比泱驗光所，能見度視覺中心 30 年堅持「不追求最貴，只追求最適合」。這裡有品牌故事、門市空間設備、驗光人員團隊，以及我們對一副眼鏡的想法。"
+  title="關於我們｜能見度視覺中心品牌故事｜板橋 1992 年創立 × 新莊比泱驗光所"
+  description="從 1992 年板橋創立到新莊比泱驗光所，能見度 30 多年堅持「不追求最貴，只追求最適合」。這裡有品牌故事、門市空間設備、驗光人員團隊，以及我們對一副眼鏡的想法。"
   schema={schema}
   enPath="/en/about/"
 >
@@ -43,7 +50,7 @@ const schema = {
         不追求最貴，<br />只追求最適合你的<span class="text-brand-gold">視覺解決方案</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:18px;line-height:1.85">
-        新莊 × 板橋在地深耕超過 30 年。從一家小眼鏡行到臨床等級驗光所，我們從未改變的，是把每一位顧客的視覺需求，當作真正的專業課題來對待。
+        板橋能見度眼鏡 1992 年創立，2023 年在新莊開了比泱驗光所。這 30 多年從未改變的，是把每一位顧客的視覺需求，當作真正的專業課題來對待。
       </p>
     </div>
   </section>
@@ -54,7 +61,7 @@ const schema = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div>
           <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-5" style="font-size:12px;letter-spacing:0.22em">品牌故事</span>
-          <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(28px,4vw,44px);font-weight:300;line-height:1.2">從板橋一家眼鏡行，<br />到臨床等級驗光所</h2>
+          <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(28px,4vw,44px);font-weight:300;line-height:1.2">從板橋一家眼鏡行，<br />到新莊、板橋兩間驗光所</h2>
           <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
             <p>1992 年，能見度眼鏡行在新北市板橋區創立。那個年代的眼鏡行，配眼鏡就是驗個度數、選個框架、十分鐘出貨——這是行業的預設值，也是我們後來決定打破的東西。</p>
             <p>超過 30 年的時間，我們看過太多顧客帶著「配好的眼鏡」進門，說戴了頭暈、看不清楚、不舒服。每一次重新驗光，我們都在思考：為什麼第一次就不能做對？</p>
@@ -65,7 +72,7 @@ const schema = {
           {[
             { year: '1992', event: '能見度眼鏡行板橋總店創立', desc: '新北市板橋區，提供基礎配鏡服務，在地深耕超過 30 年。' },
             { year: '2020', event: '蔡司 ZEISS 簽約認證經銷', desc: '正式成為蔡司台灣授權合作店，引進 Individual² 個人化訂製鏡片服務。' },
-            { year: '2023', event: '新莊比泱驗光所成立', desc: '能見度視覺中心 × 比泱驗光所開幕，主打臨床等級驗光與進階視覺管理。' },
+            { year: '2023', event: '新莊比泱驗光所成立', desc: '能見度視覺中心 × 比泱驗光所開幕，主打完整驗光與進階視覺管理。' },
           ].map((item, i) => (
             <div class={`flex gap-8 py-8 ${i > 0 ? 'border-t border-brand-ink/10' : ''}`}>
               <div class="flex-shrink-0 w-16">
@@ -150,7 +157,7 @@ const schema = {
           <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.9">
             <p>2023 年，新莊中正路這個位置，掛起了「比泱驗光所」的招牌。招牌不大，但背後的設定很清楚：這裡是一間驗光所，不是一間快速配鏡的眼鏡行。</p>
             <p>這裡的驗光，一次預約保留 60–90 分鐘，驗光本身約 45–60 分鐘：了解用眼需求、儀器檢測、主客觀驗光、雙眼視覺評估，一步一步做完，最後才談鏡片。</p>
-            <p>很多人是帶著「別的地方配好卻戴不住」的眼鏡進來的。看完才發現，問題不在鏡片材質或品牌，在於一開始就沒有人好好量過他的眼睛。這件事我們不做，但我們可以幫你重新做對。</p>
+            <p>很多人是帶著「別的地方配好卻戴不住」的眼鏡進來的。看完才發現，問題常常不在鏡片材質或品牌，而在配鏡高度、頂點距離這幾個數字沒有對上。我們可以幫你一項一項重新量過。</p>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ instagram: ""
 
 ## Eye Strain and Fatigue: Triage First — See an Ophthalmologist if You Have These Warning Signs, Otherwise Let Us Help Find the Cause
 
-Let's say this upfront. If your eyes feel sore, tight, or tired along with redness, pain, a sudden drop in vision, or shadows or flashes in your vision, your body is telling you "it's time to see a physician" — please see an ophthalmologist as soon as possible, don't wait it out. But if it's more like "I've been staring at a screen all day, and by evening my eyes are sore and dry and I just want to close them," that's usually not directly related to eye health — it's your visual system running "overtime." In that case, coming in for a full visual assessment at an optometry practice can usually identify the cause.
+Let's say this upfront. If your eyes feel sore, tight, or tired along with redness, pain, a sudden drop in vision, or shadows or flashes in your vision, your body is telling you "it's time to see a physician" — please see an ophthalmologist as soon as possible, don't wait it out. But if it's more like "I've been staring at a screen all day, and by evening my eyes are sore and dry and I just want to close them," that's often your visual system running "overtime." If none of the warning signs above are present, a full visual assessment is a reasonable first step.
 
 Let's be clear about who we are: Beyond Visual Optometry is a licensed optometry practice (Beyond Visual Optometry / Biyang Optometry), not an ophthalmology clinic, we don't have a physician on site, and we don't diagnose or treat eye disease. What we can do is take "why do my eyes get tired every time I use them" and break it down from a visual perspective.
 

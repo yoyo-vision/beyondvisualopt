@@ -11,6 +11,10 @@ export async function getStaticPaths() {
 const { post, allPosts } = Astro.props;
 const { Content, headings } = await post.render();
 
+// 未滿六歲題材（frontmatter under6: true）：文末 CTA 與側欄預約卡改成眼科導向、不放 /booking/ 連結
+// 依據：驗光人員法 §12（未滿六歲不得驗光）、合規手冊三之四「未滿六歲題材不掛預約」
+const isUnder6 = post.data.under6 === true;
+
 // 文內目錄：取內文的 H2／H3（Astro 已自動替標題加 id，slug 與 headings 一致）
 // H2 少於 3 個的短文不顯示，避免目錄比內文還顯眼
 // 「常見問題」底下的 H3 問句不列進目錄，避免目錄被一串問句撐長
@@ -309,14 +313,21 @@ const pageSchema = {
           </div>
         )}
 
-        <!-- CTA -->
-        <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
-          <h2 class="text-xl font-bold mb-3">還有問題？歡迎預約驗光人員</h2>
-          <p class="text-gray-300 mb-6" style="font-size:15px">能見度視覺中心（新莊比泱驗光所 × 板橋能見度驗光所）｜新北市新莊・板橋驗光所，持照驗光人員完整驗光</p>
-          <a href="/booking/" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
-            線上預約 →
-          </a>
-        </div>
+        <!-- CTA：未滿六歲題材改眼科導向、不放預約連結（A3） -->
+        {isUnder6 ? (
+          <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
+            <h2 class="text-xl font-bold mb-3">未滿 6 歲請由眼科醫師檢查</h2>
+            <p class="text-gray-300" style="font-size:15px">依《驗光人員法》第十二條，未滿六歲兒童的驗光，驗光人員不得為之。這個年紀的視力檢查與度數判讀，請直接掛眼科。</p>
+          </div>
+        ) : (
+          <div class="mt-12 bg-brand-navy text-white rounded-2xl p-8 text-center">
+            <h2 class="text-xl font-bold mb-3">還有問題？歡迎預約驗光人員</h2>
+            <p class="text-gray-300 mb-6" style="font-size:15px">能見度視覺中心（新莊比泱驗光所 × 板橋能見度驗光所）｜新北市新莊・板橋驗光所，持照驗光人員完整驗光</p>
+            <a href="/booking/" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-brand-gold/90 transition-colors inline-block">
+              線上預約 →
+            </a>
+          </div>
+        )}
 
         <div class="mt-10 text-center">
           <a href="/blog/" class="text-brand-navy font-semibold hover:underline text-sm">← 回到視覺小知識</a>
@@ -347,14 +358,21 @@ const pageSchema = {
           </ul>
         </div>
 
-        <!-- 快速諮詢 -->
-        <div class="bg-brand-light rounded-2xl p-5 mb-6">
-          <p class="text-brand-navy font-bold text-sm mb-2">🔬 視覺諮詢</p>
-          <p class="text-gray-600 text-xs leading-relaxed mb-4">眼鏡戴起來哪裡不對又說不上來？預約一次視覺諮詢，由驗光人員逐項量測、找出配鏡上的原因。</p>
-          <a href="/booking/" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
-            線上預約 →
-          </a>
-        </div>
+        <!-- 快速諮詢：未滿六歲題材改眼科提醒、不放預約連結（A3） -->
+        {isUnder6 ? (
+          <div class="bg-brand-light rounded-2xl p-5 mb-6">
+            <p class="text-brand-navy font-bold text-sm mb-2">👶 未滿六歲，請掛眼科</p>
+            <p class="text-gray-600 text-xs leading-relaxed">這個年紀的視力檢查與驗光屬眼科，驗光人員依法不得為之。在家看到文中提到的那些狀況，請直接帶孩子掛眼科。</p>
+          </div>
+        ) : (
+          <div class="bg-brand-light rounded-2xl p-5 mb-6">
+            <p class="text-brand-navy font-bold text-sm mb-2">🔬 視覺諮詢</p>
+            <p class="text-gray-600 text-xs leading-relaxed mb-4">眼鏡戴起來哪裡不對又說不上來？預約一次視覺諮詢，由驗光人員逐項量測、找出配鏡上的原因。</p>
+            <a href="/booking/" class="block text-center bg-brand-navy text-white text-sm font-bold py-2.5 rounded-full hover:bg-brand-navy/90 transition-colors">
+              線上預約 →
+            </a>
+          </div>
+        )}
 
         <!-- 門市資訊 -->
         <div class="border border-gray-200 rounded-2xl p-5 text-xs text-gray-600 space-y-3">

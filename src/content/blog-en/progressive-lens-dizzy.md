@@ -1,9 +1,9 @@
 ---
-title: "Why Do Progressive Lenses Make You Dizzy? 3 Common Causes and How to Fix Them"
+title: "Why Do Progressive Lenses Make You Dizzy? 3 Common Fitting Causes and What to Check"
 date: 2026-06-01
 tag: "Lenses"
 excerpt: "Still dizzy after getting progressive lenses? It's probably not you — it's one of these three fitting parameters that wasn't set correctly."
-seoDescription: "Still dizzy after getting progressive lenses? It's not you — it's one of three fitting parameters: prescription accuracy, pupillary distance, or lens design."
+seoDescription: "Still dizzy after getting progressive lenses? It's often one of three fitting factors: prescription accuracy, pupillary distance and fitting height, or lens design."
 image: ""
 youtube: ""
 instagram: ""
@@ -32,8 +32,6 @@ The lens has three main zones:
 
 **Key fact:** On both sides of the progressive corridor (nasal and temporal) there are unavoidable **aberration zones** where the image is distorted and blurry. The whole point of high-quality progressive lens design is to shrink these aberration zones and push them toward the periphery, making the corridor wider and the field of view clearer.
 
-This is also why the comfort gap between a Zeiss Individual² lens and a budget progressive is so large — the precision of aberration control is fundamentally different.
-
 ---
 
 ## Cause 1: Prescription Measurement Errors
@@ -50,7 +48,7 @@ A quick refraction (under 10 minutes) rarely confirms that your accommodation is
 
 **2. Reusing old auto-refractor readings**
 
-Auto-refractor results are objective starting values. They need to be confirmed through subjective testing (red-green test, binocular balance) before ordering lenses. Filling a prescription straight from auto-refractor readings carries a high error rate — especially for the presbyopic addition.
+Auto-refractor results are objective starting values. They need to be confirmed through subjective testing (red-green test, binocular balance) before ordering lenses. Filling a prescription straight from auto-refractor readings is more likely to be off — especially for the presbyopic addition.
 
 **3. Wrong working-distance assumption for the near addition**
 
@@ -108,7 +106,7 @@ Different brands and product lines vary enormously in three design parameters:
 
 ## Which Cause Is Behind Your Dizziness?
 
-| Symptom | Most Likely Cause |
+| Symptom | Fitting issues to check first |
 |---------|------------|
 | Clear at distance, blurry or effortful up close | Addition too low / near zone design mismatch |
 | Floor seems tilted while walking | Misaligned optical centers / prismatic effect |
@@ -116,6 +114,8 @@ Different brands and product lines vary enormously in three design parameters:
 | Headaches after extended wear | Prescription error / ciliary muscle over-accommodation |
 | Fine at first, dizzy after a few months | Frame out of alignment, shifted optical centers |
 | Slightly blurry at both far and near | Overall prescription error — needs a full re-exam |
+
+This table only covers fitting-side causes. If dizziness or headaches continue after the glasses have been checked or after you stop wearing them, or come with nausea or a sudden change in vision, please see a physician.
 
 ---
 
@@ -141,22 +141,22 @@ Different brands and product lines vary enormously in three design parameters:
 
 Most people need 2–4 weeks to adapt to the visual logic of the progressive zones. If you still have significant dizziness or headaches after 4 weeks, go back for a re-evaluation of the fitting parameters rather than continuing to tough it out.
 
-**Q: Can I get a refund on progressive lenses?**
+**Q: What happens if I can't get used to my progressives?**
 
-Beyond Visual Optometry actively follows up during the adaptation period. If the issue is confirmed to be a fitting-parameter problem, our licensed optometry staff recheck the prescription and fit and re-adjust the glasses; for glasses fitted with us, frame adjustments after pickup are included at no extra charge. If a lens replacement is needed, it's discussed case by case. Both the Xinzhuang and Banqiao stores handle follow-up visits.
+We follow up within 2 weeks of pickup. For glasses fitted with us, frame adjustments after pickup are not charged separately; if the glasses still don't feel right after a while, our licensed optometry staff recheck the prescription and how the glasses sit. If a lens replacement is needed, it's discussed case by case. Both the Xinzhuang and Banqiao stores handle follow-up visits.
 
 **Q: Will upgrading to expensive lenses (like Zeiss) stop the dizziness?**
 
 Not necessarily. Premium lenses offer wider corridors and smaller aberration zones, but if the prescription is off or the PD and fitting height were never measured correctly, even the most expensive lens will still cause dizziness. Lens quality and refraction accuracy are both essential — you can't skip either.
 
-**Q: Where can I get progressive lens dizziness sorted out in Xinzhuang or Banqiao?**
+**Q: My progressives make me dizzy — where in Xinzhuang or Banqiao can I have the fitting re-checked?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao, New Taipei City) offers a complete progressive-lens dizziness assessment by our licensed optometry staff: re-measuring PD and fitting height, verifying the prescription, adjusting the frame, and evaluating whether the lens design suits you. Even if your progressives were made elsewhere, you're welcome to come in for a second opinion. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
+Beyond Visual Optometry (Xinzhuang and Banqiao, New Taipei City) offers a complete re-check of your progressive fitting by our licensed optometry staff: re-measuring PD and fitting height, verifying the prescription, adjusting the frame, and evaluating whether the lens design suits you. Even if your progressives were made elsewhere, you're welcome to bring them in. Call +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or [book online](/en/booking/).
 
 ---
 
 Dizziness in progressives can be worked through item by item. It doesn't have to be accepted as something about your constitution.
 
-Pupillary distance and fitting height, frame position, lens design, the prescription itself — go through those four in order and most cases give up a cause. Only when they all check out does "this design doesn't suit you" become a fair conclusion, and by then there are alternatives to move to. Reach that conclusion first and you end up having paid for glasses and been told the failure was yours.
+Pupillary distance and fitting height, frame position, lens design, the prescription itself — go through those four in order and you'll know which one is off, or whether all four check out. Only when they all check out does "this design doesn't suit you" become a fair conclusion, and by then there are alternatives to move to. Reach that conclusion first and you end up having paid for glasses and been told the failure was yours.
 
 Pairs made elsewhere are welcome too; we'll measure them the same way, in front of you. Xinzhuang +886-2-2206-6700, Banqiao +886-2-2253-1246.

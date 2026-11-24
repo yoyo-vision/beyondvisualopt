@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: '蔡司鏡片和普通鏡片差在哪裡？',
-    a: '差異核心是「個人化光學計算」：高階鏡片會把頂點距離、前傾角、面彎角與配鏡高度這些實際配戴參數納入設計計算。以蔡司 Individual² 為例，原廠公開資料標示其清晰視野範圍較標準鏡片提升 20% 以上。是否用得到這些差異，取決於你的度數與用眼型態，建議由驗光人員評估。能見度視覺中心為蔡司 ZEISS 簽約認證經銷。',
+    a: '差異核心是「個人化光學計算」：個人化鏡片會把頂點距離、前傾角、面彎角與配鏡高度這些實際配戴參數納入設計計算，蔡司 Individual² 就屬於這類設計。是否用得到這些差異，取決於你的度數與用眼型態，建議由驗光人員評估。能見度視覺中心為蔡司 ZEISS 簽約認證經銷。',
   },
   {
     q: '孩子近視，離焦鏡片適合嗎？',
-    a: '適不適合你的孩子，要由眼科醫師評估過才知道。離焦設計鏡片屬於特殊光學設計，產品特性與適應症一律以衛福部許可證核准內容為準。十五歲以下孩子的驗光，依法要在眼科醫師指導下進行；離焦設計的軟式隱形眼鏡，能見度目前不為這個年紀的孩子驗配，請家長先帶去給眼科醫師評估。驗光人員會安排視力評估、記下每次的度數變化，也確認眼鏡戴著還合不合用。藥物處方屬醫療行為，請洽眼科醫師評估。',
+    a: '適不適合你的孩子，要由眼科醫師評估過才知道。離焦設計鏡片屬於特殊光學設計，產品特性與適應症一律以衛福部許可證核准內容為準。十五歲以下孩子的驗光，依法要在眼科醫師指導下進行；離焦設計的軟式隱形眼鏡，能見度目前不為這個年紀的孩子驗配，請家長直接帶孩子去看眼科。驗光人員會安排視力評估、記下每次的度數變化，也確認眼鏡戴著還合不合用。藥物處方屬醫療行為，請洽眼科醫師評估。',
   },
   {
     q: '兒童近視應該多久追蹤一次？',
@@ -72,15 +72,15 @@ const processPhases = [
     steps: [
       { num: '06', name: '鏡片選配說明', desc: '不推銷，而是說明每種鏡片的光學特性與生活適配度，讓你在理解之後自己選。' },
       { num: '07', name: '鏡架調整與訂製', desc: '頂點距離、傾斜角、鼻托高度逐一調整，確保鏡片光學中心對準你的瞳距。' },
-      { num: '08', name: '取鏡與適應追蹤', desc: '取鏡時再次確認配戴感並提供適應期指引；鏡架調整不另外收費，戴不順可回店由驗光人員重新確認度數與配戴位置。' },
+      { num: '08', name: '取鏡與適應追蹤', desc: '取鏡時再次確認配戴感並提供適應期指引；在能見度配的眼鏡，取件後的鏡架調整不另外收費，戴不順可回店由驗光人員重新確認度數與配戴位置。' },
     ],
   },
 ];
 ---
 <Layout
   title="能見度眼鏡行｜能見度視覺中心・比泱驗光所｜新莊板橋蔡司多焦點"
-  description="新莊、板橋配眼鏡｜能見度眼鏡行。品牌在地深耕 30 年，YoYo 驗光師主理新莊店。蔡司 ZEISS 簽約經銷，多焦點鏡片、兒童視力追蹤、高度近視與長時間螢幕用眼配鏡；一個預約時段保留 60–90 分鐘，由持照驗光人員完成完整臨床驗光。"
-  keywords="新莊驗光,新莊配眼鏡,板橋驗光,板橋配眼鏡,新北驗光推薦,新莊多焦點鏡片,新莊漸進鏡片,新莊蔡司鏡片,板橋多焦點鏡片,板橋蔡司鏡片,新莊老花眼鏡,板橋老花眼鏡,新莊高度近視眼鏡,新莊兒童近視追蹤,戴眼鏡為什麼頭暈,老花一定要配多焦點嗎,漸進鏡片為什麼會暈,高度近視要怎麼配眼鏡,數位疲勞眼鏡,RGP硬式隱形眼鏡,蔡司Zeiss,HOYA鏡片,NIKON鏡片,ESSILOR鏡片,能見度眼鏡行,能見度視覺中心,比泱驗光所,能見度驗光所,YoYo驗光師,鄭家侑驗光師"
+  description="新莊、板橋配眼鏡｜能見度眼鏡行。板橋店 1992 年創立，新莊店由 YoYo 驗光師主理。蔡司 ZEISS 簽約經銷，多焦點鏡片、兒童視力追蹤、高度近視與長時間螢幕用眼配鏡；一個預約時段保留 60–90 分鐘，由持照驗光人員完成完整臨床驗光。"
+  keywords="新莊驗光,新莊配眼鏡,板橋驗光,板橋配眼鏡,新北驗光推薦,新莊多焦點鏡片,新莊漸進鏡片,新莊蔡司鏡片,板橋多焦點鏡片,板橋蔡司鏡片,新莊老花眼鏡,板橋老花眼鏡,新莊高度近視眼鏡,新莊兒童近視追蹤,戴眼鏡為什麼頭暈,老花一定要配多焦點嗎,漸進鏡片為什麼會暈,高度近視要怎麼配眼鏡,電腦眼鏡,RGP硬式隱形眼鏡,蔡司Zeiss,HOYA鏡片,能見度眼鏡行,能見度視覺中心,比泱驗光所,能見度驗光所,YoYo驗光師,鄭家侑驗光師"
   schema={faqSchema}
   preloadHeroMobile="/images/store-interior-hero-mobile.webp"
   preloadHeroDesktop="/images/store-interior-hero.webp"
@@ -95,12 +95,12 @@ const processPhases = [
     </picture>
     <div class="absolute inset-0 bg-gradient-to-br from-brand-navy/90 to-[#0f1e33]/85"></div>
     <div class="relative max-w-4xl mx-auto text-center">
-      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">新北市新莊 × 板橋｜在地眼鏡品牌深耕 30 年</p>
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">新北市新莊 × 板橋｜1992 年從板橋起家的眼鏡品牌</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(32px,5.5vw,62px);font-weight:300">
         眼鏡不是越貴越好，<br />是越<span class="text-brand-gold">適合你</span>越好
       </h1>
       <p class="text-white/75 max-w-2xl mx-auto mb-10" style="font-size:18px;line-height:1.85">
-        我們是在新莊、板橋深耕 30 年的眼鏡行。從孩子的近視追蹤到爸媽的老花配鏡，先花時間搞懂你怎麼用眼睛，再幫你挑真正適合的那一副——不是最貴的，是最對的。
+        我們是 1992 年在板橋創立的眼鏡行，2023 年又在新莊開了驗光所。從孩子的近視追蹤到爸媽的老花配鏡，先花時間搞懂你怎麼用眼睛，再幫你挑真正適合的那一副——不是最貴的，是最對的。
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/booking/"
@@ -173,9 +173,9 @@ const processPhases = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { num: '01', title: '驗光，不是量個度數就結束', desc: '在新莊，我們做的是完整的臨床驗光——雙眼視覺評估、頂點距離量測、鏡片傾斜角調整，每個參數都對到位，而不是十分鐘驗完就叫你等取貨。' },
+          { num: '01', title: '驗光，不是量個度數就結束', desc: '在新莊，我們做的是完整的臨床驗光——雙眼視覺評估、頂點距離量測、鏡片傾斜角調整，每個參數都對到位，該花的時間我們不省。' },
           { num: '02', title: '要用好鏡片，我們有蔡司原廠', desc: '新莊、板橋蔡司 ZEISS 簽約認證經銷。從 Individual² 個人化訂製、多焦點漸進到數位鏡片（藍光過濾設計），原廠品質，經銷憑證可查。' },
-          { num: '03', title: '孩子的近視，我們幫你一起盯', desc: '6–14 歲的孩子，我們提供定期視力檢查與度數變化追蹤，讓你清楚看見孩子這半年、這一年的視力走向。依驗光人員法，十五歲以下者之驗光於眼科醫師指導下進行，需要時協同眼科醫師轉介追蹤。' },
+          { num: '03', title: '孩子的近視，我們幫你一起盯', desc: '6～15 歲的孩子，第一次配鏡須先經醫師確診為非假性近視；依驗光人員法，十五歲以下者之驗光於眼科醫師指導下進行。在這兩條規定之內，我們提供定期視力檢查與度數變化追蹤，讓你清楚看見孩子這半年、這一年的視力走向，需要時協同眼科醫師轉介追蹤。' },
         ].map(item => (
           <div class="border-t border-brand-ink/20 pt-8">
             <div class="font-sans text-brand-ink-3 mb-4" style="font-size:12px;letter-spacing:0.2em">{item.num}</div>
@@ -613,7 +613,7 @@ const processPhases = [
         style="font-size:15px;letter-spacing:0.1em;font-weight:600">
         線上預約 →
       </a>
-      <p class="text-brand-paper/40 mt-4" style="font-size:13px;letter-spacing:0.05em">諮詢不代表要消費・全程不推銷・可隨時改期</p>
+      <p class="text-brand-paper/40 mt-4" style="font-size:13px;letter-spacing:0.05em">不必當天決定配鏡・全程不推銷・可隨時改期</p>
     </div>
   </section>
 </Layout>

@@ -62,7 +62,7 @@ Some people are better off wearing glasses most of the time, whatever type of co
 
 If your eyes are often dry, or itch as soon as allergy season starts, a lens covering the eye makes the discomfort more noticeable, and persistent dryness should be checked by an ophthalmologist first. If you spend most of the day at a screen in air-conditioning, you already blink less, and wearing contacts all day on top of that adds to the load. If you have diabetes or a weaker immune system, a corneal infection is harder to deal with, so ask your doctor before wearing contacts. And if your schedule is irregular, you often work late, or you can't remember when you opened your lenses, you're the most likely to overwear them or sleep in them.
 
-There are age rules too. Under Article 12 of Taiwan's Optometrists Act, contact lens refraction for those aged fifteen and under must be carried out under an ophthalmologist's guidance, and is not permitted for children under six. We do not currently fit contact lenses for children aged fifteen and under, so please have an ophthalmologist assess your child first; how each age group is handled is in [The Complete Guide to Children's Myopia Tracking](/en/guide/children-myopia/).
+There are age rules too. Under Article 12 of Taiwan's Optometrists Act, contact lens refraction for those aged fifteen and under must be carried out under an ophthalmologist's guidance, and is not permitted for children under six. We do not currently fit contact lenses for children aged fifteen and under, so please take your child straight to an ophthalmologist; how each age group is handled is in [The Complete Guide to Children's Myopia Tracking](/en/guide/children-myopia/).
 
 ---
 
@@ -113,7 +113,7 @@ Take the lenses out first and rest your eyes, and think back on whether you've w
 
 **Q: For sport, should I wear contacts or sports glasses?**
 
-It depends on the sport. For running or ball games, where you sweat and turn your head, contacts give you a view with no frame in the way and won't slide down your nose. For swimming, surfing, or anything in the water, don't wear contacts: water isn't sterile. For contact sports, an extra layer in front of your eyes is reassuring, so consider prescription sports glasses, or a sports strap on your regular glasses. We stock sports frames and sports straps, fitted to your glasses prescription.
+It depends on the sport. For running or ball games, where you sweat and turn your head, contacts give you a view with no frame in the way and won't slide down your nose. For swimming, surfing, or anything in the water, don't wear contacts: water isn't sterile. For contact sports, neither contacts nor regular glasses are ideal; consider prescription sports glasses, or a sports strap on your regular glasses. We stock sports frames and sports straps, fitted to your glasses prescription.
 
 ---
 

@@ -16,15 +16,15 @@ Beyond Visual Optometry (Banqiao) is a certified ZEISS dealer in Taiwan, founded
 
 ## Understanding ZEISS's Lens Tiers at a Glance
 
-| Tier | Representative Series | Best For |
+| Tier | Representative Series | Design type |
 |------|---------|--------|
-| Standard | ClearView, etc. | Straightforward prescriptions, budget-focused |
-| Near-addition design | Digital Lens | Long stretches of close-range work (screens, phones) |
-| Driving-enhanced | DriveSafe | Frequent drivers concerned about night glare |
-| Progressive multifocal | Progressive series | Presbyopia, needing distance, intermediate, and near all clear |
-| Personalized custom | Individual² | High prescriptions, significant astigmatism, those particular about visual quality |
+| Standard | ClearView, etc. | Single vision |
+| Near-addition design | Digital Lens | Single vision, with a little added plus power at the bottom |
+| Driving | DriveSafe | Single-vision and progressive designs for driving |
+| Progressive multifocal | Progressive series | Distance, intermediate and near on one lens |
+| Personalized custom | Individual² | Your own fitting parameters built into the design |
 
-**The key point: the difference between brands is often smaller than the difference between tiers within the same brand.** A premium, personalized HOYA lens can very plausibly outperform an entry-level ZEISS lens. Beyond Visual Optometry is also a HOYA dealer, so we can compare the two brands side by side objectively — see our [complete lens brand guide](/en/guide/) for more detail.
+**The key point: the difference between brands is often smaller than the difference between tiers within the same brand.** Beyond Visual Optometry is also a HOYA dealer, so we can compare the two brands side by side objectively — see our [complete lens brand guide](/en/guide/) for more detail.
 
 What separates the tiers is the **optical design and personalized parameters**. Do a full vision exam first, confirm what you actually need, and then choose a tier. "We don't chase the most expensive option, only the one that actually fits you" has been Beyond Visual Optometry's principle for 30 years.
 
@@ -63,7 +63,7 @@ The core difference is in the optical design and personalization: a personalized
 
 **Q: Is ZEISS always better than HOYA?**
 
-Not necessarily. HOYA's premium series is very competitive on value, and the difference between brands is often smaller than the difference between tiers. Beyond Visual Optometry carries both brands, and our licensed optometry staff will make an objective comparison based on your prescription and budget, without favoring either one.
+Not necessarily. Both brands have entry-level and personalized tiers, and the tier usually matters more than the brand. Beyond Visual Optometry carries both brands, and our licensed optometry staff will make an objective comparison based on your prescription and budget, without favoring either one.
 
 **Q: Do I need an appointment to get ZEISS lenses in Banqiao?**
 

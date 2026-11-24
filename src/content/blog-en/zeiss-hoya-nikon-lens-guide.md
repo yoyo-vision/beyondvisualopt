@@ -12,7 +12,7 @@ keywords: "Optometrist YoYo,Zeiss lenses,HOYA lenses,Nikon lenses,Essilor lenses
 
 Zeiss, HOYA, Nikon, Essilor.
 
-Some people hear "Zeiss" and instinctively think "the best." Others hear "HOYA" and picture "made in Japan." And plenty of people have no idea what actually separates these brands—they just know the quotes can differ by several thousand New Taiwan dollars.
+Some people hear "Zeiss" and instinctively think "the best." Others hear "HOYA" and picture "made in Japan." And plenty of people have no idea what actually separates these brands—they just know the quotes can differ a lot.
 
 This article isn't about declaring which one is best. Every brand has its own strengths and suits different visual needs and budgets. What I want to do here is simple: give you some basic background on these names before you walk into an optical shop.
 
@@ -26,7 +26,7 @@ In the eyeglass lens world, Zeiss is known for its **personalized customization 
 
 **Zeiss's main lens series (a brief overview):**
 
-- **Individual² personalized custom lenses**: The premium choice among progressive multifocal lenses, made to order after measuring individual parameters
+- **Individual² personalized custom lenses**: ZEISS's made-to-order progressive, calculated from your own fitting measurements
 - **DriveSafe lenses for night driving**: A lens design for driving, per the manufacturer's public information
 - **Digital Lens**: Adds near-intermediate support in the lower part of the lens, matching a usage pattern of long hours on phones and computers
 - **SmartLife series**: Modern lenses for everyday multi-scenario use, available in single-vision, progressive, and other versions
@@ -55,13 +55,7 @@ HOYA's strength lies in a complete product lineup, mature technology, and a wide
 
 In the Taiwan market, Nikon is best known for its cameras and lenses, but its eyeglass lens division has an equally long history of optical expertise. Nikon's eyeglass lens business is run by Nikon-Essilor, a joint venture owned half by Nikon and half by France's Essilor.
 
-**Nikon's main lens series (a brief overview):**
-
-- **SeeMax Ultimate progressive lenses**: Nikon's personalized multifocal lenses (per the manufacturer's public information)
-- **Presio series**: Progressive lenses with multiple tier options
-- **Light / Relaxsee single-vision series**: Everyday single-vision lenses emphasizing clarity and light weight
-
-The brand enjoys high recognition, and consumers' trust in "Nikon optics" carries over from the impression of its camera lenses—while the actual lens quality and technology are genuinely solid.
+We don't carry or order Nikon lenses. If you bring in a Nikon lens or quote, we can compare its design tier with the equivalent ZEISS and HOYA series.
 
 ---
 
@@ -69,13 +63,7 @@ The brand enjoys high recognition, and consumers' trust in "Nikon optics" carrie
 
 Essilor comes from France and is one of the world's largest eyeglass lens manufacturing groups, as well as the inventor of the progressive multifocal lens back in 1959. Essilor has since merged with Italy's Luxottica (whose frame brands include Ray-Ban and Oakley) to form the "EssilorLuxottica" group.
 
-**Essilor's main lens series (a brief overview):**
-
-- **Varilux progressive lenses**: The original progressive lens series, ranging from Comfort to the X series across multiple tiers
-- **Crizal coating series**: Essilor's signature anti-reflective coating, often paired with lenses from other brands
-- **Eyezen blue-light filter / near-support lenses**: A single-vision series designed for digital life
-
-Essilor's advantage lies in its deep history in progressive lens technology and its global reach—Varilux has an extremely high penetration rate in eyewear markets worldwide.
+We don't carry or order Essilor lenses either. Our article [Essilor lenses explained](/en/blog/essilor-lens-guide/) walks through how each series is divided.
 
 ---
 

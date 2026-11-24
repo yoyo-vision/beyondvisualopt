@@ -41,7 +41,7 @@ In other words: **whether progressives work out for you is half about the lens, 
 
 A progressive lens prescription isn't just "a number." A full process includes intake, objective and subjective refraction, binocular vision assessment, addition-power (ADD) assessment, and measuring fitting height and pantoscopic tilt — Beyond Visual Optometry's full exam takes about 45–60 minutes, performed one-on-one by our licensed optometry staff.
 
-A pair of progressives fitted from a 10-minute computerized refraction has a much higher chance of causing dizziness — that's not a scare tactic, it's just optics.
+When progressives are fitted from an autorefractor reading alone, fitting height and pantoscopic tilt go unmeasured, and the clear zones are harder to find.
 
 ## Thing Four: The Real Difference Between Lens Tiers Is "How Personalized"
 
@@ -51,9 +51,9 @@ If you have a strong prescription, significant astigmatism, or are particular ab
 
 ## Thing Five: The Service Doesn't End When You Walk Out With Your Glasses
 
-Progressive lenses come with an adaptation period, and frames drift out of alignment. When you're choosing a store, just ask one question directly: "**Is there a charge for adjustments after I pick up my glasses?**"
+Progressive lenses come with an adaptation period, and frames drift out of alignment. When you're choosing a store, it's worth asking: "**What happens if my glasses need adjusting after pickup?**"
 
-Beyond Visual Optometry's answer: no. For glasses fitted with us, adaptation-period follow-up and frame adjustments after pickup are included at no extra charge — because the fitting isn't done until it's actually comfortable.
+For glasses fitted with us, frame adjustments after pickup are not charged separately — because the fitting isn't done until it's actually comfortable. We also check in with you during the adaptation period.
 
 ---
 

@@ -91,7 +91,7 @@ If this applies to you, mention the difference between your eyes up front when y
 
 ## Which Kind Is Yours: A Symptom Table
 
-| Symptom | Most likely cause |
+| Symptom | Fitting issues to check first |
 |---------|------------|
 | Distance vision feels effortful, eyes tire easily | Over-correction (prescription too strong) |
 | Distance not quite clear, and wearing them only makes you more uncomfortable | Under-correction (prescription too weak) |

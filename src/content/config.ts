@@ -28,6 +28,9 @@ const blog = defineCollection({
     // 參考資料（選填）：內文提到的出處多數由 [slug].astro 自動偵測；
     // 偵測不到的（例如只在這篇用到的論文）才手動寫在這裡，兩者合併去重後顯示在文末
     references: z.array(z.object({ title: z.string(), url: z.string() })).optional(),
+    // 未滿六歲題材旗標（選填，2026-11-24 健檢 A3）：設 true 時，文章頁的文末 CTA 與側欄預約卡
+    // 改成「未滿 6 歲請由眼科醫師檢查」，不輸出預約連結（驗光人員法 §12：未滿六歲不得驗光）
+    under6: z.boolean().optional(),
   }),
 });
 

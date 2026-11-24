@@ -12,7 +12,7 @@ keywords: "progressive lens dizziness, progressive lens adaptation, progressive 
 
 "The shop said the adaptation period is a month, just push through it."
 
-Half of that is true, and half of it is an excuse for a bad fitting.
+Half of that is true; the other half depends on whether the fitting was right.
 
 Progressive multifocal lenses do require an adaptation period, because your visual system is learning to "find the right focus in different zones." But **the discomfort of adaptation has limits**—if certain symptoms fall outside the normal range, pushing through only wastes your time and may leave you even more resistant to progressive lenses.
 
@@ -112,7 +112,7 @@ ADD too low:
 - Phone/book: raise your head slightly and drop your eyes to the near zone at the bottom of the lens (not by lowering your chin)
 
 **Don't force yourself to "get used to" the distortion**
-If the distortion at the sides of the corridor really bothers you, the lens design tier may not be high enough. Entry-level progressive lenses have narrower corridors and larger aberration zones; high-end personalized progressives (such as Zeiss Individual² or the HOYA iD series) have better aberration-spreading designs and wider corridors. If you're a first-time progressive wearer, your starting lens choice really does matter.
+If the distortion at the sides of the corridor really bothers you, the lens design tier may not be high enough. Entry-level progressive lenses have narrower corridors and larger aberration zones; personalized designs build your fitting parameters into the lens, so peripheral aberration is distributed differently from a standard design (among the brands we carry, ZEISS Individual² and HOYA MyStyle V+ are of this type). If you're a first-time progressive wearer, your starting lens choice really does matter.
 
 **Wear them often—don't switch back and forth**
 During adaptation, wear the progressive lenses full-time as much as possible and avoid alternating with your old single-vision glasses—your visual system needs continuous stimulation to build the new habit.
@@ -139,4 +139,4 @@ At Beyond Visual Optometry's Xinzhuang store (Beyond Visual Optometry × Biyang 
 
 ---
 
-Discomfort with progressive lenses doesn't mean they're "not for you." Most of the time, the real problem is a fitting process that skipped a critical measurement step. With the right lens and the right measurements, the adaptation period shouldn't be something you have to grit your teeth through.
+Discomfort with progressive lenses doesn't mean they're "not for you." Often the cause is a fitting measurement that can be re-checked. With the right lens and the right measurements, the adaptation period shouldn't be something you have to grit your teeth through.

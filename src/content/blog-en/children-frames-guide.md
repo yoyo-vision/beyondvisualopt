@@ -94,7 +94,7 @@ Stability comes down to a few things:
 
 | Factor | What to Look For | Why It Matters |
 |---|---|---|
-| Material safety | TR90, silicone, no sharp edges | Won't hurt the face or scratch skin on impact |
+| Material safety | TR90, silicone, no sharp edges | Less likely to hurt the face or scratch skin on impact |
 | Durability | Spring hinges, full rim, one-piece molding | Holds up to rough handling, fewer repairs |
 | Room to grow | Adjustable nose pads, reshapeable temples | Grows with the child's face — no need to keep replacing |
 | Fit | Proper size, optical center aligned with pupil | A misaligned optical center can cause unsteady vision, eye strain, or even dizziness |
@@ -122,7 +122,7 @@ Don't rush to replace the glasses — most slipping issues can be fixed with an 
 
 Choosing a kids' frame isn't just about looks — it's about safety, durability, and whether the lens can actually do what it's designed to do. Those calls are best made together, in person, after your child tries on a few frames and we take our own measurements.
 
-Bring your child in, and we'll help find the frame that best fits their face shape, visual habits, and lens needs.
+Children under 6 need an ophthalmologist to check their prescription; before a first pair at ages 6–15, a physician must confirm the myopia is not pseudomyopia. Once that's done, bring the result and your child in, and we'll help find the frame that best fits their face shape, visual habits, and lens needs.
 
 - **Xinzhuang store (Biyang Optometry Practice):** +886-2-2206-6700
 - **Banqiao store (Beyond Visual Optometry):** +886-2-2253-1246

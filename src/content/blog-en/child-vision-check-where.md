@@ -38,7 +38,7 @@ Most first and second graders bringing home their first re-check notice fall int
 
 ### Ages 6–15, Already Has Glasses: Refraction Under an Ophthalmologist's Guidance
 
-Once the diagnosis step is done, later lens changes and prescription records can be handled at an optometry clinic. But Article 12 states clearly that refraction for those aged 15 and under must be carried out under an ophthalmologist's guidance, and the same goes for contact lens refraction. "Aged 15 and under" includes 15: students in their third year of junior high, and those just starting senior high who haven't turned 16 yet, are still in this row. For how to track through the three junior high years, see [junior high myopia tracking](/blog/junior-high-myopia-peak/) (in Chinese).
+Once the diagnosis step is done, later lens changes and prescription records can be handled at an optometry clinic. But Article 12 states clearly that refraction for those aged 15 and under must be carried out under an ophthalmologist's guidance, and the same goes for contact lens refraction (we do not currently fit contact lenses for anyone aged 15 or under; please see an ophthalmologist). "Aged 15 and under" includes 15: students in their third year of junior high, and those just starting senior high who haven't turned 16 yet, are still in this row. For how to track through the three junior high years, see [junior high myopia tracking](/blog/junior-high-myopia-peak/) (in Chinese).
 
 ### Over 15: Go Directly to Optometry Staff
 

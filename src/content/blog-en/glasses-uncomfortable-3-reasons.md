@@ -88,7 +88,7 @@ After that, depending on how you switch between distances during the day, there 
 
 ## Symptom Table: Which Kind of Discomfort Is Yours Closest To?
 
-| Symptom | Most likely cause |
+| Symptom | Fitting issues to check first |
 |---------|------------|
 | Headache or sore eye sockets after long reading sessions | Your two eyes don't work well together |
 | Extreme eye fatigue after a full day at the computer | Lens design doesn't match your viewing distances |

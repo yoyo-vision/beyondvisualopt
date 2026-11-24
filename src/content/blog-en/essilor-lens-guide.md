@@ -25,7 +25,7 @@ On the technology side, Essilor is best known for **commercializing the progress
 Varilux is Essilor's flagship progressive multifocal series and one of the names most synonymous with progressive lenses worldwide. It's organized into several tiers by technology level:
 
 - **Varilux Comfort:** An entry-level progressive, suited to people wearing progressives for the first time, with a more traditional zone layout
-- **Varilux Physio:** Uses wavefront aberration correction technology for a clearer field of view and less distortion in the transition zones
+- **Varilux Physio:** According to Essilor's published information, a design calculated with wavefront-based methods
 - **Varilux X series:** Optimized for the "within arm's reach" visual zone, suited to older adults who spend a lot of time on phones and tablets
 - **Varilux Xclusive:** A fully personalized version, custom-calculated based on the wearer's pupillary distance, prescription, lifestyle, and head posture
 
@@ -83,7 +83,7 @@ Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., N
 
 **Q: What's the difference between Varilux and a typical progressive lens?**
 
-Varilux's core technology lies in wavefront aberration correction and personalized calculation, which reduces blur in the transition zones and widens the field of clear vision. The difference is real, but whether it's right for you depends on licensed optometry staff evaluating your prescription combination and visual habits.
+According to Essilor's published information, Varilux designs are calculated with wavefront-based methods; whether one suits you depends on licensed optometry staff evaluating your prescription combination and visual habits.
 
 **Q: What age is Eyezen suitable for?**
 

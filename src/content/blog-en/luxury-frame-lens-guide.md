@@ -7,7 +7,7 @@ excerpt: "Want prescription lenses in your Cartier, Chrome Hearts, or Linda Farr
 
 ## "We're Not Comfortable Touching This One" — What Luxury Frame Owners Hear Most Often
 
-You spend tens of thousands of NT dollars on a Cartier frame, have a friend bring back Chrome Hearts from Japan, or want to convert a Linda Farrow sunglasses frame you've had for years into prescription lenses — and after visiting a few optical shops, you keep hearing the same thing: "We're not comfortable disassembling this one."
+You spend a good deal on a Cartier frame, have a friend bring back Chrome Hearts from Japan, or want to convert a Linda Farrow sunglasses frame you've had for years into prescription lenses — and after visiting a few optical shops, you keep hearing the same thing: "We're not comfortable disassembling this one."
 
 It's not that the shop doesn't want the business — there's **genuine risk involved.** The structure, materials, and hinge design of luxury frames are completely different from mass-produced frames, and one wrong move during disassembly can mean damage you can't undo or pay to fix.
 

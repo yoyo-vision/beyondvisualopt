@@ -39,7 +39,7 @@ Factors that influence your ADD include:
 | **Single-vision reading glasses** | Single near focus | Readers, phone users, occasional use | Those who frequently switch between near and far |
 | **Progressive lenses** | Continuous far + intermediate + near vision | Those who frequently switch distances or spend a lot of time outdoors | People prone to dizziness, high astigmatism, or working at a single fixed distance |
 | **Office lenses (near-focused progressives)** | Intermediate + near distance | Office workers, computer users | Those needing sharp distance vision or doing outdoor activities |
-| **Multifocal contact lenses** | Far + near (no intermediate) | Those who don't want frame glasses, occasional use | People whose eyes dry out easily or who demand high sharpness |
+| **Multifocal contact lenses** | Far + near (intermediate varies by design) | Needs an assessment by our optometry staff first | People whose eyes dry out easily or who demand high sharpness |
 
 ---
 
@@ -74,7 +74,6 @@ The lens is designed with three visual zones from top to bottom: the upper part 
 - Most people need a 2–4 week adaptation period
 - Blur/distortion zones in the peripheral field of view (outside the progressive corridor)
 - Adaptation is more difficult for people with high astigmatism
-- Quality varies enormously; the comfort gap between cheap progressives and ZEISS-grade progressives is night and day
 
 **Best for:** People who need to frequently switch between far (driving, going out), intermediate (computer), and near (phone, documents) throughout the day.
 
@@ -94,7 +93,6 @@ Designed specifically for "working indoors at a fixed distance for long periods,
 **Cons:**
 - Can't see clearly at distance (things start to blur beyond about 100cm)
 - You need a second pair for going out or driving
-- Many optical shops don't actively recommend them (because they require two pairs)
 
 **Best for:** Office workers, designers, accountants, and lawyers who face a computer screen for 8+ hours a day and only occasionally go out after work.
 
@@ -102,19 +100,7 @@ Designed specifically for "working indoors at a fixed distance for long periods,
 
 ## Solution 4: Multifocal Contact Lenses
 
-Soft multifocal contact lenses use a concentric-ring or progressive design, allowing the cornea to receive light from both near and far at once, with the brain choosing which focal distance to prioritize. Both our stores can fit multifocal contact lenses, but we don't keep trial lenses for this type, so our optometry staff need to assess whether they suit you first.
-
-**Pros:**
-- Completely invisible that you're wearing presbyopia correction
-- Works well with sports and outdoor activities
-
-**Cons:**
-- Less sharp than frame lenses (the brain's focus-splitting mechanism causes a slight image-overlap sensation)
-- May be uncomfortable for people whose eyes dry out easily
-- Higher cost (an ongoing monthly expense)
-- Not suitable for precision visual tasks (such as jewelers or painters)
-
-**Best for:** People who use them occasionally, value appearance, and don't require extremely high visual sharpness.
+Multifocal contact lenses form near and far images on the retina at the same time, and the brain picks the one it needs. Sharpness is usually lower than with spectacle lenses, and dry eye and the ongoing monthly cost are worth weighing too. Whether they suit you needs an in-person assessment by our optometry staff; we don't keep trial lenses for this type.
 
 ---
 
@@ -132,7 +118,7 @@ If you spend 90% of your time working at a screen 60cm away, office lenses are f
 The lenses for highly myopic people are already thick, and adding a presbyopia addition power calls for even more precise optical design to avoid amplifying vertex-distance correction errors. You should always have this evaluated by licensed optometry staff with extensive progressive-lens experience.
 
 **4. Brand isn't the only factor in comfort**
-ZEISS Individual² is genuinely more comfortable than an ordinary progressive lens, but only if you truly need progressives and the measurements are precise. Even the best lens delivers diminished results when paired with the wrong prescription or the wrong wearer.
+Personalized designs such as ZEISS Individual² are calculated from your own fitting measurements; whether you notice the difference depends on your prescription and how you use your eyes, and it only matters if you truly need progressives and the measurements are precise. Even the best lens delivers diminished results when paired with the wrong prescription or the wrong wearer.
 
 ---
 
@@ -156,7 +142,7 @@ At Beyond Visual Optometry (Xinzhuang × Banqiao), our licensed optometry staff 
 
 **Q: Why are progressive lenses so expensive?**
 
-Progressive lenses are far more complex to design than single-vision lenses. High-end progressives (such as ZEISS Individual²) are ordered with personal parameters beyond the prescription and pupillary distance, including vertex distance, pantoscopic tilt, face-form angle, and fitting height, and each lens is calculated from those numbers. Cheap progressives use standardized designs with narrower adaptation zones and greater peripheral distortion, which is the fundamental reason for the price gap.
+Progressive lenses are far more complex to design than single-vision lenses. Personalized progressives (ZEISS Individual², among the brands we carry) are ordered with personal parameters beyond the prescription and pupillary distance, including vertex distance, pantoscopic tilt, face-form angle, and fitting height, and each lens is calculated from those numbers. Standard designs are built on average wearing values rather than your own measurements, which is the main reason for the price gap.
 
 ---
 

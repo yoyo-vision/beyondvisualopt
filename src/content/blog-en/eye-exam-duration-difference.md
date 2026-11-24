@@ -67,7 +67,7 @@ Roughly: a consultation about how you use your eyes, old-glasses analysis, auto-
 
 **Q4: Do children need this full a process too?**
 
-A child's vision is still developing, so the items that need assessing aren't fewer. One thing to keep in mind: under Taiwan's Optometrists Act, refraction for schoolchildren under 15 must be carried out under an ophthalmologist's guidance; children under 6 should see an ophthalmologist first for a medical evaluation. Within that framework, we coordinate with ophthalmologists on vision assessment and prescription tracking.
+A child's vision is still developing, so the items that need assessing aren't fewer. One thing to keep in mind: under Taiwan's Optometrists Act, optometry staff may not perform refraction for children under 6, so please see an ophthalmologist. Before a first refraction and glasses at ages 6–15, a physician must confirm the myopia is not pseudomyopia, and refraction for those aged 15 and under is carried out under an ophthalmologist's guidance. Within that framework, we coordinate with ophthalmologists on vision assessment and prescription tracking.
 
 ---
 

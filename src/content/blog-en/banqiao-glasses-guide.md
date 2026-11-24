@@ -37,7 +37,7 @@ In short: **if your prescription is stable and you just want a new pair of myopi
 Fitting reading glasses and progressive multifocal lenses is significantly more demanding than fitting a standard myopia prescription. Fitting-height measurement, addition-power assessment, lifestyle analysis — every one of these steps is best handled by licensed optometry staff, or you risk ending up with a pair that leaves you constantly dizzy.
 
 ### Children with myopia
-Kids' prescriptions change fast and need to be tracked every 3–6 months. Choosing a clinic that offers children's myopia tracking matters far more than one that sees you once and calls it done.
+Check the child's age first. By law, optometry staff may not perform refraction for children under 6, so please see an ophthalmologist. Before a first pair at ages 6–15, a physician must confirm the myopia is not pseudomyopia, and refraction for those aged 15 and under is carried out under an ophthalmologist's guidance. Once glasses are fitted, kids' prescriptions can change quickly, so we usually record them every 3–6 months.
 
 ### High myopia (prescriptions above -6.00D)
 Fitting high-myopia lenses requires calculating a vertex-distance compensation to make sure the effective power is correct — a step that's almost always skipped in a quick, rushed exam.
@@ -68,7 +68,7 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 - Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, and MASAKI MATSUSHIMA
 - Expert precision repair and adjustment for premium frames such as Lindberg, ic! berlin, Cartier, and Chrome Hearts, plus fitting service for lenses in your own frame (repair expertise)
 - Professional progressive lens fitting and adaptation-period follow-up for presbyopia
-- Regular myopia tracking for children
+- Prescription tracking for schoolchildren (ages 6–15: a physician must confirm the myopia is not pseudomyopia before the first refraction and glasses)
 - Precision fitting for high myopia (with vertex-distance compensation)
 - Frame adjustments after pickup are not charged separately for glasses fitted with us
 

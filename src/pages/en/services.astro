@@ -3,13 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 ---
 <Layout
   title="Services | Beyond Visual Optometry | Xinzhuang & Banqiao, New Taipei"
-  description="Complete clinical vision exams, ZEISS progressive lenses, children's myopia tracking, high myopia precision glasses, and digital eye strain solutions."
+  description="Complete clinical vision exams, ZEISS progressive lenses, children's myopia tracking, high myopia precision glasses, and vision assessment for heavy screen use."
   lang="en"
   enPath="/en/services/"
 >
   <section class="bg-brand-navy text-white py-20 px-6 text-center">
     <h1 class="font-serif text-white mb-4" style="font-size:clamp(28px,5vw,48px);font-weight:300">Our Services</h1>
-    <p class="text-white/70 text-lg max-w-2xl mx-auto font-sans">Clinical-grade eye care tailored to your vision needs.</p>
+    <p class="text-white/70 text-lg max-w-2xl mx-auto font-sans">Complete vision exams by licensed optometry staff, tailored to how you use your eyes.</p>
   </section>
 
   <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
@@ -46,6 +46,7 @@ import Layout from '../../layouts/Layout.astro';
           items: [
             'Baseline record of prescription (after accommodation relaxes) and binocular vision',
             'Prescription & corrected visual acuity records every 3–6 months',
+            "Ages 6–15: the first exam and fitting require a physician's confirmation that the myopia is not pseudomyopia; refraction is then carried out under an ophthalmologist's guidance",
           ],
         },
         {
@@ -61,10 +62,10 @@ import Layout from '../../layouts/Layout.astro';
         },
         {
           icon: '💻',
-          title: 'Digital Eye Strain Solution',
+          title: 'Screen-Use Vision Assessment',
           duration: '45 min',
           items: [
-            'ZEISS Digital Lens evaluation',
+            'Digital-lens design options (among the brands we carry, ZEISS Digital Lens is of this type)',
             'Screen distance assessment',
             'Near-support (accommodative-support) lens recommendation',
             'Blue-light filtering options',
@@ -123,7 +124,7 @@ import Layout from '../../layouts/Layout.astro';
         {[
           { q: 'Do I need an appointment?', a: 'Yes, we recommend booking in advance for a complete clinical vision exam. Walk-ins may be accommodated for simple adjustments or inquiries.' },
           { q: 'How long does a full vision exam take?', a: 'A complete clinical exam takes 45–60 minutes for first-time visitors. We do not rush — every parameter is carefully assessed to ensure your glasses are truly comfortable.' },
-          { q: 'Can you help if my current glasses make me dizzy?', a: 'Yes. Dizziness from glasses is often caused by prescription errors, axis deviation, or incorrect frame adjustment. We provide a full binocular vision assessment to identify the root cause.' },
+          { q: 'Can you help if my current glasses make me dizzy?', a: 'Bring them in. We check the prescription, cylinder axis, optical centres and frame fit one by one; if the cause appears to be medical, we refer you to an ophthalmologist.' },
           { q: 'Can I get polarized or photochromic sunglasses with my prescription?', a: 'Yes. Both our Xinzhuang and Banqiao stores make prescription polarized, photochromic and tinted lenses from ZEISS and HOYA, for myopia, hyperopia, astigmatism and progressives; an eye exam comes first. Both stores also stock ready-made non-prescription sunglasses from brands such as Ray-Ban, which you can buy as they are or fit with prescription lenses, plus clip-ons (including polarized) and magnetic sun lenses. We do not currently offer lenses that combine polarized and photochromic in one, or photochromic lenses designed to darken inside a car.' },
           { q: 'Do you speak English?', a: 'Basic English communication is available. We can assist foreign customers with prescription reading, lens selection, and basic consultations.' },
         ].map(faq => (
