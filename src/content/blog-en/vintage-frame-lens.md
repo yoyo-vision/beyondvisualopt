@@ -12,7 +12,7 @@ instagram: ""
 
 **Yes, but the frame's condition needs to be evaluated first.** What makes vintage and secondhand frames so appealing is exactly what makes them tricky: they have age on them. The appeal is in the discontinued acetate colors and patterns, the metalwork, the design lines you simply can't find made the same way anymore. The catch is that all those years have quietly aged the material, and disassembling and fitting a frame like that carries a real risk of damage.
 
-Our approach here is direct: **the optometrist evaluates the frame's condition and material first; if there's a risk of damage, we'll tell you first, and start only once you agree; if it's genuinely not suitable, we'll recommend against it.** This isn't meant to talk you out of it — it's so you know exactly what that frame can handle before you spend money on new lenses for it.
+Our approach here is direct: **our optometry staff evaluate the frame's condition and material first; if there's a risk of damage, we'll tell you first, and start only once you agree; if it's genuinely not suitable, we'll recommend against it.** This isn't meant to talk you out of it — it's so you know exactly what that frame can handle before you spend money on new lenses for it.
 
 ## Aging Risk Comes Down to Material
 
@@ -60,7 +60,7 @@ Cost is still lens price plus a fitting fee that depends on the frame type, quot
 
 **Q1: Does a really old vintage frame automatically mean it can't be fitted?**
 
-Not necessarily. Age isn't the only factor — the material's actual condition is what matters. Some well-preserved old frames are still perfectly sound, while some that look intact are already brittle underneath. Whether we take it on depends on the optometrist's evaluation of the frame's condition; if the risk is higher, we'll disclose it and proceed only with your agreement.
+Not necessarily. Age isn't the only factor — the material's actual condition is what matters. Some well-preserved old frames are still perfectly sound, while some that look intact are already brittle underneath. Whether we take it on depends on how our optometry staff assess the frame's condition; if the risk is higher, we'll disclose it and proceed only with your agreement.
 
 **Q2: Can I keep the original lenses removed from a secondhand frame?**
 

@@ -129,7 +129,7 @@ It could be either. If the frame is too wide overall, the weight shifts forward,
 
 **Q: How do I know if a frame size is right for me?**
 
-There are a few things you can check in person: whether the outer edge of the frame lines up with your cheeks, whether it extends past your temples, whether the bridge sits flush against your nose, and whether the temple bend lands right behind your ear. If you're not sure by eye, the most accurate way is to have an optometrist measure it — factoring in your face width, nose bridge, pupillary distance, and prescription together to determine what size actually fits you.
+There are a few things you can check in person: whether the outer edge of the frame lines up with your cheeks, whether it extends past your temples, whether the bridge sits flush against your nose, and whether the temple bend lands right behind your ear. If you're not sure by eye, the most accurate way is to have our optometry staff measure it — factoring in your face width, nose bridge, pupillary distance, and prescription together to determine what size actually fits you.
 
 ---
 

@@ -75,7 +75,7 @@ Yes. Hyperopia is a state of your eye's refractive structure, while presbyopia i
 
 **Q2: The prescription is all "+" power — how do I tell hyperopia from presbyopia?**
 
-You can't tell from the sign alone. It takes a complete assessment by a licensed optometrist — including distance refractive power, near addition power (ADD), and accommodation and binocular vision function — to determine whether it's structural hyperopia, age-related presbyopia, or both.
+You can't tell from the sign alone. It takes a complete assessment by licensed optometry staff — including distance refractive power, near addition power (ADD), and accommodation and binocular vision function — to determine whether it's structural hyperopia, age-related presbyopia, or both.
 
 **Q3: Is presbyopia a disease? Does it go away?**
 
@@ -87,4 +87,4 @@ Yes. Hyperopia is usually caused by inherited eyeball structure, and many people
 
 ---
 
-Figuring out whether you have hyperopia, presbyopia, or both is the first step before choosing how to handle distance and near vision together. If your concern is "wanting one pair of glasses that handles both distance and near," it's worth understanding how progressive multifocal lenses are designed. To find out which applies to you, you're also welcome to visit Beyond Visual Optometry in Xinzhuang or Banqiao for a complete visual assessment with a licensed optometrist.
+Figuring out whether you have hyperopia, presbyopia, or both is the first step before choosing how to handle distance and near vision together. If your concern is "wanting one pair of glasses that handles both distance and near," it's worth understanding how progressive multifocal lenses are designed. To find out which applies to you, you're also welcome to visit Beyond Visual Optometry in Xinzhuang or Banqiao for a complete visual assessment with our licensed optometry staff.

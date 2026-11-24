@@ -1,120 +1,102 @@
 ---
-title: "How Should You Get Fitted for Presbyopia Glasses? An Optometrist Walks You Through 3 Lens Options"
+title: "How Should You Get Fitted for Presbyopia Glasses? The Full Process, From Eye Exam to Pickup"
 date: "2026-06-24"
 tag: "Lenses"
-excerpt: "Once presbyopia sets in, do you have to get progressive multifocal lenses? Not necessarily. There are three main optical solutions for presbyopia, each suited to a different lifestyle and visual habit. Optometrist YoYo breaks down the options from a clinical perspective."
+excerpt: "Getting presbyopia glasses isn't just a matter of measuring one number. What to bring before your fitting, what a presbyopia eye exam measures, what still needs measuring after you choose a frame, and what pickup and the adjustment period look like: the licensed optometry staff at Beyond Visual Optometry walk you through the whole process."
+seoDescription: "How do you get fitted for presbyopia glasses? What to prepare beforehand, how a presbyopia eye exam measures your distance prescription and addition (ADD), measuring pupillary distance, fitting height, and pantoscopic tilt after you choose a frame, and how long adjusting takes after pickup. The licensed optometry staff at Beyond Visual Optometry in Xinzhuang and Banqiao walk you through the full fitting process."
+keywords: "how to get presbyopia glasses,presbyopia glasses fitting process,presbyopia eye exam,addition power ADD,fitting height,presbyopia glasses pickup,presbyopia adjustment period,Xinzhuang presbyopia eye exam,Banqiao presbyopia glasses,Beyond Visual Optometry"
 image: ""
 youtube: ""
 instagram: ""
 ---
 
-## Presbyopia Is the Natural Decline of Your Eye's Focusing Ability
-
-Starting around age 40, the crystalline lens inside the eye gradually loses its elasticity, reducing its ability to adjust focus between near and far. This is **presbyopia**.
-
-The symptoms usually show up as: needing to hold your phone farther away to read it clearly, menu text that's too small to make out, or things going blurrier in dim lighting. Presbyopia isn't a disease—it's a normal part of physiological aging that nearly everyone goes through.
-
-The solution to presbyopia isn't as simple as "just get a pair of reading glasses." Depending on your lifestyle and visual needs, there are three main optical directions to choose from.
+"My phone's just getting a little hard to read. A pair of reading glasses should be quick, right?" We hear this a lot at our stores. Our licensed optometry staff usually don't rush to answer. First they ask you to take out your phone and scroll the way you normally do, then they measure how far it sits from your eyes with a tape measure. That number often says more than your age about how these glasses should be made.
 
 ---
 
-## Option 1: Single-Vision Reading Glasses (Near-Only Lenses)
+## What to Prepare Before Your Presbyopia Fitting
 
-The most traditional form of presbyopia glasses: a single-vision lens dedicated entirely to near vision. The whole lens carries a near-distance prescription, so you can read, look at your phone, or do close-up work clearly while wearing them—but you have to take them off to see anything at a distance.
+Bring every pair of glasses you have, including the convenience-store reading glasses sitting in your drawer. The prescription in your old glasses, plus what bothers you when you wear them, is a ready-made record of how you use your eyes.
 
-**Best for:**
-
-- Early-stage presbyopia, where only near vision is affected and distance vision doesn't need correction
-- Work that's mostly close-up and doesn't require frequently switching between near and far (e.g. handicrafts, reading)
-- Budget-conscious situations that call for a low-cost solution
-- People who don't want to spend time adapting to a more complex lens design
-
-**Limitations:**
-
-- Distance vision is blurry while wearing them, requiring frequent putting on and taking off
-- If you also have myopia or astigmatism, those need to be factored into the near-vision lens too—it's not as simple as grabbing a generic pair off a convenience-store rack
+Before you leave home, also think through your day: whether you spend the most time on your phone, a computer, or paper; how far away your screen sits; whether you drive at night. If you've seen an ophthalmologist recently, are using eye drops, or take medication long-term, mention that too. It's best to set aside a bit more than an hour, and not to schedule it fifteen minutes before your next appointment.
 
 ---
 
-## Option 2: Office Lenses (Near-Focused Progressive Lenses)
+## What a Presbyopia Eye Exam Measures
 
-Office lenses (also called computer lenses or intermediate-near lenses) are a "partial progressive" design—the lens covers intermediate distances (a computer screen, your desk) through near distances (documents, your phone), but doesn't cover far distance.
+### Your Distance Prescription
 
-They offer a wider field of view than standard progressive lenses because they don't need to squeeze the entire far-to-near range into a single lens. That means less peripheral aberration and a relatively easier adaptation.
+The presbyopia correction sits on top of your distance prescription. If your myopia, hyperopia, or astigmatism isn't measured accurately first, the foundation is crooked, and however precisely you add on top of it, what good does it do? Some people think they "only have presbyopia," then the measurements show they also have a little hyperopia or astigmatism.
 
-**Best for:**
+### Addition (ADD)
 
-- Work that's mostly computer-based, spending long hours facing a screen each day
-- Mostly office-based environments that don't require frequently switching to outdoor distance vision
-- People just starting to experience presbyopia who aren't ready to take on a full-range progressive lens
-- Anyone who already has a pair of distance glasses and wants a second, work-dedicated pair
+ADD is the plus power added on top of your distance prescription specifically for seeing up close. How much to add has to be tested at the distance where you normally look at things up close, which is exactly why the next item measures distance first. For why adding too much can actually make things harder, and how to read the ADD on your prescription, see [What Is Addition Power (ADD)?](/en/blog/lens-addition-add/)
 
-**Limitations:**
+### Your Viewing Distances
 
-- Not suited to walking outdoors, driving, or looking at distant objects
-- Usually needs to be paired with a separate pair of distance glasses
+#### Phone, Computer, and Reading, Measured One at a Time
+
+This is the step most often skipped, yet your phone, computer, and books all sit at different distances from your eyes. A computer is farther away than a phone and usually needs less added power. So we have you hold your phone, look at a screen, and read a book the way you normally do; we measure each distance, then test the power. Once that's measured, it's fairly clear whether single-vision reading glasses, multifocals, or office lenses are the right direction. The four options are compared in [Do You Really Need Progressive Lenses for Presbyopia?](/en/blog/presbyopia-vs-progressive/)
 
 ---
 
-## Option 3: Progressive Multifocal Lenses
+## Presbyopia Fitting Measurements: What Decides Whether They're Comfortable
 
-Progressive Addition Lenses (PALs) are currently the most widely used presbyopia solution. A single lens covers far, intermediate, and near vision zones from top to bottom, so in theory one pair of glasses can handle every distance.
+The eye exam measures your eyes. This stage measures where the glasses sit on your face. With the same prescription, a lens sitting slightly too high or too low feels completely different, so once you've chosen a frame, our licensed optometry staff first adjust it to where you'll actually wear it, then measure:
 
-They look no different from ordinary glasses, unlike traditional bifocal lenses with a visible dividing line.
+| Measurement | What it measures | Which lenses depend on it most |
+|---------|-----------|------------------|
+| Pupillary distance | The distance between the centers of your two pupils | All presbyopia glasses |
+| Fitting height | The height from the center of your pupil to the bottom of the frame | Multifocals, office lenses |
+| Vertex distance | The distance from the back of the lens to the surface of your eye | People with stronger prescriptions |
+| Pantoscopic tilt | How far the frame tilts toward your cheeks | Multifocals, lenses mainly for near vision |
 
-**Best for:**
+### Pupillary Distance
 
-- An active lifestyle that requires frequently switching between far, intermediate, and near distances
-- Older adults who want a single pair of glasses to cover all their daily visual needs
-- Anyone who doesn't want others to notice they're wearing presbyopia correction
-- People who have both myopia and presbyopia and need both corrected at once
+When you look at something up close, your eyes turn inward, so your pupillary distance is a little smaller than when you look into the distance. Near pupillary distance has to be measured separately. Faces are rarely perfectly symmetrical, so for multifocals each eye is also measured on its own.
 
-**What you should know:**
+### Fitting Height
 
-Progressive lenses come with an adaptation period; for most people it takes 2–4 weeks. In the early stages, you may notice mild peripheral distortion and need to watch your footing while walking. This is a normal part of visual learning, and most people adapt successfully.
+#### Why It Matters So Much for Multifocals
 
-But if discomfort persists well beyond the adaptation period, the issue usually isn't "you're not suited to progressives"—it's more often a problem somewhere in the fitting process: an inaccurate fitting height, an incorrectly set add power, or a frame that isn't sitting properly. In that case, we recommend coming back in for a reassessment.
+The near zone of a multifocal lens is only a small area in the lower part of the lens, and the fitting height decides where it lands. Set it too high, and you have to drop your head low to read. Set it too low, and when your eyes glance down they land in the transition zone, where everything looks hazy. If the two sides are at different heights, the images from your two eyes don't line up, and that's how the dizziness starts. If the frame is too shallow, part of the near zone can even get cut off.
+
+### Vertex Distance and Pantoscopic Tilt
+
+Vertex distance is usually around 12 mm, and the stronger the prescription, the more sensitive it is. Pantoscopic tilt is about 8 to 12 degrees; if it's wrong, your downward line of sight misses the near zone. Both numbers change with the nose pads and temples, so after measuring, they're adjusted together with the frame.
 
 ---
 
-## What Needs to Be Measured for a Presbyopia Fitting
+## Pickup and the Adjustment Period
 
-Regardless of which presbyopia lens solution you choose, the following measurements are essential before fitting:
+On pickup day, don't just put them on and walk out. Our licensed optometry staff will ask you to try looking into the distance, at a computer, and at a phone, adjust the frame so it doesn't slide down, and show you how to look at things up close: keep your head up and drop your eyes.
 
-**Add power (ADD)**
+If these are your first multifocals, slight distortion at the edges and needing an extra glance at your feet on the stairs during the first few weeks are usually still part of adjusting; most people take 2–4 weeks. For which sensations you can wait out and which mean you should come back, there's a comparison table in [Progressive Lens Adaptation: The Real Reasons Behind Dizziness, Unsteady Walking, and Blurry Vision](/en/blog/progressive-lens-adaptation/). If you're not sure, don't tough it out; just come back and have it looked at. Honestly, a frame adjustment fixes it more often than not, and for glasses fitted with us, frame adjustments after pickup are not charged separately.
 
-Add power is the extra near-vision correction added on top of your distance prescription, and it reflects how advanced your presbyopia is. ADD typically ranges from +0.75 to +3.00, and it's not simply a matter of "the older you are, the higher your ADD"—everyone's accommodative ability declines at a different rate, so it needs to be measured individually.
+---
 
-**Near pupillary distance**
+## Blurry Near Vision Isn't Always Something Reading Glasses Can Fix
 
-When looking at something up close, your eyes naturally turn slightly inward (convergence), so your pupillary distance is a bit smaller than it is at distance. Near PD needs to be measured separately, and it's used to calculate the optical center position for near-vision lenses.
+Sometimes a presbyopia eye exam stops partway through. If your corrected vision won't improve however the lenses are adjusted, straight lines look warped, or your near vision has suddenly gotten much worse over the past few months, the cause may be more than presbyopia. Our licensed optometry staff measure your prescription; whether your eyes are healthy is for an ophthalmologist to judge. In these situations, we'll recommend you see an ophthalmologist first, and come back for glasses once everything checks out.
 
-**Fitting height (for progressive lenses)**
-
-The near-vision zone of a progressive lens sits in the lower part of the lens, and the fitting height determines exactly where that zone lands. Get the height wrong, and no matter how you tilt your head down, you won't find the clear near-vision focal point—this is one of the most common fitting errors with progressive lenses.
-
-**Accommodation assessment**
-
-Understanding the current state of your residual accommodative ability helps your optometrist determine the most suitable ADD value, as well as which lens design best fits your needs.
+Some people's presbyopia is still very mild, and only reading a menu in a dim restaurant is a struggle. They don't necessarily need to rush into glasses. Telling you straight after the exam that "you don't need them yet" is, as we see it, part of the eye exam too.
 
 ---
 
 ## FAQ
 
-**Q: Once presbyopia starts, do I have to get glasses right away?**
+**Q: How long does the eye exam take for a pair of presbyopia glasses?**
 
-Not necessarily right away. If early-stage presbyopia only causes fatigue in low light or after long reading sessions, you can hold off and observe for now. But if it's already noticeably affecting your work efficiency or daily quality of life, getting fitted earlier can actually reduce the strain from your eyes overworking to compensate.
+At Beyond Visual Optometry, a complete eye exam takes about 45 to 60 minutes, carried out one-on-one by our licensed optometry staff. After you choose a frame, your pupillary distance, fitting height, and pantoscopic tilt still need measuring, so it's best to leave some extra time.
 
-**Q: Does presbyopia get worse the more you wear glasses?**
+**Q: Can I wear reading glasses from a convenience store?**
 
-Presbyopia naturally progresses with age, stabilizing at around age 60. Wearing glasses doesn't accelerate presbyopia's progression—in fact, avoiding glasses and forcing your eyes to keep straining tends to cause more visual fatigue.
+They're fine in a pinch, like reading a menu. Ready-made reading glasses have the same power in both lenses and no astigmatism correction, so if your two eyes differ or you have astigmatism, wearing them for long periods tends to feel like hard work. They won't make your presbyopia worse, but if you spend long hours on close work every day, we still recommend getting glasses made to your own numbers after an eye exam.
 
-**Q: Are progressive lenses always better than single-vision reading glasses?**
+**Q: How often should I get new presbyopia glasses?**
 
-Not necessarily. Progressive lenses solve the problem of "needing to frequently switch between far, intermediate, and near distances." If your daily life is relatively simple (for example, retired and mostly at home, with reading and watching TV as your main activities), a pair of distance glasses plus a pair of reading glasses can sometimes be more comfortable than progressives.
+When close-up work starts to feel hard again in the pair you have now, that's your signal to get a new eye exam. Even if you don't notice anything, we recommend a complete eye exam every one to two years. How the prescription tends to change at each stage is covered in [does presbyopia keep getting stronger?](/blog/presbyopia-progression/) (in Chinese).
 
-**Q: Where can I get fitted for presbyopia glasses in Banqiao or Xinzhuang?**
+## What Takes Time Isn't Making the Lenses
 
-Our Xinzhuang store (Beyond Visual Optometry × Biyang Optometry Practice, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City) offers a complete presbyopia assessment, including add-power measurement, accommodation evaluation, progressive lens fitting, and adaptation follow-up. Our Banqiao store also offers presbyopia fitting consultations.
-
-There's no one-size-fits-all answer for presbyopia fitting—the right choice depends on your eye condition, work habits, and lifestyle. That's exactly why a licensed optometrist's judgment matters.
+So the line from the beginning, "should be quick, right?", is only half right. What takes time is measuring you: how far you hold your phone, how you usually tilt your head down. The day you notice your arm getting straighter and straighter as you scroll, that's a good time to come in and get measured.

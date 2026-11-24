@@ -69,7 +69,7 @@ Here's something that trips up a lot of people: **AXIS is measured in "degrees o
 | 5.00D | 500 degrees | — |
 | 6.00D and above | 600+ degrees | Generally classified as high myopia |
 
-> Interpreting your power and finalizing your actual prescription should be based on the complete data an optometrist personally measures — no single number tells the whole story.
+> Interpreting your power and finalizing your actual prescription should be based on the complete data licensed optometry staff measure in person — no single number tells the whole story.
 
 ## Common Misconceptions / FAQ
 
@@ -80,7 +80,7 @@ Yes, the conversion really is that direct: degrees ÷ 100 = D, and D × 100 = de
 Because lens manufacturing and refraction typically use **0.25D (that is, 25 degrees) as the smallest increment.** You'll rarely see a prescription like "137 degrees of myopia" — it'll usually land on 125 or 150 instead, for exactly this reason.
 
 **Q3: Is it normal for the two eyes to have different prescriptions?**
-Extremely common — very few people have identical power in both eyes. Your prescription slip lists the left and right eyes separately (R/OD, L/OS). When the difference between the two eyes is significant, the lens choice may need extra consideration during fitting, and an optometrist will evaluate that.
+Extremely common — very few people have identical power in both eyes. Your prescription slip lists the left and right eyes separately (R/OD, L/OS). When the difference between the two eyes is significant, the lens choice may need extra consideration during fitting, and our optometry staff will evaluate that.
 
 **Q4: Is the power on my prescription slip exactly what I get fitted with?**
 Not always exactly the same. The refraction measures your eye's refractive status, but the final prescription also factors in binocular coordination, visual habits, and frame position, with fine adjustments made accordingly. So there can be small differences between "the refraction data" and "the final fitted power" — that's a normal part of professional judgment.

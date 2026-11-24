@@ -43,15 +43,15 @@ Notice that last row: for someone with 1000 degrees of myopia, the difference be
 
 Here's the most tangible takeaway: **for high prescriptions, exactly where the glasses sit on your face really matters.** If the frame slips down a little or gets pushed forward a little, the effective power your eye experiences shifts along with it. That's why people with high prescriptions often complain that "these new glasses look a bit off somehow"—sometimes the issue isn't the prescription itself, but the current position of the frame not matching the vertex distance that was measured during the exam.
 
-Also, **contact lens power can't simply be copied from your glasses prescription.** For people with high prescriptions, using the glasses prescription directly for contacts often misses the mark. This conversion is a matter of professional judgment handled by a licensed optometrist, based on your specific measurements.
+Also, **contact lens power can't simply be copied from your glasses prescription.** For people with high prescriptions, using the glasses prescription directly for contacts often misses the mark. This conversion is a matter of professional judgment handled by licensed optometry staff, based on your specific measurements.
 
-Ultimately, this is also part of a proper, personalized fit. Vertex distance is measured by a licensed optometrist, and it gets factored in once you've chosen a frame and confirmed exactly where it sits on your face. The same prescription can land differently depending on the frame and face it's paired with.
+Ultimately, this is also part of a proper, personalized fit. Vertex distance is measured by licensed optometry staff, and it gets factored in once you've chosen a frame and confirmed exactly where it sits on your face. The same prescription can land differently depending on the frame and face it's paired with.
 
 ## Common Misconceptions / FAQ
 
 **Q: If the standard vertex distance is 12mm, can everyone just use 12mm?**
 
-12mm is a commonly used reference standard, not a hard rule. Everyone's face shape, nose bridge height, and frame design differ, so how far the lens actually sits from the eye varies from person to person. At low prescriptions, using the standard value has little impact; at high prescriptions, a licensed optometrist will measure and calculate based on the actual fitted position rather than applying a fixed number.
+12mm is a commonly used reference standard, not a hard rule. Everyone's face shape, nose bridge height, and frame design differ, so how far the lens actually sits from the eye varies from person to person. At low prescriptions, using the standard value has little impact; at high prescriptions, licensed optometry staff will measure and calculate based on the actual fitted position rather than applying a fixed number.
 
 **Q: Why is my contact lens prescription lower than my glasses prescription (for myopia)?**
 
@@ -63,7 +63,7 @@ Generally, not much. Within ±4.00D, the difference caused by vertex distance is
 
 **Q: Do I need to measure vertex distance myself?**
 
-No, and it's not recommended that you do. It's one of the measurements taken during the vision exam process, handled by a licensed optometrist alongside your frame selection. What you should do is wear the frame in its usual position so the measurement reflects how you actually wear your glasses.
+No, and it's not recommended that you do. It's one of the measurements taken during the vision exam process, handled by licensed optometry staff alongside your frame selection. What you should do is wear the frame in its usual position so the measurement reflects how you actually wear your glasses.
 
 ---
 

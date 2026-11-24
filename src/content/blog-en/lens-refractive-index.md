@@ -10,7 +10,7 @@ keywords: "what is refractive index,1.67 lens,1.74 lens,lens refractive index di
 
 ## What Is Refractive Index? In a Sentence: How Much a Lens "Bends" Light
 
-You've probably heard an optometrist ask: "Do you want the 1.60 or the 1.67 lens?" That string of numbers is the **refractive index**.
+You've probably heard optometry staff ask: "Do you want the 1.60 or the 1.67 lens?" That string of numbers is the **refractive index**.
 
 The principle isn't complicated. When light travels from air into a denser transparent material like a lens, it slows down and changes direction — that's called **refraction**. Refractive index is simply a number that measures **how strongly a material bends light** — the higher the number, the stronger the bending power.
 
@@ -42,7 +42,7 @@ Here's the catch: materials with a higher refractive index usually have a lower 
 | **1.67** | Ultra-thin | Thin | ~31–32 | Mid-to-high prescriptions |
 | **1.74** | Ultimate thin | Thinnest | ~33 | High prescriptions |
 
-> The "prescription range" column shows typical pairings to give you a general idea — which index actually suits you depends on your prescription, frame size, pupillary distance, and visual needs, best assessed by a licensed optometrist.
+> The "prescription range" column shows typical pairings to give you a general idea — which index actually suits you depends on your prescription, frame size, pupillary distance, and visual needs, best assessed by licensed optometry staff.
 
 Two things are worth remembering from this table. One: thickness decreases steadily as refractive index goes up — that part is intuitive. The other is easier to miss: Abbe number doesn't simply get lower as refractive index goes up — notice that 1.67 actually has a lower Abbe number than some of the others in this list. So judging "how clean the vision will look" purely by how high the refractive index number is can lead you astray.
 
@@ -66,6 +66,6 @@ Usually not. A low prescription in 1.50 or 1.56 already isn't thick, so paying e
 
 ---
 
-Refractive index is probably the most fundamental — and most often glossed over — term in getting glasses. Understand it, and you won't be swayed by the numbers alone when choosing a lens. Come to Beyond Visual Optometry in Xinzhuang or Banqiao to feel the thickness difference between refractive indices for yourself, with an optometrist explaining exactly where the differences matter for your prescription. Our lens page also has the full rundown of refractive index specs and brand options.
+Refractive index is probably the most fundamental — and most often glossed over — term in getting glasses. Understand it, and you won't be swayed by the numbers alone when choosing a lens. Come to Beyond Visual Optometry in Xinzhuang or Banqiao to feel the thickness difference between refractive indices for yourself, with our optometry staff explaining exactly where the differences matter for your prescription. Our lens page also has the full rundown of refractive index specs and brand options.
 
 (Beyond Visual Optometry is a contracted, certified ZEISS dealer and a HOYA dealer — come compare the different refractive indices in person.)

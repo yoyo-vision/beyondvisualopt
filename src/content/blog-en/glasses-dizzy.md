@@ -2,148 +2,143 @@
 title: Why Do My New Glasses Make Me Dizzy? 5 Common Causes Explained by Optometrist YoYo
 date: 2026-06-15
 tag: "Optometry"
-excerpt: Dizziness with new glasses isn't something you can just "get used to." Wrong prescription, astigmatism axis errors, prismatic effect—here's how to find your real cause.
+excerpt: "Dizziness from new glasses is half adaptation, half measurements. Adaptation dizziness gets a little lighter every day; if it hasn't budged after a week, come back and have the prescription, astigmatism axis, pupillary distance, frame position, and the difference between your two eyes checked. Includes a symptom table."
+seoDescription: "Is it normal for new glasses to make you dizzy? Adaptation dizziness eases day by day; if it hasn't changed after a week, come back to have it checked. 5 common causes: a prescription set too strong or too weak, an astigmatism axis that's off, a pupillary distance that isn't centered, a frame that has shifted and thrown off vertex distance and pantoscopic tilt, and a large difference between your two eyes. Includes a symptom table. Beyond Visual Optometry, Xinzhuang and Banqiao."
 image: ""
 youtube: ""
 instagram: ""
 ---
 
-## The Bottom Line: Dizziness Isn't Always "Just Adaptation"
+## Dizziness from New Glasses: Half Adaptation, Half Measurements
 
-"It's normal to feel dizzy with new glasses—you'll get used to it."
+"It's normal for new glasses to make you dizzy. You'll get used to it."
 
-That statement is half right and half wrong.
+That's half right. Your brain really does need time to get used to a new prescription, and feeling a bit odd for the first few days, or misjudging your steps on the stairs, can simply be adaptation. The other half is the measurements: the prescription, the astigmatism axis, the position of the optical center, and the angle the frame sits at on your face. If any one of them is off, the dizziness won't go away no matter how many more days you wear the glasses.
 
-Your brain really does need time to adjust to a new prescription, and mild discomfort during the adaptation period is normal. But **the adaptation period usually lasts no more than 1 week, and the symptoms should ease a little more each day**. If your dizziness has lasted longer than a week, isn't improving, or comes with headaches, unsteadiness when walking, or distorted vision—that's not your brain being a slow learner. It's a problem with your fitting parameters.
-
-Continuing to wear them won't make the problem disappear. It will only keep your eyes under constant visual stress.
+If these are your first multifocals, the causes and the fixes are a little different, so start with [Why Do Progressive Lenses Make You Dizzy? 3 Common Causes and How to Fix Them](/en/blog/progressive-lens-dizzy/). For ordinary single-vision glasses, read on.
 
 ---
 
-## The 5 Main Causes, Broken Down One by One
+## How Long Until It Goes Away: What Adaptation Looks Like
 
-### Cause 1: Wrong Prescription (Over- or Under-Correction)
+### Dizziness That Gets Lighter Every Day: Usually Adaptation
 
-This is the most common cause—and the one most often overlooked.
+Adaptation dizziness has a few typical features:
 
-**Over-correction** (prescription too strong) keeps your ciliary muscle constantly tensed as it tries to compensate. **Under-correction** (prescription too weak) leaves your eyes stuck in a permanent "straining to see clearly" state. Both lead to eye fatigue, headaches, and dizziness.
+- It feels a little lighter each day than the day before
+- Things feel normal when you hold still and look at one distance; there's only slight discomfort when you move
+- As you walk around and look about with them on, your body gradually stops noticing the glasses
 
-Common sources of prescription error:
+Give this kind of dizziness a few days.
 
-- **Refraction was too rushed**: A quick refraction (under 10 minutes) makes it very hard to confirm that accommodation is fully relaxed—especially for people over 40 with latent presbyopia.
-- **Using the auto-refractor value directly**: Auto-refraction gives an objective starting point, but it must be confirmed with subjective testing. You should never order lenses straight off the machine reading.
-- **Skipping the binocular balance test**: Making sure both eyes carry a balanced visual load after fitting is a key step in reducing dizziness.
-- **Undetected latent presbyopia**: Nearsighted people over 40 often have latent presbyopia. If the near add isn't assessed, the myopia prescription tends to be set stronger than actually needed.
+### Dizziness That Hasn't Budged After a Week: Come Back
 
-> **How to fix it:** Book a full refraction again (at least 45 minutes) and ask for it to include a fogging step to relax accommodation, plus binocular balance confirmation. Don't settle for a "quick 10-minute recheck."
+In these situations, there's no need to keep putting up with it:
 
----
+- After a week, the dizziness is about the same as on day one, or worse
+- You still feel dizzy, or the image still feels unsteady, even when you're sitting still
+- You have a noticeable headache, especially behind the eye sockets or at the temples
+- You feel unsteady walking, as if the floor is tilted
+- Covering one eye is clearly more comfortable than having both open
 
-### Cause 2: Astigmatism Axis Error
-
-Astigmatism has two parameters: **power** and **axis**. Most people know their astigmatism power, but very few realize the axis error matters even more.
-
-An astigmatism axis that's off by 10–15 degrees can affect visual quality more noticeably than a 0.25D power error. That's because correcting astigmatism is "directional"—the lens has to be precisely aligned with the direction of your eye's astigmatism to cancel it out effectively. If the axis is wrong, your vision develops a warped feeling, and horizontal lines can seem slightly tilted.
-
-**The step a rushed refraction most often skips is the fine-tuning of the astigmatism axis (the Jackson Cross Cylinder test).**
-
-This test requires repeated back-and-forth confirmation between the optometrist and the patient, and a quick refraction usually omits or shortens it.
-
-> **How to fix it:** Come back in and ask our licensed optometry staff to redo the astigmatism axis fine-tuning, and tell them clearly that "my vision feels a bit warped" or "the edges of the letters aren't sharp enough." Those two descriptions help them pinpoint the problem quickly.
+Some dizziness should be checked from the very first day: missing your footing as you walk, straight lines that look bent, or feeling better with one eye covered. These usually point to the measurements or the frame position, and waiting a few more days won't fix them.
 
 ---
 
-### Cause 3: Off-Center Optical Center (Pupillary Distance Error)
+## 5 Causes of Dizziness from Glasses
 
-Every lens has an "optical center." This point is the zero-prism position of the lens's optical design, and it should be precisely aligned with your pupil.
+### A Prescription Set Too Strong or Too Weak
 
-If the pupillary distance (PD) is measured incorrectly, or the frame ends up crooked after adjustment, the optical center shifts away from your pupil, and the lens produces an **unintended prismatic effect** on your eye. To fuse the images from both eyes, your brain has to keep your eye muscles working to compensate for that prism error. This is the main source of that "the floor is tilting when I walk," "things look slightly slanted," and "my two eyes aren't in sync" feeling.
+When the prescription is too strong, called **over-correction**, the ciliary muscle that focuses your eye has to stay tensed to compensate. Under-correction is the reverse: your eyes spend all day working hard to see clearly. Either one can bring on eye fatigue, headaches, and dizziness.
 
-**High-prescription lenses (over -5.00D) are especially sensitive**: a 1mm PD error produces roughly 0.5–1.0 prism diopters of deviation on the lens—already enough to make the binocular vision system uncomfortable.
+When a prescription is off, it usually goes wrong in a few places. The most common is ordering lenses straight from the autorefractor reading. The machine gives a starting point; it still takes subjective refraction, comparing step by step, to find out whether you see comfortably. Next is skipping the check that both eyes are balanced. Once each eye is set, the load on the two sides should be about equal, and without that step one eye often ends up working much harder. For people over 40 there's one more: the eye's ability to focus up close starts to decline, and if that range isn't assessed, the distance prescription tends to be set stronger than you actually need.
 
-> **How to fix it:** Come back to the store and have the optometrist re-measure your monocular PD **while you're wearing the frame**, and confirm the frame is level (a phone spirit-level app can help you check). Frames can also drift out of alignment after you take them home, causing the same problem, so we recommend coming back for an adjustment every 3–6 months.
+A complete eye exam at either of our two stores takes about 45–60 minutes, and every one includes a binocular vision assessment. If your new glasses make you dizzy, bring them in for a fresh exam. With the old and new prescriptions side by side, it becomes clear where things went off.
+
+### An Astigmatism Axis That's Off
+
+Astigmatism has two numbers: the **power** and the **axis**. Most people know how much astigmatism they have, but few pay attention to the axis. Astigmatism correction is directional: the lens has to line up with the direction of your eye's astigmatism to cancel it out. When the axis is off, your view feels twisted, and horizontal lines can look slightly tilted.
+
+Fine-tuning the axis takes several rounds of back-and-forth comparison between you and our licensed optometry staff. When you come back, just say "my view feels a bit twisted" or "the edges of the letters aren't sharp." Those two descriptions help the staff find the problem faster. For why astigmatism can make things look distorted, see [Why Do Astigmatism Glasses Make Things Look Distorted?](/en/blog/astigmatism-glasses-distortion/)
+
+### A Pupillary Distance That Isn't Centered: The Lens Center Misses Your Pupil
+
+Every lens has an optical center, the one point on the lens that produces no prismatic effect, and it should line up with your pupil when the glasses are made. If your pupillary distance is measured wrong, or the frame is crooked, the optical center moves away from your pupil and the lens creates an **unintended prismatic effect** on your eye. To keep the images from your two eyes merged, your eye muscles have to keep working to compensate. That's often where the "the floor is tilting" or "things look a bit slanted" feeling comes from.
+
+How much offset you'll notice depends on your prescription. Under Prentice's rule, prism (in prism diopters) = decentration (in cm) × lens power. A -5.00D lens that is off by 1 mm adds about 0.5 prism diopters. At -10.00D, the same 1 mm becomes about 1.0 prism diopter. The stronger the prescription, the more that 1 mm matters.
+
+When you come back, our licensed optometry staff will re-measure your monocular pupillary distance with the glasses on, and check whether the frame is crooked. A frame that shifts after pickup can also pull the optical center out of place. For how pupillary distance is measured and what happens when it's wrong, see [What Is Pupillary Distance (PD)? What Happens If It's Measured Wrong](/en/blog/pupillary-distance-pd/).
+
+### A Frame That Has Shifted: Vertex Distance and Pantoscopic Tilt Out of Place
+
+The power a lens actually delivers changes with **where the frame sits relative to your eyes**.
+
+**Vertex distance** is the distance from the back surface of the lens to the cornea. The higher the prescription, the bigger the change in effective power when this distance shifts. The conversion formula is Fc = F ÷ (1 − dF). For high myopia at -8.00D, a 3 mm change in vertex distance shifts the effective power by about 0.2D; at -12.00D, the same 3 mm shifts it by about 0.4D. There's a conversion table in [What Is Vertex Distance? Why It Matters for High Prescriptions](/en/blog/vertex-distance/).
+
+**Pantoscopic tilt** is how far the frame tilts forward from vertical. When that angle is off, the power the lens actually delivers drifts with it, and the effect is greater for people wearing progressive multifocals.
+
+When a nose pad sinks or a temple gets pushed outward, both of these numbers change. For glasses fitted with us, frame adjustments after pickup are not charged separately; how it's done is on our [glasses adjustment and repair page](/services/adjustment/) (in Chinese).
+
+### A Large Difference Between Your Two Eyes
+
+A large difference in prescription between the two eyes, known as anisometropia, needs special attention.
+
+Stronger lenses have a stronger prismatic effect to begin with. The bigger the difference between your eyes, the less the two lenses' prismatic effects match, and the harder your brain has to work to merge the images from your left and right eyes. Common experiences are headaches after long use, a feeling that your two eyes aren't coordinated, and an image that occasionally looks doubled when you look into the distance.
+
+If this applies to you, mention the difference between your eyes up front when you come back. Our licensed optometry staff assess whether to include prism compensation in your refraction result or adjust how the power is split between the two eyes, so your brain has less work to do merging the images. When the two eyes see images of different sizes, that's a separate issue, covered in our [complete guide to aniseikonia](/en/guide/aniseikonia/).
 
 ---
 
-### Cause 4: Poor Frame Adjustment (Vertex Distance / Pantoscopic Tilt Issues)
+## Which Kind Is Yours: A Symptom Table
 
-The effective power of a lens changes depending on the **position of the frame relative to your eye**.
-
-**Vertex distance** is the distance from the back surface of the lens to the cornea—standard is about 12–14mm. The higher the prescription, the more a change in this distance shifts the effective power.
-
-For example: if you're highly myopic at -8.00D and the vertex distance is off by 3mm, the effective power shifts by about 0.2D; at -12.00D, the same 3mm shifts it by about 0.4D (formula: Fc = F ÷ (1 − dF)).
-
-**Pantoscopic tilt** is the angle of the frame relative to the vertical—standard is about 8–12 degrees. The wrong tilt changes how the astigmatism axis performs effectively, and the impact is even greater with progressive multifocal lenses.
-
-> **How to fix it:** When you pick up your glasses, actively ask the optometrist to confirm the frame's vertex distance and pantoscopic tilt—especially if you're highly myopic. At Beyond Visual Optometry, every lens pickup includes this precision adjustment service.
-
----
-
-### Cause 5: Prismatic Effect from High-Myopia Anisometropia
-
-If the prescriptions in your two eyes differ by more than 2.50D (a condition called anisometropia), you need to pay special attention.
-
-High-power lenses inherently have a stronger prismatic effect. The greater the difference between your two eyes, the more asymmetric the prismatic effect the two lenses produce, and the harder your brain has to work to fuse the images from your left and right eyes.
-
-**What it feels like:** headaches after prolonged near work, a sense that your two eyes are "out of sync," and occasional double vision (overlapping images) when looking into the distance.
-
-Severe anisometropia can even cause the brain to chronically "suppress" the eye with the stronger prescription, leading toward amblyopia—so even when the measured prescription is correct, visual performance stays poor.
-
-> **How to fix it:** Tell our licensed optometry staff about the difference between your two eyes so we can assess whether the refraction result needs prism compensation, or whether an asymmetric power strategy is worth considering (slightly under-correcting the stronger eye to reduce the fusion burden).
-
----
-
-## Quick Self-Assessment: Which Cause Is Behind My Dizziness?
-
-| Symptom Description | Most Likely Cause |
+| Symptom | Most likely cause |
 |---------|------------|
-| Distance vision feels effortful, eyes tire easily | Over-correction (too strong) |
-| Distance vision not clear enough, but stronger feels worse | Under-correction (not strong enough) |
-| Letters look slightly slanted, edges not sharp | Astigmatism axis error |
-| Floor seems tilted when walking, left/right vision unbalanced | PD error / prismatic effect |
-| Two eyes feel out of sync, headache after prolonged use | Anisometropia / prism issue |
-| Fine at first, dizziness starts after a while | Frame has drifted / vertex distance changed |
+| Distance vision feels effortful, eyes tire easily | Over-correction (prescription too strong) |
+| Distance not quite clear, and wearing them only makes you more uncomfortable | Under-correction (prescription too weak) |
+| Text looks slightly slanted, edges not sharp | Astigmatism axis off |
+| Floor seems tilted when walking, left and right vision unbalanced | Pupillary distance error / prismatic effect |
+| Two eyes feel uncoordinated, headache after long use | Difference between the two eyes / prism issue |
+| Fine at pickup, dizziness starts after a while | Frame has shifted / vertex distance changed |
 
 ---
 
-## Normal Adaptation vs. Signs You Need to Come Back In
+## Our Xinzhuang and Banqiao Stores and Booking
 
-**Signs of a normal adaptation period (no return visit needed):**
-- Dizziness eases a little each day
-- Vision feels normal when looking at a single fixed distance; only mild discomfort when moving
-- Symptoms clearly improve within 5–7 days
+Wherever your glasses were made, it's best to bring both the old and new pairs. That way the prescription, optical centers, and frame position can all be measured and compared side by side:
 
-**Signs you need to come back in (don't keep toughing it out):**
-- No improvement or worsening after more than 1 week
-- Still dizzy or unstable vision even when sitting still
-- Noticeable headache (especially behind the eye sockets or at the temples)
-- Unsteadiness when walking, the floor seems to tilt
-- Covering one eye feels clearly more comfortable than having both open
+- Xinzhuang store: Beyond Visual Optometry × BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700
+- Banqiao store: Beyond Visual Optometry × Neng Jian Du Optometry Clinic, No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, 02-2253-1246
+
+For a new eye exam, allow 60–90 minutes for your appointment. You can book a time in advance on our [booking page](/en/booking/).
+
+---
+
+## When Everything Measures Correctly, the Cause May Not Be Your Glasses
+
+There's another possible outcome: the prescription, axis, optical centers, and frame position have all been measured, none of them is off, and the dizziness is still there. At that point, it's no longer the glasses that need checking.
+
+If your headaches get worse day by day, your vision drops noticeably within a short time, or you feel unsteady walking along with other physical symptoms, see a doctor first. And if, during the exam, no combination of lens powers brings your vision up to normal, Article 12, Paragraph 3 of Taiwan's Optometrists Act requires our licensed optometry staff to refer you to an ophthalmologist.
 
 ---
 
 ## FAQ
 
-**Q: How long should I put up with dizziness from new glasses before coming back in?**
+**Q: How long should I wait before coming back if my new glasses make me dizzy?**
 
-If symptoms haven't clearly improved after 1 week—or at any point you develop worsening headaches, distorted vision, or unsteadiness when walking—come back in immediately. Don't keep pushing through it.
+The dizziness should get lighter every day. If it hasn't changed after a week of wear, or if at any point you get worsening headaches, distorted vision, or unsteadiness when walking, come straight back. Don't push through it.
 
-**Q: My old glasses were fine, but I started getting dizzy after switching to a different store. Is it the new store's fault?**
+**Q: My previous glasses were fine, but I started getting dizzy after going to a different store. Is the new store to blame?**
 
-Not necessarily the store's fault, but a difference between two fitting results is definitely worth digging into. We recommend bringing both your old and new glasses to your appointment so the optometrist can compare the prescription, PD, and astigmatism axis of both pairs and pinpoint where the problem lies.
+Not necessarily, but if the two fittings came out differently, it's worth getting to the bottom of it. Bring both the old and new glasses, and our licensed optometry staff will compare the prescription, pupillary distance, and astigmatism axis of the two pairs to see where they differ.
 
-**Q: My prescription didn't change, but I get dizzy after switching to a new frame. Why?**
+**Q: My prescription didn't change, but a new frame makes me dizzy. Why?**
 
-A new frame has a different frame size and face-form angle. Even with the same prescription, the relative position of the optical center and the vertex distance can change, causing a slight shift in effective power. In this case, the optometrist needs to reconfirm the frame adjustment and the position of the optical center.
+A new frame has a different size and lens angle. Even with the same prescription, the position of the optical centers relative to your eyes and the vertex distance can both change, and so does the power the lenses actually deliver. Bring it back for a frame adjustment, and we'll recheck where the optical centers sit at the same time.
 
-**Q: Where in Xinzhuang or Banqiao can I get my glasses-dizziness problem assessed?**
+**Q: Where in Xinzhuang or Banqiao can I have dizziness from my glasses assessed?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao locations) offers a complete follow-up assessment for fitting problems, carried out by our licensed optometry staff. No matter where your glasses were made, you're welcome to bring them in and let us help you find the cause. You don't need to have bought your glasses from us to book a consultation. Call us at +886-2-2206-6700 (Xinzhuang) or +886-2-2253-1246 (Banqiao), or book online at [/en/booking](/en/booking/).
+At both Beyond Visual Optometry's Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist.) and Banqiao store (Neng Jian Du Optometry Clinic, No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist.). Our licensed optometry staff will re-measure the prescription, the optical centers, and the frame position. Glasses made somewhere else are welcome too.
 
 ---
 
-"You'll get used to it" is half right.
-
-A change in prescription, a new lens design, or a first pair of progressives really can feel strange for a few days. But it should ease day by day, not still be there a week later. More importantly, some kinds of dizziness deserve checking from day one — a sense of missing a step when you walk, straight lines that bow, one eye covered feeling better than both. Those usually point to measurement or frame position, not to patience.
-
-Not sure which one you have? The quickest route is to have someone measure it again. It doesn't have to be a pair we made. Both locations can help.
+Dizziness that's going to go away gets lighter every day. If it hasn't changed since the first day, it's the measurements that need checking.

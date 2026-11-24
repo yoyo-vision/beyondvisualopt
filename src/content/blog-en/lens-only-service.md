@@ -23,7 +23,7 @@ That "awkward" feeling usually comes from one misunderstanding: assuming optical
 | You'll get charged extra because the frame's from elsewhere | Cost = lens price + a fitting fee that depends on the frame type — for the same frame type, no surcharge for outside frames |
 | The eye exam will be rushed since you're only getting lenses | The exam and measurements follow the exact same standard as a full pair — nothing skipped |
 | Bringing your own frame is a "small job" shops don't want | This is a dedicated service of ours — online orders, old frames, secondhand frames, all accepted |
-| Any frame can just have lenses dropped in | The optometrist evaluates the frame's condition first to confirm it can be safely fitted |
+| Any frame can just have lenses dropped in | Our optometry staff evaluate the frame's condition first to confirm it can be safely fitted |
 
 One more note on that last row: evaluating the frame isn't there to make things difficult — it's there to protect your frame. Disassembling and fitting a frame always carries some risk of damage, so checking the material and structure first, and confirming it can hold up, is how we avoid damaging a frame you brought in — especially one with real value or sentimental history.
 
@@ -40,7 +40,7 @@ No old glasses, no prescription record? No problem at all. A full eye exam alway
 
 | Step | What happens |
 |---|---|
-| 1. Frame evaluation | The optometrist checks the frame's material, structure, and wear before confirming it's suitable for fitting |
+| 1. Frame evaluation | Our optometry staff check the frame's material, structure, and wear before confirming it's suitable for fitting |
 | 2. Risk disclosure | If there's any risk of damage during fitting, we'll say so upfront; we start only with your agreement, and we'll recommend against fitting a frame that's not up to it. If damage is caused by the frame's own aged material or fragile structure, we can't compensate for the frame itself; if it's caused by an error on our part, we take responsibility. |
 | 3. Full eye exam | A complete exam based on your visual needs, confirming your current prescription |
 | 4. Fitting measurements | Pupillary distance, fitting height, vertex distance, and frame fit are each measured individually — aligning the prescription to your eyes, not just fitting the lens into the frame |
@@ -69,7 +69,7 @@ No. The exam and measurement standards are exactly the same whether you bring yo
 
 **Q4: Can any frame just get lenses fitted directly?**
 
-It needs an evaluation first. Online orders, designer frames, old frames, secondhand and vintage frames are all welcome, but the optometrist checks the frame's condition and material first to confirm it can be safely fitted. If there's risk, we'll disclose it and proceed only with your agreement; if a frame really isn't suitable, we'll say so honestly rather than push ahead.
+It needs an evaluation first. Online orders, designer frames, old frames, secondhand and vintage frames are all welcome, but our optometry staff check the frame's condition and material first to confirm it can be safely fitted. If there's risk, we'll disclose it and proceed only with your agreement; if a frame really isn't suitable, we'll say so honestly rather than push ahead.
 
 ---
 
@@ -85,4 +85,4 @@ That opening line — "yes, and this is exactly what we do every day" — isn't 
 
 Lens-only work is, at a lot of shops, not the business they want: thin margins, more steps, and the added risk of handling someone else's frame. We take it on because a frame you've worn in, or one that's been discontinued, shouldn't be dismissed with "just buy a new one" — not to the person wearing it.
 
-The only condition is that the frame has to hold up. Bring it in and let an optometrist take a look — we'll tell you plainly whether it can be done and what to watch for. Both locations welcome it: Xinzhuang on Zhongzheng Road, Banqiao on Shuangshi Road Section 2.
+The only condition is that the frame has to hold up. Bring it in and let our optometry staff take a look — we'll tell you plainly whether it can be done and what to watch for. Both locations welcome it: Xinzhuang on Zhongzheng Road, Banqiao on Shuangshi Road Section 2.

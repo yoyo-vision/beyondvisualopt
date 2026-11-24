@@ -2,159 +2,144 @@
 title: "Still Uncomfortable After Getting New Glasses? 3 Real Causes and Solutions | Xinzhuang & Banqiao Optometry"
 date: "2025-06-14"
 tag: "Optometry"
-excerpt: "Prescription checks out fine, but you're still dizzy or your eyes still ache? Optometrist YoYo breaks down the 3 real root causes behind 'still uncomfortable after getting new glasses' — eye alignment, lens design, and hidden presbyopia."
+excerpt: "Your prescription checks out, but you still get dizzy or your eyes still ache? There are three common reasons: your two eyes don't work well together, the lens design doesn't match the distances you actually use, or early presbyopia has you straining up close. Includes a symptom table, plus which kinds of discomfort don't actually call for new glasses."
+seoDescription: "Still uncomfortable after getting new glasses? Three common causes beyond the prescription: your two eyes don't work well together, the lens design doesn't match your viewing distances, or early presbyopia has you straining up close. Includes a symptom table to tell when you need a new eye exam, when a frame adjustment will do, and when to see an ophthalmologist first. Beyond Visual Optometry, Xinzhuang and Banqiao."
 ---
 
-## Still Uncomfortable After Getting Glasses? It's Not Just About the Prescription
+## Clear in the Morning, Aching and Dizzy by Afternoon
 
-"I just got new glasses — why is my vision still not clear?"
+You put your glasses on in the morning and the text is sharp. By mid-afternoon your eyes are aching and your head feels tight. You get the lenses checked, and the numbers match your prescription exactly. A friend tells you to just put up with it.
 
-"The prescription should be right, but I feel dizzy and my eyes ache when I wear them. My friend says just push through it?"
-
-We hear questions like these almost every day at Beyond Visual Optometry. **The answer usually isn't a wrong prescription — it's a deeper visual function issue that never got identified.**
-
-More precisely: the "prescription" from a refraction is just one variable in your visual system. Whether your eyes feel comfortable is determined jointly by your prescription, binocular coordination, lens design, frame fit, and your visual habits.
+We see this a lot at our stores. The prescription is only one of the things that decide whether glasses feel comfortable. The rest comes down to whether your two eyes cooperate, and whether the lens design fits the distances you actually look at all day. For people around forty, there is one more thing to check: whether you are already straining to see up close.
 
 ---
 
-## Reason 1: Only the Prescription Was Checked — Binocular Vision Was Never Assessed
+## Reason 1: Your Two Eyes Don't Work Well Together
 
-This is the key thing a standard refraction most often misses.
+You have two eyes but only one brain. **Your brain has to merge what your left and right eyes see into a single picture**, and that depends on the two eyes working in step.
 
-You have two eyes, but only one brain. **Your brain has to fuse the images from your left and right eyes into a single, complete picture**, and this fusion ability (binocular vision) depends on how well your two eyes coordinate.
+### When Covering One Eye Actually Feels Better
 
-If you have **phoria** — a tendency for your eyes to drift out of alignment when they're not actively working to align — your brain has to keep working to force both eyes into alignment to maintain normal fusion. Over time, this shows up as:
+Some people's eyes each have a slight tendency to drift outward or sideways when relaxed. Day to day, the eye muscles keep working to pull them into line so they see one clear image. They do line up, but the cost is constant effort, and over time that effort wears you out:
 
-- Eye soreness and fatigue that comes on faster than for other people
-- Headaches or tightness at the temples after 30 minutes of reading
-- Occasional mild double vision (that resolves quickly, because your brain forcibly corrects it)
-- Symptoms that get more noticeable at night or when you're tired
+- Eye ache and fatigue that set in sooner than for other people
+- Headaches or tight temples after half an hour of reading
+- Occasional mild double vision that quickly goes away
+- Symptoms that are worse in the evening or when you're tired
 
-**Phoria is not the same as strabismus.** It's not a visible misalignment of the eyes, so most people have no idea they have this issue — and it's never been picked up, because a standard refraction doesn't test for it.
+You can't see this drift from the outside. The eyes look perfectly straight, so many people never find out. One simple clue: covering one eye feels more relaxed. For a fuller explanation of how the two eyes work together, see [What Is Binocular Vision? How Your Two Eyes Team Up](/en/blog/binocular-vision/).
 
-### What Does It Mean When Your Eyes Have to Work to Line Up?
+### How an Eye Exam Checks Whether Your Eyes Work Together
 
-There's usually a slight gap between where your eyes naturally point at rest (with one eye covered) and where they actively align when working together with both eyes open — this gap is called the **phoria amount**.
+At both Beyond Visual Optometry stores, Xinzhuang and Banqiao, every eye exam includes a binocular vision assessment. It looks at whether your two eyes line up when used together, and whether they can keep that up comfortably.
 
-- **Mild exophoria (horizontal)** — the most common type: requires your inner eye muscles to keep working to maintain fusion
-- **Vertical phoria** (less common, but more impactful): even 1 prism diopter of vertical phoria can cause serious reading difficulty and headaches
-- **Convergence insufficiency:** difficulty keeping both eyes converged at near distances — a common cause of reading difficulty in children
-
-### The Fix
-
-Every eye exam at both Beyond Visual Optometry locations includes a binocular vision assessment, which looks at whether your two eyes stay aligned and comfortable when working together.
-
-If the phoria amount exceeds what your eye muscles can compensate for, our licensed optometry staff will assess whether prism compensation should be included in your refraction result; if vision therapy or further medical treatment is warranted, we'll help refer you to an ophthalmologist.
+If the results show your eyes need extra effort to stay aligned, our licensed optometry staff assess whether prism should be included in your refraction result so that using both eyes together takes less effort. Whether you need vision therapy or any other treatment is for an ophthalmologist to decide.
 
 ---
 
-## Reason 2: The Lens Design Doesn't Match Your Visual Habits
+## Reason 2: The Lens Design Doesn't Match the Distances You Use
 
-Glasses aren't as simple as "put the prescription into the lens." Lens design has to match your **primary viewing distance, hours of use, and work environment.**
+Glasses aren't just your prescription ground into a lens. The lens design has to match **the distance you look at most, how long you look at it, and where you're doing it**.
 
-### Common Mismatches Between Lens Design and Visual Habits
+### Staring at a Screen All Day in Distance Single-Vision Lenses
 
-**Scenario 1: You're on a computer all day, but got standard single-vision "distance-first" lenses**
+A standard single-vision lens is designed around distance vision. If you sit at a computer eight hours a day, your eyes stay focused on a screen 50–70 cm away, and the ciliary muscle that does the focusing stays tense the whole time. Coming home with tired eyes is no surprise.
 
-Single-vision lenses are optically optimized for static distance vision. If you sit in front of a computer for 8 hours, your eyes are constantly accommodating to a 50–70cm screen distance, keeping your ciliary muscle in a prolonged contracted state — feeling "exhausted" by the time you get home is a direct result.
+Office lenses and digital single-vision lenses add a small amount of near power in the lower part of the lens. Whether either one suits you depends on your exam results and the distances you actually work at. For a comparison of who each type of "computer glasses" is for, see the lens section of our [complete guide to digital eye strain](/en/guide/digital-eye-strain/).
 
-**Office lenses** or **digital single-vision lenses** add a slight near power in the lower part of the lens; whether they suit you depends on your exam results and actual working distances.
+That's why our licensed optometry staff start the exam by asking a few questions: what distances you use your eyes at each day and for how long, whether you work indoors or outdoors, whether you drive and for how long, and in which situations your current glasses feel worst. Those answers decide which direction the lens choice goes, and the most expensive option isn't necessarily on the list.
 
-**Scenario 2: You have an early tendency toward presbyopia, but got fitted with a standard myopia prescription**
+### A Strong Prescription in an Oversized Frame
 
-People aged 35–45 often have "early hidden presbyopia": the refraction shows normal accommodation, but in practice, your eyes tire more easily than before after extended near work. If you're still fitted purely to "make the eye chart clear" without adjusting for addition power (ADD), your eyes keep overworking to accommodate.
-
-**Scenario 3: A high myopia prescription paired with an oversized frame**
-
-High-myopia lenses (-5.00D or higher) inherently have a prismatic effect. The bigger the frame, the more pronounced that edge prismatic effect becomes, increasing binocular asymmetry and the burden on fusion. Switching to a smaller frame can sometimes meaningfully improve discomfort — without changing the prescription at all.
-
-### The Fix
-
-Before fitting your glasses, our licensed optometry staff ask in detail:
-- What distances do you use your eyes at each day, and for how many hours?
-- What's your main work environment (indoors / outdoors / air-conditioned)?
-- Do you drive? How long?
-- Do you play sports or spend time outdoors?
-- What's the most uncomfortable situation with your current glasses?
-
-The answers determine which lens design direction is right for you — not a blanket recommendation of "the most expensive option."
+With a strong prescription (for example, -5.00D or more), the farther your line of sight is from the lens's optical center, the stronger the prismatic effect. The bigger the frame, the more often your eyes end up looking through the outer part of the lens, and the less the images from your two eyes match. Sometimes you don't need to change the prescription at all. A frame with smaller lenses makes a noticeable difference. Our [guide to frame size and fit](/en/blog/frame-fit-size/) covers which numbers to check: what a marking like 52□18-140 on the temple means, and how to tell if a frame suits your face.
 
 ---
 
-## Reason 3: Hidden Presbyopia Goes Undetected, and Pushing Through Only Makes It Worse
+## Reason 3: Early Presbyopia Has You Straining Up Close
 
-"I'm only 42 — there's no way I have presbyopia."
+"I'm only 42. There's no way I have presbyopia."
 
-Presbyopia starts around age 40, and it doesn't appear suddenly — it's a **gradually progressing physiological process**. Many people have no obvious symptoms in the early stages — or rather, they have symptoms without realizing presbyopia is the cause.
+Presbyopia starts at around 40, and it comes on gradually rather than appearing overnight. In the first few years many people don't notice it, or they notice something but don't realize it's presbyopia.
 
-### Hidden Symptoms of Early Presbyopia
+### 4 Early Signs of Presbyopia
 
-- **Unusual eye fatigue after reading**, that improves when you adjust the distance
-- **Extra difficulty seeing near objects in dim light** (needing your phone flashlight to read a menu in a dim restaurant)
-- **Needing to hold your phone a little farther away to see clearly**, but it feels odd to hold it that far
-- **Near vision feels worse with new glasses than with your old ones** (because the new prescription is more precisely corrected, which actually exposes the hidden presbyopia)
+- **Your eyes feel unusually tired after reading**, and it helps to hold things a little farther away
+- **Seeing up close is especially hard in dim light**, like needing your phone's flashlight to read a menu in a dark restaurant
+- **You have to move your phone back a bit to see it clearly**
+- **Your new glasses are worse for close-up than your old ones**
 
-That last one is the most confusing for people: "I got new glasses, and my near vision got worse?" This usually means your old glasses under-corrected part of your myopia, which happened to compensate for mild presbyopia. Once the new prescription is precisely corrected, the presbyopia shortfall becomes noticeable.
+For more signs to compare against, see [5 early signs of presbyopia at 40](/blog/presbyopia-signs-40/) (in Chinese).
 
-### Special Needs for Refractions After Age 40
+### Why New Glasses Can Make Close-Up Vision Worse
 
-A complete refraction for people over 40 needs additional assessment of:
-- **Amplitude of accommodation:** how close your eyes can still focus
-- **Addition power (ADD):** how much compensation is needed for comfortable near vision
-- **Your real working distances:** the distances at which you actually read, use your phone and look at a screen
+The last sign is the most confusing. If your old glasses were set slightly weaker than your full myopia correction, that left you a little extra room for near vision, which happened to cover up mild presbyopia. Once your new glasses correct your distance vision accurately, that extra room is gone, and the presbyopia finally becomes noticeable.
 
-A quick, standard refraction typically skips these tests entirely, but they have a major impact on fitting comfort for people over 40.
+### Eye Exams After 40 Also Assess Near Vision
 
-### The Fix
+A complete eye exam after 40 goes beyond your distance prescription to assess near vision as well: how close your eyes can still bring things into focus, how much extra power you need for close work (the addition, or ADD), and the distances at which you usually look at your phone, books, and screens.
 
-Depending on age, visual habits, and work type, our licensed optometry staff offer different presbyopia compensation options:
+After that, depending on how you switch between distances during the day, there are a few possible directions:
 
-- **Office reading glasses:** for people who mainly work at a fixed indoor distance and don't need them once they're out and about
-- **Progressive multifocal lenses:** for people who need one pair of glasses to handle distance, intermediate, and near vision
-- **Relaxed lens design:** not "reading glasses," but a subtle compensation built into the lower part of the lens to ease the ciliary muscle's workload — suited to people who aren't ready to "admit" they need presbyopic correction
-- **Monovision design:** one eye set for distance, one for near — suited to contact lens wearers
+- **Office reading glasses**: for working at a fixed indoor distance, not worn when you go out
+- **Progressive multifocals**: for one pair that handles distance, intermediate, and near
+- **A single-vision design with a little near power added at the bottom**: for when close-up work is starting to feel hard but you don't need multifocals yet
 
 ---
 
-## How to Tell Which Cause Is Behind Your Discomfort
+## Symptom Table: Which Kind of Discomfort Is Yours Closest To?
 
-| Symptom | Most Likely Cause |
+| Symptom | Most likely cause |
 |---------|------------|
-| Headache, sore eye sockets after prolonged reading | Binocular vision issue (phoria) |
-| Extreme eye fatigue after a full day at the computer | Lens design doesn't match visual habits |
-| Distance vision clear but near vision effortful | Hidden presbyopia / insufficient ADD |
-| Fine in the morning, uncomfortable by the afternoon | Binocular fusion fatigue / accommodation exhaustion |
-| More comfortable with one eye covered than with both open | Binocular coordination issue |
-| Near vision worse with new glasses than old ones | Hidden presbyopia revealed |
+| Headache or sore eye sockets after long reading sessions | Your two eyes don't work well together |
+| Extreme eye fatigue after a full day at the computer | Lens design doesn't match your viewing distances |
+| Clear at distance but effortful up close | Early presbyopia / not enough ADD |
+| Fine in the morning, uncomfortable by afternoon | Your eyes have been working to stay aligned and can't keep it up |
+| More comfortable with one eye covered than with both open | Your two eyes don't work well together |
+| New glasses worse up close than the old ones | Presbyopia revealed by the new prescription |
 
 ---
 
-## Then Again: Not Every Kind of Discomfort Means You Need New Glasses
+## Our Xinzhuang and Banqiao Stores and Booking
 
-The three causes above are what we find most often at the shop. But having said all that, we owe you one honest caveat: **discomfort doesn't automatically mean the glasses need replacing.**
+When you come in, bring the glasses you wear now, even if they weren't made by us, and if you can, note down which times of day and which situations feel worst. Our two stores:
 
-Sometimes new glasses won't help at all, because the source isn't the lenses. It may be the surface of your eye, medication you're taking, your sleep and schedule, or the lighting and monitor height at your desk. Those belong to an ophthalmologist's judgement, and no amount of optical precision will fix them.
+- Xinzhuang store: Beyond Visual Optometry × BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, 02-2206-6700
+- Banqiao store: Beyond Visual Optometry × Neng Jian Du Optometry Clinic, No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, 02-2253-1246
 
-The opposite also happens: the glasses really are the problem, but they don't need remaking. Frames shift over time. A nose pad settles, a temple splays out, and the optical center drifts away from your pupil. That kind of adjustment usually takes ten minutes and costs nothing close to a new pair. We see plenty of people walk in braced for a full remake and walk out having only had the frame straightened.
+The eye exam itself takes about 45–60 minutes; please allow 60–90 minutes for your appointment. You can pick a time on our [booking page](/en/booking/).
 
-And sometimes it's simply time. A large change in prescription, or a first pair of progressives, comes with an adaptation period. What you want then is a check that the measurements were right, not a second pair.
+---
 
-So the order matters: first establish whether the discomfort is even related to the glasses, then whether it's a measurement issue, a design issue, or just a frame that has slipped. Skip that order and you may well pay for new glasses and still have the problem.
+## Not Every Kind of Discomfort Means You Need New Glasses
+
+The condition of the eye's surface, medication you're taking, your sleep and daily routine, even the lighting and monitor height at your office can all make your eyes uncomfortable. Those are for an ophthalmologist to assess, and no pair of glasses, however precise, will make them better.
+
+The opposite happens too: the glasses really are the problem, but they don't need to be remade. Frames shift with wear. A nose pad sinks a little, a temple splays out a little, and the optical center moves away from your pupil, which leaves the glasses feeling wrong in a way you can't quite describe. Most of the time a frame adjustment fixes it, no new pair needed. Plenty of people have walked in braced for a full remake and walked out after we'd only adjusted the frame. How we do it is on our [glasses adjustment and repair page](/services/adjustment/) (in Chinese).
+
+Then there's the question of time. If your prescription changed a lot, or you're wearing progressives for the first time, the first few days come with an adjustment period. What you need then is a check that the measurements were right, not a hurry to order another pair.
+
+So the order goes like this: first confirm whether the discomfort has anything to do with your glasses, then work out whether it's the measurements, the design, or a frame that has shifted. Skip that order and go straight to new glasses, and you may well spend the money and still have the problem.
+
+---
 
 ## FAQ
 
-**Q: My prescription is fine and I can read the eye chart clearly, but I'm still uncomfortable — does that make sense?**
+**Q: My prescription is fine and I can read the eye chart clearly, but my glasses are still uncomfortable. Does that make sense?**
 
-Completely — and it's very common. The eye chart only tests static distance clarity; it doesn't test binocular coordination, accommodation, or visual comfort at your actual working distance. Someone can have 20/20 vision on the chart and still have poor binocular efficiency, leading to fatigue with extended use.
+It does, and it's common. The eye chart tests how clearly you see at a distance while holding still. It doesn't test how well your two eyes work together, how your eyes focus up close, or whether you're comfortable at your working distance. Someone can read 20/20 on the chart and still find that using both eyes together is hard work and tires them out over long stretches.
 
-**Q: If your eyes have to work to line up, who handles treatment beyond glasses?**
+**Q: What does it mean if covering one eye feels more comfortable?**
 
-An ophthalmologist. A licensed optometrist can, where appropriate, include prism in the refraction result as the basis for your lenses, to make using both eyes together easier; treatments such as vision therapy or surgery are medical procedures, and whether they're needed is for an ophthalmologist to evaluate.
+It may mean your two eyes have to put in extra effort to line up when used together, or it may simply be that the power or optical center for one eye is off. Both can be checked when you come back to the store: our licensed optometry staff will do a binocular vision assessment and measure the optical centers of your lenses. Once they've found which it is, they assess whether prism should be included in your refraction result. Vision therapy or any other treatment is for an ophthalmologist to decide.
 
-**Q: If I'm still uncomfortable after getting glasses, should I go straight to an ophthalmologist or back to the optometrist?**
+**Q: If my new glasses are still uncomfortable, should I go straight to an ophthalmologist or back to the optometry store?**
 
-Both have a role. For fitting-related issues (prescription, lens design, binocular vision), an optometrist is the right specialist. If there are concerns like abnormal eye pressure or an increase in floaters, or a suspected retinal issue, you should see an ophthalmologist first to rule out any underlying disease. The two aren't in conflict and can be pursued at the same time.
+It depends on your symptoms. If your eyes are red and painful, you suddenly see many more floaters, or your vision has clearly dropped within a short time, see an ophthalmologist first. If the discomfort only appears when you wear the glasses and goes away when you take them off, it's most likely related to the prescription, the lens design, or the frame position, and you can come back to the store to have it checked. If, during the exam, no combination of lens powers brings your vision up to normal, our licensed optometry staff will refer you to an ophthalmologist, as required by Article 12, Paragraph 3 of Taiwan's Optometrists Act.
 
 **Q: Where in Xinzhuang or Banqiao can I get a complete binocular vision assessment?**
 
-Beyond Visual Optometry (Xinzhuang and Banqiao) offers a complete binocular vision function assessment by our licensed optometry staff, as part of every eye exam, along with lens design recommendations tailored to your visual habits. No matter where your glasses were made, you're welcome to come in for a second opinion.
+At both of our stores. Every eye exam at Beyond Visual Optometry's Xinzhuang store (BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist.) and Banqiao store (Neng Jian Du Optometry Clinic, No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist.) includes a binocular vision assessment, and the exam takes about 45–60 minutes. If your glasses weren't made by us, you're still welcome to bring them in for a second opinion.
+
+---
+
+Your friend's "just put up with it" sometimes turns out to be right. Other times you've spent years compensating for a problem nobody ever measured. The only way to tell which one you're dealing with is to have all of it measured properly, once.

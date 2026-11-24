@@ -36,7 +36,7 @@ Our process is "**assess first, then act**":
 | Step | What Happens |
 |------|------|
 | ① Frame Assessment | Check the structure, locking mechanism, and material condition to judge whether it can be safely disassembled, and explain any risk upfront |
-| ② Complete Refraction | A licensed optometrist performs a 45–60 minute complete refraction to establish a precise prescription |
+| ② Complete Refraction | Licensed optometry staff perform a 45–60 minute complete refraction to establish a precise prescription |
 | ③ Lens Recommendation | Recommend refractive index and lens type based on frame shape, prescription, and intended use (including converting sunglasses to prescription lenses) |
 | ④ Precision Fabrication and Fitting | Disassembly and reassembly tailored to that specific frame's construction, with precise optical center alignment |
 | ⑤ Fit Adjustment | Precision adjustment to fit your face; frame adjustments after pickup are included at no extra charge |
@@ -74,7 +74,7 @@ Lens cost depends on refractive index and features; fabrication cost for the fra
 
 **Q: Can sunglasses frames be converted to prescription lenses?**
 
-In most cases, yes. Converting sunglasses to prescription lenses requires attention to the frame's curvature (highly curved frames aren't ideal for high prescriptions) and any tinting requirements. An optometrist will assess whether your prescription suits the frame and which lens option balances appearance and optics.
+In most cases, yes. Converting sunglasses to prescription lenses requires attention to the frame's curvature (highly curved frames aren't ideal for high prescriptions) and any tinting requirements. Our optometry staff will assess whether your prescription suits the frame and which lens option balances appearance and optics.
 
 **Q: My Lindberg's temple arm is loose, or my ic! berlin's spring clip is deformed — can you fix it?**
 

@@ -48,13 +48,13 @@ Putting the pieces above together, the answer becomes clear:
 - **Using distance PD for a near-vision lens** → the near-vision focal point lands in the wrong place
 - **Using only binocular PD (divided by two) on an asymmetric face** → both eyes may end up misaligned
 
-None of these are things you simply "get used to" over time—they're a subtle optical strain your eyes carry every day. That's why PD is a fundamental measurement in dispensing: it's measured by a licensed optometrist during the fitting process, with the specific type of PD chosen based on your frame and lens design.
+None of these are things you simply "get used to" over time—they're a subtle optical strain your eyes carry every day. That's why PD is a fundamental measurement in dispensing: it's measured by licensed optometry staff during the fitting process, with the specific type of PD chosen based on your frame and lens design.
 
 ## Common Misconceptions / FAQ
 
 **Q: Can I measure my own PD with a ruler in front of a mirror?**
 
-You can get a rough estimate, but it's not recommended for actual fitting purposes—especially for high prescriptions or progressive lenses. Measuring it yourself is prone to error from measurement angle, eyes not being relaxed, and facial asymmetry. PD should be measured professionally by a licensed optometrist, who will distinguish between distance, near, and monocular PD as needed.
+You can get a rough estimate, but it's not recommended for actual fitting purposes—especially for high prescriptions or progressive lenses. Measuring it yourself is prone to error from measurement angle, eyes not being relaxed, and facial asymmetry. PD should be measured professionally by licensed optometry staff, who will distinguish between distance, near, and monocular PD as needed.
 
 **Q: Do I need to have my PD re-measured every time I get new glasses?**
 

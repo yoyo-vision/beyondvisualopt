@@ -129,7 +129,7 @@ Not everyone can adapt to progressives within 4 weeks. Forcing adaptation only i
 If you spend 90% of your time working at a screen 60cm away, office lenses are far more practical than full progressives. Solving 90% of your needs with a pair of office lenses delivers more real-world benefit than solving 70% of your needs with a pair of full progressives.
 
 **3. High myopia combined with presbyopia makes the design more complex**
-The lenses for highly myopic people are already thick, and adding a presbyopia addition power calls for even more precise optical design to avoid amplifying vertex-distance correction errors. You should always have this evaluated by an optometrist with extensive progressive-lens experience.
+The lenses for highly myopic people are already thick, and adding a presbyopia addition power calls for even more precise optical design to avoid amplifying vertex-distance correction errors. You should always have this evaluated by licensed optometry staff with extensive progressive-lens experience.
 
 **4. Brand isn't the only factor in comfort**
 ZEISS Individual² is genuinely more comfortable than an ordinary progressive lens, but only if you truly need progressives and the measurements are precise. Even the best lens delivers diminished results when paired with the wrong prescription or the wrong wearer.

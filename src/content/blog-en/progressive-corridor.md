@@ -76,7 +76,7 @@ Because the corridor is a fixed "path" at a specific location. **The fitting cro
 
 ### Q: How do I choose between a short and long corridor?
 
-It mainly comes down to two things: whether your **frame's lens height** can accommodate a long corridor, and how much of your visual time is spent at **intermediate distances** (like working at a computer). These are individual factors best worked out with a licensed optometrist based on actual measurements and your visual needs—this article is just here to explain the optical trade-offs.
+It mainly comes down to two things: whether your **frame's lens height** can accommodate a long corridor, and how much of your visual time is spent at **intermediate distances** (like working at a computer). These are individual factors best worked out with licensed optometry staff based on actual measurements and your visual needs—this article is just here to explain the optical trade-offs.
 
 ---
 

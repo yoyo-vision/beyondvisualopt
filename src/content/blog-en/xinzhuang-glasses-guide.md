@@ -2,104 +2,90 @@
 title: "Where to Get a Vision Exam and Glasses in Xinzhuang, New Taipei: A Guide for English Speakers"
 date: 2026-06-25
 tag: "Local Guide"
-excerpt: "Living in Xinzhuang and need glasses or a vision exam? Here's how Taiwan's optometry clinics differ from regular glasses shops, what to ask before you buy, and where to find a store near Xinzhuang MRT Station that can explain the basics in English."
+excerpt: "Getting glasses in Xinzhuang? Start by being clear about which distance this pair is mainly for. A university student reading projected slides, an office worker on screens all day who commutes by scooter, and someone around 40 who's started holding their phone further away each need different things measured and a different lens direction. Beyond Visual Optometry's Xinzhuang store (BiYang Optometry Clinic) explains what gets measured when you get a pair of glasses, and which needs should go to an ophthalmologist first."
+seoDescription: "Getting glasses in Xinzhuang as a student, an office worker or someone around 40? Start with which distance the glasses are mainly for. Beyond Visual Optometry (BiYang Optometry Clinic), No. 419-1, Zhongzheng Rd., Xinzhuang: exams take about 45–60 minutes with a binocular vision assessment every time; monocular PD measured for each eye, fitting height measured in the frame you choose, and vertex distance measured too."
+keywords: "Xinzhuang glasses,glasses in Xinzhuang,Xinzhuang optical shop,Xinzhuang optometry clinic,Fu Jen University glasses,New Taipei glasses,monocular PD,fitting height"
 image: ""
 youtube: ""
 instagram: ""
 ---
 
-## Getting Glasses in Xinzhuang as an English Speaker
+## "Where Should I Get Glasses in Xinzhuang?" We Answer With a Question
 
-If you live in Xinzhuang (New Taipei City) — maybe you're teaching, studying at Fu Jen Catholic University, or working nearby — sooner or later you'll need a vision exam or a new pair of glasses. The good news: Taiwan's optical scene is excellent and far more affordable than most Western countries. The tricky part: knowing which shops offer proper clinical vision exams, and finding one where at least the basics can be explained in English.
+Some people walk in and ask straight away: "Which shop in Xinzhuang is best for glasses?" We can't answer that one. What we do is ask a question back: "What are you mainly going to use this pair for?"
 
-There are plenty of optical shops along Zhongzheng Road in Xinzhuang, but more choice doesn't make choosing easier. This isn't a sponsored ranking — it's a guide to **the questions you should ask before getting glasses in Taiwan**.
+Maybe it's copying slides from the back row of a lecture hall, staring at two monitors all day, riding home on a scooter at night, or noticing you've started pushing your phone a little further away. The same prescription used at different distances can lead to very different glasses. If the use isn't clear, the exam has no direction, and the lens ends up set to a safe middle value.
 
----
+## Three Kinds of People We See Most for Glasses in Xinzhuang
 
-## Optometry Clinics vs. Regular Glasses Shops: Legally Different Things
+### University Students: Projected Slides in Class, Reading at Night
 
-Something many newcomers to Taiwan don't realize: a licensed "optometry clinic" (驗光所) and a regular glasses shop are completely different under Taiwanese law.
+For students around Fu Jen Catholic University, a typical day for the eyes goes like this: projected slides from the back row in the morning, textbooks in the library in the afternoon, and a laptop back in the dorm at night to finish a report. Distance and near both come up, and the switching between them is constant.
 
-| | Optometry clinic | Regular glasses shop |
-|--|------|----------|
-| Legal basis | Optometrists Act | Standard business registration |
-| Performing vision exams | Licensed optometrists required | Must set up an in-store optometry office staffed by licensed optometry personnel |
+For glasses like these, we keep an extra eye on two things during the exam. One is whether the distance prescription is enough for you to read the small text on the slides from the back row. The other is whether your two eyes work together smoothly through long stretches of close-up work. If you tell us "class is fine, but my eyes feel swollen and tight after writing reports until midnight," the problem usually isn't in the distance prescription; we look at near.
 
-Under Article 4 of the Enforcement Rules of the Optometrists Act, a glasses shop that wants to perform vision exams must set up a registered optometry office in the store.
+Students coming in on their own for the first time: remember to bring the pair you wear now. We'll measure your old glasses on the lensmeter first and put that next to today's result, so you can see at a glance how much your prescription has changed over the past few years.
 
-**Bottom line: if you have any visual complaints — dizziness with glasses, eye strain, prescriptions that never seem right — look for a place that does a full exam including a binocular vision assessment, not just a prescription check.** If your prescription has been stable for years and you have no special needs, you have more options.
+### Office Workers: Screens, and the Commute by Scooter
 
----
+People who work in Xinzhuang, or live in Xinzhuang and commute into Taipei every day, spend eight or nine hours a day in front of a screen, then ride or drive home after work. One pair of glasses has to handle a screen at arm's length and an intersection dozens of meters away, and those two actually call for different powers.
 
-## 5 Questions to Ask Any Glasses Shop in Xinzhuang
+A distance prescription that's just right, used to stare at a screen all day, keeps your eyes working hard to focus. Relax it a little for the screen, and the traffic lights on the ride home are a touch less sharp. Before the exam we'll ask how your day is divided; sometimes the answer is one pair that balances both, and sometimes it's two pairs. Our [guide to tired eyes from screens](/en/guide/digital-eye-strain/) covers how to choose lenses for heavy screen users.
 
-**1. Is the optometrist licensed?**
-Taiwan's Ministry of Health and Welfare maintains a public registry of licensed medical personnel, including optometrists. A full vision examination must be performed by a licensed optometrist — or by a physician.
+### Around 40: Starting to Hold Your Phone Further Away
 
-**2. How long does the exam take?**
-A complete clinical vision exam takes at least 45 minutes. A 10–15 minute "quick refraction" only confirms your basic prescription — it can't assess binocular vision, accommodation, or phorias, which are the key factors behind visual comfort.
+Around 40, a common first sign is having to push your phone a little further away, or struggling to read a menu in a dimly lit restaurant. Your distance prescription may not have changed, but near vision starts getting harder.
 
-**3. Which lens brands do they carry?**
-ZEISS, HOYA, Essilor, and Nikon are the mainstream premium lens brands in Taiwan. Confirm the shop is an authorized dealer rather than selling counterfeits or grey-market imports.
+For glasses at this age, the exam also assesses whether you need an addition for near, and if so, how to set it up: one pair each for distance and near, a pair just for intermediate and near distances at the computer, or progressives. We'll ask two questions first: what you look at up close most during the day, and for how long at a stretch. Someone who reads a few pages before bed and someone who stares at spreadsheets all day usually end up choosing differently. If you're wondering whether you've reached this stage yourself, compare notes with [5 early signs of presbyopia at 40](/blog/presbyopia-signs-40/) (in Chinese).
 
-**4. Can I come back for adjustments if the glasses feel off?**
-Before choosing a shop, ask whether you can come back for adjustments and whether there's a charge. For glasses fitted at Beyond Visual, frame adjustments after pickup are not charged separately.
+## What Gets Measured When You Get Glasses at Our Xinzhuang Store
 
-**5. Do they offer myopia tracking for children?**
-If you're getting glasses for your child, their prescription needs regular monitoring. Make sure the shop offers scheduled re-examinations rather than a one-and-done sale.
+Once the use is clear, the measuring starts. The prescription is only one item; several others decide where that prescription lands in front of your eyes.
 
----
+### Exams Take About 45–60 Minutes, With a Binocular Vision Assessment Every Time
 
-## Beyond Visual Optometry (Xinzhuang)
+A full eye exam at our Xinzhuang store takes about 45–60 minutes. The prescription is measured one eye at a time, but in daily life you look with both eyes together, so every exam includes a binocular vision assessment to check whether your two eyes coordinate when they work as a pair. However precisely each eye is measured on its own, using them together isn't necessarily easy. How that hour unfolds is in [your first eye exam, from booking to finish](/blog/eye-exam-first-visit/) (in Chinese).
 
-**Address:** No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City (about an 8-minute walk from Xinzhuang MRT Station)
-**Phone:** +886-2-2206-6700
-**License:** New Taipei City Optometry Clinic License No. 5Y31060655
-**Lead optometrist:** Optometrist YoYo (licensed optometrist, License No. 003309)
+### Monocular PD: Each Eye Measured Separately
 
-**Opening hours:**
-- Monday, Tuesday, Wednesday, Friday, Saturday: 11:00–21:00
-- Sunday: 12:00–21:00
-- Closed Thursdays
+Pupillary distance decides where the lens's optical center goes. At our Xinzhuang store, the left and right eyes are measured separately every time, each from the midline of the nose to the center of the pupil. Faces aren't perfectly symmetrical, and a difference of a millimeter or two between sides isn't unusual; measure only the total and divide by two, and one side's optical center ends up off.
 
-**Google reviews:** See our Xinzhuang Google Business Profile for the current rating and customer comments
+### Fitting Height: Measured in the Frame You Choose
 
-### What we offer
+Fitting height is where your pupil falls, top to bottom, on the lens. That number is tied to the frame: the same person in a different frame has different nose pad heights and rim depths, so where the pupil lands changes too. That's why fitting height is always measured with you wearing the frame you've chosen, and measured again if you change frames. It matters even more for progressive wearers, because it decides where the distance and near zones fall.
 
-- Full 45–60 minute clinical vision exams (including binocular vision assessment)
-- Certified ZEISS partner (Individual² custom lenses, progressive lens series)
-- HOYA lens dealer
-- Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, agnès b., and MINAMOTO
-- Expert repair, precision adjustment, and lens installation for premium frames such as Lindberg, ic! berlin, Cartier, and Chrome Hearts (repair expertise; not an authorized dealer)
-- Regular myopia tracking for children
-- Frame adjustments after pickup are not charged separately for glasses fitted with us
+### Vertex Distance and Pantoscopic Tilt
 
----
+Vertex distance is the distance from the back surface of the lens to your eye; pantoscopic tilt is how far the frame leans forward when seen from the side. Both change the power the lens actually delivers to your eye, and the stronger the prescription, the more noticeable that is. At our Xinzhuang store we measure vertex distance when fitting your glasses, and on pickup day we adjust the nose pads and temples to your face. The conversion is explained in [What Is Vertex Distance? Why It Matters for High Prescriptions](/en/blog/vertex-distance/).
+
+## Xinzhuang Store Details and Booking (No. 419-1, Zhongzheng Rd., Near Xinzhuang MRT)
+
+Our Xinzhuang store is Beyond Visual Optometry × BiYang Optometry Clinic, at No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, about an 8-minute walk from Xinzhuang MRT Station (Orange Line). Phone: 02-2206-6700. Hours: Mon, Tue, Wed, Fri and Sat 11:00–21:00, Sun 12:00–21:00, closed Thursdays.
+
+The Xinzhuang store is led by Optometrist YoYo (License No. 003309); eye exams are performed by licensed optometry staff. YoYo can explain the basics in simple English when on duty, so let us know you'd prefer English when you book; the exam itself is carried out in Chinese. For glasses fitted with us, frame adjustments after pickup are not charged separately. Parking and bus information is on our [Xinzhuang store page](/en/xinzhuang/).
+
+An eye exam plus choosing a frame takes 60–90 minutes, so [book a vision consultation](/en/booking/) first to get a stretch of time without interruptions.
+
+## A Few Needs Our Xinzhuang Store Isn't the Right Place For
+
+A red, painful or light-sensitive eye, a sudden jump in floaters, or vision that clearly gets worse within a few days — these should be seen by an ophthalmologist first. Our stores have no tonometer or visual field analyzer, and we don't measure axial length; whether your eyes are healthy isn't a question a pair of glasses can answer. If your vision still won't correct to normal after trying different powers during the exam, Article 12, Paragraph 3 of Taiwan's Optometrists Act requires the optometry staff to refer you to an ophthalmologist, and we hold off on making the glasses until the doctor has seen you.
+
+For children, the law sets the order. Under Taiwan's Optometrists Act, optometry staff may not perform refraction for children under 6 — please take them to an ophthalmologist. For ages 6 to 15 (inclusive), before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia; all refraction in this age group is carried out under an ophthalmologist's guidance. Before bringing your child in, read [children's glasses, from the ophthalmologist's follow-up to pickup](/blog/kids-glasses-process/) (in Chinese).
 
 ## FAQ
 
-**Q: Where can I get a vision exam in Xinzhuang as an English speaker?**
+**Q: If I get glasses in Xinzhuang, do I pay separately for the eye exam?**
 
-Beyond Visual Optometry is located at No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City, about an 8-minute walk from Xinzhuang MRT Station. It's run by Optometrist YoYo (licensed optometrist, License No. 003309). Basic explanations in English are available; the exam itself is conducted in Mandarin. You can check the store's current Google rating and customer reviews on its Google Business Profile.
+Here's how the exam fee works when you get glasses at our Xinzhuang store: a full eye exam is charged as a separate fee, and if you come back for glasses within six months of the exam, that fee is included in the cost of your glasses — bringing your own frame and replacing only the lenses counts as getting glasses too. The separate fee only applies if you have the exam without getting glasses. Our Banqiao store works the same way. The full breakdown is in [does an eye exam cost money?](/blog/eye-exam-cost/) (in Chinese). To see which days the Xinzhuang store still has openings, the [booking page](/en/booking/) is quickest.
 
-**Q: How much do glasses cost in Xinzhuang?**
+**Q: Can Fu Jen University students get glasses at the Xinzhuang store?**
 
-The cost depends on lens type, refractive index, coatings and frame, so an accurate quote comes after the exam and once you've chosen a frame. As an optometry clinic, our fee schedule is posted in the store as required by law.
+Yes. Our Xinzhuang store is at No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, about a 12-minute walk from Fu Jen University MRT Station and about 8 minutes from Xinzhuang MRT Station. Allow 60–90 minutes for an exam plus choosing a frame; booking a gap between classes is more relaxed than rushing over after class.
 
-**Q: Is it convenient for Fu Jen Catholic University students and staff?**
+**Q: How long does it take to get glasses in Xinzhuang?**
 
-Yes. The store is about a 12-minute walk from MRT Fu Jen University Station and about 8 minutes from MRT Xinzhuang Station. Allow 60–90 minutes for an exam plus choosing a frame, and book ahead.
-
----
-
-To book a visual assessment, call +886-2-2206-6700, [book online](/en/booking/), or reach us via LINE: https://lin.ee/SoWj9Ft
-
-Beyond Visual Optometry | No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City
+It depends on whether the lenses are in stock. Stock lenses take about 3–5 working days, and custom-made lenses about 7–10 working days. Once you've chosen your lenses, we'll tell you which kind your prescription and lens choice fall under, and set a pickup date with you.
 
 ---
 
-"Where's a good place to get glasses in Xinzhuang?"
-
-Having written all of this, we still think the question has no single answer. Shops differ in price, style and professional focus, and they serve people with different needs. What genuinely helps you filter is a handful of concrete questions: what do they measure, do they charge for frame adjustments, and can you come back if it doesn't feel right. Those three tell you more than a review count.
-
-If what you want is the kind that finishes the measurements, come and sit down with us. Beyond Visual Optometry × Biyang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang.
+Before you compare shops, run through how you use your eyes in a day: which distance you look at longest, and which part of the day your eyes are most tired. If you can answer those two, the prescription, the measurements and the lenses can all point in the same direction.

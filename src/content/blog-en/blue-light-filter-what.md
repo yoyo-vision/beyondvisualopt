@@ -44,7 +44,7 @@ Put simply: blue light filtering uses either "absorption" or "reflection" to red
 | **How blue light is handled** | Target wavelength is "absorbed" | Target wavelength is "reflected away" |
 | **Can be combined** | ✔ Some lenses use both designs together | ✔ |
 
-> Both methods only filter "a portion" of blue light — exactly how much and which wavelengths depends on the specific product design. When choosing, ask an optometrist to explain exactly what wavelength range and tint a given lens produces, and look at the lens color yourself before deciding.
+> Both methods only filter "a portion" of blue light — exactly how much and which wavelengths depends on the specific product design. When choosing, ask licensed optometry staff to explain exactly what wavelength range and tint a given lens produces, and look at the lens color yourself before deciding.
 
 ## So Is Blue Light Filtering Good for Your Eyes? That's Outside the Scope of This Article
 
@@ -65,4 +65,4 @@ This comes down to the filtering **method**. Absorptive lenses rely on a dye in 
 
 ---
 
-Once you understand which wavelength blue light actually is and what principle a lens uses to filter it, you won't be swayed just by the words "anti-blue-light" — you'll be able to judge for yourself what optical treatment a given lens is actually doing. If you'd like to see the color and reflection difference between absorptive and reflective lenses in person, come by Beyond Visual Optometry's Xinzhuang or Banqiao store and an optometrist will walk you through it. For anything involving your eye health, please consult an ophthalmologist.
+Once you understand which wavelength blue light actually is and what principle a lens uses to filter it, you won't be swayed just by the words "anti-blue-light" — you'll be able to judge for yourself what optical treatment a given lens is actually doing. If you'd like to see the color and reflection difference between absorptive and reflective lenses in person, come by Beyond Visual Optometry's Xinzhuang or Banqiao store and our optometry staff will walk you through it. For anything involving your eye health, please consult an ophthalmologist.

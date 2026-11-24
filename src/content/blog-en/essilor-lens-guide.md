@@ -67,7 +67,7 @@ Essilor's product line spans a wide range, with a substantial price gap between 
 - Do you spend a lot of time outdoors, or mostly indoors looking at screens?
 - What are your priorities on lens thinness and coating durability?
 
-The visual-quality difference between tiers within the same series is real, but that doesn't mean everyone needs the top tier. An optometrist's role is to help you find the one that fits — not to push the most expensive option.
+The visual-quality difference between tiers within the same series is real, but that doesn't mean everyone needs the top tier. Our optometry staff are there to help you find the one that fits — not to push the most expensive option.
 
 ---
 
@@ -83,11 +83,11 @@ Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., N
 
 **Q: What's the difference between Varilux and a typical progressive lens?**
 
-Varilux's core technology lies in wavefront aberration correction and personalized calculation, which reduces blur in the transition zones and widens the field of clear vision. The difference is real, but whether it's right for you depends on an optometrist's evaluation of your prescription combination and visual habits.
+Varilux's core technology lies in wavefront aberration correction and personalized calculation, which reduces blur in the transition zones and widens the field of clear vision. The difference is real, but whether it's right for you depends on licensed optometry staff evaluating your prescription combination and visual habits.
 
 **Q: What age is Eyezen suitable for?**
 
-There's no strict age limit for Eyezen — it's mainly suited to people who use digital devices heavily and do long stretches of close-range work. It's generally recommended for adults 18 and up; for minors, we recommend having an optometrist assess suitability first.
+There's no strict age limit for Eyezen — it's mainly suited to people who use digital devices heavily and do long stretches of close-range work. It's generally recommended for adults 18 and up; for minors, we recommend having licensed optometry staff assess suitability first.
 
 ---
 

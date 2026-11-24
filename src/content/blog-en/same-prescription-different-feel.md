@@ -44,13 +44,13 @@ Here's a situation we see often in the shop. An office worker who stares at a sc
 
 "I got glasses and I'm still uncomfortable" — the answer is often not found in the prescription line at all. We've laid out more of the real underlying causes here: [Still Uncomfortable After Getting New Glasses? 3 Real Causes and Solutions](/en/blog/glasses-uncomfortable-3-reasons/).
 
-At the end of the day, the prescription is the "answer" an eye exam produces — but putting that answer precisely into the pair of glasses on your face depends on a whole set of personalized fitting measurements and adjustments. That's why we keep saying: [a good optometrist matters more than a good lens](/en/guide/why-optometrist-matters/) — because the outcome is usually decided by these parameters nobody mentions, but that you feel every single day.
+At the end of the day, the prescription is the "answer" an eye exam produces — but putting that answer precisely into the pair of glasses on your face depends on a whole set of personalized fitting measurements and adjustments. That's why we keep saying: [good optometry staff matter more than a good lens](/en/guide/why-optometrist-matters/) — because the outcome is usually decided by these parameters nobody mentions, but that you feel every single day.
 
 ## FAQ
 
 **Q1: Same prescription, but two pairs of glasses feel really different — does that mean one of them was fitted wrong?**
 
-Not necessarily. Identical prescriptions only mean the "prescription line" matches — but astigmatism axis, PD, fitting height, vertex distance, pantoscopic tilt, and frame fit can all differ, and that alone changes how each pair feels. Rather than guessing which one was fitted wrong, bring both in and let an optometrist measure both sets of parameters — that's how you find out where the comfortable one wins and where the uncomfortable one falls short.
+Not necessarily. Identical prescriptions only mean the "prescription line" matches — but astigmatism axis, PD, fitting height, vertex distance, pantoscopic tilt, and frame fit can all differ, and that alone changes how each pair feels. Rather than guessing which one was fitted wrong, bring both in and let our optometry staff measure both sets of parameters — that's how you find out where the comfortable one wins and where the uncomfortable one falls short.
 
 **Q2: I got a new pair made with my old prescription, so why doesn't it feel right?**
 
@@ -58,12 +58,12 @@ Because "copying" the prescription only carries over the numbers — not the ent
 
 **Q3: Do these parameters matter more the higher the prescription?**
 
-Yes. Errors in vertex distance and pupillary distance both get amplified as prescription increases. At a low prescription, a slight inaccuracy might go unnoticed; at a high prescription, the same margin of error becomes immediately noticeable. That's why anyone with a high prescription should be especially attentive to fitting precision, and should specifically seek out an optometrist with a thorough measurement process.
+Yes. Errors in vertex distance and pupillary distance both get amplified as prescription increases. At a low prescription, a slight inaccuracy might go unnoticed; at a high prescription, the same margin of error becomes immediately noticeable. That's why anyone with a high prescription should be especially attentive to fitting precision, and should specifically seek out a store whose optometry staff follow a thorough measurement process.
 
 **Q4: Can I measure these parameters myself?**
 
-We wouldn't recommend it. Pupillary distance, fitting height, vertex distance, and pantoscopic tilt all need to be measured with the frame selected and worn in its normal position, by an optometrist observing your actual fit — that's the only way to capture how you really wear your glasses. What you can do is simply wear the frame in the position you normally would, so the measurement reflects your everyday use.
+We wouldn't recommend it. Pupillary distance, fitting height, vertex distance, and pantoscopic tilt all need to be measured with the frame selected and worn in its normal position, by optometry staff observing your actual fit — that's the only way to capture how you really wear your glasses. What you can do is simply wear the frame in the position you normally would, so the measurement reflects your everyday use.
 
 ---
 
-If you have a pair of glasses where "the prescription's right, but it just doesn't feel right," bring it to our Xinzhuang or Banqiao location — we'll measure your fitting parameters with proper instruments and find out exactly where the issue is. Xinzhuang store: +886-2-2206-6700, Banqiao store: +886-2-2253-1246. An optometrist at Beyond Visual Optometry will help you track down the details beyond the prescription.
+If you have a pair of glasses where "the prescription's right, but it just doesn't feel right," bring it to our Xinzhuang or Banqiao location — we'll measure your fitting parameters with proper instruments and find out exactly where the issue is. Xinzhuang store: +886-2-2206-6700, Banqiao store: +886-2-2253-1246. The optometry staff at Beyond Visual Optometry will help you track down the details beyond the prescription.

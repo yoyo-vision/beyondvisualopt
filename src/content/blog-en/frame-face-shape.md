@@ -115,7 +115,7 @@ As a rule, contrast. A frame's lines work against your face shape to create a ba
 
 **Q: What's the single most important thing when choosing a frame?**
 
-If you can only remember one thing, make it "proportion" — frame size should match your features, and frame width should align with your face width. Face shape determines the direction of the frame's lines; proportion determines its size and visual weight. Get both right, and you're most of the way there. But don't forget: if you have a high prescription or are considering progressive lenses, the frame also needs to meet your lenses' optical requirements — and that's best evaluated together with an optometrist in person.
+If you can only remember one thing, make it "proportion" — frame size should match your features, and frame width should align with your face width. Face shape determines the direction of the frame's lines; proportion determines its size and visual weight. Get both right, and you're most of the way there. But don't forget: if you have a high prescription or are considering progressive lenses, the frame also needs to meet your lenses' optical requirements — and that's best evaluated together with our optometry staff in person.
 
 ---
 
@@ -123,7 +123,7 @@ If you can only remember one thing, make it "proportion" — frame size should m
 
 Face shape, proportion, face width, brow line — you can understand 70–80% of this from an article, but whether a frame actually looks good and fits well still comes down to putting it on, looking in the mirror, and having a trained eye weigh in.
 
-And if your prescription is high, or you're considering progressive lenses, your frame choice isn't just about looks — it's also about whether your lenses can perform at their best. That's a step best handled together with a licensed optometrist.
+And if your prescription is high, or you're considering progressive lenses, your frame choice isn't just about looks — it's also about whether your lenses can perform at their best. That's a step best handled together with licensed optometry staff.
 
 Come try frames on in person at Beyond Visual Optometry — our licensed optometry staff will help you find a frame that's both good-looking and easy to wear, based on your face shape, visual needs, and lens requirements:
 

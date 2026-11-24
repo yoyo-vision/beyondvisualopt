@@ -53,7 +53,7 @@ On the flip side, there are situations where sticking with the old frame actuall
 
 ## The Process for Replacing Lenses in an Old Frame: The Frame's Condition Comes First
 
-Whether you're leaning toward lens replacement or considering a new frame, the first step is the same: **bring the frame in and let the optometrist take a look.**
+Whether you're leaning toward lens replacement or considering a new frame, the first step is the same: **bring the frame in and let our optometry staff take a look.**
 
 - **Frame evaluation**: checking material, structure, and wear to judge whether it's suitable for disassembly and refitting.
 - **Risk disclosure**: any risk of damage gets flagged upfront, and we proceed only with your agreement; if it's not suitable, we'll recommend against it directly.
@@ -68,11 +68,11 @@ In short: **we'll save you money by replacing just the lenses whenever that make
 
 **Q1: How much cheaper is replacing just the lenses compared to a whole new pair?**
 
-Mainly you save the cost of the frame. If the frame's in good shape and you're used to wearing it, replacing just the lenses means paying lens price plus a fitting fee (which depends on the frame type and is quoted before production) — no need to buy a frame, and it's usually the better deal. But if the frame's worn out or doesn't fit, sticking with it anyway often ends up costing more in comfort — in that case, replacing the frame is actually the more economical choice. Bring it in and let an optometrist evaluate for the most accurate answer.
+Mainly you save the cost of the frame. If the frame's in good shape and you're used to wearing it, replacing just the lenses means paying lens price plus a fitting fee (which depends on the frame type and is quoted before production) — no need to buy a frame, and it's usually the better deal. But if the frame's worn out or doesn't fit, sticking with it anyway often ends up costing more in comfort — in that case, replacing the frame is actually the more economical choice. Bring it in and let our optometry staff evaluate for the most accurate answer.
 
 **Q2: My frame's several years old — can the lenses still be replaced?**
 
-Let the optometrist take a look at the frame's condition first. If it's in good shape, lenses can be replaced. If the material has aged or the risk of damage is higher, we'll explain the risk clearly and proceed only with your agreement — or recommend against it if it's not a good idea. Evaluating first and proceeding with your agreement is our standard practice.
+Let our optometry staff take a look at the frame's condition first. If it's in good shape, lenses can be replaced. If the material has aged or the risk of damage is higher, we'll explain the risk clearly and proceed only with your agreement — or recommend against it if it's not a good idea. Evaluating first and proceeding with your agreement is our standard practice.
 
 **Q3: How do I know if I should just replace the lenses or get a new frame too?**
 

@@ -88,7 +88,7 @@ After all this introduction, the real answer to "which brand should I choose," f
 Take progressive multifocal lenses as an example: an entry-level Zeiss progressive lens versus a premium personalized HOYA progressive lens—the latter will very likely deliver better visual comfort. And the reverse holds true too. A brand name alone isn't a guarantee of quality; the gap between different series within the same brand can be larger than the gap between brands.
 
 What actually determines how comfortable your glasses feel is:
-- Whether the optometrist's measurements are precise
+- Whether the optometry staff's measurements are precise
 - Whether the lens design tier suits your visual needs
 - Whether the frame adjustment is properly done
 
@@ -108,7 +108,7 @@ Most optical shops carry them, but the series and tiers they stock vary. Beyond 
 
 **Q: With the same Zeiss lens, does it make a difference which optical shop I go to?**
 
-The lens itself is the same; the difference lies in how precisely the optometrist takes the measurements and whether the personal parameters needed for the custom order are entered completely. A personalized ZEISS order requires vertex distance, pantoscopic tilt, face-form angle, and fitting height, all measured with the chosen frame on. If these aren't measured accurately, the personalized design is calculated from the wrong numbers.
+The lens itself is the same; the difference lies in how precisely the optometry staff take the measurements and whether the personal parameters needed for the custom order are entered completely. A personalized ZEISS order requires vertex distance, pantoscopic tilt, face-form angle, and fitting height, all measured with the chosen frame on. If these aren't measured accurately, the personalized design is calculated from the wrong numbers.
 
 **Q: Where in Xinzhuang can I get a Zeiss lens consultation?**
 

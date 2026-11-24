@@ -3,12 +3,12 @@ import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 // 指南 → 文章的聚落連結（英文版取 blog-en 集合；尚未翻譯的英文文章由 .filter(Boolean) 濾掉）
+// 2026-11 同步中文版：順序照分類表 eye-exam → triage；child-vision-check-where 已移出聚落，改由「Children by age」段內文連結
 const CLUSTER_SLUGS = [
   'optometry-vs-ophthalmology',
   'blurry-vision-see-doctor',
-  'eye-strain-see-doctor',
-  'child-vision-check-where',
   'eye-exam-before-glasses',
+  'eye-strain-see-doctor',
 ];
 const allPosts = await getCollection('blog-en');
 const clusterPosts = CLUSTER_SLUGS
@@ -18,41 +18,68 @@ const clusterPosts = CLUSTER_SLUGS
 const canonicalUrl = 'https://beyondvisualopt.com/en/guide/eye-doctor-or-optometrist/';
 
 // 眼科 vs 驗光所 症狀分流指南（英文版）：承接「eye doctor」意圖搜尋的誠實分流頁
-// 合規基準：明確自稱驗光所非眼科；紅旗症狀一律「建議儘速至眼科就醫」；發現異常依法轉介。
+// 合規基準：明確自稱驗光所非眼科；紅旗症狀一律「建議儘速至眼科就醫」；發現異常依第十二條第三項轉介。
+// FAQ：與中文版同五題（原英文版「孩子第一次驗光」題已併入 #kids 段，中文版無此題）
 const faqs = [
   {
-    q: 'Is Beyond Visual Optometry an eye clinic with a doctor?',
-    a: 'No. We are licensed optometry clinics (BiYang Optometry Clinic in Xinzhuang and Neng Jian Du Optometry Clinic in Banqiao). Refraction and dispensing are carried out by licensed optometry staff — we are not a medical clinic and there is no physician on site. For the diagnosis and treatment of eye disease, please see an ophthalmologist. If during the exam we find that vision cannot be effectively corrected, we will assist with a referral to an ophthalmologist as required under Taiwan\'s Optometrists Act.',
+    q: 'Is Beyond Visual Optometry an eye clinic?',
+    a: 'No. We are licensed optometry clinics (BiYang Optometry Clinic in Xinzhuang and Neng Jian Du Optometry Clinic in Banqiao). Refraction and dispensing are carried out by licensed optometry staff — we are not a medical clinic and there is no physician on site. For the diagnosis and treatment of eye disease, please see an ophthalmologist. If during refraction and dispensing we find that vision cannot be corrected to normal, we will also assist with a referral to an ophthalmologist as the law requires.',
   },
   {
-    q: 'My vision is blurry — should I see an ophthalmologist first, or come for a vision exam?',
-    a: 'It depends. If things have gradually become less clear and your prescription simply feels out of date, that is usually a refractive issue and you can come to the optometry clinic for a full exam first. If your vision dropped suddenly, one eye has gone dark, or part of your visual field is missing, please go straight to an ophthalmologist — that may need medical attention. If you are unsure, describe what you are experiencing over LINE and we will tell you honestly where to go.',
+    q: 'My vision is blurry — should I see an ophthalmologist first, or come for an eye exam?',
+    a: 'It depends on how it became blurry. If your vision went unclear suddenly, one eye\'s vision dropped sharply, or part of your visual field is missing, please see an ophthalmologist as soon as possible — that may need medical attention. If things have gradually become less clear and your glasses no longer seem strong enough, it is usually a refractive issue, and you can come to the optometry clinic for a full eye exam first. If you can\'t tell which kind it is, you can describe what is happening over LINE first; but if it came on suddenly, please see a doctor first rather than losing time waiting for a reply.',
   },
   {
     q: 'My eye is red, painful, or has discharge — can an optometry clinic handle that?',
-    a: 'No. Please go directly to an ophthalmologist. Redness, swelling, pain, discharge and light sensitivity fall under eye disease, which requires diagnosis and treatment by a physician; an optometry clinic neither may nor should handle it under Taiwan\'s Optometrists Act. Once the condition has been treated and you need glasses, come and see us then.',
+    a: 'No. Redness, swelling, pain, discharge and light sensitivity fall under eye disease, which needs diagnosis and treatment by an ophthalmologist; by law an optometry clinic may not, and should not, handle it. Please see an ophthalmologist as soon as possible. Once your eye has been treated and you need glasses, come and see us then.',
   },
   {
-    q: 'For a child\'s first vision check, ophthalmologist or optometry clinic?',
-    a: 'Under Taiwan\'s Optometrists Act, optometry staff may not perform refraction for children under 6 — please take them to an ophthalmologist. For ages 6 to 15 (inclusive), before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia; all refraction in this age group is carried out under an ophthalmologist\'s guidance. On that basis we can work alongside the physician on vision assessment and prescription tracking, and if anything unusual comes up we will suggest further examination by an ophthalmologist. The two roles work together — it is not an either-or choice.',
+    q: 'If a problem turns up during the exam, how does the optometry clinic refer you?',
+    a: 'If vision won\'t correct to normal however the power is changed, or something possibly abnormal turns up during the exam, the optometry staff stop the fitting first and refer you to an ophthalmologist under Article 12, Paragraph 3 of Taiwan\'s Optometrists Act. As Article 6, Paragraph 3 of the Enforcement Rules requires, they fill in a referral form, writing down the prescription and vision measured that day so the doctor has one more piece of information. The optometry clinic works in coordination with the ophthalmologist, each sticking to their own expertise: optometry staff don\'t make a diagnosis or guess at the cause; once the doctor has examined you and confirmed glasses are appropriate, you come back and we finish your glasses.',
+  },
+  {
+    q: 'How much does an eye exam at an optometry clinic cost?',
+    a: 'A full eye exam is charged as a separate fee, the same at both our Xinzhuang and Banqiao stores; call either store and they will tell you the amount. If you come back for glasses within six months of the exam, the exam fee is included in the cost of your glasses; bringing your own frame and replacing only the lenses counts as getting glasses too, and if you get glasses at the other store, please bring your exam receipt. The separate fee only applies if you have the exam without getting glasses. Ophthalmology outpatient visits are covered by National Health Insurance; an optometry clinic is not a medical institution, so the exam and glasses are paid out of pocket. Our fee schedule is displayed somewhere clearly visible in each store as required by Article 19 of the Optometrists Act, so you can check it yourself on site.',
   },
 ];
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": `${canonicalUrl}#faq`,
-  "inLanguage": "en",
-  "mainEntity": faqs.map(f => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
-  }))
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "Something's wrong with your eyes: eye doctor, or optometry clinic? A symptom-by-symptom triage guide",
+      "dateModified": "2026-11-24",
+      "description": "Eye doctor or optometry clinic? Sudden blur, a red, painful or light-sensitive eye, flashes or a surge of dark spots, or a missing patch of vision: see an ophthalmologist as soon as possible. Gradually blurrier vision, difficulty up close, or eyes that tire after use: start with an eye exam. For children, the law sets the order by age. Beyond Visual Optometry, Xinzhuang & Banqiao (an optometry clinic, not an eye clinic).",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guides",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "YoYo Cheng",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    },
+  ],
 };
 ---
 <Layout
   title="Eye Doctor or Optometrist? A Symptom Triage Guide | Beyond Visual"
-  description="Beyond Visual is an optometry clinic, not an eye clinic — this page tells you honestly where the line falls: which symptoms need an ophthalmologist right away (redness, pain, sudden vision loss, a surge of floaters), and which an optometry clinic can handle (prescription changes, uncomfortable glasses, fitting assessment). Xinzhuang & Banqiao, Beyond Visual Optometry."
+  description="Eye doctor or optometry clinic? Sudden blur, a red, painful or light-sensitive eye, flashes or a surge of dark spots, or a missing patch of vision: see an ophthalmologist as soon as possible. Gradually blurrier vision, difficulty up close, or eyes that tire after use: start with an eye exam. For children, the law sets the order by age. Beyond Visual Optometry, Xinzhuang & Banqiao — an optometry clinic, not an eye clinic."
   lang="en"
   schema={schema}
 >
@@ -62,31 +89,60 @@ const schema = {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">First, to be clear: we are not an eye clinic</p>
       <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
-        Something's wrong with your eyes.<br />Eye doctor, or <span class="text-brand-gold">optometry clinic</span>?
+        Something's wrong with your eyes.<br />Eye doctor, or optometry clinic?<br /><span class="text-brand-gold" style="font-size:0.6em">A symptom-by-symptom triage guide</span>
       </h1>
       <p class="text-white/70 max-w-2xl mx-auto" style="font-size:17px;line-height:1.85">
-        Plenty of people find us while searching for an "eye doctor". Beyond Visual is a licensed optometry clinic, not a medical eye clinic — so this page lays out the division of work honestly: some situations mean you should go and see a physician, and some don't need an appointment with one at all, because an optometry clinic can handle them.
+        Plenty of people find us while searching for an "eye doctor". Beyond Visual is a licensed optometry clinic, not a medical eye clinic. The worst part of walking through the wrong door isn't a wasted trip — it's treating something a doctor should see as a prescription problem, and letting it drag on.
       </p>
     </div>
   </section>
 
+  <!-- TL;DR 3秒重點（GEO：answer-first，不加標題） -->
+  <section class="px-6 md:px-16 py-10" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-sans text-brand-ink-3 tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.2em">Quick Takeaways</span>
+      <ul class="space-y-2.5">
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>A red, painful or light-sensitive eye, vision that suddenly gets worse, a sudden increase in flashes or dark spots, or a missing patch in your field of vision: please see an ophthalmologist as soon as possible.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Vision that has gradually become less clear, difficulty seeing up close, uncomfortable glasses, or eyes that feel sore and tired after use: you can start with a full eye exam at an optometry clinic.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>For children, the law sets the order by age: under 6, an ophthalmologist examines them; for ages 6 to 15, before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 快速導覽 -->
+  <section class="px-6 py-10 border-b border-brand-ink/8" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center">
+      {[
+        { label: '30-Second Triage', href: '#triage' },
+        { label: 'By Symptom', href: '#symptoms' },
+        { label: 'Children by Age', href: '#kids' },
+        { label: 'Where Optometry Staff Stop', href: '#roles' },
+        { label: 'FAQ', href: '#faq' },
+        { label: 'Author & Sources', href: '#author' },
+      ].map(item => (
+        <a href={item.href} class="font-sans bg-white border border-brand-ink/10 text-brand-ink-2 px-4 py-2 rounded-full hover:border-brand-gold hover:text-brand-gold transition-colors" style="font-size:13px">{item.label}</a>
+      ))}
+    </div>
+  </section>
+
   <!-- 分流表 -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <section id="triage" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">A 30-second triage: where should you go?</h2>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">A 30-second triage: where should your symptoms go?</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-white border-t-4 p-8" style="border-top-color:#b0413e">
-          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">See an ophthalmologist</h3>
-          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">These fall under eye disease and need a physician's diagnosis and treatment — please seek medical care promptly</p>
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">Symptoms that need a doctor's diagnosis</h3>
+          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">These fall under eye disease and need a physician's diagnosis and treatment — please seek medical care as soon as possible</p>
           <ul class="space-y-3">
             {[
               'A red, swollen or painful eye, discharge, or light sensitivity',
-              'Vision that dropped suddenly, one eye that cannot see, or a missing part of your visual field',
-              'A sudden surge of floaters, especially with flashes of light',
-              'Eye injury or a foreign body in the eye',
-              'Vision checks for children under 6 (a medical assessment — please have an ophthalmologist perform it)',
+              'Vision that suddenly gets worse, one eye that cannot see, or a missing part of your visual field',
+              'A sudden surge of floaters, together with flashes of light',
+              'An eye injury, or something in your eye',
+              'A child under 6 who needs an eye exam or glasses (optometry staff may not perform refraction for them by law — please have an ophthalmologist examine them)',
+              'A child aged 6 to 15 getting their first refraction and glasses (a physician must first confirm the myopia is not pseudomyopia)',
               'Routine retinal follow-up for chronic conditions such as diabetes or high blood pressure',
             ].map(item => (
               <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">
@@ -96,16 +152,18 @@ const schema = {
           </ul>
         </div>
         <div class="bg-white border-t-4 border-brand-gold p-8">
-          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">An optometry clinic can handle it</h3>
-          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">Refraction and dispensing questions need no medical appointment — a licensed optometrist assesses them in full</p>
+          <h3 class="font-serif text-brand-ink mb-2" style="font-size:21px;font-weight:400">What an optometry clinic can handle</h3>
+          <p class="text-brand-ink-3 mb-5" style="font-size:13.5px">Refraction and glasses questions need no medical appointment — licensed optometry staff assess them in full</p>
           <ul class="space-y-3">
             {[
               'Things gradually looking less clear, and you want to check whether your prescription has changed',
-              'Glasses that leave you dizzy or tired, and that no adjustment seems to fix',
-              'Wanting new glasses, progressive lenses, or lenses fitted into a bring-your-own frame',
+              'Glasses that leave you dizzy or tired, and that no adjustment seems to make comfortable',
+              'Wanting new glasses, progressive lenses, or lenses fitted into your own frame',
               'Sore eyes after long hours on screens, and wanting a vision assessment',
-              'Prescription tracking and fitting assessment for children aged 6 and over (ages 6–15: the first pair needs a physician to confirm it is not pseudomyopia, and refraction is carried out under an ophthalmologist\'s guidance)',
-              'General contact lens wear assessment, and frame adjustment and repair',
+              'Children aged 6 to 15 who already have glasses: prescription tracking and fitting assessment (carried out under an ophthalmologist\'s guidance, as the law requires)',
+              'Over 15: eye exams and glasses directly',
+              'General contact lens fitting (under an ophthalmologist\'s guidance for those 15 and under; not permitted for children under 6)',
+              'Frame adjustment and repair',
             ].map(item => (
               <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">
                 <span class="text-brand-gold flex-shrink-0 mt-1" style="font-size:12px">●</span>{item}
@@ -115,36 +173,69 @@ const schema = {
         </div>
       </div>
       <p class="text-brand-ink-3 mt-8 text-center max-w-2xl mx-auto" style="font-size:14px;line-height:1.8">
-        Not sure which side you fall on? Describe it to us over LINE first and we will tell you honestly where to go — <strong class="text-brand-ink">telling you that you don't need us is part of the job too.</strong>
+        Not sure which side you fall on? You can describe your symptoms to us over LINE first. <strong class="text-brand-ink">If your eye is red, painful, or your vision suddenly went unclear, don't wait for a reply — please see an ophthalmologist as soon as possible.</strong>
       </p>
     </div>
   </section>
 
-  <!-- 分工說明 -->
-  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+  <!-- 依症狀看：聚落文章的入口 -->
+  <section id="symptoms" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">By symptom: blurry vision, sore and tired eyes, before getting glasses</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <h3 class="font-serif text-brand-navy" style="font-size:20px;font-weight:600">Vision that suddenly goes blurry</h3>
+        <p>If your vision went blurry over a few hours or a few days, please see an ophthalmologist as soon as possible. If it comes with redness, pain or light sensitivity, a sudden increase in flashes or dark spots, or a missing patch in your field of vision, don't wait at all — a new pair of glasses can't deal with these, and a doctor needs to find the cause first. If things have become less clear slowly over months or a year or two — squinting to see far away, holding books and your phone at arm's length — it's usually to do with your prescription, and you can start with a full eye exam at an optometry clinic. If you can't tell which kind it is, go through the comparison table in <a href="/en/blog/blurry-vision-see-doctor/" class="text-brand-gold underline">Sudden Blurry Vision: See an Ophthalmologist Right Away, or Get an Eye Exam?</a> item by item.</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">Sore, tired eyes</h3>
+        <p>If your eye is red, swollen, painful, has discharge or is sensitive to light, please see a doctor as soon as possible. If the soreness only comes on after a stretch of screen work or reading, or switching between far and near feels like an effort, you can start with an eye exam: optometry staff can measure your prescription, your working distances, and how your two eyes do when used together. If all of that measures normal and your eyes still aren't comfortable, see an ophthalmologist. We've written these three situations up separately in <a href="/en/blog/eye-strain-see-doctor/" class="text-brand-gold underline">Eye Strain and Fatigue: Should You See an Ophthalmologist?</a></p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">Should you see an ophthalmologist before getting glasses?</h3>
+        <p>If your prescription has simply changed, you want new glasses and you're over 15, come straight to an optometry clinic — no medical appointment needed. See an ophthalmologist first and then come for glasses if you've recently had eye treatment or eye surgery, if your glasses have never managed to correct your vision fully, or if you have a chronic condition such as diabetes but haven't had a retinal exam. For children, the law sets a separate order, covered in the next section. <a href="/en/blog/eye-exam-before-glasses/" class="text-brand-gold underline">Do You Need to See an Ophthalmologist Before Getting Glasses?</a> goes through each of these cases and why.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 孩子依年齡的法定順序：一段摘要，細節連 child-vision-check-where -->
+  <section id="kids" class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Children's eyes: the law sets the order by age</h2>
+      <div class="space-y-5 text-brand-ink-2" style="font-size:17px;line-height:1.85">
+        <p>Whether a child sees an ophthalmologist first or has an eye exam first doesn't depend on what's convenient for the parents — it depends on how old the child is. Article 12 of Taiwan's Optometrists Act and Article 6 of its Enforcement Rules have already set the order by age. We've also written a separate article, <a href="/en/blog/child-vision-check-where/" class="text-brand-gold underline">My Child's Vision Isn't Good: Ophthalmologist First, or Glasses First?</a>, that covers the situations you'll run into at each age.</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">Under 6: optometry staff may not perform refraction by law</h3>
+        <p>Under Article 12 of Taiwan's Optometrists Act, optometry staff may not perform refraction for children under 6. Vision and refraction checks at this age should be carried out by an ophthalmologist.</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">Ages 6 to 15: the first time, a physician must rule out pseudomyopia</h3>
+        <p>For ages 6 to 15 (inclusive), before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia, under Article 6, Paragraph 2 of the Enforcement Rules; all refraction in this age group is carried out under an ophthalmologist's guidance. On your child's first visit to an optometry clinic, please bring the ophthalmologist's confirmation.</p>
+        <h3 class="font-serif text-brand-navy pt-4" style="font-size:20px;font-weight:600">Over 15: you can go straight to optometry staff</h3>
+        <p>The law's "15 and under" includes age 15, so a child can come straight for an eye exam and glasses from age 16. At any age, a red, painful or light-sensitive eye, or vision that suddenly goes unclear, should be checked by an ophthalmologist first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 眼科醫師和驗光人員各自做什麼 -->
+  <section id="roles" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">Ophthalmologists and optometry clinics divide the work — they don't compete</h2>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">Where the work of optometry staff stops</h2>
       </div>
       <div class="space-y-5 text-brand-ink-2" style="font-size:16.5px;line-height:1.9">
-        <p>An <strong>ophthalmologist</strong> looks after the "health" of your eyes: diagnosing disease, treatment, surgery, and medical procedures such as dilated examination. An <strong>optometry clinic</strong> looks after the "visual quality" of your eyes: full refraction, binocular vision assessment, and lens fitting and adjustment, carried out by licensed optometrists under Taiwan's Optometrists Act.</p>
-        <p>The two sides cover for each other constantly: once an ophthalmologist has treated an eye condition, the fine work of fitting glasses comes to the optometry clinic; and if during a vision exam we find that vision cannot be effectively corrected, or something looks unusual, we refer you to an ophthalmologist as the law requires. Your eyes need both kinds of expertise — it's just that different situations call for a different door.</p>
-        <p>So if you landed here searching for an "eye doctor", start with the triage list above. If you genuinely need medical care, please don't delay it. And if it turns out to be a glasses problem, you're in the right place.</p>
+        <p>An <strong>ophthalmologist</strong> looks after the "health" of your eyes: diagnosing disease, treatment, medication and surgery — and dilated examination is a medical act too. <strong>Optometry staff</strong> look after the "visual quality" of your eyes: carrying out refraction and dispensing under Article 12 of Taiwan's Optometrists Act — measuring your prescription, assessing how your two eyes work together, measuring fitting parameters, and adjusting frames.</p>
+        <p>At both Beyond Visual stores, in Xinzhuang and Banqiao, every eye exam includes a binocular vision assessment, and an exam takes about 45–60 minutes. Our stores have no tonometer or visual field analyzer, and we don't measure axial length, test for dry eye, or dilate pupils; please see an ophthalmologist for these.</p>
+        <p>During the exam, if lens after lens goes in and your vision still never reaches normal, the optometry staff stop there and don't move on to glasses. Under Article 12, Paragraph 3 of the Optometrists Act, anyone whose vision cannot be corrected to normal shall be referred to a medical institution for diagnosis and treatment. How the two licenses, their scope of work and National Health Insurance differ is the subject of <a href="/en/blog/optometry-vs-ophthalmology/" class="text-brand-gold underline">Optometrist vs Ophthalmologist in Taiwan</a>.</p>
+        <p>A full eye exam is charged as a separate fee. If you have the exam without getting glasses, that fee is what you pay; if you decide to get glasses within six months of the exam, the fee is included in the cost of your glasses. If the exam stops at a referral, the optometry staff will fill in a referral form for you and explain on the spot how the fee works. We've listed how other situations work, one by one, in <a href="/blog/eye-exam-cost/" class="text-brand-gold underline">an eye exam without glasses</a> (in Chinese).</p>
+        <p>If you landed here searching for an "eye doctor" and you genuinely need medical care, please don't delay it. If it turns out to be a glasses problem, you're in the right place.</p>
       </div>
       <div class="mt-10 text-center">
         <a href="/en/booking/"
           class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
-          style="font-size:15px;letter-spacing:0.08em">See available times</a>
+          style="font-size:15px;letter-spacing:0.08em">Book online</a>
         <p class="text-brand-ink-3 mt-4" style="font-size:13px;letter-spacing:0.05em">A consultation is not a commitment to buy · No sales pressure · Reschedule any time</p>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+  <section id="faq" class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">Frequently Asked Questions</h2>
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">Eye doctor or optometry clinic: frequently asked questions</h2>
       </div>
       <div class="space-y-6">
         {faqs.map((faq, i) => (
@@ -160,10 +251,50 @@ const schema = {
     </div>
   </section>
 
+  <!-- 關於作者與資料來源（E-E-A-T）：作者框照抄已審英文指南版本（aniseikonia） -->
+  <section id="author" class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">About the author and sources</h2>
+      <div class="flex gap-5 items-start bg-white rounded-2xl border border-brand-ink/10 p-6 mb-8">
+        <img src="/images/yoyo-optometrist.webp" alt="Optometrist YoYo (Cheng Chia-Yu)" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">YoYo (Cheng Chia-Yu), Optometrist</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">Optometrist License No. 003309 | Graduate of Yuanpei University of Medical Technology | Former Lecturer, New Taipei City Optometrists Association</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">Lead optometrist at Beyond Visual Optometry × BiYang Optometry Clinic, specializing in clinical vision exams, binocular vision assessment, progressive lens fitting and children's myopia tracking.</p>
+          <a href="/en/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">Meet Optometrist YoYo →</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+        <figure>
+          <img src="/images/yoyo-examination.webp" alt="Licensed optometry staff carrying out a full eye exam, Beyond Visual Xinzhuang" width="680" height="510" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Full eye exam: prescription and binocular vision assessment</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/instrument-phoropter.webp" alt="TOPCON phoropter, BiYang Optometry Clinic Xinzhuang" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Phoropter: comparing the prescription step by step</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/store-xinzhuang-exam-room.webp" alt="Exam room, Beyond Visual Xinzhuang store" width="1200" height="900" loading="lazy" class="w-full rounded-xl object-cover" style="aspect-ratio:4/3" />
+          <figcaption class="text-brand-ink-3 mt-2" style="font-size:13px">Xinzhuang exam room</figcaption>
+        </figure>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">Sources</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'Optometrists Act (Laws & Regulations Database of the ROC, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+          { t: 'Enforcement Rules of the Optometrists Act (Laws & Regulations Database of the ROC, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020194' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">The age order and referral rules follow the original text of the two regulations above. Symptoms are only a cue to seek medical care; the cause and the diagnosis are an ophthalmologist's responsibility. How symptoms are sorted, and what is measured during an exam, reflect how our Xinzhuang and Banqiao stores work in practice. Last updated: November 24, 2026.</p>
+    </div>
+  </section>
+
   <!-- 聚落文章 -->
   <section class="px-6 md:px-16 py-20 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Read more: related articles</h2>
+      <h2 class="font-serif text-brand-ink mb-10" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Articles: eye doctor or optometry clinic?</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {clusterPosts.map(post => (
           <a href={`/en/blog/${post.slug}/`} class="rounded-2xl p-7 border border-brand-ink/10 hover:border-brand-gold transition-colors group" style="background:#f7f3ec">

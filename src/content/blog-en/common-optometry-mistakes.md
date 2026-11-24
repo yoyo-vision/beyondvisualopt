@@ -42,7 +42,7 @@ A prescription measured while accommodation is tensed up often comes out **too s
 
 This is especially common in children and teenagers, and it's why, in certain cases, **an ophthalmologist may assess whether a cycloplegic (dilated) refraction is needed** — letting the ciliary muscle fully relax before measuring, so the result is closer to the true prescription. That assessment is a physician's scope of practice, and we refer you to an ophthalmologist when it's called for.
 
-For adults, getting enough sleep before the exam, avoiding long stretches of close-up work beforehand, and having the optometrist choose the right combination of subjective and objective refraction techniques all help reduce this kind of error.
+For adults, getting enough sleep before the exam, avoiding long stretches of close-up work beforehand, and having the optometry staff choose the right combination of subjective and objective refraction techniques all help reduce this kind of error.
 
 ---
 
@@ -72,9 +72,9 @@ Some people have asymmetric left and right PDs, and estimating by simply dividin
 
 ## Mistake 5: Walking out right after the exam, with no trial fitting to confirm
 
-The final step of the fitting process should be **trying the glasses on and confirming the visual quality in front of the optometrist**—not "we'll mail the finished lenses to you, come back if there's a problem."
+The final step of the fitting process should be **trying the glasses on and confirming the visual quality in front of the optometry staff**—not "we'll mail the finished lenses to you, come back if there's a problem."
 
-This is especially true for progressive multifocal lenses. At pickup, you should confirm the following in front of the optometrist:
+This is especially true for progressive multifocal lenses. At pickup, you should confirm the following in front of the optometry staff:
 
 - Are the distance, intermediate, and near zones each clear?
 - Does the balance between the two eyes feel right?

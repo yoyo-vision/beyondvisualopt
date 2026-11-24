@@ -56,7 +56,7 @@ There's an interesting detail hidden in this table: **for someone who already ha
 | **Is there an upper limit to ADD?** | It generally stabilizes after a certain age, once accommodation has largely bottomed out |
 | **Is a higher ADD always better?** | No — too high pushes your clear near point uncomfortably close |
 
-One note: everything above describes **general trends and calculation logic.** In practice, the ADD that's right for you depends on your working distance, visual habits, and binocular coordination — it has to be **measured by a licensed optometrist.** This article is only meant to explain the terminology and the math.
+One note: everything above describes **general trends and calculation logic.** In practice, the ADD that's right for you depends on your working distance, visual habits, and binocular coordination — it has to be **measured by licensed optometry staff.** This article is only meant to explain the terminology and the math.
 
 ---
 
@@ -68,7 +68,7 @@ The same +2.00 addition can become a fixed reading pair, a progressive lens, or 
 
 One more thing worth saying early: **higher ADD is not better.** The more the lens adds, the closer it pulls your sharpest working distance. Someone gets a pair that reads a newspaper beautifully and then finds the computer screen has gone soft — that isn't a mistake, it's a pair built for a nearer distance. How much ADD you need depends on where you spend your day looking, not on an age chart.
 
-So reading your prescription is step one. Step two is telling your optometrist what distances you actually work at. That sentence matters more than 0.25 either way on the ADD.
+So reading your prescription is step one. Step two is telling the optometry staff what distances you actually work at. That sentence matters more than 0.25 either way on the ADD.
 
 ## Common Misunderstandings / FAQ
 

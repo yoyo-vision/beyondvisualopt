@@ -82,7 +82,7 @@ Beyond horizontal PD, progressives require the **fitting height** — the vertic
 
 A frame that has gone crooked (uneven nose pads, asymmetric temple tension) tilts the lenses and shifts the optical centers away from their designed positions. This is the main reason behind "the glasses were fine at first, but I started getting dizzy a few months later."
 
-> **What to do:** Return to the store and ask for your PD and fitting height to be re-measured while wearing the glasses, and have the optometrist adjust the frame's levelness, nose pads, and temple tension. For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge — many people simply don't know they can ask for it.
+> **What to do:** Return to the store and ask for your PD and fitting height to be re-measured while wearing the glasses, and have the optometry staff adjust the frame's levelness, nose pads, and temple tension. For glasses fitted at Beyond Visual, frame adjustments after pickup are included at no extra charge — many people simply don't know they can ask for it.
 
 ---
 
@@ -102,7 +102,7 @@ Different brands and product lines vary enormously in three design parameters:
 
 **Another common scenario:** The frame is too small, the progressive corridor gets truncated, and the near zone isn't fully preserved within the frame — so you can never find a stable near focus.
 
-> **What to do:** Before ordering, tell your optometrist in detail about your main visual environment (office / outdoors / roughly half and half), your habitual reading distance (30cm / 40cm / 60cm), and how many hours per day you spend at each distance. This information determines which lens design is right for you — it should never be guessed.
+> **What to do:** Before ordering, tell the optometry staff in detail about your main visual environment (office / outdoors / roughly half and half), your habitual reading distance (30cm / 40cm / 60cm), and how many hours per day you spend at each distance. This information determines which lens design is right for you — it should never be guessed.
 
 ---
 

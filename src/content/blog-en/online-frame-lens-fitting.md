@@ -51,13 +51,13 @@ You can get a specific quote by visiting in person or messaging us on LINE — w
 
 ---
 
-## Can Any Frame Be Fitted? The Optometrist Checks the Frame's Condition First
+## Can Any Frame Be Fitted? Our Optometry Staff Check the Frame's Condition First
 
-New frames, designer frames, worn old frames, secondhand or vintage frames — all welcome. But before we start, **the optometrist will check the frame's condition and material** — this step protects your frame; it's not a hurdle we're putting up.
+New frames, designer frames, worn old frames, secondhand or vintage frames — all welcome. But before we start, **our optometry staff will check the frame's condition and material** — this step protects your frame; it's not a hurdle we're putting up.
 
 Here's the practical reason: disassembling, drilling, and fitting a frame inherently puts some stress on it. New frames are usually fine, but frames that are aged, well-worn, or naturally more brittle carry a real risk of damage during the process. Our approach is:
 
-1. The optometrist evaluates the frame's condition first and determines whether it's suitable for fitting.
+1. Our optometry staff evaluate the frame's condition first and determine whether it's suitable for fitting.
 2. If there's a risk of damage, **we'll tell you upfront**, and we start only once you agree.
 3. If, after evaluation, it's genuinely not suitable, we'll recommend against it directly, so we don't risk damaging a frame you care about.
 
@@ -83,7 +83,7 @@ No. Cost is lens price plus a fitting fee; the fitting fee depends on the frame 
 
 **Q4: My frame looks a bit worn — can it still be fitted?**
 
-Let the optometrist take a look first. If the frame's condition allows it, we can proceed. If the material has aged or the risk of damage is higher, we'll explain the risk clearly and proceed only with your agreement, or recommend against it if it's not a good idea. Proceeding only after evaluation and agreement is our standard practice.
+Let our optometry staff take a look first. If the frame's condition allows it, we can proceed. If the material has aged or the risk of damage is higher, we'll explain the risk clearly and proceed only with your agreement, or recommend against it if it's not a good idea. Proceeding only after evaluation and agreement is our standard practice.
 
 ---
 

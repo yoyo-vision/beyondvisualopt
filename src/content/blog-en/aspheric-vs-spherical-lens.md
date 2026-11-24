@@ -46,7 +46,7 @@ One thing worth flagging: these are all **optical differences that come from the
 
 Looking purely at peripheral vision and lens profile, aspheric is genuinely the mainstream choice today, and most lenses on the market default to an aspheric design. Whether it's worth stepping up to double-aspheric depends on your prescription and needs. For lower prescriptions, the peripheral difference between spherical and aspheric is already fairly small, and you may not even notice it while wearing them. On the other hand, if your prescription is strong, your frame is large, and you frequently glance to the sides, the peripheral stability of aspheric — or even double-aspheric — design becomes much more noticeable.
 
-Put plainly: aspheric isn't "the more surfaces, the more expensive, the better it must be for you." It comes down to **your prescription, your frame size, and your visual habits** — which is exactly the kind of thing worth asking a licensed optometrist to walk you through when you're getting fitted.
+Put plainly: aspheric isn't "the more surfaces, the more expensive, the better it must be for you." It comes down to **your prescription, your frame size, and your visual habits** — which is exactly the kind of thing worth asking our licensed optometry staff to walk you through when you're getting fitted.
 
 ## Common Misconceptions / FAQ
 
@@ -57,8 +57,8 @@ Aspheric design mainly improves **peripheral** distortion and the lens's overall
 No. Refractive index is about "how strongly the material bends light," which determines thickness. Aspheric is about "how the surface curve is designed," which determines peripheral distortion and flatness. The two can be freely combined — for example, "1.67 aspheric" means a high-index material paired with an aspheric design.
 
 **Q: I'm used to spherical lenses — will switching to aspheric feel strange?**
-Most people don't notice any real discomfort switching to aspheric — if anything, the periphery tends to feel more natural. A small number of people are more sensitive to changes in peripheral imagery and may need a short adjustment period. If something still feels off after the switch, bring your glasses back in and have an optometrist check whether the parameters need adjusting.
+Most people don't notice any real discomfort switching to aspheric — if anything, the periphery tends to feel more natural. A small number of people are more sensitive to changes in peripheral imagery and may need a short adjustment period. If something still feels off after the switch, bring your glasses back in and have our optometry staff check whether the parameters need adjusting.
 
 ---
 
-Spherical and aspheric aren't about "clearer vs. blurrier" — the real difference is in **peripheral vision and lens profile.** Once you understand that, you'll know exactly what you're paying for in the design. If you'd like to compare a spherical and an aspheric lens side by side, come by Beyond Visual Optometry's Xinzhuang or Banqiao store, and an optometrist will walk you through it based on your prescription and frame.
+Spherical and aspheric aren't about "clearer vs. blurrier" — the real difference is in **peripheral vision and lens profile.** Once you understand that, you'll know exactly what you're paying for in the design. If you'd like to compare a spherical and an aspheric lens side by side, come by Beyond Visual Optometry's Xinzhuang or Banqiao store, and our optometry staff will walk you through it based on your prescription and frame.

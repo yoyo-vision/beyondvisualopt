@@ -2,7 +2,7 @@
 title: "Glass vs. Resin Lenses: What's the Real Difference, and Is Glass Still Worth Choosing? | Beyond Visual Optometry"
 date: 2026-07-27
 tag: "Lenses"
-excerpt: "Glass lenses resist scratches and deliver cleaner optics, yet they've nearly disappeared from Taiwan's optical shops. Resin is lighter, safer, and easier to coat or tint — which is why it's now over 90% of what gets fitted. This guide breaks down weight, thickness, Abbe number, scratch resistance, and impact safety, and explains who still genuinely benefits from glass. At Beyond Visual Optometry in Xinzhuang and Banqiao, an optometrist reviews your prescription, frame, and daily visual habits before explaining which material actually fits you."
+excerpt: "Glass lenses resist scratches and deliver cleaner optics, yet they've nearly disappeared from Taiwan's optical shops. Resin is lighter, safer, and easier to coat or tint — which is why it's now over 90% of what gets fitted. This guide breaks down weight, thickness, Abbe number, scratch resistance, and impact safety, and explains who still genuinely benefits from glass. At Beyond Visual Optometry in Xinzhuang and Banqiao, our optometry staff review your prescription, frame, and daily visual habits before explaining which material actually fits you."
 image: ""
 youtube: ""
 instagram: ""
@@ -44,7 +44,7 @@ Who feels this most?
 
 - **People with high myopia**: the lenses are already thick and heavy, and doubling that weight — your nose bridge will tell you the honest answer by the end of the day. (Related: [Complete Guide to High Myopia Glasses](/en/guide/high-myopia/))
 - **Progressive lens wearers**: extra weight drags the frame down, and once the frame slips, the lens's optical center stops lining up with your pupil. For progressives, that means the whole distance/intermediate/near zone layout shifts upward — you tilt your head back further to see the screen and drop your gaze further to see the ground. **Progressives are the design that can least afford a slipping frame.**
-- **Presbyopia patients**: a pair of glasses worn from morning to night puts cumulative load on your nose and ears. Lighter isn't a luxury here — it's the difference between making it through the whole day comfortably or not.
+- **People with presbyopia**: a pair of glasses worn from morning to night puts cumulative load on your nose and ears. Lighter isn't a luxury here — it's the difference between making it through the whole day comfortably or not.
 
 ### 2. Refractive Index and Thickness: Glass Can Get Thinner Than Resin Can
 
@@ -136,7 +136,7 @@ And progressives are really the final answer. Today's high-end progressive desig
 | **Progressive lenses** | Almost nonexistent on the market | Mainstream |
 | **Availability in Taiwan shops** | Extremely low, usually special order | Over 90% |
 
-> Figures in this table are general guidelines — actual results vary by manufacturer formula and lens design. The combination that's actually right for you can only be determined by an optometrist who has reviewed your prescription, your frame, and your daily visual habits.
+> Figures in this table are general guidelines — actual results vary by manufacturer formula and lens design. The combination that's actually right for you can only be determined by optometry staff who have reviewed your prescription, your frame, and your daily visual habits.
 
 ---
 
@@ -167,7 +167,7 @@ There are cases — the conditions are just specific. These situations are worth
 Outside these three cases, resin is almost always the more sensible answer. In particular, we'd tell these groups directly not to bother considering glass:
 
 - **Office workers staring at screens 8–12 hours a day**: what you need is a pair of glasses that can stay on your face all day without bothering you — weight and frame stability directly determine whether you're still comfortable by the afternoon. Screen-heavy users often also want anti-reflective coating and blue-light filtering, and both integrate more maturely with resin. (Related: [Complete Guide to Digital Eye Strain](/en/guide/digital-eye-strain/))
-- **Presbyopia patients wearing progressives**: as covered above, glass options are essentially nonexistent, and frame slippage from the extra weight directly disrupts progressive zone alignment.
+- **People with presbyopia wearing progressives**: as covered above, glass options are essentially nonexistent, and frame slippage from the extra weight directly disrupts progressive zone alignment.
 - **Commuters, anyone active in sports, parents of young kids, or anyone in a workplace with impact risk**: this one doesn't need explaining.
 - **Anyone wanting rimless, semi-rimless, photochromic, or gradient tinting**: the material itself doesn't support it.
 
@@ -177,11 +177,11 @@ Outside these three cases, resin is almost always the more sensible answer. In p
 
 **Q: Does anyone still use glass lenses today?**
 
-Yes, but the share is extremely small, and in Taiwan it's usually a special-order item. The people who still use glass generally fall into three groups: very high prescriptions where thickness matters more than even a 1.74 resin lens can satisfy; static, low-impact visual environments with extreme sensitivity to scratches; and a small number of cases needing specific optical specs. Special orders usually take longer to complete. For everyday glasses, progressives, rimless frames, or photochromic/tinted needs, the market is almost entirely resin. Whether it's right for you should be assessed by an optometrist who has reviewed your prescription and frame.
+Yes, but the share is extremely small, and in Taiwan it's usually a special-order item. The people who still use glass generally fall into three groups: very high prescriptions where thickness matters more than even a 1.74 resin lens can satisfy; static, low-impact visual environments with extreme sensitivity to scratches; and a small number of cases needing specific optical specs. Special orders usually take longer to complete. For everyday glasses, progressives, rimless frames, or photochromic/tinted needs, the market is almost entirely resin. Whether it's right for you should be assessed by optometry staff who have reviewed your prescription and frame.
 
 **Q: Do resin lenses scratch easily?**
 
-The raw resin material is indeed softer than glass, but every resin lens today ships with a hard coating, and scratch resistance is far better than older products — under normal use, it should last the full lifespan of a pair of glasses. What actually scratches lenses is usually cleaning habits: wiping dry, using your shirt, or setting them face-down on a table are the three most damaging things you can do. The right way is to rinse off surface dust with water first, then wipe with a clean, dedicated lens cloth. If your environment is unusually dusty, you can discuss coating options with your optometrist when getting fitted.
+The raw resin material is indeed softer than glass, but every resin lens today ships with a hard coating, and scratch resistance is far better than older products — under normal use, it should last the full lifespan of a pair of glasses. What actually scratches lenses is usually cleaning habits: wiping dry, using your shirt, or setting them face-down on a table are the three most damaging things you can do. The right way is to rinse off surface dust with water first, then wipe with a clean, dedicated lens cloth. If your environment is unusually dusty, you can discuss coating options with our optometry staff when getting fitted.
 
 **Q: Are glass lenses actually clearer?**
 
@@ -193,7 +193,7 @@ Anti-reflective coating, yes — glass is actually where coating technology star
 
 **Q: Will glass be thinner for high myopia?**
 
-Somewhat, since glass can reach a refractive index of 1.80 or 1.90, while resin tops out around 1.74 in the mainstream. But there's another cost to factor in: high-index glass has a higher density, so the thinness you gain comes at the cost of a heavier lens pressing on your nose bridge, and Abbe number also drops at higher indices for glass. In practice, frame size matters too — the bigger the frame and lens diameter, the more the thickness and weight penalty shows up. So for high prescriptions trying to minimize thickness, material is only one variable; frame size choice often matters more. We'd suggest bringing your current glasses in so an optometrist can compare directly before deciding.
+Somewhat, since glass can reach a refractive index of 1.80 or 1.90, while resin tops out around 1.74 in the mainstream. But there's another cost to factor in: high-index glass has a higher density, so the thinness you gain comes at the cost of a heavier lens pressing on your nose bridge, and Abbe number also drops at higher indices for glass. In practice, frame size matters too — the bigger the frame and lens diameter, the more the thickness and weight penalty shows up. So for high prescriptions trying to minimize thickness, material is only one variable; frame size choice often matters more. We'd suggest bringing your current glasses in so our optometry staff can compare directly before deciding.
 
 ---
 
@@ -201,11 +201,11 @@ Somewhat, since glass can reach a refractive index of 1.80 or 1.90, while resin 
 
 Whichever side you land on, there's an old saying that fits perfectly here: **no material, however good, can perform if the measurements are off or the fit is wrong.**
 
-Glass's low dispersion can't rescue a misaligned optical center. Resin's light weight can't make up for a poorly adjusted frame. The order that determines how comfortable your glasses actually feel is always: "refraction accuracy → fitting parameters → frame adjustment → lens material and design." Material comes last on that list — not because it doesn't matter, but because it only pays off once the first three are already right. (Related: [A Good Optometrist Matters More Than a Good Lens](/en/guide/why-optometrist-matters/))
+Glass's low dispersion can't rescue a misaligned optical center. Resin's light weight can't make up for a poorly adjusted frame. The order that determines how comfortable your glasses actually feel is always: "refraction accuracy → fitting parameters → frame adjustment → lens material and design." Material comes last on that list — not because it doesn't matter, but because it only pays off once the first three are already right. (Related: [Choosing Good Optometry Staff Beats Choosing a Good Lens](/en/guide/why-optometrist-matters/))
 
 So if you're on the fence about material, the most direct way to decide is exactly what that customer did: pick up both kinds of lenses and feel the weight difference in your hand. No spec sheet will ever give you that feeling.
 
-Come by either Beyond Visual Optometry location — an optometrist will review your prescription and frame, talk through what you actually look at every day, and explain which material genuinely fits you.
+Come by either Beyond Visual Optometry location — our optometry staff will review your prescription and frame, talk through what you actually look at every day, and explain which material genuinely fits you.
 
 - **Xinzhuang store (Biyang Optometry Clinic):** No. 419-1, Zhongzheng Road, Xinzhuang District, New Taipei City | +886-2-2206-6700
 - **Banqiao store (Beyond Visual Optometry Clinic):** +886-2-2253-1246

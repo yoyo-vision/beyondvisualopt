@@ -23,7 +23,7 @@ This article is here to help you understand **what actually matters when getting
 | | Optometry Clinic | Regular Glasses Shop |
 |--|------|----------|
 | Legal basis | Optometrists Act | Standard business registration |
-| Exam qualification | Licensed optometrist required | Must set up an in-store optometry office staffed by licensed optometry personnel |
+| Exam qualification | Licensed optometry staff required | Must set up an in-store optometry office staffed by licensed optometry personnel |
 
 Under Article 4 of the Enforcement Rules of the Optometrists Act, a glasses shop that wants to perform vision exams must set up a registered optometry office in the store.
 
