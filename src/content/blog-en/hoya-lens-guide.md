@@ -1,5 +1,5 @@
 ---
-title: "The Complete Guide to HOYA Lenses: Japanese Optical Craftsmanship for Your Everyday Vision Needs"
+title: "HOYA Lens Series Explained: Single Vision, Progressive, Indoor and Driving"
 date: "2026-06-24"
 tag: "Lenses"
 excerpt: "Nulux, Hilux, MyStyle V+, Balansis, Sync III — HOYA's series names run on and on, but they really sort by use into four groups: single vision, progressive, indoor and reading, and driving. Within each group, the series step up by design tier. Beyond Visual Optometry is a HOYA dealer and fits HOYA lenses at both its Xinzhuang and Banqiao stores; our licensed optometry staff explain how the series divide and which kind of design each one is."
