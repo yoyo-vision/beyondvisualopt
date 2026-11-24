@@ -24,7 +24,7 @@ The real question was never "do I have presbyopia" — it's **how you're going t
 | Progressive multifocal lenses | Need distance, intermediate, and near all in one pair | Requires precise fitting and an adaptation period |
 | Bifocal lenses | Budget-conscious, comfortable with a visible dividing line | Visible line on the lens; gap in intermediate vision |
 
-**People whose work is mostly close-range aren't necessarily good candidates for progressives** — this is something many Banqiao customers hear for the first time only after they've come into the store. The right option should be recommended by a licensed optometrist based on your lifestyle, not just whatever's most expensive. For a deeper look at how each option actually works, see our [complete guide to progressive lenses](/en/guide/).
+**People whose work is mostly close-range aren't necessarily good candidates for progressives** — this is something many Banqiao customers hear for the first time only after they've come into the store. The right option should be recommended by licensed optometry staff based on your lifestyle, not just whatever's most expensive. For a deeper look at how each option actually works, see our [complete guide to progressive lenses](/en/guide/).
 
 ## Thing Two: When Progressives Make You Dizzy, It's Almost Never the Lens's Fault
 
@@ -39,7 +39,7 @@ In other words: **whether progressives work out for you is half about the lens, 
 
 ## Thing Three: What a 45–60 Minute Exam Gets You That a 10-Minute One Doesn't
 
-A progressive lens prescription isn't just "a number." A full process includes intake, objective and subjective refraction, binocular vision assessment, addition-power (ADD) assessment, and measuring fitting height and pantoscopic tilt — Beyond Visual Optometry's full exam takes about 45–60 minutes, performed one-on-one by a licensed optometrist.
+A progressive lens prescription isn't just "a number." A full process includes intake, objective and subjective refraction, binocular vision assessment, addition-power (ADD) assessment, and measuring fitting height and pantoscopic tilt — Beyond Visual Optometry's full exam takes about 45–60 minutes, performed one-on-one by our licensed optometry staff.
 
 A pair of progressives fitted from a 10-minute computerized refraction has a much higher chance of causing dizziness — that's not a scare tactic, it's just optics.
 
@@ -79,11 +79,11 @@ It varies widely by brand and level of personalization; we don’t list prices o
 
 **Q: Do I have to get progressive lenses for presbyopia?**
 
-Not necessarily. Single-vision reading glasses, office lenses, and bifocals are all options. If your work is mostly close-range, office lenses may actually be more comfortable than progressives. The right choice should be recommended by a licensed optometrist based on your lifestyle.
+Not necessarily. Single-vision reading glasses, office lenses, and bifocals are all options. If your work is mostly close-range, office lenses may actually be more comfortable than progressives. The right choice should be recommended by licensed optometry staff based on your lifestyle.
 
 **Q: I got progressive lenses before and they made me dizzy — is there still hope?**
 
-It's worth getting re-checked. Dizziness is usually caused by pantoscopic tilt, fitting height, pupillary distance measurement, or frame drift — not because "you're simply not suited to progressives." Bring in your current glasses and an optometrist will go through each factor to pin down the cause.
+It's worth getting re-checked. Dizziness is usually caused by pantoscopic tilt, fitting height, pupillary distance measurement, or frame drift — not because "you're simply not suited to progressives." Bring in your current glasses and our optometry staff will go through each factor to pin down the cause.
 
 ---
 

@@ -4,7 +4,7 @@ date: 2026-07-06
 tag: "Lenses"
 excerpt: "Lens coatings determine how clear, durable, and comfortable a pair of glasses actually is. Optometrist YoYo at Beyond Visual Optometry walks you through anti-reflective, blue-light, scratch-resistant, and smudge-resistant coatings — come compare them in person at our Xinzhuang or Banqiao store."
 seoTitle: "Lens Coatings Explained | Anti-Reflective, Blue-Light, Scratch & Smudge Resistance | Beyond Visual Optometry"
-seoDescription: "What lens coatings are out there? A full breakdown of anti-reflective, hard scratch-resistant, water/oil-repellent, anti-fog, blue-light, and UV coatings, with a comparison table. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains how coating layers relate to clarity and lens lifespan."
+seoDescription: "What lens coatings are out there? A full breakdown of anti-reflective, hard scratch-resistant, water/oil-repellent, blue-light, and UV coatings, plus how anti-fog works, with a comparison table. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains how coating layers relate to clarity and lens lifespan."
 keywords: "lens coating,anti-reflective coating,blue-light coating,scratch-resistant coating,smudge-resistant coating,multi-layer coating,lens coating peeling,Xinzhuang glasses,Banqiao optometry,Beyond Visual Optometry"
 ---
 
@@ -54,9 +54,9 @@ Without this layer, a single fingerprint smears across the whole lens, and no am
 
 Fogged-up lenses while talking through a mask, walking from an air-conditioned room into the heat, or eating something hot — these are common frustrations. Anti-fog coating changes the surface tension of the lens so condensation **spreads into a thin, even, transparent film** instead of forming an opaque fog that blocks your view.
 
-This is an optional feature, especially useful for anyone who wears a mask for long periods or moves frequently between different temperatures.
-
 **What it solves:** lens fogging caused by temperature changes, masks, or heat.
+
+Neither of our stores currently offers anti-fog lenses; tell us about your work environment and we'll look at frame shape and fit instead.
 
 ---
 
@@ -87,7 +87,7 @@ Worth noting: a clear, uncoated-looking lens can still offer full UV protection 
 | Anti-Reflective (AR) | Reflections, ghosting, night-driving glare, washed-out photos | Everyone, especially frequent night drivers |
 | Hard Scratch-Resistant | Everyday wear, fine scratches | Everyone, especially heavier lens use |
 | Water/Oil-Repellent | Fingerprints, grease, water spots | Anyone who hates a constantly smudged lens |
-| Anti-Fog | Fogging from masks or temperature changes | Frequent mask-wearers, people moving between temperatures often |
+| Anti-Fog | Fogging from masks or temperature changes | Not offered at our stores |
 | Blue-Light | Visual comfort during long screen sessions | Anyone on a computer or phone more than 6 hours a day |
 | UV Protection | Cumulative burden of UV exposure | People frequently outdoors, focused on long-term eye health |
 
@@ -112,7 +112,6 @@ Not everyone needs every coating stacked on. A sensible approach starts from you
 
 - Do you drive at night often? Anti-reflective quality matters especially to you.
 - Do you stare at a screen more than 8 hours a day? Consider whether blue-light coating suits you.
-- Do you wear a mask often, or move between hot and cold environments a lot? Anti-fog will make a real difference.
 - Do your lenses get scratched up easily? Smudge-resistance and hardening should be your focus.
 
 The answers to these questions decide what coating you need — far more reliably than an ad ever could.

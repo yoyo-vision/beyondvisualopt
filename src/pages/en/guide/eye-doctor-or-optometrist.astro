@@ -22,7 +22,7 @@ const canonicalUrl = 'https://beyondvisualopt.com/en/guide/eye-doctor-or-optomet
 const faqs = [
   {
     q: 'Is Beyond Visual Optometry an eye clinic with a doctor?',
-    a: 'No. We are licensed optometry clinics (BiYang Optometry Clinic in Xinzhuang and Neng Jian Du Optometry Clinic in Banqiao). Refraction and dispensing are carried out by licensed optometrists — we are not a medical clinic and there is no physician on site. For the diagnosis and treatment of eye disease, please see an ophthalmologist. If during the exam we find that vision cannot be effectively corrected, we will assist with a referral to an ophthalmologist as required under Taiwan\'s Optometrists Act.',
+    a: 'No. We are licensed optometry clinics (BiYang Optometry Clinic in Xinzhuang and Neng Jian Du Optometry Clinic in Banqiao). Refraction and dispensing are carried out by licensed optometry staff — we are not a medical clinic and there is no physician on site. For the diagnosis and treatment of eye disease, please see an ophthalmologist. If during the exam we find that vision cannot be effectively corrected, we will assist with a referral to an ophthalmologist as required under Taiwan\'s Optometrists Act.',
   },
   {
     q: 'My vision is blurry — should I see an ophthalmologist first, or come for a vision exam?',
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'For a child\'s first vision check, ophthalmologist or optometry clinic?',
-    a: 'For children under 6, please see an ophthalmologist first for a medical assessment — under Taiwan\'s Optometrists Act, optometrists may not perform refraction for children under six. For children aged 6 to under 15, refraction must be carried out under the guidance of an ophthalmologist; on that basis we can work alongside the physician on vision assessment and prescription tracking, and if anything unusual comes up we will suggest further examination by an ophthalmologist. The two roles work together — it is not an either-or choice.',
+    a: 'Under Taiwan\'s Optometrists Act, optometry staff may not perform refraction for children under 6 — please take them to an ophthalmologist. For ages 6 to 15 (inclusive), before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia; all refraction in this age group is carried out under an ophthalmologist\'s guidance. On that basis we can work alongside the physician on vision assessment and prescription tracking, and if anything unusual comes up we will suggest further examination by an ophthalmologist. The two roles work together — it is not an either-or choice.',
   },
 ];
 
@@ -104,7 +104,7 @@ const schema = {
               'Glasses that leave you dizzy or tired, and that no adjustment seems to fix',
               'Wanting new glasses, progressive lenses, or lenses fitted into a bring-your-own frame',
               'Sore eyes after long hours on screens, and wanting a vision assessment',
-              'Prescription tracking and fitting assessment for children aged 6 and over (for children under 15 this is carried out under the guidance of an ophthalmologist, as required by law)',
+              'Prescription tracking and fitting assessment for children aged 6 and over (ages 6–15: the first pair needs a physician to confirm it is not pseudomyopia, and refraction is carried out under an ophthalmologist\'s guidance)',
               'General contact lens wear assessment, and frame adjustment and repair',
             ].map(item => (
               <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:15px;line-height:1.7">

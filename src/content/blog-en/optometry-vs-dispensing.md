@@ -2,7 +2,7 @@
 title: "Vision Exam vs. Dispensing: What's the Difference? An Optometrist Explains Two Separate Steps"
 date: "2026-07-15"
 tag: "Optometry"
-excerpt: "Getting a pair of glasses actually involves two distinct professional stages: the vision exam and dispensing. Getting the prescription right doesn't guarantee the glasses will feel right. Our optometrists at Beyond Visual Optometry (Xinzhuang and Banqiao) break down the difference."
+excerpt: "Getting a pair of glasses actually involves two distinct professional stages: the vision exam and dispensing. Getting the prescription right doesn't guarantee the glasses will feel right. Our optometry staff at Beyond Visual (Xinzhuang and Banqiao) break down the difference."
 image: ""
 youtube: ""
 instagram: ""
@@ -24,7 +24,7 @@ The vision exam (refraction/optometry) is the **measurement and assessment** sta
 
 This stage deals with "data about you and your eyes." Using equipment and a structured process, it produces a set of values and parameters suited to you—commonly known as your "prescription."
 
-In Taiwan, performing vision exams is the legally defined scope of practice for **licensed optometrists**, and is carried out by them.
+In Taiwan, vision exams are carried out by **licensed optometry staff** (optometrists and optometric technicians), within their legally defined scope of practice.
 
 ---
 
@@ -34,7 +34,7 @@ Dispensing comes after the vision exam: once you have your prescription, it cove
 
 This stage deals with "how to precisely put your prescription into the physical glasses on your face." With the exact same prescription, if the dispensing parameters aren't right, the glasses can feel very different to wear.
 
-Dispensing is just as much a professional skill. Fitting and calibrating a pair of glasses is also carried out by **licensed optometrists**.
+Dispensing is just as much a professional skill. At Beyond Visual, measurements such as pupillary distance and fitting height are taken by **licensed optometry staff**.
 
 ---
 
@@ -46,7 +46,7 @@ Dispensing is just as much a professional skill. Fitting and calibrating a pair 
 | Output | A prescription | A fitted, properly aligned pair of glasses |
 | What's being worked on | Your eyes and visual function | The frame, lenses, your face, and fit parameters |
 | Key measurements | Refractive power, add power, binocular vision | Pupillary distance, pantoscopic tilt, vertex distance, optical center alignment |
-| Performed by | Licensed optometrist | Licensed optometrist |
+| Performed by | Licensed optometry staff (by law) | At Beyond Visual, measured and calibrated by licensed optometry staff |
 
 ---
 
@@ -66,7 +66,7 @@ So "an accurate vision exam" and "accurate dispensing" are two separate hurdles,
 
 **Q: Are the vision exam and dispensing done by the same person?**
 
-In Taiwan, both the vision exam and the dispensing/fitting are within a licensed optometrist's professional scope. In practice, one optometrist might handle the whole process, or it might be divided between team members—but either way, both stages should be carried out by a qualified licensed optometrist.
+In Taiwan, vision exams must by law be performed by licensed optometry staff. The law does not restrict who may fit and adjust spectacle frames; at Beyond Visual, measurement and calibration are handled by licensed optometry staff. In practice, one staff member might handle the whole process, or it might be divided between team members.
 
 **Q: Can I just get a vision exam and take my prescription elsewhere?**
 
@@ -78,8 +78,8 @@ Entering your prescription only covers the "numbers" part. Genuine dispensing al
 
 **Q: How is "vision exam vs. dispensing" different from "optometry practice vs. ophthalmology"?**
 
-They're different. "Vision exam vs. dispensing" refers to the two stages involved in getting a pair of glasses (measuring the prescription vs. making the glasses). "Optometry practice vs. ophthalmology" refers to a professional division of labor—ophthalmologists diagnose and treat eye disease, while licensed optometrists handle refractive exams and dispensing. These are two different-level concepts, so don't mix them up.
+They're different. "Vision exam vs. dispensing" refers to the two stages involved in getting a pair of glasses (measuring the prescription vs. making the glasses). "Optometry practice vs. ophthalmology" refers to a professional division of labor—ophthalmologists diagnose and treat eye disease, while licensed optometry staff handle refractive exams and dispensing. These are two different-level concepts, so don't mix them up.
 
 ---
 
-Want to know how to tell whether a store's vision exam and dispensing process is thorough? We've put together a guide on choosing an optometry practice and optometrist. At Beyond Visual Optometry's Xinzhuang and Banqiao locations, every step from the vision exam through dispensing is handled by a licensed optometrist, with a full measurement and calibration process for every pair.
+Want to know how to tell whether a store's vision exam and dispensing process is thorough? We've put together a guide on choosing an optometry practice and optometry staff. At Beyond Visual's Xinzhuang and Banqiao stores, every step from the vision exam through dispensing is handled by our licensed optometry staff, with a full measurement and calibration process for every pair.

@@ -4,7 +4,7 @@ date: "2026-06-24"
 tag: "Lenses"
 excerpt: "HOYA is one of Japan's leading names in precision optics, with a lineup spanning single-vision lenses to personalized progressive multifocals that covers nearly every visual need. Optometrist YoYo at Beyond Visual Optometry walks you through the design logic behind each HOYA series and who it's best suited for."
 seoTitle: "HOYA Lenses Explained | Japanese Lens Brand Series Guide | Beyond Visual Optometry Xinzhuang & Banqiao"
-seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, iD progressive multifocals, and Sync III near-addition design. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains the design logic and ideal candidates for each series."
+seoDescription: "A complete guide to HOYA's lens series: Nulux single-vision, progressive multifocals, and Sync III near-addition design. Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store explains the design logic and ideal candidates for each series."
 keywords: "HOYA lenses,HOYA progressive lenses,HOYA iD,HOYA Sync III,Japanese lens brands,Xinzhuang HOYA,Banqiao HOYA lenses,Beyond Visual Optometry"
 ---
 
@@ -38,14 +38,12 @@ This isn't a reading lens, and it isn't a progressive multifocal. It has virtual
 
 ---
 
-### Progressive Multifocal Lenses: The iD Series
+### Progressive Multifocal Lenses: From Standard to Personalized Designs
 
-HOYA's iD series is its flagship progressive multifocal lens line, using a **double-surface design** — the optical design for the distance, intermediate, and near zones is distributed across both the front and back surfaces of the lens. **According to HOYA's published materials**, compared with traditional single-surface progressive designs, this approach aims for a wider field of clear vision and a shorter adaptation period.
+In a progressive lens the power changes gradually from top to bottom, so distance, intermediate and near vision all sit on one lens. HOYA's progressives come in two design tiers:
 
-The iD series comes in several versions:
-- **iD EaZi:** an entry-level progressive, suited to people trying progressive lenses for the first time
-- **iD Space:** optimized for indoor environments, suited to people who spend long hours in an office
-- **iD MySelf:** a fully personalized version, calculated from the wearer's individual fitting parameters (per HOYA's published information)
+- **Personalized: MyStyle V+, Lifestyle 4X and the iD series.** These lenses are calculated from your prescription and fitting parameters; the personalized version in the iD series, iD MySelf, sits in this tier. The fitting parameters can only be measured once the frame is chosen and on your face, so the order is placed after you pick a frame.
+- **Standard designs: Balansis, Dynamic Premium, Dynamic Summit, VisuPro and AMP+.** These follow a standard wearing-position design. People getting their first progressives with a straightforward prescription often start here.
 
 **Best for:** presbyopic wearers, older adults who need clear vision at distance, intermediate, and near ranges simultaneously, and anyone who wants to reduce how often they switch glasses.
 
@@ -80,7 +78,7 @@ Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei 
 
 **Q: Where in Banqiao can I get HOYA progressive multifocal lenses?**
 
-Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City) offers the HOYA iD progressive multifocal series, including iD EaZi, iD Space, and the personalized iD MySelf. Call +886-2-2253-1246 to book a consultation.
+Beyond Visual Optometry (No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City) is a HOYA dealer and fits HOYA progressive lenses at both the standard and personalized tiers. Call +886-2-2253-1246 to book a consultation.
 
 **Q: How does HOYA Sync III differ from a regular lens?**
 

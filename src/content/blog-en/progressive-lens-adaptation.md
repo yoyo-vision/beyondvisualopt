@@ -44,7 +44,7 @@ The areas to either side of the corridor (the left and right peripheral regions)
 - Needing to look straight ahead by lowering your chin—not your gaze—when going down stairs
 
 **Symptoms outside the normal range:**
-- Dizziness, nausea, or headache lasting more than two weeks
+- Dizziness, nausea, or headache with no improvement at all after two weeks
 - No matter how you shift your gaze, you can't find a clear near zone
 - A vertical image difference between the two eyes when looking at the same target (one eye's image sits higher than the other)
 - Clearly asymmetric proportions between the upper and lower clear zones
@@ -123,11 +123,11 @@ During adaptation, wear the progressive lenses full-time as much as possible and
 
 **Q: How long does progressive lens adaptation take?**
 
-Usually 1–4 weeks. First-time wearers typically take 2–3 weeks; switching to a new lens (a change in prescription or design) takes about 1–2 weeks. If significant discomfort persists beyond 4 weeks, we recommend coming back for an evaluation.
+Most people need 2–4 weeks. If you are only changing prescription or lens design, it is usually a little quicker than for a first-time wearer. If significant discomfort persists beyond 4 weeks, we recommend coming back for an evaluation.
 
 **Q: Is it normal for my footing to feel shaky when walking down stairs?**
 
-In the early stages, yes. The near zone of a progressive lens is at the bottom, so when you look down at the floor while walking, you land on the near zone or the transition band, and the image of the floor appears slightly blurred or distorted. During adaptation, raise your head slightly on stairs and use the upper-middle part of your gaze to look at the floor ahead.
+In the early stages, yes. The near zone of a progressive lens is at the bottom, so when you look down at the floor while walking, you land on the near zone or the transition band, and the image of the floor appears slightly blurred or distorted. During adaptation, when going down stairs, tuck your chin and tilt your head down so you see the steps through the upper part of the lens — don't just drop your eyes.
 
 **Q: My previous progressive lenses were completely unusable—does that mean progressives aren't for me?**
 

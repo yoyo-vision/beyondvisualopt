@@ -34,7 +34,7 @@ In short: **if your prescription is stable and you just want a new pair of myopi
 ## Who in Banqiao Especially Needs to Choose Carefully?
 
 ### The presbyopia crowd (45 and up)
-Fitting reading glasses and progressive multifocal lenses is significantly more demanding than fitting a standard myopia prescription. Fitting-height measurement, addition-power assessment, lifestyle analysis — every one of these steps needs to be handled by a licensed optometrist, or you risk ending up with a pair that leaves you constantly dizzy.
+Fitting reading glasses and progressive multifocal lenses is significantly more demanding than fitting a standard myopia prescription. Fitting-height measurement, addition-power assessment, lifestyle analysis — every one of these steps is best handled by licensed optometry staff, or you risk ending up with a pair that leaves you constantly dizzy.
 
 ### Children with myopia
 Kids' prescriptions change fast and need to be tracked every 3–6 months. Choosing a clinic that offers children's myopia tracking matters far more than one that sees you once and calls it done.
@@ -65,7 +65,7 @@ People staring at a screen more than 8 hours a day have a noticeably higher rate
 - Full clinical vision exams (binocular vision assessment, near-vision measurement for presbyopia)
 - Certified ZEISS partner dealer
 - HOYA lens dealer
-- Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, and MINAMOTO
+- Frame brands including Ray-Ban, OLIVER PEOPLES, EMPORIO ARMANI, BVLGARI, and MASAKI MATSUSHIMA
 - Expert precision repair and adjustment for premium frames such as Lindberg, ic! berlin, Cartier, and Chrome Hearts, plus fitting service for lenses in your own frame (repair expertise)
 - Professional progressive lens fitting and adaptation-period follow-up for presbyopia
 - Regular myopia tracking for children

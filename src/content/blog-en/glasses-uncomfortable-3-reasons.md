@@ -101,7 +101,7 @@ That last one is the most confusing for people: "I got new glasses, and my near 
 A complete refraction for people over 40 needs additional assessment of:
 - **Amplitude of accommodation:** how close your eyes can still focus
 - **Addition power (ADD):** how much compensation is needed for comfortable near vision
-- **Accommodative facility:** how quickly you can switch focus between near and far
+- **Your real working distances:** the distances at which you actually read, use your phone and look at a screen
 
 A quick, standard refraction typically skips these tests entirely, but they have a major impact on fitting comfort for people over 40.
 

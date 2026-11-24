@@ -12,6 +12,8 @@ const sections = [
     list: [
       'Online booking information: name, phone number, preferred location, appointment time, and a description of your vision needs.',
       'Information you provide when you contact us proactively.',
+      'If you choose to link LINE when booking: your LINE user ID and display name, used to send booking confirmations and reminders.',
+      'Our own anonymous traffic statistics: a randomly generated visitor code (stored in your browser\'s localStorage under the name bv_vid) records pages visited, time on page, the referring URL and campaign (UTM) parameters, whether the device is mobile, an approximate region (country/city) derived from the connection, and clicks on LINE, phone, map and review links. It contains no name or phone number, and we do not store your IP address.',
       'Website analytics data: de-identified statistical data collected via GA4 and cookies (such as pages visited, time on page, and device type), processed in a form that does not readily identify a specific individual.',
     ],
   },
@@ -23,8 +25,8 @@ const sections = [
     h: '4. Period, Region, Recipients, and Method of Use',
     list: [
       'Period: until the aforementioned collection purpose ceases, or until you request that we stop using or delete it (where the law provides a mandatory retention period, that period applies).',
-      'Region: the booking and contact data you provide directly is stored within Taiwan; however, data generated through third-party services such as GA4 and LINE may be processed on those providers\' servers outside Taiwan.',
-      'Recipients: limited to the optometry personnel and essential operating staff of our two stores; and processing by the aforementioned third-party analytics/communication services to the extent necessary.',
+      'Region: booking and contact data is stored with the cloud services we use, whose servers may be located outside Taiwan; data generated through third-party services such as GA4 and LINE may also be processed on those providers\' servers outside Taiwan.',
+      'Recipients: limited to the optometry personnel and essential operating staff of our two stores; and processing by the aforementioned cloud services and third-party analytics/communication services to the extent necessary.',
       'Method: processed and used in electronic and/or paper form, within the scope of the aforementioned purposes.',
     ],
   },
@@ -34,7 +36,7 @@ const sections = [
   },
   {
     h: '6. Cookies and Website Analytics',
-    body: 'This site uses cookies and GA4 for traffic analysis and experience optimization. You can refuse or delete cookies through your browser settings, though some features may be affected as a result. Third-party services embedded in this site are handled separately according to each service\'s terms and policies.',
+    body: 'This site uses cookies and GA4 for traffic analysis and experience optimization. You can refuse or delete cookies through your browser settings, though some features may be affected as a result. The visitor code used for our own traffic statistics is stored in localStorage, not in a cookie; clearing this site\'s data in your browser deletes it. Third-party services embedded in this site are handled separately according to each service\'s terms and policies.',
   },
   {
     h: '7. Your Rights as the Data Subject',
@@ -70,14 +72,14 @@ const sections = [
     <div class="max-w-3xl mx-auto">
       <span class="font-sans text-brand-gold tracking-widest uppercase block mb-4" style="font-size:12px;letter-spacing:0.22em">Privacy Policy</span>
       <h1 class="font-serif text-white mb-4" style="font-size:clamp(28px,4vw,44px);font-weight:300">Privacy Policy</h1>
-      <p class="text-white/60" style="font-size:15px">Last updated: July 15, 2026</p>
+      <p class="text-white/60" style="font-size:15px">Last updated: November 24, 2026</p>
     </div>
   </section>
 
   <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
     <div class="max-w-3xl mx-auto space-y-10">
       <p class="text-brand-ink-2" style="font-size:16px;line-height:1.9">
-        Beyond Visual Optometry (hereinafter "we" or "the Center") respects and protects the personal data of every visitor and customer. This policy explains how we collect, use, and protect your personal data, and the rights you have under the law.
+        This policy applies to 比泱國際有限公司 (Xinzhuang store: Beyond Visual Optometry × BiYang Optometry Clinic) and our Banqiao store (Beyond Visual Optometry × Neng Jian Du Optometry Clinic), together referred to as "we" or "the Center". The Center respects and protects the personal data of every visitor and customer. This policy explains how we collect, use, and protect your personal data, and the rights you have under the law.
       </p>
 
       {sections.map(s => (

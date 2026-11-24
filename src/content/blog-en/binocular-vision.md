@@ -2,7 +2,7 @@
 title: "What Is 'Binocular Vision'? An Optometrist Explains How Your Two Eyes Team Up"
 date: "2026-07-15"
 tag: "Optometry"
-excerpt: "We have two eyes, yet we see one single world with depth and dimension — that's binocular vision. Optometrists at Beyond Visual Optometry in Xinzhuang and Banqiao break down, in plain language, how your two eyes coordinate and the three levels behind it."
+excerpt: "We have two eyes, yet we see one single world with depth and dimension — that's binocular vision. Optometry staff at Beyond Visual Optometry in Xinzhuang and Banqiao break down, in plain language, how your two eyes coordinate and the three levels behind it."
 seoTitle: "What Is Binocular Vision? How Do Your Two Eyes Work Together? | Beyond Visual Optometry, Xinzhuang & Banqiao"
 seoDescription: "Binocular vision is the mechanism by which your brain fuses the images from your left and right eyes into a single, three-dimensional picture, made up of three levels: simultaneous perception, fusion, and stereopsis. This article explains the principle behind two-eye coordination in plain language, and why a full vision exam should assess binocular vision function. For vision exams in Xinzhuang and progressive lens fittings in Banqiao, come see us at Beyond Visual Optometry."
 keywords: "what is binocular vision, binocular vision function, stereopsis, fusion, depth perception, convergence, two-eye coordination, Xinzhuang optometry, Banqiao glasses, Beyond Visual Optometry"

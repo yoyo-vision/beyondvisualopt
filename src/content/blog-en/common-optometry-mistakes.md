@@ -1,9 +1,9 @@
 ---
-title: "5 Common Vision Exam Mistakes When Getting Glasses | A Firsthand Look from a Xinzhuang & Banqiao Optometrist"
+title: "5 Common Vision Exam Mistakes When Getting Glasses | A Firsthand Look from Optometrist YoYo in Xinzhuang"
 date: "2026-06-24"
 tag: "Optometry"
 excerpt: "\"Isn't a vision exam just picking which number looks clearer?\" That one sentence sums up the most common problem in Taiwan's eyewear market. From day-to-day clinical practice, Optometrist YoYo has pulled together the 5 most common vision exam mistakes—because plenty of people have bought several pairs of glasses without their real problem ever being solved."
-seoTitle: "Common Vision Exam Mistakes When Getting Glasses | Xinzhuang & Banqiao Optometrist Explains Why Your Glasses Still Feel Off"
+seoTitle: "Common Vision Exam Mistakes When Getting Glasses | Why Your Glasses Still Feel Off | Beyond Visual Optometry, Xinzhuang & Banqiao"
 seoDescription: "Why do new glasses cause dizziness, why is your prescription never quite right, and why do progressive lenses never feel comfortable? Optometrist YoYo at Beyond Visual Optometry's Xinzhuang store breaks down the 5 most common vision exam mistakes and what a proper fitting process should look like."
 keywords: "Optometrist YoYo, vision exam mistakes, glasses dizziness causes, inaccurate prescription, Xinzhuang optometrist, Banqiao glasses, Beyond Visual Optometry, binocular vision, uncomfortable glasses causes"
 ---

@@ -4,9 +4,11 @@ date: "2026-06-24"
 tag: "Lenses"
 excerpt: "Essilor is one of the world's largest lens manufacturing groups, with a product line spanning everyday single-vision lenses all the way to premium personalized progressives. Optometrist YoYo walks you through Essilor's core technologies and how each series is designed."
 seoTitle: "Essilor Lenses Explained | Varilux Progressive Lenses | Beyond Visual Optometry, Xinzhuang & Banqiao"
-seoDescription: "A complete introduction to Essilor's lens lineup: Varilux progressive multifocals, Eyezen digital-comfort lenses, and Crizal coatings. The French brand's design logic and who each series suits, with fitting consultations available at Beyond Visual Optometry in Xinzhuang and Banqiao."
-keywords: "Essilor lenses, Varilux progressive lenses, Eyezen, Crizal coating, French lenses, Xinzhuang Essilor, Banqiao Essilor lenses, Beyond Visual Optometry"
+seoDescription: "An overview of Essilor's Varilux, Eyezen and Crizal lines, compiled from the manufacturer's public information. Beyond Visual is not an Essilor dealer and does not order Essilor lenses; we carry ZEISS and HOYA and can compare designs side by side."
+keywords: "Essilor lenses, Varilux progressive lenses, Eyezen, Crizal coating, Beyond Visual Optometry"
 ---
+
+**Before we start: we are not an Essilor dealer, and we don't order Essilor lenses.** Beyond Visual carries ZEISS and HOYA. The Essilor details below are compiled from the manufacturer's public information, so you can compare designs side by side.
 
 ## What Kind of Brand Is Essilor?
 
@@ -71,9 +73,9 @@ The visual-quality difference between tiers within the same series is real, but 
 
 ## FAQ
 
-**Q: Where in Xinzhuang can I get a consultation on Essilor Varilux progressive lenses?**
+**Q: Can I get Essilor Varilux lenses at Beyond Visual?**
 
-At Beyond Visual Optometry (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City), our licensed optometry staff can compare Essilor Varilux objectively against the ZEISS and HOYA progressive options we carry, based on your visual habits and presbyopia level. Book at +886-2-2206-6700.
+No. We are not an Essilor dealer and do not order Essilor lenses. Our optometry staff can explain how its designs compare with the ZEISS and HOYA progressives we carry. Beyond Visual Optometry Xinzhuang (No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City): +886-2-2206-6700.
 
 **Q: Where in Banqiao can I compare Essilor with other progressive lenses?**
 

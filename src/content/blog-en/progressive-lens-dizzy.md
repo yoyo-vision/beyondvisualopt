@@ -96,7 +96,7 @@ Different brands and product lines vary enormously in three design parameters:
 |---------|------|---------|
 | **Corridor length** | Shorter corridor = higher near zone, less head-down tilt needed; but aberrations are more concentrated | Short corridor = better for small frames; long corridor = better for large frames |
 | **Near zone width** | Wider = larger usable clear field for close work | Near-oriented design vs. distance-oriented design |
-| **Aberration distribution** | Hard design = crisp far and near but abrupt transition; soft design = smooth transition but slightly narrower corridor | Depends on whether you tend to turn your head or move your eyes |
+| **Aberration distribution** | Hard design = wider clear zones for distance and near, with a shorter, narrower corridor and aberrations concentrated at the sides; soft design = wider corridor and smoother transition, with narrower distance and near zones | Depends on whether you tend to turn your head or move your eyes |
 
 **A real-world example:** If your work is mostly close-range (phone, books, documents) but you were fitted with a hard-design progressive optimized for outdoor distance vision, your ciliary muscles have to over-accommodate constantly to find a clear near zone in the lower field — leading quickly to headaches and eye strain.
 
@@ -125,13 +125,13 @@ Different brands and product lines vary enormously in three design parameters:
 - Dizziness lessens a little each day
 - Occurs mainly when shifting gaze (suddenly switching from far to near)
 - Feels normal when looking steadily at a single distance
-- Noticeably improves within 1–3 weeks
+- For most people, noticeably improves within 2–4 weeks
 
 **Signs you should go back for a recheck:**
 - No improvement — or worsening — after 4 weeks of wear
 - Instability or image "swimming" even when standing still
 - A clear difference between eyes (covering one eye vs. using both changes clarity dramatically)
-- Having to lift your head unusually high to see near objects clearly (the near zone is positioned too high)
+- Having to lift your chin to see near objects clearly (usually the near zone sits too low: the fitting height is too low or the frame has slipped down)
 
 ---
 
@@ -139,7 +139,7 @@ Different brands and product lines vary enormously in three design parameters:
 
 **Q: How long does it take to adapt to progressive lenses?**
 
-Most people need 1–4 weeks to adapt to the visual logic of the progressive zones. If you still have significant dizziness or headaches after 4 weeks, go back for a re-evaluation of the fitting parameters rather than continuing to tough it out.
+Most people need 2–4 weeks to adapt to the visual logic of the progressive zones. If you still have significant dizziness or headaches after 4 weeks, go back for a re-evaluation of the fitting parameters rather than continuing to tough it out.
 
 **Q: Can I get a refund on progressive lenses?**
 

@@ -71,7 +71,7 @@ The lens is designed with three visual zones from top to bottom: the upper part 
 - High-end designs (such as ZEISS Individual²) can be customized to your wearing habits
 
 **Cons:**
-- Requires a 1–4 week adaptation period
+- Most people need a 2–4 week adaptation period
 - Blur/distortion zones in the peripheral field of view (outside the progressive corridor)
 - Adaptation is more difficult for people with high astigmatism
 - Quality varies enormously; the comfort gap between cheap progressives and ZEISS-grade progressives is night and day

@@ -65,7 +65,7 @@ instagram: ""
 - 完整驗光，約 45–60 分鐘，每次都做雙眼視覺評估，由持照驗光人員執行
 - 蔡司 Zeiss 簽約認證經銷商
 - HOYA 鏡片經銷
-- Ray-Ban、OLIVER PEOPLES、EMPORIO ARMANI、BVLGARI、MINAMOTO 源等鏡框品牌
+- Ray-Ban、OLIVER PEOPLES、EMPORIO ARMANI、BVLGARI、MASAKI MATSUSHIMA 等鏡框品牌
 - Lindberg、ic! berlin、Cartier、Chrome Hearts 等高端鏡架精密維修調整與自帶鏡框配鏡（維修專長）
 - 老花多焦點配製與適應期追蹤
 - 學童度數追蹤（6～15 歲第一次驗光配鏡須先經醫師確診為非假性近視）

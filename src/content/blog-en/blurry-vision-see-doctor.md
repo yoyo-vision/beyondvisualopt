@@ -16,7 +16,7 @@ If your vision blurred **suddenly**—you woke up one morning, or at some specif
 
 If the blur has come on **gradually**—over the past few months signs look a little harder to read, you're holding your phone a bit farther away, your current glasses just don't feel strong enough anymore—that's usually a **refractive change**: your myopia or astigmatism has shifted, or presbyopia is starting to set in. In this case, a full eye exam at an optometry practice can re-measure your prescription and sort it out.
 
-Let's be upfront about who we are: **Beyond Visual Optometry is a licensed optometry practice (Beyond Visual Optometry / Biyang Optometry), not an ophthalmology clinic, and we don't have a physician on site.** Our licensed optometrists handle full eye exams and dispensing. Diagnosing and treating eye disease is an ophthalmologist's professional domain. If, during an exam, we find that vision can't be adequately corrected or notice a possible abnormality, we'll refer you to an ophthalmologist as required by law.
+Let's be upfront about who we are: **Beyond Visual Optometry is a licensed optometry practice (Beyond Visual Optometry / Biyang Optometry), not an ophthalmology clinic, and we don't have a physician on site.** Our licensed optometry staff handle full eye exams and dispensing. Diagnosing and treating eye disease is an ophthalmologist's professional domain. If, during an exam, we find that vision can't be adequately corrected or notice a possible abnormality, we'll refer you to an ophthalmologist as required by law.
 
 ---
 
@@ -71,11 +71,11 @@ A gradual increase in difficulty seeing at a distance is usually a change in myo
 
 **Q: My near vision keeps feeling blurry, and it gets worse the longer I look—is that presbyopia?**
 
-Around age 40, feeling near vision strain and needing to hold your phone farther away is a very common presbyopia change. You can come in for a full eye exam to confirm it and get fitted with the right lenses. Having a licensed optometrist actually measure it is the most accurate way to know for sure; if anything unusual turns up during the exam, we'll refer you to an ophthalmologist as required by law.
+Around age 40, feeling near vision strain and needing to hold your phone farther away is a very common presbyopia change. You can come in for a full eye exam to confirm it and get fitted with the right lenses. Having licensed optometry staff actually measure it is the most accurate way to know for sure; if anything unusual turns up during the exam, we'll refer you to an ophthalmologist as required by law.
 
 **Q: Where in Xinzhuang or Banqiao can I get a full eye exam?**
 
-Beyond Visual Optometry has one location each in Xinzhuang and Banqiao, staffed by licensed optometrists who handle full eye exams and dispensing. If you're not sure whether you should see an ophthalmologist or come in for an exam, feel free to talk to us first—we'll give you an honest answer.
+Beyond Visual Optometry has one location each in Xinzhuang and Banqiao, where licensed optometry staff handle full eye exams and dispensing. If you're not sure whether you should see an ophthalmologist or come in for an exam, feel free to talk to us first—we'll give you an honest answer.
 
 ---
 

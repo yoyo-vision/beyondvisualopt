@@ -71,7 +71,7 @@ They look no different from ordinary glasses, unlike traditional bifocal lenses 
 
 **What you should know:**
 
-Progressive lenses come with an adaptation period, usually 1–4 weeks. In the early stages, you may notice mild peripheral distortion and need to watch your footing while walking. This is a normal part of visual learning, and most people adapt successfully.
+Progressive lenses come with an adaptation period; for most people it takes 2–4 weeks. In the early stages, you may notice mild peripheral distortion and need to watch your footing while walking. This is a normal part of visual learning, and most people adapt successfully.
 
 But if discomfort persists well beyond the adaptation period, the issue usually isn't "you're not suited to progressives"—it's more often a problem somewhere in the fitting process: an inaccurate fitting height, an incorrectly set add power, or a frame that isn't sitting properly. In that case, we recommend coming back in for a reassessment.
 

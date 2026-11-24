@@ -44,7 +44,7 @@ For the situations below, don't hesitate—go straight to an ophthalmologist:
 - **Abnormal eye pressure or suspected glaucoma symptoms**
 - **Routine retinal exams for diabetic or hypertensive patients**
 - **Cataract evaluation, or pre-op assessment for laser vision correction**
-- **First vision screening for children under 6**
+- **Eye exams for children under 6 (optometry staff may not perform refraction on them by law)**
 
 These are all medical acts and fall under ophthalmology. Optometrists cannot—and should not—handle these problems.
 
@@ -60,7 +60,6 @@ If your needs look like the list below, an optometry clinic is the right first s
 - **It's your first time with progressive multifocal lenses and you don't know how to choose**
 - **You have high myopia and need precise measurements for your glasses**
 - **You spend long hours staring at screens with eye fatigue and want a solution**
-- **Your child is nearsighted and you want to track prescription changes regularly**
 
 These situations call for a **full optometric assessment**, not a one-line "recommend getting glasses" medical note.
 
@@ -108,7 +107,7 @@ No—you don't need to go through an ophthalmologist first to get glasses. Unles
 
 **Q: My child is nearsighted—ophthalmologist or optometry clinic?**
 
-For children under 6, we recommend starting with a full pediatric eye exam at an ophthalmologist (including cycloplegic refraction). For children over 6 who already need glasses, a full refraction and prescription tracking can be done at an optometry clinic. The two aren't mutually exclusive—many parents do both in parallel.
+Under Taiwan's Optometrists Act, optometry staff may not perform refraction for children under 6 — please take them to an ophthalmologist. For ages 6 to 15 (inclusive), before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia; all refraction in this age group is carried out under an ophthalmologist's guidance. Exams that need dilating drops (cycloplegic refraction) are done by an ophthalmologist.
 
 **Q: Can an optometry clinic prescribe dilating eye drops?**
 
@@ -135,7 +134,7 @@ Beyond Visual Optometry (No. 419-1, Zhongzheng Rd, Xinzhuang District, New Taipe
 | Dizziness or discomfort with your glasses | Optometry clinic |
 | Progressive multifocal lenses | Optometry clinic |
 | Precise fitting for high myopia | Optometry clinic |
-| Tracking a child's prescription | Optometry clinic (alongside ophthalmology) |
+| Tracking a child's prescription (ages 6–15) | Ophthalmologist first, then optometry clinic under the ophthalmologist's guidance |
 
 ---
 

@@ -22,7 +22,7 @@ const canonicalUrl = 'https://beyondvisualopt.com/en/guide/progressive-lens/';
 const faqs = [
   {
     q: 'How much do progressive lenses cost?',
-    a: 'In the Taiwan market, progressive multifocal lenses range from a few thousand to twenty or thirty thousand TWD depending on the design tier: standard designs run a few thousand, digitally optimized designs around ten thousand, and personalized custom lenses (such as ZEISS Individual²) start above twenty thousand. The price gap comes mainly from the precision of aberration control and the number of custom parameters, not simply a brand premium. We suggest a full vision exam and lifestyle vision analysis first, then choosing a tier based on your actual needs.',
+    a: 'An accurate quote is only possible after the eye exam and once a frame is chosen. The biggest source of price differences is the design tier — standard, digitally optimized, or personalized — which differ in how precisely aberrations are controlled and how many custom parameters are used, not simply a brand premium. Lens index and coatings also move the total up or down.',
   },
   {
     q: 'At what age do I start needing progressive lenses?',
@@ -99,7 +99,7 @@ const schema = {
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>A progressive lens is a continuously changing surface — one pair covers far, intermediate, and near. The corridor always has aberration zones on either side that no brand can fully eliminate; the difference is how small they can make them.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Presbyopia doesn't always mean progressives: single-vision reading glasses, office lenses, progressive multifocals, and multifocal contacts each have their place, depending on how your viewing distances are spread across a day.</span></li>
         <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>The difference between tiers within the same brand (standard / digitally optimized / personalized custom) is often larger than the difference between brands — choosing the right tier matters more than agonizing over the brand.</span></li>
-        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Dizziness has three causes: a normal adaptation period (eases over 1–3 weeks, keep wearing them), fitting parameters that weren't measured accurately, or a lens design that doesn't match. The last two won't improve no matter how long you tough it out — go back for a re-measure.</span></li>
+        <li class="flex items-start gap-3 text-brand-ink-2" style="font-size:16px;line-height:1.7"><span class="text-brand-gold mt-1 shrink-0">✦</span><span>Dizziness has three causes: a normal adaptation period (for most people it eases over 2–4 weeks; keep wearing them), fitting parameters that weren't measured accurately, or a lens design that doesn't match. The last two won't improve no matter how long you tough it out — go back for a re-measure.</span></li>
       </ul>
     </div>
   </section>
@@ -199,7 +199,7 @@ const schema = {
       <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">Why do progressives make you dizzy? Three causes — only one worth "toughing out"</h2>
       <div class="space-y-6">
         {[
-          { title: '① Normal Adaptation Period', desc: 'Your brain is learning the new logic that "looking down = looking near." The hallmark is that the dizziness decreases day by day and improves noticeably within 1–3 weeks. This is the only case worth toughing out.', action: 'Keep wearing them; avoid frequently taking them on and off' },
+          { title: '① Normal Adaptation Period', desc: 'Your brain is learning the new logic that "looking down = looking near." The hallmark is that the dizziness decreases day by day and improves noticeably within 2–4 weeks for most people. This is the only case worth toughing out.', action: 'Keep wearing them; avoid frequently taking them on and off' },
           { title: '② Fitting Parameter Problems', desc: "Prescription error, monocular PD or pupil height not measured accurately, a frame that has shifted — if the parameters are wrong, no amount of toughing it out will fix it. Still dizzy after 4 weeks of wear, or images that sway when you're still, is a signal to go back.", action: 'Return for a re-measure and adjustment' },
           { title: '③ Lens Design Mismatch', desc: 'A near-dominant work style fitted with a distance-oriented design; or a frame so small it cuts off the progressive corridor. These problems require a lens replacement — prevention beats cure.', action: 'Describe your viewing-distance habits in detail before fitting' },
         ].map(item => (

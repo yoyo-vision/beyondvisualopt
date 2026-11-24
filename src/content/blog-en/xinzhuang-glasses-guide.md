@@ -60,7 +60,7 @@ If you're getting glasses for your child, their prescription needs regular monit
 **Opening hours:**
 - Monday, Tuesday, Wednesday, Friday, Saturday: 11:00–21:00
 - Sunday: 12:00–21:00
-- Closed Thursdays (phone appointments available for urgent needs)
+- Closed Thursdays
 
 **Google reviews:** See our Xinzhuang Google Business Profile for the current rating and customer comments
 
@@ -88,7 +88,7 @@ The cost depends on lens type, refractive index, coatings and frame, so an accur
 
 **Q: Is it convenient for Fu Jen Catholic University students and staff?**
 
-Absolutely. Beyond Visual Optometry is about a 5-minute walk from Fu Jen Catholic University, and many students and faculty are long-term customers.
+Yes. The store is about a 12-minute walk from MRT Fu Jen University Station and about 8 minutes from MRT Xinzhuang Station. Allow 60–90 minutes for an exam plus choosing a frame, and book ahead.
 
 ---
 

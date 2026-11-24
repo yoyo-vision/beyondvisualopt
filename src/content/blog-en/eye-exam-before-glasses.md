@@ -14,7 +14,7 @@ The main point first: **for most straightforward glasses updates, you don't need
 
 If you're an adult with no particular eye issues and you just feel your prescription has changed and want a clearer new pair, you can come straight to an optometry practice for a full eye exam — no need to book an ophthalmologist appointment first. Measuring your prescription and dispensing glasses is exactly what an optometry practice is set up to do.
 
-That said, **there are a few situations where we recommend seeing an ophthalmologist first**, so a physician can confirm your eye health before you come in for glasses: **children under 6, a recent history of eye disease treatment or surgery, vision that won't correct no matter what prescription you try, or a chronic condition like diabetes without a recent retinal exam.** The table below explains the reasoning for each.
+That said, **there are a few situations where we recommend seeing an ophthalmologist first**, so a physician can confirm your eye health before you come in for glasses: **children under 6 (by law, optometry staff may not perform refraction on them), children aged 6–15 getting glasses for the first time, a recent history of eye disease treatment or surgery, vision that won't correct no matter what prescription you try, or a chronic condition like diabetes without a recent retinal exam.** The table below explains the reasoning for each.
 
 Let's be upfront about who we are: **Beyond Visual Optometry is a licensed optometry practice (Beyond Visual Optometry / Biyang Optometry), not an ophthalmology clinic, and we don't have a physician on site.** We handle full eye exams and dispensing; eye health checks and disease treatment are an ophthalmologist's job. The two sides work together rather than being an either-or choice — if we find during an exam that vision can't be adequately corrected or notice something that looks unusual, we'll proactively refer you to an ophthalmologist as required by law.
 
@@ -26,8 +26,9 @@ Let's be upfront about who we are: **Beyond Visual Optometry is a licensed optom
 |---------|------|------|
 | Adult, prescription has changed, wants new glasses | Come straight to an optometry practice | A straightforward refractive issue — a full eye exam is enough |
 | Long screen hours, want a vision assessment and a suitable pair of glasses | Come straight to an optometry practice | Visual-habit analysis and fitting |
-| Vision assessment and prescription tracking for a child age 6 and up | Can come to an optometry practice | Referral recommended if anything unusual turns up during the exam |
-| First vision check for a child **under 6** | See an ophthalmologist first | By law, this is a medical evaluation carried out by an ophthalmologist |
+| A child **under 6** | See an ophthalmologist | By law, optometry staff may not perform refraction for children under 6 |
+| Ages 6–15, getting glasses for the first time | See an ophthalmologist first | A physician must first confirm it is not pseudomyopia (Enforcement Rules, Art. 6) |
+| Ages 6–15, already has glasses | Can come to an optometry practice | Refraction is carried out under an ophthalmologist's guidance; referral if anything unusual turns up |
 | Recent **eye disease treatment or surgery history** | See an ophthalmologist first | A physician needs to confirm your eyes have stabilized |
 | Vision just won't correct no matter what you try | See an ophthalmologist first | May involve more than a prescription issue and needs a physician's exam |
 | **Chronic conditions like diabetes**, no recent retinal exam | See an ophthalmologist first | A retinal exam may require pupil dilation, which is a medical procedure — please see an ophthalmologist |
@@ -40,7 +41,7 @@ Let's be upfront about who we are: **Beyond Visual Optometry is a licensed optom
 
 Because getting glasses assumes that **the health of the eye itself is already clear.** An optometry practice measures "vision" — prescription, clarity, how well the two eyes coordinate. Whether the eye itself is healthy is what an ophthalmologist examines. For most people these are two separate matters, and getting glasses doesn't require clearing an ophthalmologist visit first.
 
-But the situations above are different. For example, under Taiwan's Optometrists Act, a first vision check for a child under 6 falls under medical evaluation, so please have an ophthalmologist examine them first. For schoolchildren age 6 to 15, refraction must by law be carried out under an ophthalmologist's guidance, and we coordinate with ophthalmologists on that basis. For someone with a chronic condition who hasn't had a recent retinal exam, it's best to have a physician check first (a retinal exam may require pupil dilation, which is a medical procedure — please see an ophthalmologist), and then come to us for glasses. This isn't turning customers away — it's handing the part that should be gatekept by a physician to a physician, so you can wear your glasses with peace of mind.
+But the situations above are different. For example, under Taiwan's Optometrists Act, optometry staff may not perform refraction for children under 6 — please take them to an ophthalmologist. For ages 6 to 15 (inclusive), before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia; all refraction in this age group is carried out under an ophthalmologist's guidance. For someone with a chronic condition who hasn't had a recent retinal exam, it's best to have a physician check first (a retinal exam may require pupil dilation, which is a medical procedure — please see an ophthalmologist), and then come to us for glasses. This isn't turning customers away — it's handing the part that should be gatekept by a physician to a physician, so you can wear your glasses with peace of mind.
 
 ---
 
@@ -64,7 +65,7 @@ No. For a straightforward adult prescription change, you can come straight to an
 
 **Q: My child needs their first pair of glasses — ophthalmologist or optometry practice first?**
 
-For children under 6, please see an ophthalmologist first for a medical evaluation. For children 6 and up, they can come to an optometry practice for a vision assessment and prescription tracking — under the Optometrists Act, refraction for schoolchildren under 15 must be carried out under an ophthalmologist's guidance, and we coordinate with ophthalmologists on that basis. If we notice anything unusual along the way, we'll recommend further evaluation by an ophthalmologist. The two sides work together — it's not an either-or choice.
+Under Taiwan's Optometrists Act, optometry staff may not perform refraction for children under 6 — please take them to an ophthalmologist. For ages 6 to 15 (inclusive), before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia; all refraction in this age group is carried out under an ophthalmologist's guidance. If we notice anything unusual along the way, we'll recommend further evaluation by an ophthalmologist. The two sides work together — it's not an either-or choice.
 
 **Q: I have diabetes — what should I keep in mind before getting glasses?**
 
