@@ -125,14 +125,15 @@ const schema = {
   schema={schema}
 >
   <!-- Hero -->
-  <section class="bg-brand-navy text-white py-20 px-4 text-center">
+  <section class="bg-brand-navy text-white py-20 px-4 lg:px-[72px] text-center">
     <h1 class="text-4xl font-bold mb-4">Which frame brands can you try on in Xinzhuang and Banqiao?</h1>
     <p class="text-gray-300 text-lg max-w-2xl mx-auto">Beyond Visual carries 12 frame brands as a dealer: 11 at both stores, with MINAMOTO at the Xinzhuang store. Our licensed optometry staff check the size and your prescription first, then help you choose a style from the frames that fit.</p>
     <p class="text-brand-gold text-sm mt-4 tracking-wider">Authorized ZEISS Dealer · HOYA Dealer | Beyond Visual Optometry — Xinzhuang × Banqiao</p>
   </section>
 
   <!-- Brand cards -->
-  <section class="max-w-6xl mx-auto px-4 py-20">
+  {/* 1024～1279 寬：右側多留位，卡片文字不被浮動圓鈕蓋到 */}
+  <section class="max-w-6xl mx-auto px-4 lg:pr-[72px] xl:pr-4 py-20">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {brands.map(brand => (
         <div class={`rounded-2xl p-7 hover:shadow-lg transition-shadow flex flex-col ${brand.highlight ? 'border-2 border-brand-gold bg-brand-light' : 'border border-gray-200'}`}>
