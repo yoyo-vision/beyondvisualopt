@@ -5,31 +5,33 @@ import Layout from '../../layouts/Layout.astro';
 const sections = [
   {
     h: '1. Scope',
-    body: 'This policy applies to the beyondvisualopt.com website and to the bookings and contact you make through it, by phone, or by Instagram DM. It also applies to your conversations with our official LINE account. When you visit third-party websites or services (such as Google, LINE, and social platforms), those providers\' own handling of personal data is governed by each service\'s own privacy policy and falls outside the scope of this policy.',
+    body: 'This policy applies to the beyondvisualopt.com website and to the bookings and contact you make through it, by phone, or by Instagram DM. It also applies to the customer records created when you visit our stores, to your conversations with our official LINE account, and to the service notifications, wearing follow-up and marketing contact we direct to customers (see Section 3). When you visit third-party websites or services (such as Google, LINE, and social platforms), those providers\' own handling of personal data is governed by each service\'s own privacy policy and falls outside the scope of this policy.',
   },
   {
     h: '2. Personal Data We Collect',
     list: [
       'Online booking information: name, phone number, preferred location, appointment time, and a description of your vision needs.',
       'Information you provide when you contact us proactively.',
-      'If you choose to link LINE when booking: your LINE user ID and display name, used to send booking confirmations and reminders.',
+      'Customer records created when you have an eye exam, order glasses or buy from us in store: name, phone number, email, date of birth and gender; refraction and fitting records (lens powers, pupillary distance, visual acuity and related measurements); order details (frame and lens items, production progress), amounts, payment method and payment records, and your pickup signature.',
+      'If you link your LINE account to our official LINE account, or message us there: your LINE user ID, display name and profile picture, used for service notifications, wearing follow-up and marketing contact (see Section 3) and to identify the account we are talking to.',
       'Your conversations with our official LINE account: we keep the message content, together with your LINE user ID, display name and profile picture, so our optometry personnel and essential operating staff can reply and refer back to it. Some messages may be handled by an automated system; in that case the text of that message is sent to Google\'s AI service (Gemini), and we do not separately attach your name, phone number or LINE account details. Please do not include sensitive information such as ID numbers in your messages.',
       'Our own anonymous traffic statistics: a randomly generated visitor code (stored in your browser\'s localStorage under the name bv_vid) records pages visited, time on page, the referring URL and campaign (UTM) parameters, whether the device is mobile, an approximate region (country/city) derived from the connection, and clicks on LINE, phone, map and review links. It contains no name or phone number, and we do not store your IP address.',
-      'Information you provide when you ask about getting glasses during a visit to Taiwan, by Instagram DM or phone: your name, contact details (including your Instagram account name), travel dates, and any photo of a prescription or optometry record you choose to share. The photo is not required for booking; if you send one, please keep ID numbers and addresses out of the shot.',
+      'Information you provide when you ask about getting glasses during a visit to Taiwan, by Instagram DM or phone: your name, contact details (including your Instagram account name), travel dates, and any photo of a prescription or optometry record you choose to share. The photo is not required for booking; if you send one, please keep ID numbers and addresses out of the shot. We use the information in this item only to arrange your appointment, prepare your glasses and follow up after pickup, not for marketing contact; customer records created when you visit our stores are covered by the in-store item above and by Section 3.',
       'Website analytics data: de-identified statistical data collected via GA4 and cookies (such as pages visited, time on page, and device type), processed in a form that does not readily identify a specific individual.',
     ],
   },
   {
     h: '3. Purpose and Use of Collection',
-    body: 'We collect and use your personal data for the following specific purposes: scheduling appointments, vision analysis services, wearing follow-up and after-care, responding to inquiries, and website traffic analysis. We use it only to the extent necessary for those purposes, and we do not sell, rent, or provide it to third parties unrelated to our services.',
+    body: 'We collect and use your personal data for the following specific purposes: scheduling appointments, vision analysis services, wearing follow-up and after-care, service notifications (booking confirmations and reminders, order and pickup progress, payment notices), responding to inquiries, customer relationship management and marketing (birthday and anniversary greetings, reorder reminders, greetings if you have not visited for some time, and news about events or products; for these, we use the contact details you have given us), and website traffic analysis. We use it only to the extent necessary for those purposes, and we do not sell, rent, or provide it to third parties unrelated to our services.',
+    after: 'You may at any time decline marketing contact (that is, the customer relationship management and marketing described above, including birthday and anniversary greetings, reorder reminders, greetings if you have not visited for some time, and news about events or products): send a message to our official LINE account, at no extra charge; tell us directly when we contact you; or phone or visit either store to let us know. Once we record your request, we stop using your data for marketing contact, and we also stop the eyewear check-ins and maintenance reminders we initiate after pickup. Booking confirmations and reminders, as well as order, pickup and payment notices, are not affected, and you can still contact us or come in at any time if you have a problem with your eyewear; after-care continues as usual.',
   },
   {
     h: '4. Period, Region, Recipients, and Method of Use',
     list: [
       'Period: until the aforementioned collection purpose ceases, or until you request that we stop using or delete it (where the law provides a mandatory retention period, that period applies).',
-      'Region: booking and contact data is stored with the cloud services we use, whose servers may be located outside Taiwan; data generated or processed through third-party services such as GA4, LINE, Instagram (Meta) and Gemini may also be processed on those providers\' servers outside Taiwan.',
+      'Region: booking, contact and customer data is stored with the cloud services we use, whose servers may be located outside Taiwan; data generated or processed through third-party services such as GA4, LINE, Instagram (Meta) and Gemini may also be processed on those providers\' servers outside Taiwan.',
       'Recipients: our two stores share one customer and booking system, and use is limited to the optometry personnel and essential operating staff of the two stores; the providers of the aforementioned cloud services and third-party analytics/communication/AI services process the relevant data in order to provide those services, in accordance with each service\'s own terms and policies.',
-      'Method: processed and used in electronic and/or paper form, within the scope of the aforementioned purposes.',
+      'Method: processed and used in electronic and/or paper form, within the scope of the aforementioned purposes; for how marketing contact is made, see Section 3.',
     ],
   },
   {
@@ -67,7 +69,7 @@ const sections = [
 ---
 <Layout
   title="Privacy Policy | Beyond Visual Optometry, Xinzhuang & Banqiao"
-  description="Beyond Visual Optometry privacy policy, covering our Xinzhuang store (with BiYang Optometry Clinic) and Banqiao store (with Neng Jian Du Optometry Clinic): the categories of personal data collected through our website and official LINE account, the purposes of collection, how it is used, and the rights you have under the Taiwan Personal Data Protection Act."
+  description="Beyond Visual Optometry privacy policy, covering our Xinzhuang store (with BiYang Optometry Clinic) and Banqiao store (with Neng Jian Du Optometry Clinic): the categories of personal data collected through our website, official LINE account and stores, the purposes of collection, how it is used, and the rights you have under the Taiwan Personal Data Protection Act."
   lang="en"
 >
   <section class="bg-brand-navy text-white py-20 px-6 text-center">
