@@ -1,0 +1,240 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const canonicalUrl = 'https://beyondvisualopt.com/guide/visiting-taiwan-glasses/';
+
+// 來台旅客配鏡頁（中文版，主要給香港旅客）：新加坡／香港旅客 90 天測水溫（老闆 2026-11-22 選 B 案）
+// 與英文版 /en/guide/visiting-taiwan-glasses/ 同一套事實，改任何一邊都要同步另一邊。
+// 營運事實取自門市既有口徑：庫存鏡片 3–5 工作天、訂製 7–10 工作天、預約時段 60–90 分鐘、
+// 驗光費半年內配鏡即含（金額不寫在網站，2026-11-23 衛生局不建議刊登）、週四公休。線上預約只收台灣手機，海外旅客一律導 IG 私訊／國際電話。
+// 不寫：國際寄送、價差比較、當日取件——都未經老闆確認或與事實不符。
+// WhatsApp Business 還沒註冊好，先走 Instagram 私訊；註冊好改回 https://wa.me/886222066700，頁面上的「IG 私訊」字樣一併換掉
+const DM = 'https://ig.me/m/bv_optical';
+const TEL = 'tel:+886222066700';
+
+const faqs = [
+  {
+    q: '取件的工作天怎麼算？週末、連假也算嗎？',
+    a: '都不算。門市週末照常營業，但工作天只數平日，週末和台灣的國定假日都不算在內。庫存鏡片約 3–5 個工作天、訂製鏡片約 7–10 個工作天，行程裡如果碰上連假，取件日就會往後延，排驗光日的時候要先扣掉。',
+  },
+  {
+    q: '只在台灣玩五、六天，配得了多焦點嗎？',
+    a: '通常這一趟拿不到。多焦點鏡片多半是接到訂單才照你的數字做，算訂製鏡片，約 7–10 個工作天，比五、六天的行程還長。這件事我們會在你預約前先講白。為了趕在你上飛機前交件，改推一片不適合你的庫存鏡片，這種事我們不做。如果你在台灣待兩週以上，又把驗光排在剛到的頭一兩天，時間通常夠。',
+  },
+  {
+    q: '可以直接用我在香港或新加坡驗的度數嗎？',
+    a: '不會直接照那張單子配，但單子還是請帶來，連同你現在戴著的眼鏡一起。舊眼鏡的度數，用鏡片驗度儀就量得出來；配鏡片之前，我們還是會完整驗一次光。瞳距、配鏡高度、頂點距離這幾個配鏡量測，也得等你在這裡挑好鏡框、戴上去才量得準。',
+  },
+  {
+    q: '驗光可以用英文或廣東話嗎？',
+    a: '英文可以，但只到簡單講解的程度，由新莊店的 YoYo 驗光師來講；廣東話沒有。驗光本身還是以國語進行。',
+  },
+  {
+    q: '人在國外，要怎麼預約？',
+    a: '用 Instagram 私訊我們（帳號 @bv_optical），或打 +886 2 2206 6700，跟我們說你幾號到台灣、幾號回去。官網的線上預約表單目前要填台灣手機號碼，人在國外，直接私訊比較方便。',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "來台旅遊順便配眼鏡，來得及嗎？短天數行程，驗光和取件怎麼排",
+      "dateModified": "2026-11-25",
+      "description": "從香港、新加坡來台灣旅遊，想順便配眼鏡？庫存鏡片約 3–5 個工作天、訂製鏡片約 7–10 個工作天，來不來得及，要看你需要哪一種鏡片。驗光日最好排在行程前段的平日，當天留 60–90 分鐘；驗光以國語進行，地點在新莊店。",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "zh-TW",
+      "articleSection": "完整指南",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "鄭家侑（YoYo）",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "inLanguage": "zh-TW",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="來台旅遊配眼鏡來得及嗎？短天數行程幾天能取件｜香港・新加坡旅客｜新莊"
+  description="從香港、新加坡來台灣玩，想順便配眼鏡？庫存鏡片約 3–5 個工作天，訂製鏡片約 7–10 個工作天，多焦點大多要訂製。出發前先在 IG 把行程日期傳給我們，趕不趕得上回程，我們會照實告訴你。驗光以國語進行，地點在新莊店（能見度視覺中心 × 比泱驗光所）。"
+  enPath="/en/guide/visiting-taiwan-glasses/"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">香港、新加坡旅客來台配鏡</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        來台旅遊順便配眼鏡，來得及嗎？ <br /><span class="text-brand-gold" style="font-size:0.6em">短天數行程，驗光和取件怎麼排</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto mb-8" style="font-size:17px;line-height:1.85">
+        眼鏡能不能在你上飛機前做好，看的是你需要哪一種鏡片，不是我們趕得多快。庫存鏡片約 3–5 個工作天，訂製鏡片約 7–10 個工作天。人還沒出發，就可以先把行程日期丟給我們，看看這一趟排不排得進去。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href={DM} target="_blank" rel="noopener"
+          class="font-sans inline-block bg-brand-gold text-brand-navy font-bold px-8 py-4 hover:bg-brand-gold/90 transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">用 IG 私訊問問看</a>
+        <a href={TEL}
+          class="font-sans inline-block border border-white/60 text-white font-bold px-8 py-4 hover:bg-white hover:text-brand-navy transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">撥打 +886 2 2206 6700</a>
+      </div>
+      <p class="text-white/50 mt-4" style="font-size:13px;letter-spacing:0.05em">新莊店・驗光以國語進行，YoYo 驗光師可用英文做簡單講解</p>
+    </div>
+  </section>
+
+  <!-- 時間看鏡片 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">幾天拿得到，差在鏡片要不要訂製</h2>
+        <p class="text-brand-ink-3 mt-3" style="font-size:15px">週末和台灣的國定假日，不算在工作天裡</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { t: '庫存鏡片：約 3–5 個工作天', d: '如果你的度數，加上你挑的折射率和鍍膜，都在庫存範圍內，鏡片就拿得到現成的，剩下的是磨邊、裝框和最後核對。單光鏡片、度數不深、散光也不高的，比較容易落在這一邊。' },
+          { t: '訂製鏡片：約 7–10 個工作天', d: '多焦點、個人化設計、度數或折射率超出庫存範圍，或驗光結果裡加了稜鏡，鏡片都得照你的數字另外做。做好送到店裡，一樣要磨邊、裝框、核對。算不算訂製，挑鏡片的時候就確定了，取件日當場就可以約。' },
+        ].map(c => (
+          <div class="bg-white border border-brand-ink/10 p-7">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:19px;font-weight:400">{c.t}</h3>
+            <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">{c.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 行程規劃 -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">配合行程，這樣排</h2>
+      </div>
+      <div class="space-y-6">
+        {[
+          { n: '01', t: '出發前：先把日期傳給我們', d: '用 IG 私訊跟我們說你哪天到、哪天走，手邊有驗光單的話，拍張照一起傳過來。照片不傳也一樣能預約，要傳的話只拍度數那一塊就好，身分證號、地址這些不用入鏡。我們可以先大概看一下，你的鏡片有沒有機會落在庫存裡，再幫你挑一個時段，讓驗光那天到回程之間，還留得下夠用的工作天。最後還是要驗完光才說得準。' },
+          { n: '02', t: '驗光日：排在行程前段的平日', d: '完整驗光、挑框和配鏡量測一次做完，那天時間抓 60–90 分鐘。驗光日排得越前面，後面能用的工作天就越多。新莊店週四公休。' },
+          { n: '03', t: '取件：留一段時間試戴', d: '取件那天，驗光人員會請你戴著新眼鏡，各種距離都看過一輪；配多焦點的人，還要站起來走幾步。哪裡不順，當場說出來，鏡架調好了再走。這段試戴的時間要算進去，別把取件排在出發去機場前的那一小時。' },
+          { n: '04', t: '回到家之後', d: '取件後 2 週內，我們會主動聯絡你，問問新眼鏡戴得習不習慣。在能見度配的眼鏡，取件後的鏡架調整不另外收費，下次再來台灣，順路彎進來調一下就行。' },
+        ].map(s => (
+          <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
+            <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">{s.n}</span>
+            <div>
+              <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">{s.t}</h3>
+              <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">{s.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 帶什麼、費用、語言 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white border border-brand-ink/10 p-7">
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:20px;font-weight:400">要帶什麼</h2>
+        <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">現在戴的眼鏡、最近一次的驗光單，還有你的行程日期。眼鏡和單子帶來當參考，驗光本身還是從頭做一次。</p>
+      </div>
+      <div class="bg-white border border-brand-ink/10 p-7">
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:20px;font-weight:400">費用</h2>
+        <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">完整驗光會單獨收一筆驗光費，金額在 IG 傳個訊息問門市，我們會直接回你。驗光後半年內配鏡，驗光這一筆就含在配鏡的費用裡；自備鏡框、只換鏡片也算配鏡。鏡片和鏡架要多少，驗光人員評估完會當面跟你講。</p>
+      </div>
+      <div class="bg-white border border-brand-ink/10 p-7">
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:20px;font-weight:400">語言</h2>
+        <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">驗光全程用國語，廣東話這部分我們沒辦法提供。英文的話，新莊店的 YoYo 驗光師可以簡單講解給你聽；你如果聽得懂國語，整趟就用國語，溝通起來最不費力。</p>
+      </div>
+    </div>
+    <p class="text-brand-ink-3 mt-8 text-center" style="font-size:13.5px;line-height:1.8">鏡片我們是蔡司簽約認證經銷、HOYA 經銷；新莊店的鏡框，有日本鯖江的 MINAMOTO 源，也有 MASAKI MATSUSHIMA。</p>
+  </section>
+
+  <!-- 交通 -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8 text-center" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">怎麼到新莊店</h2>
+      <div class="space-y-4 font-sans text-brand-ink-2" style="font-size:15px;line-height:1.8">
+        <p>📍 能見度視覺中心 × 比泱驗光所，新北市新莊區中正路 419-1 號</p>
+        <p>🚇 捷運新莊站步行約 8 分鐘，輔大站步行約 12 分鐘。從台北車站出發，搭紅線（淡水信義線）到民權西路站，轉橘線（中和新蘆線）往迴龍方向，在新莊站下車。</p>
+        <p>🕐 週一二三五六 11:00–21:00・週日 12:00–21:00・週四公休</p>
+        <p>📞 <a href={TEL} class="hover:text-brand-navy underline decoration-dotted underline-offset-2">+886 2 2206 6700</a>・<a href={DM} target="_blank" rel="noopener" class="hover:text-brand-navy underline decoration-dotted underline-offset-2">IG 私訊（@bv_optical）</a></p>
+      </div>
+      <p class="text-brand-ink-3 mt-6" style="font-size:14px"><a href="/xinzhuang/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors">新莊店門市資訊 →</a></p>
+    </div>
+  </section>
+
+  <!-- 轉：國文編審 2026-11-22 指示搬到門市塊之後、FAQ 之前（轉之後只接 FAQ 與合） -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-brand-ink-2 text-center" style="font-size:15px;line-height:1.85">
+        驗光那天可以往前排，鏡片要等的工作天卻一天也省不掉。只待五、六天，適合你的那一片又得訂製，通常就等不到。我們寧可一開始就跟你說清楚，也不會為了讓你上飛機前拿到，把它換成一片庫存裡現成的鏡片。旅行幾天就結束了，這副眼鏡卻是要跟你回家、一直戴下去的。
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">旅客來台配眼鏡・常見問題</h2>
+      </div>
+      <div class="space-y-6">
+        {faqs.map((faq, i) => (
+          <div class="border-t border-brand-ink/15 pt-6">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">Q{i + 1}. {faq.q}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href={DM} target="_blank" rel="noopener"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">在 IG 傳行程日期給我們</a>
+        <p class="text-brand-ink-3 mt-4" style="font-size:13px">新莊店 +886 2 2206 6700</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字沿用 byo-frame-lenses 中文版 -->
+  <section id="author" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">關於作者與資料來源</h2>
+      <div class="flex gap-5 items-start rounded-2xl border border-brand-ink/10 p-6 mb-8" style="background:#f7f3ec">
+        <img src="/images/yoyo-optometrist.webp" alt="YoYo 驗光師（鄭家侑）" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">YoYo（鄭家侑）驗光師</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">驗師字第 003309 號｜元培醫事科技大學畢業｜新北市驗光師公會講師</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">能見度視覺中心 × 比泱驗光所主理驗光師，專精臨床驗光、雙眼視覺評估、多焦點鏡片驗配與兒童近視追蹤。</p>
+          <a href="/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">認識 YoYo 驗光師 →</a>
+        </div>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">資料來源</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: '驗光人員法（全國法規資料庫）', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">驗光由持照驗光人員執行，範圍依上列驗光人員法第 12 條。取件天數、驗光費和取件那天的流程，寫的都是新莊店現在的做法；你的鏡片算庫存還是訂製，以挑鏡片當下確認的為準。</p>
+      <p class="text-brand-ink-2 mt-4" style="font-size:15px;line-height:1.8">帶孩子同行的話要先知道：未滿六歲的孩子，驗光人員依法不能驗光；六歲以上、十五歲以下，驗光要在眼科醫師指導下進行，第一次配鏡還得先由眼科醫師確診不是假性近視。所以孩子幾歲，請先跟我們說。</p>
+      <p class="text-brand-ink-2 mt-4" style="font-size:15px;line-height:1.8">你在 Instagram 傳來的姓名、電話、行程日期和驗光單照片，由能見度視覺中心 × 比泱驗光所（新莊店）蒐集，只用來安排預約、準備配鏡和取件後的聯絡。看得到這些資料的，只有我們新莊、板橋兩店的驗光人員和必要的營運人員。Instagram 的私訊會經過 Meta 設在台灣以外的伺服器。這些資料想更正或刪除，傳訊息或來電說一聲就可以，後來決定不來也一樣。其餘的部分，請看頁尾的隱私權政策。最後更新：2026 年 11 月 25 日。</p>
+    </div>
+  </section>
+
+</Layout>

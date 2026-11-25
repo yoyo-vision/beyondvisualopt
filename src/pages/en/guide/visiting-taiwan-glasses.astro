@@ -1,0 +1,240 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const canonicalUrl = 'https://beyondvisualopt.com/en/guide/visiting-taiwan-glasses/';
+
+// 來台旅客配鏡頁（英文版）：新加坡／香港旅客 90 天測水溫（老闆 2026-11-22 選 B 案）
+// 營運事實全部取自門市既有口徑：庫存鏡片 3–5 工作天、訂製 7–10 工作天、預約時段 60–90 分鐘、
+// 驗光費半年內配鏡即含（金額不寫在網站，2026-11-23 衛生局不建議刊登）、YoYo 英文只做簡單講解且限新莊店、週四公休。
+// 線上預約表單只收台灣手機（vision-platform isValidTwMobile），所以海外旅客一律導 IG 私訊／國際電話。
+// 不寫：國際寄送、價差比較、當日取件——都未經老闆確認或與事實不符。
+// WhatsApp Business 還沒註冊好，先走 Instagram 私訊；註冊好改回 https://wa.me/886222066700，頁面上的「IG 私訊」字樣一併換掉
+const DM = 'https://ig.me/m/bv_optical';
+const TEL = 'tel:+886222066700';
+
+const faqs = [
+  {
+    q: 'Can I get my glasses on the same day as the exam?',
+    a: 'No, not the same day. What gets done that day is the exam, frame selection and measurements, so allow 60–90 minutes. You get the glasses once the lenses are in, edged, fitted and checked: about 3–5 working days for stock lenses and about 7–10 working days for made-to-order lenses. Working days do not include weekends or Taiwan public holidays.',
+  },
+  {
+    q: 'I am only in Taiwan for five or six days. Can I get progressive lenses?',
+    a: 'Usually not on this trip. Progressive lenses are mostly made to order from your own numbers, so they take about 7–10 working days, longer than a five- or six-day stay. We will tell you that before you book. What we won\'t do is steer you to a stock lens that isn\'t right for you just because it would be ready before your flight. If you are staying two weeks or more and book the exam within a day or two of arriving, there is usually enough time.',
+  },
+  {
+    q: 'Can you use the prescription from my optometrist back home?',
+    a: 'Not directly, but do bring it, along with the glasses you wear now. We can read the power of your current glasses with a lensmeter, and before making lenses we still do a full exam of our own. The dispensing measurements (pupillary distance, fitting height, vertex distance) also have to be taken with the frame you choose here, on your face.',
+  },
+  {
+    q: 'Is the exam in English?',
+    a: 'Partly. Optometrist YoYo at our Xinzhuang store can give you basic explanations in English, but the exam itself is conducted in Mandarin.',
+  },
+  {
+    q: 'How do I book from overseas?',
+    a: 'Send us a DM on Instagram (@bv_optical) or call +886 2 2206 6700 and tell us when you arrive and when you leave. Our online booking form currently needs a Taiwan mobile number, so an Instagram DM is the easier route from abroad.',
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": canonicalUrl,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "headline": "Getting glasses made while visiting Taiwan: planning the exam and collection around a short trip",
+      "dateModified": "2026-11-25",
+      "description": "Visiting Taiwan from Singapore, Hong Kong or elsewhere and thinking of getting glasses made? Stock lenses take about 3–5 working days and made-to-order lenses about 7–10, so the lens type decides whether it fits your trip. Book the exam for an early weekday of your trip and allow 60–90 minutes. The exam is in Mandarin, at our Xinzhuang store.",
+      "image": "https://beyondvisualopt.com/og-image.jpg",
+      "inLanguage": "en",
+      "articleSection": "Complete Guide",
+      "author": {
+        "@type": "Person",
+        "@id": "https://beyondvisualopt.com/author/yoyo/#person",
+        "name": "Cheng Chia-Yu (YoYo)",
+        "url": "https://beyondvisualopt.com/author/yoyo/"
+      },
+      "publisher": { "@id": "https://beyondvisualopt.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "inLanguage": "en",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      })),
+    },
+  ],
+};
+---
+<Layout
+  title="Getting Glasses Made While Visiting Taiwan | Short-Trip Timeline | Xinzhuang, New Taipei"
+  description="Visiting Taiwan from Singapore or Hong Kong and want glasses made? Stock lenses take about 3–5 working days; made-to-order lenses, which is where most progressives fall, take about 7–10. DM us your travel dates on Instagram first and we'll tell you straight whether it fits your trip. Exam in Mandarin with basic English, at our Xinzhuang store."
+  lang="en"
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brand-navy to-[#0f1e33] text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-brand-gold font-sans font-semibold tracking-widest uppercase mb-5" style="font-size:13px;letter-spacing:0.2em">For visitors from Singapore, Hong Kong and elsewhere</p>
+      <h1 class="font-serif text-white leading-tight mb-7" style="font-size:clamp(30px,4.5vw,52px);font-weight:300">
+        Getting glasses made while visiting Taiwan <br /><span class="text-brand-gold" style="font-size:0.6em">Planning the exam and collection around a short trip</span>
+      </h1>
+      <p class="text-white/70 max-w-2xl mx-auto mb-8" style="font-size:17px;line-height:1.85">
+        Whether your glasses are ready before you fly depends on the lenses you need, not on how fast we can work. Stock lenses take about 3–5 working days; made-to-order lenses take about 7–10. Send us your travel dates before you leave home, and we'll see whether it fits into this trip.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href={DM} target="_blank" rel="noopener"
+          class="font-sans inline-block bg-brand-gold text-brand-navy font-bold px-8 py-4 hover:bg-brand-gold/90 transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">DM us on Instagram</a>
+        <a href={TEL}
+          class="font-sans inline-block border border-white/60 text-white font-bold px-8 py-4 hover:bg-white hover:text-brand-navy transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">Call +886 2 2206 6700</a>
+      </div>
+      <p class="text-white/50 mt-4" style="font-size:13px;letter-spacing:0.05em">Xinzhuang store · Exam in Mandarin · Optometrist YoYo can explain the basics in English</p>
+    </div>
+  </section>
+
+  <!-- 時間看鏡片 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">How long it takes depends on the lenses</h2>
+        <p class="text-brand-ink-3 mt-3" style="font-size:15px">Weekends and Taiwan public holidays don't count as working days</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { t: 'Stock lenses: about 3–5 working days', d: 'If your prescription, the lens index you pick and the coating all fall within the stock range, nothing has to be made. What\'s left is edging the lenses, fitting them into the frame and a final check. Single-vision lenses for a lower prescription with little astigmatism are the ones most likely to land here.' },
+          { t: 'Made-to-order lenses: about 7–10 working days', d: 'Progressive lenses, personalized designs, a prescription or lens index outside the stock range, or prism in your prescription all mean the lenses are made from your own numbers. Once they are made and sent back to us, they go through the same edging, fitting and checking. You\'ll know whether yours are made to order the moment you choose them, and we can fix the collection date right there.' },
+        ].map(c => (
+          <div class="bg-white border border-brand-ink/10 p-7">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:19px;font-weight:400">{c.t}</h3>
+            <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">{c.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 行程規劃 -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">How to plan it around your trip</h2>
+      </div>
+      <div class="space-y-6">
+        {[
+          { n: '01', t: 'Before you fly: send us your dates', d: 'DM us on Instagram with the dates you arrive and leave, plus a photo of your current prescription if you have one. The photo is optional and you can book without it; if you do send one, just the prescription figures will do, with any ID number or address left out of the shot. From what you send, we can give you a rough idea of whether your lenses are likely to be in stock, and suggest a time slot that leaves enough working days before your flight. We can only say for sure once you\'ve had the exam.' },
+          { n: '02', t: 'Exam day: an early weekday of your trip', d: 'The full vision exam, frame selection and dispensing measurements all happen in one visit, so set aside 60–90 minutes. The earlier in your trip you come in, the more working days are left. Our Xinzhuang store is closed on Thursdays.' },
+          { n: '03', t: 'Collection: leave time to try them on', d: 'When you collect them, our licensed optometry staff will ask you to put the new glasses on and look at things at different distances; with progressive lenses you\'ll also stand up and walk a few steps. Tell us if anything feels off and we\'ll adjust the frame there and then. Just don\'t plan collection for the hour before you leave for the airport.' },
+          { n: '04', t: 'After you\'re home', d: 'We\'ll check in within 2 weeks of collection to see how the glasses are working out. For glasses made at Beyond Visual, frame adjustments after collection are not charged separately, so if you\'re back in Taiwan some time, just drop by.' },
+        ].map(s => (
+          <div class="flex gap-6 items-start bg-white/60 border border-brand-ink/10 p-6">
+            <span class="font-serif text-brand-gold flex-shrink-0" style="font-size:22px;font-weight:700">{s.n}</span>
+            <div>
+              <h3 class="font-serif text-brand-ink mb-2" style="font-size:18px;font-weight:400">{s.t}</h3>
+              <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">{s.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 帶什麼、費用、語言 -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white border border-brand-ink/10 p-7">
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:20px;font-weight:400">What to bring</h2>
+        <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">The glasses you wear now, your most recent prescription if you have one, and your travel dates. The glasses and prescription are a useful reference, but the exam itself still starts from scratch.</p>
+      </div>
+      <div class="bg-white border border-brand-ink/10 p-7">
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:20px;font-weight:400">Fees</h2>
+        <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">A complete vision exam is charged separately; DM us on Instagram or call us for the current fee. If you order glasses within six months of the exam, that fee is included in the price of your glasses; having new lenses fitted to your own frame counts as ordering glasses too. Our licensed optometry staff will go through lens and frame prices with you once they've assessed what you need.</p>
+      </div>
+      <div class="bg-white border border-brand-ink/10 p-7">
+        <h2 class="font-serif text-brand-ink mb-3" style="font-size:20px;font-weight:400">Language</h2>
+        <p class="text-brand-ink-3" style="font-size:14.5px;line-height:1.8">We run the exam in Mandarin. At the Xinzhuang store, Optometrist YoYo can walk you through the basics in English. If you follow Mandarin well, sticking with it for the whole visit is the easiest way to go.</p>
+      </div>
+    </div>
+    <p class="text-brand-ink-3 mt-8 text-center" style="font-size:13.5px;line-height:1.8">For lenses, we are a contracted ZEISS dealer and a HOYA dealer. Frames at the Xinzhuang store include MINAMOTO from Sabae, Japan, and MASAKI MATSUSHIMA.</p>
+  </section>
+
+  <!-- 交通 -->
+  <section class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8 text-center" style="font-size:clamp(24px,3.5vw,38px);font-weight:300">Getting to the Xinzhuang store</h2>
+      <div class="space-y-4 font-sans text-brand-ink-2" style="font-size:15px;line-height:1.8">
+        <p>📍 Beyond Visual Optometry × BiYang Optometry Clinic, No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City 242</p>
+        <p>🚇 About an 8-minute walk from Xinzhuang MRT Station (Orange Line), or 12 minutes from Fu Jen University Station. From Taipei Main Station, take the Red Line to Minquan West Road and change to the Orange Line towards Huilong.</p>
+        <p>🕐 Mon–Wed, Fri–Sat 11:00–21:00 · Sun 12:00–21:00 · Closed Thursdays</p>
+        <p>📞 <a href={TEL} class="hover:text-brand-navy underline decoration-dotted underline-offset-2">+886 2 2206 6700</a> · <a href={DM} target="_blank" rel="noopener" class="hover:text-brand-navy underline decoration-dotted underline-offset-2">Instagram DM (@bv_optical)</a></p>
+      </div>
+      <p class="text-brand-ink-3 mt-6" style="font-size:14px"><a href="/en/xinzhuang/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors">Xinzhuang store details →</a></p>
+    </div>
+  </section>
+
+  <!-- 轉：國文編審 2026-11-22 指示搬到門市塊之後、FAQ 之前（轉之後只接 FAQ 與合） -->
+  <section class="px-6 md:px-16 py-20" style="background:#eee8da">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-brand-ink-2 text-center" style="font-size:15px;line-height:1.85">
+        You can book the exam early in your trip, but the working days the lenses need can't be shortened. On a five- or six-day stay, if the lens that suits you has to be made to order, it usually won't be ready in time. We'd rather tell you that up front than swap it for a stock lens just so you have it before your flight. The trip will be over in a few days. The glasses come home with you, and you'll keep wearing them long after.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-6 md:px-16 py-20" style="background:#f7f3ec">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-brand-ink" style="font-size:clamp(22px,3vw,36px);font-weight:300">Getting glasses in Taiwan as a visitor · FAQ</h2>
+      </div>
+      <div class="space-y-6">
+        {faqs.map((faq, i) => (
+          <div class="border-t border-brand-ink/15 pt-6">
+            <h3 class="font-serif text-brand-ink mb-3" style="font-size:17px;font-weight:400">Q{i + 1}. {faq.q}</h3>
+            <p class="text-brand-ink-3" style="font-size:15px;line-height:1.8">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <a href={DM} target="_blank" rel="noopener"
+          class="font-sans inline-block bg-brand-navy text-brand-paper px-8 py-4 hover:bg-brand-ink transition-colors"
+          style="font-size:15px;letter-spacing:0.08em">DM us your travel dates on Instagram</a>
+        <p class="text-brand-ink-3 mt-4" style="font-size:13px">Xinzhuang store +886 2 2206 6700</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 關於作者與資料來源（E-E-A-T）：資歷文字取自 /en/author/yoyo/ -->
+  <section id="author" class="px-6 md:px-16 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-serif text-brand-ink mb-8" style="font-size:clamp(24px,3.5vw,36px);font-weight:400">About the author and sources</h2>
+      <div class="flex gap-5 items-start rounded-2xl border border-brand-ink/10 p-6 mb-8" style="background:#f7f3ec">
+        <img src="/images/yoyo-optometrist.webp" alt="Optometrist YoYo (Cheng Chia-Yu)" width="72" height="72" loading="lazy" class="rounded-full object-cover shrink-0" style="width:72px;height:72px" />
+        <div>
+          <p class="text-brand-navy font-bold mb-1" style="font-size:17px">YoYo (Cheng Chia-Yu), Optometrist</p>
+          <p class="text-brand-ink-3 mb-2" style="font-size:13px">Optometrist License No. 003309 | Graduate of Yuanpei University of Medical Technology | Lecturer, New Taipei City Optometrists Association</p>
+          <p class="text-brand-ink-2 mb-3" style="font-size:15px;line-height:1.75">Lead optometrist at Beyond Visual Optometry × BiYang Optometry Clinic, specializing in clinical vision exams, binocular vision assessment, progressive lens fitting and children's myopia tracking.</p>
+          <a href="/en/author/yoyo/" class="text-brand-navy font-semibold hover:text-brand-gold transition-colors" style="font-size:14px">Meet Optometrist YoYo →</a>
+        </div>
+      </div>
+      <p class="text-brand-navy font-bold mb-3" style="font-size:15px">Sources</p>
+      <ol class="list-decimal pl-5 space-y-2 mb-6" style="font-size:14px;line-height:1.7">
+        {[
+          { t: 'Optometrists Act (Laws & Regulations Database of the ROC, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+        ].map(r => (
+          <li class="text-brand-ink-2"><a href={r.u} target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a></li>
+        ))}
+      </ol>
+      <p class="text-brand-ink-2" style="font-size:15px;line-height:1.8">Vision exams are carried out by licensed optometry staff, within the scope of practice set out in Article 12 of the Optometrists Act listed above. The exam looks at your refraction and at how your two eyes work together, so that we can make your glasses. It is not a medical examination of your eye health: if we find vision that cannot be corrected to normal, we will refer you to an ophthalmologist. Collection times, the exam fee and what happens on collection day describe how our Xinzhuang store works today; whether your lenses are stock or made to order is confirmed when you choose them.</p>
+      <p class="text-brand-ink-2 mt-4" style="font-size:15px;line-height:1.8">If you're bringing a child, please note: by law, optometry staff in Taiwan cannot examine children under 6, and for ages 6 to 15 the exam is done under an ophthalmologist's guidance, with an ophthalmologist first ruling out pseudomyopia before the child's first pair of glasses. Please tell us your child's age in your message before you come.</p>
+      <p class="text-brand-ink-2 mt-4" style="font-size:15px;line-height:1.8">The name, phone number, travel dates and prescription photo you send us by Instagram DM are collected by Beyond Visual Optometry × BiYang Optometry Clinic (Xinzhuang store) and used only to arrange your appointment, prepare your glasses and follow up after collection. Only our optometry staff at the Xinzhuang and Banqiao stores, and the operations staff who need it for their work, can see what you send. Instagram messages pass through Meta's servers outside Taiwan. You can ask us to correct or delete what you sent, by message or phone, including if you decide not to come. Our Privacy Policy, linked in the footer, covers the rest. Last updated: November 25, 2026.</p>
+    </div>
+  </section>
+
+</Layout>
