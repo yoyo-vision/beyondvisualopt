@@ -19,16 +19,19 @@ const { label, items } = Astro.props;
 <style is:global>
 .toc-rail { display: none; }
 
-@media screen and (min-width: 1280px) {
-  /* 三欄版位：左目錄 13rem｜正文｜右欄 20rem（右欄寬度不變） */
-  div.toc-page { max-width: 80rem; }
-  .toc-page > .toc-cols { gap: 2.25rem; }
-  .toc-page .toc { display: none; } /* 有左欄就不顯示內文目錄卡，同一個寬度只有一份 */
+@media screen and (min-width: 1024px) {
   /* 7 欄以上的寬表格（目前只有英文 frame-material-guide）縮左右內距，才放得進變窄的正文、不壓到右欄 */
   .toc-page .article-body th:first-child:nth-last-child(n+7),
   .toc-page .article-body th:first-child:nth-last-child(n+7) ~ th,
   .toc-page .article-body td:first-child:nth-last-child(n+7),
   .toc-page .article-body td:first-child:nth-last-child(n+7) ~ td { padding-left: 0.25rem; padding-right: 0.25rem; }
+}
+
+@media screen and (min-width: 1280px) {
+  /* 三欄版位：左目錄 13rem｜正文｜右欄 20rem（右欄寬度不變） */
+  div.toc-page { max-width: 80rem; }
+  .toc-page > .toc-cols { gap: 2.25rem; }
+  .toc-page .toc { display: none; } /* 有左欄就不顯示內文目錄卡，同一個寬度只有一份 */
 
   .toc-rail {
     display: flex;
@@ -63,6 +66,12 @@ const { label, items } = Astro.props;
   .toc-rail-list a.toc-rail-sub { padding-left: 28px; font-size: 14px; }
   .toc-rail-list a:hover { color: #1a2f4e; }
   .toc-rail-list a[aria-current] { color: #1a2f4e; font-weight: 700; border-left-color: #1a2f4e; }
+}
+
+/* 1280～1407：右側留位給浮動圓鈕後，右欄收到 18rem、欄距縮小，正文維持 630px 左右 */
+@media screen and (min-width: 1280px) and (max-width: 1407px) {
+  .toc-page > .toc-cols { gap: 2rem; }
+  .toc-page > .toc-cols > aside { width: 18rem; }
 }
 
 @media screen and (min-width: 1440px) {

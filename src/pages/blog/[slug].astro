@@ -200,7 +200,8 @@ const pageSchema = {
   modifiedTime={modifiedIso}
   image={post.data.image || `/images/blog/og/${post.slug}.png`}
 >
-  <div class:list={['max-w-7xl mx-auto px-4 py-12 lg:py-16', showToc && 'toc-page']}>
+  {/* 1024～1407 寬時右側浮動圓鈕（寬 48＋右邊距 16）會壓到右欄，右邊多留 72px；更寬時兩側本來就有空白 */}
+  <div class:list={['max-w-7xl mx-auto px-4 lg:pr-[72px] min-[1408px]:pr-4 py-12 lg:py-16', showToc && 'toc-page']}>
     <div class="toc-cols flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
 
       <!-- 左側目錄：寬度 1280 以上才顯示，取代內文目錄卡 -->
