@@ -1,7 +1,7 @@
 ---
 image: /images/portfolio/temple-hinge-macro.webp
 model: ""
-caption: "鏡腳鉸鍊特寫，好鏡框的講究藏在細節裡"
-tags: ["特寫", "工藝"]
+caption: "黑色鏡框從側面拍，看得到鉸鏈和鼻托上的刻紋"
+tags: ["特寫"]
 date: 2026-06-15
 ---

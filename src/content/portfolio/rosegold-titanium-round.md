@@ -1,7 +1,7 @@
 ---
 image: /images/portfolio/rosegold-titanium-round.webp
 model: ""
-caption: "玫瑰金鈦金屬圓框，暖調氣質的輕盈選擇"
-tags: ["鈦金屬", "圓框"]
+caption: "深紅棕色細圓框，配金色鼻托"
+tags: ["金屬框", "圓框"]
 date: 2026-06-07
 ---

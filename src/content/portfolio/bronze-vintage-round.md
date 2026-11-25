@@ -1,7 +1,7 @@
 ---
 image: /images/portfolio/bronze-vintage-round.webp
 model: ""
-caption: "古銅色復古圓框，時光感的溫潤"
-tags: ["復古", "圓框"]
+caption: "玳瑁色圓框，鏡腳末端是銀色小圓頭"
+tags: ["玳瑁色", "圓框"]
 date: 2026-06-10
 ---

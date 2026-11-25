@@ -1,7 +1,7 @@
 ---
 image: /images/portfolio/clip-on-polarized.webp
 model: ""
-caption: "可拆式偏光前掛，開車通勤的實用美學"
-tags: ["太陽眼鏡", "前掛"]
+caption: "深色圓形前掛片，放在黑色圓框旁邊"
+tags: ["前掛", "圓框"]
 date: 2026-06-08
 ---

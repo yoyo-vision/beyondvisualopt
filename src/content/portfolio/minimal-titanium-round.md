@@ -1,7 +1,7 @@
 ---
 image: /images/portfolio/minimal-titanium-round.webp
 model: ""
-caption: "極簡鈦金屬圓框，減法美學的日常"
-tags: ["鈦金屬", "圓框"]
+caption: "深灰色圓框，鏡腳接合處呈四葉形"
+tags: ["圓框"]
 date: 2026-06-12
 ---
