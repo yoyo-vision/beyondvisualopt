@@ -39,8 +39,7 @@ const { label, items } = Astro.props;
     flex: 0 0 13rem;
     position: sticky;
     top: 6rem;
-    /* 上方扣導覽列，下方留給左下角「TOP」鈕，目錄不會被它蓋住 */
-    max-height: calc(100vh - 6rem - 7rem);
+    max-height: calc(100vh - 6rem - 2rem);
     font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
   }
   .toc-rail-title { color: #1a2f4e; font-size: 17px; font-weight: 700; margin-bottom: 0.5rem; }
@@ -77,7 +76,7 @@ const { label, items } = Astro.props;
 @media screen and (min-width: 1440px) {
   /* 82rem：右欄右緣剛好停在右側浮動圓鈕左邊，不會被蓋到 */
   div.toc-page { max-width: 82rem; }
-  .toc-rail { flex-basis: 14.5rem; max-height: calc(100vh - 6rem - 2rem); }
+  .toc-rail { flex-basis: 14.5rem; }
   .toc-rail-list a { font-size: 16px; }
   .toc-rail-list a.toc-rail-sub { font-size: 15px; }
 }

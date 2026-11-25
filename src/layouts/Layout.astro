@@ -661,10 +661,10 @@ const isBookingPage = Astro.url.pathname.startsWith('/booking') || Astro.url.pat
     </div>
   </footer>
 
-  <!-- 左下：回到頂部 -->
+  <!-- 右下：回到頂部（2026-11-25 從左下移到浮動圓鈕正下方，左下會蓋到正文） -->
   <!-- 2026-11-24 阿甘改版：手機版不顯示（放哪都會壓到內文或黏底三鍵），桌機照舊 -->
   <button id="back-to-top"
-    class="hidden lg:flex fixed bottom-6 left-6 z-50 flex-col items-center gap-1 opacity-0 pointer-events-none transition-opacity duration-300"
+    class="hidden lg:flex fixed bottom-6 right-4 w-12 z-50 flex-col items-center gap-1 opacity-0 pointer-events-none transition-opacity duration-300"
     aria-label="回到頂部">
     <div class="w-10 h-10 rounded-full bg-brand-paper border border-brand-ink/20 flex items-center justify-center shadow hover:bg-brand-ink hover:text-brand-paper hover:border-brand-ink transition-colors duration-300">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
