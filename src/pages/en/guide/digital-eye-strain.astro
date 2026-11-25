@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'What should I do about headaches and eye pain from looking at screens?',
-    a: 'First, separate two situations. If the discomfort only appears after several hours of use and goes away with a short rest, it is usually accommodative fatigue and dry eye: try the 20-20-20 rule, consciously complete blinks, and set the screen 10–15 degrees below eye level at a distance of 60–70 cm. If the dizziness comes on the moment you put your glasses on, happens even when you are still, or is paired with a clear headache or unsteadiness, it is usually a fitting-parameter problem (prescription, cylinder axis, PD, vertex distance) and needs a re-measurement in store. If symptoms persist or worsen, under Taiwan\'s Optometrists Act we will recommend a referral to an ophthalmologist; optometry staff do not make medical diagnoses.',
+    a: 'First, separate two situations. If the discomfort only appears after several hours of use and goes away with a short rest, it is usually accommodative fatigue and dry eye: try the 20-20-20 rule, consciously complete blinks, and set the screen 10–15 degrees below eye level at a distance of 60–70 cm. If the dizziness comes on the moment you put your glasses on, happens even when you are still, or is paired with a clear headache or unsteadiness, it is usually a fitting-parameter problem (prescription, cylinder axis, PD, vertex distance) and needs a re-measurement in store. If symptoms persist or worsen, under Taiwan\'s Optometric Personnel Act we will recommend a referral to an ophthalmologist; optometry staff do not make medical diagnoses.',
   },
   {
     q: 'What glasses should engineers and office workers on screens all day wear?',
@@ -168,7 +168,7 @@ const schema = {
         </table>
       </div>
       <blockquote class="border-l-2 border-brand-gold pl-5 text-brand-ink-3 mt-8" style="font-size:16px;line-height:1.8">
-        An important boundary: optometry staff assess visual function and correct vision with glasses; they do not make medical diagnoses. If you have persistent eye pain, repeated severe dryness or a clear drop in vision, under Taiwan's Optometrists Act we will recommend and help arrange a referral to an ophthalmologist, so eye disease is ruled out before we talk about glasses.
+        An important boundary: optometry staff assess visual function and correct vision with glasses; they do not make medical diagnoses. If you have persistent eye pain, repeated severe dryness or a clear drop in vision, under Taiwan's Optometric Personnel Act we will recommend and help arrange a referral to an ophthalmologist, so eye disease is ruled out before we talk about glasses.
       </blockquote>
     </div>
   </section>
@@ -292,7 +292,7 @@ const schema = {
           { t: 'American Academy of Ophthalmology EyeWiki: Computer Vision Syndrome (Digital Eye Strain) (accommodation and vergence, blinking, uncorrected presbyopia, the 20-20-20 rule)', u: 'https://eyewiki.org/Computer_Vision_Syndrome_(Digital_Eye_Strain)' },
           { t: 'American Academy of Ophthalmology: Computers, Digital Devices and Eye Strain (fewer blinks at screens, looking away into the distance, screen about an arm\'s length away and slightly below eye level)', u: 'https://www.aao.org/eye-health/tips-prevention/computer-usage' },
           { t: 'Beyond Visual Optometry: Screens look blurry by mid-afternoon: is your prescription getting stronger, or are your eyes just tired?', u: '/en/blog/digital-eye-strain-solution/' },
-          { t: 'Optometrists Act, Taiwan (Laws & Regulations Database, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
+          { t: 'Optometric Personnel Act, Taiwan (Laws & Regulations Database, in Chinese)', u: 'https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020190' },
         ].map(r => (
           <li class="text-brand-ink-2">{r.u
             ? <a href={r.u} target={r.u.startsWith('http') ? '_blank' : undefined} rel={r.u.startsWith('http') ? 'noopener noreferrer' : undefined} class="hover:text-brand-gold underline decoration-dotted underline-offset-2">{r.t}</a>

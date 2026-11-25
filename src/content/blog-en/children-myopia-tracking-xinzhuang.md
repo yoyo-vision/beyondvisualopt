@@ -23,7 +23,7 @@ If your child has never had glasses, the first stop is an ophthalmologist. This 
 
 ### Rules for a First Eye Exam and Glasses at Ages 6–15
 
-Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance. Article 6 of the Enforcement Rules of the Optometrists Act is more specific: for a child aged 6 to 15 having their first refraction and glasses, a physician must first confirm that the myopia is not pseudomyopia.
+Under Article 12 of the Optometric Personnel Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance. Article 6 of the Enforcement Rules of the Optometric Personnel Act is more specific: for a child aged 6 to 15 having their first refraction and glasses, a physician must first confirm that the myopia is not pseudomyopia.
 
 So on your first visit to our Xinzhuang store, please bring the ophthalmologist's diagnosis. Children who have already been diagnosed by an ophthalmologist and have had glasses fitted can start tracking right away; refraction for children aged 15 and under continues to be carried out under an ophthalmologist's guidance from then on.
 
@@ -51,9 +51,9 @@ For each return visit, please have your child wear their everyday glasses. Our o
 
 ### Referral to an Ophthalmologist When Something Is Unusual
 
-If tracking turns up abnormal vision (for example, your child still can't see clearly even with correction), or if parents want to learn about medical approaches such as medication, our optometry staff will help with a referral to an ophthalmologist in accordance with the Optometrists Act. This is where the records built up over earlier visits come in. The records are normally kept at the store; when you need to take them to an ophthalmologist, just let us know and we'll issue them, so the physician sees more than that day's single number.
+If tracking turns up abnormal vision (for example, your child still can't see clearly even with correction), or if parents want to learn about medical approaches such as medication, our optometry staff will help with a referral to an ophthalmologist in accordance with the Optometric Personnel Act. This is where the records built up over earlier visits come in. The records are normally kept at the store; when you need to take them to an ophthalmologist, just let us know and we'll issue them, so the physician sees more than that day's single number.
 
-Here is who handles what, in one table (the age limits and the line drawn around medical procedures follow Article 12 of the Optometrists Act):
+Here is who handles what, in one table (the age limits and the line drawn around medical procedures follow Article 12 of the Optometric Personnel Act):
 
 | Item | Optometry staff (Xinzhuang store) | Ophthalmologist |
 |------|------|------|
@@ -89,7 +89,7 @@ The record itself won't make the prescription stop changing; your child's prescr
 
 **Q: At what age can my child start myopia tracking at the Xinzhuang store?**
 
-Once they turn 6. Under Article 12 of the Optometrists Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance, and under Article 6 of the Enforcement Rules, a physician must first confirm the myopia is not pseudomyopia before the first refraction and glasses. Children already diagnosed by an ophthalmologist and fitted with glasses can come to our Xinzhuang store to set up a baseline record of prescription and binocular vision, then return every 3 to 6 months for tracking.
+Once they turn 6. Under Article 12 of the Optometric Personnel Act, optometry staff may not perform refraction on children under 6; they should be examined by an ophthalmologist. Refraction for children aged 6 to 15 must be carried out under an ophthalmologist's guidance, and under Article 6 of the Enforcement Rules, a physician must first confirm the myopia is not pseudomyopia before the first refraction and glasses. Children already diagnosed by an ophthalmologist and fitted with glasses can come to our Xinzhuang store to set up a baseline record of prescription and binocular vision, then return every 3 to 6 months for tracking.
 
 **Q: My child is already using eye drops from an ophthalmologist. Do they still need prescription measurements at an optometry clinic?**
 

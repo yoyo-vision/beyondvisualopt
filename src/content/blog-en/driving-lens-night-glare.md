@@ -35,7 +35,7 @@ Astigmatism has an axis as well as a power. An axis a few degrees off is hard to
 
 ### Changes in the eye itself
 
-If lights spread out far more than they used to, or your night vision gets noticeably worse in a short time, the cause may be a change in the eye itself, such as the crystalline lens starting to cloud. That's for an ophthalmologist to assess, so please see one as soon as possible. If an eye exam finds that your vision can't be corrected to normal, Article 12, Paragraph 3 of Taiwan's Optometrists Act also requires our optometry staff to refer you to a medical institution.
+If lights spread out far more than they used to, or your night vision gets noticeably worse in a short time, the cause may be a change in the eye itself, such as the crystalline lens starting to cloud. That's for an ophthalmologist to assess, so please see one as soon as possible. If an eye exam finds that your vision can't be corrected to normal, Article 12, Paragraph 3 of Taiwan's Optometric Personnel Act also requires our optometry staff to refer you to a medical institution.
 
 ---
 

@@ -68,7 +68,7 @@ On the day of your follow-up, bring your lenses, your case, and the solution you
 - Beyond Visual Optometry (BiYang Optometry Clinic), Xinzhuang store: No. 419-1, Zhongzheng Rd., Xinzhuang Dist., New Taipei City, near MRT Xinzhuang Station, +886-2-2206-6700, led by Optometrist YoYo
 - Beyond Visual Optical (Beyond Visual Optometry Clinic), Banqiao store: No. 28, Ln. 47, Sec. 2, Shuangshi Rd., Banqiao Dist., New Taipei City, near MRT Jiangzicui Station, +886-2-2253-1246
 
-Under Article 12 of Taiwan's Optometrists Act, contact lens refraction for those aged fifteen and under must be carried out under an ophthalmologist's guidance, and is not permitted for children under six. We do not currently fit contact lenses for children aged fifteen and under, so please take your child straight to an ophthalmologist. To book a time outside your follow-ups, use [book a vision consultation](/en/booking/).
+Under Article 12 of Taiwan's Optometric Personnel Act, contact lens refraction for those aged fifteen and under must be carried out under an ophthalmologist's guidance, and is not permitted for children under six. We do not currently fit contact lenses for children aged fifteen and under, so please take your child straight to an ophthalmologist. To book a time outside your follow-ups, use [book a vision consultation](/en/booking/).
 
 ---
 

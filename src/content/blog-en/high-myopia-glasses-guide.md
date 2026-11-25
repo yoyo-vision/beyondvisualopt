@@ -106,7 +106,7 @@ Common causes of dizziness include: optical center misalignment, a change in ver
 
 **Q: Can people with high myopia wear contact lenses?**
 
-Yes — contact lenses come in different materials, including soft and rigid (RGP) options. For high myopia combined with high astigmatism, which material suits you depends on your corneal condition and prescription, and needs to be confirmed by our licensed optometry staff after an evaluation and trial fitting. Both our Xinzhuang and Banqiao stores fit RGP lenses. Under Article 12 of Taiwan's Optometrists Act, contact lens fitting for anyone aged 15 or under must be done under an ophthalmologist's guidance, and children under 6 are not fitted. We currently do not fit contact lenses for anyone aged 15 or under, so please take your child straight to an ophthalmologist.
+Yes — contact lenses come in different materials, including soft and rigid (RGP) options. For high myopia combined with high astigmatism, which material suits you depends on your corneal condition and prescription, and needs to be confirmed by our licensed optometry staff after an evaluation and trial fitting. Both our Xinzhuang and Banqiao stores fit RGP lenses. Under Article 12 of Taiwan's Optometric Personnel Act, contact lens fitting for anyone aged 15 or under must be done under an ophthalmologist's guidance, and children under 6 are not fitted. We currently do not fit contact lenses for anyone aged 15 or under, so please take your child straight to an ophthalmologist.
 
 **Q: Where can I get a precision fitting for high myopia in Xinzhuang or Banqiao (New Taipei)?**
 

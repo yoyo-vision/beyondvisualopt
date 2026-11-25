@@ -27,7 +27,7 @@ Let's be clear about who we are: Beyond Visual Optometry is a licensed optometry
 
 Eyes get sore from long use, and a lot of people assume "resting will fix it" — but if it happens every single day and rest doesn't help, there are often a few visual causes behind it: your prescription doesn't match your current visual demands (your distance prescription is spot-on, but you spend all day looking near), your two eyes are working hard to stay coordinated (a small issue in how they focus and converge together), or presbyopia is quietly setting in and near work is getting harder. None of these are diseases — they're visual conditions, and that's exactly what licensed optometry staff are equipped to handle.
 
-To be straightforward: we don't "treat fatigue," and there's no pair of glasses that "eliminates" fatigue. What we do is assess and find the cause — going through your visual habits, prescription, and binocular coordination to see if there's anything adjustable on the visual side. If everything measures normal and the fatigue has another cause, or if we find during the process that your vision is abnormal and can't be adequately corrected, we'll refer you to an ophthalmologist under Taiwan's Optometrists Act rather than pushing ahead with glasses. Telling you "this needs to be seen by a physician" is part of doing this professionally.
+To be straightforward: we don't "treat fatigue," and there's no pair of glasses that "eliminates" fatigue. What we do is assess and find the cause — going through your visual habits, prescription, and binocular coordination to see if there's anything adjustable on the visual side. If everything measures normal and the fatigue has another cause, or if we find during the process that your vision is abnormal and can't be adequately corrected, we'll refer you to an ophthalmologist under Taiwan's Optometric Personnel Act rather than pushing ahead with glasses. Telling you "this needs to be seen by a physician" is part of doing this professionally.
 
 ## FAQ
 
@@ -45,7 +45,7 @@ Some soreness after short-term use that eases with rest is common. But if it's s
 
 **Q4. If the exam shows it's not a prescription issue, what happens next?**
 
-If the measurement comes back normal and the fatigue isn't coming from the visual side, or if your vision is abnormal and can't be adequately corrected with lenses, we'll recommend a referral to an ophthalmologist under Taiwan's Optometrists Act for further evaluation. An optometry practice's responsibility isn't just fitting you with glasses — it also includes honestly pointing you toward the right door when you need to see a physician.
+If the measurement comes back normal and the fatigue isn't coming from the visual side, or if your vision is abnormal and can't be adequately corrected with lenses, we'll recommend a referral to an ophthalmologist under Taiwan's Optometric Personnel Act for further evaluation. An optometry practice's responsibility isn't just fitting you with glasses — it also includes honestly pointing you toward the right door when you need to see a physician.
 
 ---
 

@@ -13,7 +13,7 @@ instagram: ""
 
 "How old is your child?" Every semester, parents ask us whether they should take their child to an ophthalmologist first or come straight in for glasses, and our answer always starts with that question back. Under 6: see an ophthalmologist first. Ages 6–15 getting glasses for the first time: also go to an ophthalmologist first, so a physician can confirm it isn't pseudomyopia; if your child already has glasses, refraction is carried out under an ophthalmologist's guidance. Only over 15 can your child go directly to optometry staff.
 
-This order isn't something any one store came up with. It's written in Article 12 of the Optometrists Act and Article 6 of the Enforcement Rules of the Optometrists Act. Parents really only need to remember two things: how old the child is, and whether this is their first pair of glasses.
+This order isn't something any one store came up with. It's written in Article 12 of the Optometric Personnel Act and Article 6 of the Enforcement Rules of the Optometric Personnel Act. Parents really only need to remember two things: how old the child is, and whether this is their first pair of glasses.
 
 ## Children's Vision: Which Way to Go by Age
 
@@ -30,7 +30,7 @@ Here are ages and situations in one table. First, find the row your child falls 
 
 ### Under 6: Always See an Ophthalmologist First
 
-At this age, under Article 12 of the Optometrists Act, optometry staff may not perform refraction. So no matter what the screening slip says or how close your child sits to the TV, the first stop has to be an ophthalmologist; all an optometry clinic can do at this stage is remind you to make the appointment. For ages 0 to 3, see [infant vision development](/blog/infant-vision-development/) (in Chinese); for ages 3 to 6, see [preschool vision](/blog/preschool-vision-reserve/) (in Chinese).
+At this age, under Article 12 of the Optometric Personnel Act, optometry staff may not perform refraction. So no matter what the screening slip says or how close your child sits to the TV, the first stop has to be an ophthalmologist; all an optometry clinic can do at this stage is remind you to make the appointment. For ages 0 to 3, see [infant vision development](/blog/infant-vision-development/) (in Chinese); for ages 3 to 6, see [preschool vision](/blog/preschool-vision-reserve/) (in Chinese).
 
 ### Ages 6–15, First Pair of Glasses: Confirm It Isn't Pseudomyopia at an Ophthalmologist First
 
@@ -54,7 +54,7 @@ Whatever your child's age, if any of the following appears, there's no need to s
 - Seeing double
 - An eye injury, or something in the eye
 
-These need a physician's diagnosis; a pair of glasses won't solve them. If optometry staff find during measurement that vision can't be corrected to normal, they will also refer to a medical institution under Article 12, Paragraph 3 of the Optometrists Act. The full symptom comparison is in [Ophthalmologist or optometry clinic?](/en/guide/eye-doctor-or-optometrist/).
+These need a physician's diagnosis; a pair of glasses won't solve them. If optometry staff find during measurement that vision can't be corrected to normal, they will also refer to a medical institution under Article 12, Paragraph 3 of the Optometric Personnel Act. The full symptom comparison is in [Ophthalmologist or optometry clinic?](/en/guide/eye-doctor-or-optometrist/).
 
 ## How Optometry Clinics and Ophthalmologists Divide the Work
 

@@ -2,8 +2,8 @@
 title: "Optometrist vs Ophthalmologist in Taiwan: Which One Do You Actually Need?"
 date: 2026-06-24
 tag: "Eye Care"
-excerpt: "An ophthalmology visit is covered by National Health Insurance; a refraction and glasses at an optometry clinic are paid out of pocket. What each side may do is drawn by a line in Taiwan's Optometrists Act. And if you take an ophthalmologist's prescription to get glasses made, there are still a few numbers that can't be measured until a frame is on your face."
-seoDescription: "What's the difference between an ophthalmologist and an optometry clinic in Taiwan? Ophthalmologists diagnose, prescribe medication, dilate pupils and operate; optometry staff perform refraction and dispensing under Article 12 of the Optometrists Act — no refraction for children under 6, under an ophthalmologist's guidance for those 15 and under, and a referral when vision can't be corrected. Plus NHI vs out-of-pocket, and what still needs measuring with an ophthalmologist's prescription. Beyond Visual Optometry, Xinzhuang and Banqiao."
+excerpt: "An ophthalmology visit is covered by National Health Insurance; a refraction and glasses at an optometry clinic are paid out of pocket. What each side may do is drawn by a line in Taiwan's Optometric Personnel Act. And if you take an ophthalmologist's prescription to get glasses made, there are still a few numbers that can't be measured until a frame is on your face."
+seoDescription: "What's the difference between an ophthalmologist and an optometry clinic in Taiwan? Ophthalmologists diagnose, prescribe medication, dilate pupils and operate; optometry staff perform refraction and dispensing under Article 12 of the Optometric Personnel Act — no refraction for children under 6, under an ophthalmologist's guidance for those 15 and under, and a referral when vision can't be corrected. Plus NHI vs out-of-pocket, and what still needs measuring with an ophthalmologist's prescription. Beyond Visual Optometry, Xinzhuang and Banqiao."
 image: ""
 youtube: ""
 instagram: ""
@@ -13,7 +13,7 @@ instagram: ""
 
 If something is wrong with your eyes, see an ophthalmologist first: redness, pain, vision that suddenly goes unclear, a jump in floaters, or headaches with no obvious cause all count. If your prescription has simply changed and you want a new pair of glasses, you're over 15 and your eyes feel fine, an optical shop with an optometry clinic is enough. Children 15 and under need to go through an ophthalmologist first; for children under 6, optometry staff may not perform refraction by law.
 
-Ophthalmologists handle diagnosis, treatment, medication and dilation. Optometry staff perform refraction and dispensing under Article 12 of Taiwan's Optometrists Act, and when they find vision that can't be corrected to normal, the law requires them to refer you to a medical institution.
+Ophthalmologists handle diagnosis, treatment, medication and dilation. Optometry staff perform refraction and dispensing under Article 12 of Taiwan's Optometric Personnel Act, and when they find vision that can't be corrected to normal, the law requires them to refer you to a medical institution.
 
 ## You've Seen the Ophthalmologist and Been Told "You Can Get New Glasses"
 
@@ -33,13 +33,13 @@ Here are the two side by side:
 | Age | Patients of any age | No refraction for children under 6; under an ophthalmologist's guidance for those 15 and under |
 | NHI | Outpatient visits covered by NHI | Out of pocket, not covered by NHI |
 
-The table is split by place to keep it readable, but people and places aren't actually tied together. Article 9 of the Optometrists Act lists where optometry staff can practice — medical institutions, optometry clinics and optical companies (shops) — so an ophthalmology clinic can have optometry staff too. The reverse isn't true: nobody at an optometry clinic can treat you for an illness.
+The table is split by place to keep it readable, but people and places aren't actually tied together. Article 9 of the Optometric Personnel Act lists where optometry staff can practice — medical institutions, optometry clinics and optical companies (shops) — so an ophthalmology clinic can have optometry staff too. The reverse isn't true: nobody at an optometry clinic can treat you for an illness.
 
 ### Ophthalmologists: Diagnosis, Treatment, Medication, Dilation
 
 Why your eye is red, why it hurts, why your vision suddenly went unclear, whether you need drops, whether you need surgery — these judgments are medical, and only a physician can make them. Dilation sits on this side too: it starts with drops that relax the eye and enlarge the pupil, and putting in those drops is itself a medical act. After an ophthalmology visit, what you take away is the doctor's judgment and a set of numbers; the glasses themselves usually have to be made somewhere else.
 
-### Optometry Staff: Refraction and Dispensing (Article 12, Optometrists Act)
+### Optometry Staff: Refraction and Dispensing (Article 12, Optometric Personnel Act)
 
 Article 12 lists what optometry staff may do, item by item. For optometrists, the first item is "non-invasive measurement of the eye's refractive status and related refraction," including refraction done for fitting general contact lenses; it's followed by fitting general contact lenses, teaching the use of low-vision aids, and refraction carried out on a physician's consultation or referral order. For optometric technicians, the scope is refraction for general myopia, hyperopia, astigmatism and presbyopia, without the low-vision item. In other words, an ophthalmologist can also write an order asking optometry staff to do your refraction.
 
@@ -94,7 +94,7 @@ At that moment there's very little optometry staff can do, and that is exactly w
 
 **Q: Do I need to see an ophthalmologist before going to an optometry clinic?**
 
-If you're over 15, you simply want glasses, and your eyes aren't red, painful or suddenly unclear, you can go straight to an optometry clinic. For those 15 and under, the law sets an order: optometry staff may not perform refraction for children under 6, and for ages 6 to 15 before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia. For when adults are better off seeing a doctor first, see [Do You Need to See an Ophthalmologist Before Getting Glasses?](/en/blog/eye-exam-before-glasses/)
+If you're over 15, you simply want glasses, and your eyes aren't red, painful or suddenly unclear, you can go straight to an optometry clinic. For those 15 and under, the law sets an order: optometry staff may not perform refraction for children under 6; for ages 6 to 15, before the first refraction and the first pair of glasses, a physician must confirm the myopia is not pseudomyopia, and all refraction in this age group is carried out under an ophthalmologist's guidance. For when adults are better off seeing a doctor first, see [Do You Need to See an Ophthalmologist Before Getting Glasses?](/en/blog/eye-exam-before-glasses/)
 
 **Q: Can an optometry clinic give eye drops or do medical tests?**
 
@@ -102,7 +102,7 @@ No. Eye drops and dilation are medical acts that need an ophthalmologist's judgm
 
 **Q: Can an ordinary optical shop do eye exams?**
 
-It depends on whether the shop has an optometry clinic set up inside. Under Article 4 of the Enforcement Rules of the Optometrists Act, an optical company (shop) must set up an optometry clinic within its premises before it can carry out refraction, and refraction is performed by optometry staff holding a practice license. An optical shop without an optometry clinic can sell frames, make glasses from a refraction result, and adjust frames, but by law it may not carry out refraction. When you walk in, the optometry clinic's practice license is displayed somewhere clearly visible, as the law requires. You can also check by name whether the person examining you is registered to practice, on the Ministry of Health and Welfare's medical personnel lookup system.
+It depends on whether the shop has an optometry clinic set up inside. Under Article 4 of the Enforcement Rules of the Optometric Personnel Act, an optical company (shop) must set up an optometry clinic within its premises before it can carry out refraction, and refraction is performed by optometry staff holding a practice license. An optical shop without an optometry clinic can sell frames, make glasses from a refraction result, and adjust frames, but by law it may not carry out refraction. When you walk in, the optometry clinic's practice license is displayed somewhere clearly visible, as the law requires. You can also check by name whether the person examining you is registered to practice, on the Ministry of Health and Welfare's medical personnel lookup system.
 
 **Q: Is an eye exam more accurate at an optical shop or at an ophthalmologist's?**
 

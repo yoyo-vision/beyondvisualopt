@@ -22,10 +22,10 @@ This article is here to help you understand **what actually matters when getting
 
 | | Optometry Clinic | Regular Glasses Shop |
 |--|------|----------|
-| Legal basis | Optometrists Act | Standard business registration |
+| Legal basis | Optometric Personnel Act | Standard business registration |
 | Exam qualification | Licensed optometry staff required | Must set up an in-store optometry office staffed by licensed optometry personnel |
 
-Under Article 4 of the Enforcement Rules of the Optometrists Act, a glasses shop that wants to perform vision exams must set up a registered optometry office in the store.
+Under Article 4 of the Enforcement Rules of the Optometric Personnel Act, a glasses shop that wants to perform vision exams must set up a registered optometry office in the store.
 
 In short: **if your prescription is stable and you just want a new pair of myopia glasses, the bar is lower; but if you have dizziness, eye strain, presbyopia, or a need for progressive lenses, look for an optometry clinic that does a full exam including a binocular vision assessment.**
 

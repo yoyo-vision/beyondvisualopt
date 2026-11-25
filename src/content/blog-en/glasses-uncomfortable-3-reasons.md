@@ -134,7 +134,7 @@ It may mean your two eyes have to put in extra effort to line up when used toget
 
 **Q: If my new glasses are still uncomfortable, should I go straight to an ophthalmologist or back to the optometry store?**
 
-It depends on your symptoms. If your eyes are red and painful, you suddenly see many more floaters, or your vision has clearly dropped within a short time, see an ophthalmologist first. If the discomfort only appears when you wear the glasses and goes away when you take them off, it's most likely related to the prescription, the lens design, or the frame position, and you can come back to the store to have it checked. If, during the exam, no combination of lens powers brings your vision up to normal, our licensed optometry staff will refer you to an ophthalmologist, as required by Article 12, Paragraph 3 of Taiwan's Optometrists Act.
+It depends on your symptoms. If your eyes are red and painful, you suddenly see many more floaters, or your vision has clearly dropped within a short time, see an ophthalmologist first. If the discomfort only appears when you wear the glasses and goes away when you take them off, it's most likely related to the prescription, the lens design, or the frame position, and you can come back to the store to have it checked. If, during the exam, no combination of lens powers brings your vision up to normal, our licensed optometry staff will refer you to an ophthalmologist, as required by Article 12, Paragraph 3 of Taiwan's Optometric Personnel Act.
 
 **Q: Where in Xinzhuang or Banqiao can I get a complete binocular vision assessment?**
 

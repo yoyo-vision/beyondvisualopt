@@ -117,7 +117,7 @@ For a new eye exam, allow 60–90 minutes for your appointment. You can book a t
 
 There's another possible outcome: the prescription, axis, optical centers, and frame position have all been measured, none of them is off, and the dizziness is still there. At that point, it's no longer the glasses that need checking.
 
-If your headaches get worse day by day, your vision drops noticeably within a short time, or you feel unsteady walking along with other physical symptoms, see a doctor first. And if, during the exam, no combination of lens powers brings your vision up to normal, Article 12, Paragraph 3 of Taiwan's Optometrists Act requires our licensed optometry staff to refer you to an ophthalmologist.
+If your headaches get worse day by day, your vision drops noticeably within a short time, or you feel unsteady walking along with other physical symptoms, see a doctor first. And if, during the exam, no combination of lens powers brings your vision up to normal, Article 12, Paragraph 3 of Taiwan's Optometric Personnel Act requires our licensed optometry staff to refer you to an ophthalmologist.
 
 ---
 
