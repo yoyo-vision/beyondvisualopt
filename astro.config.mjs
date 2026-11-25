@@ -14,8 +14,29 @@ for (const f of readdirSync('./src/content/blog')) {
 // 部落格列表頁 lastmod = 最新一篇文章的日期
 const latestPostDate = Object.values(blogDates).sort().at(-1);
 
+// 7 欄以上的表格：加上 wide-table，並把欄名寫進每一格的 data-label，窄螢幕才能改排成卡片（樣式在 src/styles/wide-table.css）
+function rehypeWideTable() {
+  const text = (n) => n.type === 'text' ? n.value : (n.children ?? []).map(text).join('');
+  const all = (n, tag) => (n.children ?? []).flatMap(c => c.tagName === tag ? [c] : all(c, tag));
+  return (tree) => {
+    for (const table of all(tree, 'table')) {
+      const labels = all(table, 'th').map(th => text(th).trim());
+      if (labels.length < 7) continue;
+      table.properties.className = ['wide-table'];
+      for (const tr of all(table, 'tr')) {
+        all(tr, 'td').forEach((td, i) => {
+          td.properties['data-label'] = labels[i];
+          // 內容包一層 span，卡片版的「欄名｜內容」兩欄才不會被粗體、連結切開
+          td.children = [{ type: 'element', tagName: 'span', properties: {}, children: td.children }];
+        });
+      }
+    }
+  };
+}
+
 export default defineConfig({
   site: 'https://beyondvisualopt.com',
+  markdown: { rehypePlugins: [rehypeWideTable] },
   // /author 目前只有 YoYo 一位作者，直接轉址到作者頁（麵包屑中間層不落空）
   redirects: {
     '/author': '/author/yoyo/',

@@ -1,0 +1,32 @@
+/* 7 欄以上的寬表格（class 由 astro.config.mjs 的 rehypeWideTable 加上） */
+
+/* 平板、桌機：照常是表格，左右內距縮小才放得進正文 */
+.article-body .wide-table th,
+.article-body .wide-table td { padding-left: 0.25rem; padding-right: 0.25rem; }
+
+/* 1024～1055：雙欄版位正文最窄的一段，字與內距再縮一點點 */
+@media (min-width: 1024px) and (max-width: 1055px) {
+  .article-body .wide-table { font-size: 13.5px; }
+  .article-body .wide-table th,
+  .article-body .wide-table td { padding-left: 3px; padding-right: 3px; }
+}
+
+/* 手機：表格放不下，每一列改成一張卡片（第一格當卡片標題，其餘每格前面帶欄名），不用左右滑 */
+@media (max-width: 767px) {
+  .article-body .wide-table { display: block; overflow: visible; border-radius: 0; }
+  .article-body .wide-table thead { display: none; }
+  .article-body .wide-table tbody { display: block; }
+  .article-body .wide-table tr { display: block; background: #fff; border: 1px solid #e8e3da; border-radius: 0.75rem; overflow: hidden; margin-bottom: 1rem; }
+  .article-body .wide-table td {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .article-body .wide-table td::before { content: attr(data-label); color: #524c46; font-weight: 600; }
+  .article-body .wide-table td:first-child { display: block; background: #f3ede3; font-size: 18px; }
+  .article-body .wide-table td:first-child::before { content: none; }
+  .article-body .wide-table td:last-child { border-bottom: none; }
+}
