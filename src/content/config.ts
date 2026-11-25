@@ -66,7 +66,7 @@ const portfolio = defineCollection({
     tags: z.array(z.string()).optional(), // 分類標籤（選填），例：["純鈦","無框"]
     date: z.coerce.date(),                // 拍攝/上架日期，供排序
     featured: z.boolean().optional(),     // 設 true 會優先排在前面
-    source: z.enum(["store", "customer"]).optional(), // 鏡框來源（老闆 2026-11-25）：store＝店內販售（不寫經銷或代理）、customer＝顧客自帶；未填不顯示標示
+    source: z.enum(["store", "customer"]).optional(), // 內部紀錄，頁面不輸出（老闆 2026-11-25：商品來源一律不標、不講）
   }),
 });
 
