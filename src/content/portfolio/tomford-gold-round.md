@@ -2,7 +2,8 @@
 image: /images/portfolio/tomford-gold-round.webp
 brand: "Tom Ford"
 model: ""
-caption: "Tom Ford 金屬方圓框，俐落中帶暖度"
+caption: "黑色方框近拍，鏡框轉角有金色 T 字"
 tags: ["Tom Ford"]
 date: 2026-06-23
+source: store
 ---

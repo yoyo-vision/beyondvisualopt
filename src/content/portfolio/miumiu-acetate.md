@@ -2,7 +2,8 @@
 image: /images/portfolio/miumiu-acetate.webp
 brand: "Miu Miu"
 model: ""
-caption: "Miu Miu 膠框，甜而不膩的女性線條"
+caption: "黑色鏡框，鏡腳上有金色 Miu Miu 字樣，顧客自帶"
 tags: ["Miu Miu"]
 date: 2026-06-27
+source: customer
 ---

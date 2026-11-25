@@ -1,8 +1,9 @@
 ---
 image: /images/portfolio/ferrari-sport-sunglasses.webp
-brand: "Ferrari"
+brand: "Ray-Ban × Ferrari"
 model: ""
-caption: "Ferrari 運動太陽眼鏡，紅黑配色的速度感"
-tags: ["太陽眼鏡", "Ferrari"]
+caption: "顧客自帶的聯名太陽眼鏡，鼻托和鏡腳末端都有紅色"
+tags: ["太陽眼鏡", "Ray-Ban × Ferrari"]
 date: 2026-06-26
+source: customer
 ---
