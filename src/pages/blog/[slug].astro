@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ArticleToc from '../../components/ArticleToc.astro';
 import { getCollection } from 'astro:content';
 import { findCategory, GUIDE_TITLES } from '../../data/categories';
 
@@ -199,8 +200,11 @@ const pageSchema = {
   modifiedTime={modifiedIso}
   image={post.data.image || `/images/blog/og/${post.slug}.png`}
 >
-  <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
-    <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+  <div class:list={['max-w-7xl mx-auto px-4 py-12 lg:py-16', showToc && 'toc-page']}>
+    <div class="toc-cols flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+
+      <!-- 左側目錄：寬度 1280 以上才顯示，取代內文目錄卡 -->
+      {showToc && <ArticleToc label="本篇內容" items={tocHeadings} />}
 
       <!-- ── 主文區 ── -->
       <article class="w-full lg:flex-1 min-w-0">
@@ -258,7 +262,7 @@ const pageSchema = {
           </a>
         )}
 
-        <!-- 文內目錄：用 <p> 當標籤而不是 <h2>，避免多出一個與內容無關的標題干擾 H1～H6 結構 -->
+        <!-- 文內目錄（1280 以下顯示，以上改由左側目錄）：用 <p> 當標籤而不是 <h2>，避免多出一個與內容無關的標題干擾 H1～H6 結構 -->
         {showToc && (
           <nav aria-label="文章目錄" class="toc mb-10 rounded-2xl border border-gray-200 px-6 py-5">
             <p class="text-brand-navy font-bold mb-3" style="font-size:15px">目錄</p>

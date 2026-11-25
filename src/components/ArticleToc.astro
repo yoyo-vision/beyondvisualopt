@@ -1,0 +1,122 @@
+---
+// 文章頁左側目錄（2026-11-25 老闆指示）：寬度 1280 以上才出現，捲動時固定停住、標出目前讀到哪一段
+// 1280 以下與列印時不顯示（中文版沿用內文裡的目錄卡）。用 <p> 當標籤，不新增標題層級
+interface Props {
+  label: string;
+  items: { depth: number; slug: string; text: string }[];
+}
+const { label, items } = Astro.props;
+---
+<nav aria-label={label} class="toc-rail">
+  <p class="toc-rail-title">{label}</p>
+  <ol class="toc-rail-list">
+    {items.map(h => (
+      <li><a href={`#${h.slug}`} class={h.depth === 3 ? 'toc-rail-sub' : undefined}>{h.text}</a></li>
+    ))}
+  </ol>
+</nav>
+
+<style is:global>
+.toc-rail { display: none; }
+
+@media screen and (min-width: 1280px) {
+  /* 三欄版位：左目錄 13rem｜正文｜右欄 20rem（右欄寬度不變） */
+  div.toc-page { max-width: 80rem; }
+  .toc-page > .toc-cols { gap: 2.25rem; }
+  .toc-page .toc { display: none; } /* 有左欄就不顯示內文目錄卡，同一個寬度只有一份 */
+  /* 7 欄以上的寬表格（目前只有英文 frame-material-guide）縮左右內距，才放得進變窄的正文、不壓到右欄 */
+  .toc-page .article-body th:first-child:nth-last-child(n+7),
+  .toc-page .article-body th:first-child:nth-last-child(n+7) ~ th,
+  .toc-page .article-body td:first-child:nth-last-child(n+7),
+  .toc-page .article-body td:first-child:nth-last-child(n+7) ~ td { padding-left: 0.25rem; padding-right: 0.25rem; }
+
+  .toc-rail {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 13rem;
+    position: sticky;
+    top: 6rem;
+    /* 上方扣導覽列，下方留給左下角「TOP」鈕，目錄不會被它蓋住 */
+    max-height: calc(100vh - 6rem - 7rem);
+    font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+  }
+  .toc-rail-title { color: #1a2f4e; font-size: 17px; font-weight: 700; margin-bottom: 0.5rem; }
+  .toc-rail-list {
+    position: relative; /* 讓 a.offsetTop 以清單為基準 */
+    min-height: 0;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+  }
+  .toc-rail-list a {
+    display: block;
+    padding: 5px 4px 5px 12px;
+    border-left: 3px solid transparent;
+    color: #5a6372; /* 米色底 #f7f3ec 上對比 5.5:1 */
+    font-size: 15px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    outline-offset: -2px;
+  }
+  .toc-rail-list a.toc-rail-sub { padding-left: 28px; font-size: 14px; }
+  .toc-rail-list a:hover { color: #1a2f4e; }
+  .toc-rail-list a[aria-current] { color: #1a2f4e; font-weight: 700; border-left-color: #1a2f4e; }
+}
+
+@media screen and (min-width: 1440px) {
+  /* 82rem：右欄右緣剛好停在右側浮動圓鈕左邊，不會被蓋到 */
+  div.toc-page { max-width: 82rem; }
+  .toc-rail { flex-basis: 14.5rem; max-height: calc(100vh - 6rem - 2rem); }
+  .toc-rail-list a { font-size: 16px; }
+  .toc-rail-list a.toc-rail-sub { font-size: 15px; }
+}
+
+@media screen and (min-width: 1600px) {
+  div.toc-page { max-width: 90rem; }
+  .toc-page > .toc-cols { gap: 3.25rem; }
+  .toc-rail { flex-basis: 16.5rem; }
+}
+</style>
+
+<script>
+  // 標出目前段落：最後一個「已捲到導覽列下方」的標題就是目前段落。
+  // 每次都重新量位置，所以快速捲動、點目錄跳段、圖片晚載入造成的位移都不會標錯。沒開 JS 時目錄照樣能點
+  const rail = document.querySelector<HTMLElement>('.toc-rail');
+  const list = rail?.querySelector<HTMLElement>('.toc-rail-list');
+  if (rail && list) {
+    const links = Array.from(list.querySelectorAll('a'));
+    const targets = links.map(a => document.getElementById(a.getAttribute('href')!.slice(1)));
+    const LINE = 120; // 跳段後標題停在 96px（scroll-margin-top 6rem），留 24px 誤差
+    let current = -1;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      if (!rail.offsetParent) return; // 左欄沒顯示（1280 以下）就不用算
+
+      let next = -1; // 還沒讀到第一段：不標任何一項
+      targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top <= LINE) next = i; });
+      // 螢幕很高時最後一段到不了上方，捲到頁尾就算最後一段
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) next = links.length - 1;
+      if (next === current) return;
+
+      links[current]?.removeAttribute('aria-current');
+      links[next]?.setAttribute('aria-current', 'true');
+      current = next;
+
+      // 目錄比畫面長時，把目前段落帶進可見範圍（只捲目錄，不動頁面）
+      const a = links[next];
+      if (!a) list.scrollTop = 0;
+      else if (a.offsetTop < list.scrollTop || a.offsetTop + a.offsetHeight > list.scrollTop + list.clientHeight) {
+        list.scrollTop = a.offsetTop - (list.clientHeight - a.offsetHeight) / 2;
+      }
+    };
+    const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', request, { passive: true });
+    window.addEventListener('resize', request);
+    window.addEventListener('load', request);
+    request();
+  }
+</script>

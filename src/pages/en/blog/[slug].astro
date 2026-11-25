@@ -1,5 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import ArticleToc from '../../../components/ArticleToc.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -8,7 +9,15 @@ export async function getStaticPaths() {
 }
 
 const { post, allPosts } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
+
+// 左側目錄：規則同中文版（H2 少於 3 個不顯示；FAQ 底下的 H3 不列）
+let inFaq = false;
+const tocHeadings = headings.filter(h => {
+  if (h.depth === 2) { inFaq = /FAQ/i.test(h.text); return true; }
+  return h.depth === 3 && !inFaq;
+});
+const showToc = headings.filter(h => h.depth === 2).length >= 3;
 
 const formatDate = (d: Date) =>
   d.toLocaleDateString('en-US', { timeZone: 'Asia/Taipei', year: 'numeric', month: 'short', day: 'numeric' });
@@ -192,8 +201,11 @@ const pageSchema = {
   modifiedTime={modifiedIso}
   image={post.data.image || `/images/blog/og-en/${post.slug}.png`}
 >
-  <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
-    <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+  <div class:list={['max-w-7xl mx-auto px-4 py-12 lg:py-16', showToc && 'toc-page']}>
+    <div class="toc-cols flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+
+      <!-- Left table of contents: shown at 1280px and wider -->
+      {showToc && <ArticleToc label="On this page" items={tocHeadings} />}
 
       <!-- Main article -->
       <article class="w-full lg:flex-1 min-w-0">
@@ -309,6 +321,8 @@ const pageSchema = {
 </Layout>
 
 <style is:global>
+/* 點目錄跳段時留出頂部導覽列的高度（同中文版） */
+.article-body :is(h2, h3) { scroll-margin-top: 6rem; }
 /* 沿用中文文章頁的內文排版樣式 */
 .article-body {
   color: #3a3530;
