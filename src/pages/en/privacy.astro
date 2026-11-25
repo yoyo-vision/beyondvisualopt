@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 const sections = [
   {
     h: '1. Scope',
-    body: 'This policy applies to the beyondvisualopt.com website and to the online bookings and contact you make through it. When you visit third-party websites or services (such as Google, LINE, and social platforms), their handling of personal data is governed by each service\'s own privacy policy and falls outside the scope of this policy.',
+    body: 'This policy applies to the beyondvisualopt.com website and to the online bookings and contact you make through it. It also applies to your conversations with our official LINE account. When you visit third-party websites or services (such as Google, LINE, and social platforms), those providers\' own handling of personal data is governed by each service\'s own privacy policy and falls outside the scope of this policy.',
   },
   {
     h: '2. Personal Data We Collect',
@@ -13,6 +13,7 @@ const sections = [
       'Online booking information: name, phone number, preferred location, appointment time, and a description of your vision needs.',
       'Information you provide when you contact us proactively.',
       'If you choose to link LINE when booking: your LINE user ID and display name, used to send booking confirmations and reminders.',
+      'Your conversations with our official LINE account: we keep the message content, together with your LINE user ID, display name and profile picture, so our optometry personnel and essential operating staff can reply and refer back to it. Some messages may be handled by an automated system; in that case the text of that message is sent to Google\'s AI service (Gemini), and we do not separately attach your name, phone number or LINE account details. Please do not include sensitive information such as ID numbers in your messages.',
       'Our own anonymous traffic statistics: a randomly generated visitor code (stored in your browser\'s localStorage under the name bv_vid) records pages visited, time on page, the referring URL and campaign (UTM) parameters, whether the device is mobile, an approximate region (country/city) derived from the connection, and clicks on LINE, phone, map and review links. It contains no name or phone number, and we do not store your IP address.',
       'Website analytics data: de-identified statistical data collected via GA4 and cookies (such as pages visited, time on page, and device type), processed in a form that does not readily identify a specific individual.',
     ],
@@ -25,8 +26,8 @@ const sections = [
     h: '4. Period, Region, Recipients, and Method of Use',
     list: [
       'Period: until the aforementioned collection purpose ceases, or until you request that we stop using or delete it (where the law provides a mandatory retention period, that period applies).',
-      'Region: booking and contact data is stored with the cloud services we use, whose servers may be located outside Taiwan; data generated through third-party services such as GA4 and LINE may also be processed on those providers\' servers outside Taiwan.',
-      'Recipients: our two stores share one customer and booking system, and use is limited to the optometry personnel and essential operating staff of the two stores; the aforementioned cloud services and third-party analytics/communication services process data to the extent necessary.',
+      'Region: booking and contact data is stored with the cloud services we use, whose servers may be located outside Taiwan; data generated or processed through third-party services such as GA4, LINE and Gemini may also be processed on those providers\' servers outside Taiwan.',
+      'Recipients: our two stores share one customer and booking system, and use is limited to the optometry personnel and essential operating staff of the two stores; the providers of the aforementioned cloud services and third-party analytics/communication/AI services process the relevant data in order to provide those services, in accordance with each service\'s own terms and policies.',
       'Method: processed and used in electronic and/or paper form, within the scope of the aforementioned purposes.',
     ],
   },
@@ -65,7 +66,7 @@ const sections = [
 ---
 <Layout
   title="Privacy Policy | Beyond Visual Optometry, Xinzhuang & Banqiao"
-  description="Beyond Visual Optometry × BiYang Optometry Clinic privacy policy: the categories of personal data the website collects, the purposes of collection, how it is used, and the rights you have under the Taiwan Personal Data Protection Act."
+  description="Beyond Visual Optometry privacy policy, covering our Xinzhuang store (with BiYang Optometry Clinic) and Banqiao store (with Neng Jian Du Optometry Clinic): the categories of personal data collected through our website and official LINE account, the purposes of collection, how it is used, and the rights you have under the Taiwan Personal Data Protection Act."
   lang="en"
 >
   <section class="bg-brand-navy text-white py-20 px-6 text-center">
