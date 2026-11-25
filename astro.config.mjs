@@ -14,15 +14,17 @@ for (const f of readdirSync('./src/content/blog')) {
 // 部落格列表頁 lastmod = 最新一篇文章的日期
 const latestPostDate = Object.values(blogDates).sort().at(-1);
 
-// 7 欄以上的表格：加上 wide-table，並把欄名寫進每一格的 data-label，窄螢幕才能改排成卡片（樣式在 src/styles/wide-table.css）
-function rehypeWideTable() {
+// 手機放不下的表格（英文 3 欄以上、中文 5 欄以上）：加 class，並把欄名寫進每一格的 data-label，
+// 手機才能改排成卡片（樣式在 src/styles/article-overflow.css）
+function rehypeCardTable() {
   const text = (n) => n.type === 'text' ? n.value : (n.children ?? []).map(text).join('');
   const all = (n, tag) => (n.children ?? []).flatMap(c => c.tagName === tag ? [c] : all(c, tag));
-  return (tree) => {
+  return (tree, file) => {
+    const min = file.path?.includes('/blog-en/') ? 3 : 5; // 英文單字不能折行，3 欄就會超出
     for (const table of all(tree, 'table')) {
       const labels = all(table, 'th').map(th => text(th).trim());
-      if (labels.length < 7) continue;
-      table.properties.className = ['wide-table'];
+      if (labels.length < min) continue;
+      table.properties.className = ['card-table', ...(labels.length <= 4 ? ['card-table-stack'] : []), ...(labels.length >= 7 ? ['wide-table'] : [])];
       for (const tr of all(table, 'tr')) {
         all(tr, 'td').forEach((td, i) => {
           td.properties['data-label'] = labels[i];
@@ -36,7 +38,7 @@ function rehypeWideTable() {
 
 export default defineConfig({
   site: 'https://beyondvisualopt.com',
-  markdown: { rehypePlugins: [rehypeWideTable] },
+  markdown: { rehypePlugins: [rehypeCardTable] },
   // /author 目前只有 YoYo 一位作者，直接轉址到作者頁（麵包屑中間層不落空）
   redirects: {
     '/author': '/author/yoyo/',

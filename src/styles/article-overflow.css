@@ -1,0 +1,47 @@
+/* 文章內文在窄螢幕不撐寬整頁（撐寬會把手機底部三鍵推出畫面）
+   表格的 class 由 astro.config.mjs 的 rehypeCardTable 加上 */
+
+/* 內文的長網址自動折行 */
+.article-body { overflow-wrap: break-word; }
+
+/* 7 欄以上，平板、桌機：照常是表格，左右內距縮小才放得進正文 */
+.article-body .wide-table th,
+.article-body .wide-table td { padding-left: 0.25rem; padding-right: 0.25rem; }
+
+/* 1024～1055：雙欄版位正文最窄的一段，字與內距再縮一點點 */
+@media (min-width: 1024px) and (max-width: 1055px) {
+  .article-body .wide-table { font-size: 13.5px; }
+  .article-body .wide-table th,
+  .article-body .wide-table td { padding-left: 3px; padding-right: 3px; }
+}
+
+/* 手機：英文 3 欄以上、中文 5 欄以上的表格，每一列改成一張卡片
+   （第一格當卡片標題，其餘每格帶欄名），不用左右滑 */
+@media (max-width: 767px) {
+  .article-body .card-table { display: block; overflow: visible; border-radius: 0; }
+  .article-body .card-table thead { display: none; }
+  .article-body .card-table tbody { display: block; }
+  .article-body .card-table tr { display: block; background: #fff; border: 1px solid #e8e3da; border-radius: 0.75rem; overflow: hidden; margin-bottom: 1rem; }
+  .article-body .card-table td {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .article-body .card-table td::before { content: attr(data-label); color: #524c46; font-weight: 600; }
+  .article-body .card-table td:first-child { display: block; background: #f3ede3; color: #1a2f4e; font-size: 18px; font-weight: 600; }
+  .article-body .card-table td:first-child::before { display: block; font-size: 14px; font-weight: 400; }
+  .article-body .card-table td:last-child { border-bottom: none; }
+
+  /* 4 欄以下的內容多半是整句：欄名放上面、內容放下面，用滿寬度 */
+  .article-body .card-table-stack td { display: block; }
+  .article-body .card-table-stack td:not(:first-child)::before { display: block; font-size: 15px; }
+}
+
+/* 320 寬（小手機或開了「顯示與亮度＞放大」）：沒改成卡片的表格縮左右內距 */
+@media (max-width: 359px) {
+  .article-body table:not(.card-table) th,
+  .article-body table:not(.card-table) td { padding-left: 0.5rem; padding-right: 0.5rem; }
+}
