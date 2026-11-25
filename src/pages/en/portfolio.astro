@@ -69,7 +69,7 @@ const schema = {
     <!-- 相簿方格（對齊網格） -->
     <section class="px-6 md:px-16 py-16" style="background:#f7f3ec">
       <div class="max-w-6xl mx-auto">
-        <p class="text-brand-ink-3 mb-8 max-w-3xl" style="font-size:14px;line-height:1.8">This portfolio is a photo record from our stores, not a product catalog. Frames marked &quot;For sale at our stores&quot; are from brands we sell; please check with the store for styles and stock. Frames marked &quot;Customer's own frame&quot; belong to our customers, and the ones pictured aren't for sale. If a frame isn't marked, just ask us.</p>
+        <p class="text-brand-ink-3 mb-8 max-w-3xl" style="font-size:16px;line-height:1.8">This portfolio is a photo record from our stores, not a product catalog. Frames marked &quot;For sale at our stores&quot; are from brands we sell; please check with the store for styles and stock. Frames marked &quot;Customer's own frame&quot; belong to our customers, and the ones pictured aren't for sale. If a frame isn't marked, just ask us.</p>
         <div class="gallery-grid">
           {items.map((item, i) => (
             <figure
@@ -90,7 +90,7 @@ const schema = {
               </div>
               <figcaption class="p-5 flex flex-col flex-1">
                 {item.data.source && (
-                  <span class="self-start mb-2 border border-brand-ink/15 text-brand-ink-3 rounded-full px-2.5 py-0.5" style="font-size:11px">{item.data.source === 'store' ? 'For sale at our stores' : "Customer's own frame"}</span>
+                  <span class="self-start mb-2 border border-brand-ink/15 text-brand-ink-3 rounded-full px-3 py-0.5 whitespace-nowrap" style="font-size:14px;line-height:1.6">{item.data.source === 'store' ? 'For sale at our stores' : "Customer's own frame"}</span>
                 )}
                 {item.data.brand && (
                   <div class="flex items-center gap-2 flex-wrap mb-1.5">
