@@ -219,7 +219,7 @@ const pageSchema = {
           </nav>
           <div class="flex items-center gap-3 mb-4">
             <span class="bg-brand-light text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">{found?.cat.name ?? post.data.tag}</span>
-            <span class="text-gray-400 text-sm">{formatDate(post.data.date)} · <a href="/author/yoyo/" class="hover:text-brand-gold transition-colors underline decoration-dotted underline-offset-2">YoYo 驗光師</a></span>
+            <span class="text-gray-400 text-sm">{formatDate(post.data.date)}{post.data.updated && <>（{formatDate(post.data.updated)} 更新）</>} · <a href="/author/yoyo/" class="hover:text-brand-gold transition-colors underline decoration-dotted underline-offset-2">YoYo 驗光師</a></span>
           </div>
           <h1 class="font-serif text-brand-navy leading-tight mb-5" style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.3">{post.data.title}</h1>
           <p class="text-gray-500 leading-relaxed" style="font-size:17px;line-height:1.8">{post.data.excerpt}</p>

@@ -5,10 +5,15 @@ import { readFileSync, readdirSync } from 'node:fs';
 
 // 讀取部落格文章 frontmatter 的日期，供 sitemap lastmod 使用
 // （只對「確定知道更新日期」的頁面標 lastmod，其他頁面不標，避免 Google 不信任）
+// 2026-11-25：改為優先取 updated（改文日），未填才回退 date（發布日）。
+// 原本只讀 date，於是「改內文但不動發布日」的頁面在 sitemap 看起來從沒變過，
+// Google 不重爬、舊快照一直留著——11/23 驗光費下架後，搜尋結果掛著已下架的金額兩天，
+// 就是這個原因。updated 欄位 schema 早已定義，文章頁也已用它輸出 dateModified，只有 sitemap 漏讀。
 const blogDates = {};
 for (const f of readdirSync('./src/content/blog')) {
-  const m = readFileSync(`./src/content/blog/${f}`, 'utf8')
-    .match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m);
+  const src = readFileSync(`./src/content/blog/${f}`, 'utf8');
+  const m = src.match(/^updated:\s*["']?(\d{4}-\d{2}-\d{2})/m)
+         || src.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m);
   if (m) blogDates[f.replace(/\.mdx?$/, '')] = m[1];
 }
 // 部落格列表頁 lastmod = 最新一篇文章的日期
