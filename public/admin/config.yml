@@ -55,8 +55,6 @@ collections:
           - { label: 新莊店地址, name: xinzhuang_address, widget: string }
           - { label: 板橋店地址, name: banqiao_address, widget: string }
           - { label: LINE OA 連結, name: line_url, widget: string }
-          - { label: Instagram 連結, name: instagram_url, widget: string }
-          - { label: YouTube 頻道連結, name: youtube_url, widget: string }
           - label: 首頁展示 YouTube 影片 ID
             name: homepage_youtube
             widget: string
