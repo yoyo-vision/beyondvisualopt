@@ -95,8 +95,8 @@ const PILLAR_MAP: Record<string, { title: string; href: string }> = {
 };
 const pillar = PILLAR_MAP[post.slug];
 
-// 其他英文文章（排除自己）
-const related = allPosts.filter(p => p.slug !== post.slug).slice(0, 6);
+// 其他英文文章（排除自己，最多 4 篇）
+const related = allPosts.filter(p => p.slug !== post.slug).slice(0, 4);
 
 // 從內文「## FAQ」段落自動抽取 Q&A，產生 FAQPage schema（與中文版同機制）
 function extractFaq(body: string) {
